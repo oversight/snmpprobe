@@ -1,0 +1,3317 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Integer32",
+        "Counter32",
+        "IpAddress",
+        "mib-2",
+        "Unsigned32",
+        "Counter64",
+        "zeroDotZero"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "PhysAddress",
+        "TruthValue",
+        "TimeStamp",
+        "RowPointer",
+        "TEXTUAL-CONVENTION",
+        "TestAndIncr",
+        "RowStatus",
+        "StorageType"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP"
+      ]
+    ],
+    [
+      "INET-ADDRESS-MIB",
+      [
+        "InetAddress",
+        "InetAddressType",
+        "InetAddressPrefixLength",
+        "InetVersion",
+        "InetZoneIndex"
+      ]
+    ],
+    [
+      "IF-MIB",
+      [
+        "InterfaceIndex"
+      ]
+    ]
+  ],
+  "ipMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "mib-2",
+      48
+    ]
+  },
+  "IpAddressOriginTC": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "manual",
+        "4": "dhcp",
+        "5": "linklayer",
+        "6": "random"
+      }
+    },
+    "display_hint": null
+  },
+  "IpAddressStatusTC": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "preferred",
+        "2": "deprecated",
+        "3": "invalid",
+        "4": "inaccessible",
+        "5": "unknown",
+        "6": "tentative",
+        "7": "duplicate",
+        "8": "optimistic"
+      }
+    },
+    "display_hint": null
+  },
+  "IpAddressPrefixOriginTC": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "manual",
+        "3": "wellknown",
+        "4": "dhcp",
+        "5": "routeradv"
+      }
+    },
+    "display_hint": null
+  },
+  "Ipv6AddressIfIdentifierTC": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": "2x:"
+  },
+  "ip": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "mib-2",
+      4
+    ]
+  },
+  "ipForwarding": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "forwarding",
+        "2": "notForwarding"
+      }
+    },
+    "index": null,
+    "value": [
+      "ip",
+      1
+    ]
+  },
+  "ipDefaultTTL": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      2
+    ]
+  },
+  "ipReasmTimeout": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      13
+    ]
+  },
+  "ipv6IpForwarding": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "forwarding",
+        "2": "notForwarding"
+      }
+    },
+    "index": null,
+    "value": [
+      "ip",
+      25
+    ]
+  },
+  "ipv6IpDefaultHopLimit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      26
+    ]
+  },
+  "ipv4InterfaceTableLastChange": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      27
+    ]
+  },
+  "ipv4InterfaceTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Ipv4InterfaceEntry"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      28
+    ]
+  },
+  "ipv4InterfaceEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Ipv4InterfaceEntry"
+    },
+    "index": [
+      "ipv4InterfaceIfIndex"
+    ],
+    "value": [
+      "ipv4InterfaceTable",
+      1
+    ]
+  },
+  "Ipv4InterfaceEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipv4InterfaceIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InterfaceIndex"
+    },
+    "index": null,
+    "value": [
+      "ipv4InterfaceEntry",
+      1
+    ]
+  },
+  "ipv4InterfaceReasmMaxSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipv4InterfaceEntry",
+      2
+    ]
+  },
+  "ipv4InterfaceEnableStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "up",
+        "2": "down"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipv4InterfaceEntry",
+      3
+    ]
+  },
+  "ipv4InterfaceRetransmitTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv4InterfaceEntry",
+      4
+    ]
+  },
+  "ipv6InterfaceTableLastChange": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      29
+    ]
+  },
+  "ipv6InterfaceTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Ipv6InterfaceEntry"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      30
+    ]
+  },
+  "ipv6InterfaceEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Ipv6InterfaceEntry"
+    },
+    "index": [
+      "ipv6InterfaceIfIndex"
+    ],
+    "value": [
+      "ipv6InterfaceTable",
+      1
+    ]
+  },
+  "Ipv6InterfaceEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipv6InterfaceIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InterfaceIndex"
+    },
+    "index": null,
+    "value": [
+      "ipv6InterfaceEntry",
+      1
+    ]
+  },
+  "ipv6InterfaceReasmMaxSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6InterfaceEntry",
+      2
+    ]
+  },
+  "ipv6InterfaceIdentifier": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Ipv6AddressIfIdentifierTC"
+    },
+    "index": null,
+    "value": [
+      "ipv6InterfaceEntry",
+      3
+    ]
+  },
+  "ipv6InterfaceEnableStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "up",
+        "2": "down"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipv6InterfaceEntry",
+      5
+    ]
+  },
+  "ipv6InterfaceReachableTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6InterfaceEntry",
+      6
+    ]
+  },
+  "ipv6InterfaceRetransmitTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6InterfaceEntry",
+      7
+    ]
+  },
+  "ipv6InterfaceForwarding": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "forwarding",
+        "2": "notForwarding"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipv6InterfaceEntry",
+      8
+    ]
+  },
+  "ipTrafficStats": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ip",
+      31
+    ]
+  },
+  "ipSystemStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF IpSystemStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "ipTrafficStats",
+      1
+    ]
+  },
+  "ipSystemStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpSystemStatsEntry"
+    },
+    "index": [
+      "ipSystemStatsIPVersion"
+    ],
+    "value": [
+      "ipSystemStatsTable",
+      1
+    ]
+  },
+  "IpSystemStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipSystemStatsIPVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetVersion"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      1
+    ]
+  },
+  "ipSystemStatsInReceives": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      3
+    ]
+  },
+  "ipSystemStatsHCInReceives": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      4
+    ]
+  },
+  "ipSystemStatsInOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      5
+    ]
+  },
+  "ipSystemStatsHCInOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      6
+    ]
+  },
+  "ipSystemStatsInHdrErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      7
+    ]
+  },
+  "ipSystemStatsInNoRoutes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      8
+    ]
+  },
+  "ipSystemStatsInAddrErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      9
+    ]
+  },
+  "ipSystemStatsInUnknownProtos": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      10
+    ]
+  },
+  "ipSystemStatsInTruncatedPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      11
+    ]
+  },
+  "ipSystemStatsInForwDatagrams": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      12
+    ]
+  },
+  "ipSystemStatsHCInForwDatagrams": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      13
+    ]
+  },
+  "ipSystemStatsReasmReqds": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      14
+    ]
+  },
+  "ipSystemStatsReasmOKs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      15
+    ]
+  },
+  "ipSystemStatsReasmFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      16
+    ]
+  },
+  "ipSystemStatsInDiscards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      17
+    ]
+  },
+  "ipSystemStatsInDelivers": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      18
+    ]
+  },
+  "ipSystemStatsHCInDelivers": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      19
+    ]
+  },
+  "ipSystemStatsOutRequests": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      20
+    ]
+  },
+  "ipSystemStatsHCOutRequests": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      21
+    ]
+  },
+  "ipSystemStatsOutNoRoutes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      22
+    ]
+  },
+  "ipSystemStatsOutForwDatagrams": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      23
+    ]
+  },
+  "ipSystemStatsHCOutForwDatagrams": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      24
+    ]
+  },
+  "ipSystemStatsOutDiscards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      25
+    ]
+  },
+  "ipSystemStatsOutFragReqds": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      26
+    ]
+  },
+  "ipSystemStatsOutFragOKs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      27
+    ]
+  },
+  "ipSystemStatsOutFragFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      28
+    ]
+  },
+  "ipSystemStatsOutFragCreates": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      29
+    ]
+  },
+  "ipSystemStatsOutTransmits": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      30
+    ]
+  },
+  "ipSystemStatsHCOutTransmits": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      31
+    ]
+  },
+  "ipSystemStatsOutOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      32
+    ]
+  },
+  "ipSystemStatsHCOutOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      33
+    ]
+  },
+  "ipSystemStatsInMcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      34
+    ]
+  },
+  "ipSystemStatsHCInMcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      35
+    ]
+  },
+  "ipSystemStatsInMcastOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      36
+    ]
+  },
+  "ipSystemStatsHCInMcastOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      37
+    ]
+  },
+  "ipSystemStatsOutMcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      38
+    ]
+  },
+  "ipSystemStatsHCOutMcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      39
+    ]
+  },
+  "ipSystemStatsOutMcastOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      40
+    ]
+  },
+  "ipSystemStatsHCOutMcastOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      41
+    ]
+  },
+  "ipSystemStatsInBcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      42
+    ]
+  },
+  "ipSystemStatsHCInBcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      43
+    ]
+  },
+  "ipSystemStatsOutBcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      44
+    ]
+  },
+  "ipSystemStatsHCOutBcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      45
+    ]
+  },
+  "ipSystemStatsDiscontinuityTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      46
+    ]
+  },
+  "ipSystemStatsRefreshRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipSystemStatsEntry",
+      47
+    ]
+  },
+  "ipIfStatsTableLastChange": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "ipTrafficStats",
+      2
+    ]
+  },
+  "ipIfStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF IpIfStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "ipTrafficStats",
+      3
+    ]
+  },
+  "ipIfStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpIfStatsEntry"
+    },
+    "index": [
+      "ipIfStatsIPVersion",
+      "ipIfStatsIfIndex"
+    ],
+    "value": [
+      "ipIfStatsTable",
+      1
+    ]
+  },
+  "IpIfStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipIfStatsIPVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetVersion"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      1
+    ]
+  },
+  "ipIfStatsIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InterfaceIndex"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      2
+    ]
+  },
+  "ipIfStatsInReceives": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      3
+    ]
+  },
+  "ipIfStatsHCInReceives": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      4
+    ]
+  },
+  "ipIfStatsInOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      5
+    ]
+  },
+  "ipIfStatsHCInOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      6
+    ]
+  },
+  "ipIfStatsInHdrErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      7
+    ]
+  },
+  "ipIfStatsInNoRoutes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      8
+    ]
+  },
+  "ipIfStatsInAddrErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      9
+    ]
+  },
+  "ipIfStatsInUnknownProtos": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      10
+    ]
+  },
+  "ipIfStatsInTruncatedPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      11
+    ]
+  },
+  "ipIfStatsInForwDatagrams": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      12
+    ]
+  },
+  "ipIfStatsHCInForwDatagrams": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      13
+    ]
+  },
+  "ipIfStatsReasmReqds": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      14
+    ]
+  },
+  "ipIfStatsReasmOKs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      15
+    ]
+  },
+  "ipIfStatsReasmFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      16
+    ]
+  },
+  "ipIfStatsInDiscards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      17
+    ]
+  },
+  "ipIfStatsInDelivers": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      18
+    ]
+  },
+  "ipIfStatsHCInDelivers": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      19
+    ]
+  },
+  "ipIfStatsOutRequests": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      20
+    ]
+  },
+  "ipIfStatsHCOutRequests": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      21
+    ]
+  },
+  "ipIfStatsOutForwDatagrams": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      23
+    ]
+  },
+  "ipIfStatsHCOutForwDatagrams": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      24
+    ]
+  },
+  "ipIfStatsOutDiscards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      25
+    ]
+  },
+  "ipIfStatsOutFragReqds": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      26
+    ]
+  },
+  "ipIfStatsOutFragOKs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      27
+    ]
+  },
+  "ipIfStatsOutFragFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      28
+    ]
+  },
+  "ipIfStatsOutFragCreates": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      29
+    ]
+  },
+  "ipIfStatsOutTransmits": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      30
+    ]
+  },
+  "ipIfStatsHCOutTransmits": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      31
+    ]
+  },
+  "ipIfStatsOutOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      32
+    ]
+  },
+  "ipIfStatsHCOutOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      33
+    ]
+  },
+  "ipIfStatsInMcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      34
+    ]
+  },
+  "ipIfStatsHCInMcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      35
+    ]
+  },
+  "ipIfStatsInMcastOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      36
+    ]
+  },
+  "ipIfStatsHCInMcastOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      37
+    ]
+  },
+  "ipIfStatsOutMcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      38
+    ]
+  },
+  "ipIfStatsHCOutMcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      39
+    ]
+  },
+  "ipIfStatsOutMcastOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      40
+    ]
+  },
+  "ipIfStatsHCOutMcastOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      41
+    ]
+  },
+  "ipIfStatsInBcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      42
+    ]
+  },
+  "ipIfStatsHCInBcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      43
+    ]
+  },
+  "ipIfStatsOutBcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      44
+    ]
+  },
+  "ipIfStatsHCOutBcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      45
+    ]
+  },
+  "ipIfStatsDiscontinuityTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      46
+    ]
+  },
+  "ipIfStatsRefreshRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipIfStatsEntry",
+      47
+    ]
+  },
+  "ipAddressPrefixTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF IpAddressPrefixEntry"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      32
+    ]
+  },
+  "ipAddressPrefixEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddressPrefixEntry"
+    },
+    "index": [
+      "ipAddressPrefixIfIndex",
+      "ipAddressPrefixType",
+      "ipAddressPrefixPrefix",
+      "ipAddressPrefixLength"
+    ],
+    "value": [
+      "ipAddressPrefixTable",
+      1
+    ]
+  },
+  "IpAddressPrefixEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipAddressPrefixIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InterfaceIndex"
+    },
+    "index": null,
+    "value": [
+      "ipAddressPrefixEntry",
+      1
+    ]
+  },
+  "ipAddressPrefixType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddressType"
+    },
+    "index": null,
+    "value": [
+      "ipAddressPrefixEntry",
+      2
+    ]
+  },
+  "ipAddressPrefixPrefix": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddress"
+    },
+    "index": null,
+    "value": [
+      "ipAddressPrefixEntry",
+      3
+    ]
+  },
+  "ipAddressPrefixLength": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddressPrefixLength"
+    },
+    "index": null,
+    "value": [
+      "ipAddressPrefixEntry",
+      4
+    ]
+  },
+  "ipAddressPrefixOrigin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddressPrefixOriginTC"
+    },
+    "index": null,
+    "value": [
+      "ipAddressPrefixEntry",
+      5
+    ]
+  },
+  "ipAddressPrefixOnLinkFlag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ipAddressPrefixEntry",
+      6
+    ]
+  },
+  "ipAddressPrefixAutonomousFlag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ipAddressPrefixEntry",
+      7
+    ]
+  },
+  "ipAddressPrefixAdvPreferredLifetime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipAddressPrefixEntry",
+      8
+    ]
+  },
+  "ipAddressPrefixAdvValidLifetime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipAddressPrefixEntry",
+      9
+    ]
+  },
+  "ipAddressSpinLock": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TestAndIncr"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      33
+    ]
+  },
+  "ipAddressTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF IpAddressEntry"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      34
+    ]
+  },
+  "ipAddressEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddressEntry"
+    },
+    "index": [
+      "ipAddressAddrType",
+      "ipAddressAddr"
+    ],
+    "value": [
+      "ipAddressTable",
+      1
+    ]
+  },
+  "IpAddressEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipAddressAddrType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddressType"
+    },
+    "index": null,
+    "value": [
+      "ipAddressEntry",
+      1
+    ]
+  },
+  "ipAddressAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddress"
+    },
+    "index": null,
+    "value": [
+      "ipAddressEntry",
+      2
+    ]
+  },
+  "ipAddressIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InterfaceIndex"
+    },
+    "index": null,
+    "value": [
+      "ipAddressEntry",
+      3
+    ]
+  },
+  "ipAddressType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unicast",
+        "2": "anycast",
+        "3": "broadcast"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipAddressEntry",
+      4
+    ]
+  },
+  "ipAddressPrefix": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowPointer"
+    },
+    "index": null,
+    "value": [
+      "ipAddressEntry",
+      5
+    ]
+  },
+  "ipAddressOrigin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddressOriginTC"
+    },
+    "index": null,
+    "value": [
+      "ipAddressEntry",
+      6
+    ]
+  },
+  "ipAddressStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddressStatusTC"
+    },
+    "index": null,
+    "value": [
+      "ipAddressEntry",
+      7
+    ]
+  },
+  "ipAddressCreated": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "ipAddressEntry",
+      8
+    ]
+  },
+  "ipAddressLastChanged": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "ipAddressEntry",
+      9
+    ]
+  },
+  "ipAddressRowStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "ipAddressEntry",
+      10
+    ]
+  },
+  "ipAddressStorageType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StorageType"
+    },
+    "index": null,
+    "value": [
+      "ipAddressEntry",
+      11
+    ]
+  },
+  "ipNetToPhysicalTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF IpNetToPhysicalEntry"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      35
+    ]
+  },
+  "ipNetToPhysicalEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpNetToPhysicalEntry"
+    },
+    "index": [
+      "ipNetToPhysicalIfIndex",
+      "ipNetToPhysicalNetAddressType",
+      "ipNetToPhysicalNetAddress"
+    ],
+    "value": [
+      "ipNetToPhysicalTable",
+      1
+    ]
+  },
+  "IpNetToPhysicalEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipNetToPhysicalIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InterfaceIndex"
+    },
+    "index": null,
+    "value": [
+      "ipNetToPhysicalEntry",
+      1
+    ]
+  },
+  "ipNetToPhysicalNetAddressType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddressType"
+    },
+    "index": null,
+    "value": [
+      "ipNetToPhysicalEntry",
+      2
+    ]
+  },
+  "ipNetToPhysicalNetAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddress"
+    },
+    "index": null,
+    "value": [
+      "ipNetToPhysicalEntry",
+      3
+    ]
+  },
+  "ipNetToPhysicalPhysAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PhysAddress"
+    },
+    "index": null,
+    "value": [
+      "ipNetToPhysicalEntry",
+      4
+    ]
+  },
+  "ipNetToPhysicalLastUpdated": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "ipNetToPhysicalEntry",
+      5
+    ]
+  },
+  "ipNetToPhysicalType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "invalid",
+        "3": "dynamic",
+        "4": "static",
+        "5": "local"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipNetToPhysicalEntry",
+      6
+    ]
+  },
+  "ipNetToPhysicalState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "reachable",
+        "2": "stale",
+        "3": "delay",
+        "4": "probe",
+        "5": "invalid",
+        "6": "unknown",
+        "7": "incomplete"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipNetToPhysicalEntry",
+      7
+    ]
+  },
+  "ipNetToPhysicalRowStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "ipNetToPhysicalEntry",
+      8
+    ]
+  },
+  "ipv6ScopeZoneIndexTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Ipv6ScopeZoneIndexEntry"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      36
+    ]
+  },
+  "ipv6ScopeZoneIndexEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Ipv6ScopeZoneIndexEntry"
+    },
+    "index": [
+      "ipv6ScopeZoneIndexIfIndex"
+    ],
+    "value": [
+      "ipv6ScopeZoneIndexTable",
+      1
+    ]
+  },
+  "Ipv6ScopeZoneIndexEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipv6ScopeZoneIndexIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InterfaceIndex"
+    },
+    "index": null,
+    "value": [
+      "ipv6ScopeZoneIndexEntry",
+      1
+    ]
+  },
+  "ipv6ScopeZoneIndexLinkLocal": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetZoneIndex"
+    },
+    "index": null,
+    "value": [
+      "ipv6ScopeZoneIndexEntry",
+      2
+    ]
+  },
+  "ipv6ScopeZoneIndex3": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetZoneIndex"
+    },
+    "index": null,
+    "value": [
+      "ipv6ScopeZoneIndexEntry",
+      3
+    ]
+  },
+  "ipv6ScopeZoneIndexAdminLocal": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetZoneIndex"
+    },
+    "index": null,
+    "value": [
+      "ipv6ScopeZoneIndexEntry",
+      4
+    ]
+  },
+  "ipv6ScopeZoneIndexSiteLocal": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetZoneIndex"
+    },
+    "index": null,
+    "value": [
+      "ipv6ScopeZoneIndexEntry",
+      5
+    ]
+  },
+  "ipv6ScopeZoneIndex6": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetZoneIndex"
+    },
+    "index": null,
+    "value": [
+      "ipv6ScopeZoneIndexEntry",
+      6
+    ]
+  },
+  "ipv6ScopeZoneIndex7": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetZoneIndex"
+    },
+    "index": null,
+    "value": [
+      "ipv6ScopeZoneIndexEntry",
+      7
+    ]
+  },
+  "ipv6ScopeZoneIndexOrganizationLocal": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetZoneIndex"
+    },
+    "index": null,
+    "value": [
+      "ipv6ScopeZoneIndexEntry",
+      8
+    ]
+  },
+  "ipv6ScopeZoneIndex9": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetZoneIndex"
+    },
+    "index": null,
+    "value": [
+      "ipv6ScopeZoneIndexEntry",
+      9
+    ]
+  },
+  "ipv6ScopeZoneIndexA": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetZoneIndex"
+    },
+    "index": null,
+    "value": [
+      "ipv6ScopeZoneIndexEntry",
+      10
+    ]
+  },
+  "ipv6ScopeZoneIndexB": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetZoneIndex"
+    },
+    "index": null,
+    "value": [
+      "ipv6ScopeZoneIndexEntry",
+      11
+    ]
+  },
+  "ipv6ScopeZoneIndexC": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetZoneIndex"
+    },
+    "index": null,
+    "value": [
+      "ipv6ScopeZoneIndexEntry",
+      12
+    ]
+  },
+  "ipv6ScopeZoneIndexD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetZoneIndex"
+    },
+    "index": null,
+    "value": [
+      "ipv6ScopeZoneIndexEntry",
+      13
+    ]
+  },
+  "ipDefaultRouterTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF IpDefaultRouterEntry"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      37
+    ]
+  },
+  "ipDefaultRouterEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpDefaultRouterEntry"
+    },
+    "index": [
+      "ipDefaultRouterAddressType",
+      "ipDefaultRouterAddress",
+      "ipDefaultRouterIfIndex"
+    ],
+    "value": [
+      "ipDefaultRouterTable",
+      1
+    ]
+  },
+  "IpDefaultRouterEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipDefaultRouterAddressType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddressType"
+    },
+    "index": null,
+    "value": [
+      "ipDefaultRouterEntry",
+      1
+    ]
+  },
+  "ipDefaultRouterAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddress"
+    },
+    "index": null,
+    "value": [
+      "ipDefaultRouterEntry",
+      2
+    ]
+  },
+  "ipDefaultRouterIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InterfaceIndex"
+    },
+    "index": null,
+    "value": [
+      "ipDefaultRouterEntry",
+      3
+    ]
+  },
+  "ipDefaultRouterLifetime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipDefaultRouterEntry",
+      4
+    ]
+  },
+  "ipDefaultRouterPreference": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "-2": "reserved",
+        "-1": "low",
+        "0": "medium",
+        "1": "high"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipDefaultRouterEntry",
+      5
+    ]
+  },
+  "ipv6RouterAdvertSpinLock": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TestAndIncr"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      38
+    ]
+  },
+  "ipv6RouterAdvertTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Ipv6RouterAdvertEntry"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      39
+    ]
+  },
+  "ipv6RouterAdvertEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Ipv6RouterAdvertEntry"
+    },
+    "index": [
+      "ipv6RouterAdvertIfIndex"
+    ],
+    "value": [
+      "ipv6RouterAdvertTable",
+      1
+    ]
+  },
+  "Ipv6RouterAdvertEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipv6RouterAdvertIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InterfaceIndex"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouterAdvertEntry",
+      1
+    ]
+  },
+  "ipv6RouterAdvertSendAdverts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouterAdvertEntry",
+      2
+    ]
+  },
+  "ipv6RouterAdvertMaxInterval": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouterAdvertEntry",
+      3
+    ]
+  },
+  "ipv6RouterAdvertMinInterval": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouterAdvertEntry",
+      4
+    ]
+  },
+  "ipv6RouterAdvertManagedFlag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouterAdvertEntry",
+      5
+    ]
+  },
+  "ipv6RouterAdvertOtherConfigFlag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouterAdvertEntry",
+      6
+    ]
+  },
+  "ipv6RouterAdvertLinkMTU": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouterAdvertEntry",
+      7
+    ]
+  },
+  "ipv6RouterAdvertReachableTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouterAdvertEntry",
+      8
+    ]
+  },
+  "ipv6RouterAdvertRetransmitTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouterAdvertEntry",
+      9
+    ]
+  },
+  "ipv6RouterAdvertCurHopLimit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouterAdvertEntry",
+      10
+    ]
+  },
+  "ipv6RouterAdvertDefaultLifetime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouterAdvertEntry",
+      11
+    ]
+  },
+  "ipv6RouterAdvertRowStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouterAdvertEntry",
+      12
+    ]
+  },
+  "icmp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "mib-2",
+      5
+    ]
+  },
+  "icmpStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF IcmpStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      29
+    ]
+  },
+  "icmpStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IcmpStatsEntry"
+    },
+    "index": [
+      "icmpStatsIPVersion"
+    ],
+    "value": [
+      "icmpStatsTable",
+      1
+    ]
+  },
+  "IcmpStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "icmpStatsIPVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetVersion"
+    },
+    "index": null,
+    "value": [
+      "icmpStatsEntry",
+      1
+    ]
+  },
+  "icmpStatsInMsgs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmpStatsEntry",
+      2
+    ]
+  },
+  "icmpStatsInErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmpStatsEntry",
+      3
+    ]
+  },
+  "icmpStatsOutMsgs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmpStatsEntry",
+      4
+    ]
+  },
+  "icmpStatsOutErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmpStatsEntry",
+      5
+    ]
+  },
+  "icmpMsgStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF IcmpMsgStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      30
+    ]
+  },
+  "icmpMsgStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IcmpMsgStatsEntry"
+    },
+    "index": [
+      "icmpMsgStatsIPVersion",
+      "icmpMsgStatsType"
+    ],
+    "value": [
+      "icmpMsgStatsTable",
+      1
+    ]
+  },
+  "IcmpMsgStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "icmpMsgStatsIPVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetVersion"
+    },
+    "index": null,
+    "value": [
+      "icmpMsgStatsEntry",
+      1
+    ]
+  },
+  "icmpMsgStatsType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "icmpMsgStatsEntry",
+      2
+    ]
+  },
+  "icmpMsgStatsInPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmpMsgStatsEntry",
+      3
+    ]
+  },
+  "icmpMsgStatsOutPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmpMsgStatsEntry",
+      4
+    ]
+  },
+  "ipMIBConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ipMIB",
+      2
+    ]
+  },
+  "ipMIBCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ipMIBConformance",
+      1
+    ]
+  },
+  "ipMIBGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ipMIBConformance",
+      2
+    ]
+  },
+  "ipv4GeneralGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      3
+    ]
+  },
+  "ipv4IfGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      4
+    ]
+  },
+  "ipv6GeneralGroup2": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      5
+    ]
+  },
+  "ipv6IfGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      6
+    ]
+  },
+  "ipLastChangeGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      7
+    ]
+  },
+  "ipSystemStatsGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      8
+    ]
+  },
+  "ipv4SystemStatsGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      9
+    ]
+  },
+  "ipSystemStatsHCOctetGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      10
+    ]
+  },
+  "ipSystemStatsHCPacketGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      11
+    ]
+  },
+  "ipv4SystemStatsHCPacketGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      12
+    ]
+  },
+  "ipIfStatsGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      13
+    ]
+  },
+  "ipv4IfStatsGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      14
+    ]
+  },
+  "ipIfStatsHCOctetGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      15
+    ]
+  },
+  "ipIfStatsHCPacketGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      16
+    ]
+  },
+  "ipv4IfStatsHCPacketGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      17
+    ]
+  },
+  "ipAddressPrefixGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      18
+    ]
+  },
+  "ipAddressGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      19
+    ]
+  },
+  "ipNetToPhysicalGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      20
+    ]
+  },
+  "ipv6ScopeGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      21
+    ]
+  },
+  "ipDefaultRouterGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      22
+    ]
+  },
+  "ipv6RouterAdvertGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      23
+    ]
+  },
+  "icmpStatsGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      24
+    ]
+  },
+  "ipInReceives": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      3
+    ]
+  },
+  "ipInHdrErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      4
+    ]
+  },
+  "ipInAddrErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      5
+    ]
+  },
+  "ipForwDatagrams": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      6
+    ]
+  },
+  "ipInUnknownProtos": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      7
+    ]
+  },
+  "ipInDiscards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      8
+    ]
+  },
+  "ipInDelivers": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      9
+    ]
+  },
+  "ipOutRequests": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      10
+    ]
+  },
+  "ipOutDiscards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      11
+    ]
+  },
+  "ipOutNoRoutes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      12
+    ]
+  },
+  "ipReasmReqds": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      14
+    ]
+  },
+  "ipReasmOKs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      15
+    ]
+  },
+  "ipReasmFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      16
+    ]
+  },
+  "ipFragOKs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      17
+    ]
+  },
+  "ipFragFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      18
+    ]
+  },
+  "ipFragCreates": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      19
+    ]
+  },
+  "ipRoutingDiscards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      23
+    ]
+  },
+  "ipAddrTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF IpAddrEntry"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      20
+    ]
+  },
+  "ipAddrEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddrEntry"
+    },
+    "index": [
+      "ipAdEntAddr"
+    ],
+    "value": [
+      "ipAddrTable",
+      1
+    ]
+  },
+  "IpAddrEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipAdEntAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "ipAddrEntry",
+      1
+    ]
+  },
+  "ipAdEntIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ipAddrEntry",
+      2
+    ]
+  },
+  "ipAdEntNetMask": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "ipAddrEntry",
+      3
+    ]
+  },
+  "ipAdEntBcastAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ipAddrEntry",
+      4
+    ]
+  },
+  "ipAdEntReasmMaxSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ipAddrEntry",
+      5
+    ]
+  },
+  "ipNetToMediaTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF IpNetToMediaEntry"
+    },
+    "index": null,
+    "value": [
+      "ip",
+      22
+    ]
+  },
+  "ipNetToMediaEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpNetToMediaEntry"
+    },
+    "index": [
+      "ipNetToMediaIfIndex",
+      "ipNetToMediaNetAddress"
+    ],
+    "value": [
+      "ipNetToMediaTable",
+      1
+    ]
+  },
+  "IpNetToMediaEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipNetToMediaIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ipNetToMediaEntry",
+      1
+    ]
+  },
+  "ipNetToMediaPhysAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PhysAddress"
+    },
+    "index": null,
+    "value": [
+      "ipNetToMediaEntry",
+      2
+    ]
+  },
+  "ipNetToMediaNetAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "ipNetToMediaEntry",
+      3
+    ]
+  },
+  "ipNetToMediaType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "invalid",
+        "3": "dynamic",
+        "4": "static"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipNetToMediaEntry",
+      4
+    ]
+  },
+  "icmpInMsgs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      1
+    ]
+  },
+  "icmpInErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      2
+    ]
+  },
+  "icmpInDestUnreachs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      3
+    ]
+  },
+  "icmpInTimeExcds": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      4
+    ]
+  },
+  "icmpInParmProbs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      5
+    ]
+  },
+  "icmpInSrcQuenchs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      6
+    ]
+  },
+  "icmpInRedirects": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      7
+    ]
+  },
+  "icmpInEchos": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      8
+    ]
+  },
+  "icmpInEchoReps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      9
+    ]
+  },
+  "icmpInTimestamps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      10
+    ]
+  },
+  "icmpInTimestampReps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      11
+    ]
+  },
+  "icmpInAddrMasks": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      12
+    ]
+  },
+  "icmpInAddrMaskReps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      13
+    ]
+  },
+  "icmpOutMsgs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      14
+    ]
+  },
+  "icmpOutErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      15
+    ]
+  },
+  "icmpOutDestUnreachs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      16
+    ]
+  },
+  "icmpOutTimeExcds": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      17
+    ]
+  },
+  "icmpOutParmProbs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      18
+    ]
+  },
+  "icmpOutSrcQuenchs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      19
+    ]
+  },
+  "icmpOutRedirects": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      20
+    ]
+  },
+  "icmpOutEchos": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      21
+    ]
+  },
+  "icmpOutEchoReps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      22
+    ]
+  },
+  "icmpOutTimestamps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      23
+    ]
+  },
+  "icmpOutTimestampReps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      24
+    ]
+  },
+  "icmpOutAddrMasks": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      25
+    ]
+  },
+  "icmpOutAddrMaskReps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "icmp",
+      26
+    ]
+  },
+  "ipGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      1
+    ]
+  },
+  "icmpGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipMIBGroups",
+      2
+    ]
+  }
+}

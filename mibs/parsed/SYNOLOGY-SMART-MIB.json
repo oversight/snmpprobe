@@ -1,0 +1,188 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-CONF",
+      [
+        "OBJECT-GROUP",
+        "MODULE-COMPLIANCE"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "OBJECT-TYPE",
+        "Integer32",
+        "enterprises",
+        "MODULE-IDENTITY"
+      ]
+    ]
+  ],
+  "synologyDiskSMART": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "synology",
+      5
+    ]
+  },
+  "synology": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      6574
+    ]
+  },
+  "diskSMARTTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF DiskSMARTEntry"
+    },
+    "index": null,
+    "value": [
+      "synologyDiskSMART",
+      1
+    ]
+  },
+  "diskSMARTEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DiskSMARTEntry"
+    },
+    "index": [
+      "diskSMARTInfoIndex"
+    ],
+    "value": [
+      "diskSMARTTable",
+      1
+    ]
+  },
+  "DiskSMARTEntry": {
+    "tp": "SEQUENCE"
+  },
+  "diskSMARTInfoIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "diskSMARTEntry",
+      1
+    ]
+  },
+  "diskSMARTInfoDevName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "diskSMARTEntry",
+      2
+    ]
+  },
+  "diskSMARTAttrName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "diskSMARTEntry",
+      3
+    ]
+  },
+  "diskSMARTAttrId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "diskSMARTEntry",
+      4
+    ]
+  },
+  "diskSMARTAttrCurrent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "diskSMARTEntry",
+      5
+    ]
+  },
+  "diskSMARTAttrWorst": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "diskSMARTEntry",
+      6
+    ]
+  },
+  "diskSMARTAttrThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "diskSMARTEntry",
+      7
+    ]
+  },
+  "diskSMARTAttrRaw": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "diskSMARTEntry",
+      8
+    ]
+  },
+  "diskSMARTAttrStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "diskSMARTEntry",
+      9
+    ]
+  },
+  "synologyDiskSMARTConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synologyDiskSMART",
+      2
+    ]
+  },
+  "synologyDiskSMARTCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synologyDiskSMARTConformance",
+      1
+    ]
+  },
+  "synologyDiskSMARTGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synologyDiskSMARTConformance",
+      2
+    ]
+  },
+  "synologyDiskSMARTGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "synologyDiskSMARTGroups",
+      1
+    ]
+  }
+}

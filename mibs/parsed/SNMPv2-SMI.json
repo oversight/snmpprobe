@@ -1,0 +1,124 @@
+{
+  "IMPORTS": [],
+  "org": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "iso",
+      3
+    ]
+  },
+  "dod": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "org",
+      6
+    ]
+  },
+  "internet": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "dod",
+      1
+    ]
+  },
+  "directory": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "internet",
+      1
+    ]
+  },
+  "mgmt": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "internet",
+      2
+    ]
+  },
+  "mib-2": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "mgmt",
+      1
+    ]
+  },
+  "transmission": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "mib-2",
+      10
+    ]
+  },
+  "experimental": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "internet",
+      3
+    ]
+  },
+  "private": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "internet",
+      4
+    ]
+  },
+  "enterprises": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "private",
+      1
+    ]
+  },
+  "security": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "internet",
+      5
+    ]
+  },
+  "snmpV2": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "internet",
+      6
+    ]
+  },
+  "snmpDomains": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "snmpV2",
+      1
+    ]
+  },
+  "snmpProxys": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "snmpV2",
+      2
+    ]
+  },
+  "snmpModules": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "snmpV2",
+      3
+    ]
+  },
+  "ExtUTCTime": {
+    "tp": "OCTET STRING"
+  },
+  "ObjectName": {
+    "tp": "OBJECT IDENTIFIER"
+  },
+  "NotificationName": {
+    "tp": "OBJECT IDENTIFIER"
+  },
+  "zeroDotZero": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      0,
+      0
+    ]
+  }
+}

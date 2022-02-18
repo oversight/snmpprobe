@@ -1,0 +1,219 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Integer32"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "DisplayString"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP"
+      ]
+    ],
+    [
+      "EATON-OIDS",
+      [
+        "xupsEnvironment"
+      ]
+    ]
+  ],
+  "eatonEMPMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "xupsEnvironment",
+      0
+    ]
+  },
+  "xupsEnvRemoteTemp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsEnvironment",
+      5
+    ]
+  },
+  "xupsEnvRemoteHumidity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsEnvironment",
+      6
+    ]
+  },
+  "xupsEnvNumContacts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsEnvironment",
+      7
+    ]
+  },
+  "xupsContactSenseTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF XupsContactsTableEntry"
+    },
+    "index": null,
+    "value": [
+      "xupsEnvironment",
+      8
+    ]
+  },
+  "xupsContactsTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "XupsContactsTableEntry"
+    },
+    "index": [
+      "xupsContactIndex"
+    ],
+    "value": [
+      "xupsContactSenseTable",
+      1
+    ]
+  },
+  "XupsContactsTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "xupsContactIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsContactsTableEntry",
+      1
+    ]
+  },
+  "xupsContactType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "normallyOpen",
+        "2": "normallyClosed",
+        "3": "anyChange",
+        "4": "notUsed"
+      }
+    },
+    "index": null,
+    "value": [
+      "xupsContactsTableEntry",
+      2
+    ]
+  },
+  "xupsContactState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "open",
+        "2": "closed",
+        "3": "openWithNotice",
+        "4": "closedWithNotice"
+      }
+    },
+    "index": null,
+    "value": [
+      "xupsContactsTableEntry",
+      3
+    ]
+  },
+  "xupsContactDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "xupsContactsTableEntry",
+      4
+    ]
+  },
+  "xupsEnvRemoteTempLowerLimit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsEnvironment",
+      9
+    ]
+  },
+  "xupsEnvRemoteTempUpperLimit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsEnvironment",
+      10
+    ]
+  },
+  "xupsEnvRemoteHumidityLowerLimit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsEnvironment",
+      11
+    ]
+  },
+  "xupsEnvRemoteHumidityUpperLimit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsEnvironment",
+      12
+    ]
+  },
+  "eatonEMPConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "eatonEMPMIB",
+      2
+    ]
+  },
+  "eatonEMPGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "eatonEMPConformance",
+      1
+    ]
+  },
+  "eatonEMPTableGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "eatonEMPConformance",
+      2
+    ]
+  }
+}

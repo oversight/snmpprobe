@@ -1,0 +1,1836 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "OBJECT-TYPE",
+        "NOTIFICATION-TYPE",
+        "MODULE-IDENTITY",
+        "Integer32",
+        "Opaque",
+        "enterprises",
+        "Counter32",
+        "Unsigned32"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION",
+        "DisplayString",
+        "TruthValue"
+      ]
+    ]
+  ],
+  "ucdavis": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "enterprises",
+      2021
+    ]
+  },
+  "ucdInternal": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdavis",
+      12
+    ]
+  },
+  "ucdExperimental": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdavis",
+      13
+    ]
+  },
+  "ucdSnmpAgent": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdavis",
+      250
+    ]
+  },
+  "hpux9": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdSnmpAgent",
+      1
+    ]
+  },
+  "sunos4": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdSnmpAgent",
+      2
+    ]
+  },
+  "solaris": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdSnmpAgent",
+      3
+    ]
+  },
+  "osf": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdSnmpAgent",
+      4
+    ]
+  },
+  "ultrix": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdSnmpAgent",
+      5
+    ]
+  },
+  "hpux10": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdSnmpAgent",
+      6
+    ]
+  },
+  "netbsd1": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdSnmpAgent",
+      7
+    ]
+  },
+  "freebsd": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdSnmpAgent",
+      8
+    ]
+  },
+  "irix": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdSnmpAgent",
+      9
+    ]
+  },
+  "linux": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdSnmpAgent",
+      10
+    ]
+  },
+  "bsdi": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdSnmpAgent",
+      11
+    ]
+  },
+  "openbsd": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdSnmpAgent",
+      12
+    ]
+  },
+  "win32": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdSnmpAgent",
+      13
+    ]
+  },
+  "hpux11": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdSnmpAgent",
+      14
+    ]
+  },
+  "aix": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdSnmpAgent",
+      15
+    ]
+  },
+  "macosx": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdSnmpAgent",
+      16
+    ]
+  },
+  "dragonfly": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdSnmpAgent",
+      17
+    ]
+  },
+  "unknown": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdSnmpAgent",
+      255
+    ]
+  },
+  "Float": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Opaque"
+    },
+    "display_hint": null
+  },
+  "UCDErrorFlag": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "noError",
+        "1": "error"
+      }
+    },
+    "display_hint": null
+  },
+  "UCDErrorFix": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "noError",
+        "1": "runFix"
+      }
+    },
+    "display_hint": null
+  },
+  "prTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PrEntry"
+    },
+    "index": null,
+    "value": [
+      "ucdavis",
+      2
+    ]
+  },
+  "prEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PrEntry"
+    },
+    "index": [
+      "prIndex"
+    ],
+    "value": [
+      "prTable",
+      1
+    ]
+  },
+  "PrEntry": {
+    "tp": "SEQUENCE"
+  },
+  "prIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "prEntry",
+      1
+    ]
+  },
+  "prNames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "prEntry",
+      2
+    ]
+  },
+  "prMin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "prEntry",
+      3
+    ]
+  },
+  "prMax": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "prEntry",
+      4
+    ]
+  },
+  "prCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "prEntry",
+      5
+    ]
+  },
+  "prErrorFlag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UCDErrorFlag"
+    },
+    "index": null,
+    "value": [
+      "prEntry",
+      100
+    ]
+  },
+  "prErrMessage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "prEntry",
+      101
+    ]
+  },
+  "prErrFix": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UCDErrorFix"
+    },
+    "index": null,
+    "value": [
+      "prEntry",
+      102
+    ]
+  },
+  "prErrFixCmd": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "prEntry",
+      103
+    ]
+  },
+  "extTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ExtEntry"
+    },
+    "index": null,
+    "value": [
+      "ucdavis",
+      8
+    ]
+  },
+  "extEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ExtEntry"
+    },
+    "index": [
+      "extIndex"
+    ],
+    "value": [
+      "extTable",
+      1
+    ]
+  },
+  "ExtEntry": {
+    "tp": "SEQUENCE"
+  },
+  "extIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "extEntry",
+      1
+    ]
+  },
+  "extNames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "extEntry",
+      2
+    ]
+  },
+  "extCommand": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "extEntry",
+      3
+    ]
+  },
+  "extResult": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "extEntry",
+      100
+    ]
+  },
+  "extOutput": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "extEntry",
+      101
+    ]
+  },
+  "extErrFix": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UCDErrorFix"
+    },
+    "index": null,
+    "value": [
+      "extEntry",
+      102
+    ]
+  },
+  "extErrFixCmd": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "extEntry",
+      103
+    ]
+  },
+  "memory": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdavis",
+      4
+    ]
+  },
+  "memIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "memory",
+      1
+    ]
+  },
+  "memErrorName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "memory",
+      2
+    ]
+  },
+  "memTotalSwap": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "memory",
+      3
+    ]
+  },
+  "memAvailSwap": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "memory",
+      4
+    ]
+  },
+  "memTotalReal": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "memory",
+      5
+    ]
+  },
+  "memAvailReal": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "memory",
+      6
+    ]
+  },
+  "memTotalSwapTXT": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "memory",
+      7
+    ]
+  },
+  "memAvailSwapTXT": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "memory",
+      8
+    ]
+  },
+  "memTotalRealTXT": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "memory",
+      9
+    ]
+  },
+  "memAvailRealTXT": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "memory",
+      10
+    ]
+  },
+  "memTotalFree": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "memory",
+      11
+    ]
+  },
+  "memMinimumSwap": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "memory",
+      12
+    ]
+  },
+  "memShared": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "memory",
+      13
+    ]
+  },
+  "memBuffer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "memory",
+      14
+    ]
+  },
+  "memCached": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "memory",
+      15
+    ]
+  },
+  "memUsedSwapTXT": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "memory",
+      16
+    ]
+  },
+  "memUsedRealTXT": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "memory",
+      17
+    ]
+  },
+  "memSwapError": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UCDErrorFlag"
+    },
+    "index": null,
+    "value": [
+      "memory",
+      100
+    ]
+  },
+  "memSwapErrorMsg": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "memory",
+      101
+    ]
+  },
+  "dskTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF DskEntry"
+    },
+    "index": null,
+    "value": [
+      "ucdavis",
+      9
+    ]
+  },
+  "dskEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DskEntry"
+    },
+    "index": [
+      "dskIndex"
+    ],
+    "value": [
+      "dskTable",
+      1
+    ]
+  },
+  "DskEntry": {
+    "tp": "SEQUENCE"
+  },
+  "dskIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dskEntry",
+      1
+    ]
+  },
+  "dskPath": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "dskEntry",
+      2
+    ]
+  },
+  "dskDevice": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "dskEntry",
+      3
+    ]
+  },
+  "dskMinimum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dskEntry",
+      4
+    ]
+  },
+  "dskMinPercent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dskEntry",
+      5
+    ]
+  },
+  "dskTotal": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dskEntry",
+      6
+    ]
+  },
+  "dskAvail": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dskEntry",
+      7
+    ]
+  },
+  "dskUsed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dskEntry",
+      8
+    ]
+  },
+  "dskPercent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dskEntry",
+      9
+    ]
+  },
+  "dskPercentNode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dskEntry",
+      10
+    ]
+  },
+  "dskTotalLow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "dskEntry",
+      11
+    ]
+  },
+  "dskTotalHigh": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "dskEntry",
+      12
+    ]
+  },
+  "dskAvailLow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "dskEntry",
+      13
+    ]
+  },
+  "dskAvailHigh": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "dskEntry",
+      14
+    ]
+  },
+  "dskUsedLow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "dskEntry",
+      15
+    ]
+  },
+  "dskUsedHigh": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "dskEntry",
+      16
+    ]
+  },
+  "dskErrorFlag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UCDErrorFlag"
+    },
+    "index": null,
+    "value": [
+      "dskEntry",
+      100
+    ]
+  },
+  "dskErrorMsg": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "dskEntry",
+      101
+    ]
+  },
+  "laTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF LaEntry"
+    },
+    "index": null,
+    "value": [
+      "ucdavis",
+      10
+    ]
+  },
+  "laEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "LaEntry"
+    },
+    "index": [
+      "laIndex"
+    ],
+    "value": [
+      "laTable",
+      1
+    ]
+  },
+  "LaEntry": {
+    "tp": "SEQUENCE"
+  },
+  "laIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "laEntry",
+      1
+    ]
+  },
+  "laNames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "laEntry",
+      2
+    ]
+  },
+  "laLoad": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "laEntry",
+      3
+    ]
+  },
+  "laConfig": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "laEntry",
+      4
+    ]
+  },
+  "laLoadInt": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "laEntry",
+      5
+    ]
+  },
+  "laLoadFloat": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Float"
+    },
+    "index": null,
+    "value": [
+      "laEntry",
+      6
+    ]
+  },
+  "laErrorFlag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UCDErrorFlag"
+    },
+    "index": null,
+    "value": [
+      "laEntry",
+      100
+    ]
+  },
+  "laErrMessage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "laEntry",
+      101
+    ]
+  },
+  "version": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdavis",
+      100
+    ]
+  },
+  "versionIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "version",
+      1
+    ]
+  },
+  "versionTag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "version",
+      2
+    ]
+  },
+  "versionDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "version",
+      3
+    ]
+  },
+  "versionCDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "version",
+      4
+    ]
+  },
+  "versionIdent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "version",
+      5
+    ]
+  },
+  "versionConfigureOptions": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "version",
+      6
+    ]
+  },
+  "versionClearCache": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "version",
+      10
+    ]
+  },
+  "versionUpdateConfig": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "version",
+      11
+    ]
+  },
+  "versionRestartAgent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "version",
+      12
+    ]
+  },
+  "versionSavePersistentData": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "version",
+      13
+    ]
+  },
+  "versionDoDebugging": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "version",
+      20
+    ]
+  },
+  "snmperrs": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdavis",
+      101
+    ]
+  },
+  "snmperrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "snmperrs",
+      1
+    ]
+  },
+  "snmperrNames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "snmperrs",
+      2
+    ]
+  },
+  "snmperrErrorFlag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UCDErrorFlag"
+    },
+    "index": null,
+    "value": [
+      "snmperrs",
+      100
+    ]
+  },
+  "snmperrErrMessage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "snmperrs",
+      101
+    ]
+  },
+  "mrTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF MrEntry"
+    },
+    "index": null,
+    "value": [
+      "ucdavis",
+      102
+    ]
+  },
+  "mrEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MrEntry"
+    },
+    "index": [
+      "IMPLIED mrIndex"
+    ],
+    "value": [
+      "mrTable",
+      1
+    ]
+  },
+  "MrEntry": {
+    "tp": "SEQUENCE"
+  },
+  "mrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "mrEntry",
+      1
+    ]
+  },
+  "mrModuleName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "mrEntry",
+      2
+    ]
+  },
+  "systemStats": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdavis",
+      11
+    ]
+  },
+  "ssIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      1
+    ]
+  },
+  "ssErrorName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      2
+    ]
+  },
+  "ssSwapIn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      3
+    ]
+  },
+  "ssSwapOut": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      4
+    ]
+  },
+  "ssIOSent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      5
+    ]
+  },
+  "ssIOReceive": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      6
+    ]
+  },
+  "ssSysInterrupts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      7
+    ]
+  },
+  "ssSysContext": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      8
+    ]
+  },
+  "ssCpuUser": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      9
+    ]
+  },
+  "ssCpuSystem": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      10
+    ]
+  },
+  "ssCpuIdle": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      11
+    ]
+  },
+  "ssCpuRawUser": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      50
+    ]
+  },
+  "ssCpuRawNice": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      51
+    ]
+  },
+  "ssCpuRawSystem": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      52
+    ]
+  },
+  "ssCpuRawIdle": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      53
+    ]
+  },
+  "ssCpuRawWait": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      54
+    ]
+  },
+  "ssCpuRawKernel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      55
+    ]
+  },
+  "ssCpuRawInterrupt": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      56
+    ]
+  },
+  "ssIORawSent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      57
+    ]
+  },
+  "ssIORawReceived": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      58
+    ]
+  },
+  "ssRawInterrupts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      59
+    ]
+  },
+  "ssRawContexts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      60
+    ]
+  },
+  "ssCpuRawSoftIRQ": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      61
+    ]
+  },
+  "ssRawSwapIn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      62
+    ]
+  },
+  "ssRawSwapOut": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      63
+    ]
+  },
+  "ssCpuRawSteal": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      64
+    ]
+  },
+  "ssCpuRawGuest": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      65
+    ]
+  },
+  "ssCpuRawGuestNice": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      66
+    ]
+  },
+  "ssCpuNumCpus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "systemStats",
+      67
+    ]
+  },
+  "ucdTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdavis",
+      251
+    ]
+  },
+  "fileTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF FileEntry"
+    },
+    "index": null,
+    "value": [
+      "ucdavis",
+      15
+    ]
+  },
+  "fileEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FileEntry"
+    },
+    "index": [
+      "fileIndex"
+    ],
+    "value": [
+      "fileTable",
+      1
+    ]
+  },
+  "FileEntry": {
+    "tp": "SEQUENCE"
+  },
+  "fileIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "fileEntry",
+      1
+    ]
+  },
+  "fileName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "fileEntry",
+      2
+    ]
+  },
+  "fileSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "fileEntry",
+      3
+    ]
+  },
+  "fileMax": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "fileEntry",
+      4
+    ]
+  },
+  "fileErrorFlag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UCDErrorFlag"
+    },
+    "index": null,
+    "value": [
+      "fileEntry",
+      100
+    ]
+  },
+  "fileErrorMsg": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "fileEntry",
+      101
+    ]
+  },
+  "logMatch": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ucdavis",
+      16
+    ]
+  },
+  "logMatchMaxEntries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "logMatch",
+      1
+    ]
+  },
+  "logMatchTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF LogMatchEntry"
+    },
+    "index": null,
+    "value": [
+      "logMatch",
+      2
+    ]
+  },
+  "logMatchEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "LogMatchEntry"
+    },
+    "index": [
+      "logMatchIndex"
+    ],
+    "value": [
+      "logMatchTable",
+      1
+    ]
+  },
+  "LogMatchEntry": {
+    "tp": "SEQUENCE"
+  },
+  "logMatchIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "logMatchEntry",
+      1
+    ]
+  },
+  "logMatchName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "logMatchEntry",
+      2
+    ]
+  },
+  "logMatchFilename": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "logMatchEntry",
+      3
+    ]
+  },
+  "logMatchRegEx": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "logMatchEntry",
+      4
+    ]
+  },
+  "logMatchGlobalCounter": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "logMatchEntry",
+      5
+    ]
+  },
+  "logMatchGlobalCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "logMatchEntry",
+      6
+    ]
+  },
+  "logMatchCurrentCounter": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "logMatchEntry",
+      7
+    ]
+  },
+  "logMatchCurrentCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "logMatchEntry",
+      8
+    ]
+  },
+  "logMatchCounter": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "logMatchEntry",
+      9
+    ]
+  },
+  "logMatchCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "logMatchEntry",
+      10
+    ]
+  },
+  "logMatchCycle": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "logMatchEntry",
+      11
+    ]
+  },
+  "logMatchErrorFlag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UCDErrorFlag"
+    },
+    "index": null,
+    "value": [
+      "logMatchEntry",
+      100
+    ]
+  },
+  "logMatchRegExCompilation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "logMatchEntry",
+      101
+    ]
+  }
+}

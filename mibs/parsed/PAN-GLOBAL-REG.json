@@ -1,0 +1,68 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-IDENTITY",
+        "enterprises"
+      ]
+    ]
+  ],
+  "panGlobalRegModule": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "panModules",
+      1
+    ]
+  },
+  "panRoot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "enterprises",
+      25461
+    ]
+  },
+  "panReg": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panRoot",
+      1
+    ]
+  },
+  "panModules": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panReg",
+      1
+    ]
+  },
+  "panMibs": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panRoot",
+      2
+    ]
+  },
+  "panCommonMib": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panMibs",
+      1
+    ]
+  },
+  "panSpecificMib": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panMibs",
+      2
+    ]
+  },
+  "panProductsMibs": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panMibs",
+      3
+    ]
+  }
+}

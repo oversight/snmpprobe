@@ -1,0 +1,133 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-CONF",
+      [
+        "OBJECT-GROUP",
+        "MODULE-COMPLIANCE"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "OBJECT-TYPE",
+        "Integer32",
+        "enterprises",
+        "MODULE-IDENTITY"
+      ]
+    ]
+  ],
+  "synologyEbox": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "synology",
+      105
+    ]
+  },
+  "synology": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      6574
+    ]
+  },
+  "eboxTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF EboxEntry"
+    },
+    "index": null,
+    "value": [
+      "synologyEbox",
+      1
+    ]
+  },
+  "eboxEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EboxEntry"
+    },
+    "index": [
+      "eboxIndex"
+    ],
+    "value": [
+      "eboxTable",
+      1
+    ]
+  },
+  "EboxEntry": {
+    "tp": "SEQUENCE"
+  },
+  "eboxIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "eboxEntry",
+      1
+    ]
+  },
+  "eboxModel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "eboxEntry",
+      2
+    ]
+  },
+  "eboxPower": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "eboxEntry",
+      3
+    ]
+  },
+  "eboxRedundantPower": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "eboxEntry",
+      4
+    ]
+  },
+  "synologyEboxConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synologyEbox",
+      2
+    ]
+  },
+  "synologyEboxCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synologyEboxConformance",
+      1
+    ]
+  },
+  "synologyEboxGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synologyEboxConformance",
+      2
+    ]
+  },
+  "synologyEboxGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "synologyEboxGroups",
+      1
+    ]
+  }
+}

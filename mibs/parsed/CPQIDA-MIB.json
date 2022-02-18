@@ -1,0 +1,5952 @@
+{
+  "IMPORTS": [
+    [
+      "CPQHOST-MIB",
+      [
+        "compaq"
+      ]
+    ],
+    [
+      "RFC1155-SMI",
+      [
+        "Counter"
+      ]
+    ],
+    [
+      "RFC1155-SMI",
+      [
+        "Gauge"
+      ]
+    ],
+    [
+      "RFC1213-MIB",
+      [
+        "DisplayString"
+      ]
+    ],
+    [
+      "RFC-1212",
+      [
+        "OBJECT-TYPE"
+      ]
+    ],
+    [
+      "RFC-1215",
+      [
+        "TRAP-TYPE"
+      ]
+    ],
+    [
+      "RFC1213-MIB",
+      [
+        "sysName"
+      ]
+    ],
+    [
+      "CPQHOST-MIB",
+      [
+        "cpqHoTrapFlags"
+      ]
+    ]
+  ],
+  "cpqDriveArray": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "compaq",
+      3
+    ]
+  },
+  "cpqDaMibRev": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqDriveArray",
+      1
+    ]
+  },
+  "cpqDaComponent": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqDriveArray",
+      2
+    ]
+  },
+  "cpqDaTrap": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqDriveArray",
+      3
+    ]
+  },
+  "cpqDaInterface": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqDaComponent",
+      1
+    ]
+  },
+  "cpqDaCntlr": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqDaComponent",
+      2
+    ]
+  },
+  "cpqDaLogDrv": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqDaComponent",
+      3
+    ]
+  },
+  "cpqDaSpareDrv": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqDaComponent",
+      4
+    ]
+  },
+  "cpqDaPhyDrv": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqDaComponent",
+      5
+    ]
+  },
+  "cpqDaPhyDrvThr": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqDaComponent",
+      6
+    ]
+  },
+  "cpqDaCntlrPerf": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqDaComponent",
+      7
+    ]
+  },
+  "cpqDaLogDrvPerf": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqDaComponent",
+      8
+    ]
+  },
+  "cpqDaTapeDrv": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqDaComponent",
+      9
+    ]
+  },
+  "cpqDaTapeCounters": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqDaComponent",
+      10
+    ]
+  },
+  "cpqDaTapeLibrary": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqDaComponent",
+      11
+    ]
+  },
+  "cpqDaOsNetWare3x": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqDaInterface",
+      1
+    ]
+  },
+  "cpqDaOsCommon": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqDaInterface",
+      4
+    ]
+  },
+  "cpqDaMibRevMajor": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaMibRev",
+      1
+    ]
+  },
+  "cpqDaMibRevMinor": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaMibRev",
+      2
+    ]
+  },
+  "cpqDaMibCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaMibRev",
+      3
+    ]
+  },
+  "cpqDaNw3xDriverName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaOsNetWare3x",
+      1
+    ]
+  },
+  "cpqDaNw3xDriverVer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaOsNetWare3x",
+      2
+    ]
+  },
+  "cpqDaNw3xPollType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "polled",
+        "3": "demand"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaOsNetWare3x",
+      3
+    ]
+  },
+  "cpqDaNw3xPollTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaOsNetWare3x",
+      4
+    ]
+  },
+  "cpqDaNw3xDriverStatTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaNw3xDriverStatEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaOsNetWare3x",
+      5
+    ]
+  },
+  "cpqDaNw3xDriverStatEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaNw3xDriverStatEntry"
+    },
+    "index": [
+      "cpqDaNw3xCntlrIndex",
+      "cpqDaNw3xLogDrvIndex"
+    ],
+    "value": [
+      "cpqDaNw3xDriverStatTable",
+      1
+    ]
+  },
+  "CpqDaNw3xDriverStatEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaNw3xCntlrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaNw3xDriverStatEntry",
+      1
+    ]
+  },
+  "cpqDaNw3xLogDrvIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaNw3xDriverStatEntry",
+      2
+    ]
+  },
+  "cpqDaNw3xTotalReads": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaNw3xDriverStatEntry",
+      3
+    ]
+  },
+  "cpqDaNw3xTotalWrites": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaNw3xDriverStatEntry",
+      4
+    ]
+  },
+  "cpqDaNw3xCorrReads": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaNw3xDriverStatEntry",
+      5
+    ]
+  },
+  "cpqDaNw3xCorrWrites": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaNw3xDriverStatEntry",
+      6
+    ]
+  },
+  "cpqDaNw3xFatalReads": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaNw3xDriverStatEntry",
+      7
+    ]
+  },
+  "cpqDaNw3xFatalWrites": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaNw3xDriverStatEntry",
+      8
+    ]
+  },
+  "cpqDaNw3xVolMapTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaNw3xVolMapEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaOsNetWare3x",
+      6
+    ]
+  },
+  "cpqDaNw3xVolMapEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaNw3xVolMapEntry"
+    },
+    "index": [
+      "cpqDaNw3xVolCntlrIndex",
+      "cpqDaNw3xVolLogDrvIndex"
+    ],
+    "value": [
+      "cpqDaNw3xVolMapTable",
+      1
+    ]
+  },
+  "CpqDaNw3xVolMapEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaNw3xVolCntlrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaNw3xVolMapEntry",
+      1
+    ]
+  },
+  "cpqDaNw3xVolLogDrvIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaNw3xVolMapEntry",
+      2
+    ]
+  },
+  "cpqDaNw3xVolMap": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqDaNw3xVolMapEntry",
+      3
+    ]
+  },
+  "cpqDaOsCommonPollFreq": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaOsCommon",
+      1
+    ]
+  },
+  "cpqDaOsCommonModuleTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaOsCommonModuleEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaOsCommon",
+      2
+    ]
+  },
+  "cpqDaOsCommonModuleEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaOsCommonModuleEntry"
+    },
+    "index": [
+      "cpqDaOsCommonModuleIndex"
+    ],
+    "value": [
+      "cpqDaOsCommonModuleTable",
+      1
+    ]
+  },
+  "CpqDaOsCommonModuleEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaOsCommonModuleIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaOsCommonModuleEntry",
+      1
+    ]
+  },
+  "cpqDaOsCommonModuleName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaOsCommonModuleEntry",
+      2
+    ]
+  },
+  "cpqDaOsCommonModuleVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaOsCommonModuleEntry",
+      3
+    ]
+  },
+  "cpqDaOsCommonModuleDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqDaOsCommonModuleEntry",
+      4
+    ]
+  },
+  "cpqDaOsCommonModulePurpose": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaOsCommonModuleEntry",
+      5
+    ]
+  },
+  "cpqDaOsCommonCollectionReset": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "resetSupported",
+        "3": "resetNotSupported",
+        "4": "doReset"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaOsCommon",
+      3
+    ]
+  },
+  "cpqDaCntlrTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaCntlrEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlr",
+      1
+    ]
+  },
+  "cpqDaCntlrEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaCntlrEntry"
+    },
+    "index": [
+      "cpqDaCntlrIndex"
+    ],
+    "value": [
+      "cpqDaCntlrTable",
+      1
+    ]
+  },
+  "CpqDaCntlrEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaCntlrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      1
+    ]
+  },
+  "cpqDaCntlrModel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ida",
+        "3": "idaExpansion",
+        "4": "ida-2",
+        "5": "smart",
+        "6": "smart-2e",
+        "7": "smart-2p",
+        "8": "smart-2sl",
+        "9": "smart-3100es",
+        "10": "smart-3200",
+        "11": "smart-2dh",
+        "12": "smart-221",
+        "13": "sa-4250es",
+        "14": "sa-4200",
+        "15": "sa-integrated",
+        "16": "sa-431",
+        "17": "sa-5300",
+        "18": "raidLc2",
+        "19": "sa-5i",
+        "20": "sa-532",
+        "21": "sa-5312",
+        "22": "sa-641",
+        "23": "sa-642",
+        "24": "sa-6400",
+        "25": "sa-6400em",
+        "26": "sa-6i",
+        "27": "sa-generic",
+        "29": "sa-p600",
+        "30": "sa-p400",
+        "31": "sa-e200",
+        "32": "sa-e200i",
+        "33": "sa-p400i",
+        "34": "sa-p800",
+        "35": "sa-e500",
+        "36": "sa-p700m",
+        "37": "sa-p212",
+        "38": "sa-p410",
+        "39": "sa-p410i",
+        "40": "sa-p411",
+        "41": "sa-b110i",
+        "42": "sa-p712m",
+        "43": "sa-p711m",
+        "44": "sa-p812",
+        "45": "sw-1210m",
+        "46": "sa-p220i",
+        "47": "sa-p222",
+        "48": "sa-p420",
+        "49": "sa-p420i",
+        "50": "sa-p421",
+        "51": "sa-b320i",
+        "52": "sa-p822",
+        "53": "sa-p721m",
+        "54": "sa-b120i",
+        "55": "hps-1224",
+        "56": "hps-1228",
+        "57": "hps-1228m",
+        "58": "sa-p822se",
+        "59": "hps-1224e",
+        "60": "hps-1228e",
+        "61": "hps-1228em",
+        "62": "sa-p230i",
+        "63": "sa-p430i",
+        "64": "sa-p430",
+        "65": "sa-p431",
+        "66": "sa-p731m",
+        "67": "sa-p830i",
+        "68": "sa-p830",
+        "69": "sa-p831",
+        "70": "sa-p530",
+        "71": "sa-p531",
+        "72": "sa-p244br",
+        "73": "sa-p246br",
+        "74": "sa-p440",
+        "75": "sa-p440ar",
+        "76": "sa-p441",
+        "77": "sa-p741m",
+        "78": "sa-p840",
+        "79": "sa-p841",
+        "80": "sh-h240ar",
+        "81": "sh-h244br",
+        "82": "sh-h240",
+        "83": "sh-h241",
+        "84": "sa-b140i",
+        "85": "sh-generic",
+        "86": "sa-p240nr",
+        "87": "sh-h240nr",
+        "88": "sa-p840ar",
+        "89": "sa-p542d",
+        "90": "s100i",
+        "91": "e208i-p",
+        "92": "e208i-a",
+        "93": "e208i-c",
+        "94": "e208e-p",
+        "95": "p204i-b",
+        "96": "p204i-c",
+        "97": "p408i-p",
+        "98": "p408i-a",
+        "99": "p408e-p",
+        "100": "p408i-c",
+        "101": "p408e-m",
+        "102": "p416ie-m",
+        "103": "p816i-a",
+        "104": "p408i-sb"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      2
+    ]
+  },
+  "cpqDaCntlrFWRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      3
+    ]
+  },
+  "cpqDaCntlrStndIntr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "primary",
+        "3": "secondary",
+        "4": "disabled",
+        "5": "unavailable"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      4
+    ]
+  },
+  "cpqDaCntlrSlot": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      5
+    ]
+  },
+  "cpqDaCntlrCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      6
+    ]
+  },
+  "cpqDaCntlrProductRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      7
+    ]
+  },
+  "cpqDaCntlrPartnerSlot": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      8
+    ]
+  },
+  "cpqDaCntlrCurrentRole": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notDuplexed",
+        "3": "active",
+        "4": "backup",
+        "5": "asymActiveActive"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      9
+    ]
+  },
+  "cpqDaCntlrBoardStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "generalFailure",
+        "4": "cableProblem",
+        "5": "poweredOff",
+        "6": "cacheModuleMissing"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      10
+    ]
+  },
+  "cpqDaCntlrPartnerBoardStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "generalFailure",
+        "4": "cableProblem",
+        "5": "poweredOff"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      11
+    ]
+  },
+  "cpqDaCntlrBoardCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      12
+    ]
+  },
+  "cpqDaCntlrPartnerBoardCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      13
+    ]
+  },
+  "cpqDaCntlrDriveOwnership": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "owner",
+        "3": "notOwner"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      14
+    ]
+  },
+  "cpqDaCntlrSerialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      15
+    ]
+  },
+  "cpqDaCntlrRedundancyType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notRedundant",
+        "3": "driverDuplexing",
+        "4": "fwActiveStandby",
+        "5": "fwPrimarySecondary",
+        "6": "fwActiveActive"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      16
+    ]
+  },
+  "cpqDaCntlrRedundancyError": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "noFailure",
+        "3": "noRedundantController",
+        "4": "differentHardware",
+        "5": "noLink",
+        "6": "differentFirmware",
+        "7": "differentCache",
+        "8": "otherCacheFailure",
+        "9": "noDrives",
+        "10": "otherNoDrives",
+        "11": "unsupportedDrives",
+        "12": "expandInProgress"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      17
+    ]
+  },
+  "cpqDaCntlrAccessModuleStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notSupported",
+        "3": "notPresent",
+        "4": "badSignature",
+        "5": "badChecksum",
+        "6": "fullyFunctional",
+        "7": "upgradeFirmware"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      18
+    ]
+  },
+  "cpqDaCntlrDaughterBoardType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notSupported",
+        "3": "notPresent",
+        "4": "scsiBoardPresent",
+        "5": "fibreBoardPresent",
+        "6": "arrayExpansionModulePresent"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      19
+    ]
+  },
+  "cpqDaCntlrHwLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      20
+    ]
+  },
+  "cpqDaCntlrNumberOfBuses": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      21
+    ]
+  },
+  "cpqDaCntlrBlinkTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      22
+    ]
+  },
+  "cpqDaCntlrRebuildPriority": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "low",
+        "3": "medium",
+        "4": "high",
+        "5": "mediumHigh"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      23
+    ]
+  },
+  "cpqDaCntlrExpandPriority": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "low",
+        "3": "medium",
+        "4": "high"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      24
+    ]
+  },
+  "cpqDaCntlrNumberOfInternalPorts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      25
+    ]
+  },
+  "cpqDaCntlrNumberOfExternalPorts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      26
+    ]
+  },
+  "cpqDaCntlrDriveWriteCacheState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "disabled",
+        "3": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      27
+    ]
+  },
+  "cpqDaCntlrPartnerSerialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      28
+    ]
+  },
+  "cpqDaCntlrOptionRomRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      29
+    ]
+  },
+  "cpqDaCntlrHbaFWRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      30
+    ]
+  },
+  "cpqDaCntlrHBAModeOptionRomRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      31
+    ]
+  },
+  "cpqDaCntlrCurrentTemp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      32
+    ]
+  },
+  "cpqDaCntlrLastLockupCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      33
+    ]
+  },
+  "cpqDaCntlrEncryptionStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notEnabled",
+        "3": "enabledLocalKeyMode",
+        "4": "enabledRemoteKeyManagerMode"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      34
+    ]
+  },
+  "cpqDaCntlrASICEncptSelfTestStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "selfTestsPass",
+        "3": "selfTestsFailed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      35
+    ]
+  },
+  "cpqDaCntlrEncryptCspNvramStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "detectionFailed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      36
+    ]
+  },
+  "cpqDaCntlrEncryptCryptoOfficerPwdSetStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "false",
+        "3": "true"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      37
+    ]
+  },
+  "cpqDaCntlrEncryptCntlrPwdSetStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "false",
+        "3": "true"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      38
+    ]
+  },
+  "cpqDaCntlrEncryptCntlrPwdAvailStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "passwordMissing",
+        "3": "passwordActive"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      39
+    ]
+  },
+  "cpqDaCntlrUnencryptedLogDrvCreationPolicy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "false",
+        "3": "true"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      40
+    ]
+  },
+  "cpqDaCntlrEncryptedLogDrvCreationPolicy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "false",
+        "3": "true"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      41
+    ]
+  },
+  "cpqDaCntlrEncryptFWLockStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "false",
+        "3": "true"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      42
+    ]
+  },
+  "cpqDaCntlrOperatingMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "smartArrayMode",
+        "3": "smartHbaMode",
+        "4": "mixedMode"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrEntry",
+      43
+    ]
+  },
+  "cpqDaAccelTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaAccelEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlr",
+      2
+    ]
+  },
+  "cpqDaAccelEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaAccelEntry"
+    },
+    "index": [
+      "cpqDaAccelCntlrIndex"
+    ],
+    "value": [
+      "cpqDaAccelTable",
+      1
+    ]
+  },
+  "CpqDaAccelEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaAccelCntlrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      1
+    ]
+  },
+  "cpqDaAccelStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "invalid",
+        "3": "enabled",
+        "4": "tmpDisabled",
+        "5": "permDisabled",
+        "6": "cacheModFlashMemNotAttached",
+        "7": "cacheModDegradedFailsafeSpeed",
+        "8": "cacheModCriticalFailure",
+        "9": "cacheReadCacheNotMapped"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      2
+    ]
+  },
+  "cpqDaAccelMemory": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      3
+    ]
+  },
+  "cpqDaAccelBadData": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "none",
+        "3": "possible"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      4
+    ]
+  },
+  "cpqDaAccelErrCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "invalid",
+        "3": "badConfig",
+        "4": "lowBattery",
+        "5": "disableCmd",
+        "6": "noResources",
+        "7": "notConnected",
+        "8": "badMirrorData",
+        "9": "readErr",
+        "10": "writeErr",
+        "11": "configCmd",
+        "12": "expandInProgress",
+        "13": "snapshotInProgress",
+        "14": "redundantLowBattery",
+        "15": "redundantSizeMismatch",
+        "16": "redundantCacheFailure",
+        "17": "excessiveEccErrors",
+        "18": "adgEnablerMissing",
+        "19": "postEccErrors",
+        "20": "batteryHotRemoved",
+        "21": "capacitorChargeLow",
+        "22": "notEnoughBatteries",
+        "23": "cacheModuleNotSupported",
+        "24": "batteryNotSupported",
+        "25": "noCapacitorAttached",
+        "26": "capBasedBackupFailed",
+        "27": "capBasedRestoreFailed",
+        "28": "capBasedModuleHWFailure",
+        "29": "capacitorFailedToCharge",
+        "30": "capacitorBasedHWMemBeingErased",
+        "31": "incompatibleCacheModule",
+        "32": "fbcmChargerCircuitFailure",
+        "33": "cbPowerSourceCableError"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      5
+    ]
+  },
+  "cpqDaAccelBattery": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "recharging",
+        "4": "failed",
+        "5": "degraded",
+        "6": "notPresent",
+        "7": "capacitorFailed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      6
+    ]
+  },
+  "cpqDaAccelReadErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      7
+    ]
+  },
+  "cpqDaAccelWriteErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      8
+    ]
+  },
+  "cpqDaAccelCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      9
+    ]
+  },
+  "cpqDaAccelReadMemory": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      10
+    ]
+  },
+  "cpqDaAccelSerialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      11
+    ]
+  },
+  "cpqDaAccelTotalMemory": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      12
+    ]
+  },
+  "cpqDaAccelReadCachePercent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge"
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      13
+    ]
+  },
+  "cpqDaAccelWriteCachePercent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge"
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      14
+    ]
+  },
+  "cpqDaAccelFailedBatteries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      15
+    ]
+  },
+  "cpqDaAccelBackupPowerSource": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "battery",
+        "3": "capacitor",
+        "4": "smartbattery"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      16
+    ]
+  },
+  "cpqDaAccelBoardCurrentTemp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      17
+    ]
+  },
+  "cpqDaAccelCapacitorCurrentTemp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      18
+    ]
+  },
+  "cpqDaAccelMemoryDataWidth": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      19
+    ]
+  },
+  "cpqDaAccelMemoryTransferRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaAccelEntry",
+      20
+    ]
+  },
+  "cpqDaManagedCableTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaManagedCableEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlr",
+      3
+    ]
+  },
+  "cpqDaManagedCableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaManagedCableEntry"
+    },
+    "index": [
+      "cpqDaManagedCableCntlrIndex"
+    ],
+    "value": [
+      "cpqDaManagedCableTable",
+      1
+    ]
+  },
+  "CpqDaManagedCableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaManagedCableIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaManagedCableEntry",
+      1
+    ]
+  },
+  "cpqDaManagedCableCntlrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaManagedCableEntry",
+      2
+    ]
+  },
+  "cpqDaManagedCableHostConnector": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaManagedCableEntry",
+      3
+    ]
+  },
+  "cpqDaManagedCableStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "nonFatalFault",
+        "4": "fatalFault"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaManagedCableEntry",
+      4
+    ]
+  },
+  "cpqDaManagedCableFaultCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "none",
+        "3": "linkFault",
+        "4": "noComWithCableMgmtInterface",
+        "5": "cannotConfigureCable"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaManagedCableEntry",
+      5
+    ]
+  },
+  "cpqDaManagedCableVendorRevision": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaManagedCableEntry",
+      6
+    ]
+  },
+  "cpqDaManagedCableVendorSerialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaManagedCableEntry",
+      7
+    ]
+  },
+  "cpqDaManagedCableVendorPartNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaManagedCableEntry",
+      8
+    ]
+  },
+  "cpqDaManagedCableLength": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaManagedCableEntry",
+      9
+    ]
+  },
+  "cpqDaLogDrvTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaLogDrvEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrv",
+      1
+    ]
+  },
+  "cpqDaLogDrvEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaLogDrvEntry"
+    },
+    "index": [
+      "cpqDaLogDrvCntlrIndex",
+      "cpqDaLogDrvIndex"
+    ],
+    "value": [
+      "cpqDaLogDrvTable",
+      1
+    ]
+  },
+  "CpqDaLogDrvEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaLogDrvCntlrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      1
+    ]
+  },
+  "cpqDaLogDrvIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      2
+    ]
+  },
+  "cpqDaLogDrvFaultTol": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "none",
+        "3": "mirroring",
+        "4": "dataGuard",
+        "5": "distribDataGuard",
+        "7": "advancedDataGuard",
+        "8": "raid50",
+        "9": "raid60",
+        "10": "raid1Adm",
+        "11": "raid10Adm",
+        "12": "raid10"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      3
+    ]
+  },
+  "cpqDaLogDrvStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "failed",
+        "4": "unconfigured",
+        "5": "recovering",
+        "6": "readyForRebuild",
+        "7": "rebuilding",
+        "8": "wrongDrive",
+        "9": "badConnect",
+        "10": "overheating",
+        "11": "shutdown",
+        "12": "expanding",
+        "13": "notAvailable",
+        "14": "queuedForExpansion",
+        "15": "multipathAccessDegraded",
+        "16": "erasing",
+        "17": "predictiveSpareRebuildReady",
+        "18": "rapidParityInitInProgress",
+        "19": "rapidParityInitPending",
+        "20": "noAccessEncryptedNoCntlrKey",
+        "21": "unencryptedToEncryptedInProgress",
+        "22": "newLogDrvKeyRekeyInProgress",
+        "23": "noAccessEncryptedCntlrEncryptnNotEnbld",
+        "24": "unencryptedToEncryptedNotStarted",
+        "25": "newLogDrvKeyRekeyRequestReceived"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      4
+    ]
+  },
+  "cpqDaLogDrvAutoRel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      5
+    ]
+  },
+  "cpqDaLogDrvRebuildBlks": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      6
+    ]
+  },
+  "cpqDaLogDrvHasAccel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unavailable",
+        "3": "enabled",
+        "4": "disabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      7
+    ]
+  },
+  "cpqDaLogDrvAvailSpares": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      8
+    ]
+  },
+  "cpqDaLogDrvSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      9
+    ]
+  },
+  "cpqDaLogDrvPhyDrvIDs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      10
+    ]
+  },
+  "cpqDaLogDrvCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      11
+    ]
+  },
+  "cpqDaLogDrvPercentRebuild": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      12
+    ]
+  },
+  "cpqDaLogDrvStripeSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      13
+    ]
+  },
+  "cpqDaLogDrvOsName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      14
+    ]
+  },
+  "cpqDaLogDrvBlinkTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      15
+    ]
+  },
+  "cpqDaLogDrvSpareReplaceMap": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      16
+    ]
+  },
+  "cpqDaLogDrvRebuildingPhyDrv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      17
+    ]
+  },
+  "cpqDaLogDrvMultipathAccess": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notSupported",
+        "3": "notConfigured",
+        "4": "pathRedundant",
+        "5": "noRedundantPath"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      18
+    ]
+  },
+  "cpqDaLogDrvNmbrOfParityGroups": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      19
+    ]
+  },
+  "cpqDaLogDrvSplitMirrorBackupLogDrv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "isNotBackupLogicalDrive",
+        "3": "isBackupLogicalDrive"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      20
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelAssocType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "nonMember",
+        "3": "logicalDriveMember",
+        "4": "cacheVolumeMember"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      21
+    ]
+  },
+  "cpqDaLogDrvCacheVolIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      22
+    ]
+  },
+  "cpqDaLogDrvRPIPercentComplete": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      23
+    ]
+  },
+  "cpqDaLogDrvSSDSmartPathStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "updateDriver",
+        "3": "ssdSmartPathDisabled",
+        "4": "ssdSmartPathEnabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      24
+    ]
+  },
+  "cpqDaLogDrvEncryptionStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "encrypted",
+        "3": "notEncrypted"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvEntry",
+      25
+    ]
+  },
+  "cpqDaLogDrvPhyDrvExtAttachTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaLogDrvPhyDrvExtAttachEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrv",
+      2
+    ]
+  },
+  "cpqDaLogDrvPhyDrvExtAttachEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaLogDrvPhyDrvExtAttachEntry"
+    },
+    "index": [
+      "cpqDaLogDrvPhyDrvAttachExtIndex"
+    ],
+    "value": [
+      "cpqDaLogDrvPhyDrvExtAttachTable",
+      1
+    ]
+  },
+  "CpqDaLogDrvPhyDrvExtAttachEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaLogDrvPhyDrvAttachExtIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvPhyDrvExtAttachEntry",
+      1
+    ]
+  },
+  "cpqDaLogDrvCntlrExtended": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvPhyDrvExtAttachEntry",
+      2
+    ]
+  },
+  "cpqDaLogDrvLogDrvExtended": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvPhyDrvExtAttachEntry",
+      3
+    ]
+  },
+  "cpqDaLogDrvPhyDrvExtended": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvPhyDrvExtAttachEntry",
+      4
+    ]
+  },
+  "cpqDaLogDrvSprRplcExtAttachTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaLogDrvSprRplcExtAttachEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrv",
+      3
+    ]
+  },
+  "cpqDaLogDrvSprRplcExtAttachEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaLogDrvSprRplcExtAttachEntry"
+    },
+    "index": [
+      "cpqDaLogDrvSprRplcAttachExtIndex"
+    ],
+    "value": [
+      "cpqDaLogDrvSprRplcExtAttachTable",
+      1
+    ]
+  },
+  "CpqDaLogDrvSprRplcExtAttachEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaLogDrvSprRplcAttachExtIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvSprRplcExtAttachEntry",
+      1
+    ]
+  },
+  "cpqDaLogDrvSprRplcCntlrExtended": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvSprRplcExtAttachEntry",
+      2
+    ]
+  },
+  "cpqDaLogDrvSprRplcLogDrvExtended": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvSprRplcExtAttachEntry",
+      3
+    ]
+  },
+  "cpqDaLogDrvSprRplcReplacedPhysDrvExtended": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvSprRplcExtAttachEntry",
+      4
+    ]
+  },
+  "cpqDaLogDrvSprRplcSparePhysDrvExtended": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvSprRplcExtAttachEntry",
+      5
+    ]
+  },
+  "cpqDaLogDrvAvalSprExtAttachTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaLogDrvAvalSprExtAttachEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrv",
+      4
+    ]
+  },
+  "cpqDaLogDrvAvalSprExtAttachEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaLogDrvAvalSprExtAttachEntry"
+    },
+    "index": [
+      "cpqDaLogDrvAvailSprAttachExtIndex"
+    ],
+    "value": [
+      "cpqDaLogDrvAvalSprExtAttachTable",
+      1
+    ]
+  },
+  "CpqDaLogDrvAvalSprExtAttachEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaLogDrvAvailSprAttachExtIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvAvalSprExtAttachEntry",
+      1
+    ]
+  },
+  "cpqDaLogDrvAvailSprCntlrExtended": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvAvalSprExtAttachEntry",
+      2
+    ]
+  },
+  "cpqDaLogDrvAvailSprLogDrvExtended": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvAvalSprExtAttachEntry",
+      3
+    ]
+  },
+  "cpqDaLogDrvAvailSprAvailableSpareExtended": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvAvalSprExtAttachEntry",
+      4
+    ]
+  },
+  "cpqDaLogDrvCacheVolumeAccelTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaLogDrvCacheVolumeAccelEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrv",
+      5
+    ]
+  },
+  "cpqDaLogDrvCacheVolumeAccelEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaLogDrvCacheVolumeAccelEntry"
+    },
+    "index": [
+      "cpqDaLogDrvCacheVolAccelCntlrIndex",
+      "cpqDaLogDrvCacheVolAccelLogDrvIndex"
+    ],
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelTable",
+      1
+    ]
+  },
+  "CpqDaLogDrvCacheVolumeAccelEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaLogDrvCacheVolAccelCntlrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      1
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelLogDrvIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      2
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelCachingAlgorithm": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "multiSegment",
+        "3": "singleSegment"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      3
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelCacheState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "cacheVolOffline",
+        "5": "logDriveOffline",
+        "6": "neverConfigured",
+        "7": "flushing",
+        "8": "configuring",
+        "9": "cacheConfigurationFailed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      4
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelWritePolicy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "readOnly",
+        "3": "writeThrough",
+        "4": "writeBackSafe",
+        "5": "writeBackUnsafe",
+        "6": "writeThroughNoLoad"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      5
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfReadHitsH": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      6
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfReadHits": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      7
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfReadMissDoLoadH": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      8
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfReadMissDoLoad": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      9
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfReadMissLoadingH": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      10
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfReadMissLoading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      11
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfReadMissSkipH": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      12
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfReadMissSkip": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      13
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelReadCacheHitRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      14
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfWriteHitsH": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      15
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfWriteHits": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      16
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfWriteMissDoLoadH": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      17
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfWriteMissDoLoad": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      18
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfWriteMissLoadingH": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      19
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfWriteMissLoading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      20
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfWriteMissSkipH": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      21
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfWriteMissSkip": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      22
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelWriteCacheHitRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      23
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelLoadFailures": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      24
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelCacheLineSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      25
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfReadMissLockedH": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      26
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfReadMissLocked": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      27
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfWriteMissLockedH": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      28
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfWriteMissLocked": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      29
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfReadMissTotalH": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      30
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfReadMissTotal": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      31
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfWriteMissTotalH": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      32
+    ]
+  },
+  "cpqDaLogDrvCacheVolAccelNoOfWriteMissTotal": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvCacheVolumeAccelEntry",
+      33
+    ]
+  },
+  "cpqDaSpareTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaSpareEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaSpareDrv",
+      1
+    ]
+  },
+  "cpqDaSpareEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaSpareEntry"
+    },
+    "index": [
+      "cpqDaSpareCntlrIndex",
+      "cpqDaSparePhyDrvIndex"
+    ],
+    "value": [
+      "cpqDaSpareTable",
+      1
+    ]
+  },
+  "CpqDaSpareEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaSpareCntlrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaSpareEntry",
+      1
+    ]
+  },
+  "cpqDaSparePhyDrvIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaSpareEntry",
+      2
+    ]
+  },
+  "cpqDaSpareStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "invalid",
+        "3": "failed",
+        "4": "inactive",
+        "5": "building",
+        "6": "active"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaSpareEntry",
+      3
+    ]
+  },
+  "cpqDaSpareReplacedDrv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaSpareEntry",
+      4
+    ]
+  },
+  "cpqDaSpareRebuildBlks": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaSpareEntry",
+      5
+    ]
+  },
+  "cpqDaSpareCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaSpareEntry",
+      6
+    ]
+  },
+  "cpqDaSpareBusNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaSpareEntry",
+      7
+    ]
+  },
+  "cpqDaSpareBay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaSpareEntry",
+      8
+    ]
+  },
+  "cpqDaSpareReplacedDrvBusNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaSpareEntry",
+      9
+    ]
+  },
+  "cpqDaSpareReplacedDrvBay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaSpareEntry",
+      10
+    ]
+  },
+  "cpqDaSparePercentRebuild": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge"
+    },
+    "index": null,
+    "value": [
+      "cpqDaSpareEntry",
+      11
+    ]
+  },
+  "cpqDaSpareLocationString": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaSpareEntry",
+      12
+    ]
+  },
+  "cpqDaPhyDrvTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaPhyDrvEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrv",
+      1
+    ]
+  },
+  "cpqDaPhyDrvEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaPhyDrvEntry"
+    },
+    "index": [
+      "cpqDaPhyDrvCntlrIndex",
+      "cpqDaPhyDrvIndex"
+    ],
+    "value": [
+      "cpqDaPhyDrvTable",
+      1
+    ]
+  },
+  "CpqDaPhyDrvEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaPhyDrvCntlrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      1
+    ]
+  },
+  "cpqDaPhyDrvIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      2
+    ]
+  },
+  "cpqDaPhyDrvModel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      3
+    ]
+  },
+  "cpqDaPhyDrvFWRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      4
+    ]
+  },
+  "cpqDaPhyDrvBay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      5
+    ]
+  },
+  "cpqDaPhyDrvStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "failed",
+        "4": "predictiveFailure",
+        "5": "erasing",
+        "6": "eraseDone",
+        "7": "eraseQueued",
+        "8": "ssdWearOut",
+        "9": "notAuthenticated"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      6
+    ]
+  },
+  "cpqDaPhyDrvFactReallocs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      7
+    ]
+  },
+  "cpqDaPhyDrvUsedReallocs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      8
+    ]
+  },
+  "cpqDaPhyDrvRefHours": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      9
+    ]
+  },
+  "cpqDaPhyDrvHReads": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      10
+    ]
+  },
+  "cpqDaPhyDrvReads": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      11
+    ]
+  },
+  "cpqDaPhyDrvHWrites": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      12
+    ]
+  },
+  "cpqDaPhyDrvWrites": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      13
+    ]
+  },
+  "cpqDaPhyDrvHSeeks": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      14
+    ]
+  },
+  "cpqDaPhyDrvSeeks": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      15
+    ]
+  },
+  "cpqDaPhyDrvHardReadErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      16
+    ]
+  },
+  "cpqDaPhyDrvRecvReadErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      17
+    ]
+  },
+  "cpqDaPhyDrvHardWriteErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      18
+    ]
+  },
+  "cpqDaPhyDrvRecvWriteErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      19
+    ]
+  },
+  "cpqDaPhyDrvHSeekErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      20
+    ]
+  },
+  "cpqDaPhyDrvSeekErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      21
+    ]
+  },
+  "cpqDaPhyDrvSpinupTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      22
+    ]
+  },
+  "cpqDaPhyDrvFunctTest1": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      23
+    ]
+  },
+  "cpqDaPhyDrvFunctTest2": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      24
+    ]
+  },
+  "cpqDaPhyDrvFunctTest3": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      25
+    ]
+  },
+  "cpqDaPhyDrvDrqTimeouts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      26
+    ]
+  },
+  "cpqDaPhyDrvOtherTimeouts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      27
+    ]
+  },
+  "cpqDaPhyDrvSpinupRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      28
+    ]
+  },
+  "cpqDaPhyDrvBadRecvReads": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      29
+    ]
+  },
+  "cpqDaPhyDrvBadRecvWrites": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      30
+    ]
+  },
+  "cpqDaPhyDrvFormatErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      31
+    ]
+  },
+  "cpqDaPhyDrvPostErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      32
+    ]
+  },
+  "cpqDaPhyDrvNotReadyErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      33
+    ]
+  },
+  "cpqDaPhyDrvReallocAborts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      34
+    ]
+  },
+  "cpqDaPhyDrvThreshPassed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "false",
+        "2": "true"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      35
+    ]
+  },
+  "cpqDaPhyDrvHasMonInfo": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "false",
+        "2": "true"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      36
+    ]
+  },
+  "cpqDaPhyDrvCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      37
+    ]
+  },
+  "cpqDaPhyDrvHotPlugs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      38
+    ]
+  },
+  "cpqDaPhyDrvMediaErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      39
+    ]
+  },
+  "cpqDaPhyDrvHardwareErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      40
+    ]
+  },
+  "cpqDaPhyDrvAbortedCmds": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      41
+    ]
+  },
+  "cpqDaPhyDrvSpinUpErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      42
+    ]
+  },
+  "cpqDaPhyDrvBadTargetErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      43
+    ]
+  },
+  "cpqDaPhyDrvLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "internal",
+        "3": "external",
+        "4": "proLiant"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      44
+    ]
+  },
+  "cpqDaPhyDrvSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      45
+    ]
+  },
+  "cpqDaPhyDrvBusFaults": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      46
+    ]
+  },
+  "cpqDaPhyDrvIrqDeglitches": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      47
+    ]
+  },
+  "cpqDaPhyDrvHotPlug": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "hotPlug",
+        "3": "nonHotPlug"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      48
+    ]
+  },
+  "cpqDaPhyDrvPlacement": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "internal",
+        "3": "external"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      49
+    ]
+  },
+  "cpqDaPhyDrvBusNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      50
+    ]
+  },
+  "cpqDaPhyDrvSerialNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      51
+    ]
+  },
+  "cpqDaPhyDrvPreFailMonitoring": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notAvailable",
+        "3": "available"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      52
+    ]
+  },
+  "cpqDaPhyDrvCurrentWidth": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "narrow",
+        "3": "wide16"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      53
+    ]
+  },
+  "cpqDaPhyDrvCurrentSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "asynchronous",
+        "3": "fast",
+        "4": "ultra",
+        "5": "ultra2",
+        "6": "ultra3",
+        "7": "ultra320"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      54
+    ]
+  },
+  "cpqDaPhyDrvFailureCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      55
+    ]
+  },
+  "cpqDaPhyDrvBlinkTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      56
+    ]
+  },
+  "cpqDaPhyDrvSmartStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "replaceDrive",
+        "4": "replaceDriveSSDWearOut"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      57
+    ]
+  },
+  "cpqDaPhyDrvConfigurationStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "configured",
+        "3": "notConfigured"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      58
+    ]
+  },
+  "cpqDaPhyDrvRotationalSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "rpm7200",
+        "3": "rpm10K",
+        "4": "rpm15K",
+        "5": "rpmSsd"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      59
+    ]
+  },
+  "cpqDaPhyDrvType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "parallelScsi",
+        "3": "sata",
+        "4": "sas",
+        "5": "nvme"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      60
+    ]
+  },
+  "cpqDaPhyDrvSataVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "sataOne",
+        "3": "sataTwo"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      61
+    ]
+  },
+  "cpqDaPhyDrvHostConnector": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      62
+    ]
+  },
+  "cpqDaPhyDrvBoxOnConnector": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      63
+    ]
+  },
+  "cpqDaPhyDrvLocationString": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      64
+    ]
+  },
+  "cpqDaPhyDrvNegotiatedLinkRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "rate-1-5",
+        "3": "rate-3-0",
+        "4": "rate-6-0",
+        "5": "rate-12-0"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      65
+    ]
+  },
+  "cpqDaPhyDrvNcqSupport": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "noControllerSupport",
+        "3": "noDriveSupport",
+        "4": "ncqDisabled",
+        "5": "ncqEnabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      66
+    ]
+  },
+  "cpqDaPhyDrvPhyCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      67
+    ]
+  },
+  "cpqDaPhyDrvMultipathAccess": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notSupported",
+        "3": "notConfigured",
+        "4": "pathRedundant",
+        "5": "noRedundantPath",
+        "6": "driveFailed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      68
+    ]
+  },
+  "cpqDaPhyDrvMediaType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "rotatingPlatters",
+        "3": "solidState",
+        "4": "smr"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      69
+    ]
+  },
+  "cpqDaPhyDrvCurrentTemperature": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      70
+    ]
+  },
+  "cpqDaPhyDrvTemperatureThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      71
+    ]
+  },
+  "cpqDaPhyDrvMaximumTemperature": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      72
+    ]
+  },
+  "cpqDaPhyDrvSSDWearStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "fiftySixDayThreshold",
+        "4": "fivePercentThreshold",
+        "5": "twoPercentThreshold",
+        "6": "ssdWearOut"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      73
+    ]
+  },
+  "cpqDaPhyDrvPowerOnHours": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      74
+    ]
+  },
+  "cpqDaPhyDrvSSDPercntEndrnceUsed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      75
+    ]
+  },
+  "cpqDaPhyDrvSSDEstTimeRemainingHours": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      76
+    ]
+  },
+  "cpqDaPhyDrvAuthenticationStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notSupported",
+        "3": "authenticationFailed",
+        "4": "authenticationPassed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      77
+    ]
+  },
+  "cpqDaPhyDrvSmartCarrierAppFWRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      78
+    ]
+  },
+  "cpqDaPhyDrvSmartCarrierBootldrFWRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      79
+    ]
+  },
+  "cpqDaPhyDrvEncryptionStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "encrypted",
+        "3": "notEncrypted"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvEntry",
+      80
+    ]
+  },
+  "cpqDaPhyDrvErrTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaPhyDrvErrEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrv",
+      2
+    ]
+  },
+  "cpqDaPhyDrvErrEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaPhyDrvErrEntry"
+    },
+    "index": [
+      "cpqDaPhyDrvErrCntlrIndex",
+      "cpqDaPhyDrvErrIDIndex",
+      "cpqDaPhyDrvErrIndex"
+    ],
+    "value": [
+      "cpqDaPhyDrvErrTable",
+      1
+    ]
+  },
+  "CpqDaPhyDrvErrEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaPhyDrvErrCntlrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvErrEntry",
+      1
+    ]
+  },
+  "cpqDaPhyDrvErrIDIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvErrEntry",
+      2
+    ]
+  },
+  "cpqDaPhyDrvErrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvErrEntry",
+      3
+    ]
+  },
+  "cpqDaPhyDrvErrType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "noError",
+        "3": "scsiError",
+        "4": "camError"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvErrEntry",
+      4
+    ]
+  },
+  "cpqDaPhyDrvScsiOp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvErrEntry",
+      5
+    ]
+  },
+  "cpqDaPhyDrvScsiStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvErrEntry",
+      6
+    ]
+  },
+  "cpqDaPhyDrvCamStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvErrEntry",
+      7
+    ]
+  },
+  "cpqDaPhyDrvSenseKey": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvErrEntry",
+      8
+    ]
+  },
+  "cpqDaPhyDrvQualifier": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvErrEntry",
+      9
+    ]
+  },
+  "cpqDaPhyDrvSenseCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvErrEntry",
+      10
+    ]
+  },
+  "cpqDaPhyDrvBlockValid": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "false",
+        "2": "true"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvErrEntry",
+      11
+    ]
+  },
+  "cpqDaPhyDrvBlock": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvErrEntry",
+      12
+    ]
+  },
+  "cpqDaPhyDrvTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvErrEntry",
+      13
+    ]
+  },
+  "cpqDaPhyDrvUserDesc": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvErrEntry",
+      14
+    ]
+  },
+  "cpqDaPhyDrvErrDesc": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "driveFailure",
+        "2": "commFailure",
+        "3": "driveIOError",
+        "4": "scsiCommError",
+        "5": "compaqUpgradeRequired",
+        "6": "driveWriteProtected",
+        "7": "invalidRequest",
+        "8": "scsiMessageError",
+        "9": "controllerFailure",
+        "10": "internExternConflict",
+        "11": "internalDriveFailure",
+        "12": "scsiErrorOutOfRange",
+        "13": "camErrorOutOfRange",
+        "14": "errorTypeOutOfRange"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvErrEntry",
+      15
+    ]
+  },
+  "cpqDaPhyDrvPathTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaPhyDrvPathEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrv",
+      3
+    ]
+  },
+  "cpqDaPhyDrvPathEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaPhyDrvPathEntry"
+    },
+    "index": [
+      "cpqDaPhyDrvPathCntlrIndex",
+      "cpqDaPhyDrvPathDrvIndex",
+      "cpqDaPhyDrvPathIndex"
+    ],
+    "value": [
+      "cpqDaPhyDrvPathTable",
+      1
+    ]
+  },
+  "CpqDaPhyDrvPathEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaPhyDrvPathCntlrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvPathEntry",
+      1
+    ]
+  },
+  "cpqDaPhyDrvPathDrvIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvPathEntry",
+      2
+    ]
+  },
+  "cpqDaPhyDrvPathIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvPathEntry",
+      3
+    ]
+  },
+  "cpqDaPhyDrvPathStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "linkDown"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvPathEntry",
+      4
+    ]
+  },
+  "cpqDaPhyDrvPathCurrentRole": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "active",
+        "3": "alternate"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvPathEntry",
+      5
+    ]
+  },
+  "cpqDaPhyDrvPathHostConnector": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvPathEntry",
+      6
+    ]
+  },
+  "cpqDaPhyDrvPathBoxOnConnector": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvPathEntry",
+      7
+    ]
+  },
+  "cpqDaPhyDrvPathLocationString": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvPathEntry",
+      8
+    ]
+  },
+  "cpqDaPhyDrvThrTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaPhyDrvThrEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThr",
+      1
+    ]
+  },
+  "cpqDaPhyDrvThrEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaPhyDrvThrEntry"
+    },
+    "index": [
+      "cpqDaPhyDrvThrCntlrIndex",
+      "cpqDaPhyDrvThrIndex"
+    ],
+    "value": [
+      "cpqDaPhyDrvThrTable",
+      1
+    ]
+  },
+  "CpqDaPhyDrvThrEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaPhyDrvThrCntlrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      1
+    ]
+  },
+  "cpqDaPhyDrvThrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      2
+    ]
+  },
+  "cpqDaPhyDrvThrUsedReallocs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      3
+    ]
+  },
+  "cpqDaPhyDrvThrRefHours": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      4
+    ]
+  },
+  "cpqDaPhyDrvThrHardReadErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      5
+    ]
+  },
+  "cpqDaPhyDrvThrRecvReadErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      6
+    ]
+  },
+  "cpqDaPhyDrvThrHardWriteErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      7
+    ]
+  },
+  "cpqDaPhyDrvThrRecvWriteErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      8
+    ]
+  },
+  "cpqDaPhyDrvThrHSeekErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      9
+    ]
+  },
+  "cpqDaPhyDrvThrSeekErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      10
+    ]
+  },
+  "cpqDaPhyDrvThrSpinupTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      11
+    ]
+  },
+  "cpqDaPhyDrvThrFunctTest1": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      12
+    ]
+  },
+  "cpqDaPhyDrvThrFunctTest2": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      13
+    ]
+  },
+  "cpqDaPhyDrvThrFunctTest3": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      14
+    ]
+  },
+  "cpqDaPhyDrvThrDrqTimeouts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      15
+    ]
+  },
+  "cpqDaPhyDrvThrOtherTimeouts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      16
+    ]
+  },
+  "cpqDaPhyDrvThrSpinupRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      17
+    ]
+  },
+  "cpqDaPhyDrvThrBadRecvReads": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      18
+    ]
+  },
+  "cpqDaPhyDrvThrBadRecvWrites": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      19
+    ]
+  },
+  "cpqDaPhyDrvThrFormatErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      20
+    ]
+  },
+  "cpqDaPhyDrvThrPostErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      21
+    ]
+  },
+  "cpqDaPhyDrvThrNotReadyErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      22
+    ]
+  },
+  "cpqDaPhyDrvThrReallocAborts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      23
+    ]
+  },
+  "cpqDaPhyDrvThrHotPlugs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      24
+    ]
+  },
+  "cpqDaPhyDrvThrMediaErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      25
+    ]
+  },
+  "cpqDaPhyDrvThrHardwareErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      26
+    ]
+  },
+  "cpqDaPhyDrvThrAbortedCmds": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      27
+    ]
+  },
+  "cpqDaPhyDrvThrSpinUpErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      28
+    ]
+  },
+  "cpqDaPhyDrvThrBadTargetErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      29
+    ]
+  },
+  "cpqDaPhyDrvThrViUsedReallocs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "false",
+        "2": "true",
+        "4294967295": "unknown"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      30
+    ]
+  },
+  "cpqDaPhyDrvThrViSpinupTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "false",
+        "2": "true",
+        "4294967295": "unknown"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      31
+    ]
+  },
+  "cpqDaPhyDrvThrViFunctTest1": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "false",
+        "2": "true",
+        "4294967295": "unknown"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      32
+    ]
+  },
+  "cpqDaPhyDrvThrViFunctTest2": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "false",
+        "2": "true",
+        "4294967295": "unknown"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      33
+    ]
+  },
+  "cpqDaPhyDrvThrViFunctTest3": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "false",
+        "2": "true",
+        "4294967295": "unknown"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      34
+    ]
+  },
+  "cpqDaPhyDrvThrBusFaults": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      35
+    ]
+  },
+  "cpqDaPhyDrvThrIrqDeglitches": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaPhyDrvThrEntry",
+      36
+    ]
+  },
+  "cpqDaCntlrPerfTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaCntlrPerfEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrPerf",
+      1
+    ]
+  },
+  "cpqDaCntlrPerfEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaCntlrPerfEntry"
+    },
+    "index": [
+      "cpqDaCntlrPerfCntlrIndex",
+      "cpqDaCntlrPerfInstance"
+    ],
+    "value": [
+      "cpqDaCntlrPerfTable",
+      1
+    ]
+  },
+  "CpqDaCntlrPerfEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaCntlrPerfCntlrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrPerfEntry",
+      1
+    ]
+  },
+  "cpqDaCntlrPerfInstance": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrPerfEntry",
+      2
+    ]
+  },
+  "cpqDaCntlrPerfSampleInterval": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrPerfEntry",
+      3
+    ]
+  },
+  "cpqDaCntlrPerfVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrPerfEntry",
+      4
+    ]
+  },
+  "cpqDaCntlrPerfCpuPercentBusy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrPerfEntry",
+      5
+    ]
+  },
+  "cpqDaCntlrPerfCommandCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrPerfEntry",
+      6
+    ]
+  },
+  "cpqDaCntlrPerfAvgLatency": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaCntlrPerfEntry",
+      7
+    ]
+  },
+  "cpqDaLogDrvPerfTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaLogDrvPerfEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvPerf",
+      1
+    ]
+  },
+  "cpqDaLogDrvPerfEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaLogDrvPerfEntry"
+    },
+    "index": [
+      "cpqDaLogDrvPerfCntlrIndex",
+      "cpqDaLogDrvPerfIndex",
+      "cpqDaLogDrvPerfInstance"
+    ],
+    "value": [
+      "cpqDaLogDrvPerfTable",
+      1
+    ]
+  },
+  "CpqDaLogDrvPerfEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaLogDrvPerfCntlrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvPerfEntry",
+      1
+    ]
+  },
+  "cpqDaLogDrvPerfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvPerfEntry",
+      2
+    ]
+  },
+  "cpqDaLogDrvPerfInstance": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvPerfEntry",
+      3
+    ]
+  },
+  "cpqDaLogDrvPerfSampleInterval": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvPerfEntry",
+      4
+    ]
+  },
+  "cpqDaLogDrvPerfAvgQueueDepth": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvPerfEntry",
+      5
+    ]
+  },
+  "cpqDaLogDrvPerfReads": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvPerfEntry",
+      6
+    ]
+  },
+  "cpqDaLogDrvPerfWrites": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvPerfEntry",
+      7
+    ]
+  },
+  "cpqDaLogDrvPerfTotalIO": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvPerfEntry",
+      8
+    ]
+  },
+  "cpqDaLogDrvPerfCacheHits": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvPerfEntry",
+      9
+    ]
+  },
+  "cpqDaLogDrvPerfCacheMisses": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvPerfEntry",
+      10
+    ]
+  },
+  "cpqDaLogDrvPerfReadAheadSectors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvPerfEntry",
+      11
+    ]
+  },
+  "cpqDaLogDrvPerfSectorsRead": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvPerfEntry",
+      12
+    ]
+  },
+  "cpqDaLogDrvPerfSectorsWritten": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaLogDrvPerfEntry",
+      13
+    ]
+  },
+  "cpqDaTapeDrvTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaTapeDrvEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrv",
+      1
+    ]
+  },
+  "cpqDaTapeDrvEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaTapeDrvEntry"
+    },
+    "index": [
+      "cpqDaTapeDrvCntlrIndex",
+      "cpqDaTapeDrvBusIndex",
+      "cpqDaTapeDrvScsiIdIndex",
+      "cpqDaTapeDrvLunIndex"
+    ],
+    "value": [
+      "cpqDaTapeDrvTable",
+      1
+    ]
+  },
+  "CpqDaTapeDrvEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaTapeDrvCntlrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      1
+    ]
+  },
+  "cpqDaTapeDrvBusIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      2
+    ]
+  },
+  "cpqDaTapeDrvScsiIdIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      3
+    ]
+  },
+  "cpqDaTapeDrvLunIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      4
+    ]
+  },
+  "cpqDaTapeDrvName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      5
+    ]
+  },
+  "cpqDaTapeDrvSerialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      6
+    ]
+  },
+  "cpqDaTapeDrvFwRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      7
+    ]
+  },
+  "cpqDaTapeDrvStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed",
+        "5": "offline",
+        "6": "missingWasOk",
+        "7": "missingWasOffline"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      8
+    ]
+  },
+  "cpqDaTapeDrvCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      9
+    ]
+  },
+  "cpqDaTapeDrvFwSubtype": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      10
+    ]
+  },
+  "cpqDaTapeDrvType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "cpqDat4-16",
+        "3": "cpqDatAuto",
+        "4": "cpqDat2-8",
+        "5": "cpqDlt10-20",
+        "6": "cpqDlt20-40",
+        "7": "cpqDlt15-30",
+        "8": "cpqDlt35-70",
+        "9": "cpqDat4-8",
+        "10": "cpqSlr4-8",
+        "11": "cpqDat12-24",
+        "12": "cpqDatAuto12-24",
+        "14": "cpqAit35",
+        "15": "cpqAit50",
+        "16": "cpqDat20-40",
+        "17": "cpqDlt40-80",
+        "18": "cpqDatAuto20-40"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      11
+    ]
+  },
+  "cpqDaTapeDrvCleanReq": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "true",
+        "3": "false"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      12
+    ]
+  },
+  "cpqDaTapeDrvCleanTapeRepl": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "true",
+        "3": "false"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      13
+    ]
+  },
+  "cpqDaTapeDrvCleanTapeCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      14
+    ]
+  },
+  "cpqDaTapeDrvLibraryDrive": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "true",
+        "3": "false"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      15
+    ]
+  },
+  "cpqDaTapeDrvMagSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      16
+    ]
+  },
+  "cpqDaTapeDrvHotPlug": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "hotPlug",
+        "3": "nonHotPlug"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      17
+    ]
+  },
+  "cpqDaTapeDrvPlacement": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "internal",
+        "3": "external"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      18
+    ]
+  },
+  "cpqDaTapeDrvCurrentWidth": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "narrow",
+        "3": "wide16"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      19
+    ]
+  },
+  "cpqDaTapeDrvCurrentSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "asynchronous",
+        "3": "fast",
+        "4": "ultra",
+        "5": "ultra2",
+        "6": "ultra3"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      20
+    ]
+  },
+  "cpqDaTapeDrvProtocol": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "parallelScsi",
+        "3": "sata",
+        "4": "sas"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      21
+    ]
+  },
+  "cpqDaTapeDrvNegotiatedLinkRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "rate-1-5",
+        "3": "rate-3-0",
+        "4": "rate-6-0",
+        "5": "rate-12-0"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeDrvEntry",
+      22
+    ]
+  },
+  "cpqDaTapeCountersTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaTapeCountersEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeCounters",
+      1
+    ]
+  },
+  "cpqDaTapeCountersEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaTapeCountersEntry"
+    },
+    "index": [
+      "cpqDaTapeCountersCntlrIndex",
+      "cpqDaTapeCountersBusIndex",
+      "cpqDaTapeCountersScsiIdIndex",
+      "cpqDaTapeCountersLunIndex"
+    ],
+    "value": [
+      "cpqDaTapeCountersTable",
+      1
+    ]
+  },
+  "CpqDaTapeCountersEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaTapeCountersCntlrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeCountersEntry",
+      1
+    ]
+  },
+  "cpqDaTapeCountersBusIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeCountersEntry",
+      2
+    ]
+  },
+  "cpqDaTapeCountersScsiIdIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeCountersEntry",
+      3
+    ]
+  },
+  "cpqDaTapeCountersLunIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeCountersEntry",
+      4
+    ]
+  },
+  "cpqDaTapeCountersReWrites": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeCountersEntry",
+      5
+    ]
+  },
+  "cpqDaTapeCountersReReads": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeCountersEntry",
+      6
+    ]
+  },
+  "cpqDaTapeCountersTotalErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeCountersEntry",
+      7
+    ]
+  },
+  "cpqDaTapeCountersTotalUncorrectable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeCountersEntry",
+      8
+    ]
+  },
+  "cpqDaTapeCountersTotalBytes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeCountersEntry",
+      9
+    ]
+  },
+  "cpqDaTapeLibraryTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaTapeLibraryEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibrary",
+      1
+    ]
+  },
+  "cpqDaTapeLibraryEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaTapeLibraryEntry"
+    },
+    "index": [
+      "cpqDaTapeLibraryCntlrIndex",
+      "cpqDaTapeLibraryScsiBus",
+      "cpqDaTapeLibraryScsiTarget",
+      "cpqDaTapeLibraryScsiLun"
+    ],
+    "value": [
+      "cpqDaTapeLibraryTable",
+      1
+    ]
+  },
+  "CpqDaTapeLibraryEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaTapeLibraryCntlrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      1
+    ]
+  },
+  "cpqDaTapeLibraryScsiBus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      2
+    ]
+  },
+  "cpqDaTapeLibraryScsiTarget": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      3
+    ]
+  },
+  "cpqDaTapeLibraryScsiLun": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      4
+    ]
+  },
+  "cpqDaTapeLibrarySerialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      5
+    ]
+  },
+  "cpqDaTapeLibraryModel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      6
+    ]
+  },
+  "cpqDaTapeLibraryFWRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      7
+    ]
+  },
+  "cpqDaTapeLibraryStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed",
+        "5": "offline"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      8
+    ]
+  },
+  "cpqDaTapeLibraryDoorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notSupported",
+        "3": "closed",
+        "4": "open"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      9
+    ]
+  },
+  "cpqDaTapeLibraryCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      10
+    ]
+  },
+  "cpqDaTapeLibraryOverallCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      11
+    ]
+  },
+  "cpqDaTapeLibraryLastError": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      12
+    ]
+  },
+  "cpqDaTapeLibraryStatHours": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      13
+    ]
+  },
+  "cpqDaTapeLibraryStatMoves": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      14
+    ]
+  },
+  "cpqDaTapeLibraryDriveList": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      15
+    ]
+  },
+  "cpqDaTapeLibraryCurrentWidth": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "narrow",
+        "3": "wide16"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      16
+    ]
+  },
+  "cpqDaTapeLibraryCurrentSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "asynchronous",
+        "3": "fast",
+        "4": "ultra",
+        "5": "ultra2",
+        "6": "ultra3"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      17
+    ]
+  },
+  "cpqDaTapeLibraryDriveList2": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      18
+    ]
+  },
+  "cpqDaTapeLibraryProtocol": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "parallelScsi",
+        "3": "sata",
+        "4": "sas"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      19
+    ]
+  },
+  "cpqDaTapeLibraryNegotiatedLinkRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "rate-1-5",
+        "3": "rate-3-0",
+        "4": "rate-6-0",
+        "5": "rate-12-0"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaTapeLibraryEntry",
+      20
+    ]
+  },
+  "cpqDaTrapPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTrap",
+      1
+    ]
+  },
+  "cpqDaTrapLogMaxSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTrap",
+      2
+    ]
+  },
+  "cpqDaTrapLogTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqDaTrapLogEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTrap",
+      3
+    ]
+  },
+  "cpqDaTrapLogEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqDaTrapLogEntry"
+    },
+    "index": [
+      "cpqDaTrapLogIndex"
+    ],
+    "value": [
+      "cpqDaTrapLogTable",
+      1
+    ]
+  },
+  "CpqDaTrapLogEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqDaTrapLogIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTrapLogEntry",
+      1
+    ]
+  },
+  "cpqDaTrapType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "cpqDaLogDrvStatusChange",
+        "2": "cpqDaSpareStatusChange",
+        "3": "cpqDaPhyDrvStatusChange",
+        "4": "cpqDaPhyDrvThreshExceededTrap",
+        "5": "cpqDaAccelStatusChange",
+        "6": "cpqDaAccelBadDataTrap",
+        "7": "cpqDaAccelBatteryFailed",
+        "3001": "cpqDa2LogDrvStatusChange",
+        "3002": "cpqDa2SpareStatusChange",
+        "3003": "cpqDa2PhyDrvStatusChange",
+        "3004": "cpqDa2PhyDrvThreshExceededTrap",
+        "3005": "cpqDa2AccelStatusChange",
+        "3006": "cpqDa2AccelBadDataTrap",
+        "3007": "cpqDa2AccelBatteryFailed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqDaTrapLogEntry",
+      2
+    ]
+  },
+  "cpqDaTrapTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqDaTrapLogEntry",
+      3
+    ]
+  }
+}

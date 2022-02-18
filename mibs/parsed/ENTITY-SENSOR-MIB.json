@@ -1,0 +1,271 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Integer32",
+        "Unsigned32",
+        "mib-2"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION",
+        "TimeStamp"
+      ]
+    ],
+    [
+      "ENTITY-MIB",
+      [
+        "entPhysicalIndex",
+        "entityPhysicalGroup"
+      ]
+    ],
+    [
+      "SNMP-FRAMEWORK-MIB",
+      [
+        "SnmpAdminString"
+      ]
+    ]
+  ],
+  "entitySensorMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "mib-2",
+      99
+    ]
+  },
+  "entitySensorObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entitySensorMIB",
+      1
+    ]
+  },
+  "entitySensorConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entitySensorMIB",
+      3
+    ]
+  },
+  "EntitySensorDataType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "3": "voltsAC",
+        "4": "voltsDC",
+        "5": "amperes",
+        "6": "watts",
+        "7": "hertz",
+        "8": "celsius",
+        "9": "percentRH",
+        "10": "rpm",
+        "11": "cmm",
+        "12": "truthvalue"
+      }
+    },
+    "display_hint": null
+  },
+  "EntitySensorDataScale": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yocto",
+        "2": "zepto",
+        "3": "atto",
+        "4": "femto",
+        "5": "pico",
+        "6": "nano",
+        "7": "micro",
+        "8": "milli",
+        "9": "units",
+        "10": "kilo",
+        "11": "mega",
+        "12": "giga",
+        "13": "tera",
+        "14": "exa",
+        "15": "peta",
+        "16": "zetta",
+        "17": "yotta"
+      }
+    },
+    "display_hint": null
+  },
+  "EntitySensorPrecision": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  },
+  "EntitySensorValue": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  },
+  "EntitySensorStatus": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "ok",
+        "2": "unavailable",
+        "3": "nonoperational"
+      }
+    },
+    "display_hint": null
+  },
+  "entPhySensorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF EntPhySensorEntry"
+    },
+    "index": null,
+    "value": [
+      "entitySensorObjects",
+      1
+    ]
+  },
+  "entPhySensorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntPhySensorEntry"
+    },
+    "index": [
+      "entPhysicalIndex"
+    ],
+    "value": [
+      "entPhySensorTable",
+      1
+    ]
+  },
+  "EntPhySensorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "entPhySensorType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntitySensorDataType"
+    },
+    "index": null,
+    "value": [
+      "entPhySensorEntry",
+      1
+    ]
+  },
+  "entPhySensorScale": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntitySensorDataScale"
+    },
+    "index": null,
+    "value": [
+      "entPhySensorEntry",
+      2
+    ]
+  },
+  "entPhySensorPrecision": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntitySensorPrecision"
+    },
+    "index": null,
+    "value": [
+      "entPhySensorEntry",
+      3
+    ]
+  },
+  "entPhySensorValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntitySensorValue"
+    },
+    "index": null,
+    "value": [
+      "entPhySensorEntry",
+      4
+    ]
+  },
+  "entPhySensorOperStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntitySensorStatus"
+    },
+    "index": null,
+    "value": [
+      "entPhySensorEntry",
+      5
+    ]
+  },
+  "entPhySensorUnitsDisplay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "entPhySensorEntry",
+      6
+    ]
+  },
+  "entPhySensorValueTimeStamp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "entPhySensorEntry",
+      7
+    ]
+  },
+  "entPhySensorValueUpdateRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "entPhySensorEntry",
+      8
+    ]
+  },
+  "entitySensorCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entitySensorConformance",
+      1
+    ]
+  },
+  "entitySensorGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entitySensorConformance",
+      2
+    ]
+  },
+  "entitySensorValueGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "entitySensorGroups",
+      1
+    ]
+  }
+}

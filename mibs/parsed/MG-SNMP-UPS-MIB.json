@@ -1,0 +1,2978 @@
+{
+  "IMPORTS": [
+    [
+      "RFC1155-SMI",
+      [
+        "enterprises",
+        "IpAddress",
+        "TimeTicks"
+      ]
+    ],
+    [
+      "RFC1213-MIB",
+      [
+        "DisplayString"
+      ]
+    ],
+    [
+      "RFC-1212",
+      [
+        "OBJECT-TYPE"
+      ]
+    ],
+    [
+      "RFC-1215",
+      [
+        "TRAP-TYPE"
+      ]
+    ]
+  ],
+  "merlinGerin": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      705
+    ]
+  },
+  "upsmg": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merlinGerin",
+      1
+    ]
+  },
+  "upsmgIdent": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "upsmg",
+      1
+    ]
+  },
+  "upsmgManagement": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "upsmg",
+      2
+    ]
+  },
+  "upsmgReceptacle": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "upsmg",
+      3
+    ]
+  },
+  "upsmgConfig": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "upsmg",
+      4
+    ]
+  },
+  "upsmgBattery": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "upsmg",
+      5
+    ]
+  },
+  "upsmgInput": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "upsmg",
+      6
+    ]
+  },
+  "upsmgOutput": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "upsmg",
+      7
+    ]
+  },
+  "upsmgEnviron": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "upsmg",
+      8
+    ]
+  },
+  "upsmgControl": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "upsmg",
+      9
+    ]
+  },
+  "upsmgTest": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "upsmg",
+      10
+    ]
+  },
+  "upsmgTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "upsmg",
+      11
+    ]
+  },
+  "upsmgAgent": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "upsmg",
+      12
+    ]
+  },
+  "upsmgRemote": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "upsmg",
+      13
+    ]
+  },
+  "upsmgIdentFamilyName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgIdent",
+      1
+    ]
+  },
+  "upsmgIdentModelName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgIdent",
+      2
+    ]
+  },
+  "upsmgIdentRevisionLevel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgIdent",
+      3
+    ]
+  },
+  "upsmgIdentFirmwareVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgIdent",
+      4
+    ]
+  },
+  "upsmgIdentUserID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgIdent",
+      5
+    ]
+  },
+  "upsmgIdentInstallationDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgIdent",
+      6
+    ]
+  },
+  "upsmgIdentSerialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgIdent",
+      7
+    ]
+  },
+  "upsmgManagersNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgManagement",
+      1
+    ]
+  },
+  "upsmgManagersTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF UpsmgManagersEntry"
+    },
+    "index": null,
+    "value": [
+      "upsmgManagement",
+      2
+    ]
+  },
+  "upsmgManagersEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UpsmgManagersEntry"
+    },
+    "index": [
+      "mgmanagerIndex"
+    ],
+    "value": [
+      "upsmgManagersTable",
+      1
+    ]
+  },
+  "UpsmgManagersEntry": {
+    "tp": "SEQUENCE"
+  },
+  "mgmanagerIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgManagersEntry",
+      1
+    ]
+  },
+  "mgmanagerDeviceNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgManagersEntry",
+      2
+    ]
+  },
+  "mgmanagerNMSType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "umclient",
+        "2": "decnetview",
+        "3": "umview",
+        "4": "dview",
+        "5": "hpopenview",
+        "6": "sunnetmanager",
+        "7": "novellnms",
+        "8": "ibmnetview",
+        "9": "other",
+        "10": "autolearning"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgManagersEntry",
+      3
+    ]
+  },
+  "mgmanagerCommType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "invalid",
+        "3": "cmip",
+        "4": "snmpv1",
+        "5": "snmpv2"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgManagersEntry",
+      4
+    ]
+  },
+  "mgmanagerDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgManagersEntry",
+      5
+    ]
+  },
+  "mgmanagerAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "upsmgManagersEntry",
+      6
+    ]
+  },
+  "mgmanagerCommunity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgManagersEntry",
+      7
+    ]
+  },
+  "mgmanagerSeverityLevel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgManagersEntry",
+      8
+    ]
+  },
+  "mgmanagerTrapAck": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "mgack",
+        "2": "mgnoack",
+        "3": "stdnomg",
+        "4": "mgacks",
+        "5": "cpqnoack"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgManagersEntry",
+      9
+    ]
+  },
+  "upsmgReceptaclesNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgReceptacle",
+      1
+    ]
+  },
+  "upsmgReceptaclesTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF UpsmgReceptaclesEntry"
+    },
+    "index": null,
+    "value": [
+      "upsmgReceptacle",
+      2
+    ]
+  },
+  "upsmgReceptaclesEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UpsmgReceptaclesEntry"
+    },
+    "index": [
+      "mgreceptacleIndex"
+    ],
+    "value": [
+      "upsmgReceptaclesTable",
+      1
+    ]
+  },
+  "UpsmgReceptaclesEntry": {
+    "tp": "SEQUENCE"
+  },
+  "mgreceptacleIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgReceptaclesEntry",
+      1
+    ]
+  },
+  "mgreceptacleLevel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgReceptaclesEntry",
+      2
+    ]
+  },
+  "mgreceptacleType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgReceptaclesEntry",
+      3
+    ]
+  },
+  "mgreceptacleIdent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgReceptaclesEntry",
+      4
+    ]
+  },
+  "mgreceptacleState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "manualON",
+        "2": "manualOFF",
+        "3": "normalON",
+        "4": "normalOFF",
+        "5": "controlON",
+        "6": "controlOFF",
+        "7": "scheduleON",
+        "8": "scheduleOFF"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgReceptaclesEntry",
+      5
+    ]
+  },
+  "mgreceptacleReceptacle": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgReceptaclesEntry",
+      6
+    ]
+  },
+  "mgreceptaclePowerCons": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgReceptaclesEntry",
+      7
+    ]
+  },
+  "mgreceptacleOverload": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgReceptaclesEntry",
+      8
+    ]
+  },
+  "mgreceptacleAutonomy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgReceptaclesEntry",
+      9
+    ]
+  },
+  "upsmgConfigBatteryInstalled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      1
+    ]
+  },
+  "upsmgConfigNominalBatteryVoltage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      2
+    ]
+  },
+  "upsmgConfigNominalBatteryTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      3
+    ]
+  },
+  "upsmgConfigNominalRechargeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      4
+    ]
+  },
+  "upsmgConfigMinRechargeLevel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      5
+    ]
+  },
+  "upsmgConfigMaxRechargeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      6
+    ]
+  },
+  "upsmgConfigLowBatteryTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      7
+    ]
+  },
+  "upsmgConfigLowBatteryLevel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      8
+    ]
+  },
+  "upsmgConfigAutoRestart": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "always",
+        "2": "never",
+        "3": "onmain"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      9
+    ]
+  },
+  "upsmgConfigShutdownTimer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      10
+    ]
+  },
+  "upsmgConfigSysShutDuration": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      11
+    ]
+  },
+  "upsmgConfigVARating": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      12
+    ]
+  },
+  "upsmgConfigLowTransfer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      13
+    ]
+  },
+  "upsmgConfigHighTransfer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      14
+    ]
+  },
+  "upsmgConfigOutputNominalVoltage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      15
+    ]
+  },
+  "upsmgConfigOutputNominalCurrent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      16
+    ]
+  },
+  "upsmgConfigOutputNomFrequency": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      17
+    ]
+  },
+  "upsmgConfigByPassType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "none",
+        "2": "relay",
+        "3": "static"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      18
+    ]
+  },
+  "upsmgConfigAlarmAudible": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      19
+    ]
+  },
+  "upsmgConfigAlarmTimeDelay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      20
+    ]
+  },
+  "upsmgConfigDevicesNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      21
+    ]
+  },
+  "upsmgConfigDevicesTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF UpsmgConfigDevicesEntry"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      22
+    ]
+  },
+  "upsmgConfigDevicesEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UpsmgConfigDevicesEntry"
+    },
+    "index": [
+      "mgdeviceIndex"
+    ],
+    "value": [
+      "upsmgConfigDevicesTable",
+      1
+    ]
+  },
+  "UpsmgConfigDevicesEntry": {
+    "tp": "SEQUENCE"
+  },
+  "mgdeviceIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigDevicesEntry",
+      1
+    ]
+  },
+  "mgdeviceReceptacleNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigDevicesEntry",
+      2
+    ]
+  },
+  "mgdeviceIdent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigDevicesEntry",
+      3
+    ]
+  },
+  "mgdeviceVaRating": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigDevicesEntry",
+      4
+    ]
+  },
+  "mgdeviceSequenceOff": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigDevicesEntry",
+      5
+    ]
+  },
+  "mgdeviceSequenceOn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigDevicesEntry",
+      6
+    ]
+  },
+  "mgdeviceShutdownDuration": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigDevicesEntry",
+      7
+    ]
+  },
+  "mgdeviceBootUpDuration": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigDevicesEntry",
+      8
+    ]
+  },
+  "upsmgConfigReceptaclesTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF UpsmgConfigReceptaclesEntry"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      23
+    ]
+  },
+  "upsmgConfigReceptaclesEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UpsmgConfigReceptaclesEntry"
+    },
+    "index": [
+      "mgreceptacleIndexb"
+    ],
+    "value": [
+      "upsmgConfigReceptaclesTable",
+      1
+    ]
+  },
+  "UpsmgConfigReceptaclesEntry": {
+    "tp": "SEQUENCE"
+  },
+  "mgreceptacleIndexb": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigReceptaclesEntry",
+      1
+    ]
+  },
+  "mgreceptacleStateTurnOn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "on",
+        "2": "off",
+        "3": "last",
+        "4": "schedule"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigReceptaclesEntry",
+      2
+    ]
+  },
+  "mgreceptacleStateMainReturn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "on",
+        "2": "off",
+        "3": "last",
+        "4": "schedule"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigReceptaclesEntry",
+      3
+    ]
+  },
+  "mgreceptacleStateDischarge": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "on",
+        "2": "off",
+        "3": "last",
+        "4": "schedule"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigReceptaclesEntry",
+      4
+    ]
+  },
+  "mgreceptacleShutoffLevel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigReceptaclesEntry",
+      5
+    ]
+  },
+  "mgreceptacleShutoffTimer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigReceptaclesEntry",
+      6
+    ]
+  },
+  "mgreceptacleRestartLevel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigReceptaclesEntry",
+      7
+    ]
+  },
+  "mgreceptacleRestartDelay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigReceptaclesEntry",
+      8
+    ]
+  },
+  "mgreceptacleShutdownDuration": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigReceptaclesEntry",
+      9
+    ]
+  },
+  "mgreceptacleBootUpDuration": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigReceptaclesEntry",
+      10
+    ]
+  },
+  "upsmgConfigExtAlarmNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      24
+    ]
+  },
+  "upsmgConfigExtAlarmTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF UpsmgConfigExtAlarmEntry"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      25
+    ]
+  },
+  "upsmgConfigExtAlarmEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UpsmgConfigExtAlarmEntry"
+    },
+    "index": [
+      "mgextAlarmIndex"
+    ],
+    "value": [
+      "upsmgConfigExtAlarmTable",
+      1
+    ]
+  },
+  "UpsmgConfigExtAlarmEntry": {
+    "tp": "SEQUENCE"
+  },
+  "mgextAlarmIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigExtAlarmEntry",
+      1
+    ]
+  },
+  "mgextAlarmUID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigExtAlarmEntry",
+      2
+    ]
+  },
+  "upsmgConfigEmergencyTestFail": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      26
+    ]
+  },
+  "upsmgConfigEmergencyOnByPass": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      27
+    ]
+  },
+  "upsmgConfigEmergencyOverload": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      28
+    ]
+  },
+  "upsmgConfigControlDayTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF UpsmgConfigControlDayEntry"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      29
+    ]
+  },
+  "upsmgConfigControlDayEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UpsmgConfigControlDayEntry"
+    },
+    "index": [
+      "mgcontrolDayIndex"
+    ],
+    "value": [
+      "upsmgConfigControlDayTable",
+      1
+    ]
+  },
+  "UpsmgConfigControlDayEntry": {
+    "tp": "SEQUENCE"
+  },
+  "mgcontrolDayIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigControlDayEntry",
+      1
+    ]
+  },
+  "mgcontrolDayOn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigControlDayEntry",
+      2
+    ]
+  },
+  "mgcontrolDayOff": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigControlDayEntry",
+      3
+    ]
+  },
+  "upsmgConfigLowBooster": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      30
+    ]
+  },
+  "upsmgConfigHighBooster": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      31
+    ]
+  },
+  "upsmgConfigLowFader": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      32
+    ]
+  },
+  "upsmgConfigHighFader": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      33
+    ]
+  },
+  "upsmgConfigEnvironmentTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF UpsmgConfigEnvironmentEntry"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfig",
+      34
+    ]
+  },
+  "upsmgConfigEnvironmentEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UpsmgConfigEnvironmentEntry"
+    },
+    "index": [
+      "upsmgConfigSensorIndex"
+    ],
+    "value": [
+      "upsmgConfigEnvironmentTable",
+      1
+    ]
+  },
+  "UpsmgConfigEnvironmentEntry": {
+    "tp": "SEQUENCE"
+  },
+  "upsmgConfigSensorIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigEnvironmentEntry",
+      1
+    ]
+  },
+  "upsmgConfigSensorName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigEnvironmentEntry",
+      2
+    ]
+  },
+  "upsmgConfigTemperatureLow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigEnvironmentEntry",
+      3
+    ]
+  },
+  "upsmgConfigTemperatureHigh": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigEnvironmentEntry",
+      4
+    ]
+  },
+  "upsmgConfigTemperatureHysteresis": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigEnvironmentEntry",
+      5
+    ]
+  },
+  "upsmgConfigHumidityLow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigEnvironmentEntry",
+      6
+    ]
+  },
+  "upsmgConfigHumidityHigh": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigEnvironmentEntry",
+      7
+    ]
+  },
+  "upsmgConfigHumidityHysteresis": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigEnvironmentEntry",
+      8
+    ]
+  },
+  "upsmgConfigInput1Name": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigEnvironmentEntry",
+      9
+    ]
+  },
+  "upsmgConfigInput1ClosedLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigEnvironmentEntry",
+      10
+    ]
+  },
+  "upsmgConfigInput1OpenLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigEnvironmentEntry",
+      11
+    ]
+  },
+  "upsmgConfigInput2Name": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigEnvironmentEntry",
+      12
+    ]
+  },
+  "upsmgConfigInput2ClosedLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigEnvironmentEntry",
+      13
+    ]
+  },
+  "upsmgConfigInput2OpenLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgConfigEnvironmentEntry",
+      14
+    ]
+  },
+  "upsmgBatteryRemainingTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgBattery",
+      1
+    ]
+  },
+  "upsmgBatteryLevel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgBattery",
+      2
+    ]
+  },
+  "upsmgBatteryRechargeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgBattery",
+      3
+    ]
+  },
+  "upsmgBatteryRechargeLevel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgBattery",
+      4
+    ]
+  },
+  "upsmgBatteryVoltage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgBattery",
+      5
+    ]
+  },
+  "upsmgBatteryCurrent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgBattery",
+      6
+    ]
+  },
+  "upsmgBatteryTemperature": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgBattery",
+      7
+    ]
+  },
+  "upsmgBatteryFullRechargeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgBattery",
+      8
+    ]
+  },
+  "upsmgBatteryFaultBattery": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgBattery",
+      9
+    ]
+  },
+  "upsmgBatteryNoBattery": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgBattery",
+      10
+    ]
+  },
+  "upsmgBatteryReplacement": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgBattery",
+      11
+    ]
+  },
+  "upsmgBatteryUnavailableBattery": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgBattery",
+      12
+    ]
+  },
+  "upsmgBatteryNotHighCharge": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgBattery",
+      13
+    ]
+  },
+  "upsmgBatteryLowBattery": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgBattery",
+      14
+    ]
+  },
+  "upsmgBatteryChargerFault": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgBattery",
+      15
+    ]
+  },
+  "upsmgBatteryLowCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgBattery",
+      16
+    ]
+  },
+  "upsmgBatteryLowRecharge": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgBattery",
+      17
+    ]
+  },
+  "upsmgInputPhaseNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgInput",
+      1
+    ]
+  },
+  "upsmgInputPhaseTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF UpsmgInputPhaseEntry"
+    },
+    "index": null,
+    "value": [
+      "upsmgInput",
+      2
+    ]
+  },
+  "upsmgInputPhaseEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UpsmgInputPhaseEntry"
+    },
+    "index": [
+      "mginputIndex"
+    ],
+    "value": [
+      "upsmgInputPhaseTable",
+      1
+    ]
+  },
+  "UpsmgInputPhaseEntry": {
+    "tp": "SEQUENCE"
+  },
+  "mginputIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgInputPhaseEntry",
+      1
+    ]
+  },
+  "mginputVoltage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgInputPhaseEntry",
+      2
+    ]
+  },
+  "mginputFrequency": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgInputPhaseEntry",
+      3
+    ]
+  },
+  "mginputMinimumVoltage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgInputPhaseEntry",
+      4
+    ]
+  },
+  "mginputMaximumVoltage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgInputPhaseEntry",
+      5
+    ]
+  },
+  "mginputCurrent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgInputPhaseEntry",
+      6
+    ]
+  },
+  "upsmgInputBadStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgInput",
+      3
+    ]
+  },
+  "upsmgInputLineFailCause": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "no",
+        "2": "outoftolvolt",
+        "3": "outoftolfreq",
+        "4": "utilityoff"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgInput",
+      4
+    ]
+  },
+  "upsmgOutputPhaseNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgOutput",
+      1
+    ]
+  },
+  "upsmgOutputPhaseTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF UpsmgOutputPhaseEntry"
+    },
+    "index": null,
+    "value": [
+      "upsmgOutput",
+      2
+    ]
+  },
+  "upsmgOutputPhaseEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UpsmgOutputPhaseEntry"
+    },
+    "index": [
+      "mgoutputPhaseIndex"
+    ],
+    "value": [
+      "upsmgOutputPhaseTable",
+      1
+    ]
+  },
+  "UpsmgOutputPhaseEntry": {
+    "tp": "SEQUENCE"
+  },
+  "mgoutputPhaseIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgOutputPhaseEntry",
+      1
+    ]
+  },
+  "mgoutputVoltage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgOutputPhaseEntry",
+      2
+    ]
+  },
+  "mgoutputFrequency": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgOutputPhaseEntry",
+      3
+    ]
+  },
+  "mgoutputLoadPerPhase": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgOutputPhaseEntry",
+      4
+    ]
+  },
+  "mgoutputCurrent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgOutputPhaseEntry",
+      5
+    ]
+  },
+  "upsmgOutputOnBattery": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgOutput",
+      3
+    ]
+  },
+  "upsmgOutputOnByPass": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgOutput",
+      4
+    ]
+  },
+  "upsmgOutputUnavailableByPass": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgOutput",
+      5
+    ]
+  },
+  "upsmgOutputNoByPass": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgOutput",
+      6
+    ]
+  },
+  "upsmgOutputUtilityOff": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgOutput",
+      7
+    ]
+  },
+  "upsmgOutputOnBoost": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgOutput",
+      8
+    ]
+  },
+  "upsmgOutputInverterOff": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgOutput",
+      9
+    ]
+  },
+  "upsmgOutputOverLoad": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgOutput",
+      10
+    ]
+  },
+  "upsmgOutputOverTemp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgOutput",
+      11
+    ]
+  },
+  "upsmgOutputOnBuck": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgOutput",
+      12
+    ]
+  },
+  "upsmgEnvironAmbientTemp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgEnviron",
+      1
+    ]
+  },
+  "upsmgEnvironAmbientHumidity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgEnviron",
+      2
+    ]
+  },
+  "upsmgEnvironExtAlarmTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF UpsmgEnvironExtAlarmEntry"
+    },
+    "index": null,
+    "value": [
+      "upsmgEnviron",
+      3
+    ]
+  },
+  "upsmgEnvironExtAlarmEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UpsmgEnvironExtAlarmEntry"
+    },
+    "index": [
+      "mgalarmNum"
+    ],
+    "value": [
+      "upsmgEnvironExtAlarmTable",
+      1
+    ]
+  },
+  "UpsmgEnvironExtAlarmEntry": {
+    "tp": "SEQUENCE"
+  },
+  "mgalarmNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgEnvironExtAlarmEntry",
+      1
+    ]
+  },
+  "mgalarmState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "active",
+        "2": "inactive"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgEnvironExtAlarmEntry",
+      2
+    ]
+  },
+  "upsmgEnvironSensorNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgEnviron",
+      4
+    ]
+  },
+  "upsmgEnvironSensorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF UpsmgEnvironSensorEntry"
+    },
+    "index": null,
+    "value": [
+      "upsmgEnviron",
+      5
+    ]
+  },
+  "upsmgEnvironSensorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UpsmgEnvironSensorEntry"
+    },
+    "index": [
+      "mgsensorNum"
+    ],
+    "value": [
+      "upsmgEnvironSensorTable",
+      1
+    ]
+  },
+  "UpsmgEnvironSensorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "mgsensorNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgEnvironSensorEntry",
+      1
+    ]
+  },
+  "mgsensorTemp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgEnvironSensorEntry",
+      2
+    ]
+  },
+  "mgsensorHumidity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgEnvironSensorEntry",
+      3
+    ]
+  },
+  "upsmgEnvironmentNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgEnviron",
+      6
+    ]
+  },
+  "upsmgEnvironmentSensorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF UpsmgEnvironmentSensorEntry"
+    },
+    "index": null,
+    "value": [
+      "upsmgEnviron",
+      7
+    ]
+  },
+  "upsmgEnvironmentSensorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UpsmgEnvironmentSensorEntry"
+    },
+    "index": [
+      "upsmgEnvironmentIndex"
+    ],
+    "value": [
+      "upsmgEnvironmentSensorTable",
+      1
+    ]
+  },
+  "UpsmgEnvironmentSensorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "upsmgEnvironmentIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgEnvironmentSensorEntry",
+      1
+    ]
+  },
+  "upsmgEnvironmentComFailure": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgEnvironmentSensorEntry",
+      2
+    ]
+  },
+  "upsmgEnvironmentTemperature": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgEnvironmentSensorEntry",
+      3
+    ]
+  },
+  "upsmgEnvironmentTemperatureLow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgEnvironmentSensorEntry",
+      4
+    ]
+  },
+  "upsmgEnvironmentTemperatureHigh": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgEnvironmentSensorEntry",
+      5
+    ]
+  },
+  "upsmgEnvironmentHumidity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgEnvironmentSensorEntry",
+      6
+    ]
+  },
+  "upsmgEnvironmentHumidityLow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgEnvironmentSensorEntry",
+      7
+    ]
+  },
+  "upsmgEnvironmentHumidityHigh": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgEnvironmentSensorEntry",
+      8
+    ]
+  },
+  "upsmgEnvironmentInput1State": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "closed",
+        "2": "open"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgEnvironmentSensorEntry",
+      9
+    ]
+  },
+  "upsmgEnvironmentInput2State": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "closed",
+        "2": "open"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgEnvironmentSensorEntry",
+      10
+    ]
+  },
+  "upsmgControlReceptaclesTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF UpsmgControlReceptaclesEntry"
+    },
+    "index": null,
+    "value": [
+      "upsmgControl",
+      1
+    ]
+  },
+  "upsmgControlReceptaclesEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UpsmgControlReceptaclesEntry"
+    },
+    "index": [
+      "mgreceptacleIndexc"
+    ],
+    "value": [
+      "upsmgControlReceptaclesTable",
+      1
+    ]
+  },
+  "UpsmgControlReceptaclesEntry": {
+    "tp": "SEQUENCE"
+  },
+  "mgreceptacleIndexc": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgControlReceptaclesEntry",
+      1
+    ]
+  },
+  "mgreceptacleOnDelay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgControlReceptaclesEntry",
+      2
+    ]
+  },
+  "mgreceptacleOnCtrl": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "nothing",
+        "2": "start",
+        "3": "stop"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgControlReceptaclesEntry",
+      3
+    ]
+  },
+  "mgreceptacleOnStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "none",
+        "2": "started",
+        "3": "inprogressinups",
+        "4": "completed"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgControlReceptaclesEntry",
+      4
+    ]
+  },
+  "mgreceptacleOffDelay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgControlReceptaclesEntry",
+      5
+    ]
+  },
+  "mgreceptacleOffCtrl": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "nothing",
+        "2": "start",
+        "3": "stop"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgControlReceptaclesEntry",
+      6
+    ]
+  },
+  "mgreceptacleOffStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "none",
+        "2": "started",
+        "3": "inprogressinups",
+        "4": "completed"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgControlReceptaclesEntry",
+      7
+    ]
+  },
+  "mgreceptacleToggleDelay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgControlReceptaclesEntry",
+      8
+    ]
+  },
+  "mgreceptacleToggleCtrl": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "nothing",
+        "2": "start",
+        "3": "stop"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgControlReceptaclesEntry",
+      9
+    ]
+  },
+  "mgreceptacleToggleStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "none",
+        "2": "started",
+        "3": "inprogressinups",
+        "4": "completed"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgControlReceptaclesEntry",
+      10
+    ]
+  },
+  "mgreceptacleToggleDuration": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgControlReceptaclesEntry",
+      11
+    ]
+  },
+  "upsmgControlDayOff": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "sunday",
+        "2": "monday",
+        "3": "tuesday",
+        "4": "wednesday",
+        "5": "thursday",
+        "6": "friday",
+        "7": "saterday",
+        "8": "none"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgControl",
+      2
+    ]
+  },
+  "upsmgControlDayOn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "sunday",
+        "2": "monday",
+        "3": "tuesday",
+        "4": "wednesday",
+        "5": "thursday",
+        "6": "friday",
+        "7": "saterday",
+        "8": "none"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgControl",
+      3
+    ]
+  },
+  "upsmgTestBatterySchedule": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "weekly",
+        "3": "monthly",
+        "4": "atturnon",
+        "5": "none",
+        "6": "dayly"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgTest",
+      1
+    ]
+  },
+  "upsmgTestDiagnostics": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "default",
+        "2": "start"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgTest",
+      2
+    ]
+  },
+  "upsmgTestDiagResult": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "success",
+        "2": "failed",
+        "3": "none"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgTest",
+      3
+    ]
+  },
+  "upsmgTestBatteryCalibration": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "default",
+        "2": "start"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgTest",
+      4
+    ]
+  },
+  "upsmgTestLastCalibration": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgTest",
+      5
+    ]
+  },
+  "upsmgTestIndicators": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgTest",
+      6
+    ]
+  },
+  "upsmgTestCommandLine": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgTest",
+      7
+    ]
+  },
+  "upsmgTestCommandReady": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgTest",
+      8
+    ]
+  },
+  "upsmgTestResponseLine": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgTest",
+      9
+    ]
+  },
+  "upsmgTestResponseReady": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgTest",
+      10
+    ]
+  },
+  "upsmgTestBatteryResult": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "msuccess",
+        "2": "mfailed",
+        "3": "ssuccess",
+        "4": "sfailed",
+        "5": "none"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgTest",
+      11
+    ]
+  },
+  "upsmgAgentIpaddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "upsmgAgent",
+      1
+    ]
+  },
+  "upsmgAgentSubnetMask": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "upsmgAgent",
+      2
+    ]
+  },
+  "upsmgAgentDefGateway": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "upsmgAgent",
+      3
+    ]
+  },
+  "upsmgAgentBaudRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgAgent",
+      4
+    ]
+  },
+  "upsmgAgentPollRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgAgent",
+      5
+    ]
+  },
+  "upsmgAgentType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "deviceEth",
+        "2": "deviceTR",
+        "3": "proxyEth",
+        "4": "proxyTR",
+        "5": "other"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgAgent",
+      6
+    ]
+  },
+  "upsmgAgentTrapAlarmDelay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgAgent",
+      7
+    ]
+  },
+  "upsmgAgentTrapAlarmRetry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgAgent",
+      8
+    ]
+  },
+  "upsmgAgentReset": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "reset",
+        "2": "nothing"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgAgent",
+      9
+    ]
+  },
+  "upsmgAgentFactReset": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "reset",
+        "2": "nothing"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgAgent",
+      10
+    ]
+  },
+  "upsmgAgentMibVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgAgent",
+      11
+    ]
+  },
+  "upsmgAgentFirmwareVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "upsmgAgent",
+      12
+    ]
+  },
+  "upsmgAgentCommUPS": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgAgent",
+      13
+    ]
+  },
+  "upsmgAgentTrapAck": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgAgent",
+      14
+    ]
+  },
+  "upsmgAgentAutoLearning": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgAgent",
+      15
+    ]
+  },
+  "upsmgAgentBootP": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgAgent",
+      16
+    ]
+  },
+  "upsmgAgentTFTP": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "upsmgAgent",
+      17
+    ]
+  },
+  "upsmgAgentTrapSignature": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgAgent",
+      18
+    ]
+  },
+  "upsmgRemoteOnBattery": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "upsmgRemote",
+      1
+    ]
+  },
+  "upsmgRemoteIpAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "upsmgRemote",
+      2
+    ]
+  }
+}

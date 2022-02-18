@@ -1,0 +1,1074 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "NOTIFICATION-TYPE",
+        "mib-2",
+        "Counter32",
+        "Unsigned32",
+        "Integer32",
+        "Gauge32"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "DisplayString",
+        "PhysAddress",
+        "TruthValue",
+        "TimeStamp",
+        "VariablePointer",
+        "RowPointer"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP",
+        "NOTIFICATION-GROUP"
+      ]
+    ],
+    [
+      "IPV6-TC",
+      [
+        "Ipv6IfIndex",
+        "Ipv6Address",
+        "Ipv6AddressPrefix",
+        "Ipv6AddressIfIdentifier",
+        "Ipv6IfIndexOrZero"
+      ]
+    ]
+  ],
+  "ipv6MIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "mib-2",
+      55
+    ]
+  },
+  "ipv6MIBObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ipv6MIB",
+      1
+    ]
+  },
+  "ipv6Forwarding": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "forwarding",
+        "2": "notForwarding"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipv6MIBObjects",
+      1
+    ]
+  },
+  "ipv6DefaultHopLimit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ipv6MIBObjects",
+      2
+    ]
+  },
+  "ipv6Interfaces": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6MIBObjects",
+      3
+    ]
+  },
+  "ipv6IfTableLastChange": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "ipv6MIBObjects",
+      4
+    ]
+  },
+  "ipv6IfTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Ipv6IfEntry"
+    },
+    "index": null,
+    "value": [
+      "ipv6MIBObjects",
+      5
+    ]
+  },
+  "ipv6IfEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Ipv6IfEntry"
+    },
+    "index": [
+      "ipv6IfIndex"
+    ],
+    "value": [
+      "ipv6IfTable",
+      1
+    ]
+  },
+  "Ipv6IfEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipv6IfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Ipv6IfIndex"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfEntry",
+      1
+    ]
+  },
+  "ipv6IfDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfEntry",
+      2
+    ]
+  },
+  "ipv6IfLowerLayer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "VariablePointer"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfEntry",
+      3
+    ]
+  },
+  "ipv6IfEffectiveMtu": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfEntry",
+      4
+    ]
+  },
+  "ipv6IfReasmMaxSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfEntry",
+      5
+    ]
+  },
+  "ipv6IfIdentifier": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Ipv6AddressIfIdentifier"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfEntry",
+      6
+    ]
+  },
+  "ipv6IfIdentifierLength": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfEntry",
+      7
+    ]
+  },
+  "ipv6IfPhysicalAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PhysAddress"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfEntry",
+      8
+    ]
+  },
+  "ipv6IfAdminStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "up",
+        "2": "down"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipv6IfEntry",
+      9
+    ]
+  },
+  "ipv6IfOperStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "up",
+        "2": "down",
+        "3": "noIfIdentifier",
+        "4": "unknown",
+        "5": "notPresent"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipv6IfEntry",
+      10
+    ]
+  },
+  "ipv6IfLastChange": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfEntry",
+      11
+    ]
+  },
+  "ipv6IfStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Ipv6IfStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "ipv6MIBObjects",
+      6
+    ]
+  },
+  "ipv6IfStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Ipv6IfStatsEntry"
+    },
+    "index": "ipv6IfEntry",
+    "value": [
+      "ipv6IfStatsTable",
+      1
+    ]
+  },
+  "Ipv6IfStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipv6IfStatsInReceives": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      1
+    ]
+  },
+  "ipv6IfStatsInHdrErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      2
+    ]
+  },
+  "ipv6IfStatsInTooBigErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      3
+    ]
+  },
+  "ipv6IfStatsInNoRoutes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      4
+    ]
+  },
+  "ipv6IfStatsInAddrErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      5
+    ]
+  },
+  "ipv6IfStatsInUnknownProtos": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      6
+    ]
+  },
+  "ipv6IfStatsInTruncatedPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      7
+    ]
+  },
+  "ipv6IfStatsInDiscards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      8
+    ]
+  },
+  "ipv6IfStatsInDelivers": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      9
+    ]
+  },
+  "ipv6IfStatsOutForwDatagrams": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      10
+    ]
+  },
+  "ipv6IfStatsOutRequests": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      11
+    ]
+  },
+  "ipv6IfStatsOutDiscards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      12
+    ]
+  },
+  "ipv6IfStatsOutFragOKs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      13
+    ]
+  },
+  "ipv6IfStatsOutFragFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      14
+    ]
+  },
+  "ipv6IfStatsOutFragCreates": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      15
+    ]
+  },
+  "ipv6IfStatsReasmReqds": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      16
+    ]
+  },
+  "ipv6IfStatsReasmOKs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      17
+    ]
+  },
+  "ipv6IfStatsReasmFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      18
+    ]
+  },
+  "ipv6IfStatsInMcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      19
+    ]
+  },
+  "ipv6IfStatsOutMcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6IfStatsEntry",
+      20
+    ]
+  },
+  "ipv6AddrPrefixTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Ipv6AddrPrefixEntry"
+    },
+    "index": null,
+    "value": [
+      "ipv6MIBObjects",
+      7
+    ]
+  },
+  "ipv6AddrPrefixEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Ipv6AddrPrefixEntry"
+    },
+    "index": [
+      "ipv6IfIndex",
+      "ipv6AddrPrefix",
+      "ipv6AddrPrefixLength"
+    ],
+    "value": [
+      "ipv6AddrPrefixTable",
+      1
+    ]
+  },
+  "Ipv6AddrPrefixEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipv6AddrPrefix": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Ipv6AddressPrefix"
+    },
+    "index": null,
+    "value": [
+      "ipv6AddrPrefixEntry",
+      1
+    ]
+  },
+  "ipv6AddrPrefixLength": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ipv6AddrPrefixEntry",
+      2
+    ]
+  },
+  "ipv6AddrPrefixOnLinkFlag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ipv6AddrPrefixEntry",
+      3
+    ]
+  },
+  "ipv6AddrPrefixAutonomousFlag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ipv6AddrPrefixEntry",
+      4
+    ]
+  },
+  "ipv6AddrPrefixAdvPreferredLifetime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6AddrPrefixEntry",
+      5
+    ]
+  },
+  "ipv6AddrPrefixAdvValidLifetime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6AddrPrefixEntry",
+      6
+    ]
+  },
+  "ipv6AddrTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Ipv6AddrEntry"
+    },
+    "index": null,
+    "value": [
+      "ipv6MIBObjects",
+      8
+    ]
+  },
+  "ipv6AddrEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Ipv6AddrEntry"
+    },
+    "index": [
+      "ipv6IfIndex",
+      "ipv6AddrAddress"
+    ],
+    "value": [
+      "ipv6AddrTable",
+      1
+    ]
+  },
+  "Ipv6AddrEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipv6AddrAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Ipv6Address"
+    },
+    "index": null,
+    "value": [
+      "ipv6AddrEntry",
+      1
+    ]
+  },
+  "ipv6AddrPfxLength": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ipv6AddrEntry",
+      2
+    ]
+  },
+  "ipv6AddrType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "stateless",
+        "2": "stateful",
+        "3": "unknown"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipv6AddrEntry",
+      3
+    ]
+  },
+  "ipv6AddrAnycastFlag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ipv6AddrEntry",
+      4
+    ]
+  },
+  "ipv6AddrStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "preferred",
+        "2": "deprecated",
+        "3": "invalid",
+        "4": "inaccessible",
+        "5": "unknown"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipv6AddrEntry",
+      5
+    ]
+  },
+  "ipv6RouteNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "ipv6MIBObjects",
+      9
+    ]
+  },
+  "ipv6DiscardedRoutes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipv6MIBObjects",
+      10
+    ]
+  },
+  "ipv6RouteTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Ipv6RouteEntry"
+    },
+    "index": null,
+    "value": [
+      "ipv6MIBObjects",
+      11
+    ]
+  },
+  "ipv6RouteEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Ipv6RouteEntry"
+    },
+    "index": [
+      "ipv6RouteDest",
+      "ipv6RoutePfxLength",
+      "ipv6RouteIndex"
+    ],
+    "value": [
+      "ipv6RouteTable",
+      1
+    ]
+  },
+  "Ipv6RouteEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipv6RouteDest": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Ipv6Address"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouteEntry",
+      1
+    ]
+  },
+  "ipv6RoutePfxLength": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouteEntry",
+      2
+    ]
+  },
+  "ipv6RouteIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouteEntry",
+      3
+    ]
+  },
+  "ipv6RouteIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Ipv6IfIndexOrZero"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouteEntry",
+      4
+    ]
+  },
+  "ipv6RouteNextHop": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Ipv6Address"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouteEntry",
+      5
+    ]
+  },
+  "ipv6RouteType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "discard",
+        "3": "local",
+        "4": "remote"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipv6RouteEntry",
+      6
+    ]
+  },
+  "ipv6RouteProtocol": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "local",
+        "3": "netmgmt",
+        "4": "ndisc",
+        "5": "rip",
+        "6": "ospf",
+        "7": "bgp",
+        "8": "idrp",
+        "9": "igrp"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipv6RouteEntry",
+      7
+    ]
+  },
+  "ipv6RoutePolicy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouteEntry",
+      8
+    ]
+  },
+  "ipv6RouteAge": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouteEntry",
+      9
+    ]
+  },
+  "ipv6RouteNextHopRDI": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouteEntry",
+      10
+    ]
+  },
+  "ipv6RouteMetric": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouteEntry",
+      11
+    ]
+  },
+  "ipv6RouteWeight": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouteEntry",
+      12
+    ]
+  },
+  "ipv6RouteInfo": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowPointer"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouteEntry",
+      13
+    ]
+  },
+  "ipv6RouteValid": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ipv6RouteEntry",
+      14
+    ]
+  },
+  "ipv6NetToMediaTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Ipv6NetToMediaEntry"
+    },
+    "index": null,
+    "value": [
+      "ipv6MIBObjects",
+      12
+    ]
+  },
+  "ipv6NetToMediaEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Ipv6NetToMediaEntry"
+    },
+    "index": [
+      "ipv6IfIndex",
+      "ipv6NetToMediaNetAddress"
+    ],
+    "value": [
+      "ipv6NetToMediaTable",
+      1
+    ]
+  },
+  "Ipv6NetToMediaEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipv6NetToMediaNetAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Ipv6Address"
+    },
+    "index": null,
+    "value": [
+      "ipv6NetToMediaEntry",
+      1
+    ]
+  },
+  "ipv6NetToMediaPhysAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PhysAddress"
+    },
+    "index": null,
+    "value": [
+      "ipv6NetToMediaEntry",
+      2
+    ]
+  },
+  "ipv6NetToMediaType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "dynamic",
+        "3": "static",
+        "4": "local"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipv6NetToMediaEntry",
+      3
+    ]
+  },
+  "ipv6IfNetToMediaState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "reachable",
+        "2": "stale",
+        "3": "delay",
+        "4": "probe",
+        "5": "invalid",
+        "6": "unknown"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipv6NetToMediaEntry",
+      4
+    ]
+  },
+  "ipv6IfNetToMediaLastUpdated": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "ipv6NetToMediaEntry",
+      5
+    ]
+  },
+  "ipv6NetToMediaValid": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ipv6NetToMediaEntry",
+      6
+    ]
+  },
+  "ipv6Notifications": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ipv6MIB",
+      2
+    ]
+  },
+  "ipv6NotificationPrefix": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ipv6Notifications",
+      0
+    ]
+  },
+  "ipv6Conformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ipv6MIB",
+      3
+    ]
+  },
+  "ipv6Compliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ipv6Conformance",
+      1
+    ]
+  },
+  "ipv6Groups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ipv6Conformance",
+      2
+    ]
+  },
+  "ipv6GeneralGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipv6Groups",
+      1
+    ]
+  }
+}

@@ -1,0 +1,1966 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Counter64",
+        "Unsigned32",
+        "IpAddress"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION",
+        "DisplayString",
+        "MacAddress",
+        "TruthValue"
+      ]
+    ],
+    [
+      "CISCO-SMI",
+      [
+        "ciscoPibToMib"
+      ]
+    ]
+  ],
+  "ciscoQosPIBMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "ciscoPibToMib",
+      1
+    ]
+  },
+  "Dscp": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "display_hint": null
+  },
+  "QosLayer2Cos": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "display_hint": null
+  },
+  "QueueRange": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "oneQ",
+        "2": "twoQ",
+        "3": "threeQ",
+        "4": "fourQ",
+        "8": "eightQ",
+        "16": "sixteenQ",
+        "32": "thirtyTwoQ",
+        "64": "sixtyFourQ"
+      }
+    },
+    "display_hint": null
+  },
+  "ThresholdSetRange": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "zeroT",
+        "1": "oneT",
+        "2": "twoT",
+        "4": "fourT",
+        "8": "eightT"
+      }
+    },
+    "display_hint": null
+  },
+  "Percent": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "display_hint": null
+  },
+  "QosInterfaceQueueType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "oneQ1t",
+        "2": "oneQ2t",
+        "3": "oneQ4t",
+        "4": "oneQ8t",
+        "5": "twoQ1t",
+        "6": "twoQ2t",
+        "7": "twoQ4t",
+        "8": "twoQ8t",
+        "9": "threeQ1t",
+        "10": "threeQ2t",
+        "11": "threeQ4t",
+        "12": "threeQ8t",
+        "13": "fourQ1t",
+        "14": "fourQ2t",
+        "15": "fourQ4t",
+        "16": "fourQ8t",
+        "17": "eightQ1t",
+        "18": "eightQ2t",
+        "19": "eightQ4t",
+        "20": "eightQ8t",
+        "21": "sixteenQ1t",
+        "22": "sixteenQ2t",
+        "23": "sixteenQ4t",
+        "24": "sixtyfourQ1t",
+        "25": "sixtyfourQ2t",
+        "26": "sixtyfourQ4t",
+        "27": "oneP1Q0t",
+        "28": "oneP1Q4t",
+        "29": "oneP1Q8t",
+        "30": "oneP2Q1t",
+        "31": "oneP2Q2t",
+        "32": "oneP3Q1t",
+        "33": "oneP7Q8t",
+        "34": "oneP3Q8t",
+        "35": "sixteenQ8t",
+        "36": "oneP15Q8t",
+        "37": "oneP15Q1t",
+        "38": "oneP7Q1t",
+        "39": "oneP31Q1t",
+        "40": "thirtytwoQ1t",
+        "41": "thirtytwoQ8t",
+        "42": "oneP31Q8t",
+        "43": "oneP7Q4t",
+        "44": "oneP3Q4t",
+        "45": "oneP7Q2t"
+      }
+    },
+    "display_hint": null
+  },
+  "QosInterfaceTypeCapabilities": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "BITS",
+      "values": {
+        "0": "unspecified",
+        "1": "inputL2Classification",
+        "2": "inputIpClassification",
+        "3": "outputL2Classification",
+        "4": "outputIpClassification",
+        "19": "inputPortClassification",
+        "20": "outputPortClassification",
+        "5": "inputUflowPolicing",
+        "6": "inputAggregatePolicing",
+        "7": "outputUflowPolicing",
+        "8": "outputAggregatePolicing",
+        "9": "policeByMarkingDown",
+        "10": "policeByDropping",
+        "21": "inputUflowShaping",
+        "22": "inputAggregateShaping",
+        "23": "outputUflowShaping",
+        "24": "outputAggregateShaping",
+        "11": "fifo",
+        "12": "wrr",
+        "13": "wfq",
+        "14": "cq",
+        "15": "pq",
+        "16": "cbwfq",
+        "25": "pqWrr",
+        "26": "pqCbwfq",
+        "17": "tailDrop",
+        "18": "wred"
+      }
+    },
+    "display_hint": null
+  },
+  "RoleCombination": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "PolicyInstanceId": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "display_hint": null
+  },
+  "Unsigned64": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "display_hint": null
+  },
+  "qosPIBConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoQosPIBMIB",
+      1
+    ]
+  },
+  "qosDeviceConfig": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoQosPIBMIB",
+      2
+    ]
+  },
+  "qosDevicePibIncarnationTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF QosDevicePibIncarnationEntry"
+    },
+    "index": null,
+    "value": [
+      "qosDeviceConfig",
+      1
+    ]
+  },
+  "qosDevicePibIncarnationEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosDevicePibIncarnationEntry"
+    },
+    "index": [
+      "qosDeviceIncarnationId"
+    ],
+    "value": [
+      "qosDevicePibIncarnationTable",
+      1
+    ]
+  },
+  "QosDevicePibIncarnationEntry": {
+    "tp": "SEQUENCE"
+  },
+  "qosDeviceIncarnationId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosDevicePibIncarnationEntry",
+      1
+    ]
+  },
+  "qosDevicePdpName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "qosDevicePibIncarnationEntry",
+      2
+    ]
+  },
+  "qosDevicePibIncarnation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "qosDevicePibIncarnationEntry",
+      3
+    ]
+  },
+  "qosDevicePibTtl": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "qosDevicePibIncarnationEntry",
+      4
+    ]
+  },
+  "qosDeviceAttributeTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF QosDeviceAttributeEntry"
+    },
+    "index": null,
+    "value": [
+      "qosDeviceConfig",
+      2
+    ]
+  },
+  "qosDeviceAttributeEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosDeviceAttributeEntry"
+    },
+    "index": [
+      "qosDeviceAttributeId"
+    ],
+    "value": [
+      "qosDeviceAttributeTable",
+      1
+    ]
+  },
+  "QosDeviceAttributeEntry": {
+    "tp": "SEQUENCE"
+  },
+  "qosDeviceAttributeId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosDeviceAttributeEntry",
+      1
+    ]
+  },
+  "qosDevicePepDomain": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "qosDeviceAttributeEntry",
+      2
+    ]
+  },
+  "qosDevicePrimaryPdp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "qosDeviceAttributeEntry",
+      3
+    ]
+  },
+  "qosDeviceSecondaryPdp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "qosDeviceAttributeEntry",
+      4
+    ]
+  },
+  "qosDeviceMaxMessageSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "qosDeviceAttributeEntry",
+      5
+    ]
+  },
+  "qosDeviceCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BITS",
+      "values": {
+        "0": "unspecified",
+        "1": "layer2Cos",
+        "2": "ipPrecedence",
+        "3": "dscp"
+      }
+    },
+    "index": null,
+    "value": [
+      "qosDeviceAttributeEntry",
+      6
+    ]
+  },
+  "qosInterfaceTypeTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF QosInterfaceTypeEntry"
+    },
+    "index": null,
+    "value": [
+      "qosDeviceConfig",
+      3
+    ]
+  },
+  "qosInterfaceTypeEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosInterfaceTypeEntry"
+    },
+    "index": [
+      "qosInterfaceTypeId"
+    ],
+    "value": [
+      "qosInterfaceTypeTable",
+      1
+    ]
+  },
+  "QosInterfaceTypeEntry": {
+    "tp": "SEQUENCE"
+  },
+  "qosInterfaceTypeId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosInterfaceTypeEntry",
+      1
+    ]
+  },
+  "qosInterfaceQueueType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosInterfaceQueueType"
+    },
+    "index": null,
+    "value": [
+      "qosInterfaceTypeEntry",
+      2
+    ]
+  },
+  "qosInterfaceTypeRoles": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RoleCombination"
+    },
+    "index": null,
+    "value": [
+      "qosInterfaceTypeEntry",
+      3
+    ]
+  },
+  "qosInterfaceTypeCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosInterfaceTypeCapabilities"
+    },
+    "index": null,
+    "value": [
+      "qosInterfaceTypeEntry",
+      4
+    ]
+  },
+  "qosDomainConfig": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoQosPIBMIB",
+      3
+    ]
+  },
+  "qosDiffServMappingTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF QosDiffServMappingEntry"
+    },
+    "index": null,
+    "value": [
+      "qosDomainConfig",
+      1
+    ]
+  },
+  "qosDiffServMappingEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosDiffServMappingEntry"
+    },
+    "index": [
+      "qosDscp"
+    ],
+    "value": [
+      "qosDiffServMappingTable",
+      1
+    ]
+  },
+  "QosDiffServMappingEntry": {
+    "tp": "SEQUENCE"
+  },
+  "qosDscp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dscp"
+    },
+    "index": null,
+    "value": [
+      "qosDiffServMappingEntry",
+      1
+    ]
+  },
+  "qosMarkedDscp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dscp"
+    },
+    "index": null,
+    "value": [
+      "qosDiffServMappingEntry",
+      2
+    ]
+  },
+  "qosL2Cos": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosLayer2Cos"
+    },
+    "index": null,
+    "value": [
+      "qosDiffServMappingEntry",
+      3
+    ]
+  },
+  "qosCosToDscpTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF QosCosToDscpEntry"
+    },
+    "index": null,
+    "value": [
+      "qosDomainConfig",
+      2
+    ]
+  },
+  "qosCosToDscpEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosCosToDscpEntry"
+    },
+    "index": [
+      "qosCosToDscpCos"
+    ],
+    "value": [
+      "qosCosToDscpTable",
+      1
+    ]
+  },
+  "QosCosToDscpEntry": {
+    "tp": "SEQUENCE"
+  },
+  "qosCosToDscpCos": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosLayer2Cos"
+    },
+    "index": null,
+    "value": [
+      "qosCosToDscpEntry",
+      1
+    ]
+  },
+  "qosCosToDscpDscp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dscp"
+    },
+    "index": null,
+    "value": [
+      "qosCosToDscpEntry",
+      2
+    ]
+  },
+  "qosUnmatchedPolicy": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoQosPIBMIB",
+      4
+    ]
+  },
+  "qosUnmatchedPolicyTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF QosUnmatchedPolicyEntry"
+    },
+    "index": null,
+    "value": [
+      "qosUnmatchedPolicy",
+      1
+    ]
+  },
+  "qosUnmatchedPolicyEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosUnmatchedPolicyEntry"
+    },
+    "index": [
+      "qosUnmatchedPolicyId"
+    ],
+    "value": [
+      "qosUnmatchedPolicyTable",
+      1
+    ]
+  },
+  "QosUnmatchedPolicyEntry": {
+    "tp": "SEQUENCE"
+  },
+  "qosUnmatchedPolicyId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosUnmatchedPolicyEntry",
+      1
+    ]
+  },
+  "qosUnmatchedPolicyRole": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RoleCombination"
+    },
+    "index": null,
+    "value": [
+      "qosUnmatchedPolicyEntry",
+      2
+    ]
+  },
+  "qosUnmatchedPolicyDirection": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "in",
+        "1": "out"
+      }
+    },
+    "index": null,
+    "value": [
+      "qosUnmatchedPolicyEntry",
+      3
+    ]
+  },
+  "qosUnmatchedPolicyDscp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dscp"
+    },
+    "index": null,
+    "value": [
+      "qosUnmatchedPolicyEntry",
+      4
+    ]
+  },
+  "qosUnmatchedPolicyDscpTrusted": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "qosUnmatchedPolicyEntry",
+      5
+    ]
+  },
+  "qosUnmatchPolMicroFlowPolicerId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosUnmatchedPolicyEntry",
+      6
+    ]
+  },
+  "qosUnmatchedPolicyAggregateId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosUnmatchedPolicyEntry",
+      7
+    ]
+  },
+  "qosPolicer": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoQosPIBMIB",
+      5
+    ]
+  },
+  "qosPolicerTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF QosPolicerEntry"
+    },
+    "index": null,
+    "value": [
+      "qosPolicer",
+      1
+    ]
+  },
+  "qosPolicerEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosPolicerEntry"
+    },
+    "index": [
+      "qosPolicerId"
+    ],
+    "value": [
+      "qosPolicerTable",
+      1
+    ]
+  },
+  "QosPolicerEntry": {
+    "tp": "SEQUENCE"
+  },
+  "qosPolicerId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosPolicerEntry",
+      1
+    ]
+  },
+  "qosPolicerRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned64"
+    },
+    "index": null,
+    "value": [
+      "qosPolicerEntry",
+      2
+    ]
+  },
+  "qosPolicerNormalBurst": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "qosPolicerEntry",
+      3
+    ]
+  },
+  "qosPolicerExcessBurst": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "qosPolicerEntry",
+      4
+    ]
+  },
+  "qosPolicerAction": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "drop",
+        "1": "mark",
+        "2": "shape"
+      }
+    },
+    "index": null,
+    "value": [
+      "qosPolicerEntry",
+      5
+    ]
+  },
+  "qosAggregateTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF QosAggregateEntry"
+    },
+    "index": null,
+    "value": [
+      "qosPolicer",
+      2
+    ]
+  },
+  "qosAggregateEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosAggregateEntry"
+    },
+    "index": [
+      "qosAggregateId"
+    ],
+    "value": [
+      "qosAggregateTable",
+      1
+    ]
+  },
+  "QosAggregateEntry": {
+    "tp": "SEQUENCE"
+  },
+  "qosAggregateId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosAggregateEntry",
+      1
+    ]
+  },
+  "qosAggregatePolicerId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosAggregateEntry",
+      2
+    ]
+  },
+  "qosMacQos": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoQosPIBMIB",
+      6
+    ]
+  },
+  "qosMacClassificationTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF QosMacClassificationEntry"
+    },
+    "index": null,
+    "value": [
+      "qosMacQos",
+      1
+    ]
+  },
+  "qosMacClassificationEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosMacClassificationEntry"
+    },
+    "index": [
+      "qosMacClassificationId"
+    ],
+    "value": [
+      "qosMacClassificationTable",
+      1
+    ]
+  },
+  "QosMacClassificationEntry": {
+    "tp": "SEQUENCE"
+  },
+  "qosMacClassificationId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosMacClassificationEntry",
+      1
+    ]
+  },
+  "qosDstMacVlan": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "qosMacClassificationEntry",
+      2
+    ]
+  },
+  "qosDstMacAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "qosMacClassificationEntry",
+      3
+    ]
+  },
+  "qosDstMacCos": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosLayer2Cos"
+    },
+    "index": null,
+    "value": [
+      "qosMacClassificationEntry",
+      4
+    ]
+  },
+  "qosIpQos": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoQosPIBMIB",
+      7
+    ]
+  },
+  "qosIpAceTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF QosIpAceEntry"
+    },
+    "index": null,
+    "value": [
+      "qosIpQos",
+      1
+    ]
+  },
+  "qosIpAceEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosIpAceEntry"
+    },
+    "index": [
+      "qosIpAceId"
+    ],
+    "value": [
+      "qosIpAceTable",
+      1
+    ]
+  },
+  "QosIpAceEntry": {
+    "tp": "SEQUENCE"
+  },
+  "qosIpAceId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosIpAceEntry",
+      1
+    ]
+  },
+  "qosIpAceDstAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "qosIpAceEntry",
+      2
+    ]
+  },
+  "qosIpAceDstAddrMask": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "qosIpAceEntry",
+      3
+    ]
+  },
+  "qosIpAceSrcAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "qosIpAceEntry",
+      4
+    ]
+  },
+  "qosIpAceSrcAddrMask": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "qosIpAceEntry",
+      5
+    ]
+  },
+  "qosIpAceDscpMin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dscp"
+    },
+    "index": null,
+    "value": [
+      "qosIpAceEntry",
+      6
+    ]
+  },
+  "qosIpAceDscpMax": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dscp"
+    },
+    "index": null,
+    "value": [
+      "qosIpAceEntry",
+      7
+    ]
+  },
+  "qosIpAceProtocol": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "qosIpAceEntry",
+      8
+    ]
+  },
+  "qosIpAceDstL4PortMin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "qosIpAceEntry",
+      9
+    ]
+  },
+  "qosIpAceDstL4PortMax": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "qosIpAceEntry",
+      10
+    ]
+  },
+  "qosIpAceSrcL4PortMin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "qosIpAceEntry",
+      11
+    ]
+  },
+  "qosIpAceSrcL4PortMax": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "qosIpAceEntry",
+      12
+    ]
+  },
+  "qosIpAcePermit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "qosIpAceEntry",
+      13
+    ]
+  },
+  "qosIpAclDefinitionTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF QosIpAclDefinitionEntry"
+    },
+    "index": null,
+    "value": [
+      "qosIpQos",
+      2
+    ]
+  },
+  "qosIpAclDefinitionEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosIpAclDefinitionEntry"
+    },
+    "index": [
+      "qosIpAclDefinitionId"
+    ],
+    "value": [
+      "qosIpAclDefinitionTable",
+      1
+    ]
+  },
+  "QosIpAclDefinitionEntry": {
+    "tp": "SEQUENCE"
+  },
+  "qosIpAclDefinitionId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosIpAclDefinitionEntry",
+      1
+    ]
+  },
+  "qosIpAclId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosIpAclDefinitionEntry",
+      2
+    ]
+  },
+  "qosIpAceOrder": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "qosIpAclDefinitionEntry",
+      3
+    ]
+  },
+  "qosIpAclDefAceId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosIpAclDefinitionEntry",
+      4
+    ]
+  },
+  "qosIpAclActionTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF QosIpAclActionEntry"
+    },
+    "index": null,
+    "value": [
+      "qosIpQos",
+      3
+    ]
+  },
+  "qosIpAclActionEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosIpAclActionEntry"
+    },
+    "index": [
+      "qosIpAclActionId"
+    ],
+    "value": [
+      "qosIpAclActionTable",
+      1
+    ]
+  },
+  "QosIpAclActionEntry": {
+    "tp": "SEQUENCE"
+  },
+  "qosIpAclActionId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosIpAclActionEntry",
+      1
+    ]
+  },
+  "qosIpAclActAclId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosIpAclActionEntry",
+      2
+    ]
+  },
+  "qosIpAclInterfaceRoles": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RoleCombination"
+    },
+    "index": null,
+    "value": [
+      "qosIpAclActionEntry",
+      3
+    ]
+  },
+  "qosIpAclInterfaceDirection": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "in",
+        "1": "out"
+      }
+    },
+    "index": null,
+    "value": [
+      "qosIpAclActionEntry",
+      4
+    ]
+  },
+  "qosIpAclOrder": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "qosIpAclActionEntry",
+      5
+    ]
+  },
+  "qosIpAclDscp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dscp"
+    },
+    "index": null,
+    "value": [
+      "qosIpAclActionEntry",
+      6
+    ]
+  },
+  "qosIpAclDscpTrusted": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "qosIpAclActionEntry",
+      7
+    ]
+  },
+  "qosIpAclMicroFlowPolicerId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosIpAclActionEntry",
+      8
+    ]
+  },
+  "qosIpAclAggregateId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosIpAclActionEntry",
+      9
+    ]
+  },
+  "qosIfParameters": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoQosPIBMIB",
+      8
+    ]
+  },
+  "qosIfSchedulingPreferencesTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF QosIfSchedulingPreferenceEntry"
+    },
+    "index": null,
+    "value": [
+      "qosIfParameters",
+      1
+    ]
+  },
+  "qosIfSchedulingPreferenceEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosIfSchedulingPreferenceEntry"
+    },
+    "index": [
+      "qosIfSchedulingPreferenceId"
+    ],
+    "value": [
+      "qosIfSchedulingPreferencesTable",
+      1
+    ]
+  },
+  "QosIfSchedulingPreferenceEntry": {
+    "tp": "SEQUENCE"
+  },
+  "qosIfSchedulingPreferenceId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosIfSchedulingPreferenceEntry",
+      1
+    ]
+  },
+  "qosIfSchedulingRoles": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RoleCombination"
+    },
+    "index": null,
+    "value": [
+      "qosIfSchedulingPreferenceEntry",
+      2
+    ]
+  },
+  "qosIfSchedulingPreference": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "qosIfSchedulingPreferenceEntry",
+      3
+    ]
+  },
+  "qosIfSchedulingDiscipline": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "weightedFairQueueing",
+        "2": "weightedRoundRobin",
+        "3": "customQueueing",
+        "4": "priorityQueueing",
+        "5": "classBasedWFQ",
+        "6": "fifo",
+        "7": "pqWrr",
+        "8": "pqCbwfq"
+      }
+    },
+    "index": null,
+    "value": [
+      "qosIfSchedulingPreferenceEntry",
+      4
+    ]
+  },
+  "qosIfSchedulingQueueType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosInterfaceQueueType"
+    },
+    "index": null,
+    "value": [
+      "qosIfSchedulingPreferenceEntry",
+      5
+    ]
+  },
+  "qosIfDropPreferenceTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF QosIfDropPreferenceEntry"
+    },
+    "index": null,
+    "value": [
+      "qosIfParameters",
+      2
+    ]
+  },
+  "qosIfDropPreferenceEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosIfDropPreferenceEntry"
+    },
+    "index": [
+      "qosIfDropPreferenceId"
+    ],
+    "value": [
+      "qosIfDropPreferenceTable",
+      1
+    ]
+  },
+  "QosIfDropPreferenceEntry": {
+    "tp": "SEQUENCE"
+  },
+  "qosIfDropPreferenceId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosIfDropPreferenceEntry",
+      1
+    ]
+  },
+  "qosIfDropRoles": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RoleCombination"
+    },
+    "index": null,
+    "value": [
+      "qosIfDropPreferenceEntry",
+      2
+    ]
+  },
+  "qosIfDropPreference": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "qosIfDropPreferenceEntry",
+      3
+    ]
+  },
+  "qosIfDropDiscipline": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "qosIfDropWRED",
+        "2": "qosIfDropTailDrop"
+      }
+    },
+    "index": null,
+    "value": [
+      "qosIfDropPreferenceEntry",
+      4
+    ]
+  },
+  "qosIfDscpAssignmentTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF QosIfDscpAssignmentEntry"
+    },
+    "index": null,
+    "value": [
+      "qosIfParameters",
+      3
+    ]
+  },
+  "qosIfDscpAssignmentEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosIfDscpAssignmentEntry"
+    },
+    "index": [
+      "qosIfDscpAssignmentId"
+    ],
+    "value": [
+      "qosIfDscpAssignmentTable",
+      1
+    ]
+  },
+  "QosIfDscpAssignmentEntry": {
+    "tp": "SEQUENCE"
+  },
+  "qosIfDscpAssignmentId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosIfDscpAssignmentEntry",
+      1
+    ]
+  },
+  "qosIfDscpRoles": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RoleCombination"
+    },
+    "index": null,
+    "value": [
+      "qosIfDscpAssignmentEntry",
+      2
+    ]
+  },
+  "qosIfQueueType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosInterfaceQueueType"
+    },
+    "index": null,
+    "value": [
+      "qosIfDscpAssignmentEntry",
+      3
+    ]
+  },
+  "qosIfDscp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dscp"
+    },
+    "index": null,
+    "value": [
+      "qosIfDscpAssignmentEntry",
+      4
+    ]
+  },
+  "qosIfQueue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "qosIfDscpAssignmentEntry",
+      5
+    ]
+  },
+  "qosIfThresholdSet": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "qosIfDscpAssignmentEntry",
+      6
+    ]
+  },
+  "qosIfRedTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF QosIfRedEntry"
+    },
+    "index": null,
+    "value": [
+      "qosIfParameters",
+      4
+    ]
+  },
+  "qosIfRedEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosIfRedEntry"
+    },
+    "index": [
+      "qosIfRedId"
+    ],
+    "value": [
+      "qosIfRedTable",
+      1
+    ]
+  },
+  "QosIfRedEntry": {
+    "tp": "SEQUENCE"
+  },
+  "qosIfRedId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosIfRedEntry",
+      1
+    ]
+  },
+  "qosIfRedRoles": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RoleCombination"
+    },
+    "index": null,
+    "value": [
+      "qosIfRedEntry",
+      2
+    ]
+  },
+  "qosIfRedNumThresholdSets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ThresholdSetRange"
+    },
+    "index": null,
+    "value": [
+      "qosIfRedEntry",
+      3
+    ]
+  },
+  "qosIfRedThresholdSet": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "qosIfRedEntry",
+      4
+    ]
+  },
+  "qosIfRedThresholdSetLower": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Percent"
+    },
+    "index": null,
+    "value": [
+      "qosIfRedEntry",
+      5
+    ]
+  },
+  "qosIfRedThresholdSetUpper": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Percent"
+    },
+    "index": null,
+    "value": [
+      "qosIfRedEntry",
+      6
+    ]
+  },
+  "qosIfTailDropTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF QosIfTailDropEntry"
+    },
+    "index": null,
+    "value": [
+      "qosIfParameters",
+      5
+    ]
+  },
+  "qosIfTailDropEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosIfTailDropEntry"
+    },
+    "index": [
+      "qosIfTailDropId"
+    ],
+    "value": [
+      "qosIfTailDropTable",
+      1
+    ]
+  },
+  "QosIfTailDropEntry": {
+    "tp": "SEQUENCE"
+  },
+  "qosIfTailDropId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosIfTailDropEntry",
+      1
+    ]
+  },
+  "qosIfTailDropRoles": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RoleCombination"
+    },
+    "index": null,
+    "value": [
+      "qosIfTailDropEntry",
+      2
+    ]
+  },
+  "qosIfTailDropNumThresholdSets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ThresholdSetRange"
+    },
+    "index": null,
+    "value": [
+      "qosIfTailDropEntry",
+      3
+    ]
+  },
+  "qosIfTailDropThresholdSet": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "qosIfTailDropEntry",
+      4
+    ]
+  },
+  "qosIfTailDropThresholdSetValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Percent"
+    },
+    "index": null,
+    "value": [
+      "qosIfTailDropEntry",
+      5
+    ]
+  },
+  "qosIfWeightsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF QosIfWeightsEntry"
+    },
+    "index": null,
+    "value": [
+      "qosIfParameters",
+      6
+    ]
+  },
+  "qosIfWeightsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QosIfWeightsEntry"
+    },
+    "index": [
+      "qosIfWeightsId"
+    ],
+    "value": [
+      "qosIfWeightsTable",
+      1
+    ]
+  },
+  "QosIfWeightsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "qosIfWeightsId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PolicyInstanceId"
+    },
+    "index": null,
+    "value": [
+      "qosIfWeightsEntry",
+      1
+    ]
+  },
+  "qosIfWeightsRoles": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RoleCombination"
+    },
+    "index": null,
+    "value": [
+      "qosIfWeightsEntry",
+      2
+    ]
+  },
+  "qosIfWeightsNumQueues": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "QueueRange"
+    },
+    "index": null,
+    "value": [
+      "qosIfWeightsEntry",
+      3
+    ]
+  },
+  "qosIfWeightsQueue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "qosIfWeightsEntry",
+      4
+    ]
+  },
+  "qosIfWeightsDrainSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "qosIfWeightsEntry",
+      5
+    ]
+  },
+  "qosIfWeightsQueueSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "qosIfWeightsEntry",
+      6
+    ]
+  },
+  "qosPIBCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "qosPIBConformance",
+      1
+    ]
+  },
+  "qosPIBGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "qosPIBConformance",
+      2
+    ]
+  },
+  "qosDevicePibIncarnationTableGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "qosPIBGroups",
+      1
+    ]
+  },
+  "qosDeviceAttributeTableGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "qosPIBGroups",
+      2
+    ]
+  },
+  "qosInterfaceTypeTableGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "qosPIBGroups",
+      3
+    ]
+  },
+  "qosDiffServMappingTableGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "qosPIBGroups",
+      4
+    ]
+  },
+  "qosCosToDscpTableGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "qosPIBGroups",
+      5
+    ]
+  },
+  "qosUnmatchedPolicyTableGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "qosPIBGroups",
+      6
+    ]
+  },
+  "qosPolicerTableGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "qosPIBGroups",
+      7
+    ]
+  },
+  "qosAggregateTableGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "qosPIBGroups",
+      8
+    ]
+  },
+  "qosMacClassificationTableGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "qosPIBGroups",
+      9
+    ]
+  },
+  "qosIpAceTableGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "qosPIBGroups",
+      10
+    ]
+  },
+  "qosIpAclDefinitionTableGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "qosPIBGroups",
+      11
+    ]
+  },
+  "qosIpAclActionTableGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "qosPIBGroups",
+      12
+    ]
+  },
+  "qosIfSchedulingPreferencesTableGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "qosPIBGroups",
+      13
+    ]
+  },
+  "qosIfDropPreferenceTableGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "qosPIBGroups",
+      14
+    ]
+  },
+  "qosIfDscpAssignmentTableGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "qosPIBGroups",
+      15
+    ]
+  },
+  "qosIfRedTableGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "qosPIBGroups",
+      16
+    ]
+  },
+  "qosIfTailDropTableGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "qosPIBGroups",
+      17
+    ]
+  },
+  "qosIfWeightsTableGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "qosPIBGroups",
+      18
+    ]
+  }
+}

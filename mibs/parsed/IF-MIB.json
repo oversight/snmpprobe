@@ -1,0 +1,990 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Counter32",
+        "Gauge32",
+        "Counter64",
+        "Integer32",
+        "TimeTicks",
+        "mib-2",
+        "NOTIFICATION-TYPE"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION",
+        "DisplayString",
+        "PhysAddress",
+        "TruthValue",
+        "RowStatus",
+        "TimeStamp",
+        "AutonomousType",
+        "TestAndIncr"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP",
+        "NOTIFICATION-GROUP"
+      ]
+    ],
+    [
+      "SNMPv2-MIB",
+      [
+        "snmpTraps"
+      ]
+    ],
+    [
+      "IANAifType-MIB",
+      [
+        "IANAifType"
+      ]
+    ]
+  ],
+  "ifMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "mib-2",
+      31
+    ]
+  },
+  "ifMIBObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ifMIB",
+      1
+    ]
+  },
+  "interfaces": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "mib-2",
+      2
+    ]
+  },
+  "OwnerString": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": "255a"
+  },
+  "InterfaceIndex": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": "d"
+  },
+  "InterfaceIndexOrZero": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": "d"
+  },
+  "ifNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "interfaces",
+      1
+    ]
+  },
+  "ifTableLastChange": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "ifMIBObjects",
+      5
+    ]
+  },
+  "ifTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF IfEntry"
+    },
+    "index": null,
+    "value": [
+      "interfaces",
+      2
+    ]
+  },
+  "ifEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IfEntry"
+    },
+    "index": [
+      "ifIndex"
+    ],
+    "value": [
+      "ifTable",
+      1
+    ]
+  },
+  "IfEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ifIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InterfaceIndex"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      1
+    ]
+  },
+  "ifDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      2
+    ]
+  },
+  "ifType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IANAifType"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      3
+    ]
+  },
+  "ifMtu": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      4
+    ]
+  },
+  "ifSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      5
+    ]
+  },
+  "ifPhysAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PhysAddress"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      6
+    ]
+  },
+  "ifAdminStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "up",
+        "2": "down",
+        "3": "testing"
+      }
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      7
+    ]
+  },
+  "ifOperStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "up",
+        "2": "down",
+        "3": "testing",
+        "4": "unknown",
+        "5": "dormant",
+        "6": "notPresent",
+        "7": "lowerLayerDown"
+      }
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      8
+    ]
+  },
+  "ifLastChange": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      9
+    ]
+  },
+  "ifInOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      10
+    ]
+  },
+  "ifInUcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      11
+    ]
+  },
+  "ifInNUcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      12
+    ]
+  },
+  "ifInDiscards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      13
+    ]
+  },
+  "ifInErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      14
+    ]
+  },
+  "ifInUnknownProtos": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      15
+    ]
+  },
+  "ifOutOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      16
+    ]
+  },
+  "ifOutUcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      17
+    ]
+  },
+  "ifOutNUcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      18
+    ]
+  },
+  "ifOutDiscards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      19
+    ]
+  },
+  "ifOutErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      20
+    ]
+  },
+  "ifOutQLen": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      21
+    ]
+  },
+  "ifSpecific": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "ifEntry",
+      22
+    ]
+  },
+  "ifXTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF IfXEntry"
+    },
+    "index": null,
+    "value": [
+      "ifMIBObjects",
+      1
+    ]
+  },
+  "ifXEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IfXEntry"
+    },
+    "index": "ifEntry",
+    "value": [
+      "ifXTable",
+      1
+    ]
+  },
+  "IfXEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ifName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ifXEntry",
+      1
+    ]
+  },
+  "ifInMulticastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ifXEntry",
+      2
+    ]
+  },
+  "ifInBroadcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ifXEntry",
+      3
+    ]
+  },
+  "ifOutMulticastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ifXEntry",
+      4
+    ]
+  },
+  "ifOutBroadcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ifXEntry",
+      5
+    ]
+  },
+  "ifHCInOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ifXEntry",
+      6
+    ]
+  },
+  "ifHCInUcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ifXEntry",
+      7
+    ]
+  },
+  "ifHCInMulticastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ifXEntry",
+      8
+    ]
+  },
+  "ifHCInBroadcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ifXEntry",
+      9
+    ]
+  },
+  "ifHCOutOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ifXEntry",
+      10
+    ]
+  },
+  "ifHCOutUcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ifXEntry",
+      11
+    ]
+  },
+  "ifHCOutMulticastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ifXEntry",
+      12
+    ]
+  },
+  "ifHCOutBroadcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ifXEntry",
+      13
+    ]
+  },
+  "ifLinkUpDownTrapEnable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "enabled",
+        "2": "disabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "ifXEntry",
+      14
+    ]
+  },
+  "ifHighSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "ifXEntry",
+      15
+    ]
+  },
+  "ifPromiscuousMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ifXEntry",
+      16
+    ]
+  },
+  "ifConnectorPresent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ifXEntry",
+      17
+    ]
+  },
+  "ifAlias": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ifXEntry",
+      18
+    ]
+  },
+  "ifCounterDiscontinuityTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "ifXEntry",
+      19
+    ]
+  },
+  "ifStackTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF IfStackEntry"
+    },
+    "index": null,
+    "value": [
+      "ifMIBObjects",
+      2
+    ]
+  },
+  "ifStackEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IfStackEntry"
+    },
+    "index": [
+      "ifStackHigherLayer",
+      "ifStackLowerLayer"
+    ],
+    "value": [
+      "ifStackTable",
+      1
+    ]
+  },
+  "IfStackEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ifStackHigherLayer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InterfaceIndexOrZero"
+    },
+    "index": null,
+    "value": [
+      "ifStackEntry",
+      1
+    ]
+  },
+  "ifStackLowerLayer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InterfaceIndexOrZero"
+    },
+    "index": null,
+    "value": [
+      "ifStackEntry",
+      2
+    ]
+  },
+  "ifStackStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "ifStackEntry",
+      3
+    ]
+  },
+  "ifStackLastChange": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "ifMIBObjects",
+      6
+    ]
+  },
+  "ifRcvAddressTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF IfRcvAddressEntry"
+    },
+    "index": null,
+    "value": [
+      "ifMIBObjects",
+      4
+    ]
+  },
+  "ifRcvAddressEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IfRcvAddressEntry"
+    },
+    "index": [
+      "ifIndex",
+      "ifRcvAddressAddress"
+    ],
+    "value": [
+      "ifRcvAddressTable",
+      1
+    ]
+  },
+  "IfRcvAddressEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ifRcvAddressAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PhysAddress"
+    },
+    "index": null,
+    "value": [
+      "ifRcvAddressEntry",
+      1
+    ]
+  },
+  "ifRcvAddressStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "ifRcvAddressEntry",
+      2
+    ]
+  },
+  "ifRcvAddressType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "volatile",
+        "3": "nonVolatile"
+      }
+    },
+    "index": null,
+    "value": [
+      "ifRcvAddressEntry",
+      3
+    ]
+  },
+  "ifConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ifMIB",
+      2
+    ]
+  },
+  "ifGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ifConformance",
+      1
+    ]
+  },
+  "ifCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ifConformance",
+      2
+    ]
+  },
+  "ifGeneralInformationGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ifGroups",
+      10
+    ]
+  },
+  "ifFixedLengthGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ifGroups",
+      2
+    ]
+  },
+  "ifHCFixedLengthGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ifGroups",
+      3
+    ]
+  },
+  "ifPacketGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ifGroups",
+      4
+    ]
+  },
+  "ifHCPacketGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ifGroups",
+      5
+    ]
+  },
+  "ifVHCPacketGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ifGroups",
+      6
+    ]
+  },
+  "ifRcvAddressGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ifGroups",
+      7
+    ]
+  },
+  "ifStackGroup2": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ifGroups",
+      11
+    ]
+  },
+  "ifCounterDiscontinuityGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ifGroups",
+      13
+    ]
+  },
+  "ifTestTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF IfTestEntry"
+    },
+    "index": null,
+    "value": [
+      "ifMIBObjects",
+      3
+    ]
+  },
+  "ifTestEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IfTestEntry"
+    },
+    "index": "ifEntry",
+    "value": [
+      "ifTestTable",
+      1
+    ]
+  },
+  "IfTestEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ifTestId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TestAndIncr"
+    },
+    "index": null,
+    "value": [
+      "ifTestEntry",
+      1
+    ]
+  },
+  "ifTestStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "notInUse",
+        "2": "inUse"
+      }
+    },
+    "index": null,
+    "value": [
+      "ifTestEntry",
+      2
+    ]
+  },
+  "ifTestType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AutonomousType"
+    },
+    "index": null,
+    "value": [
+      "ifTestEntry",
+      3
+    ]
+  },
+  "ifTestResult": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "none",
+        "2": "success",
+        "3": "inProgress",
+        "4": "notSupported",
+        "5": "unAbleToRun",
+        "6": "aborted",
+        "7": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "ifTestEntry",
+      4
+    ]
+  },
+  "ifTestCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "ifTestEntry",
+      5
+    ]
+  },
+  "ifTestOwner": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OwnerString"
+    },
+    "index": null,
+    "value": [
+      "ifTestEntry",
+      6
+    ]
+  },
+  "ifGeneralGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ifGroups",
+      1
+    ]
+  },
+  "ifTestGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ifGroups",
+      8
+    ]
+  },
+  "ifStackGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ifGroups",
+      9
+    ]
+  },
+  "ifOldObjectsGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ifGroups",
+      12
+    ]
+  }
+}

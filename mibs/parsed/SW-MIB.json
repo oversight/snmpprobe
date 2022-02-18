@@ -1,0 +1,4387 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-TC",
+      [
+        "DisplayString",
+        "TEXTUAL-CONVENTION",
+        "TruthValue"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "Counter32",
+        "Integer32",
+        "IpAddress",
+        "OBJECT-TYPE",
+        "OBJECT-IDENTITY",
+        "MODULE-IDENTITY",
+        "NOTIFICATION-TYPE"
+      ]
+    ],
+    [
+      "Brocade-TC",
+      [
+        "FcWwn",
+        "SwDomainIndex",
+        "SwNbIndex",
+        "SwSensorIndex",
+        "SwPortIndex",
+        "SwTrunkMaster"
+      ]
+    ],
+    [
+      "Brocade-REG-MIB",
+      [
+        "fcSwitch",
+        "bcsiModules"
+      ]
+    ],
+    [
+      "FCMGMT-MIB",
+      [
+        "connUnitPortStatEntry",
+        "connUnitPortEntry"
+      ]
+    ]
+  ],
+  "swMibModule": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "bcsiModules",
+      3
+    ]
+  },
+  "sw": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "fcSwitch",
+      1
+    ]
+  },
+  "sw28k": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "fcSwitch",
+      2
+    ]
+  },
+  "sw21kN24k": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "fcSwitch",
+      3
+    ]
+  },
+  "sw20x0": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "fcSwitch",
+      4
+    ]
+  },
+  "SwSevType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "none",
+        "1": "critical",
+        "2": "error",
+        "3": "warning",
+        "4": "informational",
+        "5": "debug"
+      }
+    },
+    "display_hint": null
+  },
+  "FcPortFlag": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "BITS",
+      "values": {
+        "0": "physical",
+        "1": "virtual"
+      }
+    },
+    "display_hint": null
+  },
+  "swSystem": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "sw",
+      1
+    ]
+  },
+  "swFabric": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "sw",
+      2
+    ]
+  },
+  "swModule": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "sw",
+      3
+    ]
+  },
+  "swAgtCfg": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "sw",
+      4
+    ]
+  },
+  "swFCport": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "sw",
+      6
+    ]
+  },
+  "swNs": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "sw",
+      7
+    ]
+  },
+  "swEvent": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "sw",
+      8
+    ]
+  },
+  "swFwSystem": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "sw",
+      10
+    ]
+  },
+  "swEndDevice": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "sw",
+      21
+    ]
+  },
+  "swGroup": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "sw",
+      22
+    ]
+  },
+  "swBlmPerfMnt": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "sw",
+      23
+    ]
+  },
+  "swTrunk": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "sw",
+      24
+    ]
+  },
+  "swTopTalker": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "sw",
+      25
+    ]
+  },
+  "swCpuOrMemoryUsage": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "sw",
+      26
+    ]
+  },
+  "swConnUnitPortStatExtentionTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SwConnUnitPortStatEntry"
+    },
+    "index": null,
+    "value": [
+      "sw",
+      27
+    ]
+  },
+  "swCurrentDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      1
+    ]
+  },
+  "swBootDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      2
+    ]
+  },
+  "swFWLastUpdated": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      3
+    ]
+  },
+  "swFlashLastUpdated": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      4
+    ]
+  },
+  "swBootPromLastUpdated": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      5
+    ]
+  },
+  "swFirmwareVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      6
+    ]
+  },
+  "swOperStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "online",
+        "2": "offline",
+        "3": "testing",
+        "4": "faulty"
+      }
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      7
+    ]
+  },
+  "swAdmStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "online",
+        "2": "offline",
+        "3": "testing",
+        "4": "faulty",
+        "5": "reboot",
+        "6": "fastboot"
+      }
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      8
+    ]
+  },
+  "swTelnetShellAdmStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "unknown",
+        "1": "terminated"
+      }
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      9
+    ]
+  },
+  "swSsn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      10
+    ]
+  },
+  "swFlashDLOperStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "unknown",
+        "1": "swCurrent",
+        "2": "swFwUpgraded",
+        "3": "swCfUploaded",
+        "4": "swCfDownloaded",
+        "5": "swFwCorrupted"
+      }
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      11
+    ]
+  },
+  "swFlashDLAdmStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "swCurrent",
+        "2": "swFwUpgrade",
+        "3": "swCfUpload",
+        "4": "swCfDownload",
+        "5": "swFwCorrupted"
+      }
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      12
+    ]
+  },
+  "swFlashDLHost": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      13
+    ]
+  },
+  "swFlashDLUser": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      14
+    ]
+  },
+  "swFlashDLFile": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      15
+    ]
+  },
+  "swFlashDLPassword": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      16
+    ]
+  },
+  "swBeaconOperStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "on",
+        "2": "off"
+      }
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      18
+    ]
+  },
+  "swBeaconAdmStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "on",
+        "2": "off"
+      }
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      19
+    ]
+  },
+  "swDiagResult": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "sw-ok",
+        "2": "sw-faulty",
+        "3": "sw-embedded-port-fault"
+      }
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      20
+    ]
+  },
+  "swNumSensors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      21
+    ]
+  },
+  "swSensorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SwSensorEntry"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      22
+    ]
+  },
+  "swSensorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwSensorEntry"
+    },
+    "index": [
+      "swSensorIndex"
+    ],
+    "value": [
+      "swSensorTable",
+      1
+    ]
+  },
+  "SwSensorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "swSensorIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwSensorIndex"
+    },
+    "index": null,
+    "value": [
+      "swSensorEntry",
+      1
+    ]
+  },
+  "swSensorType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "temperature",
+        "2": "fan",
+        "3": "power-supply"
+      }
+    },
+    "index": null,
+    "value": [
+      "swSensorEntry",
+      2
+    ]
+  },
+  "swSensorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "faulty",
+        "3": "below-min",
+        "4": "nominal",
+        "5": "above-max",
+        "6": "absent"
+      }
+    },
+    "index": null,
+    "value": [
+      "swSensorEntry",
+      3
+    ]
+  },
+  "swSensorValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swSensorEntry",
+      4
+    ]
+  },
+  "swSensorInfo": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swSensorEntry",
+      5
+    ]
+  },
+  "swTrackChangesInfo": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      23
+    ]
+  },
+  "swID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      24
+    ]
+  },
+  "swEtherIPAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      25
+    ]
+  },
+  "swEtherIPMask": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      26
+    ]
+  },
+  "swFCIPAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      27
+    ]
+  },
+  "swFCIPMask": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      28
+    ]
+  },
+  "swIPv6Address": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      29
+    ]
+  },
+  "swIPv6Status": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "tentative",
+        "2": "preferred",
+        "3": "ipdeprecated",
+        "4": "inactive"
+      }
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      30
+    ]
+  },
+  "swModel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "switch7500",
+        "2": "switch7500E",
+        "3": "other"
+      }
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      31
+    ]
+  },
+  "swTestString": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      32
+    ]
+  },
+  "swPortList": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      33
+    ]
+  },
+  "swBrcdTrapBitMask": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      34
+    ]
+  },
+  "swFCPortPrevType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "other",
+        "3": "fl-port",
+        "4": "f-port",
+        "5": "e-port",
+        "6": "g-port",
+        "7": "ex-port"
+      }
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      35
+    ]
+  },
+  "swDeviceStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "login",
+        "2": "logout",
+        "3": "unknown"
+      }
+    },
+    "index": null,
+    "value": [
+      "swSystem",
+      36
+    ]
+  },
+  "swDomainID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwDomainIndex"
+    },
+    "index": null,
+    "value": [
+      "swFabric",
+      1
+    ]
+  },
+  "swPrincipalSwitch": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "swFabric",
+      2
+    ]
+  },
+  "swNumNbs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swFabric",
+      8
+    ]
+  },
+  "swNbTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SwNbEntry"
+    },
+    "index": null,
+    "value": [
+      "swFabric",
+      9
+    ]
+  },
+  "swNbEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwNbEntry"
+    },
+    "index": [
+      "swNbIndex"
+    ],
+    "value": [
+      "swNbTable",
+      1
+    ]
+  },
+  "SwNbEntry": {
+    "tp": "SEQUENCE"
+  },
+  "swNbIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwNbIndex"
+    },
+    "index": null,
+    "value": [
+      "swNbEntry",
+      1
+    ]
+  },
+  "swNbMyPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwPortIndex"
+    },
+    "index": null,
+    "value": [
+      "swNbEntry",
+      2
+    ]
+  },
+  "swNbRemDomain": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwDomainIndex"
+    },
+    "index": null,
+    "value": [
+      "swNbEntry",
+      3
+    ]
+  },
+  "swNbRemPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwPortIndex"
+    },
+    "index": null,
+    "value": [
+      "swNbEntry",
+      4
+    ]
+  },
+  "swNbBaudRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "oneEighth",
+        "4": "quarter",
+        "8": "half",
+        "16": "full",
+        "32": "double",
+        "64": "quadruple",
+        "128": "octuple",
+        "256": "decuple",
+        "512": "sexdecuple"
+      }
+    },
+    "index": null,
+    "value": [
+      "swNbEntry",
+      5
+    ]
+  },
+  "swNbIslState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "sw-down",
+        "1": "sw-init",
+        "2": "sw-internal2",
+        "3": "sw-internal3",
+        "4": "sw-internal4",
+        "5": "sw-active"
+      }
+    },
+    "index": null,
+    "value": [
+      "swNbEntry",
+      6
+    ]
+  },
+  "swNbIslCost": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swNbEntry",
+      7
+    ]
+  },
+  "swNbRemPortName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swNbEntry",
+      8
+    ]
+  },
+  "swFabricMemTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SwFabricMemEntry"
+    },
+    "index": null,
+    "value": [
+      "swFabric",
+      10
+    ]
+  },
+  "swFabricMemEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFabricMemEntry"
+    },
+    "index": [
+      "swFabricMemWwn"
+    ],
+    "value": [
+      "swFabricMemTable",
+      1
+    ]
+  },
+  "SwFabricMemEntry": {
+    "tp": "SEQUENCE"
+  },
+  "swFabricMemWwn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcWwn"
+    },
+    "index": null,
+    "value": [
+      "swFabricMemEntry",
+      1
+    ]
+  },
+  "swFabricMemDid": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwDomainIndex"
+    },
+    "index": null,
+    "value": [
+      "swFabricMemEntry",
+      2
+    ]
+  },
+  "swFabricMemName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swFabricMemEntry",
+      3
+    ]
+  },
+  "swFabricMemEIP": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "swFabricMemEntry",
+      4
+    ]
+  },
+  "swFabricMemFCIP": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "swFabricMemEntry",
+      5
+    ]
+  },
+  "swFabricMemGWIP": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "swFabricMemEntry",
+      6
+    ]
+  },
+  "swFabricMemType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swFabricMemEntry",
+      7
+    ]
+  },
+  "swFabricMemShortVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swFabricMemEntry",
+      8
+    ]
+  },
+  "swIDIDMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "enabled",
+        "2": "disabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "swFabric",
+      11
+    ]
+  },
+  "swPmgrEventType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "create",
+        "1": "delete",
+        "2": "moveport",
+        "3": "fidchange",
+        "4": "basechange",
+        "6": "vfstatechange"
+      }
+    },
+    "index": null,
+    "value": [
+      "swFabric",
+      12
+    ]
+  },
+  "swPmgrEventTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swFabric",
+      13
+    ]
+  },
+  "swPmgrEventDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swFabric",
+      14
+    ]
+  },
+  "swVfId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swFabric",
+      15
+    ]
+  },
+  "swVfName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swFabric",
+      16
+    ]
+  },
+  "swAgtCmtyTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SwAgtCmtyEntry"
+    },
+    "index": null,
+    "value": [
+      "swAgtCfg",
+      11
+    ]
+  },
+  "swauthProtocolPassword": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swAgtCfg",
+      12
+    ]
+  },
+  "swprivProtocolPassword": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swAgtCfg",
+      13
+    ]
+  },
+  "swAgtCmtyEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwAgtCmtyEntry"
+    },
+    "index": [
+      "swAgtCmtyIdx"
+    ],
+    "value": [
+      "swAgtCmtyTable",
+      1
+    ]
+  },
+  "SwAgtCmtyEntry": {
+    "tp": "SEQUENCE"
+  },
+  "swAgtCmtyIdx": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swAgtCmtyEntry",
+      1
+    ]
+  },
+  "swAgtCmtyStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swAgtCmtyEntry",
+      2
+    ]
+  },
+  "swAgtTrapRcp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "swAgtCmtyEntry",
+      3
+    ]
+  },
+  "swAgtTrapSeverityLevel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwSevType"
+    },
+    "index": null,
+    "value": [
+      "swAgtCmtyEntry",
+      4
+    ]
+  },
+  "swFCPortCapacity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swFCport",
+      1
+    ]
+  },
+  "swFCPortTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SwFCPortEntry"
+    },
+    "index": null,
+    "value": [
+      "swFCport",
+      2
+    ]
+  },
+  "swFCPortEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFCPortEntry"
+    },
+    "index": [
+      "swFCPortIndex"
+    ],
+    "value": [
+      "swFCPortTable",
+      1
+    ]
+  },
+  "SwFCPortEntry": {
+    "tp": "SEQUENCE"
+  },
+  "swFCPortIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwPortIndex"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      1
+    ]
+  },
+  "swFCPortType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "stitch",
+        "2": "flannel",
+        "3": "loom",
+        "4": "bloom",
+        "5": "rdbloom",
+        "6": "wormhole",
+        "7": "other",
+        "8": "unknown"
+      }
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      2
+    ]
+  },
+  "swFCPortPhyState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "noCard",
+        "2": "noTransceiver",
+        "3": "laserFault",
+        "4": "noLight",
+        "5": "noSync",
+        "6": "inSync",
+        "7": "portFault",
+        "8": "diagFault",
+        "9": "lockRef",
+        "10": "validating",
+        "11": "invalidModule",
+        "14": "noSigDet",
+        "255": "unknown"
+      }
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      3
+    ]
+  },
+  "swFCPortOpStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "unknown",
+        "1": "online",
+        "2": "offline",
+        "3": "testing",
+        "4": "faulty"
+      }
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      4
+    ]
+  },
+  "swFCPortAdmStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "online",
+        "2": "offline",
+        "3": "testing",
+        "4": "faulty"
+      }
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      5
+    ]
+  },
+  "swFCPortLinkState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "enabled",
+        "2": "disabled",
+        "3": "loopback"
+      }
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      6
+    ]
+  },
+  "swFCPortTxType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "lw",
+        "3": "sw",
+        "4": "ld",
+        "5": "cu"
+      }
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      7
+    ]
+  },
+  "swFCPortTxWords": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      11
+    ]
+  },
+  "swFCPortRxWords": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      12
+    ]
+  },
+  "swFCPortTxFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      13
+    ]
+  },
+  "swFCPortRxFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      14
+    ]
+  },
+  "swFCPortRxC2Frames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      15
+    ]
+  },
+  "swFCPortRxC3Frames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      16
+    ]
+  },
+  "swFCPortRxLCs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      17
+    ]
+  },
+  "swFCPortRxMcasts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      18
+    ]
+  },
+  "swFCPortTooManyRdys": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      19
+    ]
+  },
+  "swFCPortNoTxCredits": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      20
+    ]
+  },
+  "swFCPortRxEncInFrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      21
+    ]
+  },
+  "swFCPortRxCrcs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      22
+    ]
+  },
+  "swFCPortRxTruncs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      23
+    ]
+  },
+  "swFCPortRxTooLongs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      24
+    ]
+  },
+  "swFCPortRxBadEofs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      25
+    ]
+  },
+  "swFCPortRxEncOutFrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      26
+    ]
+  },
+  "swFCPortRxBadOs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      27
+    ]
+  },
+  "swFCPortC3Discards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      28
+    ]
+  },
+  "swFCPortMcastTimedOuts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      29
+    ]
+  },
+  "swFCPortTxMcasts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      30
+    ]
+  },
+  "swFCPortLipIns": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      31
+    ]
+  },
+  "swFCPortLipOuts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      32
+    ]
+  },
+  "swFCPortLipLastAlpa": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      33
+    ]
+  },
+  "swFCPortWwn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      34
+    ]
+  },
+  "swFCPortSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "one-GB",
+        "2": "two-GB",
+        "3": "auto-Negotiate",
+        "4": "four-GB",
+        "5": "eight-GB",
+        "6": "ten-GB",
+        "7": "unknown",
+        "8": "sixteen-GB"
+      }
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      35
+    ]
+  },
+  "swFCPortName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      36
+    ]
+  },
+  "swFCPortSpecifier": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      37
+    ]
+  },
+  "swFCPortFlag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcPortFlag"
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      38
+    ]
+  },
+  "swFCPortBrcdType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "other",
+        "3": "fl-port",
+        "4": "f-port",
+        "5": "e-port",
+        "6": "g-port",
+        "7": "ex-port"
+      }
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      39
+    ]
+  },
+  "swFCPortDisableReason": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "r-recover-fail",
+        "2": "r-invalid-reason",
+        "3": "r-forced",
+        "4": "r-sw-disabled",
+        "5": "r-bl-disabled",
+        "6": "r-slot-off",
+        "7": "r-sw-enabled",
+        "8": "r-bl-enabled",
+        "9": "r-slot-on",
+        "10": "r-persistid",
+        "11": "r-sw-violation",
+        "12": "r-prv-dev-violation",
+        "13": "r-pub-dev-violation",
+        "14": "r-port-data-fail",
+        "15": "r-online-incomplete",
+        "16": "r-online-route-fail",
+        "17": "r-inconsistent",
+        "18": "r-set-vcc-fail",
+        "19": "r-ecp-in-testing",
+        "20": "r-elp-in-testing",
+        "21": "r-ecp-retries-exceeded",
+        "22": "r-invalid-ecp-state",
+        "23": "r-bad-ecp-rcvd",
+        "24": "r-send-rtmark-fail",
+        "25": "r-send-ecp-fail",
+        "26": "r-save-link-rtt-fail",
+        "27": "r-em-incnst",
+        "28": "r-pci-attach-fail",
+        "29": "r-buf-starv",
+        "30": "r-elp-fctl-mismatch",
+        "31": "r-eport-disabled",
+        "32": "r-trunk-with-vcxlt",
+        "33": "r-sw-fl-port-not-ready",
+        "34": "r-link-reinit",
+        "35": "r-domain-id-change",
+        "36": "r-auth-rejected",
+        "37": "r-auth-timeout",
+        "38": "r-auth-fail-retry",
+        "39": "r-fcr-conf-mismatch1",
+        "40": "r-fcr-conf-mismatch2",
+        "41": "r-fcr-port-ld-mode-mismatch",
+        "42": "r-fcr-ld-credit-mismatch",
+        "43": "r-fcr-set-vcc-failed",
+        "44": "r-fcr-set-rtc-failed",
+        "45": "r-fcr-elp-ver-inconsis",
+        "46": "r-fcr-elp-fctl-mismatch",
+        "47": "r-fcr-pid-mismatch",
+        "48": "r-fcr-tov-mismatch",
+        "49": "r-fcr-ld-incompat",
+        "50": "r-fcr-isolated",
+        "51": "r-elp-retries-exceeded",
+        "52": "r-fcr-exports-exceeded",
+        "53": "r-fcr-license",
+        "54": "r-fcr-conf-ex",
+        "55": "r-fcr-ftag-over",
+        "56": "r-fcr-ftag-conflict",
+        "57": "r-fcr-fowner-conflict",
+        "58": "r-fcr-zone-resource",
+        "59": "r-fcr-port-state-to",
+        "60": "r-fcr-authn-reject",
+        "61": "r-fcr-sec-fcs-list",
+        "62": "r-fcr-sec-failure",
+        "63": "r-fcr-incompatible-mode",
+        "64": "r-fcr-sec-scc-list",
+        "65": "r-fcr-generic",
+        "66": "r-sw-ex-port-not-ready",
+        "67": "r-fcr-class-f-incompat",
+        "68": "r-fcr-class-n-incompat",
+        "69": "r-fcr-invalid-flow-rcvd",
+        "70": "r-fcr-state-disabled",
+        "71": "r-fdd-strict-exist",
+        "72": "r-last-port-disable-msg",
+        "73": "r-sw-l-port-not-support",
+        "74": "r-peer-port-in-di-zone",
+        "75": "r-zone-incompat",
+        "76": "r-sw-config-l-port-not-support",
+        "77": "r-sw-port-mirror-configured",
+        "78": "r-nportlogin-inprogress",
+        "79": "r-nonpiv",
+        "80": "r-nomapping",
+        "81": "r-unknowntype",
+        "82": "r-nportoffline",
+        "83": "r-flogifailed",
+        "84": "r-nportbusy",
+        "85": "r-noflogi",
+        "86": "r-noflogiresp",
+        "87": "r-flogidupalpa",
+        "88": "r-loopcfg",
+        "89": "r-noenclicense",
+        "90": "r-nofiportmapping",
+        "91": "r-brcdfabconn",
+        "92": "r-port-reset",
+        "93": "r-floginport",
+        "94": "r-fdd-strict-conflict",
+        "95": "r-fdd-cfg-conflict",
+        "96": "r-fdd-cfg-conflict-na-neigh",
+        "97": "r-fcr-insistent-front-did-mismatch",
+        "98": "r-fcr-fabric-binding-failure",
+        "99": "r-fcr-non-standard-domain-offset",
+        "100": "r-area-in-use",
+        "101": "r-mstr-diff-pg",
+        "102": "r-mstr-diff-area",
+        "103": "r-ta-not-supported",
+        "104": "r-eport-not-supported",
+        "105": "r-fport-not-supported",
+        "106": "r-cfg-not-supported",
+        "107": "r-port-ll-th-exceeded",
+        "108": "r-port-synl-th-exceeded",
+        "109": "r-port-pe-th-exceeded",
+        "110": "f-port-disable-no-trk-lic",
+        "111": "r-port-inw-th-exceeded",
+        "112": "r-port-crc-th-exceeded",
+        "113": "f-port-tr-disable-speed-not-ok",
+        "114": "r-port-auto-disable",
+        "115": "r-fcr-export-in-non-base-sw",
+        "116": "r-base-switch-supports-no-device",
+        "117": "r-port-trunk-proto-error",
+        "118": "r-no-area-avail",
+        "119": "r-cannot-unbind-existing-area",
+        "120": "r-cannot-use-10bit-area",
+        "121": "r-authentication-required",
+        "122": "r-port-lr-th-exceeded",
+        "123": "r-fcr-export-lf-conflict",
+        "124": "r-incompat",
+        "125": "r-did-overlap",
+        "126": "r-zone-conflict",
+        "127": "r-eport-seg",
+        "128": "r-no-license",
+        "129": "r-platform-db",
+        "130": "r-sec-incompat",
+        "131": "r-sec-violation",
+        "132": "r-ecp-longdist",
+        "133": "r-dup-wwn",
+        "134": "r-eport-isolated",
+        "135": "r-ad",
+        "136": "r-esc-did-offset",
+        "137": "r-esc-etiz",
+        "138": "r-esc-fid",
+        "139": "r-safe-zone",
+        "140": "r-vf",
+        "141": "r-vf-bs-incompat",
+        "142": "r-pers-pid-on-lport",
+        "143": "r-pers-pid-portaddr-collision",
+        "144": "r-pers-pid-port-on-same-area",
+        "145": "r-pers-pid-port-addr-bnd",
+        "146": "r-msfr",
+        "147": "r-sw-halfbw-lic",
+        "148": "r-1g-mode-incompat",
+        "149": "r-10g-mode-incompat",
+        "150": "r-dual-mode-incompat",
+        "151": "r-implict-plt-service-block",
+        "152": "r-port-st-th-exceeded",
+        "153": "r-port-c3txto-th-exceeded",
+        "154": "r-eport-not-supported-def-sw",
+        "155": "r-eport-ll-th-exceeded",
+        "156": "r-eport-synl-th-exceeded",
+        "157": "r-eport-pe-th-exceeded",
+        "158": "r-eport-inw-th-exceeded",
+        "159": "r-eport-crc-th-exceeded",
+        "160": "r-eport-lr-th-exceeded",
+        "161": "r-eport-st-th-exceeded",
+        "162": "r-eport-c3txto-th-exceeded",
+        "163": "r-fopport-ll-th-exceeded",
+        "164": "r-fopport-synl-th-exceeded",
+        "165": "r-fopport-pe-th-exceeded",
+        "166": "r-fopport-inw-th-exceeded",
+        "167": "r-fopport-crc-th-exceeded",
+        "168": "r-fopport-lr-th-exceeded",
+        "169": "r-fopport-st-th-exceeded",
+        "170": "r-fopport-c3txto-th-exceeded",
+        "171": "r-fcuport-ll-th-exceeded",
+        "172": "r-fcuport-synl-th-exceeded",
+        "173": "r-fcuport-pe-th-exceeded",
+        "174": "r-fcuport-inw-th-exceeded",
+        "175": "r-fcuport-crc-th-exceeded",
+        "176": "r-fcuport-lr-th-exceeded",
+        "177": "r-fcuport-st-th-exceeded",
+        "178": "r-fcuport-c3txto-th-exceeded",
+        "179": "r-port-no-area-avail-pers-disable",
+        "180": "r-eport-locked",
+        "181": "r-enh-tizone",
+        "182": "r-sw-port-swap-not-supported",
+        "183": "r-fport-slow-drain-condition",
+        "184": "r-esc-vlanid",
+        "185": "r-port-recov-state",
+        "186": "r-port-auto-disable-losn",
+        "187": "r-port-auto-disable-losg",
+        "188": "r-port-auto-disable-ols",
+        "189": "r-port-auto-disable-nos",
+        "190": "r-port-auto-disable-lip",
+        "191": "r-port-compression",
+        "192": "r-port-encryption",
+        "193": "r-port-enccomp-res",
+        "194": "r-port-decommissioned",
+        "195": "r-port-dportmode",
+        "196": "r-port-dport-incompat",
+        "197": "r-port-enc-comp-mismatch",
+        "198": "r-non-rcs-rem-dom",
+        "199": "r-port-fips-comp-mismatch",
+        "200": "r-port-non-fips-comp-mismatch",
+        "201": "r-port-enc-auth-disabled",
+        "202": "r-port-disable-on-zeroize",
+        "203": "r-cfgspeed-not-supported",
+        "204": "r-fcr-ex-port-not-allowed",
+        "205": "r-port-duplicate-pwwn",
+        "206": "r-fcr-trunk-master-sfid-not-set",
+        "207": "r-nportistrunkmem",
+        "208": "r-policynotsupported",
+        "209": "r-no-icl-license",
+        "210": "r-no-ten-gig-license",
+        "211": "r-fdd-strict-scc-conflict",
+        "212": "r-fdd-strict-dcc-conflict",
+        "213": "r-fdd-strict-fcs-conflict",
+        "214": "r-fdd-strict-fabwide-conflict",
+        "215": "r-fdd-strict-pwd-conflict",
+        "216": "r-fcr-interop-conf",
+        "217": "r-port-enc-interop-conflict",
+        "218": "r-port-comp-interop-conflict",
+        "219": "r-no-port-open-rsp",
+        "220": "r-no-eicl-license",
+        "221": "r-eicl-license-limited",
+        "222": "r-esc-base-sw",
+        "223": "r-sw-cpu-overload",
+        "224": "r-no-icl-pod2-license",
+        "225": "r-port-area-mismatch-pers-disable",
+        "226": "r-unauthorized-device",
+        "227": "r-max-flogi-reached",
+        "228": "r-auth-not-supported-in-switch",
+        "229": "r-icl-ex-on-non-vf",
+        "230": "r-user-disabled-reason"
+      }
+    },
+    "index": null,
+    "value": [
+      "swFCPortEntry",
+      40
+    ]
+  },
+  "swNsLocalNumEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swNs",
+      1
+    ]
+  },
+  "swNsLocalTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SwNsEntry"
+    },
+    "index": null,
+    "value": [
+      "swNs",
+      2
+    ]
+  },
+  "swNsLocalEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwNsEntry"
+    },
+    "index": [
+      "swNsEntryIndex"
+    ],
+    "value": [
+      "swNsLocalTable",
+      1
+    ]
+  },
+  "SwNsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "swNsEntryIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swNsLocalEntry",
+      1
+    ]
+  },
+  "swNsPortID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swNsLocalEntry",
+      2
+    ]
+  },
+  "swNsPortType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "nPort",
+        "2": "nlPort"
+      }
+    },
+    "index": null,
+    "value": [
+      "swNsLocalEntry",
+      3
+    ]
+  },
+  "swNsPortName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcWwn"
+    },
+    "index": null,
+    "value": [
+      "swNsLocalEntry",
+      4
+    ]
+  },
+  "swNsPortSymb": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swNsLocalEntry",
+      5
+    ]
+  },
+  "swNsNodeName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcWwn"
+    },
+    "index": null,
+    "value": [
+      "swNsLocalEntry",
+      6
+    ]
+  },
+  "swNsNodeSymb": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swNsLocalEntry",
+      7
+    ]
+  },
+  "swNsIPA": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swNsLocalEntry",
+      8
+    ]
+  },
+  "swNsIpAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swNsLocalEntry",
+      9
+    ]
+  },
+  "swNsCos": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "class-F",
+        "2": "class-1",
+        "3": "class-F-1",
+        "4": "class-2",
+        "5": "class-F-2",
+        "6": "class-1-2",
+        "7": "class-F-1-2",
+        "8": "class-3",
+        "9": "class-F-3",
+        "10": "class-1-3",
+        "11": "class-F-1-3",
+        "12": "class-2-3",
+        "13": "class-F-2-3",
+        "14": "class-1-2-3",
+        "15": "class-F-1-2-3"
+      }
+    },
+    "index": null,
+    "value": [
+      "swNsLocalEntry",
+      10
+    ]
+  },
+  "swNsFc4": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swNsLocalEntry",
+      11
+    ]
+  },
+  "swNsIpNxPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swNsLocalEntry",
+      12
+    ]
+  },
+  "swNsWwn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swNsLocalEntry",
+      13
+    ]
+  },
+  "swNsHardAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swNsLocalEntry",
+      14
+    ]
+  },
+  "swEventTrapLevel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "none",
+        "1": "critical",
+        "2": "error",
+        "3": "warning",
+        "4": "informational",
+        "5": "debug"
+      }
+    },
+    "index": null,
+    "value": [
+      "swEvent",
+      1
+    ]
+  },
+  "swEventNumEntries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swEvent",
+      4
+    ]
+  },
+  "swEventTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SwEventEntry"
+    },
+    "index": null,
+    "value": [
+      "swEvent",
+      5
+    ]
+  },
+  "swEventEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwEventEntry"
+    },
+    "index": [
+      "swEventIndex"
+    ],
+    "value": [
+      "swEventTable",
+      1
+    ]
+  },
+  "SwEventEntry": {
+    "tp": "SEQUENCE"
+  },
+  "swEventIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swEventEntry",
+      1
+    ]
+  },
+  "swEventTimeInfo": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swEventEntry",
+      2
+    ]
+  },
+  "swEventLevel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "critical",
+        "2": "error",
+        "3": "warning",
+        "4": "informational",
+        "5": "debug"
+      }
+    },
+    "index": null,
+    "value": [
+      "swEventEntry",
+      3
+    ]
+  },
+  "swEventRepeatCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swEventEntry",
+      4
+    ]
+  },
+  "swEventDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swEventEntry",
+      5
+    ]
+  },
+  "swEventVfId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swEventEntry",
+      6
+    ]
+  },
+  "SwFwActs": {
+    "tp": "INTEGER",
+    "values": {
+      "0": "swFwNoAction",
+      "1": "swFwErrlog",
+      "2": "swFwSnmptrap",
+      "3": "swFwErrlogSnmptrap",
+      "4": "swFwPortloglock",
+      "5": "swFwErrlogPortloglock",
+      "6": "swFwSnmptrapPortloglock",
+      "7": "swFwErrlogSnmptrapPortloglock",
+      "8": "swFwRn",
+      "9": "swFwElRn",
+      "10": "swFwStRn",
+      "11": "swFwElStRn",
+      "12": "swFwPlRn",
+      "13": "swFwElPlRn",
+      "14": "swFwStPlRn",
+      "15": "swFwElStPlRn",
+      "16": "swFwMailAlert",
+      "17": "swFwMailAlertErrlog",
+      "18": "swFwMailAlertSnmptrap",
+      "19": "swFwMailAlertErrlogSnmptrap",
+      "20": "swFwMailAlertPortloglock",
+      "21": "swFwMailAlertErrlogPortloglock",
+      "22": "swFwMailAlertSnmptrapPortloglock",
+      "23": "swFwMailAlertErrlogSnmptrapPortloglock",
+      "24": "swFwMailAlertRn",
+      "25": "swFwElMailAlertRn",
+      "26": "swFwMailAlertStRn",
+      "27": "swFwMailAlertElStRn",
+      "28": "swFwMailAlertPlRn",
+      "29": "swFwMailAlertElPlRn",
+      "30": "swFwMailAlertStPlRn",
+      "31": "swFwMailAlertElStPlRn",
+      "32": "swFwPf",
+      "33": "swFwElPf",
+      "34": "swFwStPf",
+      "35": "swFwElStPf",
+      "36": "swFwPlPf",
+      "37": "swFwElPlPf",
+      "38": "swFwStPlPf",
+      "39": "swFwElStPlPf",
+      "40": "swFwRnPf",
+      "41": "swFwElRnPf",
+      "42": "swFwStRnPf",
+      "43": "swFwElStRnPf",
+      "44": "swFwPlRnPf",
+      "45": "swFwElPlRnPf",
+      "46": "swFwStPlRnPf",
+      "47": "swFwElStPlRnPf",
+      "48": "swFwMailAlertPf",
+      "49": "swFwMailAlertElPf",
+      "50": "swFwMailAlertStPf",
+      "51": "swFwMailAlertElStPf",
+      "52": "swFwMailAlertPlPf",
+      "53": "swFwMailAlertElPlPf",
+      "54": "swFwMailAlertStPlPf",
+      "55": "swFwMailAlertElStPlPf",
+      "56": "swFwMailAlertRnPf",
+      "57": "swFwMailAlertElRnPf",
+      "58": "swFwMailAlertStRnPf",
+      "59": "swFwMailAlertElStRnPf",
+      "60": "swFwMailAlertPlRnPf",
+      "61": "swFwMailAlertElPlRnPf",
+      "62": "swFwMailAlertStPlRnPf",
+      "63": "swFwMailAlertElStPlRnPf"
+    }
+  },
+  "SwFwLevels": {
+    "tp": "INTEGER",
+    "values": {
+      "1": "swFwReserved",
+      "2": "swFwDefault",
+      "3": "swFwCustom"
+    }
+  },
+  "SwFwClassesAreas": {
+    "tp": "INTEGER",
+    "values": {
+      "1": "swFwEnvTemp",
+      "2": "swFwEnvFan",
+      "3": "swFwEnvPs",
+      "4": "swFwTransceiverTemp",
+      "5": "swFwTransceiverRxp",
+      "6": "swFwTransceiverTxp",
+      "7": "swFwTransceiverCurrent",
+      "8": "swFwPortLink",
+      "9": "swFwPortSync",
+      "10": "swFwPortSignal",
+      "11": "swFwPortPe",
+      "12": "swFwPortWords",
+      "13": "swFwPortCrcs",
+      "14": "swFwPortRXPerf",
+      "15": "swFwPortTXPerf",
+      "16": "swFwPortState",
+      "17": "swFwFabricEd",
+      "18": "swFwFabricFr",
+      "19": "swFwFabricDi",
+      "20": "swFwFabricSc",
+      "21": "swFwFabricZc",
+      "22": "swFwFabricFq",
+      "23": "swFwFabricFl",
+      "24": "swFwFabricGs",
+      "25": "swFwEPortLink",
+      "26": "swFwEPortSync",
+      "27": "swFwEPortSignal",
+      "28": "swFwEPortPe",
+      "29": "swFwEPortWords",
+      "30": "swFwEPortCrcs",
+      "31": "swFwEPortRXPerf",
+      "32": "swFwEPortTXPerf",
+      "33": "swFwEPortState",
+      "34": "swFwFCUPortLink",
+      "35": "swFwFCUPortSync",
+      "36": "swFwFCUPortSignal",
+      "37": "swFwFCUPortPe",
+      "38": "swFwFCUPortWords",
+      "39": "swFwFCUPortCrcs",
+      "40": "swFwFCUPortRXPerf",
+      "41": "swFwFCUPortTXPerf",
+      "42": "swFwFCUPortState",
+      "43": "swFwFOPPortLink",
+      "44": "swFwFOPPortSync",
+      "45": "swFwFOPPortSignal",
+      "46": "swFwFOPPortPe",
+      "47": "swFwFOPPortWords",
+      "48": "swFwFOPPortCrcs",
+      "49": "swFwFOPPortRXPerf",
+      "50": "swFwFOPPortTXPerf",
+      "51": "swFwFOPPortState",
+      "52": "swFwPerfALPACRC",
+      "53": "swFwPerfEToECRC",
+      "54": "swFwPerfEToERxCnt",
+      "55": "swFwPerfEToETxCnt",
+      "56": "swFwPerffltCusDef",
+      "57": "swFwTransceiverVoltage",
+      "58": "swFwSecTelnetViolations",
+      "59": "swFwSecHTTPViolations",
+      "60": "swFwSecAPIViolations",
+      "61": "swFwSecRSNMPViolations",
+      "62": "swFwSecWSNMPViolations",
+      "63": "swFwSecSESViolations",
+      "64": "swFwSecMSViolations",
+      "65": "swFwSecSerialViolations",
+      "66": "swFwSecFPViolations",
+      "67": "swFwSecSCCViolations",
+      "68": "swFwSecDCCViolations",
+      "69": "swFwSecLoginViolations",
+      "70": "swFwSecInvalidTS",
+      "71": "swFwSecInvalidSign",
+      "72": "swFwSecInvalidCert",
+      "73": "swFwSecSlapFail",
+      "74": "swFwSecSlapBadPkt",
+      "75": "swFwSecTSOutSync",
+      "76": "swFwSecNoFcs",
+      "77": "swFwSecIncompDB",
+      "78": "swFwSecIllegalCmd",
+      "79": "swFwSAMTotalDownTime",
+      "80": "swFwSAMTotalUpTime",
+      "81": "swFwSAMDurationOfOccur",
+      "82": "swFwSAMFreqOfOccur",
+      "83": "swFwResourceFlash",
+      "84": "swFwEPortUtil",
+      "85": "swFwEPortPktl",
+      "86": "swFwPortLr",
+      "87": "swFwEPortLr",
+      "88": "swFwFCUPortLr",
+      "89": "swFwFOPPortLr",
+      "90": "swFwPortC3Discard",
+      "91": "swFwEPortC3Discard",
+      "92": "swFwFCUPortC3Discard",
+      "93": "swFwFOPPortC3Discard",
+      "94": "swFwVEPortStateChange",
+      "95": "swFwVEPortUtil",
+      "96": "swFwVEPortPktLoss",
+      "97": "swFwEPortTrunkUtil",
+      "98": "swFwFCUPortTrunkUtil",
+      "99": "swFwFOPPortTrunkUtil",
+      "100": "swFwCPUMemUsage",
+      "101": "filterFmCfg1",
+      "102": "filterFmCfg2",
+      "103": "filterFmCfg3",
+      "104": "filterFmCfg4",
+      "105": "filterFmCfg5",
+      "106": "filterFmCfg6",
+      "107": "filterFmCfg7",
+      "108": "filterFmCfg8",
+      "109": "filterFmCfg9",
+      "110": "filterFmCfg10",
+      "111": "filterFmCfg11",
+      "112": "filterFmCfg12",
+      "113": "filterFmCfg13",
+      "114": "filterFmCfg14",
+      "115": "filterFmCfg15",
+      "116": "filterFmCfg16",
+      "117": "filterFmCfg17",
+      "118": "filterFmCfg18",
+      "119": "filterFmCfg19",
+      "120": "filterFmCfg20",
+      "121": "filterFmCfg21",
+      "122": "filterFmCfg22",
+      "123": "filterFmCfg23",
+      "124": "filterFmCfg24",
+      "125": "filterFmCfg25",
+      "126": "filterFmCfg26",
+      "127": "filterFmCfg27",
+      "128": "filterFmCfg28",
+      "129": "filterFmCfg29",
+      "130": "filterFmCfg30",
+      "131": "filterFmCfg31",
+      "132": "filterFmCfg32",
+      "133": "filterFmCfg33",
+      "134": "filterFmCfg34",
+      "135": "filterFmCfg35",
+      "136": "filterFmCfg36",
+      "137": "filterFmCfg37",
+      "138": "filterFmCfg38",
+      "139": "filterFmCfg39",
+      "140": "filterFmCfg40",
+      "141": "filterFmCfg41",
+      "142": "filterFmCfg42",
+      "143": "filterFmCfg43",
+      "144": "filterFmCfg44",
+      "145": "filterFmCfg45",
+      "146": "filterFmCfg46",
+      "147": "filterFmCfg47",
+      "148": "filterFmCfg48",
+      "149": "filterFmCfg49",
+      "150": "filterFmCfg50",
+      "151": "filterFmCfg51",
+      "152": "swFwPowerOnHours"
+    }
+  },
+  "SwFwWriteVals": {
+    "tp": "INTEGER",
+    "values": {
+      "1": "swFwCancelWrite",
+      "2": "swFwApplyWrite"
+    }
+  },
+  "SwFwTimebase": {
+    "tp": "INTEGER",
+    "values": {
+      "1": "swFwTbNone",
+      "2": "swFwTbSec",
+      "3": "swFwTbMin",
+      "4": "swFwTbHour",
+      "5": "swFwTbDay"
+    }
+  },
+  "SwFwStatus": {
+    "tp": "INTEGER",
+    "values": {
+      "1": "disabled",
+      "2": "enabled"
+    }
+  },
+  "SwFwEvent": {
+    "tp": "INTEGER",
+    "values": {
+      "1": "started",
+      "2": "changed",
+      "3": "exceeded",
+      "4": "below",
+      "5": "above",
+      "6": "inBetween",
+      "7": "lowBufferCrsd"
+    }
+  },
+  "SwFwBehavior": {
+    "tp": "INTEGER",
+    "values": {
+      "1": "triggered",
+      "2": "continuous"
+    }
+  },
+  "SwFwState": {
+    "tp": "INTEGER",
+    "values": {
+      "1": "swFwInformative",
+      "2": "swFwNormal",
+      "3": "swFwFaulty"
+    }
+  },
+  "SwFwLicense": {
+    "tp": "INTEGER",
+    "values": {
+      "1": "swFwLicensed",
+      "2": "swFwNotLicensed"
+    }
+  },
+  "swFwFabricWatchLicense": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwLicense"
+    },
+    "index": null,
+    "value": [
+      "swFwSystem",
+      1
+    ]
+  },
+  "swFwClassAreaTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF\tSwFwClassAreaEntry"
+    },
+    "index": null,
+    "value": [
+      "swFwSystem",
+      2
+    ]
+  },
+  "swFwClassAreaEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwClassAreaEntry"
+    },
+    "index": [
+      "swFwClassAreaIndex"
+    ],
+    "value": [
+      "swFwClassAreaTable",
+      1
+    ]
+  },
+  "SwFwClassAreaEntry": {
+    "tp": "SEQUENCE"
+  },
+  "swFwClassAreaIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwClassesAreas"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      1
+    ]
+  },
+  "swFwWriteThVals": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwWriteVals"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      2
+    ]
+  },
+  "swFwDefaultUnit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      3
+    ]
+  },
+  "swFwDefaultTimebase": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwTimebase"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      4
+    ]
+  },
+  "swFwDefaultLow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      5
+    ]
+  },
+  "swFwDefaultHigh": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      6
+    ]
+  },
+  "swFwDefaultBufSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      7
+    ]
+  },
+  "swFwCustUnit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      8
+    ]
+  },
+  "swFwCustTimebase": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwTimebase"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      9
+    ]
+  },
+  "swFwCustLow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      10
+    ]
+  },
+  "swFwCustHigh": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      11
+    ]
+  },
+  "swFwCustBufSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      12
+    ]
+  },
+  "swFwThLevel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwLevels"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      13
+    ]
+  },
+  "swFwWriteActVals": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwWriteVals"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      14
+    ]
+  },
+  "swFwDefaultChangedActs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwActs"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      15
+    ]
+  },
+  "swFwDefaultExceededActs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwActs"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      16
+    ]
+  },
+  "swFwDefaultBelowActs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwActs"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      17
+    ]
+  },
+  "swFwDefaultAboveActs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwActs"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      18
+    ]
+  },
+  "swFwDefaultInBetweenActs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwActs"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      19
+    ]
+  },
+  "swFwCustChangedActs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwActs"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      20
+    ]
+  },
+  "swFwCustExceededActs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwActs"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      21
+    ]
+  },
+  "swFwCustBelowActs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwActs"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      22
+    ]
+  },
+  "swFwCustAboveActs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwActs"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      23
+    ]
+  },
+  "swFwCustInBetweenActs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwActs"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      24
+    ]
+  },
+  "swFwValidActs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwActs"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      25
+    ]
+  },
+  "swFwActLevel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwLevels"
+    },
+    "index": null,
+    "value": [
+      "swFwClassAreaEntry",
+      26
+    ]
+  },
+  "swFwThresholdTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF\tSwFwThresholdEntry"
+    },
+    "index": null,
+    "value": [
+      "swFwSystem",
+      3
+    ]
+  },
+  "swFwThresholdEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwThresholdEntry"
+    },
+    "index": [
+      "swFwClassAreaIndex",
+      "swFwThresholdIndex"
+    ],
+    "value": [
+      "swFwThresholdTable",
+      1
+    ]
+  },
+  "SwFwThresholdEntry": {
+    "tp": "SEQUENCE"
+  },
+  "swFwThresholdIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swFwThresholdEntry",
+      1
+    ]
+  },
+  "swFwStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwStatus"
+    },
+    "index": null,
+    "value": [
+      "swFwThresholdEntry",
+      2
+    ]
+  },
+  "swFwName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swFwThresholdEntry",
+      3
+    ]
+  },
+  "swFwLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swFwThresholdEntry",
+      4
+    ]
+  },
+  "swFwCurVal": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swFwThresholdEntry",
+      5
+    ]
+  },
+  "swFwLastEvent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwEvent"
+    },
+    "index": null,
+    "value": [
+      "swFwThresholdEntry",
+      6
+    ]
+  },
+  "swFwLastEventVal": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swFwThresholdEntry",
+      7
+    ]
+  },
+  "swFwLastEventTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swFwThresholdEntry",
+      8
+    ]
+  },
+  "swFwLastState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwState"
+    },
+    "index": null,
+    "value": [
+      "swFwThresholdEntry",
+      9
+    ]
+  },
+  "swFwBehaviorType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwFwBehavior"
+    },
+    "index": null,
+    "value": [
+      "swFwThresholdEntry",
+      10
+    ]
+  },
+  "swFwBehaviorInt": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swFwThresholdEntry",
+      11
+    ]
+  },
+  "swFwLastSeverityLevel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwSevType"
+    },
+    "index": null,
+    "value": [
+      "swFwThresholdEntry",
+      12
+    ]
+  },
+  "swEndDeviceRlsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF\tSwEndDeviceRlsEntry"
+    },
+    "index": null,
+    "value": [
+      "swEndDevice",
+      1
+    ]
+  },
+  "swEndDeviceRlsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwEndDeviceRlsEntry"
+    },
+    "index": [
+      "swEndDevicePort",
+      "swEndDeviceAlpa"
+    ],
+    "value": [
+      "swEndDeviceRlsTable",
+      1
+    ]
+  },
+  "SwEndDeviceRlsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "swEndDevicePort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swEndDeviceRlsEntry",
+      1
+    ]
+  },
+  "swEndDeviceAlpa": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swEndDeviceRlsEntry",
+      2
+    ]
+  },
+  "swEndDevicePortID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swEndDeviceRlsEntry",
+      3
+    ]
+  },
+  "swEndDeviceLinkFailure": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swEndDeviceRlsEntry",
+      4
+    ]
+  },
+  "swEndDeviceSyncLoss": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swEndDeviceRlsEntry",
+      5
+    ]
+  },
+  "swEndDeviceSigLoss": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swEndDeviceRlsEntry",
+      6
+    ]
+  },
+  "swEndDeviceProtoErr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swEndDeviceRlsEntry",
+      7
+    ]
+  },
+  "swEndDeviceInvalidWord": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swEndDeviceRlsEntry",
+      8
+    ]
+  },
+  "swEndDeviceInvalidCRC": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "swEndDeviceRlsEntry",
+      9
+    ]
+  },
+  "swGroupTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF     SwGroupEntry"
+    },
+    "index": null,
+    "value": [
+      "swGroup",
+      1
+    ]
+  },
+  "swGroupEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwGroupEntry"
+    },
+    "index": [
+      "swGroupIndex"
+    ],
+    "value": [
+      "swGroupTable",
+      1
+    ]
+  },
+  "SwGroupEntry": {
+    "tp": "SEQUENCE"
+  },
+  "swGroupIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swGroupEntry",
+      1
+    ]
+  },
+  "swGroupName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swGroupEntry",
+      2
+    ]
+  },
+  "swGroupType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swGroupEntry",
+      3
+    ]
+  },
+  "swGroupMemTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SwGroupMemEntry"
+    },
+    "index": null,
+    "value": [
+      "swGroup",
+      2
+    ]
+  },
+  "swGroupMemEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwGroupMemEntry"
+    },
+    "index": [
+      "swGroupId",
+      "swGroupMemWwn"
+    ],
+    "value": [
+      "swGroupMemTable",
+      1
+    ]
+  },
+  "SwGroupMemEntry": {
+    "tp": "SEQUENCE"
+  },
+  "swGroupId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swGroupMemEntry",
+      1
+    ]
+  },
+  "swGroupMemWwn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcWwn"
+    },
+    "index": null,
+    "value": [
+      "swGroupMemEntry",
+      2
+    ]
+  },
+  "swGroupMemPos": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swGroupMemEntry",
+      3
+    ]
+  },
+  "swBlmPerfALPAMntTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SwBlmPerfALPAMntEntry"
+    },
+    "index": null,
+    "value": [
+      "swBlmPerfMnt",
+      1
+    ]
+  },
+  "swBlmPerfALPAMntEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwBlmPerfALPAMntEntry"
+    },
+    "index": [
+      "swBlmPerfAlpaPort",
+      "swBlmPerfAlpaIndx"
+    ],
+    "value": [
+      "swBlmPerfALPAMntTable",
+      1
+    ]
+  },
+  "SwBlmPerfALPAMntEntry": {
+    "tp": "SEQUENCE"
+  },
+  "swBlmPerfAlpaPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwPortIndex"
+    },
+    "index": null,
+    "value": [
+      "swBlmPerfALPAMntEntry",
+      1
+    ]
+  },
+  "swBlmPerfAlpaIndx": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swBlmPerfALPAMntEntry",
+      2
+    ]
+  },
+  "swBlmPerfAlpa": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swBlmPerfALPAMntEntry",
+      3
+    ]
+  },
+  "swBlmPerfAlpaCRCCnt": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swBlmPerfALPAMntEntry",
+      4
+    ]
+  },
+  "swBlmPerfEEMntTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SwBlmPerfEEMntEntry"
+    },
+    "index": null,
+    "value": [
+      "swBlmPerfMnt",
+      2
+    ]
+  },
+  "swBlmPerfEEMntEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwBlmPerfEEMntEntry"
+    },
+    "index": [
+      "swBlmPerfEEPort",
+      "swBlmPerfEERefKey"
+    ],
+    "value": [
+      "swBlmPerfEEMntTable",
+      1
+    ]
+  },
+  "SwBlmPerfEEMntEntry": {
+    "tp": "SEQUENCE"
+  },
+  "swBlmPerfEEPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwPortIndex"
+    },
+    "index": null,
+    "value": [
+      "swBlmPerfEEMntEntry",
+      1
+    ]
+  },
+  "swBlmPerfEERefKey": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swBlmPerfEEMntEntry",
+      2
+    ]
+  },
+  "swBlmPerfEECRC": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swBlmPerfEEMntEntry",
+      3
+    ]
+  },
+  "swBlmPerfEEFCWRx": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swBlmPerfEEMntEntry",
+      4
+    ]
+  },
+  "swBlmPerfEEFCWTx": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swBlmPerfEEMntEntry",
+      5
+    ]
+  },
+  "swBlmPerfEESid": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swBlmPerfEEMntEntry",
+      6
+    ]
+  },
+  "swBlmPerfEEDid": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swBlmPerfEEMntEntry",
+      7
+    ]
+  },
+  "swBlmPerfFltMntTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SwBlmPerfFltMntEntry"
+    },
+    "index": null,
+    "value": [
+      "swBlmPerfMnt",
+      3
+    ]
+  },
+  "swBlmPerfFltMntEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwBlmPerfFltMntEntry"
+    },
+    "index": [
+      "swBlmPerfFltPort",
+      "swBlmPerfFltRefkey"
+    ],
+    "value": [
+      "swBlmPerfFltMntTable",
+      1
+    ]
+  },
+  "SwBlmPerfFltMntEntry": {
+    "tp": "SEQUENCE"
+  },
+  "swBlmPerfFltPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwPortIndex"
+    },
+    "index": null,
+    "value": [
+      "swBlmPerfFltMntEntry",
+      1
+    ]
+  },
+  "swBlmPerfFltRefkey": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swBlmPerfFltMntEntry",
+      2
+    ]
+  },
+  "swBlmPerfFltCnt": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swBlmPerfFltMntEntry",
+      3
+    ]
+  },
+  "swBlmPerfFltAlias": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "swBlmPerfFltMntEntry",
+      4
+    ]
+  },
+  "swSwitchTrunkable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "8": "yes",
+        "0": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "swTrunk",
+      1
+    ]
+  },
+  "swTrunkTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SwTrunkEntry"
+    },
+    "index": null,
+    "value": [
+      "swTrunk",
+      2
+    ]
+  },
+  "swTrunkEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwTrunkEntry"
+    },
+    "index": [
+      "swTrunkPortIndex"
+    ],
+    "value": [
+      "swTrunkTable",
+      1
+    ]
+  },
+  "SwTrunkEntry": {
+    "tp": "SEQUENCE"
+  },
+  "swTrunkPortIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwPortIndex"
+    },
+    "index": null,
+    "value": [
+      "swTrunkEntry",
+      1
+    ]
+  },
+  "swTrunkGroupNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swTrunkEntry",
+      2
+    ]
+  },
+  "swTrunkMaster": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwTrunkMaster"
+    },
+    "index": null,
+    "value": [
+      "swTrunkEntry",
+      3
+    ]
+  },
+  "swPortTrunked": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "disabled",
+        "1": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "swTrunkEntry",
+      4
+    ]
+  },
+  "swTrunkGrpTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SwTrunkGrpEntry"
+    },
+    "index": null,
+    "value": [
+      "swTrunk",
+      3
+    ]
+  },
+  "swTrunkGrpEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwTrunkGrpEntry"
+    },
+    "index": [
+      "swTrunkGrpNumber"
+    ],
+    "value": [
+      "swTrunkGrpTable",
+      1
+    ]
+  },
+  "SwTrunkGrpEntry": {
+    "tp": "SEQUENCE"
+  },
+  "swTrunkGrpNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swTrunkGrpEntry",
+      1
+    ]
+  },
+  "swTrunkGrpMaster": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwTrunkMaster"
+    },
+    "index": null,
+    "value": [
+      "swTrunkGrpEntry",
+      2
+    ]
+  },
+  "swTrunkGrpTx": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swTrunkGrpEntry",
+      3
+    ]
+  },
+  "swTrunkGrpRx": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swTrunkGrpEntry",
+      4
+    ]
+  },
+  "swTopTalkerMntMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "fabricmode",
+        "2": "portmode"
+      }
+    },
+    "index": null,
+    "value": [
+      "swTopTalker",
+      1
+    ]
+  },
+  "swTopTalkerMntNumEntries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swTopTalker",
+      2
+    ]
+  },
+  "swTopTalkerMntTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SwTopTalkerMntEntry"
+    },
+    "index": null,
+    "value": [
+      "swTopTalker",
+      3
+    ]
+  },
+  "swTopTalkerMntEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwTopTalkerMntEntry"
+    },
+    "index": [
+      "swTopTalkerMntIndex"
+    ],
+    "value": [
+      "swTopTalkerMntTable",
+      1
+    ]
+  },
+  "SwTopTalkerMntEntry": {
+    "tp": "SEQUENCE"
+  },
+  "swTopTalkerMntIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swTopTalkerMntEntry",
+      1
+    ]
+  },
+  "swTopTalkerMntPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swTopTalkerMntEntry",
+      2
+    ]
+  },
+  "swTopTalkerMntSpid": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swTopTalkerMntEntry",
+      3
+    ]
+  },
+  "swTopTalkerMntDpid": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swTopTalkerMntEntry",
+      4
+    ]
+  },
+  "swTopTalkerMntflow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swTopTalkerMntEntry",
+      5
+    ]
+  },
+  "swTopTalkerMntSwwn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcWwn"
+    },
+    "index": null,
+    "value": [
+      "swTopTalkerMntEntry",
+      6
+    ]
+  },
+  "swTopTalkerMntDwwn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcWwn"
+    },
+    "index": null,
+    "value": [
+      "swTopTalkerMntEntry",
+      7
+    ]
+  },
+  "swCpuUsage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swCpuOrMemoryUsage",
+      1
+    ]
+  },
+  "swCpuNoOfRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swCpuOrMemoryUsage",
+      2
+    ]
+  },
+  "swCpuUsageLimit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swCpuOrMemoryUsage",
+      3
+    ]
+  },
+  "swCpuPollingInterval": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swCpuOrMemoryUsage",
+      4
+    ]
+  },
+  "swCpuAction": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "none",
+        "1": "raslog",
+        "2": "snmp",
+        "3": "raslogandSnmp"
+      }
+    },
+    "index": null,
+    "value": [
+      "swCpuOrMemoryUsage",
+      5
+    ]
+  },
+  "swMemUsage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swCpuOrMemoryUsage",
+      6
+    ]
+  },
+  "swMemNoOfRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swCpuOrMemoryUsage",
+      7
+    ]
+  },
+  "swMemUsageLimit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swCpuOrMemoryUsage",
+      8
+    ]
+  },
+  "swMemPollingInterval": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swCpuOrMemoryUsage",
+      9
+    ]
+  },
+  "swMemAction": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "none",
+        "1": "raslog",
+        "2": "snmp",
+        "3": "raslogandSnmp"
+      }
+    },
+    "index": null,
+    "value": [
+      "swCpuOrMemoryUsage",
+      10
+    ]
+  },
+  "swMemUsageLimit1": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swCpuOrMemoryUsage",
+      11
+    ]
+  },
+  "swMemUsageLimit3": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "swCpuOrMemoryUsage",
+      12
+    ]
+  },
+  "swConnUnitPortStatEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SwConnUnitPortStatEntry"
+    },
+    "index": "connUnitPortStatEntry",
+    "value": [
+      "swConnUnitPortStatExtentionTable",
+      1
+    ]
+  },
+  "SwConnUnitPortStatEntry": {
+    "tp": "SEQUENCE"
+  },
+  "swConnUnitCRCWithBadEOF": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      1
+    ]
+  },
+  "swConnUnitZeroTenancy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      2
+    ]
+  },
+  "swConnUnitFLNumOfTenancy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      3
+    ]
+  },
+  "swConnUnitNLNumOfTenancy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      4
+    ]
+  },
+  "swConnUnitStopTenancyStarVation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      5
+    ]
+  },
+  "swConnUnitOpend": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      6
+    ]
+  },
+  "swConnUnitTransferConnection": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      7
+    ]
+  },
+  "swConnUnitOpen": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      8
+    ]
+  },
+  "swConnUnitInvalidARB": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      9
+    ]
+  },
+  "swConnUnitFTB1Miss": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      10
+    ]
+  },
+  "swConnUnitFTB2Miss": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      11
+    ]
+  },
+  "swConnUnitFTB6Miss": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      12
+    ]
+  },
+  "swConnUnitZoneMiss": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      13
+    ]
+  },
+  "swConnUnitLunZoneMiss": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      14
+    ]
+  },
+  "swConnUnitBadEOF": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      15
+    ]
+  },
+  "swConnUnitLCRX": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      16
+    ]
+  },
+  "swConnUnitRDYPriority": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      17
+    ]
+  },
+  "swConnUnitLli": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      18
+    ]
+  },
+  "swConnUnitInterrupts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      19
+    ]
+  },
+  "swConnUnitUnknownInterrupts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      20
+    ]
+  },
+  "swConnUnitTimedOut": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      21
+    ]
+  },
+  "swConnUnitProcRequired": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      22
+    ]
+  },
+  "swConnUnitTxBufferUnavailable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      23
+    ]
+  },
+  "swConnUnitStateChange": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      24
+    ]
+  },
+  "swConnUnitC3DiscardDueToRXTimeout": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      25
+    ]
+  },
+  "swConnUnitC3DiscardDueToDestUnreachable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      26
+    ]
+  },
+  "swConnUnitC3DiscardDueToTXTimeout": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      27
+    ]
+  },
+  "swConnUnitC3DiscardOther": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      28
+    ]
+  },
+  "swConnUnitPCSErrorCounter": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      29
+    ]
+  },
+  "swConnUnitUnroutableFrameCounter": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      30
+    ]
+  },
+  "swConnUnitFECCorrectedCounter": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      31
+    ]
+  },
+  "swConnUnitFECUnCorrectedCounter": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "swConnUnitPortStatEntry",
+      32
+    ]
+  },
+  "swTrapsV2": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "sw",
+      0
+    ]
+  }
+}

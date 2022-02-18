@@ -1,0 +1,670 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "NOTIFICATION-TYPE",
+        "TimeTicks",
+        "Counter32",
+        "snmpModules",
+        "mib-2"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "DisplayString",
+        "TestAndIncr",
+        "TimeStamp"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP",
+        "NOTIFICATION-GROUP"
+      ]
+    ]
+  ],
+  "snmpMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "snmpModules",
+      1
+    ]
+  },
+  "snmpMIBObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "snmpMIB",
+      1
+    ]
+  },
+  "system": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "mib-2",
+      1
+    ]
+  },
+  "sysDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "system",
+      1
+    ]
+  },
+  "sysObjectID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "system",
+      2
+    ]
+  },
+  "sysUpTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "system",
+      3
+    ]
+  },
+  "sysContact": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "system",
+      4
+    ]
+  },
+  "sysName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "system",
+      5
+    ]
+  },
+  "sysLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "system",
+      6
+    ]
+  },
+  "sysServices": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "system",
+      7
+    ]
+  },
+  "sysORLastChange": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "system",
+      8
+    ]
+  },
+  "sysORTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SysOREntry"
+    },
+    "index": null,
+    "value": [
+      "system",
+      9
+    ]
+  },
+  "sysOREntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SysOREntry"
+    },
+    "index": [
+      "sysORIndex"
+    ],
+    "value": [
+      "sysORTable",
+      1
+    ]
+  },
+  "SysOREntry": {
+    "tp": "SEQUENCE"
+  },
+  "sysORIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "sysOREntry",
+      1
+    ]
+  },
+  "sysORID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "sysOREntry",
+      2
+    ]
+  },
+  "sysORDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "sysOREntry",
+      3
+    ]
+  },
+  "sysORUpTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "sysOREntry",
+      4
+    ]
+  },
+  "snmp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "mib-2",
+      11
+    ]
+  },
+  "snmpInPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      1
+    ]
+  },
+  "snmpInBadVersions": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      3
+    ]
+  },
+  "snmpInBadCommunityNames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      4
+    ]
+  },
+  "snmpInBadCommunityUses": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      5
+    ]
+  },
+  "snmpInASNParseErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      6
+    ]
+  },
+  "snmpEnableAuthenTraps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "enabled",
+        "2": "disabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      30
+    ]
+  },
+  "snmpSilentDrops": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      31
+    ]
+  },
+  "snmpProxyDrops": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      32
+    ]
+  },
+  "snmpTrap": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "snmpMIBObjects",
+      4
+    ]
+  },
+  "snmpTrapOID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "snmpTrap",
+      1
+    ]
+  },
+  "snmpTrapEnterprise": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "snmpTrap",
+      3
+    ]
+  },
+  "snmpTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "snmpMIBObjects",
+      5
+    ]
+  },
+  "snmpSet": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "snmpMIBObjects",
+      6
+    ]
+  },
+  "snmpSetSerialNo": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TestAndIncr"
+    },
+    "index": null,
+    "value": [
+      "snmpSet",
+      1
+    ]
+  },
+  "snmpMIBConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "snmpMIB",
+      2
+    ]
+  },
+  "snmpMIBCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "snmpMIBConformance",
+      1
+    ]
+  },
+  "snmpMIBGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "snmpMIBConformance",
+      2
+    ]
+  },
+  "snmpGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "snmpMIBGroups",
+      8
+    ]
+  },
+  "snmpCommunityGroup1": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "snmpMIBGroups",
+      9
+    ]
+  },
+  "snmpSetGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "snmpMIBGroups",
+      5
+    ]
+  },
+  "systemGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "snmpMIBGroups",
+      6
+    ]
+  },
+  "snmpNotificationGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "snmpMIBGroups",
+      12
+    ]
+  },
+  "snmpOutPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      2
+    ]
+  },
+  "snmpInTooBigs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      8
+    ]
+  },
+  "snmpInNoSuchNames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      9
+    ]
+  },
+  "snmpInBadValues": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      10
+    ]
+  },
+  "snmpInReadOnlys": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      11
+    ]
+  },
+  "snmpInGenErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      12
+    ]
+  },
+  "snmpInTotalReqVars": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      13
+    ]
+  },
+  "snmpInTotalSetVars": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      14
+    ]
+  },
+  "snmpInGetRequests": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      15
+    ]
+  },
+  "snmpInGetNexts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      16
+    ]
+  },
+  "snmpInSetRequests": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      17
+    ]
+  },
+  "snmpInGetResponses": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      18
+    ]
+  },
+  "snmpInTraps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      19
+    ]
+  },
+  "snmpOutTooBigs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      20
+    ]
+  },
+  "snmpOutNoSuchNames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      21
+    ]
+  },
+  "snmpOutBadValues": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      22
+    ]
+  },
+  "snmpOutGenErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      24
+    ]
+  },
+  "snmpOutGetRequests": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      25
+    ]
+  },
+  "snmpOutGetNexts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      26
+    ]
+  },
+  "snmpOutSetRequests": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      27
+    ]
+  },
+  "snmpOutGetResponses": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      28
+    ]
+  },
+  "snmpOutTraps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "snmp",
+      29
+    ]
+  },
+  "snmpObsoleteGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "snmpMIBGroups",
+      10
+    ]
+  }
+}

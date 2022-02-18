@@ -1,0 +1,432 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "NOTIFICATION-TYPE",
+        "OBJECT-TYPE",
+        "Integer32",
+        "Counter32",
+        "Unsigned32"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION",
+        "DisplayString",
+        "TimeStamp",
+        "TruthValue",
+        "RowStatus"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP",
+        "NOTIFICATION-GROUP"
+      ]
+    ],
+    [
+      "SNMP-FRAMEWORK-MIB",
+      [
+        "SnmpAdminString"
+      ]
+    ],
+    [
+      "CISCO-SMI",
+      [
+        "ciscoMgmt"
+      ]
+    ],
+    [
+      "INET-ADDRESS-MIB",
+      [
+        "InetAddress",
+        "InetAddressType"
+      ]
+    ]
+  ],
+  "ciscoSyslogMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "ciscoMgmt",
+      41
+    ]
+  },
+  "ciscoSyslogMIBObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoSyslogMIB",
+      1
+    ]
+  },
+  "clogBasic": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoSyslogMIBObjects",
+      1
+    ]
+  },
+  "clogHistory": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoSyslogMIBObjects",
+      2
+    ]
+  },
+  "clogServer": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoSyslogMIBObjects",
+      3
+    ]
+  },
+  "SyslogSeverity": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "emergency",
+        "2": "alert",
+        "3": "critical",
+        "4": "error",
+        "5": "warning",
+        "6": "notice",
+        "7": "info",
+        "8": "debug"
+      }
+    },
+    "display_hint": null
+  },
+  "clogNotificationsSent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "clogBasic",
+      1
+    ]
+  },
+  "clogNotificationsEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "clogBasic",
+      2
+    ]
+  },
+  "clogMaxSeverity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SyslogSeverity"
+    },
+    "index": null,
+    "value": [
+      "clogBasic",
+      3
+    ]
+  },
+  "clogMsgIgnores": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "clogBasic",
+      4
+    ]
+  },
+  "clogMsgDrops": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "clogBasic",
+      5
+    ]
+  },
+  "clogOriginIDType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "none",
+        "2": "other",
+        "3": "hostName",
+        "4": "ipv4Address",
+        "5": "contextName",
+        "6": "userDefined"
+      }
+    },
+    "index": null,
+    "value": [
+      "clogBasic",
+      6
+    ]
+  },
+  "clogOriginID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "clogBasic",
+      7
+    ]
+  },
+  "clogHistTableMaxLength": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "clogHistory",
+      1
+    ]
+  },
+  "clogHistMsgsFlushed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "clogHistory",
+      2
+    ]
+  },
+  "clogHistoryTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ClogHistoryEntry"
+    },
+    "index": null,
+    "value": [
+      "clogHistory",
+      3
+    ]
+  },
+  "clogHistoryEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ClogHistoryEntry"
+    },
+    "index": [
+      "clogHistIndex"
+    ],
+    "value": [
+      "clogHistoryTable",
+      1
+    ]
+  },
+  "ClogHistoryEntry": {
+    "tp": "SEQUENCE"
+  },
+  "clogHistIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "clogHistoryEntry",
+      1
+    ]
+  },
+  "clogHistFacility": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "clogHistoryEntry",
+      2
+    ]
+  },
+  "clogHistSeverity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SyslogSeverity"
+    },
+    "index": null,
+    "value": [
+      "clogHistoryEntry",
+      3
+    ]
+  },
+  "clogHistMsgName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "clogHistoryEntry",
+      4
+    ]
+  },
+  "clogHistMsgText": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "clogHistoryEntry",
+      5
+    ]
+  },
+  "clogHistTimestamp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "clogHistoryEntry",
+      6
+    ]
+  },
+  "clogMaxServers": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "clogServer",
+      1
+    ]
+  },
+  "clogServerConfigTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ClogServerConfigEntry"
+    },
+    "index": null,
+    "value": [
+      "clogServer",
+      2
+    ]
+  },
+  "clogServerConfigEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ClogServerConfigEntry"
+    },
+    "index": [
+      "clogServerAddrType",
+      "clogServerAddr"
+    ],
+    "value": [
+      "clogServerConfigTable",
+      1
+    ]
+  },
+  "ClogServerConfigEntry": {
+    "tp": "SEQUENCE"
+  },
+  "clogServerAddrType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddressType"
+    },
+    "index": null,
+    "value": [
+      "clogServerConfigEntry",
+      1
+    ]
+  },
+  "clogServerAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddress"
+    },
+    "index": null,
+    "value": [
+      "clogServerConfigEntry",
+      2
+    ]
+  },
+  "clogServerStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "clogServerConfigEntry",
+      3
+    ]
+  },
+  "ciscoSyslogMIBNotificationPrefix": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoSyslogMIB",
+      2
+    ]
+  },
+  "ciscoSyslogMIBNotifications": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoSyslogMIBNotificationPrefix",
+      0
+    ]
+  },
+  "ciscoSyslogMIBConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoSyslogMIB",
+      3
+    ]
+  },
+  "ciscoSyslogMIBCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoSyslogMIBConformance",
+      1
+    ]
+  },
+  "ciscoSyslogMIBGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoSyslogMIBConformance",
+      2
+    ]
+  },
+  "ciscoSyslogMIBGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoSyslogMIBGroups",
+      1
+    ]
+  },
+  "clogServerGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoSyslogMIBGroups",
+      3
+    ]
+  },
+  "clogOriginIDGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoSyslogMIBGroups",
+      4
+    ]
+  }
+}

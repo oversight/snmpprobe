@@ -1,0 +1,68 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-IDENTITY",
+        "enterprises"
+      ]
+    ]
+  ],
+  "bcsi": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "enterprises",
+      1588
+    ]
+  },
+  "commDev": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "bcsi",
+      2
+    ]
+  },
+  "fibrechannel": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "commDev",
+      1
+    ]
+  },
+  "nos": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "commDev",
+      2
+    ]
+  },
+  "fcSwitch": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "fibrechannel",
+      1
+    ]
+  },
+  "bcsiReg": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "bcsi",
+      3
+    ]
+  },
+  "bcsiModules": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "bcsiReg",
+      1
+    ]
+  },
+  "brocadeAgentCapability": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "bcsiReg",
+      2
+    ]
+  }
+}

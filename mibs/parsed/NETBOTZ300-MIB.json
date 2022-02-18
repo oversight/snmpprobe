@@ -1,0 +1,2569 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "NOTIFICATION-TYPE",
+        "enterprises",
+        "Counter32",
+        "Integer32"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION",
+        "DisplayString",
+        "DateAndTime"
+      ]
+    ]
+  ],
+  "netBotz-APC": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      5528
+    ]
+  },
+  "netBotz": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotz-APC",
+      100
+    ]
+  },
+  "netBotzTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotz",
+      10
+    ]
+  },
+  "netBotzTrapParms": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotz",
+      11
+    ]
+  },
+  "netBotzProducts": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotz",
+      20
+    ]
+  },
+  "netBotzGenericTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzTraps",
+      1
+    ]
+  },
+  "netBotzSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzTraps",
+      2
+    ]
+  },
+  "netBotzPodTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzTraps",
+      3
+    ]
+  },
+  "netBotzPortTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzTraps",
+      4
+    ]
+  },
+  "netBotzTempSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      1
+    ]
+  },
+  "netBotzHumiditySensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      2
+    ]
+  },
+  "netBotzDewPointSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      3
+    ]
+  },
+  "netBotzAirFlowSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      4
+    ]
+  },
+  "netBotzAudioSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      5
+    ]
+  },
+  "netBotzAmpDetectSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      6
+    ]
+  },
+  "netBotzDryContactSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      7
+    ]
+  },
+  "netBotzCameraMotionSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      8
+    ]
+  },
+  "netBotzDoorSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      9
+    ]
+  },
+  "netBotzMicPlugSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      10
+    ]
+  },
+  "netBotzSpeakerPlugSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      11
+    ]
+  },
+  "netBotzTVSignalSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      12
+    ]
+  },
+  "netBotzGPSPositionSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      13
+    ]
+  },
+  "netBotzGPSMovementSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      14
+    ]
+  },
+  "netBotzGPSStatusSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      15
+    ]
+  },
+  "netBotzWirelessStatusSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      22
+    ]
+  },
+  "netBotzPacketDropSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      23
+    ]
+  },
+  "netBotzSNMPCrawlerSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      24
+    ]
+  },
+  "netBotzPlugModuleStatusSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      25
+    ]
+  },
+  "netBotzOutputControlSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      26
+    ]
+  },
+  "netBotzMultiRAESensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      27
+    ]
+  },
+  "netBotzMultiRAESensorStatusTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      28
+    ]
+  },
+  "netBotzMultiRAEDeviceStatusTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      29
+    ]
+  },
+  "netBotzLinkStatusSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      30
+    ]
+  },
+  "netBotzLoopVoltageSensorTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensorTraps",
+      31
+    ]
+  },
+  "netBotzBasePodTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzPodTraps",
+      1
+    ]
+  },
+  "netBotzSensorPodTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzPodTraps",
+      2
+    ]
+  },
+  "netBotzCameraPodTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzPodTraps",
+      3
+    ]
+  },
+  "netBotzCCTVPodTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzPodTraps",
+      4
+    ]
+  },
+  "netBotz4to20mAPodTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzPodTraps",
+      5
+    ]
+  },
+  "netBotzBotz": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzProducts",
+      10
+    ]
+  },
+  "netBotzWallBotz500": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzBotz",
+      2000
+    ]
+  },
+  "netBotz420Wall": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzBotz",
+      2001
+    ]
+  },
+  "raeSystemsAreaConnect500": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzBotz",
+      2002
+    ]
+  },
+  "netBotz420Rack": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzBotz",
+      2003
+    ]
+  },
+  "netBotz320Wall": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzBotz",
+      2004
+    ]
+  },
+  "netBotz320Rack": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzBotz",
+      2005
+    ]
+  },
+  "netBotz420ERack": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzBotz",
+      2006
+    ]
+  },
+  "netBotz320ERack": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzBotz",
+      2007
+    ]
+  },
+  "netBotz220Camera": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzBotz",
+      2008
+    ]
+  },
+  "apprion500": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzBotz",
+      2009
+    ]
+  },
+  "avocent500": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzBotz",
+      2010
+    ]
+  },
+  "netBotz320EWall": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzBotz",
+      2011
+    ]
+  },
+  "netBotz420EWall": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzBotz",
+      2012
+    ]
+  },
+  "netBotz550Rack": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzBotz",
+      2013
+    ]
+  },
+  "netBotz450Rack": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzBotz",
+      2014
+    ]
+  },
+  "netBotz455Wall": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzBotz",
+      2015
+    ]
+  },
+  "netBotz355Wall": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzBotz",
+      2016
+    ]
+  },
+  "OperStatus": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "disconnected",
+        "1": "error",
+        "2": "normal"
+      }
+    },
+    "display_hint": null
+  },
+  "ErrorStatus": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "normal",
+        "1": "info",
+        "2": "warning",
+        "3": "error",
+        "4": "critical",
+        "5": "failure"
+      }
+    },
+    "display_hint": null
+  },
+  "BoolValue": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "no",
+        "1": "yes",
+        "2": "null"
+      }
+    },
+    "display_hint": null
+  },
+  "netBotzEnclosures": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotz",
+      2
+    ]
+  },
+  "netBotzPorts": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotz",
+      3
+    ]
+  },
+  "netBotzSensors": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotz",
+      4
+    ]
+  },
+  "netBotzErrors": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotz",
+      5
+    ]
+  },
+  "netBotzNumericSensors": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensors",
+      1
+    ]
+  },
+  "netBotzStateSensors": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netBotzSensors",
+      2
+    ]
+  },
+  "netBotzErrorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ErrorStatus"
+    },
+    "index": null,
+    "value": [
+      "netBotz",
+      100
+    ]
+  },
+  "enclosureTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF EnclosureEntry"
+    },
+    "index": null,
+    "value": [
+      "netBotzEnclosures",
+      1
+    ]
+  },
+  "enclosureEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EnclosureEntry"
+    },
+    "index": [
+      "enclosureIndex"
+    ],
+    "value": [
+      "enclosureTable",
+      1
+    ]
+  },
+  "EnclosureEntry": {
+    "tp": "SEQUENCE"
+  },
+  "enclosureId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureEntry",
+      1
+    ]
+  },
+  "enclosureStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OperStatus"
+    },
+    "index": null,
+    "value": [
+      "enclosureEntry",
+      2
+    ]
+  },
+  "enclosureErrorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ErrorStatus"
+    },
+    "index": null,
+    "value": [
+      "enclosureEntry",
+      3
+    ]
+  },
+  "enclosureLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureEntry",
+      4
+    ]
+  },
+  "enclosureParentEncId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureEntry",
+      5
+    ]
+  },
+  "enclosureDockedToEncId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureEntry",
+      6
+    ]
+  },
+  "enclosureIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "enclosureEntry",
+      7
+    ]
+  },
+  "dinPortTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF DINPortEntry"
+    },
+    "index": null,
+    "value": [
+      "netBotzPorts",
+      1
+    ]
+  },
+  "dinPortEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DINPortEntry"
+    },
+    "index": [
+      "dinPortIndex"
+    ],
+    "value": [
+      "dinPortTable",
+      1
+    ]
+  },
+  "DINPortEntry": {
+    "tp": "SEQUENCE"
+  },
+  "dinPortId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "dinPortEntry",
+      1
+    ]
+  },
+  "dinPortStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OperStatus"
+    },
+    "index": null,
+    "value": [
+      "dinPortEntry",
+      2
+    ]
+  },
+  "dinPortLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "dinPortEntry",
+      3
+    ]
+  },
+  "dinPortEncId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "dinPortEntry",
+      4
+    ]
+  },
+  "dinPortSensorIdSuffix": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "dinPortEntry",
+      5
+    ]
+  },
+  "dinPortSupportsAverage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BoolValue"
+    },
+    "index": null,
+    "value": [
+      "dinPortEntry",
+      6
+    ]
+  },
+  "dinPortSupportsRMS": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BoolValue"
+    },
+    "index": null,
+    "value": [
+      "dinPortEntry",
+      7
+    ]
+  },
+  "dinPortSupportsDryContact": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BoolValue"
+    },
+    "index": null,
+    "value": [
+      "dinPortEntry",
+      8
+    ]
+  },
+  "dinPortIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "dinPortEntry",
+      9
+    ]
+  },
+  "otherPortTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF OtherPortEntry"
+    },
+    "index": null,
+    "value": [
+      "netBotzPorts",
+      10
+    ]
+  },
+  "otherPortEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OtherPortEntry"
+    },
+    "index": [
+      "otherPortIndex"
+    ],
+    "value": [
+      "otherPortTable",
+      1
+    ]
+  },
+  "OtherPortEntry": {
+    "tp": "SEQUENCE"
+  },
+  "otherPortId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "otherPortEntry",
+      1
+    ]
+  },
+  "otherPortStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OperStatus"
+    },
+    "index": null,
+    "value": [
+      "otherPortEntry",
+      2
+    ]
+  },
+  "otherPortLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "otherPortEntry",
+      3
+    ]
+  },
+  "otherPortEncId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "otherPortEntry",
+      4
+    ]
+  },
+  "otherPortIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "otherPortEntry",
+      5
+    ]
+  },
+  "tempSensorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF TempSensorEntry"
+    },
+    "index": null,
+    "value": [
+      "netBotzNumericSensors",
+      1
+    ]
+  },
+  "tempSensorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TempSensorEntry"
+    },
+    "index": [
+      "tempSensorIndex"
+    ],
+    "value": [
+      "tempSensorTable",
+      1
+    ]
+  },
+  "TempSensorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "tempSensorId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "tempSensorEntry",
+      1
+    ]
+  },
+  "tempSensorValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "tempSensorEntry",
+      2
+    ]
+  },
+  "tempSensorErrorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ErrorStatus"
+    },
+    "index": null,
+    "value": [
+      "tempSensorEntry",
+      3
+    ]
+  },
+  "tempSensorLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "tempSensorEntry",
+      4
+    ]
+  },
+  "tempSensorEncId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "tempSensorEntry",
+      5
+    ]
+  },
+  "tempSensorPortId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "tempSensorEntry",
+      6
+    ]
+  },
+  "tempSensorValueStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "tempSensorEntry",
+      7
+    ]
+  },
+  "tempSensorValueInt": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "tempSensorEntry",
+      8
+    ]
+  },
+  "tempSensorValueIntF": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "tempSensorEntry",
+      9
+    ]
+  },
+  "tempSensorIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "tempSensorEntry",
+      10
+    ]
+  },
+  "humiSensorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HumiSensorEntry"
+    },
+    "index": null,
+    "value": [
+      "netBotzNumericSensors",
+      2
+    ]
+  },
+  "humiSensorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HumiSensorEntry"
+    },
+    "index": [
+      "humiSensorIndex"
+    ],
+    "value": [
+      "humiSensorTable",
+      1
+    ]
+  },
+  "HumiSensorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "humiSensorId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "humiSensorEntry",
+      1
+    ]
+  },
+  "humiSensorValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "humiSensorEntry",
+      2
+    ]
+  },
+  "humiSensorErrorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ErrorStatus"
+    },
+    "index": null,
+    "value": [
+      "humiSensorEntry",
+      3
+    ]
+  },
+  "humiSensorLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "humiSensorEntry",
+      4
+    ]
+  },
+  "humiSensorEncId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "humiSensorEntry",
+      5
+    ]
+  },
+  "humiSensorPortId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "humiSensorEntry",
+      6
+    ]
+  },
+  "humiSensorValueStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "humiSensorEntry",
+      7
+    ]
+  },
+  "humiSensorValueInt": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "humiSensorEntry",
+      8
+    ]
+  },
+  "humiSensorIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "humiSensorEntry",
+      9
+    ]
+  },
+  "dewPointSensorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF DewPointSensorEntry"
+    },
+    "index": null,
+    "value": [
+      "netBotzNumericSensors",
+      3
+    ]
+  },
+  "dewPointSensorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DewPointSensorEntry"
+    },
+    "index": [
+      "dewPointSensorIndex"
+    ],
+    "value": [
+      "dewPointSensorTable",
+      1
+    ]
+  },
+  "DewPointSensorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "dewPointSensorId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "dewPointSensorEntry",
+      1
+    ]
+  },
+  "dewPointSensorValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dewPointSensorEntry",
+      2
+    ]
+  },
+  "dewPointSensorErrorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ErrorStatus"
+    },
+    "index": null,
+    "value": [
+      "dewPointSensorEntry",
+      3
+    ]
+  },
+  "dewPointSensorLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "dewPointSensorEntry",
+      4
+    ]
+  },
+  "dewPointSensorEncId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "dewPointSensorEntry",
+      5
+    ]
+  },
+  "dewPointSensorPortId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "dewPointSensorEntry",
+      6
+    ]
+  },
+  "dewPointSensorValueStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "dewPointSensorEntry",
+      7
+    ]
+  },
+  "dewPointSensorValueInt": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dewPointSensorEntry",
+      8
+    ]
+  },
+  "dewPointSensorIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "dewPointSensorEntry",
+      9
+    ]
+  },
+  "audioSensorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF AudioSensorEntry"
+    },
+    "index": null,
+    "value": [
+      "netBotzNumericSensors",
+      4
+    ]
+  },
+  "audioSensorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AudioSensorEntry"
+    },
+    "index": [
+      "audioSensorIndex"
+    ],
+    "value": [
+      "audioSensorTable",
+      1
+    ]
+  },
+  "AudioSensorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "audioSensorId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "audioSensorEntry",
+      1
+    ]
+  },
+  "audioSensorValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "audioSensorEntry",
+      2
+    ]
+  },
+  "audioSensorErrorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ErrorStatus"
+    },
+    "index": null,
+    "value": [
+      "audioSensorEntry",
+      3
+    ]
+  },
+  "audioSensorLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "audioSensorEntry",
+      4
+    ]
+  },
+  "audioSensorEncId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "audioSensorEntry",
+      5
+    ]
+  },
+  "audioSensorPortId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "audioSensorEntry",
+      6
+    ]
+  },
+  "audioSensorValueStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "audioSensorEntry",
+      7
+    ]
+  },
+  "audioSensorValueInt": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "audioSensorEntry",
+      8
+    ]
+  },
+  "audioSensorIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "audioSensorEntry",
+      9
+    ]
+  },
+  "airFlowSensorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF AirFlowSensorEntry"
+    },
+    "index": null,
+    "value": [
+      "netBotzNumericSensors",
+      5
+    ]
+  },
+  "airFlowSensorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AirFlowSensorEntry"
+    },
+    "index": [
+      "airFlowSensorIndex"
+    ],
+    "value": [
+      "airFlowSensorTable",
+      1
+    ]
+  },
+  "AirFlowSensorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "airFlowSensorId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "airFlowSensorEntry",
+      1
+    ]
+  },
+  "airFlowSensorValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "airFlowSensorEntry",
+      2
+    ]
+  },
+  "airFlowSensorErrorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ErrorStatus"
+    },
+    "index": null,
+    "value": [
+      "airFlowSensorEntry",
+      3
+    ]
+  },
+  "airFlowSensorLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "airFlowSensorEntry",
+      4
+    ]
+  },
+  "airFlowSensorEncId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "airFlowSensorEntry",
+      5
+    ]
+  },
+  "airFlowSensorPortId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "airFlowSensorEntry",
+      6
+    ]
+  },
+  "airFlowSensorValueStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "airFlowSensorEntry",
+      7
+    ]
+  },
+  "airFlowSensorValueInt": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "airFlowSensorEntry",
+      8
+    ]
+  },
+  "airFlowSensorIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "airFlowSensorEntry",
+      9
+    ]
+  },
+  "ampDetectSensorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF AmpDetectSensorEntry"
+    },
+    "index": null,
+    "value": [
+      "netBotzNumericSensors",
+      6
+    ]
+  },
+  "ampDetectSensorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AmpDetectSensorEntry"
+    },
+    "index": [
+      "ampDetectSensorIndex"
+    ],
+    "value": [
+      "ampDetectSensorTable",
+      1
+    ]
+  },
+  "AmpDetectSensorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ampDetectSensorId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ampDetectSensorEntry",
+      1
+    ]
+  },
+  "ampDetectSensorValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ampDetectSensorEntry",
+      2
+    ]
+  },
+  "ampDetectSensorErrorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ErrorStatus"
+    },
+    "index": null,
+    "value": [
+      "ampDetectSensorEntry",
+      3
+    ]
+  },
+  "ampDetectSensorLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ampDetectSensorEntry",
+      4
+    ]
+  },
+  "ampDetectSensorEncId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ampDetectSensorEntry",
+      5
+    ]
+  },
+  "ampDetectSensorPortId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ampDetectSensorEntry",
+      6
+    ]
+  },
+  "ampDetectSensorValueStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ampDetectSensorEntry",
+      7
+    ]
+  },
+  "ampDetectSensorValueInt": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ampDetectSensorEntry",
+      8
+    ]
+  },
+  "ampDetectSensorIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ampDetectSensorEntry",
+      9
+    ]
+  },
+  "otherNumericSensorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF OtherNumericSensorEntry"
+    },
+    "index": null,
+    "value": [
+      "netBotzNumericSensors",
+      10
+    ]
+  },
+  "otherNumericSensorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OtherNumericSensorEntry"
+    },
+    "index": [
+      "otherNumericSensorIndex"
+    ],
+    "value": [
+      "otherNumericSensorTable",
+      1
+    ]
+  },
+  "OtherNumericSensorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "otherNumericSensorId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "otherNumericSensorEntry",
+      1
+    ]
+  },
+  "otherNumericSensorValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "otherNumericSensorEntry",
+      2
+    ]
+  },
+  "otherNumericSensorErrorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ErrorStatus"
+    },
+    "index": null,
+    "value": [
+      "otherNumericSensorEntry",
+      3
+    ]
+  },
+  "otherNumericSensorLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "otherNumericSensorEntry",
+      4
+    ]
+  },
+  "otherNumericSensorEncId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "otherNumericSensorEntry",
+      5
+    ]
+  },
+  "otherNumericSensorPortId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "otherNumericSensorEntry",
+      6
+    ]
+  },
+  "otherNumericSensorValueStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "otherNumericSensorEntry",
+      7
+    ]
+  },
+  "otherNumericSensorValueInt": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "otherNumericSensorEntry",
+      8
+    ]
+  },
+  "otherNumericSensorUnits": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "otherNumericSensorEntry",
+      9
+    ]
+  },
+  "otherNumericSensorValueIntX1000": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "otherNumericSensorEntry",
+      10
+    ]
+  },
+  "otherNumericSensorValueIntX1000000": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "otherNumericSensorEntry",
+      11
+    ]
+  },
+  "otherNumericSensorIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "otherNumericSensorEntry",
+      12
+    ]
+  },
+  "dryContactSensorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF DryContactSensorEntry"
+    },
+    "index": null,
+    "value": [
+      "netBotzStateSensors",
+      1
+    ]
+  },
+  "dryContactSensorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DryContactSensorEntry"
+    },
+    "index": [
+      "dryContactSensorIndex"
+    ],
+    "value": [
+      "dryContactSensorTable",
+      1
+    ]
+  },
+  "DryContactSensorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "dryContactSensorId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "dryContactSensorEntry",
+      1
+    ]
+  },
+  "dryContactSensorValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "-1": "null",
+        "0": "open",
+        "1": "closed"
+      }
+    },
+    "index": null,
+    "value": [
+      "dryContactSensorEntry",
+      2
+    ]
+  },
+  "dryContactSensorErrorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ErrorStatus"
+    },
+    "index": null,
+    "value": [
+      "dryContactSensorEntry",
+      3
+    ]
+  },
+  "dryContactSensorLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "dryContactSensorEntry",
+      4
+    ]
+  },
+  "dryContactSensorEncId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "dryContactSensorEntry",
+      5
+    ]
+  },
+  "dryContactSensorPortId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "dryContactSensorEntry",
+      6
+    ]
+  },
+  "dryContactSensorValueStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "dryContactSensorEntry",
+      7
+    ]
+  },
+  "dryContactSensorIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "dryContactSensorEntry",
+      8
+    ]
+  },
+  "doorSwitchSensorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF DoorSwitchSensorEntry"
+    },
+    "index": null,
+    "value": [
+      "netBotzStateSensors",
+      2
+    ]
+  },
+  "doorSwitchSensorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DoorSwitchSensorEntry"
+    },
+    "index": [
+      "doorSwitchSensorIndex"
+    ],
+    "value": [
+      "doorSwitchSensorTable",
+      1
+    ]
+  },
+  "DoorSwitchSensorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "doorSwitchSensorId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "doorSwitchSensorEntry",
+      1
+    ]
+  },
+  "doorSwitchSensorValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "-1": "null",
+        "0": "open",
+        "1": "closed"
+      }
+    },
+    "index": null,
+    "value": [
+      "doorSwitchSensorEntry",
+      2
+    ]
+  },
+  "doorSwitchSensorErrorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ErrorStatus"
+    },
+    "index": null,
+    "value": [
+      "doorSwitchSensorEntry",
+      3
+    ]
+  },
+  "doorSwitchSensorLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "doorSwitchSensorEntry",
+      4
+    ]
+  },
+  "doorSwitchSensorEncId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "doorSwitchSensorEntry",
+      5
+    ]
+  },
+  "doorSwitchSensorPortId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "doorSwitchSensorEntry",
+      6
+    ]
+  },
+  "doorSwitchSensorValueStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "doorSwitchSensorEntry",
+      7
+    ]
+  },
+  "doorSwitchSensorIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "doorSwitchSensorEntry",
+      8
+    ]
+  },
+  "cameraMotionSensorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CameraMotionSensorEntry"
+    },
+    "index": null,
+    "value": [
+      "netBotzStateSensors",
+      3
+    ]
+  },
+  "cameraMotionSensorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CameraMotionSensorEntry"
+    },
+    "index": [
+      "cameraMotionSensorIndex"
+    ],
+    "value": [
+      "cameraMotionSensorTable",
+      1
+    ]
+  },
+  "CameraMotionSensorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cameraMotionSensorId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cameraMotionSensorEntry",
+      1
+    ]
+  },
+  "cameraMotionSensorValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "-1": "null",
+        "0": "noMotion",
+        "1": "motionDetected"
+      }
+    },
+    "index": null,
+    "value": [
+      "cameraMotionSensorEntry",
+      2
+    ]
+  },
+  "cameraMotionSensorErrorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ErrorStatus"
+    },
+    "index": null,
+    "value": [
+      "cameraMotionSensorEntry",
+      3
+    ]
+  },
+  "cameraMotionSensorLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cameraMotionSensorEntry",
+      4
+    ]
+  },
+  "cameraMotionSensorEncId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cameraMotionSensorEntry",
+      5
+    ]
+  },
+  "cameraMotionSensorPortId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cameraMotionSensorEntry",
+      6
+    ]
+  },
+  "cameraMotionSensorValueStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cameraMotionSensorEntry",
+      7
+    ]
+  },
+  "cameraMotionSensorIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "cameraMotionSensorEntry",
+      8
+    ]
+  },
+  "otherStateSensorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF OtherStateSensorEntry"
+    },
+    "index": null,
+    "value": [
+      "netBotzStateSensors",
+      10
+    ]
+  },
+  "otherStateSensorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OtherStateSensorEntry"
+    },
+    "index": [
+      "otherStateSensorIndex"
+    ],
+    "value": [
+      "otherStateSensorTable",
+      1
+    ]
+  },
+  "OtherStateSensorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "otherStateSensorId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "otherStateSensorEntry",
+      1
+    ]
+  },
+  "otherStateSensorValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "otherStateSensorEntry",
+      2
+    ]
+  },
+  "otherStateSensorErrorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ErrorStatus"
+    },
+    "index": null,
+    "value": [
+      "otherStateSensorEntry",
+      3
+    ]
+  },
+  "otherStateSensorLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "otherStateSensorEntry",
+      4
+    ]
+  },
+  "otherStateSensorEncId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "otherStateSensorEntry",
+      5
+    ]
+  },
+  "otherStateSensorPortId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "otherStateSensorEntry",
+      6
+    ]
+  },
+  "otherStateSensorValueStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "otherStateSensorEntry",
+      7
+    ]
+  },
+  "otherStateSensorIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "otherStateSensorEntry",
+      8
+    ]
+  },
+  "errorCondTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ErrorCondEntry"
+    },
+    "index": null,
+    "value": [
+      "netBotzErrors",
+      1
+    ]
+  },
+  "errorCondEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ErrorCondEntry"
+    },
+    "index": [
+      "errorCondIndex"
+    ],
+    "value": [
+      "errorCondTable",
+      1
+    ]
+  },
+  "ErrorCondEntry": {
+    "tp": "SEQUENCE"
+  },
+  "errorCondId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "errorCondEntry",
+      1
+    ]
+  },
+  "errorCondSeverity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ErrorStatus"
+    },
+    "index": null,
+    "value": [
+      "errorCondEntry",
+      2
+    ]
+  },
+  "errorCondTypeId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "errorCondEntry",
+      3
+    ]
+  },
+  "errorCondStartTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateAndTime"
+    },
+    "index": null,
+    "value": [
+      "errorCondEntry",
+      4
+    ]
+  },
+  "errorCondStartTimeStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "errorCondEntry",
+      5
+    ]
+  },
+  "errorCondResolved": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BoolValue"
+    },
+    "index": null,
+    "value": [
+      "errorCondEntry",
+      6
+    ]
+  },
+  "errorCondResolvedTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateAndTime"
+    },
+    "index": null,
+    "value": [
+      "errorCondEntry",
+      7
+    ]
+  },
+  "errorCondResolvedTimeStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "errorCondEntry",
+      8
+    ]
+  },
+  "errorCondEncId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "errorCondEntry",
+      9
+    ]
+  },
+  "errorCondPortId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "errorCondEntry",
+      10
+    ]
+  },
+  "errorCondSensorId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "errorCondEntry",
+      11
+    ]
+  },
+  "errorCondIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "errorCondEntry",
+      12
+    ]
+  },
+  "netBotzTrapErrorID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "netBotzTrapParms",
+      1
+    ]
+  },
+  "netBotzTrapErrorType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "netBotzTrapParms",
+      2
+    ]
+  },
+  "netBotzTrapErrorTypeLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "netBotzTrapParms",
+      3
+    ]
+  },
+  "netBotzTrapSensorID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "netBotzTrapParms",
+      4
+    ]
+  },
+  "netBotzTrapSensorLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "netBotzTrapParms",
+      5
+    ]
+  },
+  "netBotzTrapPodID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "netBotzTrapParms",
+      6
+    ]
+  },
+  "netBotzTrapPodLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "netBotzTrapParms",
+      7
+    ]
+  },
+  "netBotzTrapPortID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "netBotzTrapParms",
+      8
+    ]
+  },
+  "netBotzTrapPortLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "netBotzTrapParms",
+      9
+    ]
+  },
+  "netBotzTrapStartTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "netBotzTrapParms",
+      10
+    ]
+  },
+  "netBotzTrapNotifyTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "netBotzTrapParms",
+      11
+    ]
+  },
+  "netBotzTrapResolveTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "netBotzTrapParms",
+      12
+    ]
+  },
+  "netBotzTrapSeverity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "information",
+        "1": "warning",
+        "2": "error",
+        "3": "critical",
+        "4": "failure"
+      }
+    },
+    "index": null,
+    "value": [
+      "netBotzTrapParms",
+      13
+    ]
+  },
+  "netBotzTrapSensorValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "netBotzTrapParms",
+      14
+    ]
+  },
+  "netBotzTrapSensorValueInt": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "netBotzTrapParms",
+      15
+    ]
+  },
+  "netBotzTrapSensorValueFraction": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "netBotzTrapParms",
+      16
+    ]
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Integer32",
+        "Gauge32",
+        "NOTIFICATION-TYPE"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP",
+        "NOTIFICATION-GROUP"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION",
+        "DisplayString",
+        "TruthValue"
+      ]
+    ],
+    [
+      "CISCO-QOS-PIB-MIB",
+      [
+        "Percent"
+      ]
+    ],
+    [
+      "CISCO-SMI",
+      [
+        "ciscoMgmt"
+      ]
+    ]
+  ],
+  "ciscoMemoryPoolMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "ciscoMgmt",
+      48
+    ]
+  },
+  "CiscoMemoryPoolTypes": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  },
+  "ciscoMemoryPoolObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoMemoryPoolMIB",
+      1
+    ]
+  },
+  "ciscoMemoryPoolTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CiscoMemoryPoolEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoMemoryPoolObjects",
+      1
+    ]
+  },
+  "ciscoMemoryPoolEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CiscoMemoryPoolEntry"
+    },
+    "index": [
+      "ciscoMemoryPoolType"
+    ],
+    "value": [
+      "ciscoMemoryPoolTable",
+      1
+    ]
+  },
+  "CiscoMemoryPoolEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ciscoMemoryPoolType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CiscoMemoryPoolTypes"
+    },
+    "index": null,
+    "value": [
+      "ciscoMemoryPoolEntry",
+      1
+    ]
+  },
+  "ciscoMemoryPoolName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ciscoMemoryPoolEntry",
+      2
+    ]
+  },
+  "ciscoMemoryPoolAlternate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ciscoMemoryPoolEntry",
+      3
+    ]
+  },
+  "ciscoMemoryPoolValid": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ciscoMemoryPoolEntry",
+      4
+    ]
+  },
+  "ciscoMemoryPoolUsed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "ciscoMemoryPoolEntry",
+      5
+    ]
+  },
+  "ciscoMemoryPoolFree": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "ciscoMemoryPoolEntry",
+      6
+    ]
+  },
+  "ciscoMemoryPoolLargestFree": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "ciscoMemoryPoolEntry",
+      7
+    ]
+  },
+  "ciscoMemoryPoolLowMemoryNotifThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Percent"
+    },
+    "index": null,
+    "value": [
+      "ciscoMemoryPoolEntry",
+      8
+    ]
+  },
+  "ciscoMemoryPoolUtilizationTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CiscoMemoryPoolUtilizationEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoMemoryPoolObjects",
+      2
+    ]
+  },
+  "ciscoMemoryPoolUtilizationEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CiscoMemoryPoolUtilizationEntry"
+    },
+    "index": "ciscoMemoryPoolEntry",
+    "value": [
+      "ciscoMemoryPoolUtilizationTable",
+      1
+    ]
+  },
+  "CiscoMemoryPoolUtilizationEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ciscoMemoryPoolUtilization1Min": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Percent"
+    },
+    "index": null,
+    "value": [
+      "ciscoMemoryPoolUtilizationEntry",
+      1
+    ]
+  },
+  "ciscoMemoryPoolUtilization5Min": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Percent"
+    },
+    "index": null,
+    "value": [
+      "ciscoMemoryPoolUtilizationEntry",
+      2
+    ]
+  },
+  "ciscoMemoryPoolUtilization10Min": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Percent"
+    },
+    "index": null,
+    "value": [
+      "ciscoMemoryPoolUtilizationEntry",
+      3
+    ]
+  },
+  "ciscoMemoryPoolLowMemoryNotifEnable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ciscoMemoryPoolObjects",
+      3
+    ]
+  },
+  "ciscoMemoryPoolNotifications": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoMemoryPoolMIB",
+      2
+    ]
+  },
+  "ciscoMemoryPoolMIBNotificationPrefix": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoMemoryPoolNotifications",
+      0
+    ]
+  },
+  "ciscoMemoryPoolConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoMemoryPoolMIB",
+      3
+    ]
+  },
+  "ciscoMemoryPoolCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoMemoryPoolConformance",
+      1
+    ]
+  },
+  "ciscoMemoryPoolGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoMemoryPoolConformance",
+      2
+    ]
+  },
+  "ciscoMemoryPoolGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoMemoryPoolGroups",
+      1
+    ]
+  },
+  "ciscoMemoryPoolUtilizationGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoMemoryPoolGroups",
+      2
+    ]
+  },
+  "ciscoMemoryPoolNotificationCtrlGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoMemoryPoolGroups",
+      4
+    ]
+  },
+  "ciscoMemoryPoolGroupRev1": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoMemoryPoolGroups",
+      5
+    ]
+  }
+}

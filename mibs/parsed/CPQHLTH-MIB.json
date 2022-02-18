@@ -1,0 +1,4843 @@
+{
+  "IMPORTS": [
+    [
+      "CPQHOST-MIB",
+      [
+        "compaq"
+      ]
+    ],
+    [
+      "RFC1155-SMI",
+      [
+        "enterprises"
+      ]
+    ],
+    [
+      "RFC1155-SMI",
+      [
+        "Counter"
+      ]
+    ],
+    [
+      "RFC1213-MIB",
+      [
+        "DisplayString"
+      ]
+    ],
+    [
+      "RFC-1212",
+      [
+        "OBJECT-TYPE"
+      ]
+    ],
+    [
+      "RFC-1215",
+      [
+        "TRAP-TYPE"
+      ]
+    ],
+    [
+      "RFC1213-MIB",
+      [
+        "sysName"
+      ]
+    ],
+    [
+      "CPQHOST-MIB",
+      [
+        "cpqHoTrapFlags"
+      ]
+    ],
+    [
+      "CPQSINFO-MIB",
+      [
+        "cpqSiServerSystemId"
+      ]
+    ],
+    [
+      "CPQSINFO-MIB",
+      [
+        "cpqSiMemModuleSize"
+      ]
+    ],
+    [
+      "CPQHOST-MIB",
+      [
+        "cpqHoGUIDCanonical"
+      ]
+    ]
+  ],
+  "cpqHealth": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "compaq",
+      6
+    ]
+  },
+  "cpqHeMibRev": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHealth",
+      1
+    ]
+  },
+  "cpqHeComponent": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHealth",
+      2
+    ]
+  },
+  "cpqHeTrap": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHealth",
+      3
+    ]
+  },
+  "cpqHeInterface": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      1
+    ]
+  },
+  "cpqHeCriticalError": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      2
+    ]
+  },
+  "cpqHeCorrectableMemory": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      3
+    ]
+  },
+  "cpqHeAsr": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      5
+    ]
+  },
+  "cpqHeThermal": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      6
+    ]
+  },
+  "cpqHePostMsg": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      7
+    ]
+  },
+  "cpqHeSysUtil": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      8
+    ]
+  },
+  "cpqHeFltTolPwrSupply": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      9
+    ]
+  },
+  "cpqHeIRC": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      10
+    ]
+  },
+  "cpqHeEventLog": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      11
+    ]
+  },
+  "cpqHeMgmtDisplay": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      12
+    ]
+  },
+  "cpqHePowerConverter": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      13
+    ]
+  },
+  "cpqHeResilientMemory": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      14
+    ]
+  },
+  "cpqHePowerMeter": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      15
+    ]
+  },
+  "cpqHeHWBios": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      16
+    ]
+  },
+  "cpqHeSysBackupBattery": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      17
+    ]
+  },
+  "cpqHeSysPwrHw": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      18
+    ]
+  },
+  "cpqHeSysBoardFru": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      19
+    ]
+  },
+  "cpqHePowerFailure": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      20
+    ]
+  },
+  "cpqHeInterlockFailure": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      21
+    ]
+  },
+  "cpqHeNvdimm": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      22
+    ]
+  },
+  "cpqHeBbu": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeComponent",
+      23
+    ]
+  },
+  "cpqHeOsNetWare3x": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeInterface",
+      1
+    ]
+  },
+  "cpqHeOsCommon": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHeInterface",
+      4
+    ]
+  },
+  "cpqHeMibRevMajor": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeMibRev",
+      1
+    ]
+  },
+  "cpqHeMibRevMinor": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeMibRev",
+      2
+    ]
+  },
+  "cpqHeMibCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeMibRev",
+      3
+    ]
+  },
+  "cpqHeNw3xDriverName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeOsNetWare3x",
+      1
+    ]
+  },
+  "cpqHeNw3xDriverDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeOsNetWare3x",
+      2
+    ]
+  },
+  "cpqHeNw3xDriverVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeOsNetWare3x",
+      3
+    ]
+  },
+  "cpqHeOsCommonPollFreq": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeOsCommon",
+      1
+    ]
+  },
+  "cpqHeOsCommonModuleTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHeOsCommonModuleEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHeOsCommon",
+      2
+    ]
+  },
+  "cpqHeOsCommonModuleEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHeOsCommonModuleEntry"
+    },
+    "index": [
+      "cpqHeOsCommonModuleIndex"
+    ],
+    "value": [
+      "cpqHeOsCommonModuleTable",
+      1
+    ]
+  },
+  "CpqHeOsCommonModuleEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHeOsCommonModuleIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeOsCommonModuleEntry",
+      1
+    ]
+  },
+  "cpqHeOsCommonModuleName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeOsCommonModuleEntry",
+      2
+    ]
+  },
+  "cpqHeOsCommonModuleVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeOsCommonModuleEntry",
+      3
+    ]
+  },
+  "cpqHeOsCommonModuleDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHeOsCommonModuleEntry",
+      4
+    ]
+  },
+  "cpqHeOsCommonModulePurpose": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeOsCommonModuleEntry",
+      5
+    ]
+  },
+  "cpqHeCritLogSupported": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notSupported",
+        "3": "supported"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeCriticalError",
+      1
+    ]
+  },
+  "cpqHeCritLogCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeCriticalError",
+      2
+    ]
+  },
+  "cpqHeLastCritErrorAbendMsg": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeCriticalError",
+      3
+    ]
+  },
+  "cpqHeCriticalErrorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHeCriticalErrorEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHeCriticalError",
+      4
+    ]
+  },
+  "cpqHeCriticalErrorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHeCriticalErrorEntry"
+    },
+    "index": [
+      "cpqHeCriticalErrorIndex"
+    ],
+    "value": [
+      "cpqHeCriticalErrorTable",
+      1
+    ]
+  },
+  "CpqHeCriticalErrorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHeCriticalErrorIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeCriticalErrorEntry",
+      1
+    ]
+  },
+  "cpqHeCriticalErrorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "uncorrected",
+        "2": "corrected"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeCriticalErrorEntry",
+      2
+    ]
+  },
+  "cpqHeCriticalErrorType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "empty",
+        "3": "nonCorrectableMemErr",
+        "4": "busMasterTimeoutNmi",
+        "5": "commandBusTimeoutNmi",
+        "6": "ioCheckNmi",
+        "7": "refreshOverflowNmi",
+        "8": "cacheParityNmi",
+        "9": "processorParityNmi",
+        "10": "eisaHostMemReadHit",
+        "11": "processorFailure",
+        "12": "cautionTemperature",
+        "13": "postCriticalError",
+        "14": "criticalException",
+        "15": "serverManagerIfFail",
+        "16": "pentiumIperr",
+        "17": "pentiumAperr",
+        "18": "pentiumIeerr",
+        "19": "pentiumApcheck",
+        "20": "cpuLocalError",
+        "21": "failsafeTimer",
+        "22": "softwareNmi",
+        "23": "asrBaseMemoryParity",
+        "24": "asrExtendedMemParity",
+        "25": "asrResetLimit",
+        "26": "asrMemoryParity",
+        "27": "abend",
+        "28": "asrTestEvent",
+        "29": "asrTimeoutNmi",
+        "30": "fanFailure",
+        "31": "upsDetectedLineFail",
+        "32": "asrDetectedAtBoot",
+        "33": "redunPowerSupplyFailure",
+        "34": "pciBusParityError",
+        "35": "diagnosticError",
+        "36": "rtcChipBatteryFailure",
+        "37": "pentiumBerr",
+        "38": "dcConverterFailure",
+        "39": "cpuInternalThreshPassed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeCriticalErrorEntry",
+      3
+    ]
+  },
+  "cpqHeCriticalErrorTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHeCriticalErrorEntry",
+      4
+    ]
+  },
+  "cpqHeCriticalErrorInfo": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHeCriticalErrorEntry",
+      5
+    ]
+  },
+  "cpqHeCriticalErrorDesc": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeCriticalErrorEntry",
+      6
+    ]
+  },
+  "cpqHeCorrMemLogStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notSupported",
+        "3": "disabled",
+        "4": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeCorrectableMemory",
+      1
+    ]
+  },
+  "cpqHeCorrMemLogCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeCorrectableMemory",
+      2
+    ]
+  },
+  "cpqHeCorrMemTotalErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeCorrectableMemory",
+      3
+    ]
+  },
+  "cpqHeCorrMemErrTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHeCorrMemErrEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHeCorrectableMemory",
+      4
+    ]
+  },
+  "cpqHeCorrMemErrEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHeCorrMemErrEntry"
+    },
+    "index": [
+      "cpqHeCorrMemErrIndex"
+    ],
+    "value": [
+      "cpqHeCorrMemErrTable",
+      1
+    ]
+  },
+  "CpqHeCorrMemErrEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHeCorrMemErrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeCorrMemErrEntry",
+      1
+    ]
+  },
+  "cpqHeCorrMemErrCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeCorrMemErrEntry",
+      2
+    ]
+  },
+  "cpqHeCorrMemErrTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHeCorrMemErrEntry",
+      3
+    ]
+  },
+  "cpqHeCorrMemErrDdr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHeCorrMemErrEntry",
+      4
+    ]
+  },
+  "cpqHeCorrMemErrSyndrome": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHeCorrMemErrEntry",
+      5
+    ]
+  },
+  "cpqHeCorrMemErrDesc": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeCorrMemErrEntry",
+      6
+    ]
+  },
+  "cpqHeCorrMemErrHwLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeCorrMemErrEntry",
+      7
+    ]
+  },
+  "cpqHeCorrMemErrorCntThresh": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeCorrectableMemory",
+      5
+    ]
+  },
+  "cpqHeAsrStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notAvailable",
+        "3": "disabled",
+        "4": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      1
+    ]
+  },
+  "cpqHeAsrMajorVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      2
+    ]
+  },
+  "cpqHeAsrMinorVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      3
+    ]
+  },
+  "cpqHeAsrTimeout": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      4
+    ]
+  },
+  "cpqHeAsrBaseIo": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      5
+    ]
+  },
+  "cpqHeAsrPost": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "failed",
+        "3": "ok"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      6
+    ]
+  },
+  "cpqHeAsrReset": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "manualReset",
+        "3": "asrReset",
+        "4": "viewed-asrReset"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      7
+    ]
+  },
+  "cpqHeAsrReboot": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "bootOs",
+        "3": "bootUtilities"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      8
+    ]
+  },
+  "cpqHeAsrRebootLimit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      9
+    ]
+  },
+  "cpqHeAsrRebootCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      10
+    ]
+  },
+  "cpqHeAsrPagerStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "disabled",
+        "3": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      11
+    ]
+  },
+  "cpqHeAsrPagerNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      12
+    ]
+  },
+  "cpqHeAsrCommPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      13
+    ]
+  },
+  "cpqHeAsrBaudRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      14
+    ]
+  },
+  "cpqHeAsrPagerMessage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      15
+    ]
+  },
+  "cpqHeAsrBootFail": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "interrupt18"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      16
+    ]
+  },
+  "cpqHeAsrCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      17
+    ]
+  },
+  "cpqHeAsrDialInStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "disabled",
+        "3": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      18
+    ]
+  },
+  "cpqHeAsrDialOutStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "disabled",
+        "3": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      19
+    ]
+  },
+  "cpqHeAsrDialOutNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      20
+    ]
+  },
+  "cpqHeAsrNetworkAccessStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "disabled",
+        "3": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      21
+    ]
+  },
+  "cpqHeAsrPollTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeAsr",
+      22
+    ]
+  },
+  "cpqHeThermalCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeThermal",
+      1
+    ]
+  },
+  "cpqHeThermalDegradedAction": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "continue",
+        "3": "shutdown"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeThermal",
+      2
+    ]
+  },
+  "cpqHeThermalTempStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeThermal",
+      3
+    ]
+  },
+  "cpqHeThermalSystemFanStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeThermal",
+      4
+    ]
+  },
+  "cpqHeThermalCpuFanStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeThermal",
+      5
+    ]
+  },
+  "cpqHeThermalFanTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHeThermalFanEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHeThermal",
+      6
+    ]
+  },
+  "cpqHeThermalFanEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHeThermalFanEntry"
+    },
+    "index": [
+      "cpqHeThermalFanIndex"
+    ],
+    "value": [
+      "cpqHeThermalFanTable",
+      1
+    ]
+  },
+  "CpqHeThermalFanEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHeThermalFanIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeThermalFanEntry",
+      1
+    ]
+  },
+  "cpqHeThermalFanRequired": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "nonRequired",
+        "3": "required"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeThermalFanEntry",
+      2
+    ]
+  },
+  "cpqHeThermalFanPresent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "absent",
+        "3": "present"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeThermalFanEntry",
+      3
+    ]
+  },
+  "cpqHeThermalFanCpuFan": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "systemFan",
+        "3": "cpuFan"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeThermalFanEntry",
+      4
+    ]
+  },
+  "cpqHeThermalFanStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeThermalFanEntry",
+      5
+    ]
+  },
+  "cpqHeThermalFanHwLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeThermalFanEntry",
+      6
+    ]
+  },
+  "cpqHeThermalFanCurrentSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeThermalFanEntry",
+      7
+    ]
+  },
+  "cpqHeFltTolFanTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHeFltTolFanEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHeThermal",
+      7
+    ]
+  },
+  "cpqHeFltTolFanEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHeFltTolFanEntry"
+    },
+    "index": [
+      "cpqHeFltTolFanChassis",
+      "cpqHeFltTolFanIndex"
+    ],
+    "value": [
+      "cpqHeFltTolFanTable",
+      1
+    ]
+  },
+  "CpqHeFltTolFanEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHeFltTolFanChassis": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolFanEntry",
+      1
+    ]
+  },
+  "cpqHeFltTolFanIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolFanEntry",
+      2
+    ]
+  },
+  "cpqHeFltTolFanLocale": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "3": "system",
+        "4": "systemBoard",
+        "5": "ioBoard",
+        "6": "cpu",
+        "7": "memory",
+        "8": "storage",
+        "9": "removableMedia",
+        "10": "powerSupply",
+        "11": "ambient",
+        "12": "chassis",
+        "13": "bridgeCard",
+        "14": "managementBoard",
+        "15": "backplane",
+        "16": "networkSlot",
+        "17": "bladeSlot",
+        "18": "virtual"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolFanEntry",
+      3
+    ]
+  },
+  "cpqHeFltTolFanPresent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "absent",
+        "3": "present"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolFanEntry",
+      4
+    ]
+  },
+  "cpqHeFltTolFanType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "tachOutput",
+        "3": "spinDetect"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolFanEntry",
+      5
+    ]
+  },
+  "cpqHeFltTolFanSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "normal",
+        "3": "high"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolFanEntry",
+      6
+    ]
+  },
+  "cpqHeFltTolFanRedundant": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notRedundant",
+        "3": "redundant"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolFanEntry",
+      7
+    ]
+  },
+  "cpqHeFltTolFanRedundantPartner": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolFanEntry",
+      8
+    ]
+  },
+  "cpqHeFltTolFanCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolFanEntry",
+      9
+    ]
+  },
+  "cpqHeFltTolFanHotPlug": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "nonHotPluggable",
+        "3": "hotPluggable"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolFanEntry",
+      10
+    ]
+  },
+  "cpqHeFltTolFanHwLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolFanEntry",
+      11
+    ]
+  },
+  "cpqHeFltTolFanCurrentSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolFanEntry",
+      12
+    ]
+  },
+  "cpqHeTemperatureTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHeTemperatureEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHeThermal",
+      8
+    ]
+  },
+  "cpqHeTemperatureEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHeTemperatureEntry"
+    },
+    "index": [
+      "cpqHeTemperatureChassis",
+      "cpqHeTemperatureIndex"
+    ],
+    "value": [
+      "cpqHeTemperatureTable",
+      1
+    ]
+  },
+  "CpqHeTemperatureEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHeTemperatureChassis": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeTemperatureEntry",
+      1
+    ]
+  },
+  "cpqHeTemperatureIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeTemperatureEntry",
+      2
+    ]
+  },
+  "cpqHeTemperatureLocale": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "3": "system",
+        "4": "systemBoard",
+        "5": "ioBoard",
+        "6": "cpu",
+        "7": "memory",
+        "8": "storage",
+        "9": "removableMedia",
+        "10": "powerSupply",
+        "11": "ambient",
+        "12": "chassis",
+        "13": "bridgeCard"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeTemperatureEntry",
+      3
+    ]
+  },
+  "cpqHeTemperatureCelsius": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeTemperatureEntry",
+      4
+    ]
+  },
+  "cpqHeTemperatureThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeTemperatureEntry",
+      5
+    ]
+  },
+  "cpqHeTemperatureCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeTemperatureEntry",
+      6
+    ]
+  },
+  "cpqHeTemperatureThresholdType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "5": "blowout",
+        "9": "caution",
+        "15": "critical",
+        "16": "noreaction"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeTemperatureEntry",
+      7
+    ]
+  },
+  "cpqHeTemperatureHwLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeTemperatureEntry",
+      8
+    ]
+  },
+  "cpqHePostMsgCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHePostMsg",
+      1
+    ]
+  },
+  "cpqHePostMsgTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHePostMsgEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHePostMsg",
+      2
+    ]
+  },
+  "cpqHePostMsgEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHePostMsgEntry"
+    },
+    "index": [
+      "cpqHePostMsgIndex"
+    ],
+    "value": [
+      "cpqHePostMsgTable",
+      1
+    ]
+  },
+  "CpqHePostMsgEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHePostMsgIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHePostMsgEntry",
+      1
+    ]
+  },
+  "cpqHePostMsgCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHePostMsgEntry",
+      2
+    ]
+  },
+  "cpqHePostMsgDesc": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHePostMsgEntry",
+      3
+    ]
+  },
+  "cpqHePostMsgEv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHePostMsg",
+      3
+    ]
+  },
+  "cpqHeSysUtilLifeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysUtil",
+      1
+    ]
+  },
+  "cpqHeSysUtilEisaBusMin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysUtil",
+      2
+    ]
+  },
+  "cpqHeSysUtilEisaBusFiveMin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysUtil",
+      3
+    ]
+  },
+  "cpqHeSysUtilEisaBusThirtyMin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysUtil",
+      4
+    ]
+  },
+  "cpqHeSysUtilEisaBusHour": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysUtil",
+      5
+    ]
+  },
+  "cpqHeSysUtilPciTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHeSysUtilPciEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysUtil",
+      6
+    ]
+  },
+  "cpqHeSysUtilPciEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHeSysUtilPciEntry"
+    },
+    "index": [
+      "cpqHeSysUtilPciIndex"
+    ],
+    "value": [
+      "cpqHeSysUtilPciTable",
+      1
+    ]
+  },
+  "CpqHeSysUtilPciEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHeSysUtilPciIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysUtilPciEntry",
+      1
+    ]
+  },
+  "cpqHeSysUtilPciBus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysUtilPciEntry",
+      2
+    ]
+  },
+  "cpqHeSysUtilPciDevice": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysUtilPciEntry",
+      3
+    ]
+  },
+  "cpqHeSysUtilPciMin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysUtilPciEntry",
+      4
+    ]
+  },
+  "cpqHeSysUtilPciFiveMin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysUtilPciEntry",
+      5
+    ]
+  },
+  "cpqHeSysUtilPciThirtyMin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysUtilPciEntry",
+      6
+    ]
+  },
+  "cpqHeSysUtilPciHour": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysUtilPciEntry",
+      7
+    ]
+  },
+  "cpqHeSysUtilPciHwLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysUtilPciEntry",
+      8
+    ]
+  },
+  "cpqHeFltTolPwrSupplyCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPwrSupply",
+      1
+    ]
+  },
+  "cpqHeFltTolPwrSupplyStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notSupported",
+        "3": "notInstalled",
+        "4": "installed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPwrSupply",
+      2
+    ]
+  },
+  "cpqHeFltTolPowerSupplyTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHeFltTolPowerSupplyEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPwrSupply",
+      3
+    ]
+  },
+  "cpqHeFltTolPowerSupplyEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHeFltTolPowerSupplyEntry"
+    },
+    "index": [
+      "cpqHeFltTolPowerSupplyChassis",
+      "cpqHeFltTolPowerSupplyBay"
+    ],
+    "value": [
+      "cpqHeFltTolPowerSupplyTable",
+      1
+    ]
+  },
+  "CpqHeFltTolPowerSupplyEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHeFltTolPowerSupplyChassis": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPowerSupplyEntry",
+      1
+    ]
+  },
+  "cpqHeFltTolPowerSupplyBay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPowerSupplyEntry",
+      2
+    ]
+  },
+  "cpqHeFltTolPowerSupplyPresent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "absent",
+        "3": "present"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPowerSupplyEntry",
+      3
+    ]
+  },
+  "cpqHeFltTolPowerSupplyCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPowerSupplyEntry",
+      4
+    ]
+  },
+  "cpqHeFltTolPowerSupplyStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "noError",
+        "2": "generalFailure",
+        "3": "bistFailure",
+        "4": "fanFailure",
+        "5": "tempFailure",
+        "6": "interlockOpen",
+        "7": "epromFailed",
+        "8": "vrefFailed",
+        "9": "dacFailed",
+        "10": "ramTestFailed",
+        "11": "voltageChannelFailed",
+        "12": "orringdiodeFailed",
+        "13": "brownOut",
+        "14": "giveupOnStartup",
+        "15": "nvramInvalid",
+        "16": "calibrationTableInvalid",
+        "17": "noPowerInput"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPowerSupplyEntry",
+      5
+    ]
+  },
+  "cpqHeFltTolPowerSupplyMainVoltage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPowerSupplyEntry",
+      6
+    ]
+  },
+  "cpqHeFltTolPowerSupplyCapacityUsed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPowerSupplyEntry",
+      7
+    ]
+  },
+  "cpqHeFltTolPowerSupplyCapacityMaximum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPowerSupplyEntry",
+      8
+    ]
+  },
+  "cpqHeFltTolPowerSupplyRedundant": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notRedundant",
+        "3": "redundant"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPowerSupplyEntry",
+      9
+    ]
+  },
+  "cpqHeFltTolPowerSupplyModel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPowerSupplyEntry",
+      10
+    ]
+  },
+  "cpqHeFltTolPowerSupplySerialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPowerSupplyEntry",
+      11
+    ]
+  },
+  "cpqHeFltTolPowerSupplyAutoRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPowerSupplyEntry",
+      12
+    ]
+  },
+  "cpqHeFltTolPowerSupplyHotPlug": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "nonHotPluggable",
+        "3": "hotPluggable"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPowerSupplyEntry",
+      13
+    ]
+  },
+  "cpqHeFltTolPowerSupplyFirmwareRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPowerSupplyEntry",
+      14
+    ]
+  },
+  "cpqHeFltTolPowerSupplyHwLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPowerSupplyEntry",
+      15
+    ]
+  },
+  "cpqHeFltTolPowerSupplySparePartNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPowerSupplyEntry",
+      16
+    ]
+  },
+  "cpqHeFltTolPowerSupplyRedundantPartner": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPowerSupplyEntry",
+      17
+    ]
+  },
+  "cpqHeFltTolPowerSupplyErrorCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "noError",
+        "2": "generalFailure",
+        "3": "overvoltage",
+        "4": "overcurrent",
+        "5": "overtemperature",
+        "6": "powerinputloss",
+        "7": "fanfailure",
+        "8": "vinhighwarning",
+        "9": "vinlowwarning",
+        "10": "vouthighwarning",
+        "11": "voutlowwarning",
+        "12": "inlettemphighwarning",
+        "13": "iinternaltemphighwarning",
+        "14": "vauxhighwarning",
+        "15": "vauxlowwarning",
+        "16": "powersupplymismatch",
+        "17": "goodinstandby"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeFltTolPowerSupplyEntry",
+      18
+    ]
+  },
+  "cpqHeIRCStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "notavailable",
+        "3": "disabled",
+        "4": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeIRC",
+      1
+    ]
+  },
+  "cpqHeEventLogSupported": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notSupported",
+        "3": "supported",
+        "4": "clear"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeEventLog",
+      1
+    ]
+  },
+  "cpqHeEventLogCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeEventLog",
+      2
+    ]
+  },
+  "cpqHeEventLogTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHeEventLogEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHeEventLog",
+      3
+    ]
+  },
+  "cpqHeEventLogEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHeEventLogEntry"
+    },
+    "index": [
+      "cpqHeEventLogEntryNumber"
+    ],
+    "value": [
+      "cpqHeEventLogTable",
+      1
+    ]
+  },
+  "CpqHeEventLogEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHeEventLogEntryNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeEventLogEntry",
+      1
+    ]
+  },
+  "cpqHeEventLogEntrySeverity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "2": "informational",
+        "3": "infoWithAlert",
+        "6": "repaired",
+        "9": "caution",
+        "15": "critical"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeEventLogEntry",
+      2
+    ]
+  },
+  "cpqHeEventLogEntryClass": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeEventLogEntry",
+      3
+    ]
+  },
+  "cpqHeEventLogEntryCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeEventLogEntry",
+      4
+    ]
+  },
+  "cpqHeEventLogEntryCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeEventLogEntry",
+      5
+    ]
+  },
+  "cpqHeEventLogInitialTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHeEventLogEntry",
+      6
+    ]
+  },
+  "cpqHeEventLogUpdateTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHeEventLogEntry",
+      7
+    ]
+  },
+  "cpqHeEventLogErrorDesc": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeEventLogEntry",
+      8
+    ]
+  },
+  "cpqHeEventLogFreeFormData": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHeEventLogEntry",
+      9
+    ]
+  },
+  "cpqHeMgmtDisplayType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "none",
+        "3": "imd4x16",
+        "4": "ocp1x16"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeMgmtDisplay",
+      1
+    ]
+  },
+  "cpqHeMgmtDisplayText": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeMgmtDisplay",
+      2
+    ]
+  },
+  "cpqHeMgmtUID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "none",
+        "3": "ledOn",
+        "4": "ledOff",
+        "5": "ledBlinking"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeMgmtDisplay",
+      3
+    ]
+  },
+  "cpqHePowerConverterSupported": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notSupported",
+        "3": "supported"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerConverter",
+      1
+    ]
+  },
+  "cpqHePowerConverterCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerConverter",
+      2
+    ]
+  },
+  "cpqHePowerConverterTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHePowerConverterEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerConverter",
+      3
+    ]
+  },
+  "cpqHePowerConverterEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHePowerConverterEntry"
+    },
+    "index": [
+      "cpqHePwrConvChassis",
+      "cpqHePwrConvIndex"
+    ],
+    "value": [
+      "cpqHePowerConverterTable",
+      1
+    ]
+  },
+  "CpqHePowerConverterEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHePwrConvChassis": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerConverterEntry",
+      1
+    ]
+  },
+  "cpqHePwrConvIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerConverterEntry",
+      2
+    ]
+  },
+  "cpqHePwrConvPresent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "absent",
+        "3": "present"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerConverterEntry",
+      3
+    ]
+  },
+  "cpqHePwrConvSlot": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerConverterEntry",
+      4
+    ]
+  },
+  "cpqHePwrConvSocket": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerConverterEntry",
+      5
+    ]
+  },
+  "cpqHePwrConvRedundant": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "nonRedundant",
+        "3": "redundant"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerConverterEntry",
+      6
+    ]
+  },
+  "cpqHePwrConvRedundantGroupId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerConverterEntry",
+      7
+    ]
+  },
+  "cpqHePwrConvCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerConverterEntry",
+      8
+    ]
+  },
+  "cpqHePwrConvHwLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerConverterEntry",
+      9
+    ]
+  },
+  "cpqHeResilientMemTypeActive": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "none",
+        "3": "onLineSpare",
+        "4": "mirrored",
+        "5": "advancedEcc",
+        "6": "mirroredSingleBoard",
+        "7": "mirroredDualBoard",
+        "8": "xor",
+        "9": "lockStep",
+        "10": "onLineSpareChannel",
+        "11": "onLineSpareRank",
+        "12": "mirroringIntrasocket",
+        "13": "mirroringIntersocket",
+        "14": "a3dc",
+        "15": "dimmECC"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResilientMemory",
+      1
+    ]
+  },
+  "cpqHeResilientMemTypeAvailable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResilientMemory",
+      2
+    ]
+  },
+  "cpqHeResilientMemStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notProtected",
+        "3": "protected",
+        "4": "degraded",
+        "5": "dimmEcc",
+        "6": "mirrorNoFaults",
+        "7": "mirrorWithFaults",
+        "8": "hotSpareNoFaults",
+        "9": "hotSpareWithFaults",
+        "10": "xorNoFaults",
+        "11": "xorWithFaults",
+        "12": "advancedEcc",
+        "13": "advancedEccWithFaults",
+        "14": "lockStep",
+        "15": "lockStepWithFaults",
+        "16": "a3dc",
+        "17": "a3dcWithFaults"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResilientMemory",
+      3
+    ]
+  },
+  "cpqHeResilientMemCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResilientMemory",
+      4
+    ]
+  },
+  "cpqHeResilientMemHotPlug": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "nonHotPluggable",
+        "3": "hotPluggable"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResilientMemory",
+      5
+    ]
+  },
+  "cpqHeResilientMemOperatingSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResilientMemory",
+      6
+    ]
+  },
+  "cpqHeResilientMemOsMemSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResilientMemory",
+      7
+    ]
+  },
+  "cpqHeResilientMemTotalMemSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResilientMemory",
+      8
+    ]
+  },
+  "cpqHeResilientMemRivState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "inactive",
+        "3": "rebuilding",
+        "4": "initializing",
+        "5": "verifying"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResilientMemory",
+      9
+    ]
+  },
+  "cpqHeResMemBoardTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHeResMemBoardEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResilientMemory",
+      10
+    ]
+  },
+  "cpqHeResMemBoardEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHeResMemBoardEntry"
+    },
+    "index": [
+      "cpqHeResMemBoardSlotIndex"
+    ],
+    "value": [
+      "cpqHeResMemBoardTable",
+      1
+    ]
+  },
+  "CpqHeResMemBoardEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHeResMemBoardSlotIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMemBoardEntry",
+      1
+    ]
+  },
+  "cpqHeResMemBoardOnlineStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "present",
+        "3": "absent"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMemBoardEntry",
+      2
+    ]
+  },
+  "cpqHeResMemBoardErrorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "noError",
+        "3": "dimmEccError",
+        "4": "unlockError",
+        "5": "configError",
+        "6": "busError",
+        "7": "powerError",
+        "8": "advancedEcc",
+        "9": "onlineSpare",
+        "10": "mirrored",
+        "11": "mirroredDimmError",
+        "12": "memoryRaid",
+        "13": "raidDimmError",
+        "14": "lockstep",
+        "15": "lockstepDimmError"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMemBoardEntry",
+      3
+    ]
+  },
+  "cpqHeResMemBoardLocked": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unlocked",
+        "3": "locked"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMemBoardEntry",
+      4
+    ]
+  },
+  "cpqHeResMemBoardNumSockets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMemBoardEntry",
+      5
+    ]
+  },
+  "cpqHeResMemBoardOsMemSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMemBoardEntry",
+      6
+    ]
+  },
+  "cpqHeResMemBoardTotalMemSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMemBoardEntry",
+      7
+    ]
+  },
+  "cpqHeResMemBoardCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMemBoardEntry",
+      8
+    ]
+  },
+  "cpqHeResMemBoardHotPlug": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "nonHotPluggable",
+        "3": "hotPluggable"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMemBoardEntry",
+      9
+    ]
+  },
+  "cpqHeResMemModuleTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHeResMemModuleEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResilientMemory",
+      11
+    ]
+  },
+  "cpqHeResMemModuleEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHeResMemModuleEntry"
+    },
+    "index": [
+      "cpqHeResMemBoardIndex",
+      "cpqHeResMemModuleIndex"
+    ],
+    "value": [
+      "cpqHeResMemModuleTable",
+      1
+    ]
+  },
+  "CpqHeResMemModuleEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHeResMemBoardIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMemModuleEntry",
+      1
+    ]
+  },
+  "cpqHeResMemModuleIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMemModuleEntry",
+      2
+    ]
+  },
+  "cpqHeResMemModuleSparePartNo": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMemModuleEntry",
+      3
+    ]
+  },
+  "cpqHeResMemModuleStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notPresent",
+        "3": "present",
+        "4": "good",
+        "5": "add",
+        "6": "upgrade",
+        "7": "missing",
+        "8": "doesNotMatch",
+        "9": "notSupported",
+        "10": "badConfig",
+        "11": "degraded"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMemModuleEntry",
+      4
+    ]
+  },
+  "cpqHeResMemModuleCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMemModuleEntry",
+      5
+    ]
+  },
+  "cpqHeResMemModuleSpd": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMemModuleEntry",
+      6
+    ]
+  },
+  "cpqHeResMem2BoardTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHeResMem2BoardEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResilientMemory",
+      12
+    ]
+  },
+  "cpqHeResMem2BoardEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHeResMem2BoardEntry"
+    },
+    "index": [
+      "cpqHeResMem2BoardIndex"
+    ],
+    "value": [
+      "cpqHeResMem2BoardTable",
+      1
+    ]
+  },
+  "CpqHeResMem2BoardEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHeResMem2BoardIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2BoardEntry",
+      1
+    ]
+  },
+  "cpqHeResMem2BoardSlotNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2BoardEntry",
+      2
+    ]
+  },
+  "cpqHeResMem2BoardCpuNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2BoardEntry",
+      3
+    ]
+  },
+  "cpqHeResMem2BoardRiserNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2BoardEntry",
+      4
+    ]
+  },
+  "cpqHeResMem2BoardOnlineStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "present",
+        "3": "absent"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2BoardEntry",
+      5
+    ]
+  },
+  "cpqHeResMem2BoardErrorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "noError",
+        "3": "dimmEccError",
+        "4": "unlockError",
+        "5": "configError",
+        "6": "busError",
+        "7": "powerError",
+        "8": "advancedEcc",
+        "9": "onlineSpare",
+        "10": "mirrored",
+        "11": "mirroredDimmError",
+        "12": "memoryRaid",
+        "13": "raidDimmError",
+        "14": "lockStep",
+        "15": "lockStepError",
+        "16": "a3dc",
+        "17": "a3dcError"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2BoardEntry",
+      6
+    ]
+  },
+  "cpqHeResMem2BoardLocked": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unlocked",
+        "3": "locked"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2BoardEntry",
+      7
+    ]
+  },
+  "cpqHeResMem2BoardNumSockets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2BoardEntry",
+      8
+    ]
+  },
+  "cpqHeResMem2BoardOsMemSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2BoardEntry",
+      9
+    ]
+  },
+  "cpqHeResMem2BoardTotalMemSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2BoardEntry",
+      10
+    ]
+  },
+  "cpqHeResMem2BoardCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2BoardEntry",
+      11
+    ]
+  },
+  "cpqHeResMem2BoardHotPlug": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "nonHotPluggable",
+        "3": "hotPluggable"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2BoardEntry",
+      12
+    ]
+  },
+  "cpqHeResMem2BoardOperatingFrequency": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2BoardEntry",
+      13
+    ]
+  },
+  "cpqHeResMem2BoardOperatingVoltage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2BoardEntry",
+      14
+    ]
+  },
+  "cpqHeResMem2ModuleTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHeResMem2ModuleEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResilientMemory",
+      13
+    ]
+  },
+  "cpqHeResMem2ModuleEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHeResMem2ModuleEntry"
+    },
+    "index": [
+      "cpqHeResMem2Module"
+    ],
+    "value": [
+      "cpqHeResMem2ModuleTable",
+      1
+    ]
+  },
+  "CpqHeResMem2ModuleEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHeResMem2Module": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      1
+    ]
+  },
+  "cpqHeResMem2BoardNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      2
+    ]
+  },
+  "cpqHeResMem2CpuNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      3
+    ]
+  },
+  "cpqHeResMem2RiserNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      4
+    ]
+  },
+  "cpqHeResMem2ModuleNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      5
+    ]
+  },
+  "cpqHeResMem2ModuleSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      6
+    ]
+  },
+  "cpqHeResMem2ModuleType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "board",
+        "3": "cpqSingleWidthModule",
+        "4": "cpqDoubleWidthModule",
+        "5": "simm",
+        "6": "pcmcia",
+        "7": "compaq-specific",
+        "8": "dimm",
+        "9": "smallOutlineDimm",
+        "10": "rimm",
+        "11": "srimm",
+        "12": "fb-dimm",
+        "13": "dimmddr",
+        "14": "dimmddr2",
+        "15": "dimmddr3",
+        "16": "dimmfbd2",
+        "17": "fb-dimmddr2",
+        "18": "fb-dimmddr3",
+        "19": "dimmddr4",
+        "20": "hpe-specific"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      7
+    ]
+  },
+  "cpqHeResMem2ModuleTechnology": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "fastPageMode",
+        "3": "edoPageMode",
+        "4": "burstEdoPageMode",
+        "5": "synchronous",
+        "6": "rdram",
+        "7": "rdimm",
+        "8": "udimm",
+        "9": "lrdimm",
+        "10": "nvdimm",
+        "11": "rnvdimm",
+        "12": "lrnvdimm",
+        "13": "pmm"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      8
+    ]
+  },
+  "cpqHeResMem2ModuleManufacturer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      9
+    ]
+  },
+  "cpqHeResMem2ModulePartNo": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      10
+    ]
+  },
+  "cpqHeResMem2ModuleDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      11
+    ]
+  },
+  "cpqHeResMem2ModuleSerialNo": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      12
+    ]
+  },
+  "cpqHeResMem2ModuleHwLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      13
+    ]
+  },
+  "cpqHeResMem2ModuleFrequency": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      14
+    ]
+  },
+  "cpqHeResMem2ModuleCellTablePtr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      15
+    ]
+  },
+  "cpqHeResMem2ModuleCellStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "deconfigured"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      16
+    ]
+  },
+  "cpqHeResMem2ModulePartNoMfgr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      17
+    ]
+  },
+  "cpqHeResMem2ModuleSerialNoMfgr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      18
+    ]
+  },
+  "cpqHeResMem2ModuleStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notPresent",
+        "3": "present",
+        "4": "good",
+        "5": "add",
+        "6": "upgrade",
+        "7": "missing",
+        "8": "doesNotMatch",
+        "9": "notSupported",
+        "10": "badConfig",
+        "11": "degraded",
+        "12": "spare",
+        "13": "partial",
+        "14": "configError",
+        "15": "trainingFailure"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      19
+    ]
+  },
+  "cpqHeResMem2ModuleCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "degradedModuleIndexUnknown"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      20
+    ]
+  },
+  "cpqHeResMem2ModuleSpd": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      21
+    ]
+  },
+  "cpqHeResMem2ModuleSmartMemory": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notHPSmartMemory",
+        "3": "isHPSmartMemory",
+        "4": "isHPStandardMemory"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      22
+    ]
+  },
+  "cpqHeResMem2ModuleMinVoltage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      23
+    ]
+  },
+  "cpqHeResMem2ModuleRanks": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeResMem2ModuleEntry",
+      24
+    ]
+  },
+  "cpqHePowerMeterSupport": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "supported",
+        "3": "unsupported"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerMeter",
+      1
+    ]
+  },
+  "cpqHePowerMeterStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "present",
+        "3": "absent"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerMeter",
+      2
+    ]
+  },
+  "cpqHePowerMeterCurrReading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerMeter",
+      3
+    ]
+  },
+  "cpqHePowerMeterPrevReading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerMeter",
+      4
+    ]
+  },
+  "cpqHeHWBiosCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeHWBios",
+      1
+    ]
+  },
+  "cpqHeSysBackupBatteryCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysBackupBattery",
+      1
+    ]
+  },
+  "cpqHeSysBatteryTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHeSysBatteryEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysBackupBattery",
+      2
+    ]
+  },
+  "cpqHeSysBatteryEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHeSysBatteryEntry"
+    },
+    "index": [
+      "cpqHeSysBatteryChassis",
+      "cpqHeSysBatteryIndex"
+    ],
+    "value": [
+      "cpqHeSysBatteryTable",
+      1
+    ]
+  },
+  "CpqHeSysBatteryEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHeSysBatteryChassis": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysBatteryEntry",
+      1
+    ]
+  },
+  "cpqHeSysBatteryIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysBatteryEntry",
+      2
+    ]
+  },
+  "cpqHeSysBatteryPresent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "absent",
+        "3": "present"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysBatteryEntry",
+      3
+    ]
+  },
+  "cpqHeSysBatteryCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysBatteryEntry",
+      4
+    ]
+  },
+  "cpqHeSysBatteryStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "noError",
+        "2": "generalFailure",
+        "3": "shutdownHighResistance",
+        "4": "shutdownLowVoltage",
+        "5": "shutdownShortCircuit",
+        "6": "shutdownChargeTimeout",
+        "7": "shutdownOverTemperature",
+        "8": "shutdownDischargeMinVoltage",
+        "9": "shutdownDischargeCurrent",
+        "10": "shutdownLoadCountHigh",
+        "11": "shutdownEnablePin",
+        "12": "shutdownOverCurrent",
+        "13": "shutdownPermanentFailure",
+        "14": "shutdownBackupTimeExceeded",
+        "15": "predictiveFailure"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysBatteryEntry",
+      5
+    ]
+  },
+  "cpqHeSysBatteryCapacityMaximum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysBatteryEntry",
+      6
+    ]
+  },
+  "cpqHeSysBatteryProductName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysBatteryEntry",
+      7
+    ]
+  },
+  "cpqHeSysBatteryModel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysBatteryEntry",
+      8
+    ]
+  },
+  "cpqHeSysBatterySerialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysBatteryEntry",
+      9
+    ]
+  },
+  "cpqHeSysBatteryFirmwareRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysBatteryEntry",
+      10
+    ]
+  },
+  "cpqHeSysBatterySparePartNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysBatteryEntry",
+      11
+    ]
+  },
+  "cpqHeSysPwrAllocationOptimizeStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "ok",
+        "3": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysPwrHw",
+      1
+    ]
+  },
+  "cpqHeSysBoardFruStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHeSysBoardFru",
+      1
+    ]
+  },
+  "cpqHePowerFailureSupported": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "false",
+        "2": "true"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerFailure",
+      1
+    ]
+  },
+  "cpqHePowerFailureTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHePowerFailureTableEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerFailure",
+      2
+    ]
+  },
+  "cpqHePowerFailureTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHePowerFailureTableEntry"
+    },
+    "index": [
+      "cpqHePowerFailureIndex"
+    ],
+    "value": [
+      "cpqHePowerFailureTable",
+      1
+    ]
+  },
+  "CpqHePowerFailureTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHePowerFailureIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerFailureTableEntry",
+      1
+    ]
+  },
+  "cpqHePowerFailureStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "ok",
+        "2": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerFailureTableEntry",
+      2
+    ]
+  },
+  "cpqHePowerFailureDeviceID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerFailureTableEntry",
+      3
+    ]
+  },
+  "cpqHePowerFailureArea": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "systemBoard",
+        "2": "processor",
+        "3": "memory",
+        "4": "memoryBoard",
+        "5": "riserCardAssembly",
+        "6": "flexibleLOM",
+        "7": "flexibleSmartArray",
+        "8": "optIOPCIeSlots",
+        "9": "powerBackplane",
+        "10": "sasBackplane",
+        "11": "powerSupply",
+        "12": "mezzCard",
+        "13": "enclosure"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerFailureTableEntry",
+      4
+    ]
+  },
+  "cpqHePowerFailureDeviceBitMap": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerFailureTableEntry",
+      5
+    ]
+  },
+  "cpqHePowerFailureGroupString": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerFailureTableEntry",
+      6
+    ]
+  },
+  "cpqHePowerFailureRepairSteps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "noError",
+        "2": "systemBoardRpMsg1",
+        "3": "processorRpMsg1",
+        "4": "memoryRpMsg1",
+        "5": "memoryBoardRpMsg1",
+        "6": "riserCardAssemblyRpMsg1",
+        "7": "flexibleLomRpMsg1",
+        "8": "flexibleSmartArrayRpMsg1",
+        "9": "optIOPCIeSlotsRpMsg1",
+        "10": "powerBackplaneRpMsg1",
+        "11": "sasBackplaneRpMsg1",
+        "12": "powerSupplyRpMsg1",
+        "13": "mezzCardRpMsg1",
+        "14": "enclosureRpMsg1"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerFailureTableEntry",
+      7
+    ]
+  },
+  "cpqHePowerFailureType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "noError",
+        "2": "tempDeadly",
+        "3": "inputPowerLoss",
+        "4": "badFuse",
+        "5": "standby",
+        "6": "runtime",
+        "7": "powerOn",
+        "8": "generic",
+        "9": "cpuThermTrip"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHePowerFailureTableEntry",
+      8
+    ]
+  },
+  "cpqHeInterlockFailureSupported": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "false",
+        "2": "true"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeInterlockFailure",
+      1
+    ]
+  },
+  "cpqHeInterlockFailureTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHeInterlockFailureTableEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHeInterlockFailure",
+      2
+    ]
+  },
+  "cpqHeInterlockFailureTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHeInterlockFailureTableEntry"
+    },
+    "index": [
+      "cpqHeInterlockFailureIndex"
+    ],
+    "value": [
+      "cpqHeInterlockFailureTable",
+      1
+    ]
+  },
+  "CpqHeInterlockFailureTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHeInterlockFailureIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeInterlockFailureTableEntry",
+      1
+    ]
+  },
+  "cpqHeInterlockFailureStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "ok",
+        "2": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeInterlockFailureTableEntry",
+      2
+    ]
+  },
+  "cpqHeInterlockFailureDeviceID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeInterlockFailureTableEntry",
+      3
+    ]
+  },
+  "cpqHeInterlockFailureArea": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "systemBoard",
+        "2": "processor",
+        "3": "memory",
+        "4": "memoryBoard",
+        "5": "riserCardAssembly",
+        "6": "flexibleLOM",
+        "7": "flexibleSmartArray",
+        "8": "optIOPCIeSlots",
+        "9": "powerBackplane",
+        "10": "sasBackplane",
+        "11": "powerSupply",
+        "12": "mezzCard",
+        "13": "enclosure"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeInterlockFailureTableEntry",
+      4
+    ]
+  },
+  "cpqHeInterlockFailureDeviceName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeInterlockFailureTableEntry",
+      5
+    ]
+  },
+  "cpqHeInterlockFailureType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "noError",
+        "2": "standby",
+        "3": "runtime",
+        "4": "powerOn",
+        "5": "generic"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeInterlockFailureTableEntry",
+      6
+    ]
+  },
+  "cpqHeNvdimmCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimm",
+      1
+    ]
+  },
+  "cpqHeNvdimmTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHeNvdimmTableEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimm",
+      2
+    ]
+  },
+  "cpqHeNvdimmTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHeNvdimmTableEntry"
+    },
+    "index": [
+      "cpqHeNvdimmProcessorNum",
+      "cpqHeNvdimmDimmNum"
+    ],
+    "value": [
+      "cpqHeNvdimmTable",
+      1
+    ]
+  },
+  "CpqHeNvdimmTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHeNvdimmDimmNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimmTableEntry",
+      1
+    ]
+  },
+  "cpqHeNvdimmProcessorNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimmTableEntry",
+      2
+    ]
+  },
+  "cpqHeNvdimmType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "nvdimm-n",
+        "3": "nvdimm-f",
+        "4": "nvdimm-p",
+        "5": "nvdimm-logical"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimmTableEntry",
+      3
+    ]
+  },
+  "cpqHeNvdimmMemoryMedia": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "dram",
+        "3": "nand",
+        "4": "proprietary"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimmTableEntry",
+      4
+    ]
+  },
+  "cpqHeNvdimmStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimmTableEntry",
+      5
+    ]
+  },
+  "cpqHeNvdimmBackupStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "inprogress",
+        "3": "complete",
+        "4": "error"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimmTableEntry",
+      6
+    ]
+  },
+  "cpqHeNvdimmRestoreStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "inprogress",
+        "3": "complete",
+        "4": "error"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimmTableEntry",
+      7
+    ]
+  },
+  "cpqHeNvdimmEraseStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "inprogress",
+        "3": "complete",
+        "4": "error"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimmTableEntry",
+      8
+    ]
+  },
+  "cpqHeNvdimmPredictedMediaLifePercent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimmTableEntry",
+      9
+    ]
+  },
+  "cpqHeNvdimmPersistentRegionSizeLimitMiB": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimmTableEntry",
+      10
+    ]
+  },
+  "cpqHeNvdimmVolatileRegionSizeLimitMiB": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimmTableEntry",
+      11
+    ]
+  },
+  "cpqHeNvdimmPwrSource": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "superCap",
+        "3": "aux",
+        "4": "systemBattery",
+        "5": "ups"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimmTableEntry",
+      12
+    ]
+  },
+  "cpqHeNvdimmFirmwareRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimmTableEntry",
+      13
+    ]
+  },
+  "cpqHeNvdimmMfrId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimmTableEntry",
+      14
+    ]
+  },
+  "cpqHeNvdimmMfrLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimmTableEntry",
+      15
+    ]
+  },
+  "cpqHeNvdimmMfrDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimmTableEntry",
+      16
+    ]
+  },
+  "cpqHeNvdimmSerialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimmTableEntry",
+      17
+    ]
+  },
+  "cpqHeNvdimmAssociatedNVMeDrive": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimmTableEntry",
+      18
+    ]
+  },
+  "cpqHeNvdimmAssociatedUPS": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeNvdimmTableEntry",
+      19
+    ]
+  },
+  "cpqHeBbuCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeBbu",
+      1
+    ]
+  },
+  "cpqHeBbuTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHeBbuEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHeBbu",
+      2
+    ]
+  },
+  "cpqHeBbuEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHeBbuEntry"
+    },
+    "index": [
+      "cpqHeBbuChassis",
+      "cpqHeBbuBay"
+    ],
+    "value": [
+      "cpqHeBbuTable",
+      1
+    ]
+  },
+  "CpqHeBbuEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHeBbuChassis": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeBbuEntry",
+      1
+    ]
+  },
+  "cpqHeBbuBay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeBbuEntry",
+      2
+    ]
+  },
+  "cpqHeBbuStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "ok",
+        "3": "failure",
+        "4": "permanentFailure"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeBbuEntry",
+      3
+    ]
+  },
+  "cpqHeBbuTimeToCutoff": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeBbuEntry",
+      4
+    ]
+  },
+  "cpqHeBbuTimeToCharge": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeBbuEntry",
+      5
+    ]
+  },
+  "cpqHeBbuRatedCapacity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeBbuEntry",
+      6
+    ]
+  },
+  "cpqHeBbuPresentCapacity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeBbuEntry",
+      7
+    ]
+  },
+  "cpqHeBbuCutoffCapacity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeBbuEntry",
+      8
+    ]
+  },
+  "cpqHeBbuCutoffSetPoint": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeBbuEntry",
+      9
+    ]
+  },
+  "cpqHeBbuChargePercentage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeBbuEntry",
+      10
+    ]
+  },
+  "cpqHeBbuSerialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeBbuEntry",
+      11
+    ]
+  },
+  "cpqHeBbuMaxCapacityWatts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeBbuEntry",
+      12
+    ]
+  },
+  "cpqHeBbuFirmware": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHeBbuEntry",
+      13
+    ]
+  },
+  "cpqHeBbuChargeState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "discharging",
+        "3": "notCharging",
+        "4": "slowCharging",
+        "5": "standardCharging",
+        "6": "charged"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeBbuEntry",
+      14
+    ]
+  },
+  "cpqHeBbuErrorCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "noError",
+        "2": "batteryFailure",
+        "3": "replaceBattery"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeBbuEntry",
+      15
+    ]
+  },
+  "cpqHeTrapPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "cpqHeTrap",
+      1
+    ]
+  },
+  "cpqHeTrapLogMaxSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeTrap",
+      2
+    ]
+  },
+  "cpqHeTrapLogTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHeTrapLogEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHeTrap",
+      3
+    ]
+  },
+  "cpqHeTrapLogEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHeTrapLogEntry"
+    },
+    "index": [
+      "cpqHeTrapLogIndex"
+    ],
+    "value": [
+      "cpqHeTrapLogTable",
+      1
+    ]
+  },
+  "CpqHeTrapLogEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHeTrapLogIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHeTrapLogEntry",
+      1
+    ]
+  },
+  "cpqHeTrapType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "cpqHeCorrectableMemoryError",
+        "2": "cpqHeCorrectableMemoryLogDisabled",
+        "6001": "cpqHe2CorrectableMemoryError",
+        "6002": "cpqHe2CorrectableMemoryLogDisabled",
+        "6003": "cpqHeThermalTempFailed",
+        "6004": "cpqHeThermalTempDegraded",
+        "6005": "cpqHeThermalTempOk",
+        "6006": "cpqHeThermalSystemFanFailed",
+        "6007": "cpqHeThermalSystemFanDegraded",
+        "6008": "cpqHeThermalSystemFanOk",
+        "6009": "cpqHeThermalCpuFanFailed",
+        "6010": "cpqHeThermalCpuFanOk",
+        "6011": "cpqHeAsrConfirmation",
+        "6012": "cpqHeThermalConfirmation",
+        "6013": "cpqHePostError"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHeTrapLogEntry",
+      2
+    ]
+  },
+  "cpqHeTrapTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHeTrapLogEntry",
+      3
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "mib-2",
+        "Counter64"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION"
+      ]
+    ]
+  ],
+  "hcnumTC": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "mib-2",
+      78
+    ]
+  },
+  "CounterBasedGauge64": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "display_hint": null
+  },
+  "ZeroBasedCounter64": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "display_hint": null
+  }
+}

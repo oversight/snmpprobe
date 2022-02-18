@@ -1,0 +1,688 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "mib-2",
+        "NOTIFICATION-TYPE",
+        "Integer32"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TDomain",
+        "TAddress",
+        "TEXTUAL-CONVENTION",
+        "AutonomousType",
+        "RowPointer",
+        "TimeStamp",
+        "TruthValue",
+        "DateAndTime"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP",
+        "NOTIFICATION-GROUP"
+      ]
+    ],
+    [
+      "SNMP-FRAMEWORK-MIB",
+      [
+        "SnmpAdminString"
+      ]
+    ]
+  ],
+  "entityMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "mib-2",
+      47
+    ]
+  },
+  "entityMIBObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entityMIB",
+      1
+    ]
+  },
+  "entityPhysical": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entityMIBObjects",
+      1
+    ]
+  },
+  "entityLogical": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entityMIBObjects",
+      2
+    ]
+  },
+  "entityMapping": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entityMIBObjects",
+      3
+    ]
+  },
+  "entityGeneral": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entityMIBObjects",
+      4
+    ]
+  },
+  "PhysicalIndex": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": "d"
+  },
+  "PhysicalIndexOrZero": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": "d"
+  },
+  "PhysicalClass": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "3": "chassis",
+        "4": "backplane",
+        "5": "container",
+        "6": "powerSupply",
+        "7": "fan",
+        "8": "sensor",
+        "9": "module",
+        "10": "port",
+        "11": "stack",
+        "12": "cpu"
+      }
+    },
+    "display_hint": null
+  },
+  "SnmpEngineIdOrNone": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "entPhysicalTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF EntPhysicalEntry"
+    },
+    "index": null,
+    "value": [
+      "entityPhysical",
+      1
+    ]
+  },
+  "entPhysicalEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntPhysicalEntry"
+    },
+    "index": [
+      "entPhysicalIndex"
+    ],
+    "value": [
+      "entPhysicalTable",
+      1
+    ]
+  },
+  "EntPhysicalEntry": {
+    "tp": "SEQUENCE"
+  },
+  "entPhysicalIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PhysicalIndex"
+    },
+    "index": null,
+    "value": [
+      "entPhysicalEntry",
+      1
+    ]
+  },
+  "entPhysicalDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "entPhysicalEntry",
+      2
+    ]
+  },
+  "entPhysicalVendorType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AutonomousType"
+    },
+    "index": null,
+    "value": [
+      "entPhysicalEntry",
+      3
+    ]
+  },
+  "entPhysicalContainedIn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PhysicalIndexOrZero"
+    },
+    "index": null,
+    "value": [
+      "entPhysicalEntry",
+      4
+    ]
+  },
+  "entPhysicalClass": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PhysicalClass"
+    },
+    "index": null,
+    "value": [
+      "entPhysicalEntry",
+      5
+    ]
+  },
+  "entPhysicalParentRelPos": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "entPhysicalEntry",
+      6
+    ]
+  },
+  "entPhysicalName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "entPhysicalEntry",
+      7
+    ]
+  },
+  "entPhysicalHardwareRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "entPhysicalEntry",
+      8
+    ]
+  },
+  "entPhysicalFirmwareRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "entPhysicalEntry",
+      9
+    ]
+  },
+  "entPhysicalSoftwareRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "entPhysicalEntry",
+      10
+    ]
+  },
+  "entPhysicalSerialNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "entPhysicalEntry",
+      11
+    ]
+  },
+  "entPhysicalMfgName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "entPhysicalEntry",
+      12
+    ]
+  },
+  "entPhysicalModelName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "entPhysicalEntry",
+      13
+    ]
+  },
+  "entPhysicalAlias": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "entPhysicalEntry",
+      14
+    ]
+  },
+  "entPhysicalAssetID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "entPhysicalEntry",
+      15
+    ]
+  },
+  "entPhysicalIsFRU": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "entPhysicalEntry",
+      16
+    ]
+  },
+  "entPhysicalMfgDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateAndTime"
+    },
+    "index": null,
+    "value": [
+      "entPhysicalEntry",
+      17
+    ]
+  },
+  "entPhysicalUris": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "entPhysicalEntry",
+      18
+    ]
+  },
+  "entLogicalTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF EntLogicalEntry"
+    },
+    "index": null,
+    "value": [
+      "entityLogical",
+      1
+    ]
+  },
+  "entLogicalEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntLogicalEntry"
+    },
+    "index": [
+      "entLogicalIndex"
+    ],
+    "value": [
+      "entLogicalTable",
+      1
+    ]
+  },
+  "EntLogicalEntry": {
+    "tp": "SEQUENCE"
+  },
+  "entLogicalIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "entLogicalEntry",
+      1
+    ]
+  },
+  "entLogicalDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "entLogicalEntry",
+      2
+    ]
+  },
+  "entLogicalType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AutonomousType"
+    },
+    "index": null,
+    "value": [
+      "entLogicalEntry",
+      3
+    ]
+  },
+  "entLogicalCommunity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "entLogicalEntry",
+      4
+    ]
+  },
+  "entLogicalTAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TAddress"
+    },
+    "index": null,
+    "value": [
+      "entLogicalEntry",
+      5
+    ]
+  },
+  "entLogicalTDomain": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TDomain"
+    },
+    "index": null,
+    "value": [
+      "entLogicalEntry",
+      6
+    ]
+  },
+  "entLogicalContextEngineID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpEngineIdOrNone"
+    },
+    "index": null,
+    "value": [
+      "entLogicalEntry",
+      7
+    ]
+  },
+  "entLogicalContextName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "entLogicalEntry",
+      8
+    ]
+  },
+  "entLPMappingTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF EntLPMappingEntry"
+    },
+    "index": null,
+    "value": [
+      "entityMapping",
+      1
+    ]
+  },
+  "entLPMappingEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntLPMappingEntry"
+    },
+    "index": [
+      "entLogicalIndex",
+      "entLPPhysicalIndex"
+    ],
+    "value": [
+      "entLPMappingTable",
+      1
+    ]
+  },
+  "EntLPMappingEntry": {
+    "tp": "SEQUENCE"
+  },
+  "entLPPhysicalIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PhysicalIndex"
+    },
+    "index": null,
+    "value": [
+      "entLPMappingEntry",
+      1
+    ]
+  },
+  "entAliasMappingTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF EntAliasMappingEntry"
+    },
+    "index": null,
+    "value": [
+      "entityMapping",
+      2
+    ]
+  },
+  "entAliasMappingEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntAliasMappingEntry"
+    },
+    "index": [
+      "entPhysicalIndex",
+      "entAliasLogicalIndexOrZero"
+    ],
+    "value": [
+      "entAliasMappingTable",
+      1
+    ]
+  },
+  "EntAliasMappingEntry": {
+    "tp": "SEQUENCE"
+  },
+  "entAliasLogicalIndexOrZero": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "entAliasMappingEntry",
+      1
+    ]
+  },
+  "entAliasMappingIdentifier": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowPointer"
+    },
+    "index": null,
+    "value": [
+      "entAliasMappingEntry",
+      2
+    ]
+  },
+  "entPhysicalContainsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF EntPhysicalContainsEntry"
+    },
+    "index": null,
+    "value": [
+      "entityMapping",
+      3
+    ]
+  },
+  "entPhysicalContainsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntPhysicalContainsEntry"
+    },
+    "index": [
+      "entPhysicalIndex",
+      "entPhysicalChildIndex"
+    ],
+    "value": [
+      "entPhysicalContainsTable",
+      1
+    ]
+  },
+  "EntPhysicalContainsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "entPhysicalChildIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PhysicalIndex"
+    },
+    "index": null,
+    "value": [
+      "entPhysicalContainsEntry",
+      1
+    ]
+  },
+  "entLastChangeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "entityGeneral",
+      1
+    ]
+  },
+  "entityMIBTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entityMIB",
+      2
+    ]
+  },
+  "entityMIBTrapPrefix": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entityMIBTraps",
+      0
+    ]
+  },
+  "entityConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entityMIB",
+      3
+    ]
+  },
+  "entityCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entityConformance",
+      1
+    ]
+  },
+  "entityGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entityConformance",
+      2
+    ]
+  },
+  "entityPhysicalGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "entityGroups",
+      1
+    ]
+  },
+  "entityLogicalGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "entityGroups",
+      2
+    ]
+  },
+  "entityMappingGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "entityGroups",
+      3
+    ]
+  },
+  "entityGeneralGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "entityGroups",
+      4
+    ]
+  },
+  "entityPhysical2Group": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "entityGroups",
+      6
+    ]
+  },
+  "entityLogical2Group": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "entityGroups",
+      7
+    ]
+  },
+  "entityPhysical3Group": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "entityGroups",
+      8
+    ]
+  }
+}

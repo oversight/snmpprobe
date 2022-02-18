@@ -1,0 +1,592 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Integer32",
+        "Unsigned32",
+        "Gauge32",
+        "Counter32",
+        "Counter64",
+        "IpAddress",
+        "mib-2"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP"
+      ]
+    ],
+    [
+      "INET-ADDRESS-MIB",
+      [
+        "InetAddress",
+        "InetAddressType",
+        "InetPortNumber"
+      ]
+    ]
+  ],
+  "tcpMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "mib-2",
+      49
+    ]
+  },
+  "tcp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "mib-2",
+      6
+    ]
+  },
+  "tcpRtoAlgorithm": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "constant",
+        "3": "rsre",
+        "4": "vanj",
+        "5": "rfc2988"
+      }
+    },
+    "index": null,
+    "value": [
+      "tcp",
+      1
+    ]
+  },
+  "tcpRtoMin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "tcp",
+      2
+    ]
+  },
+  "tcpRtoMax": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "tcp",
+      3
+    ]
+  },
+  "tcpMaxConn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "tcp",
+      4
+    ]
+  },
+  "tcpActiveOpens": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "tcp",
+      5
+    ]
+  },
+  "tcpPassiveOpens": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "tcp",
+      6
+    ]
+  },
+  "tcpAttemptFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "tcp",
+      7
+    ]
+  },
+  "tcpEstabResets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "tcp",
+      8
+    ]
+  },
+  "tcpCurrEstab": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "tcp",
+      9
+    ]
+  },
+  "tcpInSegs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "tcp",
+      10
+    ]
+  },
+  "tcpOutSegs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "tcp",
+      11
+    ]
+  },
+  "tcpRetransSegs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "tcp",
+      12
+    ]
+  },
+  "tcpInErrs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "tcp",
+      14
+    ]
+  },
+  "tcpOutRsts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "tcp",
+      15
+    ]
+  },
+  "tcpHCInSegs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "tcp",
+      17
+    ]
+  },
+  "tcpHCOutSegs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "tcp",
+      18
+    ]
+  },
+  "tcpConnectionTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF TcpConnectionEntry"
+    },
+    "index": null,
+    "value": [
+      "tcp",
+      19
+    ]
+  },
+  "tcpConnectionEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TcpConnectionEntry"
+    },
+    "index": [
+      "tcpConnectionLocalAddressType",
+      "tcpConnectionLocalAddress",
+      "tcpConnectionLocalPort",
+      "tcpConnectionRemAddressType",
+      "tcpConnectionRemAddress",
+      "tcpConnectionRemPort"
+    ],
+    "value": [
+      "tcpConnectionTable",
+      1
+    ]
+  },
+  "TcpConnectionEntry": {
+    "tp": "SEQUENCE"
+  },
+  "tcpConnectionLocalAddressType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddressType"
+    },
+    "index": null,
+    "value": [
+      "tcpConnectionEntry",
+      1
+    ]
+  },
+  "tcpConnectionLocalAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddress"
+    },
+    "index": null,
+    "value": [
+      "tcpConnectionEntry",
+      2
+    ]
+  },
+  "tcpConnectionLocalPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetPortNumber"
+    },
+    "index": null,
+    "value": [
+      "tcpConnectionEntry",
+      3
+    ]
+  },
+  "tcpConnectionRemAddressType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddressType"
+    },
+    "index": null,
+    "value": [
+      "tcpConnectionEntry",
+      4
+    ]
+  },
+  "tcpConnectionRemAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddress"
+    },
+    "index": null,
+    "value": [
+      "tcpConnectionEntry",
+      5
+    ]
+  },
+  "tcpConnectionRemPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetPortNumber"
+    },
+    "index": null,
+    "value": [
+      "tcpConnectionEntry",
+      6
+    ]
+  },
+  "tcpConnectionState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "closed",
+        "2": "listen",
+        "3": "synSent",
+        "4": "synReceived",
+        "5": "established",
+        "6": "finWait1",
+        "7": "finWait2",
+        "8": "closeWait",
+        "9": "lastAck",
+        "10": "closing",
+        "11": "timeWait",
+        "12": "deleteTCB"
+      }
+    },
+    "index": null,
+    "value": [
+      "tcpConnectionEntry",
+      7
+    ]
+  },
+  "tcpConnectionProcess": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "tcpConnectionEntry",
+      8
+    ]
+  },
+  "tcpListenerTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF TcpListenerEntry"
+    },
+    "index": null,
+    "value": [
+      "tcp",
+      20
+    ]
+  },
+  "tcpListenerEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TcpListenerEntry"
+    },
+    "index": [
+      "tcpListenerLocalAddressType",
+      "tcpListenerLocalAddress",
+      "tcpListenerLocalPort"
+    ],
+    "value": [
+      "tcpListenerTable",
+      1
+    ]
+  },
+  "TcpListenerEntry": {
+    "tp": "SEQUENCE"
+  },
+  "tcpListenerLocalAddressType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddressType"
+    },
+    "index": null,
+    "value": [
+      "tcpListenerEntry",
+      1
+    ]
+  },
+  "tcpListenerLocalAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddress"
+    },
+    "index": null,
+    "value": [
+      "tcpListenerEntry",
+      2
+    ]
+  },
+  "tcpListenerLocalPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetPortNumber"
+    },
+    "index": null,
+    "value": [
+      "tcpListenerEntry",
+      3
+    ]
+  },
+  "tcpListenerProcess": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "tcpListenerEntry",
+      4
+    ]
+  },
+  "tcpConnTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF TcpConnEntry"
+    },
+    "index": null,
+    "value": [
+      "tcp",
+      13
+    ]
+  },
+  "tcpConnEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TcpConnEntry"
+    },
+    "index": [
+      "tcpConnLocalAddress",
+      "tcpConnLocalPort",
+      "tcpConnRemAddress",
+      "tcpConnRemPort"
+    ],
+    "value": [
+      "tcpConnTable",
+      1
+    ]
+  },
+  "TcpConnEntry": {
+    "tp": "SEQUENCE"
+  },
+  "tcpConnState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "closed",
+        "2": "listen",
+        "3": "synSent",
+        "4": "synReceived",
+        "5": "established",
+        "6": "finWait1",
+        "7": "finWait2",
+        "8": "closeWait",
+        "9": "lastAck",
+        "10": "closing",
+        "11": "timeWait",
+        "12": "deleteTCB"
+      }
+    },
+    "index": null,
+    "value": [
+      "tcpConnEntry",
+      1
+    ]
+  },
+  "tcpConnLocalAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "tcpConnEntry",
+      2
+    ]
+  },
+  "tcpConnLocalPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "tcpConnEntry",
+      3
+    ]
+  },
+  "tcpConnRemAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "tcpConnEntry",
+      4
+    ]
+  },
+  "tcpConnRemPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "tcpConnEntry",
+      5
+    ]
+  },
+  "tcpMIBConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "tcpMIB",
+      2
+    ]
+  },
+  "tcpMIBCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "tcpMIBConformance",
+      1
+    ]
+  },
+  "tcpMIBGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "tcpMIBConformance",
+      2
+    ]
+  },
+  "tcpGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "tcpMIBGroups",
+      1
+    ]
+  },
+  "tcpBaseGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "tcpMIBGroups",
+      2
+    ]
+  },
+  "tcpConnectionGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "tcpMIBGroups",
+      3
+    ]
+  },
+  "tcpListenerGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "tcpMIBGroups",
+      4
+    ]
+  },
+  "tcpHCGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "tcpMIBGroups",
+      5
+    ]
+  }
+}

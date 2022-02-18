@@ -1,0 +1,801 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Integer32",
+        "Unsigned32",
+        "Counter32",
+        "Gauge32",
+        "IpAddress",
+        "enterprises"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION",
+        "DisplayString",
+        "MacAddress",
+        "DateAndTime",
+        "TruthValue"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP"
+      ]
+    ],
+    [
+      "UBNT-MIB",
+      [
+        "ubntMIB",
+        "ubntUniFi",
+        "ubntUniFiGroups"
+      ]
+    ]
+  ],
+  "ubntUniFi": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "ubntMIB",
+      6
+    ]
+  },
+  "unifiApWireless": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ubntUniFi",
+      1
+    ]
+  },
+  "unifiApIf": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ubntUniFi",
+      2
+    ]
+  },
+  "unifiApSystem": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ubntUniFi",
+      3
+    ]
+  },
+  "TableIndex": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": "d"
+  },
+  "ObjectIndex": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": "x"
+  },
+  "Voltage": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": "d-2"
+  },
+  "Temperature": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": "d-1"
+  },
+  "unifiIfTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF UbntIfEntry"
+    },
+    "index": null,
+    "value": [
+      "unifiApIf",
+      1
+    ]
+  },
+  "unifiIfEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UbntIfEntry"
+    },
+    "index": [
+      "unifiIfIndex"
+    ],
+    "value": [
+      "unifiIfTable",
+      1
+    ]
+  },
+  "UbntIfEntry": {
+    "tp": "SEQUENCE"
+  },
+  "unifiIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectIndex"
+    },
+    "index": null,
+    "value": [
+      "unifiIfEntry",
+      1
+    ]
+  },
+  "unifiIfFullDuplex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "unifiIfEntry",
+      2
+    ]
+  },
+  "unifiIfIp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "unifiIfEntry",
+      3
+    ]
+  },
+  "unifiIfMac": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "unifiIfEntry",
+      4
+    ]
+  },
+  "unifiIfName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "unifiIfEntry",
+      5
+    ]
+  },
+  "unifiIfRxBytes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiIfEntry",
+      6
+    ]
+  },
+  "unifiIfRxDropped": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiIfEntry",
+      7
+    ]
+  },
+  "unifiIfRxError": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiIfEntry",
+      8
+    ]
+  },
+  "unifiIfRxMulticast": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiIfEntry",
+      9
+    ]
+  },
+  "unifiIfRxPackets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiIfEntry",
+      10
+    ]
+  },
+  "unifiIfSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "unifiIfEntry",
+      11
+    ]
+  },
+  "unifiIfTxBytes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiIfEntry",
+      12
+    ]
+  },
+  "unifiIfTxDropped": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiIfEntry",
+      13
+    ]
+  },
+  "unifiIfTxError": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiIfEntry",
+      14
+    ]
+  },
+  "unifiIfTxPackets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiIfEntry",
+      15
+    ]
+  },
+  "unifiIfUp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "unifiIfEntry",
+      16
+    ]
+  },
+  "unifiRadioTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF UbntRadioEntry"
+    },
+    "index": null,
+    "value": [
+      "unifiApWireless",
+      1
+    ]
+  },
+  "unifiRadioEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UbntRadioEntry"
+    },
+    "index": [
+      "unifiRadioIndex"
+    ],
+    "value": [
+      "unifiRadioTable",
+      1
+    ]
+  },
+  "UbntRadioEntry": {
+    "tp": "SEQUENCE"
+  },
+  "unifiRadioIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectIndex"
+    },
+    "index": null,
+    "value": [
+      "unifiRadioEntry",
+      1
+    ]
+  },
+  "unifiRadioName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "unifiRadioEntry",
+      2
+    ]
+  },
+  "unifiRadioRadio": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "unifiRadioEntry",
+      3
+    ]
+  },
+  "unifiRadioRxPackets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiRadioEntry",
+      4
+    ]
+  },
+  "unifiRadioTxPackets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiRadioEntry",
+      5
+    ]
+  },
+  "unifiRadioCuTotal": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "unifiRadioEntry",
+      6
+    ]
+  },
+  "unifiRadioCuSelfRx": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "unifiRadioEntry",
+      7
+    ]
+  },
+  "unifiRadioCuSelfTx": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "unifiRadioEntry",
+      8
+    ]
+  },
+  "unifiRadioOtherBss": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "unifiRadioEntry",
+      9
+    ]
+  },
+  "unifiVapTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF UbntVapEntry"
+    },
+    "index": null,
+    "value": [
+      "unifiApWireless",
+      2
+    ]
+  },
+  "unifiVapEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UbntVapEntry"
+    },
+    "index": [
+      "unifiVapIndex"
+    ],
+    "value": [
+      "unifiVapTable",
+      1
+    ]
+  },
+  "UbntVapEntry": {
+    "tp": "SEQUENCE"
+  },
+  "unifiVapIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectIndex"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      1
+    ]
+  },
+  "unifiVapBssId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      2
+    ]
+  },
+  "unifiVapCcq": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      3
+    ]
+  },
+  "unifiVapChannel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      4
+    ]
+  },
+  "unifiVapExtChannel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      5
+    ]
+  },
+  "unifiVapEssId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      6
+    ]
+  },
+  "unifiVapName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      7
+    ]
+  },
+  "unifiVapNumStations": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      8
+    ]
+  },
+  "unifiVapRadio": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      9
+    ]
+  },
+  "unifiVapRxBytes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      10
+    ]
+  },
+  "unifiVapRxCrypts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      11
+    ]
+  },
+  "unifiVapRxDropped": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      12
+    ]
+  },
+  "unifiVapRxErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      13
+    ]
+  },
+  "unifiVapRxFrags": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      14
+    ]
+  },
+  "unifiVapRxPackets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      15
+    ]
+  },
+  "unifiVapTxBytes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      16
+    ]
+  },
+  "unifiVapTxDropped": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      17
+    ]
+  },
+  "unifiVapTxErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      18
+    ]
+  },
+  "unifiVapTxPackets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      19
+    ]
+  },
+  "unifiVapTxRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      20
+    ]
+  },
+  "unifiVapTxPower": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      21
+    ]
+  },
+  "unifiVapUp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      22
+    ]
+  },
+  "unifiVapUsage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "unifiVapEntry",
+      23
+    ]
+  },
+  "unifiApSystemIp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "unifiApSystem",
+      1
+    ]
+  },
+  "unifiApSystemIsolated": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "unifiApSystem",
+      2
+    ]
+  },
+  "unifiApSystemModel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "unifiApSystem",
+      3
+    ]
+  },
+  "unifiApSystemUplink": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "unifiApSystem",
+      4
+    ]
+  },
+  "unifiApSystemUptime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "unifiApSystem",
+      5
+    ]
+  },
+  "unifiApSystemVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "unifiApSystem",
+      6
+    ]
+  },
+  "unifiIfGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ubntUniFiGroups",
+      1
+    ]
+  },
+  "unifiRadioGroups": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ubntUniFiGroups",
+      2
+    ]
+  },
+  "unifiVapGroups": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ubntUniFiGroups",
+      3
+    ]
+  },
+  "unifiApSystemGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ubntUniFiGroups",
+      4
+    ]
+  }
+}

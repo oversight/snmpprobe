@@ -1,0 +1,822 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "IpAddress",
+        "Integer32",
+        "Gauge32",
+        "Counter32"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "RowStatus"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP"
+      ]
+    ],
+    [
+      "IF-MIB",
+      [
+        "InterfaceIndexOrZero"
+      ]
+    ],
+    [
+      "IP-MIB",
+      [
+        "ip"
+      ]
+    ],
+    [
+      "IANA-RTPROTO-MIB",
+      [
+        "IANAipRouteProtocol"
+      ]
+    ],
+    [
+      "INET-ADDRESS-MIB",
+      [
+        "InetAddress",
+        "InetAddressType",
+        "InetAddressPrefixLength",
+        "InetAutonomousSystemNumber"
+      ]
+    ]
+  ],
+  "ipForward": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "ip",
+      24
+    ]
+  },
+  "inetCidrRouteNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "ipForward",
+      6
+    ]
+  },
+  "inetCidrRouteDiscards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ipForward",
+      8
+    ]
+  },
+  "inetCidrRouteTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF InetCidrRouteEntry"
+    },
+    "index": null,
+    "value": [
+      "ipForward",
+      7
+    ]
+  },
+  "inetCidrRouteEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetCidrRouteEntry"
+    },
+    "index": [
+      "inetCidrRouteDestType",
+      "inetCidrRouteDest",
+      "inetCidrRoutePfxLen",
+      "inetCidrRoutePolicy",
+      "inetCidrRouteNextHopType",
+      "inetCidrRouteNextHop"
+    ],
+    "value": [
+      "inetCidrRouteTable",
+      1
+    ]
+  },
+  "InetCidrRouteEntry": {
+    "tp": "SEQUENCE"
+  },
+  "inetCidrRouteDestType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddressType"
+    },
+    "index": null,
+    "value": [
+      "inetCidrRouteEntry",
+      1
+    ]
+  },
+  "inetCidrRouteDest": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddress"
+    },
+    "index": null,
+    "value": [
+      "inetCidrRouteEntry",
+      2
+    ]
+  },
+  "inetCidrRoutePfxLen": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddressPrefixLength"
+    },
+    "index": null,
+    "value": [
+      "inetCidrRouteEntry",
+      3
+    ]
+  },
+  "inetCidrRoutePolicy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "inetCidrRouteEntry",
+      4
+    ]
+  },
+  "inetCidrRouteNextHopType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddressType"
+    },
+    "index": null,
+    "value": [
+      "inetCidrRouteEntry",
+      5
+    ]
+  },
+  "inetCidrRouteNextHop": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddress"
+    },
+    "index": null,
+    "value": [
+      "inetCidrRouteEntry",
+      6
+    ]
+  },
+  "inetCidrRouteIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InterfaceIndexOrZero"
+    },
+    "index": null,
+    "value": [
+      "inetCidrRouteEntry",
+      7
+    ]
+  },
+  "inetCidrRouteType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "reject",
+        "3": "local",
+        "4": "remote",
+        "5": "blackhole"
+      }
+    },
+    "index": null,
+    "value": [
+      "inetCidrRouteEntry",
+      8
+    ]
+  },
+  "inetCidrRouteProto": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IANAipRouteProtocol"
+    },
+    "index": null,
+    "value": [
+      "inetCidrRouteEntry",
+      9
+    ]
+  },
+  "inetCidrRouteAge": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "inetCidrRouteEntry",
+      10
+    ]
+  },
+  "inetCidrRouteNextHopAS": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAutonomousSystemNumber"
+    },
+    "index": null,
+    "value": [
+      "inetCidrRouteEntry",
+      11
+    ]
+  },
+  "inetCidrRouteMetric1": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "inetCidrRouteEntry",
+      12
+    ]
+  },
+  "inetCidrRouteMetric2": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "inetCidrRouteEntry",
+      13
+    ]
+  },
+  "inetCidrRouteMetric3": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "inetCidrRouteEntry",
+      14
+    ]
+  },
+  "inetCidrRouteMetric4": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "inetCidrRouteEntry",
+      15
+    ]
+  },
+  "inetCidrRouteMetric5": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "inetCidrRouteEntry",
+      16
+    ]
+  },
+  "inetCidrRouteStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "inetCidrRouteEntry",
+      17
+    ]
+  },
+  "ipForwardConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ipForward",
+      5
+    ]
+  },
+  "ipForwardGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ipForwardConformance",
+      1
+    ]
+  },
+  "ipForwardCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ipForwardConformance",
+      2
+    ]
+  },
+  "inetForwardCidrRouteGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipForwardGroups",
+      4
+    ]
+  },
+  "ipCidrRouteNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "ipForward",
+      3
+    ]
+  },
+  "ipCidrRouteTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF IpCidrRouteEntry"
+    },
+    "index": null,
+    "value": [
+      "ipForward",
+      4
+    ]
+  },
+  "ipCidrRouteEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpCidrRouteEntry"
+    },
+    "index": [
+      "ipCidrRouteDest",
+      "ipCidrRouteMask",
+      "ipCidrRouteTos",
+      "ipCidrRouteNextHop"
+    ],
+    "value": [
+      "ipCidrRouteTable",
+      1
+    ]
+  },
+  "IpCidrRouteEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipCidrRouteDest": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "ipCidrRouteEntry",
+      1
+    ]
+  },
+  "ipCidrRouteMask": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "ipCidrRouteEntry",
+      2
+    ]
+  },
+  "ipCidrRouteTos": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipCidrRouteEntry",
+      3
+    ]
+  },
+  "ipCidrRouteNextHop": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "ipCidrRouteEntry",
+      4
+    ]
+  },
+  "ipCidrRouteIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipCidrRouteEntry",
+      5
+    ]
+  },
+  "ipCidrRouteType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "reject",
+        "3": "local",
+        "4": "remote"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipCidrRouteEntry",
+      6
+    ]
+  },
+  "ipCidrRouteProto": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "local",
+        "3": "netmgmt",
+        "4": "icmp",
+        "5": "egp",
+        "6": "ggp",
+        "7": "hello",
+        "8": "rip",
+        "9": "isIs",
+        "10": "esIs",
+        "11": "ciscoIgrp",
+        "12": "bbnSpfIgp",
+        "13": "ospf",
+        "14": "bgp",
+        "15": "idpr",
+        "16": "ciscoEigrp"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipCidrRouteEntry",
+      7
+    ]
+  },
+  "ipCidrRouteAge": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipCidrRouteEntry",
+      8
+    ]
+  },
+  "ipCidrRouteInfo": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "ipCidrRouteEntry",
+      9
+    ]
+  },
+  "ipCidrRouteNextHopAS": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipCidrRouteEntry",
+      10
+    ]
+  },
+  "ipCidrRouteMetric1": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipCidrRouteEntry",
+      11
+    ]
+  },
+  "ipCidrRouteMetric2": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipCidrRouteEntry",
+      12
+    ]
+  },
+  "ipCidrRouteMetric3": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipCidrRouteEntry",
+      13
+    ]
+  },
+  "ipCidrRouteMetric4": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipCidrRouteEntry",
+      14
+    ]
+  },
+  "ipCidrRouteMetric5": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipCidrRouteEntry",
+      15
+    ]
+  },
+  "ipCidrRouteStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "ipCidrRouteEntry",
+      16
+    ]
+  },
+  "ipForwardCidrRouteGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipForwardGroups",
+      3
+    ]
+  },
+  "ipForwardNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "ipForward",
+      1
+    ]
+  },
+  "ipForwardTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF IpForwardEntry"
+    },
+    "index": null,
+    "value": [
+      "ipForward",
+      2
+    ]
+  },
+  "ipForwardEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpForwardEntry"
+    },
+    "index": [
+      "ipForwardDest",
+      "ipForwardProto",
+      "ipForwardPolicy",
+      "ipForwardNextHop"
+    ],
+    "value": [
+      "ipForwardTable",
+      1
+    ]
+  },
+  "IpForwardEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ipForwardDest": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "ipForwardEntry",
+      1
+    ]
+  },
+  "ipForwardMask": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "ipForwardEntry",
+      2
+    ]
+  },
+  "ipForwardPolicy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipForwardEntry",
+      3
+    ]
+  },
+  "ipForwardNextHop": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "ipForwardEntry",
+      4
+    ]
+  },
+  "ipForwardIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipForwardEntry",
+      5
+    ]
+  },
+  "ipForwardType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "invalid",
+        "3": "local",
+        "4": "remote"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipForwardEntry",
+      6
+    ]
+  },
+  "ipForwardProto": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "local",
+        "3": "netmgmt",
+        "4": "icmp",
+        "5": "egp",
+        "6": "ggp",
+        "7": "hello",
+        "8": "rip",
+        "9": "is-is",
+        "10": "es-is",
+        "11": "ciscoIgrp",
+        "12": "bbnSpfIgp",
+        "13": "ospf",
+        "14": "bgp",
+        "15": "idpr"
+      }
+    },
+    "index": null,
+    "value": [
+      "ipForwardEntry",
+      7
+    ]
+  },
+  "ipForwardAge": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipForwardEntry",
+      8
+    ]
+  },
+  "ipForwardInfo": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "ipForwardEntry",
+      9
+    ]
+  },
+  "ipForwardNextHopAS": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipForwardEntry",
+      10
+    ]
+  },
+  "ipForwardMetric1": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipForwardEntry",
+      11
+    ]
+  },
+  "ipForwardMetric2": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipForwardEntry",
+      12
+    ]
+  },
+  "ipForwardMetric3": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipForwardEntry",
+      13
+    ]
+  },
+  "ipForwardMetric4": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipForwardEntry",
+      14
+    ]
+  },
+  "ipForwardMetric5": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ipForwardEntry",
+      15
+    ]
+  },
+  "ipForwardMultiPathGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ipForwardGroups",
+      2
+    ]
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-CONF",
+      [
+        "OBJECT-GROUP",
+        "MODULE-COMPLIANCE"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "OBJECT-TYPE",
+        "Integer32",
+        "enterprises",
+        "MODULE-IDENTITY"
+      ]
+    ]
+  ],
+  "synologyService": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "synology",
+      6
+    ]
+  },
+  "synology": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      6574
+    ]
+  },
+  "serviceTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ServiceEntry"
+    },
+    "index": null,
+    "value": [
+      "synologyService",
+      1
+    ]
+  },
+  "serviceEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceEntry"
+    },
+    "index": [
+      "serviceInfoIndex"
+    ],
+    "value": [
+      "serviceTable",
+      1
+    ]
+  },
+  "ServiceEntry": {
+    "tp": "SEQUENCE"
+  },
+  "serviceInfoIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "serviceEntry",
+      1
+    ]
+  },
+  "serviceName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "serviceEntry",
+      2
+    ]
+  },
+  "serviceUsers": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "serviceEntry",
+      3
+    ]
+  },
+  "synologyServiceConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synologyService",
+      2
+    ]
+  },
+  "synologyServiceCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synologyServiceConformance",
+      1
+    ]
+  },
+  "synologyServiceGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synologyServiceConformance",
+      2
+    ]
+  },
+  "synologyServiceGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "synologyServiceGroups",
+      1
+    ]
+  }
+}

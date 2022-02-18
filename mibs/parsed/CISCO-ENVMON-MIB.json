@@ -1,0 +1,582 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "NOTIFICATION-TYPE",
+        "Gauge32",
+        "Integer32"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION",
+        "DisplayString",
+        "TruthValue"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP",
+        "NOTIFICATION-GROUP"
+      ]
+    ],
+    [
+      "CISCO-SMI",
+      [
+        "ciscoMgmt"
+      ]
+    ]
+  ],
+  "ciscoEnvMonMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "ciscoMgmt",
+      13
+    ]
+  },
+  "CiscoEnvMonState": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "normal",
+        "2": "warning",
+        "3": "critical",
+        "4": "shutdown",
+        "5": "notPresent",
+        "6": "notFunctioning"
+      }
+    },
+    "display_hint": null
+  },
+  "CiscoSignedGauge": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  },
+  "ciscoEnvMonObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoEnvMonMIB",
+      1
+    ]
+  },
+  "ciscoEnvMonPresent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "oldAgs",
+        "2": "ags",
+        "3": "c7000",
+        "4": "ci",
+        "6": "cAccessMon",
+        "7": "cat6000",
+        "8": "ubr7200",
+        "9": "cat4000",
+        "10": "c10000",
+        "11": "osr7600",
+        "12": "c7600",
+        "13": "c37xx",
+        "14": "other"
+      }
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonObjects",
+      1
+    ]
+  },
+  "ciscoEnvMonVoltageStatusTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CiscoEnvMonVoltageStatusEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonObjects",
+      2
+    ]
+  },
+  "ciscoEnvMonVoltageStatusEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CiscoEnvMonVoltageStatusEntry"
+    },
+    "index": [
+      "ciscoEnvMonVoltageStatusIndex"
+    ],
+    "value": [
+      "ciscoEnvMonVoltageStatusTable",
+      1
+    ]
+  },
+  "CiscoEnvMonVoltageStatusEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ciscoEnvMonVoltageStatusIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonVoltageStatusEntry",
+      1
+    ]
+  },
+  "ciscoEnvMonVoltageStatusDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonVoltageStatusEntry",
+      2
+    ]
+  },
+  "ciscoEnvMonVoltageStatusValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CiscoSignedGauge"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonVoltageStatusEntry",
+      3
+    ]
+  },
+  "ciscoEnvMonVoltageThresholdLow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonVoltageStatusEntry",
+      4
+    ]
+  },
+  "ciscoEnvMonVoltageThresholdHigh": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonVoltageStatusEntry",
+      5
+    ]
+  },
+  "ciscoEnvMonVoltageLastShutdown": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonVoltageStatusEntry",
+      6
+    ]
+  },
+  "ciscoEnvMonVoltageState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CiscoEnvMonState"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonVoltageStatusEntry",
+      7
+    ]
+  },
+  "ciscoEnvMonTemperatureStatusTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CiscoEnvMonTemperatureStatusEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonObjects",
+      3
+    ]
+  },
+  "ciscoEnvMonTemperatureStatusEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CiscoEnvMonTemperatureStatusEntry"
+    },
+    "index": [
+      "ciscoEnvMonTemperatureStatusIndex"
+    ],
+    "value": [
+      "ciscoEnvMonTemperatureStatusTable",
+      1
+    ]
+  },
+  "CiscoEnvMonTemperatureStatusEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ciscoEnvMonTemperatureStatusIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonTemperatureStatusEntry",
+      1
+    ]
+  },
+  "ciscoEnvMonTemperatureStatusDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonTemperatureStatusEntry",
+      2
+    ]
+  },
+  "ciscoEnvMonTemperatureStatusValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonTemperatureStatusEntry",
+      3
+    ]
+  },
+  "ciscoEnvMonTemperatureThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonTemperatureStatusEntry",
+      4
+    ]
+  },
+  "ciscoEnvMonTemperatureLastShutdown": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonTemperatureStatusEntry",
+      5
+    ]
+  },
+  "ciscoEnvMonTemperatureState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CiscoEnvMonState"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonTemperatureStatusEntry",
+      6
+    ]
+  },
+  "ciscoEnvMonFanStatusTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CiscoEnvMonFanStatusEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonObjects",
+      4
+    ]
+  },
+  "ciscoEnvMonFanStatusEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CiscoEnvMonFanStatusEntry"
+    },
+    "index": [
+      "ciscoEnvMonFanStatusIndex"
+    ],
+    "value": [
+      "ciscoEnvMonFanStatusTable",
+      1
+    ]
+  },
+  "CiscoEnvMonFanStatusEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ciscoEnvMonFanStatusIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonFanStatusEntry",
+      1
+    ]
+  },
+  "ciscoEnvMonFanStatusDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonFanStatusEntry",
+      2
+    ]
+  },
+  "ciscoEnvMonFanState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CiscoEnvMonState"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonFanStatusEntry",
+      3
+    ]
+  },
+  "ciscoEnvMonSupplyStatusTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CiscoEnvMonSupplyStatusEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonObjects",
+      5
+    ]
+  },
+  "ciscoEnvMonSupplyStatusEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CiscoEnvMonSupplyStatusEntry"
+    },
+    "index": [
+      "ciscoEnvMonSupplyStatusIndex"
+    ],
+    "value": [
+      "ciscoEnvMonSupplyStatusTable",
+      1
+    ]
+  },
+  "CiscoEnvMonSupplyStatusEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ciscoEnvMonSupplyStatusIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonSupplyStatusEntry",
+      1
+    ]
+  },
+  "ciscoEnvMonSupplyStatusDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonSupplyStatusEntry",
+      2
+    ]
+  },
+  "ciscoEnvMonSupplyState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CiscoEnvMonState"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonSupplyStatusEntry",
+      3
+    ]
+  },
+  "ciscoEnvMonSupplySource": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "ac",
+        "3": "dc",
+        "4": "externalPowerSupply",
+        "5": "internalRedundant"
+      }
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonSupplyStatusEntry",
+      4
+    ]
+  },
+  "ciscoEnvMonAlarmContacts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BITS",
+      "values": {
+        "0": "minorVisual",
+        "1": "majorVisual",
+        "2": "criticalVisual",
+        "3": "minorAudible",
+        "4": "majorAudible",
+        "5": "criticalAudible",
+        "6": "input"
+      }
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonObjects",
+      6
+    ]
+  },
+  "ciscoEnvMonMIBNotificationEnables": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoEnvMonMIB",
+      2
+    ]
+  },
+  "ciscoEnvMonEnableShutdownNotification": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonMIBNotificationEnables",
+      1
+    ]
+  },
+  "ciscoEnvMonEnableVoltageNotification": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonMIBNotificationEnables",
+      2
+    ]
+  },
+  "ciscoEnvMonEnableTemperatureNotification": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonMIBNotificationEnables",
+      3
+    ]
+  },
+  "ciscoEnvMonEnableFanNotification": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonMIBNotificationEnables",
+      4
+    ]
+  },
+  "ciscoEnvMonEnableRedundantSupplyNotification": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonMIBNotificationEnables",
+      5
+    ]
+  },
+  "ciscoEnvMonEnableStatChangeNotif": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ciscoEnvMonMIBNotificationEnables",
+      6
+    ]
+  },
+  "ciscoEnvMonMIBNotificationPrefix": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoEnvMonMIB",
+      3
+    ]
+  },
+  "ciscoEnvMonMIBNotifications": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoEnvMonMIBNotificationPrefix",
+      0
+    ]
+  },
+  "ciscoEnvMonMIBConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoEnvMonMIB",
+      4
+    ]
+  },
+  "ciscoEnvMonMIBCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoEnvMonMIBConformance",
+      1
+    ]
+  },
+  "ciscoEnvMonMIBGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoEnvMonMIBConformance",
+      2
+    ]
+  },
+  "ciscoEnvMonMIBGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoEnvMonMIBGroups",
+      1
+    ]
+  },
+  "ciscoEnvMonMIBGroupRev": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoEnvMonMIBGroups",
+      2
+    ]
+  },
+  "ciscoEnvMonEnableStatChangeGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoEnvMonMIBGroups",
+      3
+    ]
+  }
+}

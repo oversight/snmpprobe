@@ -1,0 +1,332 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Integer32",
+        "Counter32",
+        "Counter64",
+        "Unsigned32",
+        "IpAddress",
+        "mib-2"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP"
+      ]
+    ],
+    [
+      "INET-ADDRESS-MIB",
+      [
+        "InetAddress",
+        "InetAddressType",
+        "InetPortNumber"
+      ]
+    ]
+  ],
+  "udpMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "mib-2",
+      50
+    ]
+  },
+  "udp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "mib-2",
+      7
+    ]
+  },
+  "udpInDatagrams": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "udp",
+      1
+    ]
+  },
+  "udpNoPorts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "udp",
+      2
+    ]
+  },
+  "udpInErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "udp",
+      3
+    ]
+  },
+  "udpOutDatagrams": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "udp",
+      4
+    ]
+  },
+  "udpHCInDatagrams": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "udp",
+      8
+    ]
+  },
+  "udpHCOutDatagrams": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "udp",
+      9
+    ]
+  },
+  "udpEndpointTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF UdpEndpointEntry"
+    },
+    "index": null,
+    "value": [
+      "udp",
+      7
+    ]
+  },
+  "udpEndpointEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UdpEndpointEntry"
+    },
+    "index": [
+      "udpEndpointLocalAddressType",
+      "udpEndpointLocalAddress",
+      "udpEndpointLocalPort",
+      "udpEndpointRemoteAddressType",
+      "udpEndpointRemoteAddress",
+      "udpEndpointRemotePort",
+      "udpEndpointInstance"
+    ],
+    "value": [
+      "udpEndpointTable",
+      1
+    ]
+  },
+  "UdpEndpointEntry": {
+    "tp": "SEQUENCE"
+  },
+  "udpEndpointLocalAddressType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddressType"
+    },
+    "index": null,
+    "value": [
+      "udpEndpointEntry",
+      1
+    ]
+  },
+  "udpEndpointLocalAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddress"
+    },
+    "index": null,
+    "value": [
+      "udpEndpointEntry",
+      2
+    ]
+  },
+  "udpEndpointLocalPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetPortNumber"
+    },
+    "index": null,
+    "value": [
+      "udpEndpointEntry",
+      3
+    ]
+  },
+  "udpEndpointRemoteAddressType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddressType"
+    },
+    "index": null,
+    "value": [
+      "udpEndpointEntry",
+      4
+    ]
+  },
+  "udpEndpointRemoteAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddress"
+    },
+    "index": null,
+    "value": [
+      "udpEndpointEntry",
+      5
+    ]
+  },
+  "udpEndpointRemotePort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetPortNumber"
+    },
+    "index": null,
+    "value": [
+      "udpEndpointEntry",
+      6
+    ]
+  },
+  "udpEndpointInstance": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "udpEndpointEntry",
+      7
+    ]
+  },
+  "udpEndpointProcess": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "udpEndpointEntry",
+      8
+    ]
+  },
+  "udpTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF UdpEntry"
+    },
+    "index": null,
+    "value": [
+      "udp",
+      5
+    ]
+  },
+  "udpEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UdpEntry"
+    },
+    "index": [
+      "udpLocalAddress",
+      "udpLocalPort"
+    ],
+    "value": [
+      "udpTable",
+      1
+    ]
+  },
+  "UdpEntry": {
+    "tp": "SEQUENCE"
+  },
+  "udpLocalAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "udpEntry",
+      1
+    ]
+  },
+  "udpLocalPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "udpEntry",
+      2
+    ]
+  },
+  "udpMIBConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "udpMIB",
+      2
+    ]
+  },
+  "udpMIBCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "udpMIBConformance",
+      1
+    ]
+  },
+  "udpMIBGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "udpMIBConformance",
+      2
+    ]
+  },
+  "udpGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "udpMIBGroups",
+      1
+    ]
+  },
+  "udpBaseGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "udpMIBGroups",
+      2
+    ]
+  },
+  "udpHCGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "udpMIBGroups",
+      3
+    ]
+  },
+  "udpEndpointGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "udpMIBGroups",
+      4
+    ]
+  }
+}

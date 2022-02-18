@@ -1,0 +1,1859 @@
+{
+  "IMPORTS": [
+    [
+      "RFC1155-SMI",
+      [
+        "Counter",
+        "IpAddress"
+      ]
+    ],
+    [
+      "RFC-1212",
+      [
+        "OBJECT-TYPE"
+      ]
+    ],
+    [
+      "RFC1213-MIB",
+      [
+        "DisplayString"
+      ]
+    ],
+    [
+      "HP-ICF-TC",
+      [
+        "HpSwitchPortType",
+        "VidList"
+      ]
+    ],
+    [
+      "INET-ADDRESS-MIB",
+      [
+        "InetAddress",
+        "InetAddressType",
+        "InetPortNumber"
+      ]
+    ],
+    [
+      "HP-ICF-OID",
+      [
+        "hpSwitch"
+      ]
+    ]
+  ],
+  "hpSwitchStatistics": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      9
+    ]
+  },
+  "MacAddress": {
+    "tp": "OCTET STRING"
+  },
+  "VlanID": {
+    "tp": "INTEGER"
+  },
+  "hpSwitchIpxStat": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitchStatistics",
+      1
+    ]
+  },
+  "hpSwitchIpxStatTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpSwitchIpxStatEntry"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchIpxStat",
+      1
+    ]
+  },
+  "hpSwitchIpxStatEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpSwitchIpxStatEntry"
+    },
+    "index": [
+      "hpSwitchIpxStatIndex"
+    ],
+    "value": [
+      "hpSwitchIpxStatTable",
+      1
+    ]
+  },
+  "HpSwitchIpxStatEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpSwitchIpxStatIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "VlanID"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchIpxStatEntry",
+      1
+    ]
+  },
+  "hpSwitchIpxStatNodeAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchIpxStatEntry",
+      2
+    ]
+  },
+  "hpSwitchIpxStatGatewayAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchIpxStatEntry",
+      3
+    ]
+  },
+  "hpSwitchIpxStatGatewayEncap": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "ethernetII",
+        "2": "ieee8022",
+        "3": "snap",
+        "4": "ieee8023Raw",
+        "5": "noGateway"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpSwitchIpxStatEntry",
+      4
+    ]
+  },
+  "hpSwitchIpxStatAdminStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "enable",
+        "2": "disable"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpSwitchIpxStatEntry",
+      5
+    ]
+  },
+  "hpSwitchIpStat": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitchStatistics",
+      2
+    ]
+  },
+  "hpSwitchIpStatTimepAdminStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "enable",
+        "2": "disable"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpSwitchIpStat",
+      1
+    ]
+  },
+  "hpSwitchIpStatTimepServerAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchIpStat",
+      2
+    ]
+  },
+  "hpSwitchIpStatTimepPollInterval": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchIpStat",
+      3
+    ]
+  },
+  "hpSwitchIpStatTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpSwitchIpStatEntry"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchIpStat",
+      4
+    ]
+  },
+  "hpSwitchIpStatEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpSwitchIpStatEntry"
+    },
+    "index": [
+      "hpSwitchIpStatIndex"
+    ],
+    "value": [
+      "hpSwitchIpStatTable",
+      1
+    ]
+  },
+  "HpSwitchIpStatEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpSwitchIpStatIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "VlanID"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchIpStatEntry",
+      1
+    ]
+  },
+  "hpSwitchIpStatAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchIpStatEntry",
+      2
+    ]
+  },
+  "hpSwitchIpStatMask": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchIpStatEntry",
+      3
+    ]
+  },
+  "hpSwitchIpStatGatewayAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchIpStatEntry",
+      4
+    ]
+  },
+  "hpSwitchIpStatAdminStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "enable",
+        "2": "disable",
+        "3": "bootp"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpSwitchIpStatEntry",
+      5
+    ]
+  },
+  "hpSwitchFdbInfo": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitchStatistics",
+      4
+    ]
+  },
+  "hpSwitchVlanFdbAddrTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpSwitchVlanFdbAddrEntry"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFdbInfo",
+      1
+    ]
+  },
+  "hpSwitchVlanFdbAddrEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpSwitchVlanFdbAddrEntry"
+    },
+    "index": [
+      "hpSwitchVlanFdbId",
+      "hpSwitchVlanFdbAddress"
+    ],
+    "value": [
+      "hpSwitchVlanFdbAddrTable",
+      1
+    ]
+  },
+  "HpSwitchVlanFdbAddrEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpSwitchVlanFdbId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "VlanID"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchVlanFdbAddrEntry",
+      1
+    ]
+  },
+  "hpSwitchVlanFdbAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchVlanFdbAddrEntry",
+      2
+    ]
+  },
+  "hpSwitchVlanFdbPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchVlanFdbAddrEntry",
+      3
+    ]
+  },
+  "hpSwitchPortFdbAddrTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpSwitchPortFdbAddrEntry"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFdbInfo",
+      2
+    ]
+  },
+  "hpSwitchPortFdbAddrEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpSwitchPortFdbAddrEntry"
+    },
+    "index": [
+      "hpSwitchPortFdbId",
+      "hpSwitchPortFdbAddress"
+    ],
+    "value": [
+      "hpSwitchPortFdbAddrTable",
+      1
+    ]
+  },
+  "HpSwitchPortFdbAddrEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpSwitchPortFdbId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchPortFdbAddrEntry",
+      1
+    ]
+  },
+  "hpSwitchPortFdbAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchPortFdbAddrEntry",
+      2
+    ]
+  },
+  "hpSwitchPortFdbVlanId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "VlanID"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchPortFdbAddrEntry",
+      3
+    ]
+  },
+  "hpSwitchPortFdbVidList": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "VidList"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchPortFdbAddrEntry",
+      4
+    ]
+  },
+  "hpSwitchStpStat": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitchStatistics",
+      5
+    ]
+  },
+  "hpSwitchStpStatAdminStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "enable",
+        "2": "disable"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpSwitchStpStat",
+      1
+    ]
+  },
+  "hpSwitchMiscStat": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitchStatistics",
+      6
+    ]
+  },
+  "hpSwitchCpuStat": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchMiscStat",
+      1
+    ]
+  },
+  "hpSwitchFddiIpFragStat": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitchStatistics",
+      7
+    ]
+  },
+  "hpSwitchFddiIpFragStatTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpSwitchFddiIpFragStatEntry"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFddiIpFragStat",
+      1
+    ]
+  },
+  "hpSwitchFddiIpFragStatEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpSwitchFddiIpFragStatEntry"
+    },
+    "index": [
+      "hpSwitchFddiIpFragStatIndex"
+    ],
+    "value": [
+      "hpSwitchFddiIpFragStatTable",
+      1
+    ]
+  },
+  "HpSwitchFddiIpFragStatEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpSwitchFddiIpFragStatIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFddiIpFragStatEntry",
+      1
+    ]
+  },
+  "hpSwitchFddiIpFragFramesFragmented": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFddiIpFragStatEntry",
+      2
+    ]
+  },
+  "hpSwitchFddiIpFragFramesCreated": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFddiIpFragStatEntry",
+      3
+    ]
+  },
+  "hpSwitchFddiIpFragFrameErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFddiIpFragStatEntry",
+      4
+    ]
+  },
+  "hpSwitchFddiSystemStat": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitchStatistics",
+      8
+    ]
+  },
+  "hpSwitchFddiSystemStatTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpSwitchFddiSystemStatEntry"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFddiSystemStat",
+      1
+    ]
+  },
+  "hpSwitchFddiSystemStatEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpSwitchFddiSystemStatEntry"
+    },
+    "index": [
+      "hpSwitchFddiSystemStatIndex"
+    ],
+    "value": [
+      "hpSwitchFddiSystemStatTable",
+      1
+    ]
+  },
+  "HpSwitchFddiSystemStatEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpSwitchFddiSystemStatIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFddiSystemStatEntry",
+      1
+    ]
+  },
+  "hpSwitchFddiSystemOsVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFddiSystemStatEntry",
+      2
+    ]
+  },
+  "hpSwitchFddiSystemRomVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFddiSystemStatEntry",
+      3
+    ]
+  },
+  "hpSwitchFddiSystemMemoryTotal": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFddiSystemStatEntry",
+      4
+    ]
+  },
+  "hpSwitchFddiSystemMemoryFree": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFddiSystemStatEntry",
+      5
+    ]
+  },
+  "hpSwitchFddiSystemCpuUtil": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFddiSystemStatEntry",
+      6
+    ]
+  },
+  "hpSwitchFddiSystemBuildDirectory": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFddiSystemStatEntry",
+      7
+    ]
+  },
+  "hpSwitchFddiSystemBuildDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFddiSystemStatEntry",
+      8
+    ]
+  },
+  "hpSwitchFddiSystemBuildNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFddiSystemStatEntry",
+      9
+    ]
+  },
+  "hpABCStats": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitchStatistics",
+      9
+    ]
+  },
+  "hpABCStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpABCStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "hpABCStats",
+      1
+    ]
+  },
+  "hpABCStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpABCStatsEntry"
+    },
+    "index": [
+      "hpABCStatsVlanIndex",
+      "hpABCStatsPortIndex"
+    ],
+    "value": [
+      "hpABCStatsTable",
+      1
+    ]
+  },
+  "HpABCStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpABCStatsVlanIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "VlanID"
+    },
+    "index": null,
+    "value": [
+      "hpABCStatsEntry",
+      1
+    ]
+  },
+  "hpABCStatsPortIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpABCStatsEntry",
+      2
+    ]
+  },
+  "hpABCStatsPortType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpSwitchPortType"
+    },
+    "index": null,
+    "value": [
+      "hpABCStatsEntry",
+      3
+    ]
+  },
+  "hpABCStatsArpReplies": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "hpABCStatsEntry",
+      4
+    ]
+  },
+  "hpABCStatsIpxReplies": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "hpABCStatsEntry",
+      5
+    ]
+  },
+  "hpABCStatsIpRipControl": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "forwarding",
+        "2": "notforwarding"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpABCStatsEntry",
+      6
+    ]
+  },
+  "hpABCStatsIpxRipSapControl": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "forwarding",
+        "2": "notforwarding"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpABCStatsEntry",
+      7
+    ]
+  },
+  "hpIgmpStats": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitchStatistics",
+      10
+    ]
+  },
+  "hpIgmpStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpIgmpStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "hpIgmpStats",
+      1
+    ]
+  },
+  "hpIgmpStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpIgmpStatsEntry"
+    },
+    "index": [
+      "hpIgmpStatsVlanIndex",
+      "hpIgmpStatsActiveGroupAddr"
+    ],
+    "value": [
+      "hpIgmpStatsTable",
+      1
+    ]
+  },
+  "HpIgmpStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpIgmpStatsVlanIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "VlanID"
+    },
+    "index": null,
+    "value": [
+      "hpIgmpStatsEntry",
+      1
+    ]
+  },
+  "hpIgmpStatsActiveGroupAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "hpIgmpStatsEntry",
+      2
+    ]
+  },
+  "hpIgmpStatsReports": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "hpIgmpStatsEntry",
+      3
+    ]
+  },
+  "hpIgmpStatsQueries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "hpIgmpStatsEntry",
+      4
+    ]
+  },
+  "hpIgmpStatsQuerierAccessPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpIgmpStatsEntry",
+      5
+    ]
+  },
+  "hpIgmpStatsPortTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpIgmpStatsPortEntry"
+    },
+    "index": null,
+    "value": [
+      "hpIgmpStats",
+      2
+    ]
+  },
+  "hpIgmpStatsPortEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpIgmpStatsPortEntry"
+    },
+    "index": [
+      "hpIgmpStatsActiveGroupAddr",
+      "hpIgmpStatsPortIndex"
+    ],
+    "value": [
+      "hpIgmpStatsPortTable",
+      1
+    ]
+  },
+  "HpIgmpStatsPortEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpIgmpStatsPortIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpIgmpStatsPortEntry",
+      1
+    ]
+  },
+  "hpIgmpStatsPortType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpSwitchPortType"
+    },
+    "index": null,
+    "value": [
+      "hpIgmpStatsPortEntry",
+      2
+    ]
+  },
+  "hpIgmpStatsPortAccess": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "host",
+        "2": "router",
+        "3": "host-router"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpIgmpStatsPortEntry",
+      3
+    ]
+  },
+  "hpIgmpStatsPortTable2": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpIgmpStatsPortEntry2"
+    },
+    "index": null,
+    "value": [
+      "hpIgmpStats",
+      3
+    ]
+  },
+  "hpIgmpStatsPortEntry2": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpIgmpStatsPortEntry2"
+    },
+    "index": [
+      "hpIgmpStatsVlanIndex",
+      "hpIgmpStatsActiveGroupAddr",
+      "hpIgmpStatsPortIndex2"
+    ],
+    "value": [
+      "hpIgmpStatsPortTable2",
+      1
+    ]
+  },
+  "HpIgmpStatsPortEntry2": {
+    "tp": "SEQUENCE"
+  },
+  "hpIgmpStatsPortIndex2": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpIgmpStatsPortEntry2",
+      1
+    ]
+  },
+  "hpIgmpStatsPortType2": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpSwitchPortType"
+    },
+    "index": null,
+    "value": [
+      "hpIgmpStatsPortEntry2",
+      2
+    ]
+  },
+  "hpIgmpStatsPortAccess2": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "host",
+        "2": "router",
+        "3": "host-router"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpIgmpStatsPortEntry2",
+      3
+    ]
+  },
+  "hpIgmpStatsPortAgeTimer2": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpIgmpStatsPortEntry2",
+      4
+    ]
+  },
+  "hpIgmpStatsPortLeaveTimer2": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpIgmpStatsPortEntry2",
+      5
+    ]
+  },
+  "hpLdbalStats": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitchStatistics",
+      11
+    ]
+  },
+  "hpLdbalStatsPortTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpLdbalStatsPortEntry"
+    },
+    "index": null,
+    "value": [
+      "hpLdbalStats",
+      1
+    ]
+  },
+  "hpLdbalStatsPortEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpLdbalStatsPortEntry"
+    },
+    "index": [
+      "hpLdbalStatsPortIndex"
+    ],
+    "value": [
+      "hpLdbalStatsPortTable",
+      1
+    ]
+  },
+  "HpLdbalStatsPortEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpLdbalStatsPortIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpLdbalStatsPortEntry",
+      1
+    ]
+  },
+  "hpLdbalStatsPortState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "disabled",
+        "2": "error",
+        "3": "initial",
+        "4": "notEstablished",
+        "5": "established",
+        "6": "topologyError"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpLdbalStatsPortEntry",
+      2
+    ]
+  },
+  "hpLdbalStatsAdjacentSwitch": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "hpLdbalStatsPortEntry",
+      3
+    ]
+  },
+  "hpLdbalStatsPeerPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "hpLdbalStatsPortEntry",
+      4
+    ]
+  },
+  "hpLdbalStatsAdjacentHost": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "hpLdbalStatsPortEntry",
+      5
+    ]
+  },
+  "hpLdbalStatsMeshWarningStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "enabled",
+        "2": "disabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpLdbalStatsPortEntry",
+      6
+    ]
+  },
+  "hpSwitchMacStats": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitchStatistics",
+      12
+    ]
+  },
+  "hpSwitchFdbAddressCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchMacStats",
+      1
+    ]
+  },
+  "hpSwitchFlowControlStatus": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitchStatistics",
+      13
+    ]
+  },
+  "hpSwitchFlowControlStatusTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpSwitchFlowControlStatusEntry"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFlowControlStatus",
+      1
+    ]
+  },
+  "hpSwitchFlowControlStatusEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpSwitchFlowControlStatusEntry"
+    },
+    "index": [
+      "hpSwitchFlowControlStatusPortIndex"
+    ],
+    "value": [
+      "hpSwitchFlowControlStatusTable",
+      1
+    ]
+  },
+  "HpSwitchFlowControlStatusEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpSwitchFlowControlStatusPortIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFlowControlStatusEntry",
+      1
+    ]
+  },
+  "hpSwitchFlowControlState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "off",
+        "2": "on",
+        "3": "on-rx",
+        "4": "on-tx"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpSwitchFlowControlStatusEntry",
+      2
+    ]
+  },
+  "hpFECStatsTrunk": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitchStatistics",
+      14
+    ]
+  },
+  "hpFECStatsTrunkTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpFECStatsTrunkEntry"
+    },
+    "index": null,
+    "value": [
+      "hpFECStatsTrunk",
+      1
+    ]
+  },
+  "hpFECStatsTrunkEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpFECStatsTrunkEntry"
+    },
+    "index": [
+      "hpFECStatsTrunkIndex"
+    ],
+    "value": [
+      "hpFECStatsTrunkTable",
+      1
+    ]
+  },
+  "HpFECStatsTrunkEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpFECStatsTrunkIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpFECStatsTrunkEntry",
+      1
+    ]
+  },
+  "hpFECStatsTrunkName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "hpFECStatsTrunkEntry",
+      2
+    ]
+  },
+  "hpFECStatsTrunkNegotiationStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "successful",
+        "2": "failed",
+        "3": "initialized"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpFECStatsTrunkEntry",
+      3
+    ]
+  },
+  "hpFECStatsTrunkForwardingMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "sa-only",
+        "2": "sa-da",
+        "3": "none"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpFECStatsTrunkEntry",
+      4
+    ]
+  },
+  "hpFECStatsTrunkFlushPktsEchoed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "hpFECStatsTrunkEntry",
+      5
+    ]
+  },
+  "hpFECStatsPort": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitchStatistics",
+      15
+    ]
+  },
+  "hpFECStatsPortTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpFECStatsPortEntry"
+    },
+    "index": null,
+    "value": [
+      "hpFECStatsPort",
+      1
+    ]
+  },
+  "hpFECStatsPortEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpFECStatsPortEntry"
+    },
+    "index": [
+      "hpFECStatsPortIndex"
+    ],
+    "value": [
+      "hpFECStatsPortTable",
+      1
+    ]
+  },
+  "HpFECStatsPortEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpFECStatsPortIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpFECStatsPortEntry",
+      1
+    ]
+  },
+  "hpFECStatsPortTrunkNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpFECStatsPortEntry",
+      2
+    ]
+  },
+  "hpFECStatsPortTrunkName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "hpFECStatsPortEntry",
+      3
+    ]
+  },
+  "hpFECStatsPortMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "down",
+        "2": "forwarding",
+        "3": "blocking",
+        "4": "up"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpFECStatsPortEntry",
+      4
+    ]
+  },
+  "hpFECStatsPortNegotiationStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "successful",
+        "2": "failed",
+        "3": "initialized"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpFECStatsPortEntry",
+      5
+    ]
+  },
+  "hpFECStatsPortHellosSent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "hpFECStatsPortEntry",
+      6
+    ]
+  },
+  "hpFECStatsPortHellosReceived": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "hpFECStatsPortEntry",
+      7
+    ]
+  },
+  "hpFECStatsPortMySlowHello": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "fast",
+        "2": "slow"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpFECStatsPortEntry",
+      8
+    ]
+  },
+  "hpFECStatsPortMyAutoMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "desirable",
+        "2": "auto"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpFECStatsPortEntry",
+      9
+    ]
+  },
+  "hpFECStatsPortPartner": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "hpFECStatsPortEntry",
+      10
+    ]
+  },
+  "hpFECStatsPortFlushPktsEchoed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "hpFECStatsPortEntry",
+      11
+    ]
+  },
+  "hpGvrpStats": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitchStatistics",
+      16
+    ]
+  },
+  "hpGvrpStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpGvrpStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "hpGvrpStats",
+      1
+    ]
+  },
+  "hpGvrpStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpGvrpStatsEntry"
+    },
+    "index": [
+      "hpGvrpStatsVlanIndex",
+      "hpGvrpStatsPortIndex"
+    ],
+    "value": [
+      "hpGvrpStatsTable",
+      1
+    ]
+  },
+  "HpGvrpStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpGvrpStatsVlanIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "VlanID"
+    },
+    "index": null,
+    "value": [
+      "hpGvrpStatsEntry",
+      1
+    ]
+  },
+  "hpGvrpStatsPortIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpGvrpStatsEntry",
+      2
+    ]
+  },
+  "hpGvrpStatsPortVlanMember": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "pending",
+        "2": "yes",
+        "3": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpGvrpStatsEntry",
+      3
+    ]
+  },
+  "hpGvrpPortIfOperStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "up",
+        "2": "down"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpGvrpStatsEntry",
+      4
+    ]
+  },
+  "hpPortGvrpCtrlStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "learn",
+        "2": "block",
+        "3": "disable"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpGvrpStatsEntry",
+      5
+    ]
+  },
+  "hpSshStats": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitchStatistics",
+      17
+    ]
+  },
+  "hpSshStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpSshStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "hpSshStats",
+      1
+    ]
+  },
+  "hpSshStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpSshStatsEntry"
+    },
+    "index": [
+      "hpSshStatsSesIndex"
+    ],
+    "value": [
+      "hpSshStatsTable",
+      1
+    ]
+  },
+  "HpSshStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpSshStatsSesIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpSshStatsEntry",
+      1
+    ]
+  },
+  "hpSshStatsSesType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "console",
+        "2": "telnet",
+        "3": "ssh",
+        "4": "inactive"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpSshStatsEntry",
+      2
+    ]
+  },
+  "hpSshStatsSourceIpPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "hpSshStatsEntry",
+      3
+    ]
+  },
+  "hpSshStatsSesVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "version1",
+        "2": "version2",
+        "255": "noConnect"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpSshStatsEntry",
+      4
+    ]
+  },
+  "hpSshStatsSourceIpType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddressType"
+    },
+    "index": null,
+    "value": [
+      "hpSshStatsEntry",
+      5
+    ]
+  },
+  "hpSshStatsSourceIpAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddress"
+    },
+    "index": null,
+    "value": [
+      "hpSshStatsEntry",
+      6
+    ]
+  },
+  "hpSshStatsSourceIpPortNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetPortNumber"
+    },
+    "index": null,
+    "value": [
+      "hpSshStatsEntry",
+      7
+    ]
+  },
+  "hpSwitchPhysicalPort": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitchStatistics",
+      18
+    ]
+  },
+  "hpSwitchPhysicalPortTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpSwitchPhysicalPortEntry"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchPhysicalPort",
+      1
+    ]
+  },
+  "hpSwitchPhysicalPortEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpSwitchPhysicalPortEntry"
+    },
+    "index": [
+      "hpSwitchPhysicalPortIndex"
+    ],
+    "value": [
+      "hpSwitchPhysicalPortTable",
+      1
+    ]
+  },
+  "HpSwitchPhysicalPortEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpSwitchPhysicalPortIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchPhysicalPortEntry",
+      1
+    ]
+  },
+  "hpSwitchPhysicalPortType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpSwitchPortType"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchPhysicalPortEntry",
+      2
+    ]
+  },
+  "hpSwitchCosStats": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitchStatistics",
+      19
+    ]
+  },
+  "hpSwitchQueueWatchStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpSwitchQueueWatchStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchCosStats",
+      1
+    ]
+  },
+  "hpSwitchQueueWatchStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpSwitchQueueWatchStatsEntry"
+    },
+    "index": [
+      "hpSwitchQueueWatchStatsPortIndex",
+      "hpSwitchQueueWatchStatsQueueIndex"
+    ],
+    "value": [
+      "hpSwitchQueueWatchStatsTable",
+      1
+    ]
+  },
+  "HpSwitchQueueWatchStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpSwitchQueueWatchStatsPortIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchQueueWatchStatsEntry",
+      1
+    ]
+  },
+  "hpSwitchQueueWatchStatsQueueIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchQueueWatchStatsEntry",
+      2
+    ]
+  },
+  "hpSwitchQueueWatchStatsQueueDrops": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "hpSwitchQueueWatchStatsEntry",
+      3
+    ]
+  }
+}

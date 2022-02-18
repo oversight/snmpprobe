@@ -1,0 +1,5577 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "enterprises",
+        "MODULE-IDENTITY",
+        "OBJECT-IDENTITY"
+      ]
+    ]
+  ],
+  "icf": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "nm",
+      14
+    ]
+  },
+  "hp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      11
+    ]
+  },
+  "nm": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hp",
+      2
+    ]
+  },
+  "icfCommon": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "icf",
+      1
+    ]
+  },
+  "icfHub": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "icf",
+      2
+    ]
+  },
+  "icfBridge": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "icf",
+      3
+    ]
+  },
+  "icfSecurity": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "icf",
+      4
+    ]
+  },
+  "icfConfig": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "icf",
+      5
+    ]
+  },
+  "icfEsSwitch": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "icf",
+      6
+    ]
+  },
+  "hpEs": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "icfEsSwitch",
+      1
+    ]
+  },
+  "hpEs2": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "icfEsSwitch",
+      2
+    ]
+  },
+  "hpNetSwitch": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "icfEsSwitch",
+      3
+    ]
+  },
+  "icfRouter": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "icf",
+      7
+    ]
+  },
+  "icfDot12Draft": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "icf",
+      8
+    ]
+  },
+  "icfVgRepeater": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "icfDot12Draft",
+      1
+    ]
+  },
+  "icfVgInterface": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "icfDot12Draft",
+      2
+    ]
+  },
+  "hpEntityMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "icf",
+      9
+    ]
+  },
+  "hpicfAdmin": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "icf",
+      10
+    ]
+  },
+  "hpicfObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "icf",
+      11
+    ]
+  },
+  "hpicfNotifications": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "icf",
+      12
+    ]
+  },
+  "hpicfOEMs": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "icf",
+      13
+    ]
+  },
+  "hpicfFEHub": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfOEMs",
+      1
+    ]
+  },
+  "hpicfSyslog": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "icf",
+      14
+    ]
+  },
+  "hpicfDomains": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfAdmin",
+      1
+    ]
+  },
+  "hpicfLLCDomain": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfDomains",
+      1
+    ]
+  },
+  "hpicfObjectModules": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfAdmin",
+      2
+    ]
+  },
+  "icfSecurityMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjectModules",
+      1
+    ]
+  },
+  "hpicfChainMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjectModules",
+      2
+    ]
+  },
+  "hpicfChassisMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjectModules",
+      3
+    ]
+  },
+  "hpicfDownloadMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjectModules",
+      4
+    ]
+  },
+  "hpicfBasicMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjectModules",
+      5
+    ]
+  },
+  "hpicfStackMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjectModules",
+      6
+    ]
+  },
+  "hpicfLinkTestMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjectModules",
+      7
+    ]
+  },
+  "hpicfGenRptrMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjectModules",
+      8
+    ]
+  },
+  "hpicf8023RptrMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjectModules",
+      9
+    ]
+  },
+  "icfVgRepeaterMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjectModules",
+      10
+    ]
+  },
+  "hpicfVgRptrMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjectModules",
+      11
+    ]
+  },
+  "hpicfFaultFinderMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjectModules",
+      12
+    ]
+  },
+  "hpicfJumboMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjectModules",
+      13
+    ]
+  },
+  "hpicfRateLimitMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjectModules",
+      14
+    ]
+  },
+  "hpicfAgentModules": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfAdmin",
+      3
+    ]
+  },
+  "hpicfETwistHubAgentsMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfAgentModules",
+      1
+    ]
+  },
+  "hpicfETwistBridgeAgentsMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfAgentModules",
+      2
+    ]
+  },
+  "hpicfAdvStk8023AgentsMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfAgentModules",
+      3
+    ]
+  },
+  "hpicfAdvStkVGAgentsMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfAgentModules",
+      4
+    ]
+  },
+  "hpicfTextualConventions": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfAdmin",
+      4
+    ]
+  },
+  "hpicfCommon": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjects",
+      1
+    ]
+  },
+  "hpicfRepeater": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjects",
+      2
+    ]
+  },
+  "hpicfVg": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjects",
+      3
+    ]
+  },
+  "hpicfGenericRepeater": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjects",
+      4
+    ]
+  },
+  "hpicfSwitch": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjects",
+      5
+    ]
+  },
+  "hpicfAccess": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjects",
+      6
+    ]
+  },
+  "hpicfWAN": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjects",
+      7
+    ]
+  },
+  "hpicfFabric": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjects",
+      8
+    ]
+  },
+  "hpicfSecurityDevice": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjects",
+      9
+    ]
+  },
+  "hpicfSysMgmt": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfObjects",
+      10
+    ]
+  },
+  "hpSwitch": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfSwitch",
+      1
+    ]
+  },
+  "hpOpSystem": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      1
+    ]
+  },
+  "hpHwSystem": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      2
+    ]
+  },
+  "hpVLAN": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      3
+    ]
+  },
+  "hpConfig": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      7
+    ]
+  },
+  "hpSwitchStatistics": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      9
+    ]
+  },
+  "hpSwitchVirtualStackMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      10
+    ]
+  },
+  "hpicfDhcpRelay": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      11
+    ]
+  },
+  "hpicfBridge": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      12
+    ]
+  },
+  "hpicfRip": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      13
+    ]
+  },
+  "hpicfOspf": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      14
+    ]
+  },
+  "hpicfIpRouting": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      15
+    ]
+  },
+  "hpSwitchAuthenticationMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      16
+    ]
+  },
+  "hpSwitchAccountingMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      17
+    ]
+  },
+  "hpicfXrrpMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      18
+    ]
+  },
+  "hpicfUsrAuthMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      19
+    ]
+  },
+  "hpicfPimMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      20
+    ]
+  },
+  "hpicfMstpMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      21
+    ]
+  },
+  "hpicfUdpFwd": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      23
+    ]
+  },
+  "hpicfConnectionRateFilter": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      24
+    ]
+  },
+  "hpicfDot1xMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      25
+    ]
+  },
+  "hpicfLldpMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      30
+    ]
+  },
+  "hpicfVrrpMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      31
+    ]
+  },
+  "hpSwitchAuthorizationMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      32
+    ]
+  },
+  "hpicfUdldMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      33
+    ]
+  },
+  "hpicfIpDhcpSnoop": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      34
+    ]
+  },
+  "hpicfInstMonMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      35
+    ]
+  },
+  "hpicfL3MacConfigMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      36
+    ]
+  },
+  "hpicfArpProtect": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      37
+    ]
+  },
+  "hpicfSnmpMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      38
+    ]
+  },
+  "hpicfIpLockdown": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      39
+    ]
+  },
+  "hpicfProviderBridge": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      40
+    ]
+  },
+  "hpicfGppcMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      41
+    ]
+  },
+  "hpicfAutorun": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      42
+    ]
+  },
+  "hpicfBgpv4": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      43
+    ]
+  },
+  "hpicfOspfv3MIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      44
+    ]
+  },
+  "hpicfInstMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      45
+    ]
+  },
+  "hpicfFtrCo": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      46
+    ]
+  },
+  "hpicfIpPolicyMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      47
+    ]
+  },
+  "hpicfMldMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      48
+    ]
+  },
+  "hpicfDhcpv6Relay": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      50
+    ]
+  },
+  "hpicfScriptMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      51
+    ]
+  },
+  "hpicfUSBPortMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      53
+    ]
+  },
+  "hpicfFanMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      54
+    ]
+  },
+  "hpicfPsMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      55
+    ]
+  },
+  "hpicfSavepowerMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      56
+    ]
+  },
+  "hpicfDhcpClient": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      57
+    ]
+  },
+  "hpicfOobmMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      58
+    ]
+  },
+  "hpSwitchImage": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      59
+    ]
+  },
+  "hpicfDosFilterMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      60
+    ]
+  },
+  "hpicfGppcv2MIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      61
+    ]
+  },
+  "hpicfZoneMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      62
+    ]
+  },
+  "hpicfIgmpMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      63
+    ]
+  },
+  "hpicfDebugLog": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      64
+    ]
+  },
+  "hpicfMacNotifyMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      66
+    ]
+  },
+  "hpicfGenericVlanMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      67
+    ]
+  },
+  "hpSwitchErrorMsgMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      68
+    ]
+  },
+  "hpStackMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      69
+    ]
+  },
+  "hpicfLayer3VlanConfigMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      70
+    ]
+  },
+  "hpEntityPowerMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      71
+    ]
+  },
+  "hpicfTrafficTemplateMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      72
+    ]
+  },
+  "hpicfDcbxMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      73
+    ]
+  },
+  "hpicfUfdMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      74
+    ]
+  },
+  "hpSBMMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      75
+    ]
+  },
+  "hpicfLoadBalanceMod": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      76
+    ]
+  },
+  "hpTunnelMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      77
+    ]
+  },
+  "hpSwitchFipSnoopingMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      78
+    ]
+  },
+  "hpicfTcpMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      79
+    ]
+  },
+  "hpicfTransceiverMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      82
+    ]
+  },
+  "hpicfSvcsAppMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      86
+    ]
+  },
+  "hpicfIpv6RAGuard": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      87
+    ]
+  },
+  "hpicfRpvstMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      88
+    ]
+  },
+  "hpicfOpenFlowMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      89
+    ]
+  },
+  "hpicfVrrpv3MIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      90
+    ]
+  },
+  "hpicfSflowMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      92
+    ]
+  },
+  "hpicfMstpExtnMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      94
+    ]
+  },
+  "hpicfMadMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      95
+    ]
+  },
+  "hpicfSmartLinkMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      96
+    ]
+  },
+  "hpicfServiceTunnel": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      100
+    ]
+  },
+  "hpSwitchTrapMib": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      104
+    ]
+  },
+  "hpicfJobSchedulerMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSwitch",
+      105
+    ]
+  },
+  "hpicfChain": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfCommon",
+      1
+    ]
+  },
+  "hpicfChassis": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfCommon",
+      2
+    ]
+  },
+  "hpicfDownload": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfCommon",
+      3
+    ]
+  },
+  "hpicfBasic": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfCommon",
+      4
+    ]
+  },
+  "hpicfStack": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfCommon",
+      5
+    ]
+  },
+  "hpicfLinktest": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfCommon",
+      6
+    ]
+  },
+  "hpicfFaultFinder": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfCommon",
+      7
+    ]
+  },
+  "hpicfPOE": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfCommon",
+      9
+    ]
+  },
+  "hpicfCommonSecurity": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfCommon",
+      12
+    ]
+  },
+  "hpicfSrcIpMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfCommon",
+      13
+    ]
+  },
+  "hpicfCoreDumpMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfCommon",
+      14
+    ]
+  },
+  "hpicfCommonTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfNotifications",
+      1
+    ]
+  },
+  "hpicfCommonTrapsPrefix": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfCommonTraps",
+      0
+    ]
+  },
+  "hpicf8023RptrTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfNotifications",
+      2
+    ]
+  },
+  "hpicf8023RptrTrapsPrefix": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicf8023RptrTraps",
+      0
+    ]
+  },
+  "hpicfVgRptrTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfNotifications",
+      3
+    ]
+  },
+  "hpicfVgRptrTrapsPrefix": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfVgRptrTraps",
+      0
+    ]
+  },
+  "hpicfGenRptrTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfNotifications",
+      4
+    ]
+  },
+  "hpicfGenRptrTrapsPrefix": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfGenRptrTraps",
+      0
+    ]
+  },
+  "hpicfRateLimitTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfNotifications",
+      5
+    ]
+  },
+  "hpicfRateLimitTrapsPrefix": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfRateLimitTraps",
+      0
+    ]
+  },
+  "hpicfSecLoggingTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfNotifications",
+      6
+    ]
+  },
+  "hpicfSecLoggingTrapsPrefix": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfSecLoggingTraps",
+      0
+    ]
+  },
+  "hpSystem": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "nm",
+      3
+    ]
+  },
+  "netElement": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpSystem",
+      7
+    ]
+  },
+  "bridge": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netElement",
+      1
+    ]
+  },
+  "bridge1010": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "bridge",
+      1
+    ]
+  },
+  "bridgeRemote": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "bridge",
+      2
+    ]
+  },
+  "eswitch": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "bridge",
+      3
+    ]
+  },
+  "eswitch2": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "bridge",
+      8
+    ]
+  },
+  "netSwitch100": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "bridge",
+      9
+    ]
+  },
+  "netSwitch200": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "bridge",
+      10
+    ]
+  },
+  "router": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netElement",
+      2
+    ]
+  },
+  "icfRouterER": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "router",
+      1
+    ]
+  },
+  "icfRouterTR": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "router",
+      2
+    ]
+  },
+  "icfRouterSR": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "router",
+      3
+    ]
+  },
+  "icfRouterFR": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "router",
+      4
+    ]
+  },
+  "icfRouterLR": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "router",
+      5
+    ]
+  },
+  "icfRouterBR": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "router",
+      6
+    ]
+  },
+  "icfRouterPR": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "router",
+      7
+    ]
+  },
+  "icfRouter650": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "router",
+      8
+    ]
+  },
+  "icfRouter230": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "router",
+      9
+    ]
+  },
+  "icfRouter250": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "router",
+      10
+    ]
+  },
+  "icfRouter255": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "router",
+      11
+    ]
+  },
+  "icfRouter210": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "router",
+      12
+    ]
+  },
+  "icfRouter650Engine": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "icfRouter650",
+      2
+    ]
+  },
+  "icfRouter650Port4E": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "icfRouter650",
+      3
+    ]
+  },
+  "icfRouter650Port4S": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "icfRouter650",
+      4
+    ]
+  },
+  "icfRouter650Port4T": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "icfRouter650",
+      5
+    ]
+  },
+  "icfRouter650PortFDDI": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "icfRouter650",
+      6
+    ]
+  },
+  "icfRouter650Port100VG": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "icfRouter650",
+      7
+    ]
+  },
+  "hub": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netElement",
+      5
+    ]
+  },
+  "etherTwist12": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      1
+    ]
+  },
+  "fiberOptic": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      3
+    ]
+  },
+  "etherTwist48": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      4
+    ]
+  },
+  "thinLAN": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      5
+    ]
+  },
+  "etherTwist24S": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      6
+    ]
+  },
+  "advStack12": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      7
+    ]
+  },
+  "advStack24": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      8
+    ]
+  },
+  "advStack48": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      9
+    ]
+  },
+  "advStackVg15": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      10
+    ]
+  },
+  "advStackU8": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      11
+    ]
+  },
+  "advStackU16": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      12
+    ]
+  },
+  "advStackVg6": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      13
+    ]
+  },
+  "advStackVg12": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      14
+    ]
+  },
+  "hpAdvStkEnetSH12R": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      15
+    ]
+  },
+  "hpAdvStkEnetSH24R": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      16
+    ]
+  },
+  "hpAdvStkEnetSH24T": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      17
+    ]
+  },
+  "hpAdvStk100Tx12TM": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      18
+    ]
+  },
+  "hp10THub16M": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      19
+    ]
+  },
+  "hp10BaseTHub12M": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      20
+    ]
+  },
+  "hp10BaseTHub24M": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      21
+    ]
+  },
+  "hpProCurve10T100THub12M": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      22
+    ]
+  },
+  "hpProCurve10T100THub24M": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hub",
+      23
+    ]
+  },
+  "chassis": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netElement",
+      8
+    ]
+  },
+  "repeaterAgent": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "chassis",
+      1
+    ]
+  },
+  "chassisAgents": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "chassis",
+      2
+    ]
+  },
+  "icfVgAgent": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "chassisAgents",
+      1
+    ]
+  },
+  "icfVgAgent2": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "chassisAgents",
+      3
+    ]
+  },
+  "hpicfEnetSMM": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "chassisAgents",
+      4
+    ]
+  },
+  "hpAdvStkEnetSHAgent": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "chassisAgents",
+      5
+    ]
+  },
+  "hpAdvStkSwStackTopMgmt": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "chassisAgents",
+      6
+    ]
+  },
+  "hpSwitch8000CpuCard": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "chassisAgents",
+      7
+    ]
+  },
+  "icfSensors": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "chassis",
+      3
+    ]
+  },
+  "icfPowerSupplySensor": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "icfSensors",
+      1
+    ]
+  },
+  "icfFanSensor": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "icfSensors",
+      2
+    ]
+  },
+  "icfTemperatureSensor": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "icfSensors",
+      3
+    ]
+  },
+  "icfFutureSlotSensor": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "icfSensors",
+      4
+    ]
+  },
+  "icfCards": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "chassis",
+      4
+    ]
+  },
+  "icfUnidentifiedCard": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "icfCards",
+      1
+    ]
+  },
+  "hpAdvStkEnetSHSwitch": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "icfCards",
+      2
+    ]
+  },
+  "hpAdvStkSwStackExpander": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "icfCards",
+      3
+    ]
+  },
+  "hpicfStacks": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "chassis",
+      5
+    ]
+  },
+  "hpAdvStkEnetSHStack": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfStacks",
+      1
+    ]
+  },
+  "hpStack": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfStacks",
+      2
+    ]
+  },
+  "hpStack2920": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfStacks",
+      3
+    ]
+  },
+  "hpicfBackplanes": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "chassis",
+      6
+    ]
+  },
+  "hpAdvStkEnetSHExtSeg": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfBackplanes",
+      1
+    ]
+  },
+  "hpAdvStkEnetSHIntSeg": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfBackplanes",
+      2
+    ]
+  },
+  "hp10BaseTHubSeg": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfBackplanes",
+      3
+    ]
+  },
+  "hpSwitchBackplane": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfBackplanes",
+      4
+    ]
+  },
+  "hp100BaseTHubSeg": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfBackplanes",
+      5
+    ]
+  },
+  "hpicfSlots": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "chassis",
+      7
+    ]
+  },
+  "hpAdvStkEnetSHAgentSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      1
+    ]
+  },
+  "hpAdvStkEnetSHIOSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      2
+    ]
+  },
+  "hpAdvStkSwStackMgmtSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      3
+    ]
+  },
+  "hpAdvStkSwStackExpSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      4
+    ]
+  },
+  "hpSwitch8000PowerSupplyBay": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      5
+    ]
+  },
+  "hpSwitch8000CpuSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      6
+    ]
+  },
+  "hpSwitch8000PortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      7
+    ]
+  },
+  "hpSwitch2524PortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      8
+    ]
+  },
+  "hpSwitch5308PowerSupplyBay": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      9
+    ]
+  },
+  "hpSwitch5308PortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      10
+    ]
+  },
+  "hpSwitch4865PowerSupplyBay": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      11
+    ]
+  },
+  "hpSwitch4865PortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      12
+    ]
+  },
+  "hpSwitch2650PortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      13
+    ]
+  },
+  "hpSwitch6108PortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      14
+    ]
+  },
+  "hpSwitch2824PortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      15
+    ]
+  },
+  "hpSwitch2626PortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      16
+    ]
+  },
+  "hpSwitch2650PPortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      17
+    ]
+  },
+  "hpSwitch2626PPortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      18
+    ]
+  },
+  "hpSwitch3324PortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      19
+    ]
+  },
+  "hpSwitch2650CRPortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      20
+    ]
+  },
+  "hpSwitch2626CRPortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      21
+    ]
+  },
+  "hpSwitch2600n8PPortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      22
+    ]
+  },
+  "hpSwitch869xPowerSupplyBay": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      23
+    ]
+  },
+  "hpSwitch869xPortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      24
+    ]
+  },
+  "hpSwitch2510PortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      25
+    ]
+  },
+  "hpSwitch2810PortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      26
+    ]
+  },
+  "hpSwitch5400CpuCardBay": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      27
+    ]
+  },
+  "hpSwitch8212FabricBay": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      28
+    ]
+  },
+  "hpSwitch2610PortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      29
+    ]
+  },
+  "hpSwitch2610PPortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      30
+    ]
+  },
+  "hpSwitch2510BPortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      31
+    ]
+  },
+  "hpSwitch2626CPortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      32
+    ]
+  },
+  "hpSwitch2650CPortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      33
+    ]
+  },
+  "hpSwitch2910PortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      34
+    ]
+  },
+  "hpSwitch2510GPortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      35
+    ]
+  },
+  "hpSwitch2520PortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      36
+    ]
+  },
+  "hpSwitch2520GPortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      37
+    ]
+  },
+  "hpSwitch2615PortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      38
+    ]
+  },
+  "hpSwitch2915PortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      39
+    ]
+  },
+  "hpSwitchJ9580PowerSupply": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      40
+    ]
+  },
+  "hpSwitchJ9581PowerSupply": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      41
+    ]
+  },
+  "hpSwitchJ9582FanTray": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      42
+    ]
+  },
+  "hpSwitch2620PortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      43
+    ]
+  },
+  "hpSwitch2530PortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      45
+    ]
+  },
+  "hpSwitch2920StackingSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      46
+    ]
+  },
+  "hpSwitchJ9737APowerSupply": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      47
+    ]
+  },
+  "hpSwitchJ9738APowerSupply": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      48
+    ]
+  },
+  "hpSwitchJ9739APowerSupply": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      49
+    ]
+  },
+  "hpSwitch2920PortSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      50
+    ]
+  },
+  "hpSwitch3800StackingSlot": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      51
+    ]
+  },
+  "hpSwitchJ9828APowerSupply": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      52
+    ]
+  },
+  "hpSwitchJ9829APowerSupply": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      53
+    ]
+  },
+  "hpSwitchJ9830APowerSupply": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      54
+    ]
+  },
+  "hpSwitchJ9831AFanTray": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      55
+    ]
+  },
+  "hpSwitchJ9832AFanTray": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      56
+    ]
+  },
+  "hpSwitchJ9805APowerSupply": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      57
+    ]
+  },
+  "hpSwitchJ9806APowerCable": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSlots",
+      58
+    ]
+  },
+  "hpicfHubPorts": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "chassis",
+      8
+    ]
+  },
+  "hpAdvStkEnetSHExtPort": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfHubPorts",
+      1
+    ]
+  },
+  "hpAdvStkEnetSHIntPort": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfHubPorts",
+      2
+    ]
+  },
+  "hpAdvStkEnetSHAgentPort": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfHubPorts",
+      3
+    ]
+  },
+  "hp10BaseTHubPort": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfHubPorts",
+      4
+    ]
+  },
+  "hp10BaseTHubAgentPort": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfHubPorts",
+      5
+    ]
+  },
+  "hp10T100THubPort": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfHubPorts",
+      6
+    ]
+  },
+  "hp100BaseTHubAgentPort": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfHubPorts",
+      7
+    ]
+  },
+  "hpicfEnetChipSets": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "chassis",
+      9
+    ]
+  },
+  "hpicfEnetChipSetHydra": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfEnetChipSets",
+      1
+    ]
+  },
+  "hpicfEnetChipSetGT48001": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfEnetChipSets",
+      2
+    ]
+  },
+  "hpicfEnetChipSetPentagon": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfEnetChipSets",
+      3
+    ]
+  },
+  "hpicfSwitchPorts": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "chassis",
+      10
+    ]
+  },
+  "hpicfSwitchPort10T100TX": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      1
+    ]
+  },
+  "hpicfSwitchPort100FX": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      2
+    ]
+  },
+  "hpicfSwitchPort10FL": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      3
+    ]
+  },
+  "hpicfSwitchPort1000SX": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      4
+    ]
+  },
+  "hpicfSwitchPort10T": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      5
+    ]
+  },
+  "hpicfSwitchPort1000LX": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      6
+    ]
+  },
+  "hpicfSwitchPort1000T": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      7
+    ]
+  },
+  "hpicfSwitchPort1000Stk": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      8
+    ]
+  },
+  "hpicfSwitchPort1000LH": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      9
+    ]
+  },
+  "hpicfSwitchPort10GigBaseCX4": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      10
+    ]
+  },
+  "hpicfSwitchPort1000ESP": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      11
+    ]
+  },
+  "hpicfSwitchPort10GigBaseSR": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      12
+    ]
+  },
+  "hpicfSwitchPort10GigBaseER": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      13
+    ]
+  },
+  "hpicfSwitchPort10GigBaseLR": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      14
+    ]
+  },
+  "hpicfSwitchPort100GEN": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      15
+    ]
+  },
+  "hpicfSwitchPort1000GEN": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      16
+    ]
+  },
+  "hpicfSwitchPort10GigBaseGEN": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      17
+    ]
+  },
+  "hpicfSwitchPort100BXD": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      18
+    ]
+  },
+  "hpicfSwitchPort100BXU": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      19
+    ]
+  },
+  "hpicfSwitchPort1000BXD": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      20
+    ]
+  },
+  "hpicfSwitchPort1000BXU": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      21
+    ]
+  },
+  "hpicfSwitchPort10GigBaseLRM": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      22
+    ]
+  },
+  "hpicfSwitchPortSFPplusSR": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      23
+    ]
+  },
+  "hpicfSwitchPortSFPplusLR": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      24
+    ]
+  },
+  "hpicfSwitchPortSFPplusLRM": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      25
+    ]
+  },
+  "hpicfSwitchPortSFPplusDAC": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      26
+    ]
+  },
+  "hpicfSwitchPortSFPplusDA1": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      27
+    ]
+  },
+  "hpicfSwitchPortSFPplusDA2": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      28
+    ]
+  },
+  "hpicfSwitchPortSFPplusDA3": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      29
+    ]
+  },
+  "hpicfSwitchPortSFPplusDA5": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      30
+    ]
+  },
+  "hpicfSwitchPortSFPplusDA7": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      31
+    ]
+  },
+  "hpicfSwitchPortSFPplusDA10": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      32
+    ]
+  },
+  "hpicfSwitchPortSFPplusDA15": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      33
+    ]
+  },
+  "hpicfSwitchPortSFPplusDA20": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      34
+    ]
+  },
+  "hpicfSwitchPort10GigBaseT": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      35
+    ]
+  },
+  "hpicfSwitchPort10GigBaseTSH": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      36
+    ]
+  },
+  "hpicfSwitchPort10GigBaseTLH": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      37
+    ]
+  },
+  "hpicfSwitchPort10GigBaseSTK": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      38
+    ]
+  },
+  "hpicfSwitchPort1000CWDM1470": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      39
+    ]
+  },
+  "hpicfSwitchPort1000CWDM1490": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      40
+    ]
+  },
+  "hpicfSwitchPort1000CWDM1510": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      41
+    ]
+  },
+  "hpicfSwitchPort1000CWDM1530": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      42
+    ]
+  },
+  "hpicfSwitchPort1000CWDM1550": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      43
+    ]
+  },
+  "hpicfSwitchPort1000CWDM1570": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      44
+    ]
+  },
+  "hpicfSwitchPort1000CWDM1590": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      45
+    ]
+  },
+  "hpicfSwitchPort1000CWDM1610": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      46
+    ]
+  },
+  "hpicfSwitchPort10GigCWDM1470": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      47
+    ]
+  },
+  "hpicfSwitchPort10GigCWDM1490": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      48
+    ]
+  },
+  "hpicfSwitchPort10GigCWDM1510": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      49
+    ]
+  },
+  "hpicfSwitchPort10GigCWDM1530": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      50
+    ]
+  },
+  "hpicfSwitchPort10GigCWDM1550": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      51
+    ]
+  },
+  "hpicfSwitchPort10GigCWDM1570": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      52
+    ]
+  },
+  "hpicfSwitchPort10GigCWDM1590": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      53
+    ]
+  },
+  "hpicfSwitchPort10GigCWDM1611": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfSwitchPorts",
+      54
+    ]
+  },
+  "hpicfMAUTypes": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "chassis",
+      11
+    ]
+  },
+  "hpicfMauType1000BaseSXHD": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      1
+    ]
+  },
+  "hpicfMauType1000BaseSXFD": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      2
+    ]
+  },
+  "hpicfMauType1000BaseLXHD": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      3
+    ]
+  },
+  "hpicfMauType1000BaseLXFD": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      4
+    ]
+  },
+  "hpicfMauType1000BaseTHD": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      5
+    ]
+  },
+  "hpicfMauType1000BaseTFD": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      6
+    ]
+  },
+  "hpicfMauType1000BaseStkHD": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      7
+    ]
+  },
+  "hpicfMauType1000BaseStkFD": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      8
+    ]
+  },
+  "hpicfMauType1000BaseLHFD": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      9
+    ]
+  },
+  "hpicfMauType1000BaseEspPCS": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      10
+    ]
+  },
+  "hpicfMauType1000BaseEspG": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      11
+    ]
+  },
+  "hpicfMauType10GigBaseCX4": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      12
+    ]
+  },
+  "hpicfMauType10GigBaseSR": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      13
+    ]
+  },
+  "hpicfMauType10GigBaseER": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      14
+    ]
+  },
+  "hpicfMauType10GigBaseLR": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      15
+    ]
+  },
+  "hpicfMauType100BaseGEN": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      16
+    ]
+  },
+  "hpicfMauType1000BaseGEN": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      17
+    ]
+  },
+  "hpicfMauType10GigBaseGEN": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      18
+    ]
+  },
+  "hpicfMauType100BaseBXD": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      19
+    ]
+  },
+  "hpicfMauType100BaseBXU": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      20
+    ]
+  },
+  "hpicfMauType1000BaseBXD": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      21
+    ]
+  },
+  "hpicfMauType1000BaseBXU": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      22
+    ]
+  },
+  "hpicfMauType10GigBaseLRM": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      23
+    ]
+  },
+  "hpicfMauTypeSFPplusSR": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      24
+    ]
+  },
+  "hpicfMauTypeSFPplusLR": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      25
+    ]
+  },
+  "hpicfMauTypeSFPplusLRM": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      26
+    ]
+  },
+  "hpicfMauTypeSFPplusDAC": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      27
+    ]
+  },
+  "hpicfMauTypeSFPplusDA1": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      28
+    ]
+  },
+  "hpicfMauTypeSFPplusDA2": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      29
+    ]
+  },
+  "hpicfMauTypeSFPplusDA3": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      30
+    ]
+  },
+  "hpicfMauTypeSFPplusDA5": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      31
+    ]
+  },
+  "hpicfMauTypeSFPplusDA7": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      32
+    ]
+  },
+  "hpicfMauTypeSFPplusDA10": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      33
+    ]
+  },
+  "hpicfMauTypeSFPplusDA15": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      34
+    ]
+  },
+  "hpicfMauTypeSFPplusDA20": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      35
+    ]
+  },
+  "hpicfMauType10GigBaseT": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      36
+    ]
+  },
+  "hpicfMauType10GigBaseTSH": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      37
+    ]
+  },
+  "hpicfMauType10GigBaseTLH": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      38
+    ]
+  },
+  "hpicfMauType10GigBaseSTK": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      39
+    ]
+  },
+  "hpicfMauType1000CWDM1470": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      40
+    ]
+  },
+  "hpicfMauType1000CWDM1490": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      41
+    ]
+  },
+  "hpicfMauType1000CWDM1510": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      42
+    ]
+  },
+  "hpicfMauType1000CWDM1530": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      43
+    ]
+  },
+  "hpicfMauType1000CWDM1550": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      44
+    ]
+  },
+  "hpicfMauType1000CWDM1570": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      45
+    ]
+  },
+  "hpicfMauType1000CWDM1590": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      46
+    ]
+  },
+  "hpicfMauType1000CWDM1610": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      47
+    ]
+  },
+  "hpicfMauType10GigCWDM1470": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      48
+    ]
+  },
+  "hpicfMauType10GigCWDM1490": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      49
+    ]
+  },
+  "hpicfMauType10GigCWDM1510": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      50
+    ]
+  },
+  "hpicfMauType10GigCWDM1530": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      51
+    ]
+  },
+  "hpicfMauType10GigCWDM1550": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      52
+    ]
+  },
+  "hpicfMauType10GigCWDM1570": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      53
+    ]
+  },
+  "hpicfMauType10GigCWDM1590": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      54
+    ]
+  },
+  "hpicfMauType10GigCWDM1610": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      55
+    ]
+  },
+  "hpicfMauType10GigBaseESP": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpicfMAUTypes",
+      56
+    ]
+  },
+  "hpEtherSwitch": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "netElement",
+      11
+    ]
+  },
+  "hpEtherSwitchPortType": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpEtherSwitch",
+      99
+    ]
+  },
+  "hpEtherSwitchPort10T": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpEtherSwitchPortType",
+      1
+    ]
+  },
+  "hpEtherSwitchPort100T": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpEtherSwitchPortType",
+      2
+    ]
+  },
+  "hpEtherSwitchPort100VG": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpEtherSwitchPortType",
+      3
+    ]
+  },
+  "hpEtherSwitchPort100F": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpEtherSwitchPortType",
+      4
+    ]
+  },
+  "hpAdvSwitch2000": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      1
+    ]
+  },
+  "hpAdvSwitch2000B": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      2
+    ]
+  },
+  "hpAdvSwitch800T": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      3
+    ]
+  },
+  "hpAdvSwitch200": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      4
+    ]
+  },
+  "hpAdvSwitch208T": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpAdvSwitch200",
+      1
+    ]
+  },
+  "hpAdvSwitch208VG": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpAdvSwitch200",
+      2
+    ]
+  },
+  "hpAdvSwitch224T": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpAdvSwitch200",
+      3
+    ]
+  },
+  "hpAdvSwitch224VG": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpAdvSwitch200",
+      4
+    ]
+  },
+  "hpSwitch212M": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      5
+    ]
+  },
+  "hpSwitch224M": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      6
+    ]
+  },
+  "hpSwitch8000": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      7
+    ]
+  },
+  "hpSwitch1600": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      8
+    ]
+  },
+  "hpSwitch4000": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      9
+    ]
+  },
+  "hpSwitch2400": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      10
+    ]
+  },
+  "hpSwitch2424": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      11
+    ]
+  },
+  "hpSwitch9308": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      13
+    ]
+  },
+  "hpSwitch9304": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      14
+    ]
+  },
+  "hpSwitch6308": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      15
+    ]
+  },
+  "hpSwitch6208": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      16
+    ]
+  },
+  "hpSwitchJ4819A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      17
+    ]
+  },
+  "hpSwitchJ4812A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      18
+    ]
+  },
+  "hpSwitchJ4813A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      19
+    ]
+  },
+  "hpSwitchJ4850A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      20
+    ]
+  },
+  "hpSwitchJ4815A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      21
+    ]
+  },
+  "hpSwitchJ4851A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      22
+    ]
+  },
+  "hpSwitchJ4865A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      23
+    ]
+  },
+  "hpSwitchA6713A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      24
+    ]
+  },
+  "hpSwitchA6716A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      25
+    ]
+  },
+  "hpSwitchA6717A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      26
+    ]
+  },
+  "hpSwitchJ4887A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      27
+    ]
+  },
+  "hpSwitchJ4874A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      28
+    ]
+  },
+  "hpSwitchJ4899A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      29
+    ]
+  },
+  "hpSwitchJ4902A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      30
+    ]
+  },
+  "hpSwitchJ4903A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      31
+    ]
+  },
+  "hpSwitchJ4904A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      32
+    ]
+  },
+  "hpSwitchProliant": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      33
+    ]
+  },
+  "hpSwitchJ4900A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      34
+    ]
+  },
+  "hpSwitchJ8165A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      35
+    ]
+  },
+  "hpSwitchJ8164A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      36
+    ]
+  },
+  "hpSwitchJ8130A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      37
+    ]
+  },
+  "hpSwitchJ8133A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      38
+    ]
+  },
+  "hpSwitchJ8153A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      39
+    ]
+  },
+  "hpSwitchJ8154A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      40
+    ]
+  },
+  "hpSwitchJ8155A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      41
+    ]
+  },
+  "hpSwitchJ4905A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      42
+    ]
+  },
+  "hpSwitchJ4906A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      43
+    ]
+  },
+  "hpSwitchJ4899B": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      44
+    ]
+  },
+  "hpSwitchJ4900B": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      45
+    ]
+  },
+  "hpSwitchJ8718A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      46
+    ]
+  },
+  "hpSwitchJ8719A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      47
+    ]
+  },
+  "hpSwitchJ8433A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      48
+    ]
+  },
+  "hpSwitchJ8474A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      49
+    ]
+  },
+  "hpSwitchJ8697A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      50
+    ]
+  },
+  "hpSwitchJ8698A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      51
+    ]
+  },
+  "hpSwitchJ8770A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      52
+    ]
+  },
+  "hpSwitchJ8773A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      53
+    ]
+  },
+  "hpSwitchJ8680A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      54
+    ]
+  },
+  "hpSwitchJ8762A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      55
+    ]
+  },
+  "hpSwitchJ8771A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      56
+    ]
+  },
+  "hpSwitchJ8772A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      57
+    ]
+  },
+  "hpSwitchJ8692A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      58
+    ]
+  },
+  "hpSwitchJ8693A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      59
+    ]
+  },
+  "hpSwitchJ8992A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      60
+    ]
+  },
+  "hpSwitchJ9019A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      61
+    ]
+  },
+  "hpSwitchJ9020A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      62
+    ]
+  },
+  "hpSwitchJ9021A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      63
+    ]
+  },
+  "hpSwitchJ9022A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      64
+    ]
+  },
+  "hpSwitchJ9028A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      65
+    ]
+  },
+  "hpSwitchJ9029A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      66
+    ]
+  },
+  "hpSwitchJ9038A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      67
+    ]
+  },
+  "hpSwitchJ9050A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      68
+    ]
+  },
+  "hpSwitchJ9049A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      69
+    ]
+  },
+  "hpSwitchJ9032A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      70
+    ]
+  },
+  "hpSwitchJ9091A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      72
+    ]
+  },
+  "hpSwitchJ9065A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      73
+    ]
+  },
+  "hpSwitchJ9079A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      74
+    ]
+  },
+  "hpSwitchJ9080A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      75
+    ]
+  },
+  "hpSwitchJ9085A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      76
+    ]
+  },
+  "hpSwitchJ9088A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      77
+    ]
+  },
+  "hpSwitchJ9087A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      78
+    ]
+  },
+  "hpSwitchJ9089A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      79
+    ]
+  },
+  "hpSwitchJ9086A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      80
+    ]
+  },
+  "hpSwitchJ9028B": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      81
+    ]
+  },
+  "hpSwitchJ4900C": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      82
+    ]
+  },
+  "hpSwitchJ4899C": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      83
+    ]
+  },
+  "hpSwitchJ9146A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      84
+    ]
+  },
+  "hpSwitchJ9148A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      85
+    ]
+  },
+  "hpSwitchJ9145A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      86
+    ]
+  },
+  "hpSwitchJ9147A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      87
+    ]
+  },
+  "hpSwitchJ9279A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      88
+    ]
+  },
+  "hpSwitchJ9280A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      89
+    ]
+  },
+  "hpSwitchJ9019B": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      90
+    ]
+  },
+  "hpSwitchJ9137A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      94
+    ]
+  },
+  "hpSwitchJ9138A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      95
+    ]
+  },
+  "hpSwitchJ9298A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      96
+    ]
+  },
+  "hpSwitchJ9299A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      97
+    ]
+  },
+  "hpSwitchJ9265A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      98
+    ]
+  },
+  "hpSwitchJ9263A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      100
+    ]
+  },
+  "hpSwitchJ9264A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      101
+    ]
+  },
+  "hpSwitchJ9445A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      102
+    ]
+  },
+  "hpSwitchJ9449A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      103
+    ]
+  },
+  "hpSwitchJ9450A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      104
+    ]
+  },
+  "hpSwitchJ9452A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      105
+    ]
+  },
+  "hpSwitchJ9451A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      106
+    ]
+  },
+  "hpSwitch516733-B21": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      107
+    ]
+  },
+  "hpSwitch498358-B21": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      108
+    ]
+  },
+  "hpSwitchJ9471A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      109
+    ]
+  },
+  "hpSwitchJ9473A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      110
+    ]
+  },
+  "hpSwitchJ9470A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      111
+    ]
+  },
+  "hpSwitchJ9472A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      112
+    ]
+  },
+  "hpSwitchJ9477A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      113
+    ]
+  },
+  "hpSwitchJ9310A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      114
+    ]
+  },
+  "hpSwitchJ9311A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      115
+    ]
+  },
+  "hpSwitchJ9565A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      117
+    ]
+  },
+  "hpSwitchJ9562A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      118
+    ]
+  },
+  "hpSwitchJ9573A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      119
+    ]
+  },
+  "hpSwitchJ9574A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      120
+    ]
+  },
+  "hpSwitchJ9575A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      121
+    ]
+  },
+  "hpSwitchJ9576A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      122
+    ]
+  },
+  "hpSwitchJ9584A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      123
+    ]
+  },
+  "hpSwitchJ9585A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      124
+    ]
+  },
+  "hpSwitchJ9586A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      125
+    ]
+  },
+  "hpSwitchJ9587A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      126
+    ]
+  },
+  "hpSwitchJ9588A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      127
+    ]
+  },
+  "hpSwitchJ9577A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      128
+    ]
+  },
+  "hpSwitchJ9623A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      129
+    ]
+  },
+  "hpSwitchJ9624A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      130
+    ]
+  },
+  "hpSwitchJ9625A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      131
+    ]
+  },
+  "hpSwitchJ9626A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      132
+    ]
+  },
+  "hpSwitchJ9627A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      133
+    ]
+  },
+  "hpSwitchJ9660A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      134
+    ]
+  },
+  "hpSwitchJ9772A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      136
+    ]
+  },
+  "hpSwitchJ9773A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      137
+    ]
+  },
+  "hpSwitchJ9774A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      138
+    ]
+  },
+  "hpSwitchJ9775A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      139
+    ]
+  },
+  "hpSwitchJ9776A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      140
+    ]
+  },
+  "hpSwitchJ9777A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      141
+    ]
+  },
+  "hpSwitchJ9778A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      142
+    ]
+  },
+  "hpSwitchJ9779A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      143
+    ]
+  },
+  "hpSwitchJ9780A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      144
+    ]
+  },
+  "hpSwitchJ9781A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      145
+    ]
+  },
+  "hpSwitchJ9782A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      146
+    ]
+  },
+  "hpSwitchJ9783A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      147
+    ]
+  },
+  "hpSwitchJ9802A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      150
+    ]
+  },
+  "hpSwitchJ9803A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      151
+    ]
+  },
+  "hpSwitchJ9726A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      152
+    ]
+  },
+  "hpSwitchJ9727A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      153
+    ]
+  },
+  "hpSwitchJ9728A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      154
+    ]
+  },
+  "hpSwitchJ9729A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      155
+    ]
+  },
+  "hpSwitch3800One6SFPP": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      156
+    ]
+  },
+  "hpSwitch3800One8SFPP": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      157
+    ]
+  },
+  "hpSwitchJ9833A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      158
+    ]
+  },
+  "hpSwitchJ9834A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      159
+    ]
+  },
+  "hpSwitchJ9850A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      160
+    ]
+  },
+  "hpSwitchJ9851A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      161
+    ]
+  },
+  "hpSwitchJ9853A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      163
+    ]
+  },
+  "hpSwitchJ9854A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      164
+    ]
+  },
+  "hpSwitchJ9855A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      165
+    ]
+  },
+  "hpSwitchJ9856A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpEtherSwitch",
+      166
+    ]
+  },
+  "hpSwitchPortModuleET4": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpAdvSwitch2000",
+      1
+    ]
+  },
+  "hpSwitchPortModuleVG2": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpAdvSwitch2000",
+      2
+    ]
+  },
+  "hpSwitchPortModule10FL": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpAdvSwitch2000",
+      3
+    ]
+  },
+  "hpSwitchPortModuleFDDI": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpAdvSwitch2000",
+      4
+    ]
+  },
+  "hpSwitchPortModuleTX2": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpAdvSwitch2000",
+      5
+    ]
+  },
+  "hpSwitchPortModuleATM": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpAdvSwitch2000",
+      6
+    ]
+  },
+  "hpSwitchPortModule100TX8": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitch8000",
+      1
+    ]
+  },
+  "hpSwitchPortModule100FX4": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitch8000",
+      2
+    ]
+  },
+  "hpSwitchPortModule10FL4": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitch8000",
+      3
+    ]
+  },
+  "hpSwitchPortModuleGigSX": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitch8000",
+      4
+    ]
+  },
+  "hpSwitchPortModuleGigLX": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitch8000",
+      5
+    ]
+  },
+  "hpSwitchPortModuleTwoGig": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitch8000",
+      6
+    ]
+  },
+  "hpSwitchPortModuleGigStk": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitch8000",
+      7
+    ]
+  },
+  "hpSwitchPortModuleGigT": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitch8000",
+      8
+    ]
+  },
+  "hpSwitchPortModuleJ4820A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4819A",
+      1
+    ]
+  },
+  "hpSwitchPortModuleJ4821A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4819A",
+      2
+    ]
+  },
+  "hpSwitchPortModuleJ4878A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4819A",
+      3
+    ]
+  },
+  "hpSwitchModuleJ4852A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4819A",
+      4
+    ]
+  },
+  "hpSwitchModuleJ8161A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4819A",
+      5
+    ]
+  },
+  "hpSwitchModuleJ4907A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4819A",
+      6
+    ]
+  },
+  "hpSwitchModuleJ8162A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4819A",
+      7
+    ]
+  },
+  "hpSwitchPortModuleJ4820B": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4819A",
+      8
+    ]
+  },
+  "hpSwitchPortModuleJ4821B": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4819A",
+      9
+    ]
+  },
+  "hpSwitchPortModuleJ4878B": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4819A",
+      10
+    ]
+  },
+  "hpSwitchModuleJ9001A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4819A",
+      11
+    ]
+  },
+  "hpSwitchModuleJ9003A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4819A",
+      12
+    ]
+  },
+  "hpSwitchModuleJ8988A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4819A",
+      13
+    ]
+  },
+  "hpSwitchModuleJ4812A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4812A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ4813A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4813A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ4862A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4865A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ4863A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4865A",
+      2
+    ]
+  },
+  "hpSwitchModuleJ4864A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4865A",
+      3
+    ]
+  },
+  "hpSwitchModuleJ4862B": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4865A",
+      4
+    ]
+  },
+  "hpSwitchModuleJ4893A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4865A",
+      5
+    ]
+  },
+  "hpSwitchModuleJ4892A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4865A",
+      6
+    ]
+  },
+  "hpSwitchModuleJ4908A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4865A",
+      7
+    ]
+  },
+  "hpSwitchModuleJ4899B": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4899B",
+      1
+    ]
+  },
+  "hpSwitchModuleJ4900B": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4900B",
+      1
+    ]
+  },
+  "hpSwitchModuleJ4903A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4903A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ8434A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4903A",
+      2
+    ]
+  },
+  "hpSwitchModuleJ8435A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4903A",
+      3
+    ]
+  },
+  "hpSwitchModuleJ4904A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4904A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ8762A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8762A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ4905A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4905A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ4906A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4906A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ8433A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8433A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ8474A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8474A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ8701A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ8702A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      2
+    ]
+  },
+  "hpSwitchModuleJ8705A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      3
+    ]
+  },
+  "hpSwitchModuleJ8706A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      4
+    ]
+  },
+  "hpSwitchModuleJ8707A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      5
+    ]
+  },
+  "hpSwitchModuleJ8708A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      6
+    ]
+  },
+  "hpSwitchModuleJ87xxA": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      7
+    ]
+  },
+  "hpSwitchModuleJ87yyA": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      8
+    ]
+  },
+  "hpSwitchModuleJ8694A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      9
+    ]
+  },
+  "hpSwitchModuleJ8726A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      10
+    ]
+  },
+  "hpSwitchModuleJ90xxA": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9050A",
+      11
+    ]
+  },
+  "hpSwitchModuleJ90yyA": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9050A",
+      12
+    ]
+  },
+  "hpSwitchModuleJ90zzA": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9050A",
+      13
+    ]
+  },
+  "hpSwitchModuleJ9051A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      14
+    ]
+  },
+  "hpSwitchModuleJ9052A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      15
+    ]
+  },
+  "hpSwitchModuleJ9154A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      16
+    ]
+  },
+  "hpSwitchModuleJ9155A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      17
+    ]
+  },
+  "hpSwitchModuleJ9446A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      18
+    ]
+  },
+  "hpSwitchModuleJ9307A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      19
+    ]
+  },
+  "hpSwitchModuleJ9308A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      20
+    ]
+  },
+  "hpSwitchModuleJ9478A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      21
+    ]
+  },
+  "hpSwitchModuleJ9309A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      22
+    ]
+  },
+  "hpSwitchModuleJ9312A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      23
+    ]
+  },
+  "hpSwitchModuleJ9534A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      24
+    ]
+  },
+  "hpSwitchModuleJ9535A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      25
+    ]
+  },
+  "hpSwitchModuleJ9536A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      26
+    ]
+  },
+  "hpSwitchModuleJ9537A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      27
+    ]
+  },
+  "hpSwitchModuleJ9538A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      28
+    ]
+  },
+  "hpSwitchModuleJ9546A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      29
+    ]
+  },
+  "hpSwitchModuleJ9547A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      30
+    ]
+  },
+  "hpSwitchModuleJ9548A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      31
+    ]
+  },
+  "hpSwitchModuleJ9549A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      32
+    ]
+  },
+  "hpSwitchModuleJ9550A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      33
+    ]
+  },
+  "hpSwitchAdvServicesModule": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      34
+    ]
+  },
+  "hpSwitchExtServicesModule": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      35
+    ]
+  },
+  "hpSwitchModuleJ9485A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      36
+    ]
+  },
+  "hpSwitchModuleJ9637A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8697A",
+      37
+    ]
+  },
+  "hpSwitchModuleJ8765A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8770A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ8764A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8770A",
+      2
+    ]
+  },
+  "hpSwitchModuleJ8776A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8770A",
+      3
+    ]
+  },
+  "hpSwitchModuleJ8763A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8770A",
+      4
+    ]
+  },
+  "hpSwitchModuleJ8768A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8770A",
+      5
+    ]
+  },
+  "hpSwitchModuleJ9033A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8770A",
+      6
+    ]
+  },
+  "hpSwitchModuleJ8765B": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8770A",
+      8
+    ]
+  },
+  "hpSwitchModuleJ8766A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8770A",
+      10
+    ]
+  },
+  "hpSwitchModuleJ9021A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9021A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9022A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9022A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9019A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9019A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9020A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9020A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9085A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9085A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9088A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9088A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9087A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9087A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9089A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9089A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9086A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9086A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9279A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9279A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9280A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9280A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9726A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9726A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9727A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9727A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9728A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9728A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9729A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9729A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9147A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9147A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9145A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9145A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9148A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9148A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9146A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9146A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9149A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9146A",
+      2
+    ]
+  },
+  "hpSwitchModuleJ9008A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9146A",
+      3
+    ]
+  },
+  "hpSwitchModuleJ9165A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9146A",
+      4
+    ]
+  },
+  "hpSwitchModuleJ9137A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9137A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9138A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9138A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9298A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9298A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9299A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9299A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9577A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9577A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9573": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9573A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9574x": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9574A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9574y": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9574A",
+      2
+    ]
+  },
+  "hpSwitchModuleJ9575": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9575A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9576x": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9576A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9576y": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9576A",
+      2
+    ]
+  },
+  "hpSwitchModuleJ9584": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9584A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9585": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9585A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9586x": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9586A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9586y": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9586A",
+      2
+    ]
+  },
+  "hpSwitchModuleJ9587": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9587A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9588x": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9588A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9588y": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9588A",
+      2
+    ]
+  },
+  "hpSwitchModuleJ94xxA": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9472A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ94xyA": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9472A",
+      2
+    ]
+  },
+  "hpSwitchModuleJ94yxA": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9473A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ94yyA": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9473A",
+      2
+    ]
+  },
+  "hpSwitchModuleJ93aaA": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9311A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ93bbA": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9311A",
+      2
+    ]
+  },
+  "hpSwitchModuleJ9565A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9565A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9562A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9562A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9623A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9623A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9624A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9624A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9625A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9625A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9626A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9626A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9627A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9627A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9772A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9772A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9773A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9773A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9774A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9774A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9775A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9775A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9776A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9776A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9777A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9777A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9778A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9778A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9779A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9779A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9780A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9780A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9781A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9781A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9782A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9782A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9783A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9783A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9853A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9853A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9854A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9854A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9855A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9855A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9856A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9856A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ9730A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9729A",
+      2
+    ]
+  },
+  "hpSwitchModuleJ9731A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9729A",
+      3
+    ]
+  },
+  "hpSwitchModuleJ9732A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9729A",
+      4
+    ]
+  },
+  "hpSwitchModuleJ9733A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9729A",
+      5
+    ]
+  },
+  "hpWANRouters": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfWAN",
+      1
+    ]
+  },
+  "hpWANModules": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfWAN",
+      2
+    ]
+  },
+  "hpSRJ8751A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANRouters",
+      1
+    ]
+  },
+  "hpSRJ8752A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANRouters",
+      2
+    ]
+  },
+  "hpSRJ8753A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANRouters",
+      3
+    ]
+  },
+  "hpSRJ8754A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANRouters",
+      4
+    ]
+  },
+  "hpSRmoduleJ8451A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANModules",
+      1
+    ]
+  },
+  "hpSRmoduleJ8452A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANModules",
+      2
+    ]
+  },
+  "hpSRmoduleJ8453A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANModules",
+      3
+    ]
+  },
+  "hpSRmoduleJ8454A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANModules",
+      4
+    ]
+  },
+  "hpSRmoduleJ8455A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANModules",
+      5
+    ]
+  },
+  "hpSRmoduleJ8456A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANModules",
+      6
+    ]
+  },
+  "hpSRmoduleJ8457A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANModules",
+      7
+    ]
+  },
+  "hpSRmoduleJ8458A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANModules",
+      8
+    ]
+  },
+  "hpSRmoduleJ8459A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANModules",
+      9
+    ]
+  },
+  "hpSRmoduleJ8759A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANModules",
+      10
+    ]
+  },
+  "hpSRmoduleJ8460A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANModules",
+      11
+    ]
+  },
+  "hpSRmoduleJ8461A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANModules",
+      12
+    ]
+  },
+  "hpSRmoduleJ8462A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANModules",
+      13
+    ]
+  },
+  "hpSRmoduleJ8463A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANModules",
+      14
+    ]
+  },
+  "hpSRmoduleJ8464A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANModules",
+      15
+    ]
+  },
+  "hpSRmoduleJ8465A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANModules",
+      16
+    ]
+  },
+  "hpSRmoduleJ8471A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANModules",
+      17
+    ]
+  },
+  "hpSRmoduleJ8472A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpWANModules",
+      18
+    ]
+  },
+  "hpSRPowerSupply8756A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSRJ8754A",
+      1
+    ]
+  },
+  "hpManagementModuleJ9092A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9091A",
+      1
+    ]
+  },
+  "hpFabricModuleJ9093A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9091A",
+      2
+    ]
+  },
+  "hpSSMModuleJ8784A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9091A",
+      3
+    ]
+  },
+  "hpSwitchModuleJ92yyA": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9265A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ92xxA": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9265A",
+      2
+    ]
+  },
+  "hpSwitchModuleJ92wwA": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9265A",
+      3
+    ]
+  },
+  "hpSwitchModuleJ92vvA": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9265A",
+      4
+    ]
+  },
+  "hpSwitchModuleJ92uuA": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9265A",
+      5
+    ]
+  },
+  "hpSwitchModuleJ92ttA": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ9265A",
+      6
+    ]
+  },
+  "hpSwitchModuleJ4899A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4899A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ4902A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4902A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ4900A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4900A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ8165A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8165A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ8164A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ8164A",
+      1
+    ]
+  },
+  "hpSwitchModuleJ4899C": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4899C",
+      1
+    ]
+  },
+  "hpSwitchModuleJ4900C": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchJ4900C",
+      1
+    ]
+  },
+  "hpSwitchModuleA6713A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchA6713A",
+      11
+    ]
+  },
+  "hpSwitchModuleA6716A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchA6716A",
+      12
+    ]
+  },
+  "hpSwitchModuleA6717A": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hpSwitchA6717A",
+      13
+    ]
+  }
+}

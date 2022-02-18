@@ -1,0 +1,404 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-IDENTITY"
+      ]
+    ],
+    [
+      "HOST-RESOURCES-MIB",
+      [
+        "hrMIBAdminInfo",
+        "hrStorage",
+        "hrDevice"
+      ]
+    ]
+  ],
+  "hostResourcesTypesModule": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "hrMIBAdminInfo",
+      4
+    ]
+  },
+  "hrStorageTypes": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hrStorage",
+      1
+    ]
+  },
+  "hrStorageOther": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrStorageTypes",
+      1
+    ]
+  },
+  "hrStorageRam": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrStorageTypes",
+      2
+    ]
+  },
+  "hrStorageVirtualMemory": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrStorageTypes",
+      3
+    ]
+  },
+  "hrStorageFixedDisk": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrStorageTypes",
+      4
+    ]
+  },
+  "hrStorageRemovableDisk": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrStorageTypes",
+      5
+    ]
+  },
+  "hrStorageFloppyDisk": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrStorageTypes",
+      6
+    ]
+  },
+  "hrStorageCompactDisc": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrStorageTypes",
+      7
+    ]
+  },
+  "hrStorageRamDisk": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrStorageTypes",
+      8
+    ]
+  },
+  "hrStorageFlashMemory": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrStorageTypes",
+      9
+    ]
+  },
+  "hrStorageNetworkDisk": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrStorageTypes",
+      10
+    ]
+  },
+  "hrDeviceTypes": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hrDevice",
+      1
+    ]
+  },
+  "hrDeviceOther": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrDeviceTypes",
+      1
+    ]
+  },
+  "hrDeviceUnknown": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrDeviceTypes",
+      2
+    ]
+  },
+  "hrDeviceProcessor": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrDeviceTypes",
+      3
+    ]
+  },
+  "hrDeviceNetwork": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrDeviceTypes",
+      4
+    ]
+  },
+  "hrDevicePrinter": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrDeviceTypes",
+      5
+    ]
+  },
+  "hrDeviceDiskStorage": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrDeviceTypes",
+      6
+    ]
+  },
+  "hrDeviceVideo": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrDeviceTypes",
+      10
+    ]
+  },
+  "hrDeviceAudio": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrDeviceTypes",
+      11
+    ]
+  },
+  "hrDeviceCoprocessor": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrDeviceTypes",
+      12
+    ]
+  },
+  "hrDeviceKeyboard": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrDeviceTypes",
+      13
+    ]
+  },
+  "hrDeviceModem": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrDeviceTypes",
+      14
+    ]
+  },
+  "hrDeviceParallelPort": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrDeviceTypes",
+      15
+    ]
+  },
+  "hrDevicePointing": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrDeviceTypes",
+      16
+    ]
+  },
+  "hrDeviceSerialPort": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrDeviceTypes",
+      17
+    ]
+  },
+  "hrDeviceTape": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrDeviceTypes",
+      18
+    ]
+  },
+  "hrDeviceClock": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrDeviceTypes",
+      19
+    ]
+  },
+  "hrDeviceVolatileMemory": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrDeviceTypes",
+      20
+    ]
+  },
+  "hrDeviceNonVolatileMemory": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrDeviceTypes",
+      21
+    ]
+  },
+  "hrFSTypes": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hrDevice",
+      9
+    ]
+  },
+  "hrFSOther": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      1
+    ]
+  },
+  "hrFSUnknown": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      2
+    ]
+  },
+  "hrFSBerkeleyFFS": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      3
+    ]
+  },
+  "hrFSSys5FS": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      4
+    ]
+  },
+  "hrFSFat": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      5
+    ]
+  },
+  "hrFSHPFS": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      6
+    ]
+  },
+  "hrFSHFS": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      7
+    ]
+  },
+  "hrFSMFS": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      8
+    ]
+  },
+  "hrFSNTFS": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      9
+    ]
+  },
+  "hrFSVNode": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      10
+    ]
+  },
+  "hrFSJournaled": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      11
+    ]
+  },
+  "hrFSiso9660": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      12
+    ]
+  },
+  "hrFSRockRidge": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      13
+    ]
+  },
+  "hrFSNFS": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      14
+    ]
+  },
+  "hrFSNetware": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      15
+    ]
+  },
+  "hrFSAFS": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      16
+    ]
+  },
+  "hrFSDFS": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      17
+    ]
+  },
+  "hrFSAppleshare": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      18
+    ]
+  },
+  "hrFSRFS": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      19
+    ]
+  },
+  "hrFSDGCFS": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      20
+    ]
+  },
+  "hrFSBFS": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      21
+    ]
+  },
+  "hrFSFAT32": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      22
+    ]
+  },
+  "hrFSLinuxExt2": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "hrFSTypes",
+      23
+    ]
+  }
+}

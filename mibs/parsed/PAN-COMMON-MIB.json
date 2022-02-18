@@ -1,0 +1,3233 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-IDENTITY",
+        "OBJECT-TYPE",
+        "NOTIFICATION-TYPE",
+        "Integer32"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "DisplayString",
+        "TruthValue",
+        "TimeStamp"
+      ]
+    ],
+    [
+      "PAN-GLOBAL-TC",
+      [
+        "TcChassisType"
+      ]
+    ],
+    [
+      "PAN-GLOBAL-REG",
+      [
+        "panModules",
+        "panCommonMib"
+      ]
+    ]
+  ],
+  "panCommonMibModule": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "panModules",
+      3
+    ]
+  },
+  "FloatValue": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": "d-2"
+  },
+  "panCommonConfMib": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panCommonMib",
+      1
+    ]
+  },
+  "panCommonObjs": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panCommonMib",
+      2
+    ]
+  },
+  "panCommonEvents": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panCommonMib",
+      3
+    ]
+  },
+  "panSys": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panCommonObjs",
+      1
+    ]
+  },
+  "panChassis": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panCommonObjs",
+      2
+    ]
+  },
+  "panSession": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panCommonObjs",
+      3
+    ]
+  },
+  "panMgmt": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panCommonObjs",
+      4
+    ]
+  },
+  "panGlobalProtect": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panCommonObjs",
+      5
+    ]
+  },
+  "panLogCollector": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panCommonObjs",
+      6
+    ]
+  },
+  "panDeviceLogging": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panCommonObjs",
+      7
+    ]
+  },
+  "panSSLBroker": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panCommonObjs",
+      8
+    ]
+  },
+  "panGlobalCounters": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panSys",
+      19
+    ]
+  },
+  "panSysSwVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      1
+    ]
+  },
+  "panSysHwVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      2
+    ]
+  },
+  "panSysSerialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      3
+    ]
+  },
+  "panSysTimeZoneOffset": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      4
+    ]
+  },
+  "panSysDaylightSaving": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      5
+    ]
+  },
+  "panSysVpnClientVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      6
+    ]
+  },
+  "panSysAppVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      7
+    ]
+  },
+  "panSysAvVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      8
+    ]
+  },
+  "panSysThreatVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      9
+    ]
+  },
+  "panSysUrlFilteringVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      10
+    ]
+  },
+  "panSysHAState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      11
+    ]
+  },
+  "panSysHAPeerState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      12
+    ]
+  },
+  "panSysHAMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      13
+    ]
+  },
+  "panSysUrlFilteringDatabase": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      14
+    ]
+  },
+  "panSysGlobalProtectClientVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      15
+    ]
+  },
+  "panSysOpswatDatafileVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      16
+    ]
+  },
+  "panSysWildfireVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      17
+    ]
+  },
+  "panSysWildfirePrivateCloudVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      18
+    ]
+  },
+  "panSysAppReleaseDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      20
+    ]
+  },
+  "panSysThreatReleaseDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      21
+    ]
+  },
+  "panSysAvReleaseDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      22
+    ]
+  },
+  "panSysWfReleaseDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSys",
+      23
+    ]
+  },
+  "panChassisType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panChassis",
+      1
+    ]
+  },
+  "panMSeriesMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panChassis",
+      2
+    ]
+  },
+  "panSessionUtilization": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panSession",
+      1
+    ]
+  },
+  "panSessionMax": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panSession",
+      2
+    ]
+  },
+  "panSessionActive": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panSession",
+      3
+    ]
+  },
+  "panSessionActiveTcp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panSession",
+      4
+    ]
+  },
+  "panSessionActiveUdp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panSession",
+      5
+    ]
+  },
+  "panSessionActiveICMP": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panSession",
+      6
+    ]
+  },
+  "panSessionActiveSslProxy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panSession",
+      7
+    ]
+  },
+  "panSessionSslProxyUtilization": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panSession",
+      8
+    ]
+  },
+  "panVsysTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PanVsysEntry"
+    },
+    "index": null,
+    "value": [
+      "panSession",
+      9
+    ]
+  },
+  "panZoneTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PanZoneEntry"
+    },
+    "index": null,
+    "value": [
+      "panSession",
+      10
+    ]
+  },
+  "panIfTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PanIfEntry"
+    },
+    "index": null,
+    "value": [
+      "panSession",
+      11
+    ]
+  },
+  "panVsysEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PanVsysEntry"
+    },
+    "index": [
+      "panVsysId"
+    ],
+    "value": [
+      "panVsysTable",
+      1
+    ]
+  },
+  "PanVsysEntry": {
+    "tp": "SEQUENCE"
+  },
+  "panVsysId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panVsysEntry",
+      1
+    ]
+  },
+  "panVsysName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panVsysEntry",
+      2
+    ]
+  },
+  "panVsysSessionUtilizationPct": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panVsysEntry",
+      3
+    ]
+  },
+  "panVsysActiveSessions": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panVsysEntry",
+      4
+    ]
+  },
+  "panVsysMaxSessions": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panVsysEntry",
+      5
+    ]
+  },
+  "panVsysActiveTcpCps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panVsysEntry",
+      6
+    ]
+  },
+  "panVsysActiveUdpCps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panVsysEntry",
+      7
+    ]
+  },
+  "panVsysActiveOtherIpCps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panVsysEntry",
+      8
+    ]
+  },
+  "panMgmtPanoramaConnected": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panMgmt",
+      1
+    ]
+  },
+  "panMgmtPanorama2Connected": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panMgmt",
+      2
+    ]
+  },
+  "panGPGatewayUtilization": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panGlobalProtect",
+      1
+    ]
+  },
+  "panGPGWUtilizationPct": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panGPGatewayUtilization",
+      1
+    ]
+  },
+  "panGPGWUtilizationMaxTunnels": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panGPGatewayUtilization",
+      2
+    ]
+  },
+  "panGPGWUtilizationActiveTunnels": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panGPGatewayUtilization",
+      3
+    ]
+  },
+  "panDeviceLoggingLogRate": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panDeviceLogging",
+      1
+    ]
+  },
+  "panDeviceLoggingLogTypeStatTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PanDeviceLoggingLogTypeStatEntry"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLogging",
+      2
+    ]
+  },
+  "panDeviceLoggingLogUsageTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PanDeviceLoggingLogUsageEntry"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLogging",
+      3
+    ]
+  },
+  "panDeviceLoggingExtFwd": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panDeviceLogging",
+      4
+    ]
+  },
+  "panDeviceLoggingCollectorConnectionTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PanDeviceLoggingCollectorConnectionEntry"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLogging",
+      5
+    ]
+  },
+  "panSSLBrokerStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PanSSLBrokerStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "panSSLBroker",
+      1
+    ]
+  },
+  "panSSLBrokerStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PanSSLBrokerStatsEntry"
+    },
+    "index": [
+      "index"
+    ],
+    "value": [
+      "panSSLBrokerStatsTable",
+      1
+    ]
+  },
+  "PanSSLBrokerStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "index": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panSSLBrokerStatsEntry",
+      1
+    ]
+  },
+  "chainName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panSSLBrokerStatsEntry",
+      2
+    ]
+  },
+  "avgLatency": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panSSLBrokerStatsEntry",
+      3
+    ]
+  },
+  "sessionCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panSSLBrokerStatsEntry",
+      4
+    ]
+  },
+  "panDeviceIncomingLogRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingLogRate",
+      1
+    ]
+  },
+  "panDeviceWriteLogRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingLogRate",
+      2
+    ]
+  },
+  "panDeviceLoggingLogTypeStatEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PanDeviceLoggingLogTypeStatEntry"
+    },
+    "index": [
+      "panDeviceLoggingDevice",
+      "panDeviceLoggingLogType"
+    ],
+    "value": [
+      "panDeviceLoggingLogTypeStatTable",
+      1
+    ]
+  },
+  "PanDeviceLoggingLogTypeStatEntry": {
+    "tp": "SEQUENCE"
+  },
+  "panDeviceLoggingDevice": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingLogTypeStatEntry",
+      1
+    ]
+  },
+  "panDeviceLoggingDeviceIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingLogTypeStatEntry",
+      2
+    ]
+  },
+  "panDeviceLoggingLogType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingLogTypeStatEntry",
+      3
+    ]
+  },
+  "panDeviceLoggingLogLastLogCreated": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingLogTypeStatEntry",
+      4
+    ]
+  },
+  "panDeviceLoggingLogLastLogFwded": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingLogTypeStatEntry",
+      5
+    ]
+  },
+  "panDeviceLoggingLogLastSeqNumberFwded": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingLogTypeStatEntry",
+      6
+    ]
+  },
+  "panDeviceLoggingLogLastSeqNumberAck": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingLogTypeStatEntry",
+      7
+    ]
+  },
+  "panDeviceLoggingLogTotalLogsFwded": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingLogTypeStatEntry",
+      8
+    ]
+  },
+  "panDeviceLoggingLogUsageEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PanDeviceLoggingLogUsageEntry"
+    },
+    "index": [
+      "panDeviceLoggingLogUsageLogType"
+    ],
+    "value": [
+      "panDeviceLoggingLogUsageTable",
+      1
+    ]
+  },
+  "PanDeviceLoggingLogUsageEntry": {
+    "tp": "SEQUENCE"
+  },
+  "panDeviceLoggingLogUsageLogType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingLogUsageEntry",
+      1
+    ]
+  },
+  "panDeviceLoggingDiskUsageDiskSpace": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingLogUsageEntry",
+      2
+    ]
+  },
+  "panDeviceLoggingDiskUsageRetention": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingLogUsageEntry",
+      3
+    ]
+  },
+  "panDeviceLoggingDiskQuotaPct": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingLogUsageEntry",
+      4
+    ]
+  },
+  "panDeviceLoggingDiskQuota": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingLogUsageEntry",
+      5
+    ]
+  },
+  "panDeviceLoggingExtFwdCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingExtFwd",
+      1
+    ]
+  },
+  "panDeviceLoggingExtFwdQueueDrop": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingExtFwd",
+      2
+    ]
+  },
+  "panDeviceLoggingExtFwdStatsSendErr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingExtFwd",
+      3
+    ]
+  },
+  "panDeviceLoggingExtFwdStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PanDeviceLoggingExtFwdStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingExtFwd",
+      4
+    ]
+  },
+  "panDeviceLoggingExtFwdStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PanDeviceLoggingExtFwdStatsEntry"
+    },
+    "index": [
+      "panDeviceLoggingExtFwdStatsTableType"
+    ],
+    "value": [
+      "panDeviceLoggingExtFwdStatsTable",
+      1
+    ]
+  },
+  "PanDeviceLoggingExtFwdStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "panDeviceLoggingExtFwdStatsTableType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingExtFwdStatsEntry",
+      1
+    ]
+  },
+  "panDeviceLoggingExtFwdStatsTableEnqueueCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingExtFwdStatsEntry",
+      2
+    ]
+  },
+  "panDeviceLoggingExtFwdStatsTableSendCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingExtFwdStatsEntry",
+      3
+    ]
+  },
+  "panDeviceLoggingExtFwdStatsTableDropCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingExtFwdStatsEntry",
+      4
+    ]
+  },
+  "panDeviceLoggingExtFwdStatsTableQueueDepth": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingExtFwdStatsEntry",
+      5
+    ]
+  },
+  "panDeviceLoggingExtFwdStatsTable1minAvgSendRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingExtFwdStatsEntry",
+      6
+    ]
+  },
+  "panDeviceLoggingCollectorConnectionEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PanDeviceLoggingCollectorConnectionEntry"
+    },
+    "index": [
+      "panDeviceLoggingCollectorConnectionIP"
+    ],
+    "value": [
+      "panDeviceLoggingCollectorConnectionTable",
+      1
+    ]
+  },
+  "PanDeviceLoggingCollectorConnectionEntry": {
+    "tp": "SEQUENCE"
+  },
+  "panDeviceLoggingCollectorConnectionType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingCollectorConnectionEntry",
+      1
+    ]
+  },
+  "panDeviceLoggingCollectorConnectionIP": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingCollectorConnectionEntry",
+      2
+    ]
+  },
+  "panDeviceLoggingCollectorConnectionHostname": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingCollectorConnectionEntry",
+      3
+    ]
+  },
+  "panDeviceLoggingCollectorConnectionStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panDeviceLoggingCollectorConnectionEntry",
+      4
+    ]
+  },
+  "panLcStat": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panLogCollector",
+      1
+    ]
+  },
+  "panLcLogRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panLcStat",
+      1
+    ]
+  },
+  "panLcLogDuration": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panLcStat",
+      2
+    ]
+  },
+  "panLcDiskUsageTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PanLcDiskUsageEntry"
+    },
+    "index": null,
+    "value": [
+      "panLcStat",
+      3
+    ]
+  },
+  "panLcLogUsageTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PanLcLogUsageEntry"
+    },
+    "index": null,
+    "value": [
+      "panLcStat",
+      4
+    ]
+  },
+  "panLocalLogUsageTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PanLocalLogUsageEntry"
+    },
+    "index": null,
+    "value": [
+      "panLcStat",
+      5
+    ]
+  },
+  "panLcDiskIOPSTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PanLcDiskIOPSEntry"
+    },
+    "index": null,
+    "value": [
+      "panLcStat",
+      6
+    ]
+  },
+  "panLcLogDurationTraffic": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panLcLogDuration",
+      1
+    ]
+  },
+  "panLcLogDurationConfig": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panLcLogDuration",
+      2
+    ]
+  },
+  "panLcLogDurationSystem": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panLcLogDuration",
+      3
+    ]
+  },
+  "panLcLogDurationThreat": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panLcLogDuration",
+      4
+    ]
+  },
+  "panLcLogDurationAppstat": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panLcLogDuration",
+      5
+    ]
+  },
+  "panLcLogDurationTrsum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panLcLogDuration",
+      6
+    ]
+  },
+  "panLcLogDurationThsum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panLcLogDuration",
+      7
+    ]
+  },
+  "panLcLogDurationEvent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panLcLogDuration",
+      8
+    ]
+  },
+  "panLcLogDurationAlarm": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panLcLogDuration",
+      9
+    ]
+  },
+  "panLcLogDurationHipmatch": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panLcLogDuration",
+      10
+    ]
+  },
+  "panLcLogDurationUserid": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panLcLogDuration",
+      11
+    ]
+  },
+  "panLcDiskUsageEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PanLcDiskUsageEntry"
+    },
+    "index": [
+      "panLcDiskUsageId"
+    ],
+    "value": [
+      "panLcDiskUsageTable",
+      1
+    ]
+  },
+  "PanLcDiskUsageEntry": {
+    "tp": "SEQUENCE"
+  },
+  "panLocalLogUsageEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PanLocalLogUsageEntry"
+    },
+    "index": [
+      "panLcLogType"
+    ],
+    "value": [
+      "panLocalLogUsageTable",
+      1
+    ]
+  },
+  "PanLocalLogUsageEntry": {
+    "tp": "SEQUENCE"
+  },
+  "panLocalLogType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panLocalLogUsageEntry",
+      1
+    ]
+  },
+  "panLocalDiskUsageDiskSpace": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panLocalLogUsageEntry",
+      2
+    ]
+  },
+  "panLocalDiskUsageRetention": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panLocalLogUsageEntry",
+      3
+    ]
+  },
+  "panLocalDiskQuota": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panLocalLogUsageEntry",
+      4
+    ]
+  },
+  "panLocalDiskQuotaPct": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panLocalLogUsageEntry",
+      5
+    ]
+  },
+  "panLcDiskIOPSEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PanLcDiskIOPSEntry"
+    },
+    "index": [
+      "panLcDiskIOPSId"
+    ],
+    "value": [
+      "panLcDiskIOPSTable",
+      1
+    ]
+  },
+  "PanLcDiskIOPSEntry": {
+    "tp": "SEQUENCE"
+  },
+  "panLcDiskIOPSId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panLcDiskIOPSEntry",
+      1
+    ]
+  },
+  "panLcDiskIORead5min": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panLcDiskIOPSEntry",
+      2
+    ]
+  },
+  "panLcDiskIOWrite5min": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panLcDiskIOPSEntry",
+      3
+    ]
+  },
+  "panLcLogUsageEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PanLcLogUsageEntry"
+    },
+    "index": [
+      "panLcLogType"
+    ],
+    "value": [
+      "panLcLogUsageTable",
+      1
+    ]
+  },
+  "PanLcLogUsageEntry": {
+    "tp": "SEQUENCE"
+  },
+  "panLcLogType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panLcLogUsageEntry",
+      1
+    ]
+  },
+  "panLcDiskUsageDiskSpacePct": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panLcLogUsageEntry",
+      2
+    ]
+  },
+  "panLcDiskUsageRetention": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panLcLogUsageEntry",
+      3
+    ]
+  },
+  "panLcDiskQuotaPct": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panLcLogUsageEntry",
+      4
+    ]
+  },
+  "panLcDiskUsageId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "panLcDiskUsageEntry",
+      1
+    ]
+  },
+  "panLcDiskUsage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panLcDiskUsageEntry",
+      2
+    ]
+  },
+  "panLcIsRedundancyMember": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "panLogCollector",
+      2
+    ]
+  },
+  "panLcLogFwdStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PanLcLogFwdStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "panLogCollector",
+      3
+    ]
+  },
+  "panLcLogFwdStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PanLcLogFwdStatsEntry"
+    },
+    "index": [
+      "panLcLogFwdStatsTableType"
+    ],
+    "value": [
+      "panLcLogFwdStatsTable",
+      1
+    ]
+  },
+  "PanLcLogFwdStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "panLcLogFwdStatsTableType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panLcLogFwdStatsEntry",
+      1
+    ]
+  },
+  "panLcLogFwdStatsTableEnqueueCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panLcLogFwdStatsEntry",
+      2
+    ]
+  },
+  "panLcLogFwdStatsTableSendCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panLcLogFwdStatsEntry",
+      3
+    ]
+  },
+  "panLcLogFwdStatsTableDropCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panLcLogFwdStatsEntry",
+      4
+    ]
+  },
+  "panLcLogFwdStatsTableQueueDepth": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panLcLogFwdStatsEntry",
+      5
+    ]
+  },
+  "panLcLoggingConnectedDeviceTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PanLcLoggingConnectedDeviceEntry"
+    },
+    "index": null,
+    "value": [
+      "panLogCollector",
+      4
+    ]
+  },
+  "panLcLoggingConnectedDeviceEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PanLcLoggingConnectedDeviceEntry"
+    },
+    "index": [
+      "panLcLoggingConnectedDeviceConnectionId"
+    ],
+    "value": [
+      "panLcLoggingConnectedDeviceTable",
+      1
+    ]
+  },
+  "PanLcLoggingConnectedDeviceEntry": {
+    "tp": "SEQUENCE"
+  },
+  "panLcLoggingConnectedDeviceName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panLcLoggingConnectedDeviceEntry",
+      1
+    ]
+  },
+  "panLcLoggingConnectedDeviceConnectionId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panLcLoggingConnectedDeviceEntry",
+      2
+    ]
+  },
+  "panLcLoggingConnectedIdLogRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panLcLoggingConnectedDeviceEntry",
+      3
+    ]
+  },
+  "panLcLoggingDeviceTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PanLcLoggingDeviceEntry"
+    },
+    "index": null,
+    "value": [
+      "panLogCollector",
+      5
+    ]
+  },
+  "panLcLoggingDeviceEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PanLcLoggingDeviceEntry"
+    },
+    "index": [
+      "panLcLoggingDeviceConnectionId",
+      "panLcLoggingLogType"
+    ],
+    "value": [
+      "panLcLoggingDeviceTable",
+      1
+    ]
+  },
+  "PanLcLoggingDeviceEntry": {
+    "tp": "SEQUENCE"
+  },
+  "panLcLoggingDeviceConnectionId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panLcLoggingDeviceEntry",
+      1
+    ]
+  },
+  "panLcLoggingLogType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panLcLoggingDeviceEntry",
+      2
+    ]
+  },
+  "panLcLogTypeLastLogRecd": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "panLcLoggingDeviceEntry",
+      3
+    ]
+  },
+  "panLcLogTypeLastSeqNumRecd": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panLcLoggingDeviceEntry",
+      4
+    ]
+  },
+  "panLcLogTypeLastLogGen": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "panLcLoggingDeviceEntry",
+      5
+    ]
+  },
+  "panCommonEventObjs": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panCommonEvents",
+      1
+    ]
+  },
+  "panCommonEventEvents": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panCommonEvents",
+      2
+    ]
+  },
+  "panCommonEventEventsV2": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panCommonEventEvents",
+      0
+    ]
+  },
+  "panCommonEventDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panCommonEventObjs",
+      1
+    ]
+  },
+  "panAhoSw": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCounters",
+      1
+    ]
+  },
+  "panDfaSw": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCounters",
+      2
+    ]
+  },
+  "panFlowHostServiceAllow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCounters",
+      3
+    ]
+  },
+  "panHaPathmonSent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCounters",
+      4
+    ]
+  },
+  "panAhoFpga": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCounters",
+      5
+    ]
+  },
+  "panDfaFpga": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCounters",
+      6
+    ]
+  },
+  "panFpgaPkt": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCounters",
+      7
+    ]
+  },
+  "panGlobalCountersDOSCounters": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panGlobalCounters",
+      8
+    ]
+  },
+  "panGlobalCountersDropCounters": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panGlobalCounters",
+      9
+    ]
+  },
+  "panGlobalCountersIPFragmentationCounters": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panGlobalCounters",
+      10
+    ]
+  },
+  "panGlobalCountersTCPState": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panGlobalCounters",
+      11
+    ]
+  },
+  "panGlobalCountersTunnelInspect": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "panGlobalCounters",
+      12
+    ]
+  },
+  "panFlowDosAgMaxSessLimit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      1
+    ]
+  },
+  "panFlowDosBlkNumEntries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      2
+    ]
+  },
+  "panFlowDosClMaxSessLimit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      3
+    ]
+  },
+  "panFlowDosClSyncookieAckErr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      4
+    ]
+  },
+  "panFlowDosClSyncookieAckRcv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      5
+    ]
+  },
+  "panFlowDosClSyncookieBlkDur": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      6
+    ]
+  },
+  "panFlowDosClSyncookieMax": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      7
+    ]
+  },
+  "panFlowDosClSyncookieSent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      8
+    ]
+  },
+  "panFlowMeterVsysThrottle": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      9
+    ]
+  },
+  "panFlowPolicyDeny": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      10
+    ]
+  },
+  "panFlowPolicyNat": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      11
+    ]
+  },
+  "panFlowScanDrop": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      12
+    ]
+  },
+  "panFlowDosDropIpBlocked": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      13
+    ]
+  },
+  "panFlowDosRedIcmp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      14
+    ]
+  },
+  "panFlowDosRedIcmp6": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      15
+    ]
+  },
+  "panFlowDosRedIp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      16
+    ]
+  },
+  "panFlowDosRedTcp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      17
+    ]
+  },
+  "panFlowDosRedUdp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      18
+    ]
+  },
+  "panFlowDosRuleAgBlkDur": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      19
+    ]
+  },
+  "panFlowDosRuleAgRedAct": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      20
+    ]
+  },
+  "panFlowDosRuleAgRedMax": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      21
+    ]
+  },
+  "panFlowDosRuleDeny": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      22
+    ]
+  },
+  "panFlowDosRuleDrop": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      23
+    ]
+  },
+  "panFlowDosRuleDropAggr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      24
+    ]
+  },
+  "panFlowDosRuleDropClBlkDur": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      25
+    ]
+  },
+  "panFlowDosRuleDropClRedAct": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      26
+    ]
+  },
+  "panFlowDosRuleDropClRedMax": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      27
+    ]
+  },
+  "panFlowDosRuleDropClassified": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      28
+    ]
+  },
+  "panFlowDosSyncookieBlkDur": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      29
+    ]
+  },
+  "panFlowDosSyncookieMax": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      30
+    ]
+  },
+  "panFlowDosZoneRedAct": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      31
+    ]
+  },
+  "panFlowDosZoneRedMax": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      32
+    ]
+  },
+  "panFlowDosBlkSwEntries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      33
+    ]
+  },
+  "panFlowDosBlkHwEntries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      34
+    ]
+  },
+  "panFlowDosSyncookieNotTcpSyn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      35
+    ]
+  },
+  "panFlowDosSyncookieNotTcpSynAck": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      36
+    ]
+  },
+  "panFlowDosPfIpspoof": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      37
+    ]
+  },
+  "panFlowDosPfIpfrag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      38
+    ]
+  },
+  "panFlowDosPfPing0": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      39
+    ]
+  },
+  "panFlowDosPfIcmpfrag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      40
+    ]
+  },
+  "panFlowDosPfIcmplpkt": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      41
+    ]
+  },
+  "panFlowDosPfIcmperr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      42
+    ]
+  },
+  "panFlowDosPfNoreplyttl": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      43
+    ]
+  },
+  "panFlowDosPfNoreplyneedfrag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      44
+    ]
+  },
+  "panFlowDosPfStrictsource": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      45
+    ]
+  },
+  "panFlowDosPfLoosesource": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      46
+    ]
+  },
+  "panFlowDosPfTimestamp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      47
+    ]
+  },
+  "panFlowDosPfRecordroute": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      48
+    ]
+  },
+  "panFlowDosPfSecurity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      49
+    ]
+  },
+  "panFlowDosPfSatnetid": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      50
+    ]
+  },
+  "panFlowDosPfUnknown": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      51
+    ]
+  },
+  "panFlowDosPfBadoption": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      52
+    ]
+  },
+  "panFlowDosPfTcpoverlappingmismatch": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      53
+    ]
+  },
+  "panFlowDosPfStrictip": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      54
+    ]
+  },
+  "panFlowDosPfTcpsplithandshake": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      55
+    ]
+  },
+  "panFlowDosPfTcpsyndata": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      56
+    ]
+  },
+  "panFlowDosPfTcpsynackdata": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      57
+    ]
+  },
+  "panFlowDosIp6Route0": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      58
+    ]
+  },
+  "panFlowDosIp6Route1": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      59
+    ]
+  },
+  "panFlowDosIp6Route3": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      60
+    ]
+  },
+  "panFlowDosIp6Route4to252": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      61
+    ]
+  },
+  "panFlowDosIp6Route253": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      62
+    ]
+  },
+  "panFlowDosIp6Route254": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      63
+    ]
+  },
+  "panFlowDosIp6Route255": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      64
+    ]
+  },
+  "panFlowDosIp6Ip4cmpt": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      65
+    ]
+  },
+  "panFlowDosIp6Acast": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      66
+    ]
+  },
+  "panFlowDosIp6OptionsInvalidIPv6": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      67
+    ]
+  },
+  "panFlowDosIp6Icmpv6ErrorInvalid": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      68
+    ]
+  },
+  "panFlowDosIp6NeedlessIpv6FragHdr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      69
+    ]
+  },
+  "panFlowDosIp6RsvdSet": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      70
+    ]
+  },
+  "panFlowDosIPv6ExtHdrHopByHop": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      71
+    ]
+  },
+  "panFlowDosip6IPv6ExtHdrRouting": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      72
+    ]
+  },
+  "panFlowDosIp6IPv6ExtHdrDestOpt": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      73
+    ]
+  },
+  "panFlowDosPbpDrop": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      74
+    ]
+  },
+  "panFlowDosCurrSessIncrFailed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      75
+    ]
+  },
+  "panFlowDosCurrSessDecrFailed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDOSCounters",
+      76
+    ]
+  },
+  "panFlowFwdL3TtlZero": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDropCounters",
+      1
+    ]
+  },
+  "panFlowMeterHostThrottle": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDropCounters",
+      2
+    ]
+  },
+  "panFlowHostServiceDeny": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDropCounters",
+      3
+    ]
+  },
+  "panFlowHostServiceUnknown": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDropCounters",
+      4
+    ]
+  },
+  "panPktAllocFailure": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDropCounters",
+      5
+    ]
+  },
+  "panPktAllocFailureCos": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDropCounters",
+      6
+    ]
+  },
+  "panSessionDiscard": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersDropCounters",
+      7
+    ]
+  },
+  "panFlowIpfragFragErr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersIPFragmentationCounters",
+      1
+    ]
+  },
+  "panFlowIpfragRecv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersIPFragmentationCounters",
+      2
+    ]
+  },
+  "panTcpAllocWqeFailed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersTCPState",
+      1
+    ]
+  },
+  "panTcpDeny": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersTCPState",
+      2
+    ]
+  },
+  "panTcpDropOutOfWnd": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersTCPState",
+      3
+    ]
+  },
+  "panTcpDropPacket": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersTCPState",
+      4
+    ]
+  },
+  "panFlowActionClose": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersTCPState",
+      5
+    ]
+  },
+  "panFlowActionReset": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersTCPState",
+      6
+    ]
+  },
+  "panFlowTcpNonSyn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersTCPState",
+      7
+    ]
+  },
+  "panTcpExceedSegLimit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersTCPState",
+      8
+    ]
+  },
+  "panFlowTciGreDecapSuccess": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersTunnelInspect",
+      1
+    ]
+  },
+  "panFlowTciGreDecapFailed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersTunnelInspect",
+      2
+    ]
+  },
+  "panFlowTciGreDecapUnknown": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersTunnelInspect",
+      3
+    ]
+  },
+  "panFlowTciIpsecDecapSuccess": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersTunnelInspect",
+      4
+    ]
+  },
+  "panFlowTciIpsecDecapFailed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersTunnelInspect",
+      5
+    ]
+  },
+  "panFlowTciIpsecDecapUnknown": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersTunnelInspect",
+      6
+    ]
+  },
+  "panFlowTciGtpDecapSuccess": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersTunnelInspect",
+      7
+    ]
+  },
+  "panFlowTciGtpDecapFailed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersTunnelInspect",
+      8
+    ]
+  },
+  "panFlowTciGtpDecapUnknown": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "panGlobalCountersTunnelInspect",
+      9
+    ]
+  },
+  "panIfEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PanIfEntry"
+    },
+    "index": [
+      "ifIndex"
+    ],
+    "value": [
+      "panIfTable",
+      1
+    ]
+  },
+  "PanIfEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ifIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panIfEntry",
+      1
+    ]
+  },
+  "ifDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panIfEntry",
+      2
+    ]
+  },
+  "panIfActiveTcpCps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panIfEntry",
+      3
+    ]
+  },
+  "panIfActiveUdpCps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panIfEntry",
+      4
+    ]
+  },
+  "panIfActiveOtherIpCps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panIfEntry",
+      5
+    ]
+  },
+  "panZoneEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PanZoneEntry"
+    },
+    "index": [
+      "ifIndex"
+    ],
+    "value": [
+      "panZoneTable",
+      1
+    ]
+  },
+  "PanZoneEntry": {
+    "tp": "SEQUENCE"
+  },
+  "panZoneName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "panZoneEntry",
+      1
+    ]
+  },
+  "panZoneActiveTcpCps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panZoneEntry",
+      2
+    ]
+  },
+  "panZoneActiveUdpCps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panZoneEntry",
+      3
+    ]
+  },
+  "panZoneActiveOtherIpCps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "panZoneEntry",
+      4
+    ]
+  }
+}

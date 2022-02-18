@@ -1,0 +1,162 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "DisplayString"
+      ]
+    ],
+    [
+      "AH-SMI-MIB",
+      [
+        "ahProduct"
+      ]
+    ]
+  ],
+  "ahSystem": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "ahProduct",
+      2
+    ]
+  },
+  "ahSystemName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ahSystem",
+      1
+    ]
+  },
+  "ahSystemDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ahSystem",
+      2
+    ]
+  },
+  "ahCpuUtilization": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ahSystem",
+      3
+    ]
+  },
+  "ahMemUtilization": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ahSystem",
+      4
+    ]
+  },
+  "ahSystemSerial": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ahSystem",
+      5
+    ]
+  },
+  "ahDeviceMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ahSystem",
+      6
+    ]
+  },
+  "ahUpTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ahSystem",
+      7
+    ]
+  },
+  "ahHwVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ahSystem",
+      8
+    ]
+  },
+  "ahClientCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ahSystem",
+      9
+    ]
+  },
+  "ahEnvirmentTemp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ahSystem",
+      10
+    ]
+  },
+  "ahEnvirmentFan": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ahSystem",
+      11
+    ]
+  },
+  "ahFirmwareVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ahSystem",
+      12
+    ]
+  }
+}

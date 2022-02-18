@@ -1,0 +1,2787 @@
+{
+  "IMPORTS": [
+    [
+      "RFC1155-SMI",
+      [
+        "IpAddress",
+        "TimeTicks",
+        "experimental"
+      ]
+    ],
+    [
+      "RFC-1212",
+      [
+        "OBJECT-TYPE"
+      ]
+    ],
+    [
+      "RFC1213-MIB",
+      [
+        "DisplayString"
+      ]
+    ],
+    [
+      "RFC-1215",
+      [
+        "TRAP-TYPE"
+      ]
+    ]
+  ],
+  "FcNameId": {
+    "tp": "OCTET STRING"
+  },
+  "FcGlobalId": {
+    "tp": "OCTET STRING"
+  },
+  "FcAddressId": {
+    "tp": "OCTET STRING"
+  },
+  "FcEventSeverity": {
+    "tp": "INTEGER",
+    "values": {
+      "1": "unknown",
+      "2": "emergency",
+      "3": "alert",
+      "4": "critical",
+      "5": "error",
+      "6": "warning",
+      "7": "notify",
+      "8": "info",
+      "9": "debug",
+      "10": "mark"
+    }
+  },
+  "FcUnitType": {
+    "tp": "INTEGER",
+    "values": {
+      "1": "unknown",
+      "2": "other",
+      "3": "hub",
+      "4": "switch",
+      "5": "gateway",
+      "6": "converter",
+      "7": "hba",
+      "8": "proxy-agent",
+      "9": "storage-device",
+      "10": "host",
+      "11": "storage-subsystem",
+      "12": "module",
+      "13": "swdriver",
+      "14": "storage-access-device",
+      "15": "wdm",
+      "16": "ups",
+      "17": "nas"
+    }
+  },
+  "fcmgmt": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "experimental",
+      94
+    ]
+  },
+  "connSet": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "fcmgmt",
+      1
+    ]
+  },
+  "trapReg": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "fcmgmt",
+      2
+    ]
+  },
+  "statSet": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "fcmgmt",
+      4
+    ]
+  },
+  "connUnitServiceSet": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "fcmgmt",
+      5
+    ]
+  },
+  "connUnitServiceScalars": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "connUnitServiceSet",
+      1
+    ]
+  },
+  "connUnitServiceTables": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "connUnitServiceSet",
+      2
+    ]
+  },
+  "revisionNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "fcmgmt",
+      3
+    ]
+  },
+  "uNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connSet",
+      1
+    ]
+  },
+  "systemURL": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connSet",
+      2
+    ]
+  },
+  "statusChangeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "connSet",
+      3
+    ]
+  },
+  "configurationChangeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "connSet",
+      4
+    ]
+  },
+  "connUnitTableChangeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "connSet",
+      5
+    ]
+  },
+  "connUnitTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ConnUnitEntry"
+    },
+    "index": null,
+    "value": [
+      "connSet",
+      6
+    ]
+  },
+  "connUnitEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ConnUnitEntry"
+    },
+    "index": [
+      "connUnitId"
+    ],
+    "value": [
+      "connUnitTable",
+      1
+    ]
+  },
+  "ConnUnitEntry": {
+    "tp": "SEQUENCE"
+  },
+  "connUnitId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcGlobalId"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      1
+    ]
+  },
+  "connUnitGlobalId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcGlobalId"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      2
+    ]
+  },
+  "connUnitType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcUnitType"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      3
+    ]
+  },
+  "connUnitNumports": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      4
+    ]
+  },
+  "connUnitState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "online",
+        "3": "offline"
+      }
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      5
+    ]
+  },
+  "connUnitStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "unused",
+        "3": "ok",
+        "4": "warning",
+        "5": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      6
+    ]
+  },
+  "connUnitProduct": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      7
+    ]
+  },
+  "connUnitSn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      8
+    ]
+  },
+  "connUnitUpTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      9
+    ]
+  },
+  "connUnitUrl": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      10
+    ]
+  },
+  "connUnitDomainId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      11
+    ]
+  },
+  "connUnitProxyMaster": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "no",
+        "3": "yes"
+      }
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      12
+    ]
+  },
+  "connUnitPrincipal": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "no",
+        "3": "yes"
+      }
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      13
+    ]
+  },
+  "connUnitNumSensors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      14
+    ]
+  },
+  "connUnitStatusChangeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      15
+    ]
+  },
+  "connUnitConfigurationChangeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      16
+    ]
+  },
+  "connUnitNumRevs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      17
+    ]
+  },
+  "connUnitNumZones": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      18
+    ]
+  },
+  "connUnitModuleId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcGlobalId"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      19
+    ]
+  },
+  "connUnitName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      20
+    ]
+  },
+  "connUnitInfo": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      21
+    ]
+  },
+  "connUnitControl": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "invalid",
+        "3": "resetConnUnitColdStart",
+        "4": "resetConnUnitWarmStart",
+        "5": "offlineConnUnit",
+        "6": "onlineConnUnit"
+      }
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      22
+    ]
+  },
+  "connUnitContact": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      23
+    ]
+  },
+  "connUnitLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      24
+    ]
+  },
+  "connUnitEventFilter": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcEventSeverity"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      25
+    ]
+  },
+  "connUnitNumEvents": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      26
+    ]
+  },
+  "connUnitMaxEvents": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      27
+    ]
+  },
+  "connUnitEventCurrID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      28
+    ]
+  },
+  "connUnitFabricID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcGlobalId"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      29
+    ]
+  },
+  "connUnitNumLinks": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      30
+    ]
+  },
+  "connUnitVendorId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitEntry",
+      31
+    ]
+  },
+  "connUnitRevsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ConnUnitRevsEntry"
+    },
+    "index": null,
+    "value": [
+      "connSet",
+      7
+    ]
+  },
+  "connUnitRevsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ConnUnitRevsEntry"
+    },
+    "index": [
+      "connUnitRevsUnitId",
+      "connUnitRevsIndex"
+    ],
+    "value": [
+      "connUnitRevsTable",
+      1
+    ]
+  },
+  "ConnUnitRevsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "connUnitRevsUnitId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcGlobalId"
+    },
+    "index": null,
+    "value": [
+      "connUnitRevsEntry",
+      1
+    ]
+  },
+  "connUnitRevsIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitRevsEntry",
+      2
+    ]
+  },
+  "connUnitRevsRevId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitRevsEntry",
+      3
+    ]
+  },
+  "connUnitRevsDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitRevsEntry",
+      4
+    ]
+  },
+  "connUnitSensorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ConnUnitSensorEntry"
+    },
+    "index": null,
+    "value": [
+      "connSet",
+      8
+    ]
+  },
+  "connUnitSensorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ConnUnitSensorEntry"
+    },
+    "index": [
+      "connUnitSensorUnitId",
+      "connUnitSensorIndex"
+    ],
+    "value": [
+      "connUnitSensorTable",
+      1
+    ]
+  },
+  "ConnUnitSensorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "connUnitSensorUnitId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcGlobalId"
+    },
+    "index": null,
+    "value": [
+      "connUnitSensorEntry",
+      1
+    ]
+  },
+  "connUnitSensorIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitSensorEntry",
+      2
+    ]
+  },
+  "connUnitSensorName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitSensorEntry",
+      3
+    ]
+  },
+  "connUnitSensorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "other",
+        "3": "ok",
+        "4": "warning",
+        "5": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "connUnitSensorEntry",
+      4
+    ]
+  },
+  "connUnitSensorInfo": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitSensorEntry",
+      5
+    ]
+  },
+  "connUnitSensorMessage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitSensorEntry",
+      6
+    ]
+  },
+  "connUnitSensorType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "other",
+        "3": "battery",
+        "4": "fan",
+        "5": "power-supply",
+        "6": "transmitter",
+        "7": "enclosure",
+        "8": "board",
+        "9": "receiver"
+      }
+    },
+    "index": null,
+    "value": [
+      "connUnitSensorEntry",
+      7
+    ]
+  },
+  "connUnitSensorCharacteristic": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "other",
+        "3": "temperature",
+        "4": "pressure",
+        "5": "emf",
+        "6": "currentValue",
+        "7": "airflow",
+        "8": "frequency",
+        "9": "power",
+        "10": "door"
+      }
+    },
+    "index": null,
+    "value": [
+      "connUnitSensorEntry",
+      8
+    ]
+  },
+  "connUnitPortTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ConnUnitPortEntry"
+    },
+    "index": null,
+    "value": [
+      "connSet",
+      10
+    ]
+  },
+  "connUnitPortEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ConnUnitPortEntry"
+    },
+    "index": [
+      "connUnitPortUnitId",
+      "connUnitPortIndex"
+    ],
+    "value": [
+      "connUnitPortTable",
+      1
+    ]
+  },
+  "ConnUnitPortEntry": {
+    "tp": "SEQUENCE"
+  },
+  "connUnitPortUnitId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcGlobalId"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      1
+    ]
+  },
+  "connUnitPortIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      2
+    ]
+  },
+  "connUnitPortType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "other",
+        "3": "not-present",
+        "4": "hub-port",
+        "5": "n-port",
+        "6": "nl-port",
+        "7": "fl-port",
+        "8": "f-port",
+        "9": "e-port",
+        "10": "g-port",
+        "11": "domain-ctl",
+        "12": "hub-controller",
+        "13": "scsi",
+        "14": "escon",
+        "15": "lan",
+        "16": "wan",
+        "17": "ac",
+        "18": "dc",
+        "19": "ssa",
+        "20": "wdm",
+        "21": "ib",
+        "22": "ipstore"
+      }
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      3
+    ]
+  },
+  "connUnitPortFCClassCap": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      4
+    ]
+  },
+  "connUnitPortFCClassOp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      5
+    ]
+  },
+  "connUnitPortState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "online",
+        "3": "offline",
+        "4": "bypassed",
+        "5": "diagnostics"
+      }
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      6
+    ]
+  },
+  "connUnitPortStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "unused",
+        "3": "ready",
+        "4": "warning",
+        "5": "failure",
+        "6": "notparticipating",
+        "7": "initializing",
+        "8": "bypass",
+        "9": "ols",
+        "10": "other"
+      }
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      7
+    ]
+  },
+  "connUnitPortTransmitterType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "other",
+        "3": "unused",
+        "4": "shortwave",
+        "5": "longwave",
+        "6": "copper",
+        "7": "scsi",
+        "8": "longwaveNoOFC",
+        "9": "shortwaveNoOFC",
+        "10": "longwaveLED",
+        "11": "ssa"
+      }
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      8
+    ]
+  },
+  "connUnitPortModuleType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "other",
+        "3": "gbic",
+        "4": "embedded",
+        "5": "glm",
+        "6": "gbicSerialId",
+        "7": "gbicNoSerialId",
+        "8": "gbicNotInstalled",
+        "9": "smallFormFactor"
+      }
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      9
+    ]
+  },
+  "connUnitPortWwn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcGlobalId"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      10
+    ]
+  },
+  "connUnitPortFCId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcAddressId"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      11
+    ]
+  },
+  "connUnitPortSn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      12
+    ]
+  },
+  "connUnitPortRevision": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      13
+    ]
+  },
+  "connUnitPortVendor": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      14
+    ]
+  },
+  "connUnitPortSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      15
+    ]
+  },
+  "connUnitPortControl": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "invalid",
+        "3": "resetConnUnitPort",
+        "4": "bypassConnUnitPort",
+        "5": "unbypassConnUnitPort",
+        "6": "offlineConnUnitPort",
+        "7": "onlineConnUnitPort",
+        "8": "resetConnUnitPortCounters"
+      }
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      16
+    ]
+  },
+  "connUnitPortName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      17
+    ]
+  },
+  "connUnitPortPhysicalNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      18
+    ]
+  },
+  "connUnitPortStatObject": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      19
+    ]
+  },
+  "connUnitPortProtocolCap": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      20
+    ]
+  },
+  "connUnitPortProtocolOp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      21
+    ]
+  },
+  "connUnitPortNodeWwn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcNameId"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      22
+    ]
+  },
+  "connUnitPortHWState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "failed",
+        "3": "bypassed",
+        "4": "active",
+        "5": "loopback",
+        "6": "txfault",
+        "7": "noMedia",
+        "8": "linkDown"
+      }
+    },
+    "index": null,
+    "value": [
+      "connUnitPortEntry",
+      23
+    ]
+  },
+  "connUnitEventTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ConnUnitEventEntry"
+    },
+    "index": null,
+    "value": [
+      "connSet",
+      11
+    ]
+  },
+  "connUnitEventEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ConnUnitEventEntry"
+    },
+    "index": [
+      "connUnitEventUnitId",
+      "connUnitEventIndex"
+    ],
+    "value": [
+      "connUnitEventTable",
+      1
+    ]
+  },
+  "ConnUnitEventEntry": {
+    "tp": "SEQUENCE"
+  },
+  "connUnitEventUnitId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcGlobalId"
+    },
+    "index": null,
+    "value": [
+      "connUnitEventEntry",
+      1
+    ]
+  },
+  "connUnitEventIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitEventEntry",
+      2
+    ]
+  },
+  "connUnitEventId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitEventEntry",
+      3
+    ]
+  },
+  "connUnitREventTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitEventEntry",
+      4
+    ]
+  },
+  "connUnitSEventTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "connUnitEventEntry",
+      5
+    ]
+  },
+  "connUnitEventSeverity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcEventSeverity"
+    },
+    "index": null,
+    "value": [
+      "connUnitEventEntry",
+      6
+    ]
+  },
+  "connUnitEventType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "other",
+        "3": "status",
+        "4": "configuration",
+        "5": "topology"
+      }
+    },
+    "index": null,
+    "value": [
+      "connUnitEventEntry",
+      7
+    ]
+  },
+  "connUnitEventObject": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "connUnitEventEntry",
+      8
+    ]
+  },
+  "connUnitEventDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitEventEntry",
+      9
+    ]
+  },
+  "connUnitLinkTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ConnUnitLinkEntry"
+    },
+    "index": null,
+    "value": [
+      "connSet",
+      12
+    ]
+  },
+  "connUnitLinkEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ConnUnitLinkEntry"
+    },
+    "index": [
+      "connUnitLinkUnitId",
+      "connUnitLinkIndex"
+    ],
+    "value": [
+      "connUnitLinkTable",
+      1
+    ]
+  },
+  "ConnUnitLinkEntry": {
+    "tp": "SEQUENCE"
+  },
+  "connUnitLinkUnitId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcGlobalId"
+    },
+    "index": null,
+    "value": [
+      "connUnitLinkEntry",
+      1
+    ]
+  },
+  "connUnitLinkIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitLinkEntry",
+      2
+    ]
+  },
+  "connUnitLinkNodeIdX": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitLinkEntry",
+      3
+    ]
+  },
+  "connUnitLinkPortNumberX": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitLinkEntry",
+      4
+    ]
+  },
+  "connUnitLinkPortWwnX": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcGlobalId"
+    },
+    "index": null,
+    "value": [
+      "connUnitLinkEntry",
+      5
+    ]
+  },
+  "connUnitLinkNodeIdY": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitLinkEntry",
+      6
+    ]
+  },
+  "connUnitLinkPortNumberY": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitLinkEntry",
+      7
+    ]
+  },
+  "connUnitLinkPortWwnY": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcGlobalId"
+    },
+    "index": null,
+    "value": [
+      "connUnitLinkEntry",
+      8
+    ]
+  },
+  "connUnitLinkAgentAddressY": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitLinkEntry",
+      9
+    ]
+  },
+  "connUnitLinkAgentAddressTypeY": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitLinkEntry",
+      10
+    ]
+  },
+  "connUnitLinkAgentPortY": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitLinkEntry",
+      11
+    ]
+  },
+  "connUnitLinkUnitTypeY": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcUnitType"
+    },
+    "index": null,
+    "value": [
+      "connUnitLinkEntry",
+      12
+    ]
+  },
+  "connUnitLinkConnIdY": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitLinkEntry",
+      13
+    ]
+  },
+  "connUnitLinkCurrIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitLinkEntry",
+      14
+    ]
+  },
+  "connUnitZoneTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ConnUnitZoneEntry"
+    },
+    "index": null,
+    "value": [
+      "connSet",
+      13
+    ]
+  },
+  "connUnitZoneEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ConnUnitZoneEntry"
+    },
+    "index": [
+      "connUnitZoneIndex",
+      "connUnitZoneMemberIndex"
+    ],
+    "value": [
+      "connUnitZoneTable",
+      1
+    ]
+  },
+  "ConnUnitZoneEntry": {
+    "tp": "SEQUENCE"
+  },
+  "connUnitZoneIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitZoneEntry",
+      1
+    ]
+  },
+  "connUnitZoneMemberIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitZoneEntry",
+      2
+    ]
+  },
+  "connUnitZoneSetName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitZoneEntry",
+      3
+    ]
+  },
+  "connUnitZoneSetNumZones": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitZoneEntry",
+      4
+    ]
+  },
+  "connUnitZoneName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitZoneEntry",
+      5
+    ]
+  },
+  "connUnitZoneCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitZoneEntry",
+      6
+    ]
+  },
+  "connUnitZoneEnforcementState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitZoneEntry",
+      7
+    ]
+  },
+  "connUnitZoneAttributeBlock": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitZoneEntry",
+      8
+    ]
+  },
+  "connUnitZoneNumMembers": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitZoneEntry",
+      9
+    ]
+  },
+  "connUnitZoneMemberIdType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitZoneEntry",
+      10
+    ]
+  },
+  "connUnitZoneMemberID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcGlobalId"
+    },
+    "index": null,
+    "value": [
+      "connUnitZoneEntry",
+      11
+    ]
+  },
+  "connUnitZoningAliasTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ConnUnitZoningAliasEntry"
+    },
+    "index": null,
+    "value": [
+      "connSet",
+      14
+    ]
+  },
+  "connUnitZoningAliasEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ConnUnitZoningAliasEntry"
+    },
+    "index": [
+      "connUnitZoningAliasIndex",
+      "connUnitZoningAliasMemberIndex"
+    ],
+    "value": [
+      "connUnitZoningAliasTable",
+      1
+    ]
+  },
+  "ConnUnitZoningAliasEntry": {
+    "tp": "SEQUENCE"
+  },
+  "connUnitZoningAliasIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitZoningAliasEntry",
+      1
+    ]
+  },
+  "connUnitZoningAliasMemberIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitZoningAliasEntry",
+      2
+    ]
+  },
+  "connUnitZoningAliasNumAliases": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitZoningAliasEntry",
+      3
+    ]
+  },
+  "connUnitZoningAliasName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitZoningAliasEntry",
+      4
+    ]
+  },
+  "connUnitZoningAliasNumMembers": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitZoningAliasEntry",
+      5
+    ]
+  },
+  "connUnitZoningAliasMemberIdType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitZoningAliasEntry",
+      6
+    ]
+  },
+  "connUnitZoningAliasMemberID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcGlobalId"
+    },
+    "index": null,
+    "value": [
+      "connUnitZoningAliasEntry",
+      7
+    ]
+  },
+  "connUnitPortStatTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ConnUnitPortStatEntry"
+    },
+    "index": null,
+    "value": [
+      "statSet",
+      5
+    ]
+  },
+  "connUnitPortStatEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ConnUnitPortStatEntry"
+    },
+    "index": [
+      "connUnitPortStatUnitId",
+      "connUnitPortStatIndex"
+    ],
+    "value": [
+      "connUnitPortStatTable",
+      1
+    ]
+  },
+  "ConnUnitPortStatEntry": {
+    "tp": "SEQUENCE"
+  },
+  "connUnitPortStatUnitId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcGlobalId"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      1
+    ]
+  },
+  "connUnitPortStatIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      2
+    ]
+  },
+  "connUnitPortStatCountError": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      3
+    ]
+  },
+  "connUnitPortStatCountTxObjects": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      4
+    ]
+  },
+  "connUnitPortStatCountRxObjects": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      5
+    ]
+  },
+  "connUnitPortStatCountTxElements": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      6
+    ]
+  },
+  "connUnitPortStatCountRxElements": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      7
+    ]
+  },
+  "connUnitPortStatCountBBCreditZero": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      8
+    ]
+  },
+  "connUnitPortStatCountInputBuffersFull": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      9
+    ]
+  },
+  "connUnitPortStatCountFBSYFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      10
+    ]
+  },
+  "connUnitPortStatCountPBSYFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      11
+    ]
+  },
+  "connUnitPortStatCountFRJTFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      12
+    ]
+  },
+  "connUnitPortStatCountPRJTFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      13
+    ]
+  },
+  "connUnitPortStatCountClass1RxFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      14
+    ]
+  },
+  "connUnitPortStatCountClass1TxFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      15
+    ]
+  },
+  "connUnitPortStatCountClass1FBSYFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      16
+    ]
+  },
+  "connUnitPortStatCountClass1PBSYFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      17
+    ]
+  },
+  "connUnitPortStatCountClass1FRJTFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      18
+    ]
+  },
+  "connUnitPortStatCountClass1PRJTFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      19
+    ]
+  },
+  "connUnitPortStatCountClass2RxFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      20
+    ]
+  },
+  "connUnitPortStatCountClass2TxFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      21
+    ]
+  },
+  "connUnitPortStatCountClass2FBSYFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      22
+    ]
+  },
+  "connUnitPortStatCountClass2PBSYFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      23
+    ]
+  },
+  "connUnitPortStatCountClass2FRJTFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      24
+    ]
+  },
+  "connUnitPortStatCountClass2PRJTFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      25
+    ]
+  },
+  "connUnitPortStatCountClass3RxFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      26
+    ]
+  },
+  "connUnitPortStatCountClass3TxFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      27
+    ]
+  },
+  "connUnitPortStatCountClass3Discards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      28
+    ]
+  },
+  "connUnitPortStatCountRxMulticastObjects": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      29
+    ]
+  },
+  "connUnitPortStatCountTxMulticastObjects": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      30
+    ]
+  },
+  "connUnitPortStatCountRxBroadcastObjects": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      31
+    ]
+  },
+  "connUnitPortStatCountTxBroadcastObjects": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      32
+    ]
+  },
+  "connUnitPortStatCountRxLinkResets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      33
+    ]
+  },
+  "connUnitPortStatCountTxLinkResets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      34
+    ]
+  },
+  "connUnitPortStatCountNumberLinkResets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      35
+    ]
+  },
+  "connUnitPortStatCountRxOfflineSequences": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      36
+    ]
+  },
+  "connUnitPortStatCountTxOfflineSequences": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      37
+    ]
+  },
+  "connUnitPortStatCountNumberOfflineSequences": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      38
+    ]
+  },
+  "connUnitPortStatCountLinkFailures": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      39
+    ]
+  },
+  "connUnitPortStatCountInvalidCRC": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      40
+    ]
+  },
+  "connUnitPortStatCountInvalidTxWords": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      41
+    ]
+  },
+  "connUnitPortStatCountPrimitiveSequenceProtocolErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      42
+    ]
+  },
+  "connUnitPortStatCountLossofSignal": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      43
+    ]
+  },
+  "connUnitPortStatCountLossofSynchronization": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      44
+    ]
+  },
+  "connUnitPortStatCountInvalidOrderedSets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      45
+    ]
+  },
+  "connUnitPortStatCountFramesTooLong": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      46
+    ]
+  },
+  "connUnitPortStatCountFramesTruncated": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      47
+    ]
+  },
+  "connUnitPortStatCountAddressErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      48
+    ]
+  },
+  "connUnitPortStatCountDelimiterErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      49
+    ]
+  },
+  "connUnitPortStatCountEncodingDisparityErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPortStatEntry",
+      50
+    ]
+  },
+  "connUnitSnsMaxEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitServiceScalars",
+      1
+    ]
+  },
+  "connUnitSnsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ConnUnitSnsEntry"
+    },
+    "index": null,
+    "value": [
+      "connUnitServiceTables",
+      1
+    ]
+  },
+  "connUnitSnsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ConnUnitSnsEntry"
+    },
+    "index": [
+      "connUnitSnsId",
+      "connUnitSnsPortName",
+      "connUnitSnsPortIdentifier"
+    ],
+    "value": [
+      "connUnitSnsTable",
+      1
+    ]
+  },
+  "ConnUnitSnsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "connUnitSnsId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitSnsEntry",
+      1
+    ]
+  },
+  "connUnitSnsPortIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitSnsEntry",
+      2
+    ]
+  },
+  "connUnitSnsPortIdentifier": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcAddressId"
+    },
+    "index": null,
+    "value": [
+      "connUnitSnsEntry",
+      3
+    ]
+  },
+  "connUnitSnsPortName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcNameId"
+    },
+    "index": null,
+    "value": [
+      "connUnitSnsEntry",
+      4
+    ]
+  },
+  "connUnitSnsNodeName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcNameId"
+    },
+    "index": null,
+    "value": [
+      "connUnitSnsEntry",
+      5
+    ]
+  },
+  "connUnitSnsClassOfSvc": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitSnsEntry",
+      6
+    ]
+  },
+  "connUnitSnsNodeIPAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitSnsEntry",
+      7
+    ]
+  },
+  "connUnitSnsProcAssoc": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitSnsEntry",
+      8
+    ]
+  },
+  "connUnitSnsFC4Type": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitSnsEntry",
+      9
+    ]
+  },
+  "connUnitSnsPortType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitSnsEntry",
+      10
+    ]
+  },
+  "connUnitSnsPortIPAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitSnsEntry",
+      11
+    ]
+  },
+  "connUnitSnsFabricPortName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcNameId"
+    },
+    "index": null,
+    "value": [
+      "connUnitSnsEntry",
+      12
+    ]
+  },
+  "connUnitSnsHardAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcGlobalId"
+    },
+    "index": null,
+    "value": [
+      "connUnitSnsEntry",
+      13
+    ]
+  },
+  "connUnitSnsSymbolicPortName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitSnsEntry",
+      14
+    ]
+  },
+  "connUnitSnsSymbolicNodeName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitSnsEntry",
+      15
+    ]
+  },
+  "connUnitPlatformMaxEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitServiceScalars",
+      2
+    ]
+  },
+  "connUnitPlatformTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ConnUnitPlatformEntry"
+    },
+    "index": null,
+    "value": [
+      "connUnitServiceTables",
+      2
+    ]
+  },
+  "connUnitPlatformEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ConnUnitPlatformEntry"
+    },
+    "index": [
+      "connUnitPlatformIndex",
+      "connUnitPlatformNodeIndex"
+    ],
+    "value": [
+      "connUnitPlatformTable",
+      1
+    ]
+  },
+  "ConnUnitPlatformEntry": {
+    "tp": "SEQUENCE"
+  },
+  "connUnitPlatformIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitPlatformEntry",
+      1
+    ]
+  },
+  "connUnitPlatformNodeIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitPlatformEntry",
+      2
+    ]
+  },
+  "connUnitPlatformUnitID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcGlobalId"
+    },
+    "index": null,
+    "value": [
+      "connUnitPlatformEntry",
+      3
+    ]
+  },
+  "connUnitPlatformName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "connUnitPlatformEntry",
+      4
+    ]
+  },
+  "connUnitPlatformType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcUnitType"
+    },
+    "index": null,
+    "value": [
+      "connUnitPlatformEntry",
+      6
+    ]
+  },
+  "connUnitPlatformLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitPlatformEntry",
+      7
+    ]
+  },
+  "connUnitPlatformDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitPlatformEntry",
+      8
+    ]
+  },
+  "connUnitPlatformLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitPlatformEntry",
+      9
+    ]
+  },
+  "connUnitPlatformManagementUrl": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "connUnitPlatformEntry",
+      10
+    ]
+  },
+  "connUnitPlatformNumNodes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "connUnitPlatformEntry",
+      11
+    ]
+  },
+  "connUnitPlatformNodeName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcGlobalId"
+    },
+    "index": null,
+    "value": [
+      "connUnitPlatformEntry",
+      12
+    ]
+  },
+  "trapMaxClients": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "trapReg",
+      1
+    ]
+  },
+  "trapClientCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "trapReg",
+      2
+    ]
+  },
+  "trapRegTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF TrapRegEntry"
+    },
+    "index": null,
+    "value": [
+      "trapReg",
+      3
+    ]
+  },
+  "trapRegEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TrapRegEntry"
+    },
+    "index": [
+      "trapRegIpAddress",
+      "trapRegPort"
+    ],
+    "value": [
+      "trapRegTable",
+      1
+    ]
+  },
+  "TrapRegEntry": {
+    "tp": "SEQUENCE"
+  },
+  "trapRegIpAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "trapRegEntry",
+      1
+    ]
+  },
+  "trapRegPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "trapRegEntry",
+      2
+    ]
+  },
+  "trapRegFilter": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FcEventSeverity"
+    },
+    "index": null,
+    "value": [
+      "trapRegEntry",
+      3
+    ]
+  },
+  "trapRegRowState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "rowDestroy",
+        "2": "rowInactive",
+        "3": "rowActive"
+      }
+    },
+    "index": null,
+    "value": [
+      "trapRegEntry",
+      4
+    ]
+  }
+}

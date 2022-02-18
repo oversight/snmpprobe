@@ -1,0 +1,181 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Integer32",
+        "Counter32",
+        "Counter64"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "DisplayString"
+      ]
+    ],
+    [
+      "UCD-SNMP-MIB",
+      [
+        "ucdExperimental"
+      ]
+    ]
+  ],
+  "ucdDiskIOMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "ucdExperimental",
+      15
+    ]
+  },
+  "diskIOTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF DiskIOEntry"
+    },
+    "index": null,
+    "value": [
+      "ucdDiskIOMIB",
+      1
+    ]
+  },
+  "diskIOEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DiskIOEntry"
+    },
+    "index": [
+      "diskIOIndex"
+    ],
+    "value": [
+      "diskIOTable",
+      1
+    ]
+  },
+  "DiskIOEntry": {
+    "tp": "SEQUENCE"
+  },
+  "diskIOIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "diskIOEntry",
+      1
+    ]
+  },
+  "diskIODevice": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "diskIOEntry",
+      2
+    ]
+  },
+  "diskIONRead": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "diskIOEntry",
+      3
+    ]
+  },
+  "diskIONWritten": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "diskIOEntry",
+      4
+    ]
+  },
+  "diskIOReads": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "diskIOEntry",
+      5
+    ]
+  },
+  "diskIOWrites": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "diskIOEntry",
+      6
+    ]
+  },
+  "diskIOLA1": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "diskIOEntry",
+      9
+    ]
+  },
+  "diskIOLA5": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "diskIOEntry",
+      10
+    ]
+  },
+  "diskIOLA15": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "diskIOEntry",
+      11
+    ]
+  },
+  "diskIONReadX": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "diskIOEntry",
+      12
+    ]
+  },
+  "diskIONWrittenX": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "diskIOEntry",
+      13
+    ]
+  }
+}

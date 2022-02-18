@@ -1,0 +1,679 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "Integer32",
+        "Counter32",
+        "OBJECT-TYPE",
+        "MODULE-IDENTITY",
+        "NOTIFICATION-TYPE"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "DisplayString",
+        "TimeStamp",
+        "TruthValue"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP",
+        "NOTIFICATION-GROUP"
+      ]
+    ],
+    [
+      "ENTITY-MIB",
+      [
+        "PhysicalIndex"
+      ]
+    ],
+    [
+      "HP-ICF-OID",
+      [
+        "hpicfObjectModules",
+        "hpicfCommon",
+        "hpicfCommonTrapsPrefix"
+      ]
+    ]
+  ],
+  "hpicfChassisMib": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "hpicfObjectModules",
+      3
+    ]
+  },
+  "hpicfChassis": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfCommon",
+      2
+    ]
+  },
+  "hpicfChassisId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "hpicfChassis",
+      1
+    ]
+  },
+  "hpicfChassisNumSlots": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hpicfChassis",
+      2
+    ]
+  },
+  "hpicfSlotTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpicfSlotEntry"
+    },
+    "index": null,
+    "value": [
+      "hpicfChassis",
+      3
+    ]
+  },
+  "hpicfSlotEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpicfSlotEntry"
+    },
+    "index": [
+      "hpicfSlotIndex"
+    ],
+    "value": [
+      "hpicfSlotTable",
+      1
+    ]
+  },
+  "HpicfSlotEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpicfSlotIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hpicfSlotEntry",
+      1
+    ]
+  },
+  "hpicfSlotObjectId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "hpicfSlotEntry",
+      2
+    ]
+  },
+  "hpicfSlotLastChange": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "hpicfSlotEntry",
+      3
+    ]
+  },
+  "hpicfSlotDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "hpicfSlotEntry",
+      4
+    ]
+  },
+  "hpicfEntityTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpicfEntityEntry"
+    },
+    "index": null,
+    "value": [
+      "hpicfChassis",
+      4
+    ]
+  },
+  "hpicfEntityEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpicfEntityEntry"
+    },
+    "index": [
+      "hpicfEntityIndex"
+    ],
+    "value": [
+      "hpicfEntityTable",
+      1
+    ]
+  },
+  "HpicfEntityEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpicfEntityIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hpicfEntityEntry",
+      1
+    ]
+  },
+  "hpicfEntityFunction": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hpicfEntityEntry",
+      2
+    ]
+  },
+  "hpicfEntityObjectId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "hpicfEntityEntry",
+      3
+    ]
+  },
+  "hpicfEntityDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "hpicfEntityEntry",
+      4
+    ]
+  },
+  "hpicfEntityTimestamp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "hpicfEntityEntry",
+      5
+    ]
+  },
+  "hpicfSlotMapTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpicfSlotMapEntry"
+    },
+    "index": null,
+    "value": [
+      "hpicfChassis",
+      5
+    ]
+  },
+  "hpicfSlotMapEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpicfSlotMapEntry"
+    },
+    "index": [
+      "hpicfSlotMapSlot",
+      "hpicfSlotMapEntity"
+    ],
+    "value": [
+      "hpicfSlotMapTable",
+      1
+    ]
+  },
+  "HpicfSlotMapEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpicfSlotMapSlot": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hpicfSlotMapEntry",
+      1
+    ]
+  },
+  "hpicfSlotMapEntity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hpicfSlotMapEntry",
+      2
+    ]
+  },
+  "hpicfSensorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpicfSensorEntry"
+    },
+    "index": null,
+    "value": [
+      "hpicfChassis",
+      6
+    ]
+  },
+  "hpicfSensorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpicfSensorEntry"
+    },
+    "index": [
+      "hpicfSensorIndex"
+    ],
+    "value": [
+      "hpicfSensorTable",
+      1
+    ]
+  },
+  "HpicfSensorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpicfSensorIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hpicfSensorEntry",
+      1
+    ]
+  },
+  "hpicfSensorObjectId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "hpicfSensorEntry",
+      2
+    ]
+  },
+  "hpicfSensorNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hpicfSensorEntry",
+      3
+    ]
+  },
+  "hpicfSensorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "bad",
+        "3": "warning",
+        "4": "good",
+        "5": "notPresent"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpicfSensorEntry",
+      4
+    ]
+  },
+  "hpicfSensorWarnings": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "hpicfSensorEntry",
+      5
+    ]
+  },
+  "hpicfSensorFailures": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "hpicfSensorEntry",
+      6
+    ]
+  },
+  "hpicfSensorDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "hpicfSensorEntry",
+      7
+    ]
+  },
+  "hpicfChassisAddrTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpicfChassisAddrEntry"
+    },
+    "index": null,
+    "value": [
+      "hpicfChassis",
+      7
+    ]
+  },
+  "hpicfChassisAddrEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpicfChassisAddrEntry"
+    },
+    "index": [
+      "hpicfChasAddrType",
+      "hpicfChasAddrAddress"
+    ],
+    "value": [
+      "hpicfChassisAddrTable",
+      1
+    ]
+  },
+  "HpicfChassisAddrEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpicfChasAddrType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "ipAddr",
+        "2": "ipxAddr",
+        "3": "macAddr"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpicfChassisAddrEntry",
+      1
+    ]
+  },
+  "hpicfChasAddrAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "hpicfChassisAddrEntry",
+      2
+    ]
+  },
+  "hpicfChasAddrEntity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hpicfChassisAddrEntry",
+      3
+    ]
+  },
+  "hpChassisTemperature": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfChassis",
+      8
+    ]
+  },
+  "hpSystemAirTempTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HpSystemAirTempEntry"
+    },
+    "index": null,
+    "value": [
+      "hpChassisTemperature",
+      1
+    ]
+  },
+  "hpSystemAirTempEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HpSystemAirTempEntry"
+    },
+    "index": [
+      "hpSystemAirSensor"
+    ],
+    "value": [
+      "hpSystemAirTempTable",
+      1
+    ]
+  },
+  "HpSystemAirTempEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hpSystemAirSensor": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hpSystemAirTempEntry",
+      1
+    ]
+  },
+  "hpSystemAirName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "hpSystemAirTempEntry",
+      2
+    ]
+  },
+  "hpSystemAirCurrentTemp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "hpSystemAirTempEntry",
+      3
+    ]
+  },
+  "hpSystemAirMaxTemp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "hpSystemAirTempEntry",
+      4
+    ]
+  },
+  "hpSystemAirMinTemp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "hpSystemAirTempEntry",
+      5
+    ]
+  },
+  "hpSystemAirOverTemp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yes",
+        "2": "no"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpSystemAirTempEntry",
+      6
+    ]
+  },
+  "hpSystemAirThresholdTemp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "hpSystemAirTempEntry",
+      7
+    ]
+  },
+  "hpSystemAirAvgTemp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "hpSystemAirTempEntry",
+      8
+    ]
+  },
+  "hpSystemAirEntPhysicalIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PhysicalIndex"
+    },
+    "index": null,
+    "value": [
+      "hpSystemAirTempEntry",
+      9
+    ]
+  },
+  "hpicfFanTrayType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "standard",
+        "2": "highPerformance"
+      }
+    },
+    "index": null,
+    "value": [
+      "hpicfChassis",
+      9
+    ]
+  },
+  "hpicfOpacityShieldInstalled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "hpicfChassis",
+      10
+    ]
+  },
+  "hpicfChassisConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfChassisMib",
+      1
+    ]
+  },
+  "hpicfChassisCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfChassisConformance",
+      1
+    ]
+  },
+  "hpicfChassisGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hpicfChassisConformance",
+      2
+    ]
+  },
+  "hpicfChassisBasicGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "hpicfChassisGroups",
+      1
+    ]
+  },
+  "hpicfSensorGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "hpicfChassisGroups",
+      2
+    ]
+  },
+  "hpicfChassisAddrGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "hpicfChassisGroups",
+      3
+    ]
+  },
+  "hpicfChasTempGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "hpicfChassisGroups",
+      5
+    ]
+  },
+  "hpicfOpacityShieldsGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "hpicfChassisGroups",
+      6
+    ]
+  }
+}

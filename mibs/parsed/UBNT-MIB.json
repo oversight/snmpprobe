@@ -1,0 +1,212 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Integer32",
+        "enterprises"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "DisplayString"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "OBJECT-GROUP",
+        "MODULE-COMPLIANCE"
+      ]
+    ]
+  ],
+  "ubntMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "ubnt",
+      1
+    ]
+  },
+  "ubnt": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      41112
+    ]
+  },
+  "ubntSnmpInfo": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ubntMIB",
+      2
+    ]
+  },
+  "ubntSnmpGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ubntSnmpInfo",
+      1
+    ]
+  },
+  "ubntAirosGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ubntSnmpInfo",
+      2
+    ]
+  },
+  "ubntAirFiberGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ubntSnmpInfo",
+      3
+    ]
+  },
+  "ubntEdgeMaxGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ubntSnmpInfo",
+      4
+    ]
+  },
+  "ubntUniFiGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ubntSnmpInfo",
+      5
+    ]
+  },
+  "ubntAirVisionGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ubntSnmpInfo",
+      6
+    ]
+  },
+  "ubntMFiGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ubntSnmpInfo",
+      7
+    ]
+  },
+  "ubntUniTelGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ubntSnmpInfo",
+      8
+    ]
+  },
+  "ubntAirFIBER": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ubntMIB",
+      3
+    ]
+  },
+  "ubntEdgeMax": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ubntMIB",
+      5
+    ]
+  },
+  "ubntUniFi": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ubntMIB",
+      6
+    ]
+  },
+  "ubntAirVision": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ubntMIB",
+      7
+    ]
+  },
+  "ubntMFi": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ubntMIB",
+      8
+    ]
+  },
+  "ubntUniTel": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ubntMIB",
+      9
+    ]
+  },
+  "ubntORTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF UbntOREntry"
+    },
+    "index": null,
+    "value": [
+      "ubntMIB",
+      1
+    ]
+  },
+  "ubntOREntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "UbntOREntry"
+    },
+    "index": [
+      "ubntORIndex"
+    ],
+    "value": [
+      "ubntORTable",
+      1
+    ]
+  },
+  "UbntOREntry": {
+    "tp": "SEQUENCE"
+  },
+  "ubntORIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ubntOREntry",
+      1
+    ]
+  },
+  "ubntORID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "ubntOREntry",
+      2
+    ]
+  },
+  "ubntORDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ubntOREntry",
+      3
+    ]
+  },
+  "ubntORInfoGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ubntSnmpGroups",
+      1
+    ]
+  }
+}

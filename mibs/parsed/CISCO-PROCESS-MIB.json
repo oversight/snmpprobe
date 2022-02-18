@@ -1,0 +1,1972 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Counter32",
+        "Gauge32",
+        "Unsigned32",
+        "NOTIFICATION-TYPE",
+        "Counter64"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP",
+        "NOTIFICATION-GROUP"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TimeStamp",
+        "DisplayString",
+        "RowStatus",
+        "TruthValue",
+        "RowPointer",
+        "TEXTUAL-CONVENTION"
+      ]
+    ],
+    [
+      "SNMP-FRAMEWORK-MIB",
+      [
+        "SnmpAdminString"
+      ]
+    ],
+    [
+      "HCNUM-TC",
+      [
+        "CounterBasedGauge64"
+      ]
+    ],
+    [
+      "CISCO-TC",
+      [
+        "EntPhysicalIndexOrZero",
+        "Unsigned64"
+      ]
+    ],
+    [
+      "CISCO-SMI",
+      [
+        "ciscoMgmt"
+      ]
+    ]
+  ],
+  "ciscoProcessMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "ciscoMgmt",
+      109
+    ]
+  },
+  "CPULoadAverage": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "display_hint": "d"
+  },
+  "ciscoProcessMIBObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoProcessMIB",
+      1
+    ]
+  },
+  "cpmCPU": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoProcessMIBObjects",
+      1
+    ]
+  },
+  "cpmProcess": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoProcessMIBObjects",
+      2
+    ]
+  },
+  "cpmThread": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoProcessMIBObjects",
+      3
+    ]
+  },
+  "cpmVirtualProcess": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoProcessMIBObjects",
+      4
+    ]
+  },
+  "cpmCPUHistory": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpmProcess",
+      5
+    ]
+  },
+  "cpmCPUTotalTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpmCPUTotalEntry"
+    },
+    "index": null,
+    "value": [
+      "cpmCPU",
+      1
+    ]
+  },
+  "cpmCPUTotalEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpmCPUTotalEntry"
+    },
+    "index": [
+      "cpmCPUTotalIndex"
+    ],
+    "value": [
+      "cpmCPUTotalTable",
+      1
+    ]
+  },
+  "CpmCPUTotalEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpmCPUTotalIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      1
+    ]
+  },
+  "cpmCPUTotalPhysicalIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntPhysicalIndexOrZero"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      2
+    ]
+  },
+  "cpmCPUTotal5sec": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      3
+    ]
+  },
+  "cpmCPUTotal1min": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      4
+    ]
+  },
+  "cpmCPUTotal5min": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      5
+    ]
+  },
+  "cpmCPUTotal5secRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      6
+    ]
+  },
+  "cpmCPUTotal1minRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      7
+    ]
+  },
+  "cpmCPUTotal5minRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      8
+    ]
+  },
+  "cpmCPUMonInterval": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      9
+    ]
+  },
+  "cpmCPUTotalMonIntervalValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      10
+    ]
+  },
+  "cpmCPUInterruptMonIntervalValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      11
+    ]
+  },
+  "cpmCPUMemoryUsed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      12
+    ]
+  },
+  "cpmCPUMemoryFree": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      13
+    ]
+  },
+  "cpmCPUMemoryKernelReserved": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      14
+    ]
+  },
+  "cpmCPUMemoryLowest": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      15
+    ]
+  },
+  "cpmCPUMemoryUsedOvrflw": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      16
+    ]
+  },
+  "cpmCPUMemoryHCUsed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CounterBasedGauge64"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      17
+    ]
+  },
+  "cpmCPUMemoryFreeOvrflw": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      18
+    ]
+  },
+  "cpmCPUMemoryHCFree": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      19
+    ]
+  },
+  "cpmCPUMemoryKernelReservedOvrflw": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      20
+    ]
+  },
+  "cpmCPUMemoryHCKernelReserved": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CounterBasedGauge64"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      21
+    ]
+  },
+  "cpmCPUMemoryLowestOvrflw": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      22
+    ]
+  },
+  "cpmCPUMemoryHCLowest": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CounterBasedGauge64"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      23
+    ]
+  },
+  "cpmCPULoadAvg1min": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CPULoadAverage"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      24
+    ]
+  },
+  "cpmCPULoadAvg5min": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CPULoadAverage"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      25
+    ]
+  },
+  "cpmCPULoadAvg15min": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CPULoadAverage"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      26
+    ]
+  },
+  "cpmCPUMemoryCommitted": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      27
+    ]
+  },
+  "cpmCPUMemoryCommittedOvrflw": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      28
+    ]
+  },
+  "cpmCPUMemoryHCCommitted": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CounterBasedGauge64"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUTotalEntry",
+      29
+    ]
+  },
+  "cpmCoreTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpmCoreEntry"
+    },
+    "index": null,
+    "value": [
+      "cpmCPU",
+      2
+    ]
+  },
+  "cpmCoreEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpmCoreEntry"
+    },
+    "index": [
+      "cpmCPUTotalIndex",
+      "cpmCoreIndex"
+    ],
+    "value": [
+      "cpmCoreTable",
+      1
+    ]
+  },
+  "CpmCoreEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpmCoreIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmCoreEntry",
+      1
+    ]
+  },
+  "cpmCorePhysicalIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntPhysicalIndexOrZero"
+    },
+    "index": null,
+    "value": [
+      "cpmCoreEntry",
+      2
+    ]
+  },
+  "cpmCore5sec": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCoreEntry",
+      3
+    ]
+  },
+  "cpmCore1min": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCoreEntry",
+      4
+    ]
+  },
+  "cpmCore5min": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCoreEntry",
+      5
+    ]
+  },
+  "cpmCoreLoadAvg1min": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CPULoadAverage"
+    },
+    "index": null,
+    "value": [
+      "cpmCoreEntry",
+      6
+    ]
+  },
+  "cpmCoreLoadAvg5min": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CPULoadAverage"
+    },
+    "index": null,
+    "value": [
+      "cpmCoreEntry",
+      7
+    ]
+  },
+  "cpmCoreLoadAvg15min": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CPULoadAverage"
+    },
+    "index": null,
+    "value": [
+      "cpmCoreEntry",
+      8
+    ]
+  },
+  "cpmProcessTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpmProcessEntry"
+    },
+    "index": null,
+    "value": [
+      "cpmProcess",
+      1
+    ]
+  },
+  "cpmProcessEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpmProcessEntry"
+    },
+    "index": [
+      "cpmCPUTotalIndex",
+      "cpmProcessPID"
+    ],
+    "value": [
+      "cpmProcessTable",
+      1
+    ]
+  },
+  "CpmProcessEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpmProcessPID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessEntry",
+      1
+    ]
+  },
+  "cpmProcessName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessEntry",
+      2
+    ]
+  },
+  "cpmProcessuSecs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessEntry",
+      4
+    ]
+  },
+  "cpmProcessTimeCreated": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessEntry",
+      5
+    ]
+  },
+  "cpmProcessAverageUSecs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessEntry",
+      6
+    ]
+  },
+  "cpmProcessExtTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpmProcessExtEntry"
+    },
+    "index": null,
+    "value": [
+      "cpmProcess",
+      2
+    ]
+  },
+  "cpmProcessExtEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpmProcessExtEntry"
+    },
+    "index": "cpmProcessEntry",
+    "value": [
+      "cpmProcessExtTable",
+      1
+    ]
+  },
+  "CpmProcessExtEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpmProcExtMemAllocated": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtEntry",
+      1
+    ]
+  },
+  "cpmProcExtMemFreed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtEntry",
+      2
+    ]
+  },
+  "cpmProcExtInvoked": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtEntry",
+      3
+    ]
+  },
+  "cpmProcExtRuntime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtEntry",
+      4
+    ]
+  },
+  "cpmProcExtUtil5Sec": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtEntry",
+      5
+    ]
+  },
+  "cpmProcExtUtil1Min": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtEntry",
+      6
+    ]
+  },
+  "cpmProcExtUtil5Min": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtEntry",
+      7
+    ]
+  },
+  "cpmProcExtPriority": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "critical",
+        "2": "high",
+        "3": "normal",
+        "4": "low",
+        "5": "notAssigned"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtEntry",
+      8
+    ]
+  },
+  "cpmProcessExtRevTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpmProcessExtRevEntry"
+    },
+    "index": null,
+    "value": [
+      "cpmProcess",
+      3
+    ]
+  },
+  "cpmProcessExtRevEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpmProcessExtRevEntry"
+    },
+    "index": [
+      "cpmCPUTotalIndex",
+      "cpmProcessPID"
+    ],
+    "value": [
+      "cpmProcessExtRevTable",
+      1
+    ]
+  },
+  "CpmProcessExtRevEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpmProcExtMemAllocatedRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      1
+    ]
+  },
+  "cpmProcExtMemFreedRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      2
+    ]
+  },
+  "cpmProcExtInvokedRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      3
+    ]
+  },
+  "cpmProcExtRuntimeRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      4
+    ]
+  },
+  "cpmProcExtUtil5SecRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      5
+    ]
+  },
+  "cpmProcExtUtil1MinRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      6
+    ]
+  },
+  "cpmProcExtUtil5MinRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      7
+    ]
+  },
+  "cpmProcExtPriorityRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "critical",
+        "2": "high",
+        "3": "normal",
+        "4": "low",
+        "5": "notAssigned"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      8
+    ]
+  },
+  "cpmProcessType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "posix",
+        "3": "ios"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      9
+    ]
+  },
+  "cpmProcessRespawn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      10
+    ]
+  },
+  "cpmProcessRespawnCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      11
+    ]
+  },
+  "cpmProcessRespawnAfterLastPatch": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      12
+    ]
+  },
+  "cpmProcessMemoryCore": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "mainmem",
+        "3": "mainmemSharedmem",
+        "4": "mainmemText",
+        "5": "mainmemTextSharedmem",
+        "6": "sharedmem",
+        "7": "sparse",
+        "8": "off"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      13
+    ]
+  },
+  "cpmProcessLastRestartUser": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      14
+    ]
+  },
+  "cpmProcessTextSegmentSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      15
+    ]
+  },
+  "cpmProcessDataSegmentSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      16
+    ]
+  },
+  "cpmProcessStackSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      17
+    ]
+  },
+  "cpmProcessDynamicMemorySize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      18
+    ]
+  },
+  "cpmProcExtMemAllocatedRevOvrflw": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      19
+    ]
+  },
+  "cpmProcExtHCMemAllocatedRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CounterBasedGauge64"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      20
+    ]
+  },
+  "cpmProcExtMemFreedRevOvrflw": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      21
+    ]
+  },
+  "cpmProcExtHCMemFreedRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CounterBasedGauge64"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      22
+    ]
+  },
+  "cpmProcessTextSegmentSizeOvrflw": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      23
+    ]
+  },
+  "cpmProcessHCTextSegmentSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned64"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      24
+    ]
+  },
+  "cpmProcessDataSegmentSizeOvrflw": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      25
+    ]
+  },
+  "cpmProcessHCDataSegmentSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CounterBasedGauge64"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      26
+    ]
+  },
+  "cpmProcessStackSizeOvrflw": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      27
+    ]
+  },
+  "cpmProcessHCStackSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CounterBasedGauge64"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      28
+    ]
+  },
+  "cpmProcessDynamicMemorySizeOvrflw": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      29
+    ]
+  },
+  "cpmProcessHCDynamicMemorySize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CounterBasedGauge64"
+    },
+    "index": null,
+    "value": [
+      "cpmProcessExtRevEntry",
+      30
+    ]
+  },
+  "cpmCPUThresholdTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpmCPUThresholdEntry"
+    },
+    "index": null,
+    "value": [
+      "cpmProcess",
+      4
+    ]
+  },
+  "cpmCPUThresholdEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpmCPUThresholdEntry"
+    },
+    "index": [
+      "cpmCPUTotalIndex",
+      "cpmCPUThresholdClass"
+    ],
+    "value": [
+      "cpmCPUThresholdTable",
+      1
+    ]
+  },
+  "CpmCPUThresholdEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpmCPUThresholdClass": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "total",
+        "2": "interrupt",
+        "3": "process"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpmCPUThresholdEntry",
+      1
+    ]
+  },
+  "cpmCPURisingThresholdValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUThresholdEntry",
+      2
+    ]
+  },
+  "cpmCPURisingThresholdPeriod": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUThresholdEntry",
+      3
+    ]
+  },
+  "cpmCPUFallingThresholdValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUThresholdEntry",
+      4
+    ]
+  },
+  "cpmCPUFallingThresholdPeriod": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUThresholdEntry",
+      5
+    ]
+  },
+  "cpmCPUThresholdEntryStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUThresholdEntry",
+      6
+    ]
+  },
+  "cpmCPUHistoryThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUHistory",
+      1
+    ]
+  },
+  "cpmCPUHistorySize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUHistory",
+      2
+    ]
+  },
+  "cpmCPUHistoryTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpmCPUHistoryEntry"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUHistory",
+      3
+    ]
+  },
+  "cpmCPUHistoryEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpmCPUHistoryEntry"
+    },
+    "index": [
+      "cpmCPUTotalIndex",
+      "cpmCPUHistoryReportId"
+    ],
+    "value": [
+      "cpmCPUHistoryTable",
+      1
+    ]
+  },
+  "CpmCPUHistoryEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpmCPUHistoryReportId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUHistoryEntry",
+      1
+    ]
+  },
+  "cpmCPUHistoryReportSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUHistoryEntry",
+      2
+    ]
+  },
+  "cpmCPUHistoryTotalUtil": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUHistoryEntry",
+      3
+    ]
+  },
+  "cpmCPUHistoryInterruptUtil": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUHistoryEntry",
+      4
+    ]
+  },
+  "cpmCPUHistoryCreatedTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUHistoryEntry",
+      5
+    ]
+  },
+  "cpmThreadTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpmThreadEntry"
+    },
+    "index": null,
+    "value": [
+      "cpmThread",
+      1
+    ]
+  },
+  "cpmThreadEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpmThreadEntry"
+    },
+    "index": [
+      "cpmCPUTotalIndex",
+      "cpmProcessPID",
+      "cpmThreadID"
+    ],
+    "value": [
+      "cpmThreadTable",
+      1
+    ]
+  },
+  "CpmThreadEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpmThreadID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmThreadEntry",
+      1
+    ]
+  },
+  "cpmThreadName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cpmThreadEntry",
+      2
+    ]
+  },
+  "cpmThreadPriority": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmThreadEntry",
+      3
+    ]
+  },
+  "cpmThreadState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "dead",
+        "3": "running",
+        "4": "ready",
+        "5": "stopped",
+        "6": "send",
+        "7": "receive",
+        "8": "reply",
+        "9": "stack",
+        "10": "waitpage",
+        "11": "sigsuspend",
+        "12": "sigwaitinfo",
+        "13": "nanosleep",
+        "14": "mutex",
+        "15": "condvar",
+        "16": "join",
+        "17": "intr",
+        "18": "sem"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpmThreadEntry",
+      4
+    ]
+  },
+  "cpmThreadBlockingProcess": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowPointer"
+    },
+    "index": null,
+    "value": [
+      "cpmThreadEntry",
+      5
+    ]
+  },
+  "cpmThreadCpuUtilization": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmThreadEntry",
+      6
+    ]
+  },
+  "cpmThreadStackSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmThreadEntry",
+      7
+    ]
+  },
+  "cpmThreadStackSizeOvrflw": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmThreadEntry",
+      8
+    ]
+  },
+  "cpmThreadHCStackSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CounterBasedGauge64"
+    },
+    "index": null,
+    "value": [
+      "cpmThreadEntry",
+      9
+    ]
+  },
+  "cpmVirtualProcessTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpmVirtualProcessEntry"
+    },
+    "index": null,
+    "value": [
+      "cpmVirtualProcess",
+      1
+    ]
+  },
+  "cpmVirtualProcessEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpmVirtualProcessEntry"
+    },
+    "index": [
+      "cpmCPUTotalIndex",
+      "cpmProcessPID",
+      "cpmVirtualProcessID"
+    ],
+    "value": [
+      "cpmVirtualProcessTable",
+      1
+    ]
+  },
+  "CpmVirtualProcessEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpmVirtualProcessID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmVirtualProcessEntry",
+      1
+    ]
+  },
+  "cpmVirtualProcessName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cpmVirtualProcessEntry",
+      2
+    ]
+  },
+  "cpmVirtualProcessUtil5Sec": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmVirtualProcessEntry",
+      3
+    ]
+  },
+  "cpmVirtualProcessUtil1Min": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmVirtualProcessEntry",
+      4
+    ]
+  },
+  "cpmVirtualProcessUtil5Min": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmVirtualProcessEntry",
+      5
+    ]
+  },
+  "cpmVirtualProcessMemAllocated": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmVirtualProcessEntry",
+      6
+    ]
+  },
+  "cpmVirtualProcessMemFreed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmVirtualProcessEntry",
+      7
+    ]
+  },
+  "cpmVirtualProcessInvokeCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "cpmVirtualProcessEntry",
+      8
+    ]
+  },
+  "cpmVirtualProcessRuntime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "cpmVirtualProcessEntry",
+      9
+    ]
+  },
+  "cpmVirtualProcessMemAllocatedOvrflw": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmVirtualProcessEntry",
+      10
+    ]
+  },
+  "cpmVirtualProcessHCMemAllocated": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CounterBasedGauge64"
+    },
+    "index": null,
+    "value": [
+      "cpmVirtualProcessEntry",
+      11
+    ]
+  },
+  "cpmVirtualProcessMemFreedOvrflw": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmVirtualProcessEntry",
+      12
+    ]
+  },
+  "cpmVirtualProcessHCMemFreed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CounterBasedGauge64"
+    },
+    "index": null,
+    "value": [
+      "cpmVirtualProcessEntry",
+      13
+    ]
+  },
+  "cpmCPUProcessHistoryTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpmCPUProcessHistoryEntry"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUHistory",
+      4
+    ]
+  },
+  "cpmCPUProcessHistoryEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpmCPUProcessHistoryEntry"
+    },
+    "index": [
+      "cpmCPUTotalIndex",
+      "cpmCPUHistoryReportId",
+      "cpmCPUProcessHistoryIndex"
+    ],
+    "value": [
+      "cpmCPUProcessHistoryTable",
+      1
+    ]
+  },
+  "CpmCPUProcessHistoryEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpmCPUProcessHistoryIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUProcessHistoryEntry",
+      1
+    ]
+  },
+  "cpmCPUHistoryProcId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUProcessHistoryEntry",
+      2
+    ]
+  },
+  "cpmCPUHistoryProcName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUProcessHistoryEntry",
+      3
+    ]
+  },
+  "cpmCPUHistoryProcCreated": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUProcessHistoryEntry",
+      4
+    ]
+  },
+  "cpmCPUHistoryProcUtil": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cpmCPUProcessHistoryEntry",
+      5
+    ]
+  },
+  "ciscoProcessMIBNotifPrefix": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoProcessMIB",
+      2
+    ]
+  },
+  "ciscoProcessMIBNotifs": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoProcessMIBNotifPrefix",
+      0
+    ]
+  },
+  "ciscoProcessMIBConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoProcessMIB",
+      3
+    ]
+  },
+  "cpmCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoProcessMIBConformance",
+      1
+    ]
+  },
+  "cpmGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoProcessMIBConformance",
+      2
+    ]
+  },
+  "cpmCPUTotalGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      1
+    ]
+  },
+  "cpmProcessGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      2
+    ]
+  },
+  "cpmProcessExtGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      3
+    ]
+  },
+  "cpmCPUTotalGroupRev": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      4
+    ]
+  },
+  "cpmProcessExtGroupRev": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      5
+    ]
+  },
+  "cpmProcessGroupRev": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      6
+    ]
+  },
+  "cpmCPUTotalGroupRev1": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      7
+    ]
+  },
+  "cpmCPUThresholdGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      8
+    ]
+  },
+  "cpmCPUHistoryGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      9
+    ]
+  },
+  "cpmCPUPosixMemoryGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      11
+    ]
+  },
+  "cpmPosixProcessGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      12
+    ]
+  },
+  "cpmThreadGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      13
+    ]
+  },
+  "cpmVirtualProcessGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      14
+    ]
+  },
+  "cpmCPUTotalOverflowGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      15
+    ]
+  },
+  "cpmCPUTotalHCGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      16
+    ]
+  },
+  "cpmProcessExtRevOverflowGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      17
+    ]
+  },
+  "cpmProcessExtRevHCGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      18
+    ]
+  },
+  "cpmThreadOverflowGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      19
+    ]
+  },
+  "cpmThreadHCGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      20
+    ]
+  },
+  "cpmVirtualProcessOverflowGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      21
+    ]
+  },
+  "cpmVirtualProcessHCGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      22
+    ]
+  },
+  "cpmCPULoadAvgGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      23
+    ]
+  },
+  "cpmCPUTotalMemoryCommitGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      24
+    ]
+  },
+  "cpmCoreGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "cpmGroups",
+      25
+    ]
+  }
+}

@@ -1,0 +1,1167 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "IpAddress"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TruthValue"
+      ]
+    ],
+    [
+      "AH-SMI-MIB",
+      [
+        "ahAPInterface",
+        "AhString",
+        "AhNodeID",
+        "AhInterfaceMode",
+        "AhInterfaceType",
+        "AhMACProtocol"
+      ]
+    ],
+    [
+      "IF-MIB",
+      [
+        "ifIndex",
+        "ifEntry"
+      ]
+    ]
+  ],
+  "ahInterface": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "ahAPInterface",
+      1
+    ]
+  },
+  "AhAuthenticationMethod": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "cwp",
+        "1": "open",
+        "2": "wep-open",
+        "3": "wep-shared",
+        "4": "wpa-psk",
+        "5": "wpa2-psk",
+        "6": "wpa-8021x",
+        "7": "wpa2-8021X",
+        "8": "wpa-auto-psk",
+        "9": "wpa-auto-8021x",
+        "10": "dynamic-wep"
+      }
+    },
+    "display_hint": null
+  },
+  "AhEncrytionMethod": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "AES",
+        "1": "TKIP",
+        "2": "WEP",
+        "3": "Non"
+      }
+    },
+    "display_hint": null
+  },
+  "ahXIfTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF  AhXIfEntry"
+    },
+    "index": null,
+    "value": [
+      "ahInterface",
+      1
+    ]
+  },
+  "ahXIfEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AhXIfEntry"
+    },
+    "index": "ifEntry",
+    "value": [
+      "ahXIfTable",
+      1
+    ]
+  },
+  "AhXIfEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ahIfName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AhString"
+    },
+    "index": null,
+    "value": [
+      "ahXIfEntry",
+      1
+    ]
+  },
+  "ahSSIDName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AhString"
+    },
+    "index": null,
+    "value": [
+      "ahXIfEntry",
+      2
+    ]
+  },
+  "ahIfPromiscuous": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ahXIfEntry",
+      3
+    ]
+  },
+  "ahIfType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AhInterfaceType"
+    },
+    "index": null,
+    "value": [
+      "ahXIfEntry",
+      4
+    ]
+  },
+  "ahIfMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AhInterfaceMode"
+    },
+    "index": null,
+    "value": [
+      "ahXIfEntry",
+      5
+    ]
+  },
+  "ahIfConfMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AhInterfaceMode"
+    },
+    "index": null,
+    "value": [
+      "ahXIfEntry",
+      6
+    ]
+  },
+  "ahAssociationTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF  AhAssociationEntry"
+    },
+    "index": null,
+    "value": [
+      "ahInterface",
+      2
+    ]
+  },
+  "ahAssociationEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AhAssociationEntry"
+    },
+    "index": [
+      "ifIndex",
+      "ahClientMac"
+    ],
+    "value": [
+      "ahAssociationTable",
+      1
+    ]
+  },
+  "AhAssociationEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ahClientMac": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AhNodeID"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      1
+    ]
+  },
+  "ahClientIP": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      2
+    ]
+  },
+  "ahClientHostname": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AhString"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      3
+    ]
+  },
+  "ahClientRSSI": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      4
+    ]
+  },
+  "ahClientLinkUptime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      5
+    ]
+  },
+  "ahClientCWPUsed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      6
+    ]
+  },
+  "ahClientAuthMethod": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AhAuthenticationMethod"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      7
+    ]
+  },
+  "ahClientEncryptionMethod": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AhEncrytionMethod"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      8
+    ]
+  },
+  "ahClientMACProtocol": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AhMACProtocol"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      9
+    ]
+  },
+  "ahClientSSID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AhString"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      10
+    ]
+  },
+  "ahClientVLAN": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      11
+    ]
+  },
+  "ahClientUserProfId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      12
+    ]
+  },
+  "ahClientChannel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      13
+    ]
+  },
+  "ahClientLastTxRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      14
+    ]
+  },
+  "ahClientUsername": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AhString"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      15
+    ]
+  },
+  "ahClientRxDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      16
+    ]
+  },
+  "ahClientRxDataOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      17
+    ]
+  },
+  "ahClientRxMgtFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      18
+    ]
+  },
+  "ahClientRxUnicastFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      19
+    ]
+  },
+  "ahClientRxMulticastFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      20
+    ]
+  },
+  "ahClientRxBroadcastFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      21
+    ]
+  },
+  "ahClientRxMICFailures": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      22
+    ]
+  },
+  "ahClientTxDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      23
+    ]
+  },
+  "ahClientTxMgtFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      24
+    ]
+  },
+  "ahClientTxDataOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      25
+    ]
+  },
+  "ahClientTxUnicastFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      26
+    ]
+  },
+  "ahClientTxMulticastFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      27
+    ]
+  },
+  "ahClientTxBroadcastFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      28
+    ]
+  },
+  "ahClientLastRxRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      29
+    ]
+  },
+  "ahClientTxBeDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      30
+    ]
+  },
+  "ahClientTxBgDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      31
+    ]
+  },
+  "ahClientTxViDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      32
+    ]
+  },
+  "ahClientTxVoDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      33
+    ]
+  },
+  "ahClientTxAirtime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      34
+    ]
+  },
+  "ahClientRxAirtime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      35
+    ]
+  },
+  "ahClientAssociationTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      36
+    ]
+  },
+  "ahClientBSSID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AhNodeID"
+    },
+    "index": null,
+    "value": [
+      "ahAssociationEntry",
+      37
+    ]
+  },
+  "ahRadioStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF  AhRadioStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "ahInterface",
+      3
+    ]
+  },
+  "ahRadioStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AhRadioStatsEntry"
+    },
+    "index": [
+      "ifIndex"
+    ],
+    "value": [
+      "ahRadioStatsTable",
+      1
+    ]
+  },
+  "AhRadioStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ahRadioTxDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      1
+    ]
+  },
+  "ahRadioTxUnicastDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      2
+    ]
+  },
+  "ahRadioTxMulticastDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      3
+    ]
+  },
+  "ahRadioTxBroadcastDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      4
+    ]
+  },
+  "ahRadioTxNonBeaconMgtFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      5
+    ]
+  },
+  "ahRadioTxBeaconFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      6
+    ]
+  },
+  "ahRadioTxTotalRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      7
+    ]
+  },
+  "ahRadioTxTotalFramesDropped": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      8
+    ]
+  },
+  "ahRadioTxTotalFrameErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      9
+    ]
+  },
+  "ahRadioTxFEForExcessiveHWRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      10
+    ]
+  },
+  "ahRadioRxTotalDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      11
+    ]
+  },
+  "ahRadioRxUnicastDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      12
+    ]
+  },
+  "ahRadioRxMulticastDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      13
+    ]
+  },
+  "ahRadioRxBroadcastDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      14
+    ]
+  },
+  "ahRadioRxMgtFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      15
+    ]
+  },
+  "ahRadioRxTotalFrameDropped": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      16
+    ]
+  },
+  "ahRadioTxBeDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      17
+    ]
+  },
+  "ahRadioTxBgDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      18
+    ]
+  },
+  "ahRadioTxViDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      19
+    ]
+  },
+  "ahRadioTxVoDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      20
+    ]
+  },
+  "ahRadioTXRTSFailures": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      21
+    ]
+  },
+  "ahRadioTxAirtime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      22
+    ]
+  },
+  "ahRadioRxAirtime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ahRadioStatsEntry",
+      23
+    ]
+  },
+  "ahVIfStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF  AhVIfStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "ahInterface",
+      4
+    ]
+  },
+  "ahVIfStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AhVIfStatsEntry"
+    },
+    "index": [
+      "ifIndex"
+    ],
+    "value": [
+      "ahVIfStatsTable",
+      1
+    ]
+  },
+  "AhVIfStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ahVIfRxDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahVIfStatsEntry",
+      1
+    ]
+  },
+  "ahVIfRxUnicastDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahVIfStatsEntry",
+      2
+    ]
+  },
+  "ahVIfRxMulticastDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahVIfStatsEntry",
+      3
+    ]
+  },
+  "ahVIfRxBroadcastDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahVIfStatsEntry",
+      4
+    ]
+  },
+  "ahVIfRxErrorFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahVIfStatsEntry",
+      5
+    ]
+  },
+  "ahVIfRxDroppedFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahVIfStatsEntry",
+      6
+    ]
+  },
+  "ahVIfTxDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahVIfStatsEntry",
+      7
+    ]
+  },
+  "ahVIfTxUnicastDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahVIfStatsEntry",
+      8
+    ]
+  },
+  "ahVIfTxMulticastDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahVIfStatsEntry",
+      9
+    ]
+  },
+  "ahVIfTxBroadcastDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahVIfStatsEntry",
+      10
+    ]
+  },
+  "ahVIfTxErrorFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahVIfStatsEntry",
+      11
+    ]
+  },
+  "ahVIfTxDroppedFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahVIfStatsEntry",
+      12
+    ]
+  },
+  "ahVIfTxBeDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahVIfStatsEntry",
+      13
+    ]
+  },
+  "ahVIfTxBgDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahVIfStatsEntry",
+      14
+    ]
+  },
+  "ahVIfTxViDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahVIfStatsEntry",
+      15
+    ]
+  },
+  "ahVIfTxVoDataFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "ahVIfStatsEntry",
+      16
+    ]
+  },
+  "ahVifTxAirtime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ahVIfStatsEntry",
+      17
+    ]
+  },
+  "ahVifRxAirtime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "ahVIfStatsEntry",
+      18
+    ]
+  },
+  "ahRadioAttributeTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF  AhRadioAttributeEntry"
+    },
+    "index": null,
+    "value": [
+      "ahInterface",
+      5
+    ]
+  },
+  "ahRadioAttributeEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AhRadioAttributeEntry"
+    },
+    "index": [
+      "ifIndex"
+    ],
+    "value": [
+      "ahRadioAttributeTable",
+      1
+    ]
+  },
+  "AhRadioAttributeEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ahRadioChannel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioAttributeEntry",
+      1
+    ]
+  },
+  "ahRadioTxPower": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioAttributeEntry",
+      2
+    ]
+  },
+  "ahRadioNoiseFloor": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "ahRadioAttributeEntry",
+      3
+    ]
+  }
+}

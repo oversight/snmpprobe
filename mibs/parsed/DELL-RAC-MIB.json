@@ -1,0 +1,1398 @@
+{
+  "IMPORTS": [
+    [
+      "RFC1155-SMI",
+      [
+        "enterprises",
+        "TimeTicks"
+      ]
+    ],
+    [
+      "RFC-1212",
+      [
+        "OBJECT-TYPE"
+      ]
+    ],
+    [
+      "RFC-1215",
+      [
+        "TRAP-TYPE"
+      ]
+    ],
+    [
+      "RFC1213-MIB",
+      [
+        "DisplayString"
+      ]
+    ]
+  ],
+  "DellString": {
+    "tp": "DisplayString"
+  },
+  "DellRacType": {
+    "tp": "INTEGER",
+    "values": {
+      "1": "other",
+      "2": "unknown",
+      "3": "dracIII",
+      "4": "era",
+      "5": "drac4",
+      "6": "drac5",
+      "7": "drac5MC",
+      "8": "cmc",
+      "9": "idrac",
+      "18": "vrtxCMC",
+      "19": "fx2CMC"
+    }
+  },
+  "DellStatus": {
+    "tp": "INTEGER",
+    "values": {
+      "1": "other",
+      "2": "unknown",
+      "3": "ok",
+      "4": "nonCritical",
+      "5": "critical",
+      "6": "nonRecoverable"
+    }
+  },
+  "DellPowerReading": {
+    "tp": "DisplayString"
+  },
+  "DellCMCPowerIndexRange": {
+    "tp": "INTEGER"
+  },
+  "DellCMCPSUIndexRange": {
+    "tp": "INTEGER"
+  },
+  "DellCMCPSUCapable": {
+    "tp": "INTEGER",
+    "values": {
+      "1": "absent",
+      "2": "none",
+      "3": "basic"
+    }
+  },
+  "DellTemperatureReading": {
+    "tp": "INTEGER"
+  },
+  "DellTimestamp": {
+    "tp": "DisplayString"
+  },
+  "DellCMCServerIndexRange": {
+    "tp": "INTEGER"
+  },
+  "DellCMCServerCapable": {
+    "tp": "INTEGER",
+    "values": {
+      "1": "absent",
+      "2": "none",
+      "3": "basic",
+      "4": "off"
+    }
+  },
+  "dell": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      674
+    ]
+  },
+  "server3": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "dell",
+      10892
+    ]
+  },
+  "drsOutofBandGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "server3",
+      2
+    ]
+  },
+  "drsInformationGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "drsOutofBandGroup",
+      1
+    ]
+  },
+  "drsProductInfoGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "drsInformationGroup",
+      1
+    ]
+  },
+  "drsFirmwareGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "drsInformationGroup",
+      2
+    ]
+  },
+  "drsStatusGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "drsOutofBandGroup",
+      2
+    ]
+  },
+  "drsChassisStatusGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "drsOutofBandGroup",
+      3
+    ]
+  },
+  "drsStatusNowGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "drsChassisStatusGroup",
+      1
+    ]
+  },
+  "drsStatusPrevGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "drsChassisStatusGroup",
+      2
+    ]
+  },
+  "drsStatusChangeGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "drsChassisStatusGroup",
+      3
+    ]
+  },
+  "drsChassisPowerGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "drsOutofBandGroup",
+      4
+    ]
+  },
+  "DrsCMCPowerTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "DrsCMCPSUTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "drsChassisServerGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "drsOutofBandGroup",
+      5
+    ]
+  },
+  "DrsCMCServerTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "drsCMCAlertGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "drsOutofBandGroup",
+      20
+    ]
+  },
+  "drsChassisAlertVariables": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "drsCMCAlertGroup",
+      10
+    ]
+  },
+  "drsCMCAlert2Group": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "drsOutofBandGroup",
+      21
+    ]
+  },
+  "drsChassisAlert2Variables": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "drsCMCAlert2Group",
+      10
+    ]
+  },
+  "drsAlertGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "drsOutofBandGroup",
+      5000
+    ]
+  },
+  "drsAlertVariables": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "drsAlertGroup",
+      10
+    ]
+  },
+  "drsProductName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      1
+    ]
+  },
+  "drsProductShortName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      2
+    ]
+  },
+  "drsProductDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      3
+    ]
+  },
+  "drsProductManufacturer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      4
+    ]
+  },
+  "drsProductVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      5
+    ]
+  },
+  "drsChassisServiceTag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      6
+    ]
+  },
+  "drsProductURL": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      7
+    ]
+  },
+  "drsProductChassisAssetTag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      8
+    ]
+  },
+  "drsProductChassisLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      9
+    ]
+  },
+  "drsProductChassisName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      10
+    ]
+  },
+  "drsSystemServiceTag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      11
+    ]
+  },
+  "drsProductSystemAssetTag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      12
+    ]
+  },
+  "drsProductSystemSlot": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      13
+    ]
+  },
+  "drsProductType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellRacType"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      14
+    ]
+  },
+  "drsProductChassisDataCenter": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      15
+    ]
+  },
+  "drsProductChassisAisle": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      16
+    ]
+  },
+  "drsProductChassisRack": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      17
+    ]
+  },
+  "drsProductChassisRackSlot": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      18
+    ]
+  },
+  "drsProductChassisModel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      19
+    ]
+  },
+  "drsProductChassisExpressServiceCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      20
+    ]
+  },
+  "drsProductChassisSystemID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      21
+    ]
+  },
+  "drsProductChassisSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "drsProductInfoGroup",
+      22
+    ]
+  },
+  "drsFirmwareVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsFirmwareGroup",
+      1
+    ]
+  },
+  "drsiKVMFirmwareVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsFirmwareGroup",
+      2
+    ]
+  },
+  "drsFirmwareVersion2": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsFirmwareGroup",
+      3
+    ]
+  },
+  "drsGlobalSystemStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsStatusGroup",
+      1
+    ]
+  },
+  "drsGlobalCurrStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsStatusNowGroup",
+      1
+    ]
+  },
+  "drsIOMCurrStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsStatusNowGroup",
+      2
+    ]
+  },
+  "drsKVMCurrStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsStatusNowGroup",
+      3
+    ]
+  },
+  "drsRedCurrStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsStatusNowGroup",
+      4
+    ]
+  },
+  "drsPowerCurrStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsStatusNowGroup",
+      5
+    ]
+  },
+  "drsFanCurrStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsStatusNowGroup",
+      6
+    ]
+  },
+  "drsBladeCurrStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsStatusNowGroup",
+      7
+    ]
+  },
+  "drsTempCurrStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsStatusNowGroup",
+      8
+    ]
+  },
+  "drsCMCCurrStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsStatusNowGroup",
+      9
+    ]
+  },
+  "drsChassisFrontPanelAmbientTemperature": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellTemperatureReading"
+    },
+    "index": null,
+    "value": [
+      "drsStatusNowGroup",
+      10
+    ]
+  },
+  "drsCMCAmbientTemperature": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellTemperatureReading"
+    },
+    "index": null,
+    "value": [
+      "drsStatusNowGroup",
+      11
+    ]
+  },
+  "drsCMCProcessorTemperature": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellTemperatureReading"
+    },
+    "index": null,
+    "value": [
+      "drsStatusNowGroup",
+      12
+    ]
+  },
+  "drsGlobalPrevStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsStatusPrevGroup",
+      1
+    ]
+  },
+  "drsIOMPrevStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsStatusPrevGroup",
+      2
+    ]
+  },
+  "drsKVMPrevStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsStatusPrevGroup",
+      3
+    ]
+  },
+  "drsRedPrevStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsStatusPrevGroup",
+      4
+    ]
+  },
+  "drsPowerPrevStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsStatusPrevGroup",
+      5
+    ]
+  },
+  "drsFanPrevStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsStatusPrevGroup",
+      6
+    ]
+  },
+  "drsBladePrevStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsStatusPrevGroup",
+      7
+    ]
+  },
+  "drsTempPrevStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsStatusPrevGroup",
+      8
+    ]
+  },
+  "drsCMCPrevStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsStatusPrevGroup",
+      9
+    ]
+  },
+  "drsGlobalChangeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "drsStatusChangeGroup",
+      1
+    ]
+  },
+  "drsIOMChangeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "drsStatusChangeGroup",
+      2
+    ]
+  },
+  "drsKVMChangeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "drsStatusChangeGroup",
+      3
+    ]
+  },
+  "drsRedChangeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "drsStatusChangeGroup",
+      4
+    ]
+  },
+  "drsPowerChangeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "drsStatusChangeGroup",
+      5
+    ]
+  },
+  "drsFanChangeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "drsStatusChangeGroup",
+      6
+    ]
+  },
+  "drsBladeChangeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "drsStatusChangeGroup",
+      7
+    ]
+  },
+  "drsTempChangeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "drsStatusChangeGroup",
+      8
+    ]
+  },
+  "drsCMCChangeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "drsStatusChangeGroup",
+      9
+    ]
+  },
+  "drsCMCPowerTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF DrsCMCPowerTableEntry"
+    },
+    "index": null,
+    "value": [
+      "drsChassisPowerGroup",
+      1
+    ]
+  },
+  "drsCMCPowerTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DrsCMCPowerTableEntry"
+    },
+    "index": [
+      "drsChassisIndex"
+    ],
+    "value": [
+      "drsCMCPowerTable",
+      1
+    ]
+  },
+  "drsCMCPSUTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF DrsCMCPSUTableEntry"
+    },
+    "index": null,
+    "value": [
+      "drsChassisPowerGroup",
+      2
+    ]
+  },
+  "drsCMCPSUTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DrsCMCPSUTableEntry"
+    },
+    "index": [
+      "drsPSUChassisIndex",
+      "drsPSUIndex"
+    ],
+    "value": [
+      "drsCMCPSUTable",
+      1
+    ]
+  },
+  "drsChassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellCMCPowerIndexRange"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPowerTableEntry",
+      1
+    ]
+  },
+  "drsPotentialPower": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellPowerReading"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPowerTableEntry",
+      2
+    ]
+  },
+  "drsIdlePower": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellPowerReading"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPowerTableEntry",
+      3
+    ]
+  },
+  "drsMaxPowerSpecification": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellPowerReading"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPowerTableEntry",
+      4
+    ]
+  },
+  "drsPowerSurplus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellPowerReading"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPowerTableEntry",
+      5
+    ]
+  },
+  "drsKWhCumulative": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellPowerReading"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPowerTableEntry",
+      6
+    ]
+  },
+  "drsKWhCumulativeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellTimestamp"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPowerTableEntry",
+      7
+    ]
+  },
+  "drsWattsPeakUsage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellPowerReading"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPowerTableEntry",
+      8
+    ]
+  },
+  "drsWattsPeakTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellTimestamp"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPowerTableEntry",
+      9
+    ]
+  },
+  "drsWattsMinUsage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellPowerReading"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPowerTableEntry",
+      10
+    ]
+  },
+  "drsWattsMinTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellTimestamp"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPowerTableEntry",
+      11
+    ]
+  },
+  "drsWattsResetTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellTimestamp"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPowerTableEntry",
+      12
+    ]
+  },
+  "drsWattsReading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellPowerReading"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPowerTableEntry",
+      13
+    ]
+  },
+  "drsAmpsReading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellPowerReading"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPowerTableEntry",
+      14
+    ]
+  },
+  "drsPSUChassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellCMCPowerIndexRange"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPSUTableEntry",
+      1
+    ]
+  },
+  "drsPSUIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellCMCPSUIndexRange"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPSUTableEntry",
+      2
+    ]
+  },
+  "drsPSULocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPSUTableEntry",
+      3
+    ]
+  },
+  "drsPSUMonitoringCapable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellCMCPSUCapable"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPSUTableEntry",
+      4
+    ]
+  },
+  "drsPSUVoltsReading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellPowerReading"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPSUTableEntry",
+      5
+    ]
+  },
+  "drsPSUAmpsReading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellPowerReading"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPSUTableEntry",
+      6
+    ]
+  },
+  "drsPSUWattsReading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellPowerReading"
+    },
+    "index": null,
+    "value": [
+      "drsCMCPSUTableEntry",
+      7
+    ]
+  },
+  "drsCMCServerTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF DrsCMCServerTableEntry"
+    },
+    "index": null,
+    "value": [
+      "drsChassisServerGroup",
+      1
+    ]
+  },
+  "drsCMCServerTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DrsCMCServerTableEntry"
+    },
+    "index": [
+      "drsServerIndex"
+    ],
+    "value": [
+      "drsCMCServerTable",
+      1
+    ]
+  },
+  "drsServerIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellCMCServerIndexRange"
+    },
+    "index": null,
+    "value": [
+      "drsCMCServerTableEntry",
+      1
+    ]
+  },
+  "drsServerMonitoringCapable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellCMCServerCapable"
+    },
+    "index": null,
+    "value": [
+      "drsCMCServerTableEntry",
+      2
+    ]
+  },
+  "drsServerServiceTag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsCMCServerTableEntry",
+      3
+    ]
+  },
+  "drsServerSlotName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsCMCServerTableEntry",
+      4
+    ]
+  },
+  "drsServerSlotNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsCMCServerTableEntry",
+      5
+    ]
+  },
+  "drsServerNodeID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsCMCServerTableEntry",
+      6
+    ]
+  },
+  "drsCASubSystem": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsChassisAlertVariables",
+      1
+    ]
+  },
+  "drsCASSCurrStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsChassisAlertVariables",
+      2
+    ]
+  },
+  "drsCASSPrevStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsChassisAlertVariables",
+      3
+    ]
+  },
+  "drsCASSChangeTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "drsChassisAlertVariables",
+      4
+    ]
+  },
+  "drsCAMessage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsChassisAlertVariables",
+      5
+    ]
+  },
+  "drsCA2MessageID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "drsChassisAlert2Variables",
+      1
+    ]
+  },
+  "drsCA2Message": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsChassisAlert2Variables",
+      2
+    ]
+  },
+  "drsCA2MessageArgs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellString"
+    },
+    "index": null,
+    "value": [
+      "drsChassisAlert2Variables",
+      3
+    ]
+  },
+  "drsCA2AlertStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsChassisAlert2Variables",
+      4
+    ]
+  },
+  "drsCA2FQDD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "drsChassisAlert2Variables",
+      5
+    ]
+  },
+  "drsAlertSystem": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "drsAlertVariables",
+      1
+    ]
+  },
+  "drsAlertTableIndexOID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "drsAlertVariables",
+      2
+    ]
+  },
+  "drsAlertMessage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "drsAlertVariables",
+      3
+    ]
+  },
+  "drsAlertCurrentStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsAlertVariables",
+      4
+    ]
+  },
+  "drsAlertPreviousStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DellStatus"
+    },
+    "index": null,
+    "value": [
+      "drsAlertVariables",
+      5
+    ]
+  },
+  "drsAlertData": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "drsAlertVariables",
+      6
+    ]
+  }
+}

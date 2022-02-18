@@ -1,0 +1,192 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Unsigned32",
+        "Integer32",
+        "enterprises"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION",
+        "TruthValue"
+      ]
+    ]
+  ],
+  "synologyHA": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "synology",
+      106
+    ]
+  },
+  "synology": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      6574
+    ]
+  },
+  "HostName": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": "255a"
+  },
+  "ClusterStatusType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "normal",
+        "1": "warning",
+        "2": "critical",
+        "3": "upgrading",
+        "4": "processing"
+      }
+    },
+    "display_hint": null
+  },
+  "HeartbeatStatusType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "normal",
+        "1": "abnormal",
+        "2": "disconnected",
+        "3": "empty"
+      }
+    },
+    "display_hint": null
+  },
+  "activeNodeName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HostName"
+    },
+    "index": null,
+    "value": [
+      "synologyHA",
+      1
+    ]
+  },
+  "passiveNodeName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HostName"
+    },
+    "index": null,
+    "value": [
+      "synologyHA",
+      2
+    ]
+  },
+  "clusterAutoFailover": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "synologyHA",
+      3
+    ]
+  },
+  "clusterName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HostName"
+    },
+    "index": null,
+    "value": [
+      "synologyHA",
+      4
+    ]
+  },
+  "clusterStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ClusterStatusType"
+    },
+    "index": null,
+    "value": [
+      "synologyHA",
+      5
+    ]
+  },
+  "heartbeatStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HeartbeatStatusType"
+    },
+    "index": null,
+    "value": [
+      "synologyHA",
+      6
+    ]
+  },
+  "heartbeatTxRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "synologyHA",
+      7
+    ]
+  },
+  "heartbeatLatency": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "synologyHA",
+      8
+    ]
+  },
+  "synologyHAConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synologyHA",
+      9
+    ]
+  },
+  "synologyHACompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synologyHAConformance",
+      1
+    ]
+  },
+  "synologyHAGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synologyHAConformance",
+      2
+    ]
+  },
+  "synologyHAGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "synologyHAGroups",
+      1
+    ]
+  }
+}

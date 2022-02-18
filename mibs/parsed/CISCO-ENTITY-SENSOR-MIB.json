@@ -1,0 +1,476 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "NOTIFICATION-TYPE",
+        "Integer32"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP",
+        "NOTIFICATION-GROUP"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION",
+        "TimeStamp",
+        "TruthValue"
+      ]
+    ],
+    [
+      "ENTITY-MIB",
+      [
+        "entPhysicalIndex"
+      ]
+    ],
+    [
+      "CISCO-TC",
+      [
+        "EntPhysicalIndexOrZero"
+      ]
+    ],
+    [
+      "CISCO-SMI",
+      [
+        "ciscoMgmt"
+      ]
+    ]
+  ],
+  "ciscoEntitySensorMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "ciscoMgmt",
+      91
+    ]
+  },
+  "entitySensorMIBObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoEntitySensorMIB",
+      1
+    ]
+  },
+  "entitySensorMIBNotificationPrefix": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoEntitySensorMIB",
+      2
+    ]
+  },
+  "entitySensorMIBConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoEntitySensorMIB",
+      3
+    ]
+  },
+  "SensorDataType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "3": "voltsAC",
+        "4": "voltsDC",
+        "5": "amperes",
+        "6": "watts",
+        "7": "hertz",
+        "8": "celsius",
+        "9": "percentRH",
+        "10": "rpm",
+        "11": "cmm",
+        "12": "truthvalue",
+        "13": "specialEnum",
+        "14": "dBm",
+        "15": "dB"
+      }
+    },
+    "display_hint": null
+  },
+  "SensorDataScale": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "yocto",
+        "2": "zepto",
+        "3": "atto",
+        "4": "femto",
+        "5": "pico",
+        "6": "nano",
+        "7": "micro",
+        "8": "milli",
+        "9": "units",
+        "10": "kilo",
+        "11": "mega",
+        "12": "giga",
+        "13": "tera",
+        "14": "exa",
+        "15": "peta",
+        "16": "zetta",
+        "17": "yotta"
+      }
+    },
+    "display_hint": null
+  },
+  "SensorPrecision": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "display_hint": null
+  },
+  "SensorValue": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "display_hint": null
+  },
+  "SensorStatus": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "ok",
+        "2": "unavailable",
+        "3": "nonoperational"
+      }
+    },
+    "display_hint": null
+  },
+  "SensorValueUpdateRate": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "display_hint": null
+  },
+  "SensorThresholdSeverity": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "10": "minor",
+        "20": "major",
+        "30": "critical"
+      }
+    },
+    "display_hint": null
+  },
+  "SensorThresholdRelation": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "lessThan",
+        "2": "lessOrEqual",
+        "3": "greaterThan",
+        "4": "greaterOrEqual",
+        "5": "equalTo",
+        "6": "notEqualTo"
+      }
+    },
+    "display_hint": null
+  },
+  "entSensorValues": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entitySensorMIBObjects",
+      1
+    ]
+  },
+  "entSensorThresholds": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entitySensorMIBObjects",
+      2
+    ]
+  },
+  "entSensorGlobalObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entitySensorMIBObjects",
+      3
+    ]
+  },
+  "entSensorValueTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF EntSensorValueEntry"
+    },
+    "index": null,
+    "value": [
+      "entSensorValues",
+      1
+    ]
+  },
+  "entSensorValueEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntSensorValueEntry"
+    },
+    "index": [
+      "entPhysicalIndex"
+    ],
+    "value": [
+      "entSensorValueTable",
+      1
+    ]
+  },
+  "EntSensorValueEntry": {
+    "tp": "SEQUENCE"
+  },
+  "entSensorType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SensorDataType"
+    },
+    "index": null,
+    "value": [
+      "entSensorValueEntry",
+      1
+    ]
+  },
+  "entSensorScale": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SensorDataScale"
+    },
+    "index": null,
+    "value": [
+      "entSensorValueEntry",
+      2
+    ]
+  },
+  "entSensorPrecision": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SensorPrecision"
+    },
+    "index": null,
+    "value": [
+      "entSensorValueEntry",
+      3
+    ]
+  },
+  "entSensorValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SensorValue"
+    },
+    "index": null,
+    "value": [
+      "entSensorValueEntry",
+      4
+    ]
+  },
+  "entSensorStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SensorStatus"
+    },
+    "index": null,
+    "value": [
+      "entSensorValueEntry",
+      5
+    ]
+  },
+  "entSensorValueTimeStamp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "entSensorValueEntry",
+      6
+    ]
+  },
+  "entSensorValueUpdateRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SensorValueUpdateRate"
+    },
+    "index": null,
+    "value": [
+      "entSensorValueEntry",
+      7
+    ]
+  },
+  "entSensorMeasuredEntity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntPhysicalIndexOrZero"
+    },
+    "index": null,
+    "value": [
+      "entSensorValueEntry",
+      8
+    ]
+  },
+  "entSensorThresholdTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF EntSensorThresholdEntry"
+    },
+    "index": null,
+    "value": [
+      "entSensorThresholds",
+      1
+    ]
+  },
+  "entSensorThresholdEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntSensorThresholdEntry"
+    },
+    "index": [
+      "entPhysicalIndex",
+      "entSensorThresholdIndex"
+    ],
+    "value": [
+      "entSensorThresholdTable",
+      1
+    ]
+  },
+  "EntSensorThresholdEntry": {
+    "tp": "SEQUENCE"
+  },
+  "entSensorThresholdIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "entSensorThresholdEntry",
+      1
+    ]
+  },
+  "entSensorThresholdSeverity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SensorThresholdSeverity"
+    },
+    "index": null,
+    "value": [
+      "entSensorThresholdEntry",
+      2
+    ]
+  },
+  "entSensorThresholdRelation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SensorThresholdRelation"
+    },
+    "index": null,
+    "value": [
+      "entSensorThresholdEntry",
+      3
+    ]
+  },
+  "entSensorThresholdValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SensorValue"
+    },
+    "index": null,
+    "value": [
+      "entSensorThresholdEntry",
+      4
+    ]
+  },
+  "entSensorThresholdEvaluation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "entSensorThresholdEntry",
+      5
+    ]
+  },
+  "entSensorThresholdNotificationEnable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "entSensorThresholdEntry",
+      6
+    ]
+  },
+  "entSensorThreshNotifGlobalEnable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "entSensorGlobalObjects",
+      1
+    ]
+  },
+  "entitySensorMIBNotifications": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entitySensorMIBNotificationPrefix",
+      0
+    ]
+  },
+  "entitySensorMIBCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entitySensorMIBConformance",
+      1
+    ]
+  },
+  "entitySensorMIBGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "entitySensorMIBConformance",
+      2
+    ]
+  },
+  "entitySensorValueGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "entitySensorMIBGroups",
+      1
+    ]
+  },
+  "entitySensorThresholdGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "entitySensorMIBGroups",
+      2
+    ]
+  },
+  "entitySensorValueGroupSup1": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "entitySensorMIBGroups",
+      4
+    ]
+  },
+  "entitySensorNotifCtrlGlobalGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "entitySensorMIBGroups",
+      5
+    ]
+  }
+}

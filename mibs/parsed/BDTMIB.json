@@ -1,0 +1,309 @@
+{
+  "IMPORTS": [
+    [
+      "RFC-1212",
+      [
+        "OBJECT-TYPE"
+      ]
+    ],
+    [
+      "RFC-1215",
+      [
+        "TRAP-TYPE"
+      ]
+    ],
+    [
+      "RFC1155-SMI",
+      [
+        "enterprises"
+      ]
+    ],
+    [
+      "RFC1213-MIB",
+      [
+        "DisplayString"
+      ]
+    ]
+  ],
+  "bdt": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      20884
+    ]
+  },
+  "storage": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "bdt",
+      10893
+    ]
+  },
+  "hardware": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "storage",
+      2
+    ]
+  },
+  "bDTagent": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hardware",
+      101
+    ]
+  },
+  "bDTAgentInfo": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "bDTagent",
+      1
+    ]
+  },
+  "bDTDisplayName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "bDTAgentInfo",
+      1
+    ]
+  },
+  "bDTDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "bDTAgentInfo",
+      2
+    ]
+  },
+  "bDTAgentVendor": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "bDTAgentInfo",
+      3
+    ]
+  },
+  "bDTAgentVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "bDTAgentInfo",
+      4
+    ]
+  },
+  "bDTGlobalData": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "bDTagent",
+      2
+    ]
+  },
+  "bDTGlobalStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "3": "ok",
+        "4": "non-critical",
+        "5": "critical",
+        "6": "non-Recoverable"
+      }
+    },
+    "index": null,
+    "value": [
+      "bDTGlobalData",
+      1
+    ]
+  },
+  "bDTLastGlobalStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "3": "ok",
+        "4": "non-critical",
+        "5": "critical",
+        "6": "non-recoverable"
+      }
+    },
+    "index": null,
+    "value": [
+      "bDTGlobalData",
+      2
+    ]
+  },
+  "bDTTimeStamp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "bDTGlobalData",
+      3
+    ]
+  },
+  "bDTGetTimeOut": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "bDTGlobalData",
+      4
+    ]
+  },
+  "bDTErrorCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "bDTGlobalData",
+      5
+    ]
+  },
+  "bDTRefreshRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "bDTGlobalData",
+      6
+    ]
+  },
+  "bDTErrorData": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "bDTGlobalData",
+      9
+    ]
+  },
+  "bDTDeviceInfo": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "bDTagent",
+      4
+    ]
+  },
+  "bDTDevSerialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "bDTDeviceInfo",
+      1
+    ]
+  },
+  "bDTDevVendorID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "bDTDeviceInfo",
+      2
+    ]
+  },
+  "bDTDevProductID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "bDTDeviceInfo",
+      3
+    ]
+  },
+  "bDTDevFirmwareRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "bDTDeviceInfo",
+      4
+    ]
+  },
+  "bDTDevRobFirmwareRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "bDTDeviceInfo",
+      5
+    ]
+  },
+  "bDTDevBootcodeRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "bDTDeviceInfo",
+      6
+    ]
+  },
+  "bDTTraps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "bDTagent",
+      3
+    ]
+  },
+  "bDTDriveNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "bDTTraps",
+      13
+    ]
+  },
+  "bDTMagNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "bDTTraps",
+      14
+    ]
+  }
+}

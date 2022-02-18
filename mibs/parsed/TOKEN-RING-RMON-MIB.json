@@ -1,0 +1,2124 @@
+{
+  "IMPORTS": [
+    [
+      "RFC1155-SMI",
+      [
+        "Counter",
+        "TimeTicks"
+      ]
+    ],
+    [
+      "RFC-1212",
+      [
+        "OBJECT-TYPE"
+      ]
+    ],
+    [
+      "RFC1271-MIB",
+      [
+        "OwnerString",
+        "rmon",
+        "statistics",
+        "history"
+      ]
+    ]
+  ],
+  "OwnerString": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": "255a"
+  },
+  "MacAddress": {
+    "tp": "OCTET STRING"
+  },
+  "TimeInterval": {
+    "tp": "INTEGER"
+  },
+  "tokenRing": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "rmon",
+      10
+    ]
+  },
+  "EntryStatus": {
+    "tp": "INTEGER",
+    "values": {
+      "1": "valid",
+      "2": "createRequest",
+      "3": "underCreation",
+      "4": "invalid"
+    }
+  },
+  "tokenRingMLStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF TokenRingMLStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "statistics",
+      2
+    ]
+  },
+  "tokenRingMLStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TokenRingMLStatsEntry"
+    },
+    "index": [
+      "tokenRingMLStatsIndex"
+    ],
+    "value": [
+      "tokenRingMLStatsTable",
+      1
+    ]
+  },
+  "TokenRingMLStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "tokenRingMLStatsIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      1
+    ]
+  },
+  "tokenRingMLStatsDataSource": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      2
+    ]
+  },
+  "tokenRingMLStatsDropEvents": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      3
+    ]
+  },
+  "tokenRingMLStatsMacOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      4
+    ]
+  },
+  "tokenRingMLStatsMacPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      5
+    ]
+  },
+  "tokenRingMLStatsRingPurgeEvents": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      6
+    ]
+  },
+  "tokenRingMLStatsRingPurgePkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      7
+    ]
+  },
+  "tokenRingMLStatsBeaconEvents": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      8
+    ]
+  },
+  "tokenRingMLStatsBeaconTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeInterval"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      9
+    ]
+  },
+  "tokenRingMLStatsBeaconPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      10
+    ]
+  },
+  "tokenRingMLStatsClaimTokenEvents": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      11
+    ]
+  },
+  "tokenRingMLStatsClaimTokenPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      12
+    ]
+  },
+  "tokenRingMLStatsNAUNChanges": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      13
+    ]
+  },
+  "tokenRingMLStatsLineErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      14
+    ]
+  },
+  "tokenRingMLStatsInternalErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      15
+    ]
+  },
+  "tokenRingMLStatsBurstErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      16
+    ]
+  },
+  "tokenRingMLStatsACErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      17
+    ]
+  },
+  "tokenRingMLStatsAbortErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      18
+    ]
+  },
+  "tokenRingMLStatsLostFrameErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      19
+    ]
+  },
+  "tokenRingMLStatsCongestionErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      20
+    ]
+  },
+  "tokenRingMLStatsFrameCopiedErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      21
+    ]
+  },
+  "tokenRingMLStatsFrequencyErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      22
+    ]
+  },
+  "tokenRingMLStatsTokenErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      23
+    ]
+  },
+  "tokenRingMLStatsSoftErrorReports": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      24
+    ]
+  },
+  "tokenRingMLStatsRingPollEvents": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      25
+    ]
+  },
+  "tokenRingMLStatsOwner": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OwnerString"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      26
+    ]
+  },
+  "tokenRingMLStatsStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntryStatus"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLStatsEntry",
+      27
+    ]
+  },
+  "tokenRingPStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF TokenRingPStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "statistics",
+      3
+    ]
+  },
+  "tokenRingPStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TokenRingPStatsEntry"
+    },
+    "index": [
+      "tokenRingPStatsIndex"
+    ],
+    "value": [
+      "tokenRingPStatsTable",
+      1
+    ]
+  },
+  "TokenRingPStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "tokenRingPStatsIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPStatsEntry",
+      1
+    ]
+  },
+  "tokenRingPStatsDataSource": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPStatsEntry",
+      2
+    ]
+  },
+  "tokenRingPStatsDropEvents": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPStatsEntry",
+      3
+    ]
+  },
+  "tokenRingPStatsDataOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPStatsEntry",
+      4
+    ]
+  },
+  "tokenRingPStatsDataPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPStatsEntry",
+      5
+    ]
+  },
+  "tokenRingPStatsDataBroadcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPStatsEntry",
+      6
+    ]
+  },
+  "tokenRingPStatsDataMulticastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPStatsEntry",
+      7
+    ]
+  },
+  "tokenRingPStatsDataPkts18to63Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPStatsEntry",
+      8
+    ]
+  },
+  "tokenRingPStatsDataPkts64to127Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPStatsEntry",
+      9
+    ]
+  },
+  "tokenRingPStatsDataPkts128to255Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPStatsEntry",
+      10
+    ]
+  },
+  "tokenRingPStatsDataPkts256to511Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPStatsEntry",
+      11
+    ]
+  },
+  "tokenRingPStatsDataPkts512to1023Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPStatsEntry",
+      12
+    ]
+  },
+  "tokenRingPStatsDataPkts1024to2047Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPStatsEntry",
+      13
+    ]
+  },
+  "tokenRingPStatsDataPkts2048to4095Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPStatsEntry",
+      14
+    ]
+  },
+  "tokenRingPStatsDataPkts4096to8191Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPStatsEntry",
+      15
+    ]
+  },
+  "tokenRingPStatsDataPkts8192to18000Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPStatsEntry",
+      16
+    ]
+  },
+  "tokenRingPStatsDataPktsGreaterThan18000Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPStatsEntry",
+      17
+    ]
+  },
+  "tokenRingPStatsOwner": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OwnerString"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPStatsEntry",
+      18
+    ]
+  },
+  "tokenRingPStatsStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntryStatus"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPStatsEntry",
+      19
+    ]
+  },
+  "tokenRingMLHistoryTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF TokenRingMLHistoryEntry"
+    },
+    "index": null,
+    "value": [
+      "history",
+      3
+    ]
+  },
+  "tokenRingMLHistoryEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TokenRingMLHistoryEntry"
+    },
+    "index": [
+      "tokenRingMLHistoryIndex",
+      "tokenRingMLHistorySampleIndex"
+    ],
+    "value": [
+      "tokenRingMLHistoryTable",
+      1
+    ]
+  },
+  "TokenRingMLHistoryEntry": {
+    "tp": "SEQUENCE"
+  },
+  "tokenRingMLHistoryIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      1
+    ]
+  },
+  "tokenRingMLHistorySampleIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      2
+    ]
+  },
+  "tokenRingMLHistoryIntervalStart": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      3
+    ]
+  },
+  "tokenRingMLHistoryDropEvents": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      4
+    ]
+  },
+  "tokenRingMLHistoryMacOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      5
+    ]
+  },
+  "tokenRingMLHistoryMacPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      6
+    ]
+  },
+  "tokenRingMLHistoryRingPurgeEvents": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      7
+    ]
+  },
+  "tokenRingMLHistoryRingPurgePkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      8
+    ]
+  },
+  "tokenRingMLHistoryBeaconEvents": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      9
+    ]
+  },
+  "tokenRingMLHistoryBeaconTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeInterval"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      10
+    ]
+  },
+  "tokenRingMLHistoryBeaconPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      11
+    ]
+  },
+  "tokenRingMLHistoryClaimTokenEvents": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      12
+    ]
+  },
+  "tokenRingMLHistoryClaimTokenPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      13
+    ]
+  },
+  "tokenRingMLHistoryNAUNChanges": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      14
+    ]
+  },
+  "tokenRingMLHistoryLineErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      15
+    ]
+  },
+  "tokenRingMLHistoryInternalErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      16
+    ]
+  },
+  "tokenRingMLHistoryBurstErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      17
+    ]
+  },
+  "tokenRingMLHistoryACErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      18
+    ]
+  },
+  "tokenRingMLHistoryAbortErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      19
+    ]
+  },
+  "tokenRingMLHistoryLostFrameErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      20
+    ]
+  },
+  "tokenRingMLHistoryCongestionErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      21
+    ]
+  },
+  "tokenRingMLHistoryFrameCopiedErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      22
+    ]
+  },
+  "tokenRingMLHistoryFrequencyErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      23
+    ]
+  },
+  "tokenRingMLHistoryTokenErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      24
+    ]
+  },
+  "tokenRingMLHistorySoftErrorReports": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      25
+    ]
+  },
+  "tokenRingMLHistoryRingPollEvents": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      26
+    ]
+  },
+  "tokenRingMLHistoryActiveStations": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "tokenRingMLHistoryEntry",
+      27
+    ]
+  },
+  "tokenRingPHistoryTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF TokenRingPHistoryEntry"
+    },
+    "index": null,
+    "value": [
+      "history",
+      4
+    ]
+  },
+  "tokenRingPHistoryEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TokenRingPHistoryEntry"
+    },
+    "index": [
+      "tokenRingPHistoryIndex",
+      "tokenRingPHistorySampleIndex"
+    ],
+    "value": [
+      "tokenRingPHistoryTable",
+      1
+    ]
+  },
+  "TokenRingPHistoryEntry": {
+    "tp": "SEQUENCE"
+  },
+  "tokenRingPHistoryIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPHistoryEntry",
+      1
+    ]
+  },
+  "tokenRingPHistorySampleIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPHistoryEntry",
+      2
+    ]
+  },
+  "tokenRingPHistoryIntervalStart": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPHistoryEntry",
+      3
+    ]
+  },
+  "tokenRingPHistoryDropEvents": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPHistoryEntry",
+      4
+    ]
+  },
+  "tokenRingPHistoryDataOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPHistoryEntry",
+      5
+    ]
+  },
+  "tokenRingPHistoryDataPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPHistoryEntry",
+      6
+    ]
+  },
+  "tokenRingPHistoryDataBroadcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPHistoryEntry",
+      7
+    ]
+  },
+  "tokenRingPHistoryDataMulticastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPHistoryEntry",
+      8
+    ]
+  },
+  "tokenRingPHistoryDataPkts18to63Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPHistoryEntry",
+      9
+    ]
+  },
+  "tokenRingPHistoryDataPkts64to127Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPHistoryEntry",
+      10
+    ]
+  },
+  "tokenRingPHistoryDataPkts128to255Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPHistoryEntry",
+      11
+    ]
+  },
+  "tokenRingPHistoryDataPkts256to511Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPHistoryEntry",
+      12
+    ]
+  },
+  "tokenRingPHistoryDataPkts512to1023Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPHistoryEntry",
+      13
+    ]
+  },
+  "tokenRingPHistoryDataPkts1024to2047Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPHistoryEntry",
+      14
+    ]
+  },
+  "tokenRingPHistoryDataPkts2048to4095Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPHistoryEntry",
+      15
+    ]
+  },
+  "tokenRingPHistoryDataPkts4096to8191Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPHistoryEntry",
+      16
+    ]
+  },
+  "tokenRingPHistoryDataPkts8192to18000Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPHistoryEntry",
+      17
+    ]
+  },
+  "tokenRingPHistoryDataPktsGreaterThan18000Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "tokenRingPHistoryEntry",
+      18
+    ]
+  },
+  "ringStationControlTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF RingStationControlEntry"
+    },
+    "index": null,
+    "value": [
+      "tokenRing",
+      1
+    ]
+  },
+  "ringStationControlEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RingStationControlEntry"
+    },
+    "index": [
+      "ringStationControlIfIndex"
+    ],
+    "value": [
+      "ringStationControlTable",
+      1
+    ]
+  },
+  "RingStationControlEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ringStationControlIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ringStationControlEntry",
+      1
+    ]
+  },
+  "ringStationControlTableSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ringStationControlEntry",
+      2
+    ]
+  },
+  "ringStationControlActiveStations": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ringStationControlEntry",
+      3
+    ]
+  },
+  "ringStationControlRingState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "normalOperation",
+        "2": "ringPurgeState",
+        "3": "claimTokenState",
+        "4": "beaconFrameStreamingState",
+        "5": "beaconBitStreamingState",
+        "6": "beaconRingSignalLossState",
+        "7": "beaconSetRecoveryModeState"
+      }
+    },
+    "index": null,
+    "value": [
+      "ringStationControlEntry",
+      4
+    ]
+  },
+  "ringStationControlBeaconSender": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "ringStationControlEntry",
+      5
+    ]
+  },
+  "ringStationControlBeaconNAUN": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "ringStationControlEntry",
+      6
+    ]
+  },
+  "ringStationControlActiveMonitor": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "ringStationControlEntry",
+      7
+    ]
+  },
+  "ringStationControlOrderChanges": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "ringStationControlEntry",
+      8
+    ]
+  },
+  "ringStationControlOwner": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OwnerString"
+    },
+    "index": null,
+    "value": [
+      "ringStationControlEntry",
+      9
+    ]
+  },
+  "ringStationControlStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntryStatus"
+    },
+    "index": null,
+    "value": [
+      "ringStationControlEntry",
+      10
+    ]
+  },
+  "ringStationTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF RingStationEntry"
+    },
+    "index": null,
+    "value": [
+      "tokenRing",
+      2
+    ]
+  },
+  "ringStationEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RingStationEntry"
+    },
+    "index": [
+      "ringStationIfIndex",
+      "ringStationMacAddress"
+    ],
+    "value": [
+      "ringStationTable",
+      1
+    ]
+  },
+  "RingStationEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ringStationIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      1
+    ]
+  },
+  "ringStationMacAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      2
+    ]
+  },
+  "ringStationLastNAUN": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      3
+    ]
+  },
+  "ringStationStationStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "active",
+        "2": "inactive",
+        "3": "forcedRemoval"
+      }
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      4
+    ]
+  },
+  "ringStationLastEnterTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      5
+    ]
+  },
+  "ringStationLastExitTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      6
+    ]
+  },
+  "ringStationDuplicateAddresses": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      7
+    ]
+  },
+  "ringStationInLineErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      8
+    ]
+  },
+  "ringStationOutLineErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      9
+    ]
+  },
+  "ringStationInternalErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      10
+    ]
+  },
+  "ringStationInBurstErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      11
+    ]
+  },
+  "ringStationOutBurstErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      12
+    ]
+  },
+  "ringStationACErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      13
+    ]
+  },
+  "ringStationAbortErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      14
+    ]
+  },
+  "ringStationLostFrameErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      15
+    ]
+  },
+  "ringStationCongestionErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      16
+    ]
+  },
+  "ringStationFrameCopiedErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      17
+    ]
+  },
+  "ringStationFrequencyErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      18
+    ]
+  },
+  "ringStationTokenErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      19
+    ]
+  },
+  "ringStationInBeaconErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      20
+    ]
+  },
+  "ringStationOutBeaconErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      21
+    ]
+  },
+  "ringStationInsertions": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "ringStationEntry",
+      22
+    ]
+  },
+  "ringStationOrderTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF RingStationOrderEntry"
+    },
+    "index": null,
+    "value": [
+      "tokenRing",
+      3
+    ]
+  },
+  "ringStationOrderEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RingStationOrderEntry"
+    },
+    "index": [
+      "ringStationOrderIfIndex",
+      "ringStationOrderOrderIndex"
+    ],
+    "value": [
+      "ringStationOrderTable",
+      1
+    ]
+  },
+  "RingStationOrderEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ringStationOrderIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ringStationOrderEntry",
+      1
+    ]
+  },
+  "ringStationOrderOrderIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ringStationOrderEntry",
+      2
+    ]
+  },
+  "ringStationOrderMacAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "ringStationOrderEntry",
+      3
+    ]
+  },
+  "ringStationConfigControlTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF RingStationConfigControlEntry"
+    },
+    "index": null,
+    "value": [
+      "tokenRing",
+      4
+    ]
+  },
+  "ringStationConfigControlEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RingStationConfigControlEntry"
+    },
+    "index": [
+      "ringStationConfigControlIfIndex",
+      "ringStationConfigControlMacAddress"
+    ],
+    "value": [
+      "ringStationConfigControlTable",
+      1
+    ]
+  },
+  "RingStationConfigControlEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ringStationConfigControlIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ringStationConfigControlEntry",
+      1
+    ]
+  },
+  "ringStationConfigControlMacAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "ringStationConfigControlEntry",
+      2
+    ]
+  },
+  "ringStationConfigControlRemove": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "stable",
+        "2": "removing"
+      }
+    },
+    "index": null,
+    "value": [
+      "ringStationConfigControlEntry",
+      3
+    ]
+  },
+  "ringStationConfigControlUpdateStats": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "stable",
+        "2": "updating"
+      }
+    },
+    "index": null,
+    "value": [
+      "ringStationConfigControlEntry",
+      4
+    ]
+  },
+  "ringStationConfigTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF RingStationConfigEntry"
+    },
+    "index": null,
+    "value": [
+      "tokenRing",
+      5
+    ]
+  },
+  "ringStationConfigEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RingStationConfigEntry"
+    },
+    "index": [
+      "ringStationConfigIfIndex",
+      "ringStationConfigMacAddress"
+    ],
+    "value": [
+      "ringStationConfigTable",
+      1
+    ]
+  },
+  "RingStationConfigEntry": {
+    "tp": "SEQUENCE"
+  },
+  "ringStationConfigIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ringStationConfigEntry",
+      1
+    ]
+  },
+  "ringStationConfigMacAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "ringStationConfigEntry",
+      2
+    ]
+  },
+  "ringStationConfigUpdateTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "ringStationConfigEntry",
+      3
+    ]
+  },
+  "ringStationConfigLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "ringStationConfigEntry",
+      4
+    ]
+  },
+  "ringStationConfigMicrocode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "ringStationConfigEntry",
+      5
+    ]
+  },
+  "ringStationConfigGroupAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "ringStationConfigEntry",
+      6
+    ]
+  },
+  "ringStationConfigFunctionalAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "ringStationConfigEntry",
+      7
+    ]
+  },
+  "sourceRoutingStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SourceRoutingStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "tokenRing",
+      6
+    ]
+  },
+  "sourceRoutingStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SourceRoutingStatsEntry"
+    },
+    "index": [
+      "sourceRoutingStatsIfIndex"
+    ],
+    "value": [
+      "sourceRoutingStatsTable",
+      1
+    ]
+  },
+  "SourceRoutingStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "sourceRoutingStatsIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      1
+    ]
+  },
+  "sourceRoutingStatsRingNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      2
+    ]
+  },
+  "sourceRoutingStatsInFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      3
+    ]
+  },
+  "sourceRoutingStatsOutFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      4
+    ]
+  },
+  "sourceRoutingStatsThroughFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      5
+    ]
+  },
+  "sourceRoutingStatsAllRoutesBroadcastFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      6
+    ]
+  },
+  "sourceRoutingStatsSingleRouteBroadcastFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      7
+    ]
+  },
+  "sourceRoutingStatsInOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      8
+    ]
+  },
+  "sourceRoutingStatsOutOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      9
+    ]
+  },
+  "sourceRoutingStatsThroughOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      10
+    ]
+  },
+  "sourceRoutingStatsAllRoutesBroadcastOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      11
+    ]
+  },
+  "sourceRoutingStatsSingleRoutesBroadcastOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      12
+    ]
+  },
+  "sourceRoutingStatsLocalLLCFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      13
+    ]
+  },
+  "sourceRoutingStats1HopFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      14
+    ]
+  },
+  "sourceRoutingStats2HopsFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      15
+    ]
+  },
+  "sourceRoutingStats3HopsFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      16
+    ]
+  },
+  "sourceRoutingStats4HopsFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      17
+    ]
+  },
+  "sourceRoutingStats5HopsFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      18
+    ]
+  },
+  "sourceRoutingStats6HopsFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      19
+    ]
+  },
+  "sourceRoutingStats7HopsFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      20
+    ]
+  },
+  "sourceRoutingStats8HopsFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      21
+    ]
+  },
+  "sourceRoutingStatsMoreThan8HopsFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      22
+    ]
+  },
+  "sourceRoutingStatsOwner": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OwnerString"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      23
+    ]
+  },
+  "sourceRoutingStatsStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntryStatus"
+    },
+    "index": null,
+    "value": [
+      "sourceRoutingStatsEntry",
+      24
+    ]
+  }
+}

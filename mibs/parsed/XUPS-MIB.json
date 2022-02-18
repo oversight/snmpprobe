@@ -1,0 +1,1742 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "TimeTicks",
+        "Gauge32",
+        "Counter32",
+        "Integer32"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "DisplayString"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "NOTIFICATION-TYPE"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP",
+        "NOTIFICATION-GROUP"
+      ]
+    ],
+    [
+      "EATON-OIDS",
+      [
+        "eaton",
+        "xupsEnvironment"
+      ]
+    ],
+    [
+      "EATON-EMP-MIB",
+      [
+        "xupsContactIndex",
+        "xupsContactType",
+        "xupsContactState",
+        "xupsContactDescr",
+        "xupsEnvRemoteTemp",
+        "xupsEnvRemoteTempLowerLimit",
+        "xupsEnvRemoteTempUpperLimit",
+        "xupsEnvRemoteHumidity",
+        "xupsEnvRemoteHumidityLowerLimit",
+        "xupsEnvRemoteHumidityUpperLimit"
+      ]
+    ]
+  ],
+  "xupsMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "eaton",
+      1
+    ]
+  },
+  "xupsIdent": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsMIB",
+      1
+    ]
+  },
+  "xupsBattery": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsMIB",
+      2
+    ]
+  },
+  "xupsInput": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsMIB",
+      3
+    ]
+  },
+  "xupsOutput": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsMIB",
+      4
+    ]
+  },
+  "xupsBypass": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsMIB",
+      5
+    ]
+  },
+  "xupsAlarm": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsMIB",
+      7
+    ]
+  },
+  "xupsTest": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsMIB",
+      8
+    ]
+  },
+  "xupsControl": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsMIB",
+      9
+    ]
+  },
+  "xupsConfig": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsMIB",
+      10
+    ]
+  },
+  "xupsTrapControl": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsMIB",
+      11
+    ]
+  },
+  "xupsRecep": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsMIB",
+      12
+    ]
+  },
+  "xupsTopology": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsMIB",
+      13
+    ]
+  },
+  "xupsIdentManufacturer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "xupsIdent",
+      1
+    ]
+  },
+  "xupsIdentModel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "xupsIdent",
+      2
+    ]
+  },
+  "xupsIdentSoftwareVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "xupsIdent",
+      3
+    ]
+  },
+  "xupsIdentOemCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsIdent",
+      4
+    ]
+  },
+  "xupsBatTimeRemaining": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsBattery",
+      1
+    ]
+  },
+  "xupsBatVoltage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsBattery",
+      2
+    ]
+  },
+  "xupsBatCurrent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsBattery",
+      3
+    ]
+  },
+  "xupsBatCapacity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsBattery",
+      4
+    ]
+  },
+  "xupsBatteryAbmStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "batteryCharging",
+        "2": "batteryDischarging",
+        "3": "batteryFloating",
+        "4": "batteryResting",
+        "5": "unknown",
+        "6": "batteryDisconnected",
+        "7": "batteryUnderTest",
+        "8": "checkBattery"
+      }
+    },
+    "index": null,
+    "value": [
+      "xupsBattery",
+      5
+    ]
+  },
+  "xupsBatteryLastReplacedDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "xupsBattery",
+      6
+    ]
+  },
+  "xupsInputFrequency": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsInput",
+      1
+    ]
+  },
+  "xupsInputLineBads": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "xupsInput",
+      2
+    ]
+  },
+  "xupsInputNumPhases": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsInput",
+      3
+    ]
+  },
+  "xupsInputTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF XupsInputEntry"
+    },
+    "index": null,
+    "value": [
+      "xupsInput",
+      4
+    ]
+  },
+  "xupsInputEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "XupsInputEntry"
+    },
+    "index": [
+      "xupsInputPhase"
+    ],
+    "value": [
+      "xupsInputTable",
+      1
+    ]
+  },
+  "XupsInputEntry": {
+    "tp": "SEQUENCE"
+  },
+  "xupsInputPhase": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsInputEntry",
+      1
+    ]
+  },
+  "xupsInputVoltage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsInputEntry",
+      2
+    ]
+  },
+  "xupsInputCurrent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsInputEntry",
+      3
+    ]
+  },
+  "xupsInputWatts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsInputEntry",
+      4
+    ]
+  },
+  "xupsInputSource": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "none",
+        "3": "primaryUtility",
+        "4": "bypassFeed",
+        "5": "secondaryUtility",
+        "6": "generator",
+        "7": "flywheel",
+        "8": "fuelcell"
+      }
+    },
+    "index": null,
+    "value": [
+      "xupsInput",
+      5
+    ]
+  },
+  "xupsDualInputStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "bothSourcesBad",
+        "2": "primarySourceGood",
+        "3": "secondarySourceGood",
+        "4": "bothSourcesGood"
+      }
+    },
+    "index": null,
+    "value": [
+      "xupsInput",
+      6
+    ]
+  },
+  "xupsSecondaryInputWatch": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "disabled",
+        "2": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "xupsInput",
+      7
+    ]
+  },
+  "xupsOutputLoad": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsOutput",
+      1
+    ]
+  },
+  "xupsOutputFrequency": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsOutput",
+      2
+    ]
+  },
+  "xupsOutputNumPhases": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsOutput",
+      3
+    ]
+  },
+  "xupsOutputTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF XupsOutputEntry"
+    },
+    "index": null,
+    "value": [
+      "xupsOutput",
+      4
+    ]
+  },
+  "xupsOutputEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "XupsOutputEntry"
+    },
+    "index": [
+      "xupsOutputPhase"
+    ],
+    "value": [
+      "xupsOutputTable",
+      1
+    ]
+  },
+  "XupsOutputEntry": {
+    "tp": "SEQUENCE"
+  },
+  "xupsOutputPhase": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsOutputEntry",
+      1
+    ]
+  },
+  "xupsOutputVoltage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsOutputEntry",
+      2
+    ]
+  },
+  "xupsOutputCurrent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsOutputEntry",
+      3
+    ]
+  },
+  "xupsOutputWatts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsOutputEntry",
+      4
+    ]
+  },
+  "xupsOutputSource": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "none",
+        "3": "normal",
+        "4": "bypass",
+        "5": "battery",
+        "6": "booster",
+        "7": "reducer",
+        "8": "parallelCapacity",
+        "9": "parallelRedundant",
+        "10": "highEfficiencyMode",
+        "11": "maintenanceBypass"
+      }
+    },
+    "index": null,
+    "value": [
+      "xupsOutput",
+      5
+    ]
+  },
+  "xupsBypassFrequency": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsBypass",
+      1
+    ]
+  },
+  "xupsBypassNumPhases": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsBypass",
+      2
+    ]
+  },
+  "xupsBypassTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF XupsBypassEntry"
+    },
+    "index": null,
+    "value": [
+      "xupsBypass",
+      3
+    ]
+  },
+  "xupsBypassEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "XupsBypassEntry"
+    },
+    "index": [
+      "xupsBypassPhase"
+    ],
+    "value": [
+      "xupsBypassTable",
+      1
+    ]
+  },
+  "XupsBypassEntry": {
+    "tp": "SEQUENCE"
+  },
+  "xupsBypassPhase": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsBypassEntry",
+      1
+    ]
+  },
+  "xupsBypassVoltage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsBypassEntry",
+      2
+    ]
+  },
+  "xupsEnvAmbientTemp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsEnvironment",
+      1
+    ]
+  },
+  "xupsEnvAmbientLowerLimit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsEnvironment",
+      2
+    ]
+  },
+  "xupsEnvAmbientUpperLimit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsEnvironment",
+      3
+    ]
+  },
+  "xupsEnvAmbientHumidity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsEnvironment",
+      4
+    ]
+  },
+  "xupsAlarms": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "xupsAlarm",
+      1
+    ]
+  },
+  "xupsAlarmTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF XupsAlarmEntry"
+    },
+    "index": null,
+    "value": [
+      "xupsAlarm",
+      2
+    ]
+  },
+  "xupsAlarmEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "XupsAlarmEntry"
+    },
+    "index": [
+      "xupsAlarmID"
+    ],
+    "value": [
+      "xupsAlarmTable",
+      1
+    ]
+  },
+  "XupsAlarmEntry": {
+    "tp": "SEQUENCE"
+  },
+  "xupsAlarmID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsAlarmEntry",
+      1
+    ]
+  },
+  "xupsAlarmDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "xupsAlarmEntry",
+      2
+    ]
+  },
+  "xupsAlarmTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "xupsAlarmEntry",
+      3
+    ]
+  },
+  "xupsOnBattery": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      3
+    ]
+  },
+  "xupsLowBattery": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      4
+    ]
+  },
+  "xupsUtilityPowerRestored": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      5
+    ]
+  },
+  "xupsReturnFromLowBattery": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      6
+    ]
+  },
+  "xupsOutputOverload": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      7
+    ]
+  },
+  "xupsInternalFailure": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      8
+    ]
+  },
+  "xupsBatteryDischarged": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      9
+    ]
+  },
+  "xupsInverterFailure": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      10
+    ]
+  },
+  "xupsOnBypass": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      11
+    ]
+  },
+  "xupsBypassNotAvailable": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      12
+    ]
+  },
+  "xupsOutputOff": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      13
+    ]
+  },
+  "xupsInputFailure": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      14
+    ]
+  },
+  "xupsBuildingAlarm": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      15
+    ]
+  },
+  "xupsShutdownImminent": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      16
+    ]
+  },
+  "xupsOnInverter": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      17
+    ]
+  },
+  "xupsAlarmNumEvents": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "xupsAlarm",
+      18
+    ]
+  },
+  "xupsAlarmEventTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF XupsAlarmEventEntry"
+    },
+    "index": null,
+    "value": [
+      "xupsAlarm",
+      19
+    ]
+  },
+  "xupsAlarmEventEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "XupsAlarmEventEntry"
+    },
+    "index": [
+      "xupsAlarmEventID"
+    ],
+    "value": [
+      "xupsAlarmEventTable",
+      1
+    ]
+  },
+  "XupsAlarmEventEntry": {
+    "tp": "SEQUENCE"
+  },
+  "xupsAlarmEventID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsAlarmEventEntry",
+      1
+    ]
+  },
+  "xupsAlarmEventDateAndTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "xupsAlarmEventEntry",
+      2
+    ]
+  },
+  "xupsAlarmEventKind": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "occurred",
+        "2": "cleared",
+        "3": "unknown"
+      }
+    },
+    "index": null,
+    "value": [
+      "xupsAlarmEventEntry",
+      3
+    ]
+  },
+  "xupsAlarmEventDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsAlarmEventEntry",
+      4
+    ]
+  },
+  "xupsAlarmEventMsg": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "xupsAlarmEventEntry",
+      5
+    ]
+  },
+  "xupsBreakerOpen": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      20
+    ]
+  },
+  "xupsAlarmEntryAdded": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      21
+    ]
+  },
+  "xupsAlarmEntryRemoved": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      22
+    ]
+  },
+  "xupsAlarmBatteryBad": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      23
+    ]
+  },
+  "xupsOutputOffAsRequested": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      24
+    ]
+  },
+  "xupsDiagnosticTestFailed": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      25
+    ]
+  },
+  "xupsCommunicationsLost": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      26
+    ]
+  },
+  "xupsUpsShutdownPending": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      27
+    ]
+  },
+  "xupsAlarmTestInProgress": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      28
+    ]
+  },
+  "xupsAmbientTempBad": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      29
+    ]
+  },
+  "xupsLossOfRedundancy": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      30
+    ]
+  },
+  "xupsAlarmTempBad": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      31
+    ]
+  },
+  "xupsAlarmChargerFailed": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      32
+    ]
+  },
+  "xupsAlarmFanFailure": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      33
+    ]
+  },
+  "xupsAlarmFuseFailure": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      34
+    ]
+  },
+  "xupsPowerSwitchBad": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      35
+    ]
+  },
+  "xupsModuleFailure": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      36
+    ]
+  },
+  "xupsOnAlternatePowerSource": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      37
+    ]
+  },
+  "xupsAltPowerNotAvailable": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      38
+    ]
+  },
+  "xupsNoticeCondition": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      39
+    ]
+  },
+  "xupsRemoteTempBad": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      40
+    ]
+  },
+  "xupsRemoteHumidityBad": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      41
+    ]
+  },
+  "xupsAlarmOutputBad": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      42
+    ]
+  },
+  "xupsAlarmAwaitingPower": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      43
+    ]
+  },
+  "xupsOnMaintenanceBypass": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsAlarm",
+      44
+    ]
+  },
+  "xupsTestStart": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "testBattery",
+        "2": "noTestStarted",
+        "3": "testSystem",
+        "4": "testSecondarySource",
+        "5": "flashLightsTest",
+        "6": "cancelTest"
+      }
+    },
+    "index": null,
+    "value": [
+      "xupsTest",
+      1
+    ]
+  },
+  "xupsTestBatteryStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "passed",
+        "3": "failed",
+        "4": "inProgress",
+        "5": "notSupported",
+        "6": "inhibited",
+        "7": "scheduled"
+      }
+    },
+    "index": null,
+    "value": [
+      "xupsTest",
+      2
+    ]
+  },
+  "xupsLastGeneralTest": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "2": "noTestStarted",
+        "3": "testSystem",
+        "4": "testSecondarySource",
+        "5": "flashLightsTest"
+      }
+    },
+    "index": null,
+    "value": [
+      "xupsTest",
+      3
+    ]
+  },
+  "xupsLastGeneralTestResult": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "passed",
+        "3": "failed",
+        "4": "inProgress",
+        "5": "notSupported",
+        "6": "inhibited",
+        "7": "scheduled"
+      }
+    },
+    "index": null,
+    "value": [
+      "xupsTest",
+      4
+    ]
+  },
+  "xupsControlOutputOffDelay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsControl",
+      1
+    ]
+  },
+  "xupsControlOutputOnDelay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsControl",
+      2
+    ]
+  },
+  "xupsControlOutputOffTrapDelay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsControl",
+      3
+    ]
+  },
+  "xupsControlOutputOnTrapDelay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsControl",
+      4
+    ]
+  },
+  "xupsControlToBypassDelay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsControl",
+      5
+    ]
+  },
+  "xupsLoadShedSecsWithRestart": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsControl",
+      6
+    ]
+  },
+  "xupsSwitchable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "switchable",
+        "2": "notSwitchable"
+      }
+    },
+    "index": null,
+    "value": [
+      "xupsControl",
+      7
+    ]
+  },
+  "xupsConfigOutputVoltage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsConfig",
+      1
+    ]
+  },
+  "xupsConfigInputVoltage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsConfig",
+      2
+    ]
+  },
+  "xupsConfigOutputWatts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsConfig",
+      3
+    ]
+  },
+  "xupsConfigOutputFreq": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsConfig",
+      4
+    ]
+  },
+  "xupsConfigDateAndTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "xupsConfig",
+      5
+    ]
+  },
+  "xupsConfigLowOutputVoltageLimit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsConfig",
+      6
+    ]
+  },
+  "xupsConfigHighOutputVoltageLimit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsConfig",
+      7
+    ]
+  },
+  "xupsConfigInstallDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "xupsConfig",
+      8
+    ]
+  },
+  "xupsMaxTrapLevel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "none",
+        "2": "critical",
+        "3": "major",
+        "4": "minor",
+        "5": "allTraps"
+      }
+    },
+    "index": null,
+    "value": [
+      "xupsTrapControl",
+      1
+    ]
+  },
+  "xupsSendTrapType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "stnd",
+        "2": "xups",
+        "3": "stndPlus",
+        "4": "xupsPlus",
+        "5": "pxg"
+      }
+    },
+    "index": null,
+    "value": [
+      "xupsTrapControl",
+      2
+    ]
+  },
+  "xupsTrapMessage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "xupsTrapControl",
+      3
+    ]
+  },
+  "xupsTrapSource": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsTrapControl",
+      4
+    ]
+  },
+  "xupsHeartbeatMinsInterval": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsTrapControl",
+      5
+    ]
+  },
+  "xupsNumReceptacles": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsRecep",
+      1
+    ]
+  },
+  "xupsRecepTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF XupsRecepEntry"
+    },
+    "index": null,
+    "value": [
+      "xupsRecep",
+      2
+    ]
+  },
+  "xupsRecepEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "XupsRecepEntry"
+    },
+    "index": [
+      "xupsRecepIndex"
+    ],
+    "value": [
+      "xupsRecepTable",
+      1
+    ]
+  },
+  "XupsRecepEntry": {
+    "tp": "SEQUENCE"
+  },
+  "xupsRecepIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsRecepEntry",
+      1
+    ]
+  },
+  "xupsRecepStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "on",
+        "2": "off",
+        "3": "pendingOff",
+        "4": "pendingOn",
+        "5": "unknown",
+        "6": "reserved",
+        "7": "failedClosed",
+        "8": "failedOpen"
+      }
+    },
+    "index": null,
+    "value": [
+      "xupsRecepEntry",
+      2
+    ]
+  },
+  "xupsRecepOffDelaySecs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsRecepEntry",
+      3
+    ]
+  },
+  "xupsRecepOnDelaySecs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsRecepEntry",
+      4
+    ]
+  },
+  "xupsRecepAutoOffDelay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsRecepEntry",
+      5
+    ]
+  },
+  "xupsRecepAutoOnDelay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsRecepEntry",
+      6
+    ]
+  },
+  "xupsRecepShedSecsWithRestart": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsRecepEntry",
+      7
+    ]
+  },
+  "xupsTopologyType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsTopology",
+      1
+    ]
+  },
+  "xupsTopoMachineCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsTopology",
+      2
+    ]
+  },
+  "xupsTopoUnitNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "xupsTopology",
+      3
+    ]
+  },
+  "xupsTopoPowerStrategy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "highAlert",
+        "2": "standard",
+        "3": "enableHighEfficiency",
+        "4": "immediateHighEfficiency"
+      }
+    },
+    "index": null,
+    "value": [
+      "xupsTopology",
+      4
+    ]
+  },
+  "xupsTrapDefined": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsTrapSource",
+      1
+    ]
+  },
+  "xupsTrapOidDefined": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsTrapDefined",
+      0
+    ]
+  },
+  "xupsConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsMIB",
+      100
+    ]
+  },
+  "xupsIdentFullGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "xupsConformance",
+      2
+    ]
+  },
+  "xupsBatteryFullGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "xupsConformance",
+      3
+    ]
+  },
+  "xupsInputFullGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "xupsConformance",
+      4
+    ]
+  },
+  "xupsInputTableFullGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "xupsConformance",
+      5
+    ]
+  },
+  "xupsOutputFullGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "xupsConformance",
+      6
+    ]
+  },
+  "xupsOutputTableFullGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "xupsConformance",
+      7
+    ]
+  },
+  "xupsBypassFullGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "xupsConformance",
+      8
+    ]
+  },
+  "xupsEnvironmentFullGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "xupsConformance",
+      9
+    ]
+  },
+  "xupsAlarmFullGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "xupsConformance",
+      10
+    ]
+  },
+  "xupsAlarmEventsFullGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "xupsConformance",
+      11
+    ]
+  },
+  "xupsTestFullGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "xupsConformance",
+      12
+    ]
+  },
+  "xupsControlFullGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "xupsConformance",
+      13
+    ]
+  },
+  "xupsConfigFullGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "xupsConformance",
+      14
+    ]
+  },
+  "xupsTrapControlFullGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "xupsConformance",
+      15
+    ]
+  },
+  "xupsRecepFullGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "xupsConformance",
+      16
+    ]
+  },
+  "xupsTopologyFullGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "xupsConformance",
+      17
+    ]
+  },
+  "xupsDeprecatedGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "xupsConformance",
+      21
+    ]
+  }
+}

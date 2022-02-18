@@ -1,0 +1,125 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION"
+      ]
+    ],
+    [
+      "HP-ICF-OID",
+      [
+        "hpicfAdmin"
+      ]
+    ]
+  ],
+  "hpicfTextualConventions": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "hpicfAdmin",
+      4
+    ]
+  },
+  "ConfigStatus": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady"
+      }
+    },
+    "display_hint": null
+  },
+  "HpSwitchPortType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "none",
+        "3": "unknown",
+        "6": "ethernetCsmacd",
+        "7": "iso88023Csmacd",
+        "15": "fddi",
+        "37": "atm",
+        "54": "propMultiplexor",
+        "55": "ieee80212",
+        "62": "fastEther",
+        "69": "fastEtherFX",
+        "70": "fastEtherFX-sfp",
+        "112": "tenGSFP-SR",
+        "113": "tenGSFP-LR",
+        "114": "tenGSFP-ER",
+        "115": "tenGSFP-LRM",
+        "116": "tenGSFP-LX4",
+        "117": "gigabitEthernetSX",
+        "118": "gigabitEthernetLX",
+        "119": "gigabitEthernetT",
+        "120": "gigabitEthernetStk",
+        "121": "gigabitEthernetLH",
+        "122": "tenGbE-CX4",
+        "123": "gigabitEthernetESP",
+        "124": "tenGbE-SR",
+        "125": "tenGbE-ER",
+        "126": "tenGbE-LR",
+        "127": "gigabitEthernetT-sfp",
+        "128": "fastEtherGEN",
+        "129": "gigabitEthernetGEN",
+        "130": "tenGbE-GEN",
+        "131": "fastEtherBX-D",
+        "132": "fastEtherBX-U",
+        "133": "gigabitEthernetBX-D",
+        "134": "gigabitEthernetBX-U",
+        "135": "tenGbE-LRM",
+        "136": "sFP-PLUS-SR",
+        "137": "sFP-PLUS-LR",
+        "138": "sFP-PLUS-LRM",
+        "139": "sFP-PLUS-DAC",
+        "140": "sFP-PLUS-DA1",
+        "141": "sFP-PLUS-DA2",
+        "142": "sFP-PLUS-DA3",
+        "143": "sFP-PLUS-DA5",
+        "144": "sFP-PLUS-DA7",
+        "145": "sFP-PLUS-DA10",
+        "146": "sFP-PLUS-DA15",
+        "147": "sFP-PLUS-DA20",
+        "148": "tenGbE-T",
+        "149": "tenGbE-TSH",
+        "150": "tenGbE-TLH",
+        "151": "tenGbE-STK",
+        "152": "xFP-SFP-PLUS-DAC",
+        "153": "xFP-SFP-PLUS-DA1",
+        "154": "xFP-SFP-PLUS-DA3",
+        "155": "xFP-SFP-PLUS-DA5",
+        "156": "xFP-SFP-PLUS-DA7",
+        "157": "xFP-SFP-PLUS-DA10",
+        "158": "tenGbE-K",
+        "160": "sFP-PLUS-ER",
+        "161": "sFP-CWDM1470",
+        "162": "sFP-CWDM1490",
+        "163": "sFP-CWDM1510",
+        "164": "sFP-CWDM1530",
+        "165": "sFP-CWDM1550",
+        "166": "sFP-CWDM1570",
+        "167": "sFP-CWDM1590",
+        "168": "sFP-CWDM1610"
+      }
+    },
+    "display_hint": null
+  },
+  "VidList": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": "512x"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION"
+      ]
+    ],
+    [
+      "PAN-GLOBAL-REG",
+      [
+        "panModules"
+      ]
+    ]
+  ],
+  "panGlobalTcModule": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "panModules",
+      2
+    ]
+  },
+  "TcAppaname": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": "64a"
+  },
+  "TcChassisType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  }
+}

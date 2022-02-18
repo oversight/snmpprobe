@@ -1,0 +1,1217 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "mib-2",
+        "Integer32",
+        "Counter32",
+        "Gauge32",
+        "TimeTicks"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION",
+        "DisplayString",
+        "TruthValue",
+        "DateAndTime",
+        "AutonomousType"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP"
+      ]
+    ],
+    [
+      "IF-MIB",
+      [
+        "InterfaceIndexOrZero"
+      ]
+    ]
+  ],
+  "hostResourcesMibModule": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "hrMIBAdminInfo",
+      1
+    ]
+  },
+  "host": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "mib-2",
+      25
+    ]
+  },
+  "hrSystem": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "host",
+      1
+    ]
+  },
+  "hrStorage": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "host",
+      2
+    ]
+  },
+  "hrDevice": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "host",
+      3
+    ]
+  },
+  "hrSWRun": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "host",
+      4
+    ]
+  },
+  "hrSWRunPerf": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "host",
+      5
+    ]
+  },
+  "hrSWInstalled": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "host",
+      6
+    ]
+  },
+  "hrMIBAdminInfo": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "host",
+      7
+    ]
+  },
+  "KBytes": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  },
+  "ProductID": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "display_hint": null
+  },
+  "InternationalDisplayString": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "hrSystemUptime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "hrSystem",
+      1
+    ]
+  },
+  "hrSystemDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateAndTime"
+    },
+    "index": null,
+    "value": [
+      "hrSystem",
+      2
+    ]
+  },
+  "hrSystemInitialLoadDevice": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hrSystem",
+      3
+    ]
+  },
+  "hrSystemInitialLoadParameters": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InternationalDisplayString"
+    },
+    "index": null,
+    "value": [
+      "hrSystem",
+      4
+    ]
+  },
+  "hrSystemNumUsers": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "hrSystem",
+      5
+    ]
+  },
+  "hrSystemProcesses": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "hrSystem",
+      6
+    ]
+  },
+  "hrSystemMaxProcesses": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hrSystem",
+      7
+    ]
+  },
+  "hrStorageTypes": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hrStorage",
+      1
+    ]
+  },
+  "hrMemorySize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "KBytes"
+    },
+    "index": null,
+    "value": [
+      "hrStorage",
+      2
+    ]
+  },
+  "hrStorageTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HrStorageEntry"
+    },
+    "index": null,
+    "value": [
+      "hrStorage",
+      3
+    ]
+  },
+  "hrStorageEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HrStorageEntry"
+    },
+    "index": [
+      "hrStorageIndex"
+    ],
+    "value": [
+      "hrStorageTable",
+      1
+    ]
+  },
+  "HrStorageEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hrStorageIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hrStorageEntry",
+      1
+    ]
+  },
+  "hrStorageType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AutonomousType"
+    },
+    "index": null,
+    "value": [
+      "hrStorageEntry",
+      2
+    ]
+  },
+  "hrStorageDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "hrStorageEntry",
+      3
+    ]
+  },
+  "hrStorageAllocationUnits": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hrStorageEntry",
+      4
+    ]
+  },
+  "hrStorageSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hrStorageEntry",
+      5
+    ]
+  },
+  "hrStorageUsed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hrStorageEntry",
+      6
+    ]
+  },
+  "hrStorageAllocationFailures": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "hrStorageEntry",
+      7
+    ]
+  },
+  "hrDeviceTypes": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hrDevice",
+      1
+    ]
+  },
+  "hrDeviceTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HrDeviceEntry"
+    },
+    "index": null,
+    "value": [
+      "hrDevice",
+      2
+    ]
+  },
+  "hrDeviceEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HrDeviceEntry"
+    },
+    "index": [
+      "hrDeviceIndex"
+    ],
+    "value": [
+      "hrDeviceTable",
+      1
+    ]
+  },
+  "HrDeviceEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hrDeviceIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hrDeviceEntry",
+      1
+    ]
+  },
+  "hrDeviceType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AutonomousType"
+    },
+    "index": null,
+    "value": [
+      "hrDeviceEntry",
+      2
+    ]
+  },
+  "hrDeviceDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "hrDeviceEntry",
+      3
+    ]
+  },
+  "hrDeviceID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ProductID"
+    },
+    "index": null,
+    "value": [
+      "hrDeviceEntry",
+      4
+    ]
+  },
+  "hrDeviceStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "running",
+        "3": "warning",
+        "4": "testing",
+        "5": "down"
+      }
+    },
+    "index": null,
+    "value": [
+      "hrDeviceEntry",
+      5
+    ]
+  },
+  "hrDeviceErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "hrDeviceEntry",
+      6
+    ]
+  },
+  "hrProcessorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HrProcessorEntry"
+    },
+    "index": null,
+    "value": [
+      "hrDevice",
+      3
+    ]
+  },
+  "hrProcessorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HrProcessorEntry"
+    },
+    "index": [
+      "hrDeviceIndex"
+    ],
+    "value": [
+      "hrProcessorTable",
+      1
+    ]
+  },
+  "HrProcessorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hrProcessorFrwID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ProductID"
+    },
+    "index": null,
+    "value": [
+      "hrProcessorEntry",
+      1
+    ]
+  },
+  "hrProcessorLoad": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hrProcessorEntry",
+      2
+    ]
+  },
+  "hrNetworkTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HrNetworkEntry"
+    },
+    "index": null,
+    "value": [
+      "hrDevice",
+      4
+    ]
+  },
+  "hrNetworkEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HrNetworkEntry"
+    },
+    "index": [
+      "hrDeviceIndex"
+    ],
+    "value": [
+      "hrNetworkTable",
+      1
+    ]
+  },
+  "HrNetworkEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hrNetworkIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InterfaceIndexOrZero"
+    },
+    "index": null,
+    "value": [
+      "hrNetworkEntry",
+      1
+    ]
+  },
+  "hrPrinterTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HrPrinterEntry"
+    },
+    "index": null,
+    "value": [
+      "hrDevice",
+      5
+    ]
+  },
+  "hrPrinterEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HrPrinterEntry"
+    },
+    "index": [
+      "hrDeviceIndex"
+    ],
+    "value": [
+      "hrPrinterTable",
+      1
+    ]
+  },
+  "HrPrinterEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hrPrinterStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "3": "idle",
+        "4": "printing",
+        "5": "warmup"
+      }
+    },
+    "index": null,
+    "value": [
+      "hrPrinterEntry",
+      1
+    ]
+  },
+  "hrPrinterDetectedErrorState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "hrPrinterEntry",
+      2
+    ]
+  },
+  "hrDiskStorageTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HrDiskStorageEntry"
+    },
+    "index": null,
+    "value": [
+      "hrDevice",
+      6
+    ]
+  },
+  "hrDiskStorageEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HrDiskStorageEntry"
+    },
+    "index": [
+      "hrDeviceIndex"
+    ],
+    "value": [
+      "hrDiskStorageTable",
+      1
+    ]
+  },
+  "HrDiskStorageEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hrDiskStorageAccess": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "readWrite",
+        "2": "readOnly"
+      }
+    },
+    "index": null,
+    "value": [
+      "hrDiskStorageEntry",
+      1
+    ]
+  },
+  "hrDiskStorageMedia": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "3": "hardDisk",
+        "4": "floppyDisk",
+        "5": "opticalDiskROM",
+        "6": "opticalDiskWORM",
+        "7": "opticalDiskRW",
+        "8": "ramDisk"
+      }
+    },
+    "index": null,
+    "value": [
+      "hrDiskStorageEntry",
+      2
+    ]
+  },
+  "hrDiskStorageRemoveble": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "hrDiskStorageEntry",
+      3
+    ]
+  },
+  "hrDiskStorageCapacity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "KBytes"
+    },
+    "index": null,
+    "value": [
+      "hrDiskStorageEntry",
+      4
+    ]
+  },
+  "hrPartitionTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HrPartitionEntry"
+    },
+    "index": null,
+    "value": [
+      "hrDevice",
+      7
+    ]
+  },
+  "hrPartitionEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HrPartitionEntry"
+    },
+    "index": [
+      "hrDeviceIndex",
+      "hrPartitionIndex"
+    ],
+    "value": [
+      "hrPartitionTable",
+      1
+    ]
+  },
+  "HrPartitionEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hrPartitionIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hrPartitionEntry",
+      1
+    ]
+  },
+  "hrPartitionLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InternationalDisplayString"
+    },
+    "index": null,
+    "value": [
+      "hrPartitionEntry",
+      2
+    ]
+  },
+  "hrPartitionID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "hrPartitionEntry",
+      3
+    ]
+  },
+  "hrPartitionSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "KBytes"
+    },
+    "index": null,
+    "value": [
+      "hrPartitionEntry",
+      4
+    ]
+  },
+  "hrPartitionFSIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hrPartitionEntry",
+      5
+    ]
+  },
+  "hrFSTypes": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hrDevice",
+      9
+    ]
+  },
+  "hrFSTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HrFSEntry"
+    },
+    "index": null,
+    "value": [
+      "hrDevice",
+      8
+    ]
+  },
+  "hrFSEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HrFSEntry"
+    },
+    "index": [
+      "hrFSIndex"
+    ],
+    "value": [
+      "hrFSTable",
+      1
+    ]
+  },
+  "HrFSEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hrFSIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hrFSEntry",
+      1
+    ]
+  },
+  "hrFSMountPoint": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InternationalDisplayString"
+    },
+    "index": null,
+    "value": [
+      "hrFSEntry",
+      2
+    ]
+  },
+  "hrFSRemoteMountPoint": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InternationalDisplayString"
+    },
+    "index": null,
+    "value": [
+      "hrFSEntry",
+      3
+    ]
+  },
+  "hrFSType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AutonomousType"
+    },
+    "index": null,
+    "value": [
+      "hrFSEntry",
+      4
+    ]
+  },
+  "hrFSAccess": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "readWrite",
+        "2": "readOnly"
+      }
+    },
+    "index": null,
+    "value": [
+      "hrFSEntry",
+      5
+    ]
+  },
+  "hrFSBootable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "hrFSEntry",
+      6
+    ]
+  },
+  "hrFSStorageIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hrFSEntry",
+      7
+    ]
+  },
+  "hrFSLastFullBackupDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateAndTime"
+    },
+    "index": null,
+    "value": [
+      "hrFSEntry",
+      8
+    ]
+  },
+  "hrFSLastPartialBackupDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateAndTime"
+    },
+    "index": null,
+    "value": [
+      "hrFSEntry",
+      9
+    ]
+  },
+  "hrSWOSIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hrSWRun",
+      1
+    ]
+  },
+  "hrSWRunTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HrSWRunEntry"
+    },
+    "index": null,
+    "value": [
+      "hrSWRun",
+      2
+    ]
+  },
+  "hrSWRunEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HrSWRunEntry"
+    },
+    "index": [
+      "hrSWRunIndex"
+    ],
+    "value": [
+      "hrSWRunTable",
+      1
+    ]
+  },
+  "HrSWRunEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hrSWRunIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hrSWRunEntry",
+      1
+    ]
+  },
+  "hrSWRunName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InternationalDisplayString"
+    },
+    "index": null,
+    "value": [
+      "hrSWRunEntry",
+      2
+    ]
+  },
+  "hrSWRunID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ProductID"
+    },
+    "index": null,
+    "value": [
+      "hrSWRunEntry",
+      3
+    ]
+  },
+  "hrSWRunPath": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InternationalDisplayString"
+    },
+    "index": null,
+    "value": [
+      "hrSWRunEntry",
+      4
+    ]
+  },
+  "hrSWRunParameters": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InternationalDisplayString"
+    },
+    "index": null,
+    "value": [
+      "hrSWRunEntry",
+      5
+    ]
+  },
+  "hrSWRunType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "operatingSystem",
+        "3": "deviceDriver",
+        "4": "application"
+      }
+    },
+    "index": null,
+    "value": [
+      "hrSWRunEntry",
+      6
+    ]
+  },
+  "hrSWRunStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "running",
+        "2": "runnable",
+        "3": "notRunnable",
+        "4": "invalid"
+      }
+    },
+    "index": null,
+    "value": [
+      "hrSWRunEntry",
+      7
+    ]
+  },
+  "hrSWRunPerfTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HrSWRunPerfEntry"
+    },
+    "index": null,
+    "value": [
+      "hrSWRunPerf",
+      1
+    ]
+  },
+  "hrSWRunPerfEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HrSWRunPerfEntry"
+    },
+    "index": "hrSWRunEntry",
+    "value": [
+      "hrSWRunPerfTable",
+      1
+    ]
+  },
+  "HrSWRunPerfEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hrSWRunPerfCPU": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hrSWRunPerfEntry",
+      1
+    ]
+  },
+  "hrSWRunPerfMem": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "KBytes"
+    },
+    "index": null,
+    "value": [
+      "hrSWRunPerfEntry",
+      2
+    ]
+  },
+  "hrSWInstalledLastChange": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "hrSWInstalled",
+      1
+    ]
+  },
+  "hrSWInstalledLastUpdateTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "hrSWInstalled",
+      2
+    ]
+  },
+  "hrSWInstalledTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HrSWInstalledEntry"
+    },
+    "index": null,
+    "value": [
+      "hrSWInstalled",
+      3
+    ]
+  },
+  "hrSWInstalledEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HrSWInstalledEntry"
+    },
+    "index": [
+      "hrSWInstalledIndex"
+    ],
+    "value": [
+      "hrSWInstalledTable",
+      1
+    ]
+  },
+  "HrSWInstalledEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hrSWInstalledIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hrSWInstalledEntry",
+      1
+    ]
+  },
+  "hrSWInstalledName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InternationalDisplayString"
+    },
+    "index": null,
+    "value": [
+      "hrSWInstalledEntry",
+      2
+    ]
+  },
+  "hrSWInstalledID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ProductID"
+    },
+    "index": null,
+    "value": [
+      "hrSWInstalledEntry",
+      3
+    ]
+  },
+  "hrSWInstalledType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "operatingSystem",
+        "3": "deviceDriver",
+        "4": "application"
+      }
+    },
+    "index": null,
+    "value": [
+      "hrSWInstalledEntry",
+      4
+    ]
+  },
+  "hrSWInstalledDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateAndTime"
+    },
+    "index": null,
+    "value": [
+      "hrSWInstalledEntry",
+      5
+    ]
+  },
+  "hrMIBCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hrMIBAdminInfo",
+      2
+    ]
+  },
+  "hrMIBGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "hrMIBAdminInfo",
+      3
+    ]
+  },
+  "hrSystemGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "hrMIBGroups",
+      1
+    ]
+  },
+  "hrStorageGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "hrMIBGroups",
+      2
+    ]
+  },
+  "hrDeviceGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "hrMIBGroups",
+      3
+    ]
+  },
+  "hrSWRunGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "hrMIBGroups",
+      4
+    ]
+  },
+  "hrSWRunPerfGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "hrMIBGroups",
+      5
+    ]
+  },
+  "hrSWInstalledGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "hrMIBGroups",
+      6
+    ]
+  }
+}

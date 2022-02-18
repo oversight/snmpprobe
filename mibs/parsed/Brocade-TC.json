@@ -1,0 +1,72 @@
+{
+  "IMPORTS": [
+    [
+      "Brocade-REG-MIB",
+      [
+        "bcsiModules"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "Integer32",
+        "MODULE-IDENTITY"
+      ]
+    ]
+  ],
+  "bcsiModuleTC": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "bcsiModules",
+      2
+    ]
+  },
+  "FcWwn": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "SwDomainIndex": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  },
+  "SwNbIndex": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  },
+  "SwSensorIndex": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  },
+  "SwPortIndex": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  },
+  "SwTrunkMaster": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  }
+}

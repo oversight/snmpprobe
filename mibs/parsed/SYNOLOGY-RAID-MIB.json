@@ -1,0 +1,144 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-CONF",
+      [
+        "OBJECT-GROUP",
+        "MODULE-COMPLIANCE"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "enterprises",
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Integer32"
+      ]
+    ]
+  ],
+  "synoRaid": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "synology",
+      3
+    ]
+  },
+  "synology": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      6574
+    ]
+  },
+  "raidTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF RaidEntry"
+    },
+    "index": null,
+    "value": [
+      "synoRaid",
+      1
+    ]
+  },
+  "raidEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RaidEntry"
+    },
+    "index": [
+      "raidIndex"
+    ],
+    "value": [
+      "raidTable",
+      1
+    ]
+  },
+  "RaidEntry": {
+    "tp": "SEQUENCE"
+  },
+  "raidIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "raidEntry",
+      1
+    ]
+  },
+  "raidName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "raidEntry",
+      2
+    ]
+  },
+  "raidStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "raidEntry",
+      3
+    ]
+  },
+  "raidFreeSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "raidEntry",
+      4
+    ]
+  },
+  "raidTotalSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "raidEntry",
+      5
+    ]
+  },
+  "raidConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synoRaid",
+      2
+    ]
+  },
+  "raidCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "raidConformance",
+      1
+    ]
+  },
+  "raidGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "raidConformance",
+      2
+    ]
+  },
+  "raidGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "raidGroups",
+      1
+    ]
+  }
+}

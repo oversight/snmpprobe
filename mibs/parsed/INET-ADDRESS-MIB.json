@@ -1,0 +1,138 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "mib-2",
+        "Unsigned32"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION"
+      ]
+    ]
+  ],
+  "inetAddressMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "mib-2",
+      76
+    ]
+  },
+  "InetAddressType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "unknown",
+        "1": "ipv4",
+        "2": "ipv6",
+        "3": "ipv4z",
+        "4": "ipv6z",
+        "16": "dns"
+      }
+    },
+    "display_hint": null
+  },
+  "InetAddress": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "InetAddressIPv4": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": "1d.1d.1d.1d"
+  },
+  "InetAddressIPv6": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": "2x:2x:2x:2x:2x:2x:2x:2x"
+  },
+  "InetAddressIPv4z": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": "1d.1d.1d.1d%4d"
+  },
+  "InetAddressIPv6z": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": "2x:2x:2x:2x:2x:2x:2x:2x%4d"
+  },
+  "InetAddressDNS": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": "255a"
+  },
+  "InetAddressPrefixLength": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "display_hint": "d"
+  },
+  "InetPortNumber": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "display_hint": "d"
+  },
+  "InetAutonomousSystemNumber": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "display_hint": "d"
+  },
+  "InetScopeType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "interfaceLocal",
+        "2": "linkLocal",
+        "3": "subnetLocal",
+        "4": "adminLocal",
+        "5": "siteLocal",
+        "8": "organizationLocal",
+        "14": "global"
+      }
+    },
+    "display_hint": null
+  },
+  "InetZoneIndex": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "display_hint": "d"
+  },
+  "InetVersion": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "unknown",
+        "1": "ipv4",
+        "2": "ipv6"
+      }
+    },
+    "display_hint": null
+  }
+}

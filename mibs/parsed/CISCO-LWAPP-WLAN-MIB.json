@@ -1,0 +1,2970 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Unsigned32",
+        "Integer32",
+        "Gauge32"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TimeStamp",
+        "TruthValue",
+        "RowStatus",
+        "DisplayString",
+        "StorageType",
+        "MacAddress"
+      ]
+    ],
+    [
+      "SNMP-FRAMEWORK-MIB",
+      [
+        "SnmpAdminString"
+      ]
+    ],
+    [
+      "INET-ADDRESS-MIB",
+      [
+        "InetAddressType",
+        "InetAddress"
+      ]
+    ],
+    [
+      "CISCO-SMI",
+      [
+        "ciscoMgmt"
+      ]
+    ]
+  ],
+  "ciscoLwappWlanMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "ciscoMgmt",
+      512
+    ]
+  },
+  "ciscoLwappWlanMIBNotifs": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoLwappWlanMIB",
+      0
+    ]
+  },
+  "ciscoLwappWlanMIBObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoLwappWlanMIB",
+      1
+    ]
+  },
+  "ciscoLwappWlanMIBConform": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoLwappWlanMIB",
+      2
+    ]
+  },
+  "ciscoLwappWlanConfig": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoLwappWlanMIBObjects",
+      1
+    ]
+  },
+  "ciscoLwappAPGroupsVlanConfig": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoLwappWlanMIBObjects",
+      2
+    ]
+  },
+  "ciscoLwappWlan11uConfig": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoLwappWlanMIBObjects",
+      3
+    ]
+  },
+  "ciscoLwappWlanServiceAdvertisementConfig": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoLwappWlanMIBObjects",
+      4
+    ]
+  },
+  "ciscoLwappWlanHotSpot2Config": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoLwappWlanMIBObjects",
+      5
+    ]
+  },
+  "ciscoLwappAPGroupsHyperlocationConfig": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoLwappWlanMIBObjects",
+      8
+    ]
+  },
+  "ciscoLwappAPGroupsPortConfig": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoLwappWlanMIBObjects",
+      9
+    ]
+  },
+  "cLWlanConfigTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLWlanConfigEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappWlanConfig",
+      1
+    ]
+  },
+  "cLWlanConfigEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLWlanConfigEntry"
+    },
+    "index": [
+      "cLWlanIndex"
+    ],
+    "value": [
+      "cLWlanConfigTable",
+      1
+    ]
+  },
+  "CLWlanConfigEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLWlanIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      1
+    ]
+  },
+  "cLWlanRowStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      2
+    ]
+  },
+  "cLWlanProfileName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      3
+    ]
+  },
+  "cLWlanSsid": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      4
+    ]
+  },
+  "cLWlanDiagChan": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      5
+    ]
+  },
+  "cLWlanStorageType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StorageType"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      6
+    ]
+  },
+  "cLWlanIsWired": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      7
+    ]
+  },
+  "cLWlanIngressInterface": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      8
+    ]
+  },
+  "cLWlanNACSupport": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      9
+    ]
+  },
+  "cLWlanWepKeyChange": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeStamp"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      10
+    ]
+  },
+  "cLWlanChdEnable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      11
+    ]
+  },
+  "cLWlan802dot11anDTIM": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      12
+    ]
+  },
+  "cLWlan802dot11bgnDTIM": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      13
+    ]
+  },
+  "cLWlanLoadBalancingEnable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      14
+    ]
+  },
+  "cLWlanBandSelectEnable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      15
+    ]
+  },
+  "cLWlanPassiveClientEnable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      16
+    ]
+  },
+  "cLWlanReAnchorRoamedVoiceClientsEnable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      17
+    ]
+  },
+  "cLWlanMulticastInterfaceEnable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      18
+    ]
+  },
+  "cLWlanMulticastInterface": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      19
+    ]
+  },
+  "cLWlanMulticastDirectEnable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      20
+    ]
+  },
+  "cLWlanNACPostureSupport": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      21
+    ]
+  },
+  "cLWlanMaxClientsAccepted": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      22
+    ]
+  },
+  "cLWlanScanDeferPriority": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BITS",
+      "values": {
+        "0": "bit0",
+        "1": "bit1",
+        "2": "bit2",
+        "3": "bit3",
+        "4": "bit4",
+        "5": "bit5",
+        "6": "bit6",
+        "7": "bit7"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      23
+    ]
+  },
+  "cLWlanScanDeferTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      24
+    ]
+  },
+  "cLWlanLanSubType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "wirelessLan",
+        "2": "guestLan",
+        "3": "remoteLan",
+        "4": "other"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      25
+    ]
+  },
+  "cLWlanWebAuthOnMacFilterFailureEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      26
+    ]
+  },
+  "cLWlanStaticIpTunnelingEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      27
+    ]
+  },
+  "cLWlanKtsCacSupportEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      28
+    ]
+  },
+  "cLWlanWifiDirectPolicyStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "disable",
+        "2": "allow",
+        "3": "notAllow"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      29
+    ]
+  },
+  "cLWlanWebAuthIPv6AclName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      30
+    ]
+  },
+  "cLWlanHotSpot2Enabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      31
+    ]
+  },
+  "cLWlanMaxClientsAllowedPerRadio": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      32
+    ]
+  },
+  "cLWlanDhcpDeviceProfiling": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      33
+    ]
+  },
+  "cLWlanMacAuthOverDot1xEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      34
+    ]
+  },
+  "cLWlanUserTimeout": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      35
+    ]
+  },
+  "cLWlanUserIdleThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      36
+    ]
+  },
+  "cLWlanHttpDeviceProfiling": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      37
+    ]
+  },
+  "cLWlanHotSpotClearConfig": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "enable",
+        "2": "disable"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      38
+    ]
+  },
+  "cLWlanRadiusAuthFourthServer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      39
+    ]
+  },
+  "cLWlanRadiusAuthFifthServer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      40
+    ]
+  },
+  "cLWlanRadiusAuthSixthServer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      41
+    ]
+  },
+  "cLWlanRadiusAcctFourthServer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      42
+    ]
+  },
+  "cLWlanRadiusAcctFifthServer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      43
+    ]
+  },
+  "cLWlanRadiusAcctSixthServer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      44
+    ]
+  },
+  "cLWlanSelfAnchorEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      64
+    ]
+  },
+  "cLWlanUniversalAdmin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      65
+    ]
+  },
+  "cLWlan11acMuMimoEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigEntry",
+      66
+    ]
+  },
+  "cLWlan11uTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLWlan11uEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappWlan11uConfig",
+      1
+    ]
+  },
+  "cLWlan11uEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLWlan11uEntry"
+    },
+    "index": [
+      "cLWlanIndex"
+    ],
+    "value": [
+      "cLWlan11uTable",
+      1
+    ]
+  },
+  "CLWlan11uEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLWlan11uStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uEntry",
+      1
+    ]
+  },
+  "cLWlan11uInternetAccess": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uEntry",
+      2
+    ]
+  },
+  "cLWlan11uNetworkType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "invalid",
+        "2": "private",
+        "3": "privateWithGuestAccess",
+        "4": "chargeablePublicNetwork",
+        "5": "freePublicNetwork",
+        "6": "testOrEquipment",
+        "7": "wildcard",
+        "8": "personnalDeviceNetwork",
+        "9": "emgerencyServiceOnlyNetwork",
+        "255": "notConfigured"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uEntry",
+      3
+    ]
+  },
+  "cLWlan11uVenueGroup": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unspecified",
+        "2": "assembly",
+        "3": "business",
+        "4": "educational",
+        "5": "factoryAndIndustrial",
+        "6": "institutional",
+        "7": "mercantile",
+        "8": "residential",
+        "9": "storage",
+        "10": "utilityAndMisc",
+        "11": "vehicular",
+        "12": "outdoor"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uEntry",
+      4
+    ]
+  },
+  "cLWlan11uVenueType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unspecified",
+        "2": "assembly",
+        "3": "business",
+        "4": "educational",
+        "5": "factoryAndIndustrial",
+        "6": "institutional",
+        "7": "mercantile",
+        "8": "residential",
+        "9": "storage",
+        "10": "utilityAndMisc",
+        "11": "vehicular",
+        "12": "outdoor"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uEntry",
+      5
+    ]
+  },
+  "cLWlan11uVenueName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uEntry",
+      6
+    ]
+  },
+  "cLWlan11uHessid": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uEntry",
+      8
+    ]
+  },
+  "cLWlan11uNetworkAuthType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "acceptance",
+        "2": "enrollment",
+        "3": "redirection",
+        "4": "dnsRedirection",
+        "5": "notConfigured"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uEntry",
+      9
+    ]
+  },
+  "cLWlan11uIpAddressAvailIpv4": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "notAvailable",
+        "2": "public",
+        "3": "portRestricted",
+        "4": "singleNATPrivate",
+        "5": "doubleNATPrivate",
+        "6": "portRestrictedAndSingleNATPrivate",
+        "7": "portRestrictedAndDoubleNATPrivate",
+        "8": "unKnown"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uEntry",
+      10
+    ]
+  },
+  "cLWlan11uIpAddressAvailIpv6": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "notAvailable",
+        "2": "available",
+        "3": "unKnown"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uEntry",
+      11
+    ]
+  },
+  "cLWlan11uOuiTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLWlan11uOuiEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappWlan11uConfig",
+      2
+    ]
+  },
+  "cLWlan11uOuiEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLWlan11uOuiEntry"
+    },
+    "index": [
+      "cLWlanIndex",
+      "cLWlan11uOuiIndex"
+    ],
+    "value": [
+      "cLWlan11uOuiTable",
+      1
+    ]
+  },
+  "CLWlan11uOuiEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLWlan11uOuiIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uOuiEntry",
+      1
+    ]
+  },
+  "cLWlan11uOui": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uOuiEntry",
+      2
+    ]
+  },
+  "cLWlan11uOuiIsBeacon": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uOuiEntry",
+      3
+    ]
+  },
+  "cLWlan11uOuiRowStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uOuiEntry",
+      4
+    ]
+  },
+  "cLWlan11uOuiStorageType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StorageType"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uOuiEntry",
+      5
+    ]
+  },
+  "cLWlan11uRealmTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLWlan11uRealmEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappWlan11uConfig",
+      3
+    ]
+  },
+  "cLWlan11uRealmEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLWlan11uRealmEntry"
+    },
+    "index": [
+      "cLWlanIndex",
+      "cLWlan11uRealmIndex"
+    ],
+    "value": [
+      "cLWlan11uRealmTable",
+      1
+    ]
+  },
+  "CLWlan11uRealmEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLWlan11uRealmIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uRealmEntry",
+      1
+    ]
+  },
+  "cLWlan11uRealmName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uRealmEntry",
+      2
+    ]
+  },
+  "cLWlan11uRealmRowStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uRealmEntry",
+      3
+    ]
+  },
+  "cLWlan11uRealmEapTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLWlan11uRealmEapEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappWlan11uConfig",
+      4
+    ]
+  },
+  "cLWlan11uRealmEapEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLWlan11uRealmEapEntry"
+    },
+    "index": [
+      "cLWlanIndex",
+      "cLWlan11uRealmIndex",
+      "cLWlan11uRealmEapIndex"
+    ],
+    "value": [
+      "cLWlan11uRealmEapTable",
+      1
+    ]
+  },
+  "CLWlan11uRealmEapEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLWlan11uRealmEapIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uRealmEapEntry",
+      1
+    ]
+  },
+  "cLWlan11uRealmEapMethod": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "none",
+        "2": "leap",
+        "3": "peap",
+        "4": "eapTls",
+        "5": "eapFast",
+        "6": "eapSim",
+        "7": "eapTtls",
+        "8": "eapAka"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uRealmEapEntry",
+      2
+    ]
+  },
+  "cLWlan11uRealmEapRowStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uRealmEapEntry",
+      3
+    ]
+  },
+  "cLWlan11uRealmEapAuthTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLWlan11uRealmEapAuthEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappWlan11uConfig",
+      5
+    ]
+  },
+  "cLWlan11uRealmEapAuthEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLWlan11uRealmEapAuthEntry"
+    },
+    "index": [
+      "cLWlanIndex",
+      "cLWlan11uRealmIndex",
+      "cLWlan11uRealmEapIndex",
+      "cLWlan11uRealmEapAuthIndex"
+    ],
+    "value": [
+      "cLWlan11uRealmEapAuthTable",
+      1
+    ]
+  },
+  "CLWlan11uRealmEapAuthEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLWlan11uRealmEapAuthIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uRealmEapAuthEntry",
+      1
+    ]
+  },
+  "cLWlan11uRealmEapAuthMethod": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "nonEapInnerAuthType",
+        "2": "innerAuthEapType",
+        "3": "credentialType",
+        "4": "tunneledEapCredentialType"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uRealmEapAuthEntry",
+      2
+    ]
+  },
+  "cLWlan11uRealmEapAuthParam": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "none",
+        "2": "pap",
+        "3": "chap",
+        "4": "mschap",
+        "5": "mschapV2",
+        "6": "leap",
+        "7": "peap",
+        "8": "eapTls",
+        "9": "eapFast",
+        "10": "eapSim",
+        "11": "eapTtls",
+        "12": "eapAka",
+        "13": "sim",
+        "14": "usim",
+        "15": "nfcSecure",
+        "16": "hardwareToken",
+        "17": "softToken",
+        "18": "certificate",
+        "19": "usernamePassword",
+        "20": "reserved",
+        "21": "anonynous",
+        "22": "vendorSpecific"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uRealmEapAuthEntry",
+      3
+    ]
+  },
+  "cLWlan11uRealmEapAuthCredentialType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "sim",
+        "2": "usim",
+        "3": "nfcSecure",
+        "4": "hardwareToken",
+        "5": "softToken",
+        "6": "certificate",
+        "7": "usernamePassword",
+        "8": "reserved",
+        "9": "anonynous",
+        "10": "vendorSpecific"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uRealmEapAuthEntry",
+      4
+    ]
+  },
+  "cLWlan11uRealmEapAuthRowStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uRealmEapAuthEntry",
+      5
+    ]
+  },
+  "cLWlan11uDomainTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLWlan11uDomainEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappWlan11uConfig",
+      6
+    ]
+  },
+  "cLWlan11uDomainEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLWlan11uDomainEntry"
+    },
+    "index": [
+      "cLWlanIndex",
+      "cLWlan11uDomainIndex"
+    ],
+    "value": [
+      "cLWlan11uDomainTable",
+      1
+    ]
+  },
+  "CLWlan11uDomainEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLWlan11uDomainIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uDomainEntry",
+      1
+    ]
+  },
+  "cLWlan11uDomainName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uDomainEntry",
+      2
+    ]
+  },
+  "cLWlan11uDomainRowStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11uDomainEntry",
+      3
+    ]
+  },
+  "cLWlan11u3gppTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLWlan11u3gppEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappWlan11uConfig",
+      7
+    ]
+  },
+  "cLWlan11u3gppEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLWlan11u3gppEntry"
+    },
+    "index": [
+      "cLWlanIndex",
+      "cLWlan11u3gppIndex"
+    ],
+    "value": [
+      "cLWlan11u3gppTable",
+      1
+    ]
+  },
+  "CLWlan11u3gppEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLWlan11u3gppIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11u3gppEntry",
+      1
+    ]
+  },
+  "cLWlan11u3gppCountryCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11u3gppEntry",
+      2
+    ]
+  },
+  "cLWlan11u3gppNetworkCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11u3gppEntry",
+      3
+    ]
+  },
+  "cLWlan11u3gppRowStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "cLWlan11u3gppEntry",
+      4
+    ]
+  },
+  "cLWlanServiceAdvertisementTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLWlanServiceAdvertisementEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappWlanServiceAdvertisementConfig",
+      1
+    ]
+  },
+  "cLWlanServiceAdvertisementEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLWlanServiceAdvertisementEntry"
+    },
+    "index": [
+      "cLWlanIndex"
+    ],
+    "value": [
+      "cLWlanServiceAdvertisementTable",
+      1
+    ]
+  },
+  "CLWlanServiceAdvertisementEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLWlanServiceAdvertisementStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanServiceAdvertisementEntry",
+      1
+    ]
+  },
+  "cLWlanServiceAdvertisementMsapServerIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanServiceAdvertisementEntry",
+      5
+    ]
+  },
+  "cLWlanHotSpot2OperatorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLWlanHotSpot2OperatorEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappWlanHotSpot2Config",
+      1
+    ]
+  },
+  "cLWlanHotSpot2OperatorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLWlanHotSpot2OperatorEntry"
+    },
+    "index": [
+      "cLWlanIndex",
+      "cLWlanHotSpot2OperatorIndex"
+    ],
+    "value": [
+      "cLWlanHotSpot2OperatorTable",
+      1
+    ]
+  },
+  "CLWlanHotSpot2OperatorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLWlanHotSpot2OperatorIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanHotSpot2OperatorEntry",
+      1
+    ]
+  },
+  "cLWlanHotSpot2OperatorName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanHotSpot2OperatorEntry",
+      2
+    ]
+  },
+  "cLWlanHotSpot2OperatorLanguage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanHotSpot2OperatorEntry",
+      3
+    ]
+  },
+  "cLWlanHotSpot2OperatorRowStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "cLWlanHotSpot2OperatorEntry",
+      4
+    ]
+  },
+  "cLWlanHotSpot2PortConfigTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLWlanHotSpot2PortConfigEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappWlanHotSpot2Config",
+      2
+    ]
+  },
+  "cLWlanHotSpot2PortConfigEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLWlanHotSpot2PortConfigEntry"
+    },
+    "index": [
+      "cLWlanIndex",
+      "cLWlanHotSpot2PortConfigIndex"
+    ],
+    "value": [
+      "cLWlanHotSpot2PortConfigTable",
+      1
+    ]
+  },
+  "CLWlanHotSpot2PortConfigEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLWlanHotSpot2PortConfigIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanHotSpot2PortConfigEntry",
+      1
+    ]
+  },
+  "cLWlanHotSpot2PortConfigIpProtocol": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "icmp",
+        "6": "ftp",
+        "17": "ikev2",
+        "50": "esp"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlanHotSpot2PortConfigEntry",
+      2
+    ]
+  },
+  "cLWlanHotSpot2PortConfigPortNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "icmp-esp",
+        "20": "ftp",
+        "22": "ssh",
+        "443": "ttls-vpn",
+        "500": "ikev2",
+        "1723": "pptp-vpn",
+        "4500": "ipsec-nat",
+        "5060": "voip"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlanHotSpot2PortConfigEntry",
+      3
+    ]
+  },
+  "cLWlanHotSpot2PortConfigStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "closed",
+        "2": "open",
+        "3": "unknown"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlanHotSpot2PortConfigEntry",
+      4
+    ]
+  },
+  "cLWlanHotSpot2PortConfigRowStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "cLWlanHotSpot2PortConfigEntry",
+      5
+    ]
+  },
+  "cLWlanHotSpot2ConfigTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLWlanHotSpot2ConfigEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappWlanHotSpot2Config",
+      3
+    ]
+  },
+  "cLWlanHotSpot2ConfigEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLWlanHotSpot2ConfigEntry"
+    },
+    "index": [
+      "cLWlanIndex"
+    ],
+    "value": [
+      "cLWlanHotSpot2ConfigTable",
+      1
+    ]
+  },
+  "CLWlanHotSpot2ConfigEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLWlanHotSpot2WanLinkStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "linkUp",
+        "2": "linkDown",
+        "3": "linkInTestState",
+        "4": "notConfigured"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlanHotSpot2ConfigEntry",
+      1
+    ]
+  },
+  "cLWlanHotSpot2WanSymLinkStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "different",
+        "2": "same"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlanHotSpot2ConfigEntry",
+      2
+    ]
+  },
+  "cLWlanHotSpot2WanDownLinkSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanHotSpot2ConfigEntry",
+      3
+    ]
+  },
+  "cLWlanHotSpot2WanUpLinkSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanHotSpot2ConfigEntry",
+      4
+    ]
+  },
+  "cLAPGroupsHyperlocationConfigTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLAPGroupsHyperlocationConfigEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappAPGroupsHyperlocationConfig",
+      1
+    ]
+  },
+  "cLAPGroupsHyperlocationConfigEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLAPGroupsHyperlocationConfigEntry"
+    },
+    "index": [
+      "cLAPGroupName"
+    ],
+    "value": [
+      "cLAPGroupsHyperlocationConfigTable",
+      1
+    ]
+  },
+  "CLAPGroupsHyperlocationConfigEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLAPGroupsHyperlocationEnable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsHyperlocationConfigEntry",
+      1
+    ]
+  },
+  "cLAPGroupsPakRssiThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsHyperlocationConfigEntry",
+      2
+    ]
+  },
+  "cLAPGroupsPakRssiThresholdTrigger": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsHyperlocationConfigEntry",
+      3
+    ]
+  },
+  "cLAPGroupsPakRssiNtpIpAddressType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddressType"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsHyperlocationConfigEntry",
+      4
+    ]
+  },
+  "cLAPGroupsPakRssiNtpAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InetAddress"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsHyperlocationConfigEntry",
+      5
+    ]
+  },
+  "cLAPGroupsPortConfigTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLAPGroupsPortConfigEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappAPGroupsPortConfig",
+      1
+    ]
+  },
+  "cLAPGroupsPortConfigEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLAPGroupsPortConfigEntry"
+    },
+    "index": [
+      "cLAPGroupName",
+      "cLAPGroupsLANPortNumber"
+    ],
+    "value": [
+      "cLAPGroupsPortConfigTable",
+      1
+    ]
+  },
+  "CLAPGroupsPortConfigEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLAPGroupsLANPortNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsPortConfigEntry",
+      1
+    ]
+  },
+  "cLAPGroupsLANPortStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "disabled",
+        "1": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsPortConfigEntry",
+      2
+    ]
+  },
+  "cLAPGroupsLANPortPoeStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "notsupported",
+        "1": "disabled",
+        "2": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsPortConfigEntry",
+      3
+    ]
+  },
+  "cLAPGroupsLANPortRlanName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsPortConfigEntry",
+      4
+    ]
+  },
+  "cLAPGroupsLANPortRowStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsPortConfigEntry",
+      5
+    ]
+  },
+  "cLAPGroupsExtModuleConfigTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLAPGroupsExtModuleConfigEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappAPGroupsPortConfig",
+      2
+    ]
+  },
+  "cLAPGroupsExtModuleConfigEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLAPGroupsExtModuleConfigEntry"
+    },
+    "index": [
+      "cLAPGroupName"
+    ],
+    "value": [
+      "cLAPGroupsExtModuleConfigTable",
+      1
+    ]
+  },
+  "CLAPGroupsExtModuleConfigEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLAPGroupsExtModuleStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "disabled",
+        "1": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsExtModuleConfigEntry",
+      1
+    ]
+  },
+  "cLAPGroupsExtModuleRlanName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsExtModuleConfigEntry",
+      2
+    ]
+  },
+  "cLAPGroupsVlanConfigTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLAPGroupsVlanConfigEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappAPGroupsVlanConfig",
+      1
+    ]
+  },
+  "cLAPGroupsVlanConfigEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLAPGroupsVlanConfigEntry"
+    },
+    "index": [
+      "cLAPGroupName",
+      "cLWlanProfileName"
+    ],
+    "value": [
+      "cLAPGroupsVlanConfigTable",
+      1
+    ]
+  },
+  "CLAPGroupsVlanConfigEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLAPGroupName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsVlanConfigEntry",
+      1
+    ]
+  },
+  "cLAPGroupsVlanMappingInterfaceName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsVlanConfigEntry",
+      2
+    ]
+  },
+  "cLAPGroupNACSupport": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsVlanConfigEntry",
+      3
+    ]
+  },
+  "cLAPGroupsVlanConfigRowStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsVlanConfigEntry",
+      4
+    ]
+  },
+  "cLAPGroupsVlanConfigStorageType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StorageType"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsVlanConfigEntry",
+      5
+    ]
+  },
+  "cLAPGroupsWlanOrderIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsVlanConfigEntry",
+      6
+    ]
+  },
+  "cLAPGroupsVlanMappingInterfaceNameRev1": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsVlanConfigEntry",
+      7
+    ]
+  },
+  "cLAPGroupsVenueConfigTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLAPGroupsVenueConfigEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappAPGroupsVlanConfig",
+      2
+    ]
+  },
+  "cLAPGroupsVenueConfigEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLAPGroupsVenueConfigEntry"
+    },
+    "index": [
+      "cLAPGroupName"
+    ],
+    "value": [
+      "cLAPGroupsVenueConfigTable",
+      1
+    ]
+  },
+  "CLAPGroupsVenueConfigEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLAPGroupsVenueConfigVenueGroup": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unspecified",
+        "2": "assembly",
+        "3": "business",
+        "4": "educational",
+        "5": "factoryAndIndustrial",
+        "6": "institutional",
+        "7": "mercantile",
+        "8": "residential",
+        "9": "storage",
+        "10": "utilityAndMisc",
+        "11": "vehicular",
+        "12": "outdoor"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsVenueConfigEntry",
+      1
+    ]
+  },
+  "cLAPGroupsVenueConfigVenueType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unspecified",
+        "2": "unspecifiedAssembly",
+        "3": "arena",
+        "4": "stadium",
+        "5": "passengerTerminal",
+        "6": "amphitheater",
+        "7": "amusementPark",
+        "8": "placeOfWorship",
+        "9": "conventionCenter",
+        "10": "library",
+        "11": "museum",
+        "12": "restaurant",
+        "13": "theater",
+        "14": "bar",
+        "15": "coffeeShop",
+        "16": "zooOrAquarium",
+        "17": "emergencyCoordinationCenter",
+        "18": "unspecifiedBusiness",
+        "19": "doctorOrDentistOffice",
+        "20": "bank",
+        "21": "fireStation",
+        "22": "policeStation",
+        "23": "postOffice",
+        "24": "professionalOffice",
+        "25": "researchAndDevelopmentFacility",
+        "26": "attorneyOffice",
+        "27": "unspecifiedEducational",
+        "28": "schoolPrimary",
+        "29": "schoolSecondary",
+        "30": "universityOrCollege",
+        "31": "unspecifiedFactoryAndIndustrial",
+        "32": "factory",
+        "33": "unspecifiedInstitutional",
+        "34": "hospital",
+        "35": "longTermCareFacility",
+        "36": "alcoholAndDrugRehabilitationCenter",
+        "37": "groupHome",
+        "38": "prisonOrJail",
+        "39": "unspecifiedMercantile",
+        "40": "retailStore",
+        "41": "groceryMarket",
+        "42": "atomotiveServiceStation",
+        "43": "shoppingMall",
+        "44": "gasStation",
+        "45": "unspecifiedResidential",
+        "46": "privateResidence",
+        "47": "hotelOrMotel",
+        "48": "dormitory",
+        "49": "boardingHouse",
+        "50": "unspecifiedStorage",
+        "51": "unspecifiedUtility",
+        "52": "unspecifiedVehicular",
+        "53": "automobileOrTruck",
+        "54": "airplane",
+        "55": "bus",
+        "56": "ferry",
+        "57": "shipOrBoat",
+        "58": "train",
+        "59": "motorBike",
+        "60": "unspecifiedOutdoor",
+        "61": "muniMeshNetwork",
+        "62": "cityPark",
+        "63": "restArea",
+        "64": "trafficControl",
+        "65": "busStop",
+        "66": "kiosk"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsVenueConfigEntry",
+      2
+    ]
+  },
+  "cLAPGroupsVenueConfigVenueName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsVenueConfigEntry",
+      3
+    ]
+  },
+  "cLAPGroupsVenueConfigLanguage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsVenueConfigEntry",
+      4
+    ]
+  },
+  "cLAPGroupsOperatingClass": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BITS",
+      "values": {
+        "0": "class81",
+        "1": "class83",
+        "2": "class84",
+        "3": "class112",
+        "4": "class113",
+        "5": "class115",
+        "6": "class116",
+        "7": "class117",
+        "8": "class118",
+        "9": "class119",
+        "10": "class120",
+        "11": "class121",
+        "12": "class122",
+        "13": "class123",
+        "14": "class124",
+        "15": "class125",
+        "16": "class126",
+        "17": "class127"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsVenueConfigEntry",
+      5
+    ]
+  },
+  "cLAPGroupsMultipleVenueTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLAPGroupsMultipleVenueEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappAPGroupsVlanConfig",
+      3
+    ]
+  },
+  "cLAPGroupsMultipleVenueEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLAPGroupsMultipleVenueEntry"
+    },
+    "index": [
+      "cLAPGroupName",
+      "cLAPGroupsMultipleVenueLanguage"
+    ],
+    "value": [
+      "cLAPGroupsMultipleVenueTable",
+      1
+    ]
+  },
+  "CLAPGroupsMultipleVenueEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLAPGroupsMultipleVenueLanguage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsMultipleVenueEntry",
+      1
+    ]
+  },
+  "cLAPGroupsMultipleVenueName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsMultipleVenueEntry",
+      2
+    ]
+  },
+  "cLAPGroupsMultipleVenueRowStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "cLAPGroupsMultipleVenueEntry",
+      3
+    ]
+  },
+  "cLWlanConfigClientTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLWlanConfigClientEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappWlanConfig",
+      2
+    ]
+  },
+  "cLWlanConfigClientEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLWlanConfigClientEntry"
+    },
+    "index": [
+      "cLWlanIndex"
+    ],
+    "value": [
+      "cLWlanConfigClientTable",
+      1
+    ]
+  },
+  "CLWlanConfigClientEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLWlanClientAclName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigClientEntry",
+      1
+    ]
+  },
+  "cLWlanP2PBlocking": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "disable",
+        "2": "drop",
+        "3": "forwardUp"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigClientEntry",
+      2
+    ]
+  },
+  "cLWlanClientIPv6AclName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigClientEntry",
+      3
+    ]
+  },
+  "cLWlanConfigQosTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLWlanConfigQosEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappWlanConfig",
+      3
+    ]
+  },
+  "cLWlanConfigQosEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLWlanConfigQosEntry"
+    },
+    "index": [
+      "cLWlanIndex"
+    ],
+    "value": [
+      "cLWlanConfigQosTable",
+      1
+    ]
+  },
+  "CLWlanConfigQosEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLWlanClientDSAverageDataRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigQosEntry",
+      1
+    ]
+  },
+  "cLWlanClientUSAverageDataRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigQosEntry",
+      2
+    ]
+  },
+  "cLWlanClientDSBurstDataRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigQosEntry",
+      3
+    ]
+  },
+  "cLWlanClientUSBurstDataRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigQosEntry",
+      4
+    ]
+  },
+  "cLWlanClientDSAvgRealTimeDataRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigQosEntry",
+      5
+    ]
+  },
+  "cLWlanClientUSAvgRealTimeDataRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigQosEntry",
+      6
+    ]
+  },
+  "cLWlanClientDSBurstRealTimeDataRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigQosEntry",
+      7
+    ]
+  },
+  "cLWlanClientUSBurstRealTimeDataRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigQosEntry",
+      8
+    ]
+  },
+  "cLWlanSsidDSAverageDataRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigQosEntry",
+      9
+    ]
+  },
+  "cLWlanSsidUSAverageDataRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigQosEntry",
+      10
+    ]
+  },
+  "cLWlanSsidDSBurstDataRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigQosEntry",
+      11
+    ]
+  },
+  "cLWlanSsidUSBurstDataRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigQosEntry",
+      12
+    ]
+  },
+  "cLWlanSsidDSAvgRealTimeDataRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigQosEntry",
+      13
+    ]
+  },
+  "cLWlanSsidUSAvgRealTimeDataRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigQosEntry",
+      14
+    ]
+  },
+  "cLWlanSsidDSBurstRealTimeDataRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigQosEntry",
+      15
+    ]
+  },
+  "cLWlanSsidUSBurstRealTimeDataRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigQosEntry",
+      16
+    ]
+  },
+  "cLWlanConfigIosTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLWlanConfigIosEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappWlanConfig",
+      4
+    ]
+  },
+  "cLWlanConfigIosEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLWlanConfigIosEntry"
+    },
+    "index": [
+      "cLWlanIndex"
+    ],
+    "value": [
+      "cLWlanConfigIosTable",
+      1
+    ]
+  },
+  "CLWlanConfigIosEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLWlanIosAccountingMethodListName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigIosEntry",
+      1
+    ]
+  },
+  "cLWlanIosAuthenticationMethodListName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigIosEntry",
+      2
+    ]
+  },
+  "cLWlanIosMacFilteringMethodListName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigIosEntry",
+      3
+    ]
+  },
+  "cLWlanIosWebAuthMethodListName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigIosEntry",
+      4
+    ]
+  },
+  "cLWlanIosQosUpStreamProfileName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigIosEntry",
+      5
+    ]
+  },
+  "cLWlanIosQosDownStreamProfileName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigIosEntry",
+      6
+    ]
+  },
+  "cLWlanIngressDHCPOption82Format": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigIosEntry",
+      7
+    ]
+  },
+  "cLWlanIngressDHCPOption82Ascii": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigIosEntry",
+      8
+    ]
+  },
+  "cLWlanIngressDHCPOption82Rid": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigIosEntry",
+      9
+    ]
+  },
+  "cLWlanIngressDHCPOption82Enable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigIosEntry",
+      10
+    ]
+  },
+  "cLWlanIosScanDeferPriority": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigIosEntry",
+      11
+    ]
+  },
+  "cLWlanIosWebAuthParameterMapName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigIosEntry",
+      12
+    ]
+  },
+  "cLWlanIosQosClientUpStreamProfileName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigIosEntry",
+      13
+    ]
+  },
+  "cLWlanIosQosClientDownStreamProfileName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanConfigIosEntry",
+      14
+    ]
+  },
+  "cLWlanFlexibleNetflowTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CLWlanFlexibleNetflowEntry"
+    },
+    "index": null,
+    "value": [
+      "ciscoLwappWlanConfig",
+      5
+    ]
+  },
+  "cLWlanFlexibleNetflowEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CLWlanFlexibleNetflowEntry"
+    },
+    "index": [
+      "cLWlanIndex",
+      "cLWlanFlexibleNetflowPolicyTypeIndex"
+    ],
+    "value": [
+      "cLWlanFlexibleNetflowTable",
+      1
+    ]
+  },
+  "CLWlanFlexibleNetflowEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cLWlanFlexibleNetflowPolicyTypeIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "none",
+        "1": "ipv4InputPolicy",
+        "2": "ipv4OutputPolicy",
+        "3": "ipv6InputPolicy",
+        "4": "ipv6OutputPolicy",
+        "5": "datalinkInputPolicy",
+        "6": "datalinkOutputPolicy"
+      }
+    },
+    "index": null,
+    "value": [
+      "cLWlanFlexibleNetflowEntry",
+      1
+    ]
+  },
+  "cLWlanFlexibleNetflowMonitorName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cLWlanFlexibleNetflowEntry",
+      2
+    ]
+  },
+  "cLWlanFlexibleNetflowRowStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowStatus"
+    },
+    "index": null,
+    "value": [
+      "cLWlanFlexibleNetflowEntry",
+      3
+    ]
+  },
+  "ciscoLwappWlanMIBCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoLwappWlanMIBConform",
+      1
+    ]
+  },
+  "ciscoLwappWlanMIBGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoLwappWlanMIBConform",
+      2
+    ]
+  },
+  "ciscoLwappWlanConfigGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      1
+    ]
+  },
+  "ciscoLwappWlanConfigGroupSup1": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      2
+    ]
+  },
+  "ciscoLwappWlanConfigClientGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      3
+    ]
+  },
+  "ciscoLwappWlan11uConfigGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      4
+    ]
+  },
+  "ciscoLwappAPGroupsVlanConfigGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      5
+    ]
+  },
+  "ciscoLwappWlanConfigGroupSup2": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      6
+    ]
+  },
+  "ciscoLwappWlanConfigClientGroupSup1": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      7
+    ]
+  },
+  "ciscoLwappWlanConfigGroupSup3": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      8
+    ]
+  },
+  "ciscoLwappWlan11uConfigGroupsup1": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      9
+    ]
+  },
+  "ciscoLwappWlanServiceAdvertisementConfigGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      10
+    ]
+  },
+  "ciscoLwappWlanHotSpot2ConfigGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      11
+    ]
+  },
+  "ciscoLwappWlanIosConfigGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      12
+    ]
+  },
+  "ciscoLwappWlanQosConfigGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      13
+    ]
+  },
+  "ciscoLwappWlanConfigGroupSup4": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      14
+    ]
+  },
+  "ciscoLwappWlan11uConfigGroupsup2": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      15
+    ]
+  },
+  "ciscoLwappWlanHotSpot2ConfigGroupSup1": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      16
+    ]
+  },
+  "ciscoLwappAPGroupsVlanConfigGroupSup1": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      17
+    ]
+  },
+  "cLAPGroupsVenueConfigGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      18
+    ]
+  },
+  "cLAPGroupsMultipleVenueGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      19
+    ]
+  },
+  "ciscoLwappWlanConfigClientGroupSup2": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      20
+    ]
+  },
+  "ciscoLwappWlanConfigFlexibleNetflowGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      21
+    ]
+  },
+  "ciscoLwappWlanConfigGroupSup5": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      22
+    ]
+  },
+  "ciscoLwappAPGroupsVlanConfigGroupSup2": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      23
+    ]
+  },
+  "ciscoLwappWlanConfigGroupSup6": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      24
+    ]
+  },
+  "ciscoLwappWlanConfigGroupSup7": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      25
+    ]
+  },
+  "ciscoLwappWlanConfigGroupSup8": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoLwappWlanMIBGroups",
+      26
+    ]
+  }
+}

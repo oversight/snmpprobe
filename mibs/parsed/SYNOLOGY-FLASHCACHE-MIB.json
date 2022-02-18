@@ -1,0 +1,261 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-TC",
+      [
+        "DisplayString"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "OBJECT-GROUP",
+        "MODULE-COMPLIANCE"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "OBJECT-TYPE",
+        "Integer32",
+        "Counter64",
+        "enterprises",
+        "MODULE-IDENTITY"
+      ]
+    ]
+  ],
+  "flashCache": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "synology",
+      103
+    ]
+  },
+  "synology": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      6574
+    ]
+  },
+  "flashCacheTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF FlashCacheEntry"
+    },
+    "index": null,
+    "value": [
+      "flashCache",
+      1
+    ]
+  },
+  "flashCacheEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FlashCacheEntry"
+    },
+    "index": [
+      "flashCacheIndex"
+    ],
+    "value": [
+      "flashCacheTable",
+      1
+    ]
+  },
+  "FlashCacheEntry": {
+    "tp": "SEQUENCE"
+  },
+  "flashCacheIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "flashCacheEntry",
+      1
+    ]
+  },
+  "flashCacheSSDDev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "flashCacheEntry",
+      2
+    ]
+  },
+  "flashCacheSpaceDev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "flashCacheEntry",
+      3
+    ]
+  },
+  "flashCacheReadHits": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "flashCacheEntry",
+      4
+    ]
+  },
+  "flashCacheWriteHits": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "flashCacheEntry",
+      5
+    ]
+  },
+  "flashCacheDiskRead": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "flashCacheEntry",
+      6
+    ]
+  },
+  "flashCacheDiskWrite": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "flashCacheEntry",
+      7
+    ]
+  },
+  "flashCacheTotalRead": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "flashCacheEntry",
+      8
+    ]
+  },
+  "flashCacheTotalWrite": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "flashCacheEntry",
+      9
+    ]
+  },
+  "flashCacheReadHitRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "flashCacheEntry",
+      10
+    ]
+  },
+  "flashCacheWriteHitRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "flashCacheEntry",
+      11
+    ]
+  },
+  "flashCacheReadSeqSkip": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "flashCacheEntry",
+      12
+    ]
+  },
+  "flashCacheWriteSeqSkip": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "flashCacheEntry",
+      13
+    ]
+  },
+  "flashCacheWriteMissSsd": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "flashCacheEntry",
+      14
+    ]
+  },
+  "flashCacheSsdUuid": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "flashCacheEntry",
+      15
+    ]
+  },
+  "flashCacheConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "flashCache",
+      2
+    ]
+  },
+  "flashCacheCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "flashCacheConformance",
+      1
+    ]
+  },
+  "flashCacheGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "flashCacheConformance",
+      2
+    ]
+  },
+  "flashCacheGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "flashCacheGroups",
+      1
+    ]
+  }
+}

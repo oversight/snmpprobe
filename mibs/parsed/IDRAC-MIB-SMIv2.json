@@ -1,0 +1,8389 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Counter32",
+        "Integer32",
+        "TimeTicks",
+        "NOTIFICATION-TYPE",
+        "OBJECT-IDENTITY",
+        "enterprises"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION",
+        "DisplayString"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP"
+      ]
+    ]
+  ],
+  "outOfBandGroup": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "enterprises",
+      674,
+      10892,
+      5
+    ]
+  },
+  "informationGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "outOfBandGroup",
+      1
+    ]
+  },
+  "racInfoGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "informationGroup",
+      1
+    ]
+  },
+  "chassisInfoGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "informationGroup",
+      2
+    ]
+  },
+  "systemInfoGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "informationGroup",
+      3
+    ]
+  },
+  "statusGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "outOfBandGroup",
+      2
+    ]
+  },
+  "alertGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "outOfBandGroup",
+      3
+    ]
+  },
+  "alertVariablesGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "alertGroup",
+      1
+    ]
+  },
+  "alertTrapGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "alertGroup",
+      2
+    ]
+  },
+  "systemAlertTrapGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "alertTrapGroup",
+      1
+    ]
+  },
+  "storageAlertTrapGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "alertTrapGroup",
+      2
+    ]
+  },
+  "updatesAlertTrapGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "alertTrapGroup",
+      3
+    ]
+  },
+  "auditAlertTrapGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "alertTrapGroup",
+      4
+    ]
+  },
+  "configurationAlertTrapGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "alertTrapGroup",
+      5
+    ]
+  },
+  "systemDetailsGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "outOfBandGroup",
+      4
+    ]
+  },
+  "mIBVersionGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "systemDetailsGroup",
+      1
+    ]
+  },
+  "systemStateGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "systemDetailsGroup",
+      200
+    ]
+  },
+  "chassisInformationGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "systemDetailsGroup",
+      300
+    ]
+  },
+  "powerGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "systemDetailsGroup",
+      600
+    ]
+  },
+  "thermalGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "systemDetailsGroup",
+      700
+    ]
+  },
+  "deviceGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "systemDetailsGroup",
+      1100
+    ]
+  },
+  "slotGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "systemDetailsGroup",
+      1200
+    ]
+  },
+  "fruGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "systemDetailsGroup",
+      2000
+    ]
+  },
+  "storageDetailsGroup": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "outOfBandGroup",
+      5
+    ]
+  },
+  "software": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "storageDetailsGroup",
+      1
+    ]
+  },
+  "storageManagement": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "software",
+      20
+    ]
+  },
+  "physicalDevices": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "storageManagement",
+      130
+    ]
+  },
+  "logicalDevices": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "storageManagement",
+      140
+    ]
+  },
+  "StringType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "String64": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "FQDDString": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "SecurityString": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "MACAddress": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "ObjectRange": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "display_hint": null
+  },
+  "Unsigned8BitRange": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "display_hint": null
+  },
+  "Unsigned16BitRange": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "display_hint": null
+  },
+  "Unsigned32BitRange": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "display_hint": null
+  },
+  "Signed32BitRange": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "display_hint": null
+  },
+  "BooleanType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "display_hint": null
+  },
+  "Unsigned64BitRange": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "DateName": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "StateCapabilitiesFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknownCapabilities",
+        "2": "enableCapable",
+        "4": "notReadyCapable",
+        "6": "enableAndNotReadyCapable"
+      }
+    },
+    "display_hint": null
+  },
+  "StateSettingsFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "enabled",
+        "4": "notReady",
+        "6": "enabledAndNotReady"
+      }
+    },
+    "display_hint": null
+  },
+  "ProbeCapabilitiesFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "upperNonCriticalThresholdSetCapable",
+        "2": "lowerNonCriticalThresholdSetCapable",
+        "4": "upperNonCriticalThresholdDefaultCapable",
+        "8": "lowerNonCriticalThresholdDefaultCapable"
+      }
+    },
+    "display_hint": null
+  },
+  "StatusProbeEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "3": "ok",
+        "4": "nonCriticalUpper",
+        "5": "criticalUpper",
+        "6": "nonRecoverableUpper",
+        "7": "nonCriticalLower",
+        "8": "criticalLower",
+        "9": "nonRecoverableLower",
+        "10": "failed"
+      }
+    },
+    "display_hint": null
+  },
+  "StatusRedundancyEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "3": "full",
+        "4": "degraded",
+        "5": "lost",
+        "6": "notRedundant",
+        "7": "redundancyOffline"
+      }
+    },
+    "display_hint": null
+  },
+  "ObjectStatusEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "3": "ok",
+        "4": "nonCritical",
+        "5": "critical",
+        "6": "nonRecoverable"
+      }
+    },
+    "display_hint": null
+  },
+  "RacTypeEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "16": "idrac7monolithic",
+        "17": "idrac7modular"
+      }
+    },
+    "display_hint": null
+  },
+  "SystemFormFactorEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "3": "u1",
+        "4": "u2",
+        "5": "u4",
+        "6": "u7",
+        "7": "singleWidthSingleHeight",
+        "8": "dualWidthSingleHeight",
+        "9": "singleWidthDualHeight",
+        "10": "dualWidthDualHeight",
+        "11": "singleWidthQuarterHeight",
+        "12": "u5"
+      }
+    },
+    "display_hint": null
+  },
+  "BladeGeometryEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "3": "singleWidthSingleHeight",
+        "4": "dualWidthSingleHeight",
+        "5": "singleWidthDualHeight",
+        "6": "dualWidthDualHeight",
+        "7": "singleWidthQuarterHeight"
+      }
+    },
+    "display_hint": null
+  },
+  "PowerStateStatusEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "3": "off",
+        "4": "on"
+      }
+    },
+    "display_hint": null
+  },
+  "racName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "racInfoGroup",
+      1
+    ]
+  },
+  "racShortName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "racInfoGroup",
+      2
+    ]
+  },
+  "racDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "racInfoGroup",
+      3
+    ]
+  },
+  "racManufacturer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "racInfoGroup",
+      4
+    ]
+  },
+  "racVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "racInfoGroup",
+      5
+    ]
+  },
+  "racURL": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "racInfoGroup",
+      6
+    ]
+  },
+  "racType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RacTypeEnum"
+    },
+    "index": null,
+    "value": [
+      "racInfoGroup",
+      7
+    ]
+  },
+  "racFirmwareVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "racInfoGroup",
+      8
+    ]
+  },
+  "chassisServiceTag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "chassisInfoGroup",
+      1
+    ]
+  },
+  "systemFQDN": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "systemInfoGroup",
+      1
+    ]
+  },
+  "systemServiceTag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "systemInfoGroup",
+      2
+    ]
+  },
+  "systemExpressServiceCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "systemInfoGroup",
+      3
+    ]
+  },
+  "systemAssetTag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "systemInfoGroup",
+      4
+    ]
+  },
+  "systemBladeSlotNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "systemInfoGroup",
+      5
+    ]
+  },
+  "systemOSName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "systemInfoGroup",
+      6
+    ]
+  },
+  "systemFormFactor": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SystemFormFactorEnum"
+    },
+    "index": null,
+    "value": [
+      "systemInfoGroup",
+      7
+    ]
+  },
+  "systemDataCenterName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "systemInfoGroup",
+      8
+    ]
+  },
+  "systemAisleName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "systemInfoGroup",
+      9
+    ]
+  },
+  "systemRackName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "systemInfoGroup",
+      10
+    ]
+  },
+  "systemRackSlot": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "systemInfoGroup",
+      11
+    ]
+  },
+  "systemModelName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "systemInfoGroup",
+      12
+    ]
+  },
+  "systemSystemID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned16BitRange"
+    },
+    "index": null,
+    "value": [
+      "systemInfoGroup",
+      13
+    ]
+  },
+  "systemOSVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "systemInfoGroup",
+      14
+    ]
+  },
+  "systemRoomName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "systemInfoGroup",
+      15
+    ]
+  },
+  "systemChassisSystemHeight": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "systemInfoGroup",
+      16
+    ]
+  },
+  "systemBladeGeometry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BladeGeometryEnum"
+    },
+    "index": null,
+    "value": [
+      "systemInfoGroup",
+      17
+    ]
+  },
+  "globalSystemStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "statusGroup",
+      1
+    ]
+  },
+  "systemLCDStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "statusGroup",
+      2
+    ]
+  },
+  "globalStorageStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "statusGroup",
+      3
+    ]
+  },
+  "systemPowerState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PowerStateStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "statusGroup",
+      4
+    ]
+  },
+  "alertMessageID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "alertVariablesGroup",
+      1
+    ]
+  },
+  "alertMessage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "alertVariablesGroup",
+      2
+    ]
+  },
+  "alertCurrentStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "alertVariablesGroup",
+      3
+    ]
+  },
+  "alertSystemServiceTag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "alertVariablesGroup",
+      4
+    ]
+  },
+  "alertSystemFQDN": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "alertVariablesGroup",
+      5
+    ]
+  },
+  "alertFQDD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "alertVariablesGroup",
+      6
+    ]
+  },
+  "alertDeviceDisplayName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "alertVariablesGroup",
+      7
+    ]
+  },
+  "alertMessageArguments": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StringType"
+    },
+    "index": null,
+    "value": [
+      "alertVariablesGroup",
+      8
+    ]
+  },
+  "alertChassisServiceTag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "alertVariablesGroup",
+      9
+    ]
+  },
+  "mIBMajorVersionNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned8BitRange"
+    },
+    "index": null,
+    "value": [
+      "mIBVersionGroup",
+      1
+    ]
+  },
+  "mIBMinorVersionNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned8BitRange"
+    },
+    "index": null,
+    "value": [
+      "mIBVersionGroup",
+      2
+    ]
+  },
+  "mIBMaintenanceVersionNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned8BitRange"
+    },
+    "index": null,
+    "value": [
+      "mIBVersionGroup",
+      3
+    ]
+  },
+  "SystemStateTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "systemStateTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SystemStateTableEntry"
+    },
+    "index": null,
+    "value": [
+      "systemStateGroup",
+      10
+    ]
+  },
+  "systemStateTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SystemStateTableEntry"
+    },
+    "index": [
+      "systemStatechassisIndex"
+    ],
+    "value": [
+      "systemStateTable",
+      1
+    ]
+  },
+  "systemStatechassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      1
+    ]
+  },
+  "systemStateGlobalSystemStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      2
+    ]
+  },
+  "systemStateChassisState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      3
+    ]
+  },
+  "systemStateChassisStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      4
+    ]
+  },
+  "systemStatePowerUnitStateDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      5
+    ]
+  },
+  "systemStatePowerUnitStatusRedundancy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StatusRedundancyEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      6
+    ]
+  },
+  "systemStatePowerUnitStatusDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      7
+    ]
+  },
+  "systemStatePowerSupplyStateDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      8
+    ]
+  },
+  "systemStatePowerSupplyStatusCombined": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      9
+    ]
+  },
+  "systemStatePowerSupplyStatusDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      10
+    ]
+  },
+  "systemStateVoltageStateDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      11
+    ]
+  },
+  "systemStateVoltageStatusCombined": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      12
+    ]
+  },
+  "systemStateVoltageStatusDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      13
+    ]
+  },
+  "systemStateAmperageStateDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      14
+    ]
+  },
+  "systemStateAmperageStatusCombined": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      15
+    ]
+  },
+  "systemStateAmperageStatusDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      16
+    ]
+  },
+  "systemStateCoolingUnitStateDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      17
+    ]
+  },
+  "systemStateCoolingUnitStatusRedundancy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StatusRedundancyEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      18
+    ]
+  },
+  "systemStateCoolingUnitStatusDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      19
+    ]
+  },
+  "systemStateCoolingDeviceStateDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      20
+    ]
+  },
+  "systemStateCoolingDeviceStatusCombined": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      21
+    ]
+  },
+  "systemStateCoolingDeviceStatusDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      22
+    ]
+  },
+  "systemStateTemperatureStateDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      23
+    ]
+  },
+  "systemStateTemperatureStatusCombined": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      24
+    ]
+  },
+  "systemStateTemperatureStatusDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      25
+    ]
+  },
+  "systemStateMemoryDeviceStateDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      26
+    ]
+  },
+  "systemStateMemoryDeviceStatusCombined": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      27
+    ]
+  },
+  "systemStateMemoryDeviceStatusDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      28
+    ]
+  },
+  "systemStateChassisIntrusionStateDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      29
+    ]
+  },
+  "systemStateChassisIntrusionStatusCombined": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      30
+    ]
+  },
+  "systemStateChassisIntrusionStatusDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      31
+    ]
+  },
+  "systemStatePowerUnitStatusCombined": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      42
+    ]
+  },
+  "systemStatePowerUnitStatusList": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      43
+    ]
+  },
+  "systemStateCoolingUnitStatusCombined": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      44
+    ]
+  },
+  "systemStateCoolingUnitStatusList": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      45
+    ]
+  },
+  "systemStateProcessorDeviceStatusCombined": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      50
+    ]
+  },
+  "systemStateProcessorDeviceStatusList": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      51
+    ]
+  },
+  "systemStateBatteryStatusCombined": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      52
+    ]
+  },
+  "systemStateBatteryStatusList": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      53
+    ]
+  },
+  "systemStateSDCardUnitStatusCombined": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      54
+    ]
+  },
+  "systemStateSDCardUnitStatusList": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      55
+    ]
+  },
+  "systemStateSDCardDeviceStatusCombined": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      56
+    ]
+  },
+  "systemStateSDCardDeviceStatusList": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      57
+    ]
+  },
+  "systemStateIDSDMCardUnitStatusCombined": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      58
+    ]
+  },
+  "systemStateIDSDMCardUnitStatusList": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      59
+    ]
+  },
+  "systemStateIDSDMCardDeviceStatusCombined": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      60
+    ]
+  },
+  "systemStateIDSDMCardDeviceStatusList": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      61
+    ]
+  },
+  "systemStateTemperatureStatisticsStateDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      62
+    ]
+  },
+  "systemStateTemperatureStatisticsStatusCombined": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      63
+    ]
+  },
+  "systemStateTemperatureStatisticsStatusDetails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "systemStateTableEntry",
+      64
+    ]
+  },
+  "StateCapabilitiesLogUniqueFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "onlineCapable",
+        "4": "notReadyCapable",
+        "8": "resetCapable"
+      }
+    },
+    "display_hint": null
+  },
+  "StateSettingsLogUniqueFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "online",
+        "4": "notReady",
+        "8": "reset"
+      }
+    },
+    "display_hint": null
+  },
+  "LogFormatType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "raw",
+        "2": "ascii",
+        "3": "uniCode"
+      }
+    },
+    "display_hint": null
+  },
+  "numEventLogEntries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationGroup",
+      1
+    ]
+  },
+  "numLCLogEntries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationGroup",
+      2
+    ]
+  },
+  "ChassisTypeEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "3": "desktop",
+        "4": "lowProfileDesktop",
+        "5": "pizzaBox",
+        "6": "miniTower",
+        "7": "tower",
+        "8": "portable",
+        "9": "lapTop",
+        "10": "noteBook",
+        "11": "handHeld",
+        "12": "dockingStation",
+        "13": "allInOne",
+        "14": "subNoteBook",
+        "15": "spaceSaving",
+        "16": "lunchBox",
+        "17": "mainSystemChassis",
+        "18": "expansionChassis",
+        "19": "subChassis",
+        "20": "busExpansionChassis",
+        "21": "peripheralChassis",
+        "22": "raidChassis",
+        "23": "rackMountChassis",
+        "24": "sealedCasePC",
+        "25": "multiSystemChassis"
+      }
+    },
+    "display_hint": null
+  },
+  "ChassisSystemClassEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "3": "workstationClass",
+        "4": "serverClass",
+        "5": "desktopClass",
+        "6": "portableClass",
+        "7": "netPCClass",
+        "8": "storageClass"
+      }
+    },
+    "display_hint": null
+  },
+  "LEDControlCapabilitiesFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "alertOnErrorCapable",
+        "4": "alertOnWarningAndErrorCapable",
+        "6": "alertOnWarningOrErrorCapable"
+      }
+    },
+    "display_hint": null
+  },
+  "LEDControlSettingsFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "alertOnError",
+        "4": "alertOnWarningAndError"
+      }
+    },
+    "display_hint": null
+  },
+  "ChassisIdentifyControlCapabilitiesFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknownCapabilities",
+        "2": "enableCapable",
+        "4": "notReadyCapable",
+        "8": "identifyCapable"
+      }
+    },
+    "display_hint": null
+  },
+  "ChassisIdentifyControlSettingsFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "enabled",
+        "4": "notReady",
+        "8": "identifyChassis",
+        "10": "identifyChassisAndEnable"
+      }
+    },
+    "display_hint": null
+  },
+  "HostControlCapabilitiesFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "manualRebootCapable",
+        "2": "manualPowerOFFCapable",
+        "4": "manualPowerCycleCapable",
+        "7": "manualAllExceptOperatingSystemShutdownCapable",
+        "8": "manualOperatingSystemShutdownCapable",
+        "15": "manualFullyCapable",
+        "16": "manualRebootWithOSShutdownCapable",
+        "32": "manualRebootWithoutOSShutdownCapable",
+        "64": "manualPowerOffWithOSShutdownCapable",
+        "128": "manualPowerOffWithoutOSShutdownCapable",
+        "256": "manualPowerCycleWithOSShutdownCapable",
+        "512": "manualPowerCycleWithoutOSShutdownCapable"
+      }
+    },
+    "display_hint": null
+  },
+  "HostControlSettingsFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "manualReboot",
+        "2": "manualPowerOFF",
+        "4": "manualPowerCycle",
+        "8": "manualOperatingSystemShutdown",
+        "9": "manualOperatingSystemShutdownThenReboot",
+        "10": "manualOperatingSystemShutdownThenPowerOFF",
+        "12": "manualOperatingSystemShutdownThenPowerCycle"
+      }
+    },
+    "display_hint": null
+  },
+  "WatchDogControlCapabilitiesFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "automaticRebootCapable",
+        "2": "automaticPowerCycleCapable",
+        "4": "automaticNotificationCapable",
+        "8": "automaticWatchDogTimerCapable",
+        "16": "automaticPowerOffCapable",
+        "27": "automaticAllExceptNotificationCapable",
+        "31": "automaticFullyCapable"
+      }
+    },
+    "display_hint": null
+  },
+  "WatchControlSettingsFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "automaticRebootEnabled",
+        "2": "automaticPowerCycleEnabled",
+        "4": "automaticNotificationEnabled",
+        "8": "automaticPowerOffEnabled"
+      }
+    },
+    "display_hint": null
+  },
+  "WatchDogTimerCapabilitiesFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "type1Capable",
+        "2": "type2Capable",
+        "4": "type3Capable"
+      }
+    },
+    "display_hint": null
+  },
+  "PowerButtonControlCapabilitiesFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknownCapabilities",
+        "2": "enableCapable"
+      }
+    },
+    "display_hint": null
+  },
+  "PowerButtonControlSettingsFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "enabled",
+        "4": "disabled"
+      }
+    },
+    "display_hint": null
+  },
+  "NMIButtonControlCapabilitiesFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknownCapabilities",
+        "2": "enableCapable"
+      }
+    },
+    "display_hint": null
+  },
+  "NMIButtonControlSettingsFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "enabled",
+        "4": "disabled"
+      }
+    },
+    "display_hint": null
+  },
+  "SystemPropertiesFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "energySmart"
+      }
+    },
+    "display_hint": null
+  },
+  "ChassisInformationTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "chassisInformationTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ChassisInformationTableEntry"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationGroup",
+      10
+    ]
+  },
+  "chassisInformationTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ChassisInformationTableEntry"
+    },
+    "index": [
+      "chassisIndexChassisInformation"
+    ],
+    "value": [
+      "chassisInformationTable",
+      1
+    ]
+  },
+  "chassisIndexChassisInformation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      1
+    ]
+  },
+  "chassisStateCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      2
+    ]
+  },
+  "chassisStateSettings": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      3
+    ]
+  },
+  "chassisStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      4
+    ]
+  },
+  "chassisparentIndexReference": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      5
+    ]
+  },
+  "chassisType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ChassisTypeEnum"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      6
+    ]
+  },
+  "chassisName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      7
+    ]
+  },
+  "chassisManufacturerName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      8
+    ]
+  },
+  "chassisModelTypeName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      9
+    ]
+  },
+  "chassisAssetTagName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      10
+    ]
+  },
+  "chassisServiceTagName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      11
+    ]
+  },
+  "chassisID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned8BitRange"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      12
+    ]
+  },
+  "chassisIDExtension": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned16BitRange"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      13
+    ]
+  },
+  "chassisSystemClass": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ChassisSystemClassEnum"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      14
+    ]
+  },
+  "chassisSystemName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      15
+    ]
+  },
+  "chassisLEDControlCapabilitiesUnique": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "LEDControlCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      24
+    ]
+  },
+  "chassisLEDControlSettingsUnique": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "LEDControlSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      25
+    ]
+  },
+  "chassisIdentifyFlashControlCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ChassisIdentifyControlCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      28
+    ]
+  },
+  "chassisIdentifyFlashControlSettings": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ChassisIdentifyControlSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      29
+    ]
+  },
+  "chassisLockPresent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BooleanType"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      30
+    ]
+  },
+  "chassishostControlCapabilitiesUnique": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HostControlCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      31
+    ]
+  },
+  "chassishostControlSettingsUnique": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HostControlSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      32
+    ]
+  },
+  "chassiswatchDogControlCapabilitiesUnique": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "WatchDogControlCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      33
+    ]
+  },
+  "chassiswatchDogControlSettingsUnique": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "WatchControlSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      34
+    ]
+  },
+  "chassiswatchDogControlExpiryTimeCapabilitiesUnique": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "WatchDogTimerCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      35
+    ]
+  },
+  "chassiswatchDogControlExpiryTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned16BitRange"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      36
+    ]
+  },
+  "chassisPowerButtonControlCapabilitiesUnique": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PowerButtonControlCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      38
+    ]
+  },
+  "chassisPowerButtonControlSettingsUnique": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PowerButtonControlSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      39
+    ]
+  },
+  "chassisNMIButtonControlCapabilitiesUnique": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "NMIButtonControlCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      44
+    ]
+  },
+  "chassisNMIButtonControlSettingsUnique": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "NMIButtonControlSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      45
+    ]
+  },
+  "chassisSystemProperties": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SystemPropertiesFlags"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      46
+    ]
+  },
+  "chassisSystemRevisionNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned8BitRange"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      47
+    ]
+  },
+  "chassisSystemRevisionName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      48
+    ]
+  },
+  "chassisExpressServiceCodeName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationTableEntry",
+      49
+    ]
+  },
+  "EventLogTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "eventLogTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF EventLogTableEntry"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationGroup",
+      40
+    ]
+  },
+  "eventLogTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EventLogTableEntry"
+    },
+    "index": [
+      "eventLogchassisIndex",
+      "eventLogRecordIndex"
+    ],
+    "value": [
+      "eventLogTable",
+      1
+    ]
+  },
+  "eventLogchassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "eventLogTableEntry",
+      1
+    ]
+  },
+  "eventLogRecordIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "eventLogTableEntry",
+      2
+    ]
+  },
+  "eventLogStateCapabilitiesUnique": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateCapabilitiesLogUniqueFlags"
+    },
+    "index": null,
+    "value": [
+      "eventLogTableEntry",
+      3
+    ]
+  },
+  "eventLogStateSettingsUnique": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateSettingsLogUniqueFlags"
+    },
+    "index": null,
+    "value": [
+      "eventLogTableEntry",
+      4
+    ]
+  },
+  "eventLogRecord": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "eventLogTableEntry",
+      5
+    ]
+  },
+  "eventLogFormat": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "LogFormatType"
+    },
+    "index": null,
+    "value": [
+      "eventLogTableEntry",
+      6
+    ]
+  },
+  "eventLogSeverityStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "eventLogTableEntry",
+      7
+    ]
+  },
+  "eventLogDateName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateName"
+    },
+    "index": null,
+    "value": [
+      "eventLogTableEntry",
+      8
+    ]
+  },
+  "SystemBIOSTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "systemBIOSTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SystemBIOSTableEntry"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationGroup",
+      50
+    ]
+  },
+  "systemBIOSTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SystemBIOSTableEntry"
+    },
+    "index": [
+      "systemBIOSchassisIndex",
+      "systemBIOSIndex"
+    ],
+    "value": [
+      "systemBIOSTable",
+      1
+    ]
+  },
+  "systemBIOSchassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "systemBIOSTableEntry",
+      1
+    ]
+  },
+  "systemBIOSIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "systemBIOSTableEntry",
+      2
+    ]
+  },
+  "systemBIOSStateCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "systemBIOSTableEntry",
+      3
+    ]
+  },
+  "systemBIOSStateSettings": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "systemBIOSTableEntry",
+      4
+    ]
+  },
+  "systemBIOSStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemBIOSTableEntry",
+      5
+    ]
+  },
+  "systemBIOSReleaseDateName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateName"
+    },
+    "index": null,
+    "value": [
+      "systemBIOSTableEntry",
+      7
+    ]
+  },
+  "systemBIOSVersionName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "systemBIOSTableEntry",
+      8
+    ]
+  },
+  "systemBIOSManufacturerName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "systemBIOSTableEntry",
+      11
+    ]
+  },
+  "FirmwareType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "20": "lifecycleController",
+        "21": "iDRAC7"
+      }
+    },
+    "display_hint": null
+  },
+  "FirmwareTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "firmwareTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF FirmwareTableEntry"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationGroup",
+      60
+    ]
+  },
+  "firmwareTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FirmwareTableEntry"
+    },
+    "index": [
+      "firmwarechassisIndex",
+      "firmwareIndex"
+    ],
+    "value": [
+      "firmwareTable",
+      1
+    ]
+  },
+  "firmwarechassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "firmwareTableEntry",
+      1
+    ]
+  },
+  "firmwareIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "firmwareTableEntry",
+      2
+    ]
+  },
+  "firmwareStateCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "firmwareTableEntry",
+      3
+    ]
+  },
+  "firmwareStateSettings": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "firmwareTableEntry",
+      4
+    ]
+  },
+  "firmwareStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "firmwareTableEntry",
+      5
+    ]
+  },
+  "firmwareSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned16BitRange"
+    },
+    "index": null,
+    "value": [
+      "firmwareTableEntry",
+      6
+    ]
+  },
+  "firmwareType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FirmwareType"
+    },
+    "index": null,
+    "value": [
+      "firmwareTableEntry",
+      7
+    ]
+  },
+  "firmwareTypeName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "firmwareTableEntry",
+      8
+    ]
+  },
+  "firmwareUpdateCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned16BitRange"
+    },
+    "index": null,
+    "value": [
+      "firmwareTableEntry",
+      9
+    ]
+  },
+  "firmwareVersionName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "firmwareTableEntry",
+      11
+    ]
+  },
+  "IntrusionReadingEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "chassisNotBreached",
+        "2": "chassisBreached",
+        "3": "chassisBreachedPrior",
+        "4": "chassisBreachSensorFailure"
+      }
+    },
+    "display_hint": null
+  },
+  "IntrusionTypeEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "chassisBreachDetectionWhenPowerON",
+        "2": "chassisBreachDetectionWhenPowerOFF"
+      }
+    },
+    "display_hint": null
+  },
+  "IntrusionTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "intrusionTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF IntrusionTableEntry"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationGroup",
+      70
+    ]
+  },
+  "intrusionTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IntrusionTableEntry"
+    },
+    "index": [
+      "intrusionchassisIndex",
+      "intrusionIndex"
+    ],
+    "value": [
+      "intrusionTable",
+      1
+    ]
+  },
+  "intrusionchassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "intrusionTableEntry",
+      1
+    ]
+  },
+  "intrusionIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "intrusionTableEntry",
+      2
+    ]
+  },
+  "intrusionStateCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "intrusionTableEntry",
+      3
+    ]
+  },
+  "intrusionStateSettings": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "intrusionTableEntry",
+      4
+    ]
+  },
+  "intrusionStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "intrusionTableEntry",
+      5
+    ]
+  },
+  "intrusionReading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IntrusionReadingEnum"
+    },
+    "index": null,
+    "value": [
+      "intrusionTableEntry",
+      6
+    ]
+  },
+  "intrusionType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IntrusionTypeEnum"
+    },
+    "index": null,
+    "value": [
+      "intrusionTableEntry",
+      7
+    ]
+  },
+  "intrusionLocationName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "intrusionTableEntry",
+      8
+    ]
+  },
+  "LcLogCategoryEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "system",
+        "2": "storage",
+        "3": "updates",
+        "4": "audit",
+        "5": "configuration",
+        "6": "workNotes"
+      }
+    },
+    "display_hint": null
+  },
+  "LcLogTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "lcLogTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF LcLogTableEntry"
+    },
+    "index": null,
+    "value": [
+      "chassisInformationGroup",
+      90
+    ]
+  },
+  "lcLogTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "LcLogTableEntry"
+    },
+    "index": [
+      "lcLogChassisIndex",
+      "lcLogRecordIndex"
+    ],
+    "value": [
+      "lcLogTable",
+      1
+    ]
+  },
+  "lcLogChassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "lcLogTableEntry",
+      1
+    ]
+  },
+  "lcLogRecordIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "lcLogTableEntry",
+      2
+    ]
+  },
+  "lcLogSequenceNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "lcLogTableEntry",
+      3
+    ]
+  },
+  "lcLogCategory": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "LcLogCategoryEnum"
+    },
+    "index": null,
+    "value": [
+      "lcLogTableEntry",
+      4
+    ]
+  },
+  "lcLogSeverityStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "lcLogTableEntry",
+      5
+    ]
+  },
+  "lcLogDateName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateName"
+    },
+    "index": null,
+    "value": [
+      "lcLogTableEntry",
+      6
+    ]
+  },
+  "lcLogFQDD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FQDDString"
+    },
+    "index": null,
+    "value": [
+      "lcLogTableEntry",
+      7
+    ]
+  },
+  "lcLogMessageID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "lcLogTableEntry",
+      8
+    ]
+  },
+  "lcLogMessage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "lcLogTableEntry",
+      9
+    ]
+  },
+  "lcLogDetailedDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "lcLogTableEntry",
+      10
+    ]
+  },
+  "lcLogRecommededAction": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "lcLogTableEntry",
+      11
+    ]
+  },
+  "lcLogComment": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "lcLogTableEntry",
+      12
+    ]
+  },
+  "PowerUnitTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "powerUnitTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PowerUnitTableEntry"
+    },
+    "index": null,
+    "value": [
+      "powerGroup",
+      10
+    ]
+  },
+  "powerUnitTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PowerUnitTableEntry"
+    },
+    "index": [
+      "powerUnitchassisIndex",
+      "powerUnitIndex"
+    ],
+    "value": [
+      "powerUnitTable",
+      1
+    ]
+  },
+  "powerUnitchassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "powerUnitTableEntry",
+      1
+    ]
+  },
+  "powerUnitIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "powerUnitTableEntry",
+      2
+    ]
+  },
+  "powerUnitStateCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "powerUnitTableEntry",
+      3
+    ]
+  },
+  "powerUnitStateSettings": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "powerUnitTableEntry",
+      4
+    ]
+  },
+  "powerUnitRedundancyStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StatusRedundancyEnum"
+    },
+    "index": null,
+    "value": [
+      "powerUnitTableEntry",
+      5
+    ]
+  },
+  "powerSupplyCountForRedundancy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "powerUnitTableEntry",
+      6
+    ]
+  },
+  "powerUnitName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "powerUnitTableEntry",
+      7
+    ]
+  },
+  "powerUnitStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "powerUnitTableEntry",
+      8
+    ]
+  },
+  "PowerSupplyStateCapabilitiesUniqueFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "onlineCapable",
+        "4": "notReadyCapable"
+      }
+    },
+    "display_hint": null
+  },
+  "PowerSupplyStateSettingsUniqueFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "onLine",
+        "4": "notReady",
+        "8": "fanFailure",
+        "10": "onlineAndFanFailure",
+        "16": "powerSupplyIsON",
+        "32": "powerSupplyIsOK",
+        "64": "acSwitchIsON",
+        "66": "onlineandAcSwitchIsON",
+        "128": "acPowerIsON",
+        "130": "onlineAndAcPowerIsON",
+        "210": "onlineAndPredictiveFailure",
+        "242": "acPowerAndSwitchAreOnPowerSupplyIsOnIsOkAndOnline"
+      }
+    },
+    "display_hint": null
+  },
+  "PowerSupplyTypeEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "powerSupplyTypeIsOther",
+        "2": "powerSupplyTypeIsUnknown",
+        "3": "powerSupplyTypeIsLinear",
+        "4": "powerSupplyTypeIsSwitching",
+        "5": "powerSupplyTypeIsBattery",
+        "6": "powerSupplyTypeIsUPS",
+        "7": "powerSupplyTypeIsConverter",
+        "8": "powerSupplyTypeIsRegulator",
+        "9": "powerSupplyTypeIsAC",
+        "10": "powerSupplyTypeIsDC",
+        "11": "powerSupplyTypeIsVRM"
+      }
+    },
+    "display_hint": null
+  },
+  "PowerSupplySensorStateFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "presenceDetected",
+        "2": "psFailureDetected",
+        "4": "predictiveFailure",
+        "8": "psACLost",
+        "16": "acLostOrOutOfRange",
+        "32": "acOutOfRangeButPresent",
+        "64": "configurationError"
+      }
+    },
+    "display_hint": null
+  },
+  "PowerSupplyConfigurationErrorTypeEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "vendorMismatch",
+        "2": "revisionMismatch",
+        "3": "processorMissing"
+      }
+    },
+    "display_hint": null
+  },
+  "PowerSupplyTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "powerSupplyTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PowerSupplyTableEntry"
+    },
+    "index": null,
+    "value": [
+      "powerGroup",
+      12
+    ]
+  },
+  "powerSupplyTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PowerSupplyTableEntry"
+    },
+    "index": [
+      "powerSupplychassisIndex",
+      "powerSupplyIndex"
+    ],
+    "value": [
+      "powerSupplyTable",
+      1
+    ]
+  },
+  "powerSupplychassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "powerSupplyTableEntry",
+      1
+    ]
+  },
+  "powerSupplyIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "powerSupplyTableEntry",
+      2
+    ]
+  },
+  "powerSupplyStateCapabilitiesUnique": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PowerSupplyStateCapabilitiesUniqueFlags"
+    },
+    "index": null,
+    "value": [
+      "powerSupplyTableEntry",
+      3
+    ]
+  },
+  "powerSupplyStateSettingsUnique": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PowerSupplyStateSettingsUniqueFlags"
+    },
+    "index": null,
+    "value": [
+      "powerSupplyTableEntry",
+      4
+    ]
+  },
+  "powerSupplyStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "powerSupplyTableEntry",
+      5
+    ]
+  },
+  "powerSupplyOutputWatts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "powerSupplyTableEntry",
+      6
+    ]
+  },
+  "powerSupplyType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PowerSupplyTypeEnum"
+    },
+    "index": null,
+    "value": [
+      "powerSupplyTableEntry",
+      7
+    ]
+  },
+  "powerSupplyLocationName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "powerSupplyTableEntry",
+      8
+    ]
+  },
+  "powerSupplyInputVoltage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "powerSupplyTableEntry",
+      9
+    ]
+  },
+  "powerSupplypowerUnitIndexReference": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "powerSupplyTableEntry",
+      10
+    ]
+  },
+  "powerSupplySensorState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PowerSupplySensorStateFlags"
+    },
+    "index": null,
+    "value": [
+      "powerSupplyTableEntry",
+      11
+    ]
+  },
+  "powerSupplyConfigurationErrorType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PowerSupplyConfigurationErrorTypeEnum"
+    },
+    "index": null,
+    "value": [
+      "powerSupplyTableEntry",
+      12
+    ]
+  },
+  "powerSupplyPowerMonitorCapable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BooleanType"
+    },
+    "index": null,
+    "value": [
+      "powerSupplyTableEntry",
+      13
+    ]
+  },
+  "powerSupplyRatedInputWattage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "powerSupplyTableEntry",
+      14
+    ]
+  },
+  "powerSupplyFQDD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FQDDString"
+    },
+    "index": null,
+    "value": [
+      "powerSupplyTableEntry",
+      15
+    ]
+  },
+  "VoltageTypeEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "voltageProbeTypeIsOther",
+        "2": "voltageProbeTypeIsUnknown",
+        "3": "voltageProbeTypeIs1Point5Volt",
+        "4": "voltageProbeTypeIs3Point3Volt",
+        "5": "voltageProbeTypeIs5Volt",
+        "6": "voltageProbeTypeIsMinus5Volt",
+        "7": "voltageProbeTypeIs12Volt",
+        "8": "voltageProbeTypeIsMinus12Volt",
+        "9": "voltageProbeTypeIsIO",
+        "10": "voltageProbeTypeIsCore",
+        "11": "voltageProbeTypeIsFLEA",
+        "12": "voltageProbeTypeIsBattery",
+        "13": "voltageProbeTypeIsTerminator",
+        "14": "voltageProbeTypeIs2Point5Volt",
+        "15": "voltageProbeTypeIsGTL",
+        "16": "voltageProbeTypeIsDiscrete",
+        "17": "voltageProbeTypeIsGenericDiscrete",
+        "18": "voltageProbeTypeIsPSVoltage",
+        "19": "voltageProbeTypeIsMemoryStatus"
+      }
+    },
+    "display_hint": null
+  },
+  "VoltageDiscreteReadingEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "voltageIsGood",
+        "2": "voltageIsBad"
+      }
+    },
+    "display_hint": null
+  },
+  "VoltageProbeTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "voltageProbeTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF VoltageProbeTableEntry"
+    },
+    "index": null,
+    "value": [
+      "powerGroup",
+      20
+    ]
+  },
+  "voltageProbeTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "VoltageProbeTableEntry"
+    },
+    "index": [
+      "voltageProbechassisIndex",
+      "voltageProbeIndex"
+    ],
+    "value": [
+      "voltageProbeTable",
+      1
+    ]
+  },
+  "voltageProbechassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "voltageProbeTableEntry",
+      1
+    ]
+  },
+  "voltageProbeIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "voltageProbeTableEntry",
+      2
+    ]
+  },
+  "voltageProbeStateCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "voltageProbeTableEntry",
+      3
+    ]
+  },
+  "voltageProbeStateSettings": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "voltageProbeTableEntry",
+      4
+    ]
+  },
+  "voltageProbeStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StatusProbeEnum"
+    },
+    "index": null,
+    "value": [
+      "voltageProbeTableEntry",
+      5
+    ]
+  },
+  "voltageProbeReading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "voltageProbeTableEntry",
+      6
+    ]
+  },
+  "voltageProbeType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "VoltageTypeEnum"
+    },
+    "index": null,
+    "value": [
+      "voltageProbeTableEntry",
+      7
+    ]
+  },
+  "voltageProbeLocationName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "voltageProbeTableEntry",
+      8
+    ]
+  },
+  "voltageProbeUpperNonRecoverableThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "voltageProbeTableEntry",
+      9
+    ]
+  },
+  "voltageProbeUpperCriticalThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "voltageProbeTableEntry",
+      10
+    ]
+  },
+  "voltageProbeUpperNonCriticalThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "voltageProbeTableEntry",
+      11
+    ]
+  },
+  "voltageProbeLowerNonCriticalThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "voltageProbeTableEntry",
+      12
+    ]
+  },
+  "voltageProbeLowerCriticalThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "voltageProbeTableEntry",
+      13
+    ]
+  },
+  "voltageProbeLowerNonRecoverableThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "voltageProbeTableEntry",
+      14
+    ]
+  },
+  "voltageProbeProbeCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ProbeCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "voltageProbeTableEntry",
+      15
+    ]
+  },
+  "voltageProbeDiscreteReading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "VoltageDiscreteReadingEnum"
+    },
+    "index": null,
+    "value": [
+      "voltageProbeTableEntry",
+      16
+    ]
+  },
+  "AmperageProbeTypeEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "amperageProbeTypeIsOther",
+        "2": "amperageProbeTypeIsUnknown",
+        "3": "amperageProbeTypeIs1Point5Volt",
+        "4": "amperageProbeTypeIs3Point3volt",
+        "5": "amperageProbeTypeIs5Volt",
+        "6": "amperageProbeTypeIsMinus5Volt",
+        "7": "amperageProbeTypeIs12Volt",
+        "8": "amperageProbeTypeIsMinus12Volt",
+        "9": "amperageProbeTypeIsIO",
+        "10": "amperageProbeTypeIsCore",
+        "11": "amperageProbeTypeIsFLEA",
+        "12": "amperageProbeTypeIsBattery",
+        "13": "amperageProbeTypeIsTerminator",
+        "14": "amperageProbeTypeIs2Point5Volt",
+        "15": "amperageProbeTypeIsGTL",
+        "16": "amperageProbeTypeIsDiscrete",
+        "23": "amperageProbeTypeIsPowerSupplyAmps",
+        "24": "amperageProbeTypeIsPowerSupplyWatts",
+        "25": "amperageProbeTypeIsSystemAmps",
+        "26": "amperageProbeTypeIsSystemWatts"
+      }
+    },
+    "display_hint": null
+  },
+  "AmperageDiscreteReadingEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "amperageIsGood",
+        "2": "amperageIsBad"
+      }
+    },
+    "display_hint": null
+  },
+  "AmperageProbeTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "amperageProbeTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF AmperageProbeTableEntry"
+    },
+    "index": null,
+    "value": [
+      "powerGroup",
+      30
+    ]
+  },
+  "amperageProbeTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AmperageProbeTableEntry"
+    },
+    "index": [
+      "amperageProbechassisIndex",
+      "amperageProbeIndex"
+    ],
+    "value": [
+      "amperageProbeTable",
+      1
+    ]
+  },
+  "amperageProbechassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "amperageProbeTableEntry",
+      1
+    ]
+  },
+  "amperageProbeIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "amperageProbeTableEntry",
+      2
+    ]
+  },
+  "amperageProbeStateCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "amperageProbeTableEntry",
+      3
+    ]
+  },
+  "amperageProbeStateSettings": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "amperageProbeTableEntry",
+      4
+    ]
+  },
+  "amperageProbeStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StatusProbeEnum"
+    },
+    "index": null,
+    "value": [
+      "amperageProbeTableEntry",
+      5
+    ]
+  },
+  "amperageProbeReading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "amperageProbeTableEntry",
+      6
+    ]
+  },
+  "amperageProbeType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AmperageProbeTypeEnum"
+    },
+    "index": null,
+    "value": [
+      "amperageProbeTableEntry",
+      7
+    ]
+  },
+  "amperageProbeLocationName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "amperageProbeTableEntry",
+      8
+    ]
+  },
+  "amperageProbeUpperNonRecoverableThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "amperageProbeTableEntry",
+      9
+    ]
+  },
+  "amperageProbeUpperCriticalThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "amperageProbeTableEntry",
+      10
+    ]
+  },
+  "amperageProbeUpperNonCriticalThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "amperageProbeTableEntry",
+      11
+    ]
+  },
+  "amperageProbeLowerNonCriticalThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "amperageProbeTableEntry",
+      12
+    ]
+  },
+  "amperageProbeLowerCriticalThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "amperageProbeTableEntry",
+      13
+    ]
+  },
+  "amperageProbeLowerNonRecoverableThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "amperageProbeTableEntry",
+      14
+    ]
+  },
+  "amperageProbeProbeCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ProbeCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "amperageProbeTableEntry",
+      15
+    ]
+  },
+  "amperageProbeDiscreteReading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AmperageDiscreteReadingEnum"
+    },
+    "index": null,
+    "value": [
+      "amperageProbeTableEntry",
+      16
+    ]
+  },
+  "SystemBatteryReadingFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "predictiveFailure",
+        "2": "failed",
+        "4": "presenceDetected"
+      }
+    },
+    "display_hint": null
+  },
+  "SystemBatteryTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "systemBatteryTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SystemBatteryTableEntry"
+    },
+    "index": null,
+    "value": [
+      "powerGroup",
+      50
+    ]
+  },
+  "systemBatteryTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SystemBatteryTableEntry"
+    },
+    "index": [
+      "systemBatteryChassisIndex",
+      "systemBatteryIndex"
+    ],
+    "value": [
+      "systemBatteryTable",
+      1
+    ]
+  },
+  "systemBatteryChassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "systemBatteryTableEntry",
+      1
+    ]
+  },
+  "systemBatteryIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "systemBatteryTableEntry",
+      2
+    ]
+  },
+  "systemBatteryStateCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "systemBatteryTableEntry",
+      3
+    ]
+  },
+  "systemBatteryStateSettings": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "systemBatteryTableEntry",
+      4
+    ]
+  },
+  "systemBatteryStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemBatteryTableEntry",
+      5
+    ]
+  },
+  "systemBatteryReading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SystemBatteryReadingFlags"
+    },
+    "index": null,
+    "value": [
+      "systemBatteryTableEntry",
+      6
+    ]
+  },
+  "systemBatteryLocationName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "systemBatteryTableEntry",
+      7
+    ]
+  },
+  "PowerCapCapabilitiesFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "enable",
+        "2": "disable"
+      }
+    },
+    "display_hint": null
+  },
+  "PowerCapSettingEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "enabled"
+      }
+    },
+    "display_hint": null
+  },
+  "PowerUsageTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "powerUsageTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PowerUsageTableEntry"
+    },
+    "index": null,
+    "value": [
+      "powerGroup",
+      60
+    ]
+  },
+  "powerUsageTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PowerUsageTableEntry"
+    },
+    "index": [
+      "powerUsageChassisIndex",
+      "powerUsageIndex"
+    ],
+    "value": [
+      "powerUsageTable",
+      1
+    ]
+  },
+  "powerUsageChassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      1
+    ]
+  },
+  "powerUsageIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      2
+    ]
+  },
+  "powerUsageStateCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      3
+    ]
+  },
+  "powerUsageStateSettings": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      4
+    ]
+  },
+  "powerUsageStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      5
+    ]
+  },
+  "powerUsageEntityName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      6
+    ]
+  },
+  "powerUsageCumulativeWattage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      7
+    ]
+  },
+  "powerUsageCumulativeWattageStartDateName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateName"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      8
+    ]
+  },
+  "powerUsagePeakWatts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      9
+    ]
+  },
+  "powerUsagePeakWattsStartDateName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateName"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      10
+    ]
+  },
+  "powerUsagePeakWattsReadingDateName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateName"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      11
+    ]
+  },
+  "powerUsagePeakAmps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      12
+    ]
+  },
+  "powerUsagePeakAmpsStartDateName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateName"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      13
+    ]
+  },
+  "powerUsagePeakAmpsReadingDateName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateName"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      14
+    ]
+  },
+  "powerUsageIdlePower": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      15
+    ]
+  },
+  "powerUsageMaxPotentialPower": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      16
+    ]
+  },
+  "powerUsagePowerCapCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PowerCapCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      17
+    ]
+  },
+  "powerUsagePowerCapSetting": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PowerCapSettingEnum"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      18
+    ]
+  },
+  "powerUsagePowerCapValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      19
+    ]
+  },
+  "powerUsageInstantaneousHeadroom": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      20
+    ]
+  },
+  "powerUsagePeakHeadroom": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "powerUsageTableEntry",
+      21
+    ]
+  },
+  "CoolingUnitTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "coolingUnitTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CoolingUnitTableEntry"
+    },
+    "index": null,
+    "value": [
+      "thermalGroup",
+      10
+    ]
+  },
+  "coolingUnitTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CoolingUnitTableEntry"
+    },
+    "index": [
+      "coolingUnitchassisIndex",
+      "coolingUnitIndex"
+    ],
+    "value": [
+      "coolingUnitTable",
+      1
+    ]
+  },
+  "coolingUnitchassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "coolingUnitTableEntry",
+      1
+    ]
+  },
+  "coolingUnitIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "coolingUnitTableEntry",
+      2
+    ]
+  },
+  "coolingUnitStateCapabilties": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "coolingUnitTableEntry",
+      3
+    ]
+  },
+  "coolingUnitStateSettings": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "coolingUnitTableEntry",
+      4
+    ]
+  },
+  "coolingUnitRedundancyStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StatusRedundancyEnum"
+    },
+    "index": null,
+    "value": [
+      "coolingUnitTableEntry",
+      5
+    ]
+  },
+  "coolingDeviceCountForRedundancy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "coolingUnitTableEntry",
+      6
+    ]
+  },
+  "coolingUnitName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "coolingUnitTableEntry",
+      7
+    ]
+  },
+  "coolingUnitStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "coolingUnitTableEntry",
+      8
+    ]
+  },
+  "CoolingDeviceTypeEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "coolingDeviceTypeIsOther",
+        "2": "coolingDeviceTypeIsUnknown",
+        "3": "coolingDeviceTypeIsAFan",
+        "4": "coolingDeviceTypeIsABlower",
+        "5": "coolingDeviceTypeIsAChipFan",
+        "6": "coolingDeviceTypeIsACabinetFan",
+        "7": "coolingDeviceTypeIsAPowerSupplyFan",
+        "8": "coolingDeviceTypeIsAHeatPipe",
+        "9": "coolingDeviceTypeIsRefrigeration",
+        "10": "coolingDeviceTypeIsActiveCooling",
+        "11": "coolingDeviceTypeIsPassiveCooling"
+      }
+    },
+    "display_hint": null
+  },
+  "CoolingDeviceSubTypeEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "coolingDeviceSubTypeIsOther",
+        "2": "coolingDeviceSubTypeIsUnknown",
+        "3": "coolingDeviceSubTypeIsAFanThatReadsInRPM",
+        "4": "coolingDeviceSubTypeIsAFanReadsONorOFF",
+        "5": "coolingDeviceSubTypeIsAPowerSupplyFanThatReadsinRPM",
+        "6": "coolingDeviceSubTypeIsAPowerSupplyFanThatReadsONorOFF",
+        "16": "coolingDeviceSubTypeIsDiscrete"
+      }
+    },
+    "display_hint": null
+  },
+  "CoolingDeviceDiscreteReadingEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "coolingDeviceIsGood",
+        "2": "coolingDeviceIsBad"
+      }
+    },
+    "display_hint": null
+  },
+  "CoolingDeviceTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "coolingDeviceTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CoolingDeviceTableEntry"
+    },
+    "index": null,
+    "value": [
+      "thermalGroup",
+      12
+    ]
+  },
+  "coolingDeviceTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CoolingDeviceTableEntry"
+    },
+    "index": [
+      "coolingDevicechassisIndex",
+      "coolingDeviceIndex"
+    ],
+    "value": [
+      "coolingDeviceTable",
+      1
+    ]
+  },
+  "coolingDevicechassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "coolingDeviceTableEntry",
+      1
+    ]
+  },
+  "coolingDeviceIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "coolingDeviceTableEntry",
+      2
+    ]
+  },
+  "coolingDeviceStateCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "coolingDeviceTableEntry",
+      3
+    ]
+  },
+  "coolingDeviceStateSettings": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "coolingDeviceTableEntry",
+      4
+    ]
+  },
+  "coolingDeviceStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StatusProbeEnum"
+    },
+    "index": null,
+    "value": [
+      "coolingDeviceTableEntry",
+      5
+    ]
+  },
+  "coolingDeviceReading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "coolingDeviceTableEntry",
+      6
+    ]
+  },
+  "coolingDeviceType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CoolingDeviceTypeEnum"
+    },
+    "index": null,
+    "value": [
+      "coolingDeviceTableEntry",
+      7
+    ]
+  },
+  "coolingDeviceLocationName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "coolingDeviceTableEntry",
+      8
+    ]
+  },
+  "coolingDeviceUpperNonRecoverableThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "coolingDeviceTableEntry",
+      9
+    ]
+  },
+  "coolingDeviceUpperCriticalThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "coolingDeviceTableEntry",
+      10
+    ]
+  },
+  "coolingDeviceUpperNonCriticalThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "coolingDeviceTableEntry",
+      11
+    ]
+  },
+  "coolingDeviceLowerNonCriticalThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "coolingDeviceTableEntry",
+      12
+    ]
+  },
+  "coolingDeviceLowerCriticalThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "coolingDeviceTableEntry",
+      13
+    ]
+  },
+  "coolingDeviceLowerNonRecoverableThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "coolingDeviceTableEntry",
+      14
+    ]
+  },
+  "coolingDevicecoolingUnitIndexReference": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "coolingDeviceTableEntry",
+      15
+    ]
+  },
+  "coolingDeviceSubType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CoolingDeviceSubTypeEnum"
+    },
+    "index": null,
+    "value": [
+      "coolingDeviceTableEntry",
+      16
+    ]
+  },
+  "coolingDeviceProbeCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ProbeCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "coolingDeviceTableEntry",
+      17
+    ]
+  },
+  "coolingDeviceDiscreteReading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CoolingDeviceDiscreteReadingEnum"
+    },
+    "index": null,
+    "value": [
+      "coolingDeviceTableEntry",
+      18
+    ]
+  },
+  "coolingDeviceFQDD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FQDDString"
+    },
+    "index": null,
+    "value": [
+      "coolingDeviceTableEntry",
+      19
+    ]
+  },
+  "TemperatureProbeTypeEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "temperatureProbeTypeIsOther",
+        "2": "temperatureProbeTypeIsUnknown",
+        "3": "temperatureProbeTypeIsAmbientESM",
+        "16": "temperatureProbeTypeIsDiscrete"
+      }
+    },
+    "display_hint": null
+  },
+  "TemperatureDiscreteReadingEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "temperatureIsGood",
+        "2": "temperatureIsBad"
+      }
+    },
+    "display_hint": null
+  },
+  "TemperatureProbeTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "temperatureProbeTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF TemperatureProbeTableEntry"
+    },
+    "index": null,
+    "value": [
+      "thermalGroup",
+      20
+    ]
+  },
+  "temperatureProbeTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TemperatureProbeTableEntry"
+    },
+    "index": [
+      "temperatureProbechassisIndex",
+      "temperatureProbeIndex"
+    ],
+    "value": [
+      "temperatureProbeTable",
+      1
+    ]
+  },
+  "temperatureProbechassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "temperatureProbeTableEntry",
+      1
+    ]
+  },
+  "temperatureProbeIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "temperatureProbeTableEntry",
+      2
+    ]
+  },
+  "temperatureProbeStateCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "temperatureProbeTableEntry",
+      3
+    ]
+  },
+  "temperatureProbeStateSettings": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "temperatureProbeTableEntry",
+      4
+    ]
+  },
+  "temperatureProbeStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StatusProbeEnum"
+    },
+    "index": null,
+    "value": [
+      "temperatureProbeTableEntry",
+      5
+    ]
+  },
+  "temperatureProbeReading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "temperatureProbeTableEntry",
+      6
+    ]
+  },
+  "temperatureProbeType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TemperatureProbeTypeEnum"
+    },
+    "index": null,
+    "value": [
+      "temperatureProbeTableEntry",
+      7
+    ]
+  },
+  "temperatureProbeLocationName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "temperatureProbeTableEntry",
+      8
+    ]
+  },
+  "temperatureProbeUpperNonRecoverableThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "temperatureProbeTableEntry",
+      9
+    ]
+  },
+  "temperatureProbeUpperCriticalThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "temperatureProbeTableEntry",
+      10
+    ]
+  },
+  "temperatureProbeUpperNonCriticalThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "temperatureProbeTableEntry",
+      11
+    ]
+  },
+  "temperatureProbeLowerNonCriticalThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "temperatureProbeTableEntry",
+      12
+    ]
+  },
+  "temperatureProbeLowerCriticalThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "temperatureProbeTableEntry",
+      13
+    ]
+  },
+  "temperatureProbeLowerNonRecoverableThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "temperatureProbeTableEntry",
+      14
+    ]
+  },
+  "temperatureProbeProbeCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ProbeCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "temperatureProbeTableEntry",
+      15
+    ]
+  },
+  "temperatureProbeDiscreteReading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TemperatureDiscreteReadingEnum"
+    },
+    "index": null,
+    "value": [
+      "temperatureProbeTableEntry",
+      16
+    ]
+  },
+  "ProcessorDeviceType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "deviceTypeIsOther",
+        "2": "deviceTypeIsUnknown",
+        "3": "deviceTypeIsCPU",
+        "4": "deviceTypeIsMathProcessor",
+        "5": "deviceTypeIsDSP",
+        "6": "deviceTypeIsAVideoProcessor"
+      }
+    },
+    "display_hint": null
+  },
+  "ProcessorDeviceFamily": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "deviceFamilyIsOther",
+        "2": "deviceFamilyIsUnknown",
+        "3": "deviceFamilyIs8086",
+        "4": "deviceFamilyIs80286",
+        "5": "deviceFamilyIsIntel386",
+        "6": "deviceFamilyIsIntel486",
+        "7": "deviceFamilyIs8087",
+        "8": "deviceFamilyIs80287",
+        "9": "deviceFamilyIs80387",
+        "10": "deviceFamilyIs80487",
+        "11": "deviceFamilyIsPentium",
+        "12": "deviceFamilyIsPentiumPro",
+        "13": "deviceFamilyIsPentiumII",
+        "14": "deviceFamilyIsPentiumMMX",
+        "15": "deviceFamilyIsCeleron",
+        "16": "deviceFamilyIsPentiumIIXeon",
+        "17": "deviceFamilyIsPentiumIII",
+        "18": "deviceFamilyIsPentiumIIIXeon",
+        "19": "deviceFamilyIsPentiumIIISpeedStep",
+        "20": "deviceFamilyIsItanium",
+        "21": "deviceFamilyIsIntelXeon",
+        "22": "deviceFamilyIsPentium4",
+        "23": "deviceFamilyIsIntelXeonMP",
+        "24": "deviceFamilyIsIntelItanium2",
+        "25": "deviceFamilyIsK5",
+        "26": "deviceFamilyIsK6",
+        "27": "deviceFamilyIsK6-2",
+        "28": "deviceFamilyIsK6-3",
+        "29": "deviceFamilyIsAMDAthlon",
+        "30": "deviceFamilyIsAMD2900",
+        "31": "deviceFamilyIsK6-2Plus",
+        "32": "deviceFamilyIsPowerPC",
+        "33": "deviceFamilyIsPowerPC601",
+        "34": "deviceFamilyIsPowerPC603",
+        "35": "deviceFamilyIsPowerPC603Plus",
+        "36": "deviceFamilyIsPowerPC604",
+        "37": "deviceFamilyIsPowerPC620",
+        "38": "deviceFamilyIsPowerPCx704",
+        "39": "deviceFamilyIsPowerPC750",
+        "40": "deviceFamilyIsIntelCoreDuo",
+        "41": "deviceFamilyIsIntelCoreDuoMobile",
+        "42": "deviceFamilyIsIntelCoreSoloMobile",
+        "43": "deviceFamilyIsIntelAtom",
+        "48": "deviceFamilyIsAlpha",
+        "49": "deviceFamilyIsAlpha21064",
+        "50": "deviceFamilyIsAlpha21066",
+        "51": "deviceFamilyIsAlpha21164",
+        "52": "deviceFamilyIsAlpha21164PC",
+        "53": "deviceFamilyIsAlpha21164a",
+        "54": "deviceFamilyIsAlpha21264",
+        "55": "deviceFamilyIsAlpha21364",
+        "56": "deviceFamilyIsAMDTurionIIUltraDualMobileM",
+        "57": "deviceFamilyIsAMDTurionIIDualMobileM",
+        "58": "deviceFamilyIsAMDAthlonIIDualMobileM",
+        "59": "deviceFamilyIsAMDOpteron6100",
+        "60": "deviceFamilyIsAMDOpteron4100",
+        "61": "deviceFamilyIsAMDOpteron6200",
+        "62": "deviceFamilyIsAMDOpteron4200",
+        "64": "deviceFamilyIsMIPS",
+        "65": "deviceFamilyIsMIPSR4000",
+        "66": "deviceFamilyIsMIPSR4200",
+        "67": "deviceFamilyIsMIPSR4400",
+        "68": "deviceFamilyIsMIPSR4600",
+        "69": "deviceFamilyIsMIPSR10000",
+        "80": "deviceFamilyIsSPARC",
+        "81": "deviceFamilyIsSuperSPARC",
+        "82": "deviceFamilyIsmicroSPARCII",
+        "83": "deviceFamilyIsmicroSPARCIIep",
+        "84": "deviceFamilyIsUltraSPARC",
+        "85": "deviceFamilyIsUltraSPARCII",
+        "86": "deviceFamilyIsUltraSPARCIIi",
+        "87": "deviceFamilyIsUltraSPARCIII",
+        "88": "deviceFamilyIsUltraSPARCIIIi",
+        "96": "deviceFamilyIs68040",
+        "97": "deviceFamilyIs68xxx",
+        "98": "deviceFamilyIs68000",
+        "99": "deviceFamilyIs68010",
+        "100": "deviceFamilyIs68020",
+        "101": "deviceFamilyIs68030",
+        "112": "deviceFamilyIsHobbit",
+        "120": "deviceFamilyIsCrusoeTM5000",
+        "121": "deviceFamilyIsCrusoeTM3000",
+        "122": "deviceFamilyIsEfficeonTM8000",
+        "128": "deviceFamilyIsWeitek",
+        "130": "deviceFamilyIsIntelCeleronM",
+        "131": "deviceFamilyIsAMDAthlon64",
+        "132": "deviceFamilyIsAMDOpteron",
+        "133": "deviceFamilyIsAMDSempron",
+        "134": "deviceFamilyIsAMDTurion64Mobile",
+        "135": "deviceFamilyIsDualCoreAMDOpteron",
+        "136": "deviceFamilyIsAMDAthlon64X2DualCore",
+        "137": "deviceFamilyIsAMDTurion64X2Mobile",
+        "138": "deviceFamilyIsQuadCoreAMDOpteron",
+        "139": "deviceFamilyIsThirdGenerationAMDOpteron",
+        "140": "deviceFamilyIsAMDPhenomFXQuadCore",
+        "141": "deviceFamilyIsAMDPhenomX4QuadCore",
+        "142": "deviceFamilyIsAMDPhenomX2DualCore",
+        "143": "deviceFamilyIsAMDAthlonX2DualCore",
+        "144": "deviceFamilyIsPA-RISC",
+        "145": "deviceFamilyIsPA-RISC8500",
+        "146": "deviceFamilyIsPA-RISC8000",
+        "147": "deviceFamilyIsPA-RISC7300LC",
+        "148": "deviceFamilyIsPA-RISC7200",
+        "149": "deviceFamilyIsPA-RISC7100LC",
+        "150": "deviceFamilyIsPA-RISC7100",
+        "160": "deviceFamilyIsV30",
+        "161": "deviceFamilyIsQuadCoreIntelXeon3200",
+        "162": "deviceFamilyIsDualCoreIntelXeon3000",
+        "163": "deviceFamilyIsQuadCoreIntelXeon5300",
+        "164": "deviceFamilyIsDualCoreIntelXeon5100",
+        "165": "deviceFamilyIsDualCoreIntelXeon5000",
+        "166": "deviceFamilyIsDualCoreIntelXeonLV",
+        "167": "deviceFamilyIsDualCoreIntelXeonULV",
+        "168": "deviceFamilyIsDualCoreIntelXeon7100",
+        "169": "deviceFamilyIsQuadCoreIntelXeon5400",
+        "170": "deviceFamilyIsQuadCoreIntelXeon",
+        "171": "deviceFamilyIsDualCoreIntelXeon5200",
+        "172": "deviceFamilyIsDualCoreIntelXeon7200",
+        "173": "deviceFamilyIsQuadCoreIntelXeon7300",
+        "174": "deviceFamilyIsQuadCoreIntelXeon7400",
+        "175": "deviceFamilyIsMultiCoreIntelXeon7400",
+        "176": "deviceFamilyIsM1",
+        "177": "deviceFamilyIsM2",
+        "179": "deviceFamilyIsIntelPentium4HT",
+        "180": "deviceFamilyIsAS400",
+        "182": "deviceFamilyIsAMDAthlonXP",
+        "183": "deviceFamilyIsAMDAthlonMP",
+        "184": "deviceFamilyIsAMDDuron",
+        "185": "deviceFamilyIsIntelPentiumM",
+        "186": "deviceFamilyIsIntelCeleronD",
+        "187": "deviceFamilyIsIntelPentiumD",
+        "188": "deviceFamilyIsIntelPentiumExtreme",
+        "189": "deviceFamilyIsIntelCoreSolo",
+        "190": "deviceFamilyIsIntelCore2",
+        "191": "deviceFamilyIsIntelCore2Duo",
+        "192": "deviceFamilyIsIntelCore2Solo",
+        "193": "deviceFamilyIsIntelCore2Extreme",
+        "194": "deviceFamilyIsIntelCore2Quad",
+        "195": "deviceFamilyIsIntelCore2ExtremeMobile",
+        "196": "deviceFamilyIsIntelCore2DuoMobile",
+        "197": "deviceFamilyIsIntelCore2SoloMobile",
+        "198": "deviceFamilyIsIntelCorei7",
+        "199": "deviceFamilyIsDualCoreIntelCeleron",
+        "200": "deviceFamilyIsIBM390",
+        "201": "deviceFamilyIsG4",
+        "202": "deviceFamilyIsG5",
+        "203": "deviceFamilyIsESA390G6",
+        "204": "deviceFamilyIszArchitectur",
+        "205": "deviceFamilyIsIntelCorei5",
+        "206": "deviceFamilyIsIntelCorei3",
+        "210": "deviceFamilyIsVIAC7-M",
+        "211": "deviceFamilyIsVIAC7-D",
+        "212": "deviceFamilyIsVIAC7",
+        "213": "deviceFamilyIsVIAEden",
+        "214": "deviceFamilyIsMultiCoreIntelXeon",
+        "215": "deviceFamilyIsDualCoreIntelXeon3xxx",
+        "216": "deviceFamilyIsQuadCoreIntelXeon3xxx",
+        "217": "deviceFamilyIsVIANano",
+        "218": "deviceFamilyIsDualCoreIntelXeon5xxx",
+        "219": "deviceFamilyIsQuadCoreIntelXeon5xxx",
+        "221": "deviceFamilyIsDualCoreIntelXeon7xxx",
+        "222": "deviceFamilyIsQuadCoreIntelXeon7xxx",
+        "223": "deviceFamilyIsMultiCoreIntelXeon7xxx",
+        "224": "deviceFamilyIsMultiCoreIntelXeon3400",
+        "230": "deviceFamilyIsEmbeddedAMDOpertonQuadCore",
+        "231": "deviceFamilyIsAMDPhenomTripleCore",
+        "232": "deviceFamilyIsAMDTurionUltraDualCoreMobile",
+        "233": "deviceFamilyIsAMDTurionDualCoreMobile",
+        "234": "deviceFamilyIsAMDAthlonDualCore",
+        "235": "deviceFamilyIsAMDSempronSI",
+        "236": "deviceFamilyIsAMDPhenomII",
+        "237": "deviceFamilyIsAMDAthlonII",
+        "238": "deviceFamilyIsSixCoreAMDOpteron",
+        "239": "deviceFamilyIsAMDSempronM",
+        "250": "deviceFamilyIsi860",
+        "251": "deviceFamilyIsi960"
+      }
+    },
+    "display_hint": null
+  },
+  "ProcessorDeviceStatusState": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unknown",
+        "3": "enabled",
+        "4": "userDisabled",
+        "5": "biosDisabled",
+        "6": "idle"
+      }
+    },
+    "display_hint": null
+  },
+  "ProcessorDeviceTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "processorDeviceTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ProcessorDeviceTableEntry"
+    },
+    "index": null,
+    "value": [
+      "deviceGroup",
+      30
+    ]
+  },
+  "processorDeviceTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ProcessorDeviceTableEntry"
+    },
+    "index": [
+      "processorDevicechassisIndex",
+      "processorDeviceIndex"
+    ],
+    "value": [
+      "processorDeviceTable",
+      1
+    ]
+  },
+  "processorDevicechassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      1
+    ]
+  },
+  "processorDeviceIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      2
+    ]
+  },
+  "processorDeviceStateCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      3
+    ]
+  },
+  "processorDeviceStateSettings": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      4
+    ]
+  },
+  "processorDeviceStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      5
+    ]
+  },
+  "processorDeviceType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ProcessorDeviceType"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      7
+    ]
+  },
+  "processorDeviceManufacturerName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      8
+    ]
+  },
+  "processorDeviceStatusState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ProcessorDeviceStatusState"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      9
+    ]
+  },
+  "processorDeviceFamily": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ProcessorDeviceFamily"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      10
+    ]
+  },
+  "processorDeviceMaximumSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      11
+    ]
+  },
+  "processorDeviceCurrentSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      12
+    ]
+  },
+  "processorDeviceExternalClockSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      13
+    ]
+  },
+  "processorDeviceVoltage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Signed32BitRange"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      14
+    ]
+  },
+  "processorDeviceVersionName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      16
+    ]
+  },
+  "processorDeviceCoreCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      17
+    ]
+  },
+  "processorDeviceCoreEnabledCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      18
+    ]
+  },
+  "processorDeviceThreadCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      19
+    ]
+  },
+  "processorDeviceCharacteristics": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned16BitRange"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      20
+    ]
+  },
+  "processorDeviceExtendedCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned16BitRange"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      21
+    ]
+  },
+  "processorDeviceExtendedSettings": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned16BitRange"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      22
+    ]
+  },
+  "processorDeviceBrandName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      23
+    ]
+  },
+  "processorDeviceFQDD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FQDDString"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceTableEntry",
+      26
+    ]
+  },
+  "ProcessorDeviceStatusReadingFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "internalError",
+        "2": "thermalTrip",
+        "32": "configurationError",
+        "128": "processorPresent",
+        "256": "processorDisabled",
+        "512": "terminatorPresent",
+        "1024": "processorThrottled"
+      }
+    },
+    "display_hint": null
+  },
+  "ProcessorDeviceStatusTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "processorDeviceStatusTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ProcessorDeviceStatusTableEntry"
+    },
+    "index": null,
+    "value": [
+      "deviceGroup",
+      32
+    ]
+  },
+  "processorDeviceStatusTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ProcessorDeviceStatusTableEntry"
+    },
+    "index": [
+      "processorDeviceStatusChassisIndex",
+      "processorDeviceStatusIndex"
+    ],
+    "value": [
+      "processorDeviceStatusTable",
+      1
+    ]
+  },
+  "processorDeviceStatusChassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceStatusTableEntry",
+      1
+    ]
+  },
+  "processorDeviceStatusIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceStatusTableEntry",
+      2
+    ]
+  },
+  "processorDeviceStatusStateCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceStatusTableEntry",
+      3
+    ]
+  },
+  "processorDeviceStatusStateSettings": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceStatusTableEntry",
+      4
+    ]
+  },
+  "processorDeviceStatusStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceStatusTableEntry",
+      5
+    ]
+  },
+  "processorDeviceStatusReading": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ProcessorDeviceStatusReadingFlags"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceStatusTableEntry",
+      6
+    ]
+  },
+  "processorDeviceStatusLocationName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "processorDeviceStatusTableEntry",
+      7
+    ]
+  },
+  "MemoryDeviceTypeEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "deviceTypeIsOther",
+        "2": "deviceTypeIsUnknown",
+        "3": "deviceTypeIsDRAM",
+        "4": "deviceTypeIsEDRAM",
+        "5": "deviceTypeIsVRAM",
+        "6": "deviceTypeIsSRAM",
+        "7": "deviceTypeIsRAM",
+        "8": "deviceTypeIsROM",
+        "9": "deviceTypeIsFLASH",
+        "10": "deviceTypeIsEEPROM",
+        "11": "deviceTypeIsFEPROM",
+        "12": "deviceTypeIsEPROM",
+        "13": "deviceTypeIsCDRAM",
+        "14": "deviceTypeIs3DRAM",
+        "15": "deviceTypeIsSDRAM",
+        "16": "deviceTypeIsSGRAM",
+        "17": "deviceTypeIsRDRAM",
+        "18": "deviceTypeIsDDR",
+        "19": "deviceTypeIsDDR2",
+        "20": "deviceTypeIsDDR2FBDIMM",
+        "24": "deviceTypeIsDDR3",
+        "25": "deviceTypeIsFBD2"
+      }
+    },
+    "display_hint": null
+  },
+  "MemoryDeviceTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "memoryDeviceTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF MemoryDeviceTableEntry"
+    },
+    "index": null,
+    "value": [
+      "deviceGroup",
+      50
+    ]
+  },
+  "memoryDeviceTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MemoryDeviceTableEntry"
+    },
+    "index": [
+      "memoryDevicechassisIndex",
+      "memoryDeviceIndex"
+    ],
+    "value": [
+      "memoryDeviceTable",
+      1
+    ]
+  },
+  "memoryDevicechassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "memoryDeviceTableEntry",
+      1
+    ]
+  },
+  "memoryDeviceIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "memoryDeviceTableEntry",
+      2
+    ]
+  },
+  "memoryDeviceStateCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "memoryDeviceTableEntry",
+      3
+    ]
+  },
+  "memoryDeviceStateSettings": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "memoryDeviceTableEntry",
+      4
+    ]
+  },
+  "memoryDeviceStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "memoryDeviceTableEntry",
+      5
+    ]
+  },
+  "memoryDeviceType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MemoryDeviceTypeEnum"
+    },
+    "index": null,
+    "value": [
+      "memoryDeviceTableEntry",
+      7
+    ]
+  },
+  "memoryDeviceLocationName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "memoryDeviceTableEntry",
+      8
+    ]
+  },
+  "memoryDeviceBankLocationName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "memoryDeviceTableEntry",
+      10
+    ]
+  },
+  "memoryDeviceSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "memoryDeviceTableEntry",
+      14
+    ]
+  },
+  "memoryDeviceSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "memoryDeviceTableEntry",
+      15
+    ]
+  },
+  "memoryDeviceManufacturerName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "memoryDeviceTableEntry",
+      21
+    ]
+  },
+  "memoryDevicePartNumberName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "memoryDeviceTableEntry",
+      22
+    ]
+  },
+  "memoryDeviceSerialNumberName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "memoryDeviceTableEntry",
+      23
+    ]
+  },
+  "memoryDeviceFQDD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FQDDString"
+    },
+    "index": null,
+    "value": [
+      "memoryDeviceTableEntry",
+      26
+    ]
+  },
+  "PCIDeviceTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "pCIDeviceTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PCIDeviceTableEntry"
+    },
+    "index": null,
+    "value": [
+      "deviceGroup",
+      80
+    ]
+  },
+  "pCIDeviceTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PCIDeviceTableEntry"
+    },
+    "index": [
+      "pCIDevicechassisIndex",
+      "pCIDeviceIndex"
+    ],
+    "value": [
+      "pCIDeviceTable",
+      1
+    ]
+  },
+  "pCIDevicechassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "pCIDeviceTableEntry",
+      1
+    ]
+  },
+  "pCIDeviceIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "pCIDeviceTableEntry",
+      2
+    ]
+  },
+  "pCIDeviceStateCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "pCIDeviceTableEntry",
+      3
+    ]
+  },
+  "pCIDeviceStateSettings": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "StateSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "pCIDeviceTableEntry",
+      4
+    ]
+  },
+  "pCIDeviceStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "pCIDeviceTableEntry",
+      5
+    ]
+  },
+  "pCIDeviceDataBusWidth": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32BitRange"
+    },
+    "index": null,
+    "value": [
+      "pCIDeviceTableEntry",
+      7
+    ]
+  },
+  "pCIDeviceManufacturerName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "pCIDeviceTableEntry",
+      8
+    ]
+  },
+  "pCIDeviceDescriptionName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "pCIDeviceTableEntry",
+      9
+    ]
+  },
+  "pCIDeviceFQDD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FQDDString"
+    },
+    "index": null,
+    "value": [
+      "pCIDeviceTableEntry",
+      12
+    ]
+  },
+  "NetworkDeviceConnectionStatusEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "connected",
+        "2": "disconnected",
+        "3": "driverBad",
+        "4": "driverDisabled",
+        "10": "hardwareInitalizing",
+        "11": "hardwareResetting",
+        "12": "hardwareClosing",
+        "13": "hardwareNotReady"
+      }
+    },
+    "display_hint": null
+  },
+  "NetworkDeviceTOECapabilityFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "available",
+        "4": "notAvailable",
+        "8": "cannotBeDetermined",
+        "16": "driverNotResponding"
+      }
+    },
+    "display_hint": null
+  },
+  "NetworkDeviceiSCSICapabilityFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "available",
+        "4": "notAvailable",
+        "8": "cannotBeDetermined",
+        "16": "driverNotResponding"
+      }
+    },
+    "display_hint": null
+  },
+  "NetworkDeviceCapabilitiesFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "supported",
+        "2": "toe",
+        "4": "iscsiOffload",
+        "8": "fcoeOffload"
+      }
+    },
+    "display_hint": null
+  },
+  "NetworkDeviceTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "networkDeviceTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF NetworkDeviceTableEntry"
+    },
+    "index": null,
+    "value": [
+      "deviceGroup",
+      90
+    ]
+  },
+  "networkDeviceTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "NetworkDeviceTableEntry"
+    },
+    "index": [
+      "networkDeviceChassisIndex",
+      "networkDeviceIndex"
+    ],
+    "value": [
+      "networkDeviceTable",
+      1
+    ]
+  },
+  "networkDeviceChassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "networkDeviceTableEntry",
+      1
+    ]
+  },
+  "networkDeviceIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "networkDeviceTableEntry",
+      2
+    ]
+  },
+  "networkDeviceStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "networkDeviceTableEntry",
+      3
+    ]
+  },
+  "networkDeviceConnectionStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "NetworkDeviceConnectionStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "networkDeviceTableEntry",
+      4
+    ]
+  },
+  "networkDeviceProductName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "networkDeviceTableEntry",
+      6
+    ]
+  },
+  "networkDeviceVendorName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "networkDeviceTableEntry",
+      7
+    ]
+  },
+  "networkDeviceCurrentMACAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MACAddress"
+    },
+    "index": null,
+    "value": [
+      "networkDeviceTableEntry",
+      15
+    ]
+  },
+  "networkDevicePermanentMACAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MACAddress"
+    },
+    "index": null,
+    "value": [
+      "networkDeviceTableEntry",
+      16
+    ]
+  },
+  "networkDevicePCIBusNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned8BitRange"
+    },
+    "index": null,
+    "value": [
+      "networkDeviceTableEntry",
+      17
+    ]
+  },
+  "networkDevicePCIDeviceNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned8BitRange"
+    },
+    "index": null,
+    "value": [
+      "networkDeviceTableEntry",
+      18
+    ]
+  },
+  "networkDevicePCIFunctionNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned8BitRange"
+    },
+    "index": null,
+    "value": [
+      "networkDeviceTableEntry",
+      19
+    ]
+  },
+  "networkDeviceTOECapabilityFlags": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "NetworkDeviceTOECapabilityFlags"
+    },
+    "index": null,
+    "value": [
+      "networkDeviceTableEntry",
+      23
+    ]
+  },
+  "networkDeviceiSCSICapabilityFlags": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "NetworkDeviceiSCSICapabilityFlags"
+    },
+    "index": null,
+    "value": [
+      "networkDeviceTableEntry",
+      27
+    ]
+  },
+  "networkDeviceiSCSIEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BooleanType"
+    },
+    "index": null,
+    "value": [
+      "networkDeviceTableEntry",
+      28
+    ]
+  },
+  "networkDeviceCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "NetworkDeviceCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "networkDeviceTableEntry",
+      29
+    ]
+  },
+  "networkDeviceFQDD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FQDDString"
+    },
+    "index": null,
+    "value": [
+      "networkDeviceTableEntry",
+      30
+    ]
+  },
+  "SystemSlotStateCapabilitiesFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "systemSlotHotPlugIsUnknown",
+        "2": "systemSlotHotPlugIsHotPluggableCapable",
+        "4": "systemSlotHotPlugCanBePoweredOn",
+        "8": "systemSlotHotPlugCanSignalAttention",
+        "16": "systemSlotHotPlugCanSignalPowerFault",
+        "32": "systemSlotHotPlugCanSignalAdapterPresent",
+        "64": "systemSlotHotPlugCanSignalPowerButtonPressed",
+        "126": "canSupportAllHotPlugCapabilities",
+        "128": "systemSlotCanProvide5Volts",
+        "256": "systemSlotCanProvide3Point3Volts",
+        "512": "systemSlotCanSignalIfShared",
+        "1024": "systemSlotCanSupportCard16",
+        "2048": "systemSlotCanSupportCardBus",
+        "4096": "systemSlotCanSupportZoomVideo",
+        "8192": "systemSlotCanSupportModemRingResume",
+        "16384": "systemSlotCanSupportPMESignal",
+        "32640": "canSupportAllSlotCapabilities",
+        "32766": "canSupportAllSlotAndAllHotPlugCapabilities"
+      }
+    },
+    "display_hint": null
+  },
+  "SystemSlotStateSettingsFlags": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "systemSlotHotPlugIsUnknown",
+        "2": "systemSlotHotPlugIsHotPluggable",
+        "4": "systemSlotHotPlugIsPoweredOn",
+        "8": "systemSlotHotPlugIsAtAttention",
+        "16": "systemSlotHotPlugHasPowerFaulted",
+        "32": "systemSlotHotPlugAdapterIsPresent",
+        "36": "systemSlotHotPlugAdapterPresentAndPoweredOn",
+        "64": "systemSlotHotPlugPowerButtonPressed",
+        "128": "systemSlotProvides5Volts",
+        "256": "systemSlotProvides3Point3Volts",
+        "512": "systemSlotIsShared",
+        "1024": "systemSlotSupportsCard16",
+        "2048": "systemSlotSupportsCardBus",
+        "4096": "systemSlotSupportsZoomVideo",
+        "8192": "systemSlotSupportsModemRingResume",
+        "16384": "systemSlotSupportsPMESignal",
+        "16770": "supportsPMEand3P3Vand5VandHotPluggable",
+        "16804": "supportsPMEand3P3Vand5VhasAdapterOn",
+        "16806": "supportsPMEand3P3Vand5VhasAdapterOnandisHotPluggable",
+        "17316": "supportsPMEand3P3VIsSharedand5VhasAdapterOnandHotPlugable"
+      }
+    },
+    "display_hint": null
+  },
+  "SystemSlotTypeEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "systemSlotIsOther",
+        "2": "systemSlotIsUnknown",
+        "3": "systemSlotIsISA",
+        "4": "systemSlotIsMCA",
+        "5": "systemSlotIsEISA",
+        "6": "systemSlotIsPCI",
+        "7": "systemSlotIsPCMCIA",
+        "8": "systemSlotIsVLVESA",
+        "9": "systemSlotIsProprietary",
+        "10": "systemSlotIsProcessorCard",
+        "11": "systemSlotIsProprietaryMemory",
+        "12": "systemSlotIsIORiserCard",
+        "13": "systemSlotIsNuBUS",
+        "14": "systemSlotIsPCI66MHz",
+        "15": "systemSlotIsAGP",
+        "16": "systemSlotIsAGP2X",
+        "17": "systemSlotIsAGP4X",
+        "18": "systemSlotIsPC98C20",
+        "19": "systemSlotIsPC98C24",
+        "20": "systemSlotIsPC98E",
+        "21": "systemSlotIsPC98LocalBus",
+        "22": "systemSlotIsPC98Card",
+        "23": "systemSlotIsPCIX",
+        "24": "systemSlotIsPCIExpress",
+        "25": "systemSlotIsAGP8X",
+        "166": "systemSlotIsPCIExpressX1",
+        "167": "systemSlotIsPCIExpressX2",
+        "168": "systemSlotIsPCIExpressX4",
+        "169": "systemSlotIsPCIExpressX8",
+        "170": "systemSlotIsPCIExpressX16",
+        "171": "systemSlotIsPCIExpressGen2",
+        "172": "systemSlotIsPCIExpressGen2X1",
+        "173": "systemSlotIsPCIExpressGen2X2",
+        "174": "systemSlotIsPCIExpressGen2X4",
+        "175": "systemSlotIsPCIExpressGen2X8",
+        "176": "systemSlotIsPCIExpressGen2X16"
+      }
+    },
+    "display_hint": null
+  },
+  "SystemSlotUsageEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "systemSlotUsageIsOther",
+        "2": "systemSlotUsageIsUnknown",
+        "3": "systemSlotUsageIsAvailable",
+        "4": "systemSlotUsageIsInUse"
+      }
+    },
+    "display_hint": null
+  },
+  "SystemSlotCategoryEnum": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "systemSlotCategoryIsOther",
+        "2": "systemSlotCategoryIsUnknown",
+        "3": "systemSlotCategoryIsBusConnector",
+        "4": "systemSlotCategoryIsPCMCIA",
+        "5": "systemSlotCategoryIsMotherboard"
+      }
+    },
+    "display_hint": null
+  },
+  "SystemSlotTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "systemSlotTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SystemSlotTableEntry"
+    },
+    "index": null,
+    "value": [
+      "slotGroup",
+      10
+    ]
+  },
+  "systemSlotTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SystemSlotTableEntry"
+    },
+    "index": [
+      "systemSlotchassisIndex",
+      "systemSlotIndex"
+    ],
+    "value": [
+      "systemSlotTable",
+      1
+    ]
+  },
+  "systemSlotchassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "systemSlotTableEntry",
+      1
+    ]
+  },
+  "systemSlotIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "systemSlotTableEntry",
+      2
+    ]
+  },
+  "systemSlotStateCapabilitiesUnique": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SystemSlotStateCapabilitiesFlags"
+    },
+    "index": null,
+    "value": [
+      "systemSlotTableEntry",
+      3
+    ]
+  },
+  "systemSlotStateSettingsUnique": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SystemSlotStateSettingsFlags"
+    },
+    "index": null,
+    "value": [
+      "systemSlotTableEntry",
+      4
+    ]
+  },
+  "systemSlotStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "systemSlotTableEntry",
+      5
+    ]
+  },
+  "systemSlotCurrentUsage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SystemSlotUsageEnum"
+    },
+    "index": null,
+    "value": [
+      "systemSlotTableEntry",
+      6
+    ]
+  },
+  "systemSlotType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SystemSlotTypeEnum"
+    },
+    "index": null,
+    "value": [
+      "systemSlotTableEntry",
+      7
+    ]
+  },
+  "systemSlotSlotExternalSlotName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "String64"
+    },
+    "index": null,
+    "value": [
+      "systemSlotTableEntry",
+      8
+    ]
+  },
+  "systemSlotCategory": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SystemSlotCategoryEnum"
+    },
+    "index": null,
+    "value": [
+      "systemSlotTableEntry",
+      11
+    ]
+  },
+  "FruTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "fruTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF FruTableEntry"
+    },
+    "index": null,
+    "value": [
+      "fruGroup",
+      10
+    ]
+  },
+  "fruTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FruTableEntry"
+    },
+    "index": [
+      "fruChassisIndex",
+      "fruIndex"
+    ],
+    "value": [
+      "fruTable",
+      1
+    ]
+  },
+  "fruChassisIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "fruTableEntry",
+      1
+    ]
+  },
+  "fruIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectRange"
+    },
+    "index": null,
+    "value": [
+      "fruTableEntry",
+      2
+    ]
+  },
+  "fruInformationStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "fruTableEntry",
+      3
+    ]
+  },
+  "fruManufacturerName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "fruTableEntry",
+      6
+    ]
+  },
+  "fruSerialNumberName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "fruTableEntry",
+      7
+    ]
+  },
+  "fruPartNumberName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "fruTableEntry",
+      8
+    ]
+  },
+  "fruRevisionName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "fruTableEntry",
+      9
+    ]
+  },
+  "fruFQDD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FQDDString"
+    },
+    "index": null,
+    "value": [
+      "fruTableEntry",
+      12
+    ]
+  },
+  "BatteryTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "batteryTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF BatteryTableEntry"
+    },
+    "index": null,
+    "value": [
+      "physicalDevices",
+      15
+    ]
+  },
+  "batteryTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BatteryTableEntry"
+    },
+    "index": [
+      "batteryNumber"
+    ],
+    "value": [
+      "batteryTable",
+      1
+    ]
+  },
+  "batteryNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "batteryTableEntry",
+      1
+    ]
+  },
+  "batteryState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "ready",
+        "3": "failed",
+        "4": "degraded",
+        "5": "missing",
+        "6": "charging",
+        "7": "belowThreshold"
+      }
+    },
+    "index": null,
+    "value": [
+      "batteryTableEntry",
+      4
+    ]
+  },
+  "batteryComponentStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "batteryTableEntry",
+      6
+    ]
+  },
+  "batteryPredictedCapacity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "failed",
+        "3": "ready"
+      }
+    },
+    "index": null,
+    "value": [
+      "batteryTableEntry",
+      10
+    ]
+  },
+  "batteryFQDD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "batteryTableEntry",
+      20
+    ]
+  },
+  "batteryDisplayName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "batteryTableEntry",
+      21
+    ]
+  },
+  "ControllerTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "controllerTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ControllerTableEntry"
+    },
+    "index": null,
+    "value": [
+      "physicalDevices",
+      1
+    ]
+  },
+  "controllerTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ControllerTableEntry"
+    },
+    "index": [
+      "controllerNumber"
+    ],
+    "value": [
+      "controllerTable",
+      1
+    ]
+  },
+  "controllerNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      1
+    ]
+  },
+  "controllerName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      2
+    ]
+  },
+  "controllerRebuildRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      7
+    ]
+  },
+  "controllerFWVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      8
+    ]
+  },
+  "controllerCacheSizeInMB": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      9
+    ]
+  },
+  "controllerRollUpStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      37
+    ]
+  },
+  "controllerComponentStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      38
+    ]
+  },
+  "controllerDriverVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      41
+    ]
+  },
+  "controllerPCISlot": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      42
+    ]
+  },
+  "controllerReconstructRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      48
+    ]
+  },
+  "controllerPatrolReadRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      49
+    ]
+  },
+  "controllerBGIRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      50
+    ]
+  },
+  "controllerCheckConsistencyRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      51
+    ]
+  },
+  "controllerPatrolReadMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notSupported",
+        "3": "disabled",
+        "4": "auto",
+        "5": "manual"
+      }
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      52
+    ]
+  },
+  "controllerPatrolReadState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "stopped",
+        "3": "active"
+      }
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      53
+    ]
+  },
+  "controllerPersistentHotSpare": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BooleanType"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      59
+    ]
+  },
+  "controllerSpinDownUnconfiguredDrives": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BooleanType"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      60
+    ]
+  },
+  "controllerSpinDownHotSpareDrives": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BooleanType"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      61
+    ]
+  },
+  "controllerSpinDownTimeInterval": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      62
+    ]
+  },
+  "controllerPreservedCache": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BooleanType"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      69
+    ]
+  },
+  "controllerCheckConsistencyMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unsupported",
+        "3": "normal",
+        "4": "stopOnError"
+      }
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      70
+    ]
+  },
+  "controllerCopyBackMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unsupported",
+        "3": "on",
+        "4": "onWithSmart",
+        "5": "off"
+      }
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      71
+    ]
+  },
+  "controllerSecurityStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "none",
+        "3": "lkm"
+      }
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      72
+    ]
+  },
+  "controllerEncryptionKeyPresent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BooleanType"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      73
+    ]
+  },
+  "controllerEncryptionCapability": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "none",
+        "3": "lkm"
+      }
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      74
+    ]
+  },
+  "controllerLoadBalanceSetting": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "unsupported",
+        "3": "auto",
+        "4": "none"
+      }
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      75
+    ]
+  },
+  "controllerMaxCapSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "oneDotFiveGbps",
+        "3": "threeGbps",
+        "4": "sixGbps"
+      }
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      76
+    ]
+  },
+  "controllerSASAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      77
+    ]
+  },
+  "controllerFQDD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FQDDString"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      78
+    ]
+  },
+  "controllerDisplayName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "controllerTableEntry",
+      79
+    ]
+  },
+  "PhysicalDiskTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "physicalDiskTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PhysicalDiskTableEntry"
+    },
+    "index": null,
+    "value": [
+      "physicalDevices",
+      4
+    ]
+  },
+  "physicalDiskTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PhysicalDiskTableEntry"
+    },
+    "index": [
+      "physicalDiskNumber"
+    ],
+    "value": [
+      "physicalDiskTable",
+      1
+    ]
+  },
+  "physicalDiskNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      1
+    ]
+  },
+  "physicalDiskName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      2
+    ]
+  },
+  "physicalDiskManufacturer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      3
+    ]
+  },
+  "physicalDiskState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "ready",
+        "3": "online",
+        "4": "foreign",
+        "5": "offline",
+        "6": "blocked",
+        "7": "failed",
+        "8": "non-raid",
+        "9": "removed"
+      }
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      4
+    ]
+  },
+  "physicalDiskProductID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      6
+    ]
+  },
+  "physicalDiskSerialNo": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      7
+    ]
+  },
+  "physicalDiskRevision": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      8
+    ]
+  },
+  "physicalDiskCapacityInMB": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      11
+    ]
+  },
+  "physicalDiskUsedSpaceInMB": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      17
+    ]
+  },
+  "physicalDiskFreeSpaceInMB": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      19
+    ]
+  },
+  "physicalDiskBusType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "scsi",
+        "3": "sas",
+        "4": "sata",
+        "5": "fibre"
+      }
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      21
+    ]
+  },
+  "physicalDiskSpareState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "notASpare",
+        "2": "dedicatedHotSpare",
+        "3": "globalHotSpare"
+      }
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      22
+    ]
+  },
+  "physicalDiskComponentStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      24
+    ]
+  },
+  "physicalDiskPartNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      27
+    ]
+  },
+  "physicalDiskSASAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      28
+    ]
+  },
+  "physicalDiskNegotiatedSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "oneDotFiveGbps",
+        "3": "threeGbps",
+        "4": "sixGbps"
+      }
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      29
+    ]
+  },
+  "physicalDiskCapableSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "oneDotFiveGbps",
+        "3": "threeGbps",
+        "4": "sixGbps"
+      }
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      30
+    ]
+  },
+  "physicalDiskSmartAlertIndication": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BooleanType"
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      31
+    ]
+  },
+  "physicalDiskManufactureDay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      32
+    ]
+  },
+  "physicalDiskManufactureWeek": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      33
+    ]
+  },
+  "physicalDiskManufactureYear": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      34
+    ]
+  },
+  "physicalDiskMediaType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "hdd",
+        "3": "ssd"
+      }
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      35
+    ]
+  },
+  "physicalDiskPowerState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "spunUp",
+        "3": "spunDown",
+        "4": "transition"
+      }
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      42
+    ]
+  },
+  "physicalDiskOperationalState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "notApplicable",
+        "2": "rebuild",
+        "3": "clear",
+        "4": "copyback"
+      }
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      50
+    ]
+  },
+  "physicalDiskProgress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      51
+    ]
+  },
+  "physicalDiskSecurityStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "notSupported",
+        "3": "secured",
+        "4": "locked",
+        "5": "foreign"
+      }
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      52
+    ]
+  },
+  "physicalDiskFormFactor": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "oneDotEight",
+        "3": "twoDotFive",
+        "4": "threeDotFive"
+      }
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      53
+    ]
+  },
+  "physicalDiskFQDD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FQDDString"
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      54
+    ]
+  },
+  "physicalDiskDisplayName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "physicalDiskTableEntry",
+      55
+    ]
+  },
+  "VirtualDiskTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "virtualDiskTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF VirtualDiskTableEntry"
+    },
+    "index": null,
+    "value": [
+      "logicalDevices",
+      1
+    ]
+  },
+  "virtualDiskTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "VirtualDiskTableEntry"
+    },
+    "index": [
+      "virtualDiskNumber"
+    ],
+    "value": [
+      "virtualDiskTable",
+      1
+    ]
+  },
+  "virtualDiskNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      1
+    ]
+  },
+  "virtualDiskName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      2
+    ]
+  },
+  "virtualDiskState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "online",
+        "3": "failed",
+        "4": "degraded"
+      }
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      4
+    ]
+  },
+  "virtualDiskSizeInMB": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      6
+    ]
+  },
+  "virtualDiskWritePolicy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "writeThrough",
+        "2": "writeBack",
+        "3": "writeBackForce"
+      }
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      10
+    ]
+  },
+  "virtualDiskReadPolicy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "noReadAhead",
+        "2": "readAhead",
+        "3": "adaptiveReadAhead"
+      }
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      11
+    ]
+  },
+  "virtualDiskLayout": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "r0",
+        "3": "r1",
+        "4": "r5",
+        "5": "r6",
+        "6": "r10",
+        "7": "r50",
+        "8": "r60",
+        "9": "concatRaid-1",
+        "10": "concatRaid-5"
+      }
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      13
+    ]
+  },
+  "virtualDiskStripeSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "default",
+        "3": "fiveHundredAndTwelvebytes",
+        "4": "oneKilobytes",
+        "5": "twoKilobytes",
+        "6": "fourKilobytes",
+        "7": "eightKilobytes",
+        "8": "sixteenKilobytes",
+        "9": "thirtyTwoKilobytes",
+        "10": "sixtyFourKilobytes",
+        "11": "oneTwentyEightKilobytes",
+        "12": "twoFiftySixKilobytes",
+        "13": "fiveOneTwoKilobytes",
+        "14": "oneMegabye",
+        "15": "twoMegabytes",
+        "16": "fourMegabytes",
+        "17": "eightMegabytes",
+        "18": "sixteenMegabytes"
+      }
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      14
+    ]
+  },
+  "virtualDiskComponentStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      20
+    ]
+  },
+  "virtualDiskBadBlocksDetected": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BooleanType"
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      23
+    ]
+  },
+  "virtualDiskSecured": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BooleanType"
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      24
+    ]
+  },
+  "virtualDiskIsCacheCade": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BooleanType"
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      25
+    ]
+  },
+  "virtualDiskDiskCachePolicy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "enabled",
+        "2": "disabled",
+        "3": "defullt"
+      }
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      26
+    ]
+  },
+  "virtualDiskOperationalState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "notApplicable",
+        "2": "reconstructing",
+        "3": "resynching",
+        "4": "initializing",
+        "5": "backgroundInit"
+      }
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      30
+    ]
+  },
+  "virtualDiskProgress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      31
+    ]
+  },
+  "virtualDiskAvailableProtocols": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      32
+    ]
+  },
+  "virtualDiskMediaType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      33
+    ]
+  },
+  "virtualDiskRemainingRedundancy": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      34
+    ]
+  },
+  "virtualDiskFQDD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FQDDString"
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      35
+    ]
+  },
+  "virtualDiskDisplayName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "virtualDiskTableEntry",
+      36
+    ]
+  },
+  "EnclosureTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "enclosureTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF EnclosureTableEntry"
+    },
+    "index": null,
+    "value": [
+      "physicalDevices",
+      3
+    ]
+  },
+  "enclosureTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EnclosureTableEntry"
+    },
+    "index": [
+      "enclosureNumber"
+    ],
+    "value": [
+      "enclosureTable",
+      1
+    ]
+  },
+  "enclosureNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      1
+    ]
+  },
+  "enclosureName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      2
+    ]
+  },
+  "enclosureState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "ready",
+        "3": "failed",
+        "4": "missing",
+        "5": "degraded"
+      }
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      4
+    ]
+  },
+  "enclosureServiceTag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      8
+    ]
+  },
+  "enclosureAssetTag": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      9
+    ]
+  },
+  "enclosureConnectedPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      19
+    ]
+  },
+  "enclosureRollUpStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      23
+    ]
+  },
+  "enclosureComponentStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      24
+    ]
+  },
+  "enclosureFirmwareVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      26
+    ]
+  },
+  "enclosureSASAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      30
+    ]
+  },
+  "enclosureDriveCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      31
+    ]
+  },
+  "enclosureTotalSlots": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      32
+    ]
+  },
+  "enclosureFanCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      40
+    ]
+  },
+  "enclosurePSUCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      41
+    ]
+  },
+  "enclosureEMMCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      42
+    ]
+  },
+  "enclosureTempProbeCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      43
+    ]
+  },
+  "enclosureRedundantPath": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      44
+    ]
+  },
+  "enclosurePosition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      45
+    ]
+  },
+  "enclosureBackplaneBayID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      46
+    ]
+  },
+  "enclosureFQDD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FQDDString"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      47
+    ]
+  },
+  "enclosureDisplayName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureTableEntry",
+      48
+    ]
+  },
+  "EnclosureManagementModuleTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "enclosureManagementModuleTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF EnclosureManagementModuleTableEntry"
+    },
+    "index": null,
+    "value": [
+      "physicalDevices",
+      13
+    ]
+  },
+  "enclosureManagementModuleTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EnclosureManagementModuleTableEntry"
+    },
+    "index": [
+      "enclosureManagementModuleNumber"
+    ],
+    "value": [
+      "enclosureManagementModuleTable",
+      1
+    ]
+  },
+  "enclosureManagementModuleNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "enclosureManagementModuleTableEntry",
+      1
+    ]
+  },
+  "enclosureManagementModuleName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureManagementModuleTableEntry",
+      2
+    ]
+  },
+  "enclosureManagementModuleState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "ready",
+        "3": "failed",
+        "4": "missing",
+        "5": "degraded"
+      }
+    },
+    "index": null,
+    "value": [
+      "enclosureManagementModuleTableEntry",
+      4
+    ]
+  },
+  "enclosureManagementModulePartNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureManagementModuleTableEntry",
+      6
+    ]
+  },
+  "enclosureManagementModuleFWVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureManagementModuleTableEntry",
+      8
+    ]
+  },
+  "enclosureManagementModuleComponentStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "enclosureManagementModuleTableEntry",
+      11
+    ]
+  },
+  "enclosureManagementModuleFQDD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FQDDString"
+    },
+    "index": null,
+    "value": [
+      "enclosureManagementModuleTableEntry",
+      15
+    ]
+  },
+  "enclosureManagementModuleDisplayName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureManagementModuleTableEntry",
+      16
+    ]
+  },
+  "EnclosureFanTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "enclosureFanTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF EnclosureFanTableEntry"
+    },
+    "index": null,
+    "value": [
+      "physicalDevices",
+      7
+    ]
+  },
+  "enclosureFanTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EnclosureFanTableEntry"
+    },
+    "index": [
+      "enclosureFanNumber"
+    ],
+    "value": [
+      "enclosureFanTable",
+      1
+    ]
+  },
+  "enclosureFanNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "enclosureFanTableEntry",
+      1
+    ]
+  },
+  "enclosureFanName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureFanTableEntry",
+      2
+    ]
+  },
+  "enclosureFanState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "ready",
+        "3": "failed",
+        "4": "missing",
+        "5": "degraded"
+      }
+    },
+    "index": null,
+    "value": [
+      "enclosureFanTableEntry",
+      4
+    ]
+  },
+  "enclosureFanSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "stopped",
+        "3": "slow",
+        "4": "medium",
+        "5": "fast"
+      }
+    },
+    "index": null,
+    "value": [
+      "enclosureFanTableEntry",
+      11
+    ]
+  },
+  "enclosureFanComponentStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "enclosureFanTableEntry",
+      15
+    ]
+  },
+  "enclosureFanFQDD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FQDDString"
+    },
+    "index": null,
+    "value": [
+      "enclosureFanTableEntry",
+      20
+    ]
+  },
+  "enclosureFanDisplayName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureFanTableEntry",
+      21
+    ]
+  },
+  "EnclosurePowerSupplyTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "enclosurePowerSupplyTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF EnclosurePowerSupplyTableEntry"
+    },
+    "index": null,
+    "value": [
+      "physicalDevices",
+      9
+    ]
+  },
+  "enclosurePowerSupplyTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EnclosurePowerSupplyTableEntry"
+    },
+    "index": [
+      "enclosurePowerSupplyNumber"
+    ],
+    "value": [
+      "enclosurePowerSupplyTable",
+      1
+    ]
+  },
+  "enclosurePowerSupplyNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "enclosurePowerSupplyTableEntry",
+      1
+    ]
+  },
+  "enclosurePowerSupplyName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosurePowerSupplyTableEntry",
+      2
+    ]
+  },
+  "enclosurePowerSupplyState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "ready",
+        "3": "failed",
+        "4": "missing",
+        "5": "degraded"
+      }
+    },
+    "index": null,
+    "value": [
+      "enclosurePowerSupplyTableEntry",
+      4
+    ]
+  },
+  "enclosurePowerSupplyPartNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosurePowerSupplyTableEntry",
+      7
+    ]
+  },
+  "enclosurePowerSupplyComponentStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "enclosurePowerSupplyTableEntry",
+      9
+    ]
+  },
+  "enclosurePowerSupplyFQDD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FQDDString"
+    },
+    "index": null,
+    "value": [
+      "enclosurePowerSupplyTableEntry",
+      15
+    ]
+  },
+  "enclosurePowerSupplyDisplayName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosurePowerSupplyTableEntry",
+      16
+    ]
+  },
+  "EnclosureTemperatureProbeTableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "enclosureTemperatureProbeTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF EnclosureTemperatureProbeTableEntry"
+    },
+    "index": null,
+    "value": [
+      "physicalDevices",
+      11
+    ]
+  },
+  "enclosureTemperatureProbeTableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EnclosureTemperatureProbeTableEntry"
+    },
+    "index": [
+      "enclosureTemperatureProbeNumber"
+    ],
+    "value": [
+      "enclosureTemperatureProbeTable",
+      1
+    ]
+  },
+  "enclosureTemperatureProbeNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "enclosureTemperatureProbeTableEntry",
+      1
+    ]
+  },
+  "enclosureTemperatureProbeName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureTemperatureProbeTableEntry",
+      2
+    ]
+  },
+  "enclosureTemperatureProbeState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "ready",
+        "3": "failed",
+        "4": "missing",
+        "5": "degraded"
+      }
+    },
+    "index": null,
+    "value": [
+      "enclosureTemperatureProbeTableEntry",
+      4
+    ]
+  },
+  "enclosureTemperatureProbeMinWarningValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "enclosureTemperatureProbeTableEntry",
+      7
+    ]
+  },
+  "enclosureTemperatureProbeMinCriticalValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "enclosureTemperatureProbeTableEntry",
+      8
+    ]
+  },
+  "enclosureTemperatureProbeMaxWarningValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "enclosureTemperatureProbeTableEntry",
+      9
+    ]
+  },
+  "enclosureTemperatureProbeMaxCriticalValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "enclosureTemperatureProbeTableEntry",
+      10
+    ]
+  },
+  "enclosureTemperatureProbeCurValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "enclosureTemperatureProbeTableEntry",
+      11
+    ]
+  },
+  "enclosureTemperatureProbeComponentStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ObjectStatusEnum"
+    },
+    "index": null,
+    "value": [
+      "enclosureTemperatureProbeTableEntry",
+      13
+    ]
+  },
+  "enclosureTemperatureProbeFQDD": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FQDDString"
+    },
+    "index": null,
+    "value": [
+      "enclosureTemperatureProbeTableEntry",
+      15
+    ]
+  },
+  "enclosureTemperatureProbeDisplayName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "enclosureTemperatureProbeTableEntry",
+      16
+    ]
+  }
+}

@@ -1,0 +1,945 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-CONF",
+      [
+        "OBJECT-GROUP",
+        "NOTIFICATION-GROUP",
+        "MODULE-COMPLIANCE"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "NOTIFICATION-TYPE",
+        "Counter32",
+        "Gauge32",
+        "Unsigned32",
+        "IpAddress"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "DateAndTime",
+        "TEXTUAL-CONVENTION",
+        "RowPointer"
+      ]
+    ],
+    [
+      "SNMP-FRAMEWORK-MIB",
+      [
+        "SnmpAdminString"
+      ]
+    ],
+    [
+      "IF-MIB",
+      [
+        "InterfaceIndexOrZero"
+      ]
+    ],
+    [
+      "CISCO-SMI",
+      [
+        "ciscoMgmt"
+      ]
+    ]
+  ],
+  "ciscoFirewallMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "ciscoMgmt",
+      147
+    ]
+  },
+  "ciscoFirewallMIBObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoFirewallMIB",
+      1
+    ]
+  },
+  "cfwEvents": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoFirewallMIBObjects",
+      1
+    ]
+  },
+  "cfwBasicEvents": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cfwEvents",
+      1
+    ]
+  },
+  "cfwNetEvents": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cfwEvents",
+      2
+    ]
+  },
+  "cfwSystem": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoFirewallMIBObjects",
+      2
+    ]
+  },
+  "cfwStatus": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cfwSystem",
+      1
+    ]
+  },
+  "cfwStatistics": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cfwSystem",
+      2
+    ]
+  },
+  "ResourceStatistics": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "highUse",
+        "2": "highLoad",
+        "3": "maximum",
+        "4": "minimum",
+        "5": "low",
+        "6": "high",
+        "7": "average",
+        "8": "free",
+        "9": "inUse"
+      }
+    },
+    "display_hint": null
+  },
+  "Hardware": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "memory",
+        "2": "disk",
+        "3": "power",
+        "4": "netInterface",
+        "5": "cpu",
+        "6": "primaryUnit",
+        "7": "secondaryUnit",
+        "8": "other"
+      }
+    },
+    "display_hint": null
+  },
+  "Services": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "otherFWService",
+        "2": "fileXferFtp",
+        "3": "fileXferTftp",
+        "4": "fileXferFtps",
+        "5": "loginTelnet",
+        "6": "loginRlogin",
+        "7": "loginTelnets",
+        "8": "remoteExecSunRPC",
+        "9": "remoteExecMSRPC",
+        "10": "remoteExecRsh",
+        "11": "remoteExecXserver",
+        "12": "webHttp",
+        "13": "webHttps",
+        "14": "mailSmtp",
+        "15": "multimediaStreamworks",
+        "16": "multimediaH323",
+        "17": "multimediaNetShow",
+        "18": "multimediaVDOLive",
+        "19": "multimediaRealAV",
+        "20": "multimediaRTSP",
+        "21": "dbOracle",
+        "22": "dbMSsql",
+        "23": "contInspProgLang",
+        "24": "contInspUrl",
+        "25": "directoryNis",
+        "26": "directoryDns",
+        "27": "directoryNetbiosns",
+        "28": "directoryNetbiosdgm",
+        "29": "directoryNetbiosssn",
+        "30": "directoryWins",
+        "31": "qryWhois",
+        "32": "qryFinger",
+        "33": "qryIdent",
+        "34": "fsNfsStatus",
+        "35": "fsNfs",
+        "36": "fsCifs",
+        "37": "protoIcmp",
+        "38": "protoTcp",
+        "39": "protoUdp",
+        "40": "protoIp",
+        "41": "protoSnmp"
+      }
+    },
+    "display_hint": null
+  },
+  "HardwareStatus": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "up",
+        "3": "down",
+        "4": "error",
+        "5": "overTemp",
+        "6": "busy",
+        "7": "noMedia",
+        "8": "backup",
+        "9": "active",
+        "10": "standby"
+      }
+    },
+    "display_hint": null
+  },
+  "SecurityEvent": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "none",
+        "3": "dos",
+        "4": "recon",
+        "5": "pakFwd",
+        "6": "addrSpoof",
+        "7": "svcSpoof",
+        "8": "thirdParty",
+        "9": "complete",
+        "10": "invalPak",
+        "11": "illegCom",
+        "12": "policy"
+      }
+    },
+    "display_hint": null
+  },
+  "ContentInspectionEvent": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "okay",
+        "3": "error",
+        "4": "found",
+        "5": "clean",
+        "6": "reject",
+        "7": "saved"
+      }
+    },
+    "display_hint": null
+  },
+  "ConnectionEvent": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "accept",
+        "3": "error",
+        "4": "drop",
+        "5": "close",
+        "6": "timeout",
+        "7": "refused",
+        "8": "reset",
+        "9": "noResp"
+      }
+    },
+    "display_hint": null
+  },
+  "ConnectionStat": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "totalOpen",
+        "3": "currentOpen",
+        "4": "currentClosing",
+        "5": "currentHalfOpen",
+        "6": "currentInUse",
+        "7": "high"
+      }
+    },
+    "display_hint": null
+  },
+  "AccessEvent": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "grant",
+        "3": "deny",
+        "4": "denyMult",
+        "5": "error"
+      }
+    },
+    "display_hint": null
+  },
+  "AuthenticationEvent": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "succ",
+        "3": "error",
+        "4": "fail",
+        "5": "succPriv",
+        "6": "failPriv",
+        "7": "failMult"
+      }
+    },
+    "display_hint": null
+  },
+  "GenericEvent": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "abnormal",
+        "2": "okay",
+        "3": "error"
+      }
+    },
+    "display_hint": null
+  },
+  "cfwBasicEventsTableLastRow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cfwBasicEvents",
+      1
+    ]
+  },
+  "cfwBasicEventsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CfwBasicEventsEntry"
+    },
+    "index": null,
+    "value": [
+      "cfwBasicEvents",
+      2
+    ]
+  },
+  "cfwBasicEventsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CfwBasicEventsEntry"
+    },
+    "index": [
+      "cfwBasicEventIndex"
+    ],
+    "value": [
+      "cfwBasicEventsTable",
+      1
+    ]
+  },
+  "CfwBasicEventsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cfwBasicEventIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cfwBasicEventsEntry",
+      1
+    ]
+  },
+  "cfwBasicEventTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateAndTime"
+    },
+    "index": null,
+    "value": [
+      "cfwBasicEventsEntry",
+      2
+    ]
+  },
+  "cfwBasicSecurityEventType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SecurityEvent"
+    },
+    "index": null,
+    "value": [
+      "cfwBasicEventsEntry",
+      3
+    ]
+  },
+  "cfwBasicContentInspEventType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ContentInspectionEvent"
+    },
+    "index": null,
+    "value": [
+      "cfwBasicEventsEntry",
+      4
+    ]
+  },
+  "cfwBasicConnectionEventType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ConnectionEvent"
+    },
+    "index": null,
+    "value": [
+      "cfwBasicEventsEntry",
+      5
+    ]
+  },
+  "cfwBasicAccessEventType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AccessEvent"
+    },
+    "index": null,
+    "value": [
+      "cfwBasicEventsEntry",
+      6
+    ]
+  },
+  "cfwBasicAuthenticationEventType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AuthenticationEvent"
+    },
+    "index": null,
+    "value": [
+      "cfwBasicEventsEntry",
+      7
+    ]
+  },
+  "cfwBasicGenericEventType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "GenericEvent"
+    },
+    "index": null,
+    "value": [
+      "cfwBasicEventsEntry",
+      8
+    ]
+  },
+  "cfwBasicEventDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cfwBasicEventsEntry",
+      9
+    ]
+  },
+  "cfwBasicEventDetailsTableRow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RowPointer"
+    },
+    "index": null,
+    "value": [
+      "cfwBasicEventsEntry",
+      10
+    ]
+  },
+  "cfwNetEventsTableLastRow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cfwNetEvents",
+      1
+    ]
+  },
+  "cfwNetEventsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CfwNetEventsEntry"
+    },
+    "index": null,
+    "value": [
+      "cfwNetEvents",
+      2
+    ]
+  },
+  "cfwNetEventsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CfwNetEventsEntry"
+    },
+    "index": [
+      "cfwNetEventIndex"
+    ],
+    "value": [
+      "cfwNetEventsTable",
+      1
+    ]
+  },
+  "CfwNetEventsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cfwNetEventIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cfwNetEventsEntry",
+      1
+    ]
+  },
+  "cfwNetEventInterface": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InterfaceIndexOrZero"
+    },
+    "index": null,
+    "value": [
+      "cfwNetEventsEntry",
+      2
+    ]
+  },
+  "cfwNetEventSrcIpAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "cfwNetEventsEntry",
+      3
+    ]
+  },
+  "cfwNetEventInsideSrcIpAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "cfwNetEventsEntry",
+      4
+    ]
+  },
+  "cfwNetEventDstIpAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "cfwNetEventsEntry",
+      5
+    ]
+  },
+  "cfwNetEventInsideDstIpAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "cfwNetEventsEntry",
+      6
+    ]
+  },
+  "cfwNetEventSrcIpPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cfwNetEventsEntry",
+      7
+    ]
+  },
+  "cfwNetEventInsideSrcIpPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cfwNetEventsEntry",
+      8
+    ]
+  },
+  "cfwNetEventDstIpPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cfwNetEventsEntry",
+      9
+    ]
+  },
+  "cfwNetEventInsideDstIpPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cfwNetEventsEntry",
+      10
+    ]
+  },
+  "cfwNetEventService": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Services"
+    },
+    "index": null,
+    "value": [
+      "cfwNetEventsEntry",
+      11
+    ]
+  },
+  "cfwNetEventServiceInformation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cfwNetEventsEntry",
+      12
+    ]
+  },
+  "cfwNetEventIdentity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cfwNetEventsEntry",
+      13
+    ]
+  },
+  "cfwNetEventDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cfwNetEventsEntry",
+      14
+    ]
+  },
+  "cfwHardwareStatusTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CfwHardwareStatusEntry"
+    },
+    "index": null,
+    "value": [
+      "cfwStatus",
+      1
+    ]
+  },
+  "cfwHardwareStatusEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CfwHardwareStatusEntry"
+    },
+    "index": [
+      "cfwHardwareType"
+    ],
+    "value": [
+      "cfwHardwareStatusTable",
+      1
+    ]
+  },
+  "CfwHardwareStatusEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cfwHardwareType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Hardware"
+    },
+    "index": null,
+    "value": [
+      "cfwHardwareStatusEntry",
+      1
+    ]
+  },
+  "cfwHardwareInformation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cfwHardwareStatusEntry",
+      2
+    ]
+  },
+  "cfwHardwareStatusValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HardwareStatus"
+    },
+    "index": null,
+    "value": [
+      "cfwHardwareStatusEntry",
+      3
+    ]
+  },
+  "cfwHardwareStatusDetail": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cfwHardwareStatusEntry",
+      4
+    ]
+  },
+  "cfwBufferStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CfwBufferStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "cfwStatistics",
+      1
+    ]
+  },
+  "cfwBufferStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CfwBufferStatsEntry"
+    },
+    "index": [
+      "cfwBufferStatSize",
+      "cfwBufferStatType"
+    ],
+    "value": [
+      "cfwBufferStatsTable",
+      1
+    ]
+  },
+  "CfwBufferStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cfwBufferStatSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "cfwBufferStatsEntry",
+      1
+    ]
+  },
+  "cfwBufferStatType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ResourceStatistics"
+    },
+    "index": null,
+    "value": [
+      "cfwBufferStatsEntry",
+      2
+    ]
+  },
+  "cfwBufferStatInformation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cfwBufferStatsEntry",
+      3
+    ]
+  },
+  "cfwBufferStatValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cfwBufferStatsEntry",
+      4
+    ]
+  },
+  "cfwConnectionStatTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CfwConnectionStatEntry"
+    },
+    "index": null,
+    "value": [
+      "cfwStatistics",
+      2
+    ]
+  },
+  "cfwConnectionStatEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CfwConnectionStatEntry"
+    },
+    "index": [
+      "cfwConnectionStatService",
+      "cfwConnectionStatType"
+    ],
+    "value": [
+      "cfwConnectionStatTable",
+      1
+    ]
+  },
+  "CfwConnectionStatEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cfwConnectionStatService": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Services"
+    },
+    "index": null,
+    "value": [
+      "cfwConnectionStatEntry",
+      1
+    ]
+  },
+  "cfwConnectionStatType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ConnectionStat"
+    },
+    "index": null,
+    "value": [
+      "cfwConnectionStatEntry",
+      2
+    ]
+  },
+  "cfwConnectionStatDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "cfwConnectionStatEntry",
+      3
+    ]
+  },
+  "cfwConnectionStatCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "cfwConnectionStatEntry",
+      4
+    ]
+  },
+  "cfwConnectionStatValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "cfwConnectionStatEntry",
+      5
+    ]
+  },
+  "ciscoFirewallMIBNotificationPrefix": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoFirewallMIB",
+      2
+    ]
+  },
+  "ciscoFirewallMIBNotifications": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoFirewallMIBNotificationPrefix",
+      0
+    ]
+  },
+  "ciscoFirewallMIBConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoFirewallMIB",
+      3
+    ]
+  },
+  "ciscoFirewallMIBCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoFirewallMIBConformance",
+      1
+    ]
+  },
+  "ciscoFirewallMIBGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoFirewallMIBConformance",
+      2
+    ]
+  },
+  "ciscoFirewallMIBEventsGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoFirewallMIBGroups",
+      1
+    ]
+  },
+  "ciscoFirewallMIBStatisticsGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoFirewallMIBGroups",
+      2
+    ]
+  },
+  "ciscoFirewallMIBNotificationGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "ciscoFirewallMIBGroups",
+      3
+    ]
+  }
+}

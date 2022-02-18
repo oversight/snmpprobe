@@ -1,0 +1,276 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-CONF",
+      [
+        "OBJECT-GROUP",
+        "MODULE-COMPLIANCE"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "OBJECT-TYPE",
+        "Integer32",
+        "enterprises",
+        "MODULE-IDENTITY"
+      ]
+    ]
+  ],
+  "synologyiSCSILUN": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "synology",
+      104
+    ]
+  },
+  "synology": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      6574
+    ]
+  },
+  "iSCSILUNTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ISCSILUNEntry"
+    },
+    "index": null,
+    "value": [
+      "synologyiSCSILUN",
+      1
+    ]
+  },
+  "iSCSILUNEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ISCSILUNEntry"
+    },
+    "index": [
+      "iSCSILUNInfoIndex"
+    ],
+    "value": [
+      "iSCSILUNTable",
+      1
+    ]
+  },
+  "ISCSILUNEntry": {
+    "tp": "SEQUENCE"
+  },
+  "iSCSILUNInfoIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "iSCSILUNEntry",
+      1
+    ]
+  },
+  "iSCSILUNUUID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "iSCSILUNEntry",
+      2
+    ]
+  },
+  "iSCSILUNName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "iSCSILUNEntry",
+      3
+    ]
+  },
+  "iSCSILUNThroughputReadHigh": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "iSCSILUNEntry",
+      4
+    ]
+  },
+  "iSCSILUNThroughputReadLow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "iSCSILUNEntry",
+      5
+    ]
+  },
+  "iSCSILUNThroughputWriteHigh": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "iSCSILUNEntry",
+      6
+    ]
+  },
+  "iSCSILUNThroughputWriteLow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "iSCSILUNEntry",
+      7
+    ]
+  },
+  "iSCSILUNIopsRead": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "iSCSILUNEntry",
+      8
+    ]
+  },
+  "iSCSILUNIopsWrite": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "iSCSILUNEntry",
+      9
+    ]
+  },
+  "iSCSILUNDiskLatencyRead": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "iSCSILUNEntry",
+      10
+    ]
+  },
+  "iSCSILUNDiskLatencyWrite": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "iSCSILUNEntry",
+      11
+    ]
+  },
+  "iSCSILUNNetworkLatencyTx": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "iSCSILUNEntry",
+      12
+    ]
+  },
+  "iSCSILUNNetworkLatencyRx": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "iSCSILUNEntry",
+      13
+    ]
+  },
+  "iSCSILUNIoSizeRead": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "iSCSILUNEntry",
+      14
+    ]
+  },
+  "iSCSILUNIoSizeWrite": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "iSCSILUNEntry",
+      15
+    ]
+  },
+  "iSCSILUNQueueDepth": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "iSCSILUNEntry",
+      16
+    ]
+  },
+  "iSCSILUNType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "iSCSILUNEntry",
+      17
+    ]
+  },
+  "synologyiSCSILUNConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synologyiSCSILUN",
+      2
+    ]
+  },
+  "synologyiSCSILUNCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synologyiSCSILUNConformance",
+      1
+    ]
+  },
+  "synologyiSCSILUNGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synologyiSCSILUNConformance",
+      2
+    ]
+  },
+  "synologyiSCSILUNGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "synologyiSCSILUNGroups",
+      1
+    ]
+  }
+}

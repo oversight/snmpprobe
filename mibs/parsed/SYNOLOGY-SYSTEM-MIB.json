@@ -1,0 +1,175 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-CONF",
+      [
+        "OBJECT-GROUP",
+        "MODULE-COMPLIANCE"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "enterprises",
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Integer32"
+      ]
+    ]
+  ],
+  "synoSystem": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "synology",
+      1
+    ]
+  },
+  "synology": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      6574
+    ]
+  },
+  "systemStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "synoSystem",
+      1
+    ]
+  },
+  "temperature": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "synoSystem",
+      2
+    ]
+  },
+  "powerStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "synoSystem",
+      3
+    ]
+  },
+  "fan": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synoSystem",
+      4
+    ]
+  },
+  "systemFanStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "fan",
+      1
+    ]
+  },
+  "cpuFanStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "fan",
+      2
+    ]
+  },
+  "dsmInfo": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synoSystem",
+      5
+    ]
+  },
+  "modelName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "dsmInfo",
+      1
+    ]
+  },
+  "serialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "dsmInfo",
+      2
+    ]
+  },
+  "version": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "dsmInfo",
+      3
+    ]
+  },
+  "upgradeAvailable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dsmInfo",
+      4
+    ]
+  },
+  "systemConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synoSystem",
+      6
+    ]
+  },
+  "systemCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "systemConformance",
+      1
+    ]
+  },
+  "systemGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "systemConformance",
+      2
+    ]
+  },
+  "systemGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "systemGroups",
+      1
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "mib-2"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION"
+      ]
+    ]
+  ],
+  "ianaRtProtoMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "mib-2",
+      84
+    ]
+  },
+  "IANAipRouteProtocol": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "local",
+        "3": "netmgmt",
+        "4": "icmp",
+        "5": "egp",
+        "6": "ggp",
+        "7": "hello",
+        "8": "rip",
+        "9": "isIs",
+        "10": "esIs",
+        "11": "ciscoIgrp",
+        "12": "bbnSpfIgp",
+        "13": "ospf",
+        "14": "bgp",
+        "15": "idpr",
+        "16": "ciscoEigrp",
+        "17": "dvmrp"
+      }
+    },
+    "display_hint": null
+  },
+  "IANAipMRouteProtocol": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "local",
+        "3": "netmgmt",
+        "4": "dvmrp",
+        "5": "mospf",
+        "6": "pimSparseDense",
+        "7": "cbt",
+        "8": "pimSparseMode",
+        "9": "pimDenseMode",
+        "10": "igmpOnly",
+        "11": "bgmp",
+        "12": "msdp"
+      }
+    },
+    "display_hint": null
+  }
+}

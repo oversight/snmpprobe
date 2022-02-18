@@ -1,0 +1,155 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-CONF",
+      [
+        "OBJECT-GROUP",
+        "MODULE-COMPLIANCE"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "enterprises",
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Integer32"
+      ]
+    ]
+  ],
+  "synoDisk": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "synology",
+      2
+    ]
+  },
+  "synology": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      6574
+    ]
+  },
+  "diskTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF DiskEntry"
+    },
+    "index": null,
+    "value": [
+      "synoDisk",
+      1
+    ]
+  },
+  "diskEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DiskEntry"
+    },
+    "index": [
+      "diskIndex"
+    ],
+    "value": [
+      "diskTable",
+      1
+    ]
+  },
+  "DiskEntry": {
+    "tp": "SEQUENCE"
+  },
+  "diskIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "diskEntry",
+      1
+    ]
+  },
+  "diskID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "diskEntry",
+      2
+    ]
+  },
+  "diskModel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "diskEntry",
+      3
+    ]
+  },
+  "diskType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "diskEntry",
+      4
+    ]
+  },
+  "diskStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "diskEntry",
+      5
+    ]
+  },
+  "diskTemperature": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "diskEntry",
+      6
+    ]
+  },
+  "diskConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "synoDisk",
+      2
+    ]
+  },
+  "diskCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "diskConformance",
+      1
+    ]
+  },
+  "diskGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "diskConformance",
+      2
+    ]
+  },
+  "diskGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "diskGroups",
+      1
+    ]
+  }
+}

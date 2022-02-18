@@ -1,0 +1,455 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "mib-2",
+        "OBJECT-TYPE",
+        "Integer32",
+        "Gauge32",
+        "Counter32",
+        "NOTIFICATION-TYPE"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TruthValue"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP",
+        "NOTIFICATION-GROUP"
+      ]
+    ],
+    [
+      "SNMP-FRAMEWORK-MIB",
+      [
+        "SnmpAdminString"
+      ]
+    ]
+  ],
+  "powerEthernetMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "mib-2",
+      105
+    ]
+  },
+  "pethNotifications": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "powerEthernetMIB",
+      0
+    ]
+  },
+  "pethObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "powerEthernetMIB",
+      1
+    ]
+  },
+  "pethConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "powerEthernetMIB",
+      2
+    ]
+  },
+  "pethPsePortTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PethPsePortEntry"
+    },
+    "index": null,
+    "value": [
+      "pethObjects",
+      1
+    ]
+  },
+  "pethPsePortEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PethPsePortEntry"
+    },
+    "index": [
+      "pethPsePortGroupIndex",
+      "pethPsePortIndex"
+    ],
+    "value": [
+      "pethPsePortTable",
+      1
+    ]
+  },
+  "PethPsePortEntry": {
+    "tp": "SEQUENCE"
+  },
+  "pethPsePortGroupIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "pethPsePortEntry",
+      1
+    ]
+  },
+  "pethPsePortIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "pethPsePortEntry",
+      2
+    ]
+  },
+  "pethPsePortAdminEnable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "pethPsePortEntry",
+      3
+    ]
+  },
+  "pethPsePortPowerPairsControlAbility": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "pethPsePortEntry",
+      4
+    ]
+  },
+  "pethPsePortPowerPairs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "signal",
+        "2": "spare"
+      }
+    },
+    "index": null,
+    "value": [
+      "pethPsePortEntry",
+      5
+    ]
+  },
+  "pethPsePortDetectionStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "disabled",
+        "2": "searching",
+        "3": "deliveringPower",
+        "4": "fault",
+        "5": "test",
+        "6": "otherFault"
+      }
+    },
+    "index": null,
+    "value": [
+      "pethPsePortEntry",
+      6
+    ]
+  },
+  "pethPsePortPowerPriority": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "critical",
+        "2": "high",
+        "3": "low"
+      }
+    },
+    "index": null,
+    "value": [
+      "pethPsePortEntry",
+      7
+    ]
+  },
+  "pethPsePortMPSAbsentCounter": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "pethPsePortEntry",
+      8
+    ]
+  },
+  "pethPsePortType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpAdminString"
+    },
+    "index": null,
+    "value": [
+      "pethPsePortEntry",
+      9
+    ]
+  },
+  "pethPsePortPowerClassifications": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "class0",
+        "2": "class1",
+        "3": "class2",
+        "4": "class3",
+        "5": "class4"
+      }
+    },
+    "index": null,
+    "value": [
+      "pethPsePortEntry",
+      10
+    ]
+  },
+  "pethPsePortInvalidSignatureCounter": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "pethPsePortEntry",
+      11
+    ]
+  },
+  "pethPsePortPowerDeniedCounter": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "pethPsePortEntry",
+      12
+    ]
+  },
+  "pethPsePortOverLoadCounter": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "pethPsePortEntry",
+      13
+    ]
+  },
+  "pethPsePortShortCounter": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "pethPsePortEntry",
+      14
+    ]
+  },
+  "pethMainPseObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "pethObjects",
+      3
+    ]
+  },
+  "pethMainPseTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PethMainPseEntry"
+    },
+    "index": null,
+    "value": [
+      "pethMainPseObjects",
+      1
+    ]
+  },
+  "pethMainPseEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PethMainPseEntry"
+    },
+    "index": [
+      "pethMainPseGroupIndex"
+    ],
+    "value": [
+      "pethMainPseTable",
+      1
+    ]
+  },
+  "PethMainPseEntry": {
+    "tp": "SEQUENCE"
+  },
+  "pethMainPseGroupIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "pethMainPseEntry",
+      1
+    ]
+  },
+  "pethMainPsePower": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "pethMainPseEntry",
+      2
+    ]
+  },
+  "pethMainPseOperStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "on",
+        "2": "off",
+        "3": "faulty"
+      }
+    },
+    "index": null,
+    "value": [
+      "pethMainPseEntry",
+      3
+    ]
+  },
+  "pethMainPseConsumptionPower": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "pethMainPseEntry",
+      4
+    ]
+  },
+  "pethMainPseUsageThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "pethMainPseEntry",
+      5
+    ]
+  },
+  "pethNotificationControl": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "pethObjects",
+      4
+    ]
+  },
+  "pethNotificationControlTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF PethNotificationControlEntry"
+    },
+    "index": null,
+    "value": [
+      "pethNotificationControl",
+      1
+    ]
+  },
+  "pethNotificationControlEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PethNotificationControlEntry"
+    },
+    "index": [
+      "pethNotificationControlGroupIndex"
+    ],
+    "value": [
+      "pethNotificationControlTable",
+      1
+    ]
+  },
+  "PethNotificationControlEntry": {
+    "tp": "SEQUENCE"
+  },
+  "pethNotificationControlGroupIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "pethNotificationControlEntry",
+      1
+    ]
+  },
+  "pethNotificationControlEnable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "pethNotificationControlEntry",
+      2
+    ]
+  },
+  "pethCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "pethConformance",
+      1
+    ]
+  },
+  "pethGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "pethConformance",
+      2
+    ]
+  },
+  "pethPsePortGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "pethGroups",
+      1
+    ]
+  },
+  "pethMainPseGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "pethGroups",
+      2
+    ]
+  },
+  "pethNotificationControlGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "pethGroups",
+      3
+    ]
+  }
+}

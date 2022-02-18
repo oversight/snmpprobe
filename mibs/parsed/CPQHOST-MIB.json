@@ -1,0 +1,1901 @@
+{
+  "IMPORTS": [
+    [
+      "RFC1155-SMI",
+      [
+        "enterprises"
+      ]
+    ],
+    [
+      "RFC1155-SMI",
+      [
+        "IpAddress"
+      ]
+    ],
+    [
+      "RFC1213-MIB",
+      [
+        "DisplayString"
+      ]
+    ],
+    [
+      "RFC-1212",
+      [
+        "OBJECT-TYPE"
+      ]
+    ],
+    [
+      "RFC-1215",
+      [
+        "TRAP-TYPE"
+      ]
+    ],
+    [
+      "RFC1213-MIB",
+      [
+        "sysName"
+      ]
+    ]
+  ],
+  "compaq": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      232
+    ]
+  },
+  "cpqHostOs": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "compaq",
+      11
+    ]
+  },
+  "cpqHoMibRev": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHostOs",
+      1
+    ]
+  },
+  "cpqHoComponent": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHostOs",
+      2
+    ]
+  },
+  "cpqHoInterface": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHoComponent",
+      1
+    ]
+  },
+  "cpqHoInfo": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHoComponent",
+      2
+    ]
+  },
+  "cpqHoUtil": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHoComponent",
+      3
+    ]
+  },
+  "cpqHoFileSys": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHoComponent",
+      4
+    ]
+  },
+  "cpqHoIfPhysMap": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHoComponent",
+      5
+    ]
+  },
+  "cpqHoSWRunning": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHoComponent",
+      6
+    ]
+  },
+  "cpqHoSwVer": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHoComponent",
+      7
+    ]
+  },
+  "cpqHoGeneric": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHoComponent",
+      8
+    ]
+  },
+  "cpqHoSwPerf": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHoComponent",
+      9
+    ]
+  },
+  "cpqHoSystemStatus": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHoComponent",
+      10
+    ]
+  },
+  "cpqHoTrapInfo": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHoComponent",
+      11
+    ]
+  },
+  "cpqHoClients": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHoComponent",
+      12
+    ]
+  },
+  "cpqHoMemory": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHoComponent",
+      13
+    ]
+  },
+  "cpqHoFwVer": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHoComponent",
+      14
+    ]
+  },
+  "cpqHoHWInfo": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHoComponent",
+      15
+    ]
+  },
+  "cpqPwrThreshold": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHoComponent",
+      16
+    ]
+  },
+  "cpqHoOsCommon": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cpqHoInterface",
+      4
+    ]
+  },
+  "cpqHoMibRevMajor": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoMibRev",
+      1
+    ]
+  },
+  "cpqHoMibRevMinor": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoMibRev",
+      2
+    ]
+  },
+  "cpqHoMibCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoMibRev",
+      3
+    ]
+  },
+  "cpqHoOsCommonPollFreq": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoOsCommon",
+      1
+    ]
+  },
+  "cpqHoOsCommonModuleTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHoOsCommonModuleEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHoOsCommon",
+      2
+    ]
+  },
+  "cpqHoOsCommonModuleEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHoOsCommonModuleEntry"
+    },
+    "index": [
+      "cpqHoOsCommonModuleIndex"
+    ],
+    "value": [
+      "cpqHoOsCommonModuleTable",
+      1
+    ]
+  },
+  "CpqHoOsCommonModuleEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHoOsCommonModuleIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoOsCommonModuleEntry",
+      1
+    ]
+  },
+  "cpqHoOsCommonModuleName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoOsCommonModuleEntry",
+      2
+    ]
+  },
+  "cpqHoOsCommonModuleVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoOsCommonModuleEntry",
+      3
+    ]
+  },
+  "cpqHoOsCommonModuleDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHoOsCommonModuleEntry",
+      4
+    ]
+  },
+  "cpqHoOsCommonModulePurpose": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoOsCommonModuleEntry",
+      5
+    ]
+  },
+  "cpqHoName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoInfo",
+      1
+    ]
+  },
+  "cpqHoVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoInfo",
+      2
+    ]
+  },
+  "cpqHoDesc": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoInfo",
+      3
+    ]
+  },
+  "cpqHoOsType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "netware",
+        "3": "windowsnt",
+        "4": "sco-unix",
+        "5": "unixware",
+        "6": "os-2",
+        "7": "ms-dos",
+        "8": "dos-windows",
+        "9": "windows95",
+        "10": "windows98",
+        "11": "open-vms",
+        "12": "nsk",
+        "13": "windowsCE",
+        "14": "linux",
+        "15": "windows2000",
+        "16": "tru64UNIX",
+        "17": "windows2003",
+        "18": "windows2003-x64",
+        "19": "solaris",
+        "20": "windows2003-ia64",
+        "21": "windows2008",
+        "22": "windows2008-x64",
+        "23": "windows2008-ia64",
+        "24": "vmware-esx",
+        "25": "vmware-esxi",
+        "26": "windows2012",
+        "27": "windows7",
+        "28": "windows7-x64",
+        "29": "windows8",
+        "30": "windows8-x64",
+        "31": "windows81",
+        "32": "windows81-x64",
+        "33": "windowsxp",
+        "34": "windowsxp-x64",
+        "35": "windowsvista",
+        "36": "windowsvista-x64",
+        "37": "windows2008-r2",
+        "38": "windows2012-r2",
+        "39": "rhel",
+        "40": "rhel-64",
+        "41": "solaris-64",
+        "42": "sles",
+        "43": "sles-64",
+        "44": "ubuntu",
+        "45": "ubuntu-64",
+        "46": "debian",
+        "47": "debian-64",
+        "48": "linux-64-bit",
+        "49": "other-64-bit",
+        "50": "centos-32bit",
+        "51": "centos-64bit",
+        "52": "oracle-linux32",
+        "53": "oracle-linux64",
+        "54": "apple-osx",
+        "55": "windows2016",
+        "56": "nanoserver",
+        "57": "windows2019"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoInfo",
+      4
+    ]
+  },
+  "cpqHoTelnet": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "available",
+        "3": "notavailable"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoInfo",
+      5
+    ]
+  },
+  "cpqHoSystemRole": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoInfo",
+      6
+    ]
+  },
+  "cpqHoSystemRoleDetail": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoInfo",
+      7
+    ]
+  },
+  "cpqHoCrashDumpState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "completememorydump",
+        "2": "kernelmemorydump",
+        "3": "smallmemorydump",
+        "4": "none"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoInfo",
+      8
+    ]
+  },
+  "cpqHoCrashDumpCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoInfo",
+      9
+    ]
+  },
+  "cpqHoCrashDumpMonitoring": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "enabled",
+        "2": "disabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoInfo",
+      10
+    ]
+  },
+  "cpqHoMaxLogicalCPUSupported": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoInfo",
+      11
+    ]
+  },
+  "cpqHoSystemName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoInfo",
+      12
+    ]
+  },
+  "cpqHosysDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoInfo",
+      13
+    ]
+  },
+  "cpqHoCpuUtilTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHoCpuUtilEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHoUtil",
+      1
+    ]
+  },
+  "cpqHoCpuUtilEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHoCpuUtilEntry"
+    },
+    "index": [
+      "cpqHoCpuUtilUnitIndex"
+    ],
+    "value": [
+      "cpqHoCpuUtilTable",
+      1
+    ]
+  },
+  "CpqHoCpuUtilEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHoCpuUtilUnitIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoCpuUtilEntry",
+      1
+    ]
+  },
+  "cpqHoCpuUtilMin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoCpuUtilEntry",
+      2
+    ]
+  },
+  "cpqHoCpuUtilFiveMin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoCpuUtilEntry",
+      3
+    ]
+  },
+  "cpqHoCpuUtilThirtyMin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoCpuUtilEntry",
+      4
+    ]
+  },
+  "cpqHoCpuUtilHour": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoCpuUtilEntry",
+      5
+    ]
+  },
+  "cpqHoCpuUtilHwLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoCpuUtilEntry",
+      6
+    ]
+  },
+  "cpqHoFileSysTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHoFileSysEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHoFileSys",
+      1
+    ]
+  },
+  "cpqHoFileSysEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHoFileSysEntry"
+    },
+    "index": [
+      "cpqHoFileSysIndex"
+    ],
+    "value": [
+      "cpqHoFileSysTable",
+      1
+    ]
+  },
+  "CpqHoFileSysEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHoFileSysIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoFileSysEntry",
+      1
+    ]
+  },
+  "cpqHoFileSysDesc": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoFileSysEntry",
+      2
+    ]
+  },
+  "cpqHoFileSysSpaceTotal": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoFileSysEntry",
+      3
+    ]
+  },
+  "cpqHoFileSysSpaceUsed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoFileSysEntry",
+      4
+    ]
+  },
+  "cpqHoFileSysPercentSpaceUsed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoFileSysEntry",
+      5
+    ]
+  },
+  "cpqHoFileSysAllocUnitsTotal": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoFileSysEntry",
+      6
+    ]
+  },
+  "cpqHoFileSysAllocUnitsUsed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoFileSysEntry",
+      7
+    ]
+  },
+  "cpqHoFileSysStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoFileSysEntry",
+      8
+    ]
+  },
+  "cpqHoFileSysShortDesc": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoFileSysEntry",
+      9
+    ]
+  },
+  "cpqHoFileSysCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoFileSys",
+      2
+    ]
+  },
+  "cpqHoIfPhysMapTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHoIfPhysMapEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHoIfPhysMap",
+      1
+    ]
+  },
+  "cpqHoIfPhysMapEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHoIfPhysMapEntry"
+    },
+    "index": [
+      "cpqHoIfPhysMapIndex"
+    ],
+    "value": [
+      "cpqHoIfPhysMapTable",
+      1
+    ]
+  },
+  "CpqHoIfPhysMapEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHoIfPhysMapIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoIfPhysMapEntry",
+      1
+    ]
+  },
+  "cpqHoIfPhysMapSlot": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoIfPhysMapEntry",
+      2
+    ]
+  },
+  "cpqHoIfPhysMapIoBaseAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoIfPhysMapEntry",
+      3
+    ]
+  },
+  "cpqHoIfPhysMapIrq": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoIfPhysMapEntry",
+      4
+    ]
+  },
+  "cpqHoIfPhysMapDma": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoIfPhysMapEntry",
+      5
+    ]
+  },
+  "cpqHoIfPhysMapMemBaseAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoIfPhysMapEntry",
+      6
+    ]
+  },
+  "cpqHoIfPhysMapPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoIfPhysMapEntry",
+      7
+    ]
+  },
+  "cpqHoIfPhysMapDuplexState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "half",
+        "3": "full"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoIfPhysMapEntry",
+      8
+    ]
+  },
+  "cpqHoIfPhysMapCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoIfPhysMapEntry",
+      9
+    ]
+  },
+  "cpqHoIfPhysMapOverallCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoIfPhysMap",
+      2
+    ]
+  },
+  "cpqHoSWRunningTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHoSWRunningEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSWRunning",
+      1
+    ]
+  },
+  "cpqHoSWRunningEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHoSWRunningEntry"
+    },
+    "index": [
+      "cpqHoSWRunningIndex"
+    ],
+    "value": [
+      "cpqHoSWRunningTable",
+      1
+    ]
+  },
+  "CpqHoSWRunningEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHoSWRunningIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSWRunningEntry",
+      1
+    ]
+  },
+  "cpqHoSWRunningName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSWRunningEntry",
+      2
+    ]
+  },
+  "cpqHoSWRunningDesc": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSWRunningEntry",
+      3
+    ]
+  },
+  "cpqHoSWRunningVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSWRunningEntry",
+      4
+    ]
+  },
+  "cpqHoSWRunningDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSWRunningEntry",
+      5
+    ]
+  },
+  "cpqHoSWRunningMonitor": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "start",
+        "3": "stop",
+        "4": "startAndStop",
+        "5": "count",
+        "6": "startAndCount",
+        "7": "countAndStop",
+        "8": "startCountAndStop"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoSWRunningEntry",
+      6
+    ]
+  },
+  "cpqHoSWRunningState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "started",
+        "3": "stopped"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoSWRunningEntry",
+      7
+    ]
+  },
+  "cpqHoSWRunningCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSWRunningEntry",
+      8
+    ]
+  },
+  "cpqHoSWRunningCountMin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSWRunningEntry",
+      9
+    ]
+  },
+  "cpqHoSWRunningCountMax": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSWRunningEntry",
+      10
+    ]
+  },
+  "cpqHoSWRunningEventTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSWRunningEntry",
+      11
+    ]
+  },
+  "cpqHoSWRunningStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "normal",
+        "3": "warning",
+        "4": "minor",
+        "5": "major",
+        "6": "critical",
+        "7": "disabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoSWRunningEntry",
+      12
+    ]
+  },
+  "cpqHoSWRunningConfigStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "starting",
+        "3": "initialized",
+        "4": "configured",
+        "5": "operational"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoSWRunningEntry",
+      13
+    ]
+  },
+  "cpqHoSWRunningIdentifier": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSWRunningEntry",
+      14
+    ]
+  },
+  "cpqHoSWRunningRedundancyMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "master",
+        "3": "backup",
+        "4": "slave"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoSWRunningEntry",
+      15
+    ]
+  },
+  "cpqHoSwRunningTrapDesc": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSWRunning",
+      2
+    ]
+  },
+  "cpqHoSwVerNextIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSwVer",
+      1
+    ]
+  },
+  "cpqHoSwVerTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHoSwVerEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSwVer",
+      2
+    ]
+  },
+  "cpqHoSwVerEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHoSwVerEntry"
+    },
+    "index": [
+      "cpqHoSwVerIndex"
+    ],
+    "value": [
+      "cpqHoSwVerTable",
+      1
+    ]
+  },
+  "CpqHoSwVerEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHoSwVerIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSwVerEntry",
+      1
+    ]
+  },
+  "cpqHoSwVerStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "loaded",
+        "3": "notloaded"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoSwVerEntry",
+      2
+    ]
+  },
+  "cpqHoSwVerType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "driver",
+        "3": "agent",
+        "4": "sysutil",
+        "5": "application",
+        "6": "keyfile",
+        "7": "firmware"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoSwVerEntry",
+      3
+    ]
+  },
+  "cpqHoSwVerName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSwVerEntry",
+      4
+    ]
+  },
+  "cpqHoSwVerDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSwVerEntry",
+      5
+    ]
+  },
+  "cpqHoSwVerDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSwVerEntry",
+      6
+    ]
+  },
+  "cpqHoSwVerLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSwVerEntry",
+      7
+    ]
+  },
+  "cpqHoSwVerVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSwVerEntry",
+      8
+    ]
+  },
+  "cpqHoSwVerVersionBinary": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSwVerEntry",
+      9
+    ]
+  },
+  "cpqHoSwVerAgentsVer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSwVer",
+      3
+    ]
+  },
+  "cpqHoGenericData": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoGeneric",
+      1
+    ]
+  },
+  "cpqHoCriticalSoftwareUpdateData": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoGeneric",
+      2
+    ]
+  },
+  "cpqHoSwPerfAppErrorDesc": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSwPerf",
+      1
+    ]
+  },
+  "cpqHoMibStatusArray": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSystemStatus",
+      1
+    ]
+  },
+  "cpqHoConfigChangedDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSystemStatus",
+      2
+    ]
+  },
+  "cpqHoGUID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSystemStatus",
+      3
+    ]
+  },
+  "cpqHoCodeServer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSystemStatus",
+      4
+    ]
+  },
+  "cpqHoWebMgmtPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSystemStatus",
+      5
+    ]
+  },
+  "cpqHoGUIDCanonical": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSystemStatus",
+      6
+    ]
+  },
+  "cpqHoMibHealthStatusArray": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHoSystemStatus",
+      7
+    ]
+  },
+  "cpqHoTrapFlags": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoTrapInfo",
+      1
+    ]
+  },
+  "cpqHoClientLastModified": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHoClients",
+      1
+    ]
+  },
+  "cpqHoClientDelete": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoClients",
+      2
+    ]
+  },
+  "cpqHoClientTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHoClientEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHoClients",
+      3
+    ]
+  },
+  "cpqHoClientEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHoClientEntry"
+    },
+    "index": [
+      "cpqHoClientIndex"
+    ],
+    "value": [
+      "cpqHoClientTable",
+      1
+    ]
+  },
+  "CpqHoClientEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHoClientIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoClientEntry",
+      1
+    ]
+  },
+  "cpqHoClientName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoClientEntry",
+      2
+    ]
+  },
+  "cpqHoClientIpxAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHoClientEntry",
+      3
+    ]
+  },
+  "cpqHoClientIpAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "cpqHoClientEntry",
+      4
+    ]
+  },
+  "cpqHoClientCommunity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoClientEntry",
+      5
+    ]
+  },
+  "cpqHoClientID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "cpqHoClientEntry",
+      6
+    ]
+  },
+  "cpqHoPhysicalMemorySize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoMemory",
+      1
+    ]
+  },
+  "cpqHoPhysicalMemoryFree": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoMemory",
+      2
+    ]
+  },
+  "cpqHoPagingMemorySize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoMemory",
+      3
+    ]
+  },
+  "cpqHoPagingMemoryFree": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoMemory",
+      4
+    ]
+  },
+  "cpqHoBootPagingFileSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoMemory",
+      5
+    ]
+  },
+  "cpqHoBootPagingFileMinimumSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoMemory",
+      6
+    ]
+  },
+  "cpqHoBootPagingFileVolumeFreeSpace": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoMemory",
+      7
+    ]
+  },
+  "cpqHoFwVerTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CpqHoFwVerEntry"
+    },
+    "index": null,
+    "value": [
+      "cpqHoFwVer",
+      1
+    ]
+  },
+  "cpqHoFwVerEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CpqHoFwVerEntry"
+    },
+    "index": [
+      "cpqHoFwVerIndex"
+    ],
+    "value": [
+      "cpqHoFwVerTable",
+      1
+    ]
+  },
+  "CpqHoFwVerEntry": {
+    "tp": "SEQUENCE"
+  },
+  "cpqHoFwVerIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqHoFwVerEntry",
+      1
+    ]
+  },
+  "cpqHoFwVerCategory": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "storage",
+        "3": "nic",
+        "4": "rib",
+        "5": "system"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoFwVerEntry",
+      2
+    ]
+  },
+  "cpqHoFwVerDeviceType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "internalArrayController",
+        "3": "fibreArrayController",
+        "4": "scsiController",
+        "5": "fibreChannelTapeController",
+        "6": "modularDataRouter",
+        "7": "ideCdRomDrive",
+        "8": "ideDiskDrive",
+        "9": "scsiCdRom-ScsiAttached",
+        "10": "scsiDiskDrive-ScsiAttached",
+        "11": "scsiTapeDrive-ScsiAttached",
+        "12": "scsiTapeLibrary-ScsiAttached",
+        "13": "scsiDiskDrive-ArrayAttached",
+        "14": "scsiTapeDrive-ArrayAttached",
+        "15": "scsiTapeLibrary-ArrayAttached",
+        "16": "scsiDiskDrive-FibreAttached",
+        "17": "scsiTapeDrive-FibreAttached",
+        "18": "scsiTapeLibrary-FibreAttached",
+        "19": "scsiEnclosureBackplaneRom-ScsiAttached",
+        "20": "scsiEnclosureBackplaneRom-ArrayAttached",
+        "21": "scsiEnclosureBackplaneRom-FibreAttached",
+        "22": "scsiEnclosureBackplaneRom-ra4x00",
+        "23": "systemRom",
+        "24": "networkInterfaceController",
+        "25": "remoteInsightBoard",
+        "26": "sasDiskDrive-SasAttached",
+        "27": "sataDiskDrive-SataAttached",
+        "28": "usbController",
+        "29": "sasControllerAdapter",
+        "30": "sataControllerAdapter",
+        "31": "systemDevice",
+        "32": "fibreChannelHba",
+        "33": "convergedNetworkAdapter",
+        "34": "ideController"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoFwVerEntry",
+      3
+    ]
+  },
+  "cpqHoFwVerDisplayName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoFwVerEntry",
+      4
+    ]
+  },
+  "cpqHoFwVerVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoFwVerEntry",
+      5
+    ]
+  },
+  "cpqHoFwVerLocation": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoFwVerEntry",
+      6
+    ]
+  },
+  "cpqHoFwVerXmlString": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoFwVerEntry",
+      7
+    ]
+  },
+  "cpqHoFwVerKeyString": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqHoFwVerEntry",
+      8
+    ]
+  },
+  "cpqHoFwVerUpdateMethod": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "noUpdate",
+        "3": "softwareflash",
+        "4": "replacePhysicalRom"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoFwVerEntry",
+      9
+    ]
+  },
+  "cpqHoHWInfoPlatform": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "cellular",
+        "3": "foundation",
+        "4": "virtualMachine",
+        "5": "serverBlade"
+      }
+    },
+    "index": null,
+    "value": [
+      "cpqHoHWInfo",
+      1
+    ]
+  },
+  "cpqPwrWarnType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqPwrThreshold",
+      1
+    ]
+  },
+  "cpqPwrWarnThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqPwrThreshold",
+      2
+    ]
+  },
+  "cpqPwrWarnDuration": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "cpqPwrThreshold",
+      3
+    ]
+  },
+  "cpqSerialNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqPwrThreshold",
+      4
+    ]
+  },
+  "cpqServerUUID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "cpqPwrThreshold",
+      5
+    ]
+  }
+}

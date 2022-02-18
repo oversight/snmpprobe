@@ -1,0 +1,731 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "Gauge32",
+        "Integer32",
+        "Unsigned32",
+        "Counter64"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION"
+      ]
+    ],
+    [
+      "CISCO-SMI",
+      [
+        "ciscoModules"
+      ]
+    ]
+  ],
+  "ciscoTextualConventions": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "ciscoModules",
+      1
+    ]
+  },
+  "Layer2Cos": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  },
+  "CiscoNetworkProtocol": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "ip",
+        "2": "decnet",
+        "3": "pup",
+        "4": "chaos",
+        "5": "xns",
+        "6": "x121",
+        "7": "appletalk",
+        "8": "clns",
+        "9": "lat",
+        "10": "vines",
+        "11": "cons",
+        "12": "apollo",
+        "13": "stun",
+        "14": "novell",
+        "15": "qllc",
+        "16": "snapshot",
+        "17": "atmIlmi",
+        "18": "bstun",
+        "19": "x25pvc",
+        "20": "ipv6",
+        "21": "cdm",
+        "22": "nbf",
+        "23": "bpxIgx",
+        "24": "clnsPfx",
+        "25": "http",
+        "65535": "unknown"
+      }
+    },
+    "display_hint": null
+  },
+  "CiscoNetworkAddress": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "Unsigned64": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "display_hint": null
+  },
+  "InterfaceIndexOrZero": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  },
+  "SAPType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  },
+  "CountryCode": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "CountryCodeITU": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "display_hint": null
+  },
+  "EntPhysicalIndexOrZero": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  },
+  "CiscoRowOperStatus": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "active",
+        "2": "activeDependencies",
+        "3": "inactiveDependency",
+        "4": "missingDependency"
+      }
+    },
+    "display_hint": null
+  },
+  "CiscoPort": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  },
+  "CiscoIpProtocol": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  },
+  "CiscoLocationClass": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "chassis",
+        "2": "shelf",
+        "3": "slot",
+        "4": "subSlot",
+        "5": "port",
+        "6": "subPort",
+        "7": "channel",
+        "8": "subChannel"
+      }
+    },
+    "display_hint": null
+  },
+  "CiscoLocationSpecifier": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "CiscoInetAddressMask": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "display_hint": null
+  },
+  "CiscoAbsZeroBasedCounter32": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "display_hint": null
+  },
+  "CiscoSnapShotAbsCounter32": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "display_hint": null
+  },
+  "CiscoAlarmSeverity": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "cleared",
+        "2": "indeterminate",
+        "3": "critical",
+        "4": "major",
+        "5": "minor",
+        "6": "warning",
+        "7": "info"
+      }
+    },
+    "display_hint": null
+  },
+  "PerfHighIntervalCount": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "display_hint": null
+  },
+  "ConfigIterator": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "display_hint": null
+  },
+  "BulkConfigResult": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "ListIndex": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  },
+  "ListIndexOrZero": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  },
+  "TimeIntervalSec": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "display_hint": null
+  },
+  "TimeIntervalMin": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "display_hint": null
+  },
+  "CiscoMilliSeconds": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "display_hint": null
+  },
+  "MicroSeconds": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "display_hint": null
+  },
+  "CiscoPortList": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "CiscoPortListRange": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "oneto2k",
+        "2": "twoKto4K",
+        "3": "fourKto6K",
+        "4": "sixKto8K",
+        "5": "eightKto10K",
+        "6": "tenKto12K",
+        "7": "twelveKto14K",
+        "8": "fourteenKto16K"
+      }
+    },
+    "display_hint": null
+  },
+  "IfOperStatusReason": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "none",
+        "3": "hwFailure",
+        "4": "loopbackDiagFailure",
+        "5": "errorDisabled",
+        "6": "swFailure",
+        "7": "linkFailure",
+        "8": "offline",
+        "9": "nonParticipating",
+        "10": "initializing",
+        "11": "vsanInactive",
+        "12": "adminDown",
+        "13": "channelAdminDown",
+        "14": "channelOperSuspended",
+        "15": "channelConfigurationInProgress",
+        "16": "rcfInProgress",
+        "17": "elpFailureIsolation",
+        "18": "escFailureIsolation",
+        "19": "domainOverlapIsolation",
+        "20": "domainAddrAssignFailureIsolation",
+        "21": "domainOtherSideEportIsolation",
+        "22": "domainInvalidRcfReceived",
+        "23": "domainManagerDisabled",
+        "24": "zoneMergeFailureIsolation",
+        "25": "vsanMismatchIsolation",
+        "26": "parentDown",
+        "27": "srcPortNotBound",
+        "28": "interfaceRemoved",
+        "29": "fcotNotPresent",
+        "30": "fcotVendorNotSupported",
+        "31": "incompatibleAdminMode",
+        "32": "incompatibleAdminSpeed",
+        "33": "suspendedByMode",
+        "34": "suspendedBySpeed",
+        "35": "suspendedByWWN",
+        "36": "domainMaxReTxFailure",
+        "37": "eppFailure",
+        "38": "portVsanMismatchIsolation",
+        "39": "loopbackIsolation",
+        "40": "upgradeInProgress",
+        "41": "incompatibleAdminRxBbCredit",
+        "42": "incompatibleAdminRxBufferSize",
+        "43": "portChannelMembersDown",
+        "44": "zoneRemoteNoRespIsolation",
+        "45": "firstPortUpAsEport",
+        "46": "firstPortNotUp",
+        "47": "peerFCIPPortClosedConnection",
+        "48": "peerFCIPPortResetConnection",
+        "49": "fcipPortMaxReTx",
+        "50": "fcipPortKeepAliveTimerExpire",
+        "51": "fcipPortPersistTimerExpire",
+        "52": "fcipPortSrcLinkDown",
+        "53": "fcipPortSrcAdminDown",
+        "54": "fcipPortAdminCfgChange",
+        "55": "fcipSrcPortRemoved",
+        "56": "fcipSrcModuleNotOnline",
+        "57": "invalidConfig",
+        "58": "portBindFailure",
+        "59": "portFabricBindFailure",
+        "60": "noCommonVsanIsolation",
+        "61": "ficonVsanDown",
+        "62": "invalidAttachment",
+        "63": "portBlocked",
+        "64": "incomAdminRxBbCreditPerBuf",
+        "65": "tooManyInvalidFlogis",
+        "66": "deniedDueToPortBinding",
+        "67": "elpFailureRevMismatch",
+        "68": "elpFailureClassFParamErr",
+        "69": "elpFailureClassNParamErr",
+        "70": "elpFailureUnknownFlowCtlCode",
+        "71": "elpFailureInvalidFlowCtlParam",
+        "72": "elpFailureInvalidPortName",
+        "73": "elpFailureInvalidSwitchName",
+        "74": "elpFailureRatovEdtovMismatch",
+        "75": "elpFailureLoopbackDetected",
+        "76": "elpFailureInvalidTxBbCredit",
+        "77": "elpFailureInvalidPayloadSize",
+        "78": "bundleMisCfg",
+        "79": "bitErrRuntimeThreshExceeded",
+        "80": "linkFailLinkReset",
+        "81": "linkFailPortInitFail",
+        "82": "linkFailPortUnusable",
+        "83": "linkFailLossOfSignal",
+        "84": "linkFailLossOfSync",
+        "85": "linkFailNosRcvd",
+        "86": "linkFailOLSRcvd",
+        "87": "linkFailDebounceTimeout",
+        "88": "linkFailLrRcvd",
+        "89": "linkFailCreditLoss",
+        "90": "linkFailRxQOverflow",
+        "91": "linkFailTooManyInterrupts",
+        "92": "linkFailLipRcvdBb",
+        "93": "linkFailBbCreditLoss",
+        "94": "linkFailOpenPrimSignalTimeout",
+        "95": "linkFailOpenPrimSignalReturned",
+        "96": "linkFailLipF8Rcvd",
+        "97": "linkFailLineCardPortShutdown",
+        "98": "fcspAuthenfailure",
+        "99": "fcotChecksumError",
+        "100": "ohmsExtLoopbackTest",
+        "101": "invalidFabricBindExchange",
+        "102": "tovMismatch",
+        "103": "ficonNotEnabled",
+        "104": "ficonNoPortNumber",
+        "105": "ficonBeingEnabled",
+        "106": "ePortProhibited",
+        "107": "portGracefulShutdown",
+        "108": "trunkNotFullyActive",
+        "109": "fabricBindingSwitchWwnNotFound",
+        "110": "fabricBindingDomainInvalid",
+        "111": "fabricBindingDbMismatch",
+        "112": "fabricBindingNoRspFromPeer",
+        "113": "dpvmVsanSuspended",
+        "114": "dpvmVsanNotFound",
+        "115": "trackedPortDown",
+        "116": "ecSuspendedOnLoop",
+        "117": "isolateBundleMisCfg",
+        "118": "noPeerBundleSupport",
+        "119": "portBringupIsolation",
+        "120": "domainNotAllowedIsolated",
+        "121": "virtualIvrDomainOverlapIsolation",
+        "122": "outOfService",
+        "123": "portAuthFailed",
+        "124": "bundleStandby",
+        "125": "portConnectorTypeErr",
+        "126": "errorDisabledReInitLmtReached",
+        "127": "ficonDupPortNum",
+        "128": "localRcf",
+        "129": "twoSwitchesWithSameWWN",
+        "130": "invalidOtherSidePrincEFPReqRecd",
+        "131": "domainOther",
+        "132": "elpFailureAllZeroPeerWWNRcvd",
+        "133": "preferredPathIsolation",
+        "134": "fcRedirectIsolation",
+        "135": "portActLicenseNotAvailable",
+        "136": "sdmIsolation",
+        "137": "fcidAllocationFailed",
+        "138": "externallyDisabled",
+        "139": "unavailableNPVUpstreamPort",
+        "140": "unavailableNPVPrefUpstreamPort",
+        "141": "sfpReadError",
+        "142": "stickyDownOnLinkFailure",
+        "143": "tooManyLinkFlapsErr",
+        "144": "unidirectionalUDLD",
+        "145": "txRxLoopUDLD",
+        "146": "neighborMismatchUDLD",
+        "147": "authzPending",
+        "148": "hotStdbyInBundle",
+        "149": "incompleteConfig",
+        "150": "incompleteTunnelCfg",
+        "151": "hwProgrammingFailed",
+        "152": "tunnelDstUnreachable",
+        "153": "suspendByMtu",
+        "154": "sfpInvalid",
+        "155": "sfpAbsent",
+        "156": "portCapabilitiesUnknown",
+        "157": "channelErrDisabled",
+        "158": "vrfMismatch",
+        "159": "vrfForwardReferencing",
+        "160": "dupTunnelConfigDetected",
+        "161": "primaryVLANDown",
+        "162": "vrfUnusable",
+        "163": "errDisableHandShkFailure",
+        "164": "errDisabledBPDUGuard",
+        "165": "dot1xSecViolationErrDisabled",
+        "166": "emptyEchoUDLD",
+        "167": "vfTaggingCapErr",
+        "168": "portDisabled",
+        "169": "tunnelModeNotConfigured",
+        "170": "tunnelSrcNotConfigured",
+        "171": "tunnelDstNotConfigured",
+        "172": "tunnelUnableToResolveSrcIP",
+        "173": "tunnelUnableToResolveDstIP",
+        "174": "tunnelVrfDown",
+        "175": "sifAdminDown",
+        "176": "phyIntfDown",
+        "177": "ifSifLimitExceeded",
+        "178": "sifHoldDown",
+        "179": "noFcoe",
+        "180": "dcxCompatMismatch",
+        "181": "isolateBundleLimitExceeded",
+        "182": "sifNotBound",
+        "183": "errDisabledLacpMiscfg",
+        "184": "satFabricIfDown",
+        "185": "invalidSatFabricIf",
+        "186": "noRemoteChassis",
+        "187": "vicEnableNotReceived",
+        "188": "vicDisableReceived",
+        "189": "vlanVsanMappingNotEnabled",
+        "190": "stpNotFwdingInFcoeMappedVlan",
+        "191": "moduleOffline",
+        "192": "udldAggModeLinkFailure",
+        "193": "stpInconsVpcPeerDisabled",
+        "194": "setPortStateFailed",
+        "195": "suspendedByVpc",
+        "196": "vpcCfgInProgress",
+        "197": "vpcPeerLinkDown",
+        "198": "vpcNoRspFromPeer",
+        "199": "protoPortSuspend",
+        "200": "tunnelSrcDown",
+        "201": "cdpInfoUnavailable",
+        "202": "fexSfpInvalid",
+        "203": "errDisabledIpConflict",
+        "204": "fcotClkRateMismatch",
+        "205": "portGuardTrustSecViolation",
+        "206": "sdpTimeout",
+        "207": "satIncompatTopo",
+        "208": "waitForFlogi",
+        "209": "satNotConfigured",
+        "210": "npivNotEnabledInUpstream",
+        "211": "vsanMismatchWithUpstreamSwPort",
+        "212": "portGuardBitErrRate",
+        "213": "portGuardSigLoss",
+        "214": "portGuardSyncLoss",
+        "215": "portGuardLinkReset",
+        "216": "portGuardCreditLoss",
+        "217": "ipQosMgrPolicyAppFailure",
+        "218": "pauseRateLimitErrDisabled",
+        "219": "lstGrpUplinkDown",
+        "220": "stickyDnLinkFailure",
+        "221": "routerMacFailure",
+        "222": "dcxMultipleMsapIds",
+        "223": "dcxHundredPdusRcvdNoAck",
+        "224": "enmSatIncompatibleUplink",
+        "225": "enmLoopDetected",
+        "226": "nonStickyExternallyDisabled",
+        "227": "subGroupIdNotAssigned",
+        "228": "vemUnlicensed",
+        "229": "profileNotFound",
+        "230": "nonExistentVlan",
+        "231": "vlanInvalidType",
+        "232": "vlanDown",
+        "233": "vpcPeerUpgrade",
+        "234": "ipQosDcbxpCompatFailure",
+        "235": "nonCiscoHbaVfTag",
+        "236": "domainIdConfigMismatch",
+        "237": "sfpSpeedMismatch",
+        "238": "xcvrInitializing",
+        "239": "xcvrAbsent",
+        "240": "xcvrInvalid",
+        "241": "vfcBindingInvalid",
+        "242": "vlanNotFcoeEnabled",
+        "243": "pvlanNativeVlanErr",
+        "244": "ethL2VlanDown",
+        "245": "ethIntfInvalidBinding",
+        "246": "pmonFailure",
+        "247": "l3NotReady",
+        "248": "speedMismatch",
+        "249": "flowControlMismatch",
+        "250": "vdcMode",
+        "251": "suspendedDueToMinLinks",
+        "252": "enmPinFailLinkDown",
+        "253": "inactiveM1PortFpathActiveVlan",
+        "254": "parentPortDown",
+        "255": "moduleRemoved",
+        "256": "corePortMct",
+        "257": "nonCorePortMct",
+        "258": "ficonInorderNotActive",
+        "259": "invalidEncapsulation",
+        "260": "modemLineDeasserted",
+        "261": "ipSecHndshkInProgress",
+        "262": "sfpEthCompliantErr",
+        "263": "cellularModemUnattached",
+        "264": "outOfGlblRxBuffers",
+        "265": "sfpFcCompliantErr",
+        "266": "ethIntfNotLicensed",
+        "267": "domainIdsInvalid",
+        "268": "fabricNameInvalid",
+        "269": "ficonNoPortSwapLogicalPort",
+        "270": "ficonInvalidPortNum",
+        "271": "remotePortInL2vpnDown",
+        "272": "suspendedDueToNoLacpPdus",
+        "273": "fcotValidationFailedAtDriver",
+        "274": "unsupportedTransceiverMd5DigestNotSame",
+        "275": "unsupportedTransceiver",
+        "276": "adminStateConfigChange",
+        "277": "vlanAllowedList",
+        "278": "vlanAllowedListOverride",
+        "279": "vlanAllowedListAdd",
+        "280": "vlanAllowedRemove",
+        "281": "vlanCfgStateChange",
+        "282": "vlanCfgDelete",
+        "283": "pppPeerNotResponding",
+        "284": "pppAuthFailed",
+        "285": "xcvrAuthFailed",
+        "286": "badFramesRcvdFromLink",
+        "287": "physicalPortHotStandBy",
+        "288": "wimaxModemUnattached",
+        "289": "wpanModemUnattached",
+        "290": "rbhModulo",
+        "291": "fpcMinLinkNotMet",
+        "292": "misCabling",
+        "293": "rcvSrpOnNonFcoeFex",
+        "294": "acessPortOnBd",
+        "295": "lacpMisConfig",
+        "300": "fortyGMemberPort",
+        "301": "goldLoopBackTest",
+        "302": "edpError",
+        "303": "vpcCompCheckFailed",
+        "304": "aclQosNoResource",
+        "305": "vpcShutdown",
+        "306": "notPcMember",
+        "307": "systemIntfShut",
+        "308": "speedGroupConfigMisMatch",
+        "310": "dot1qMisConfig",
+        "311": "mdMisMatch",
+        "312": "vpcPeerLinkShut",
+        "313": "notAvailable"
+      }
+    },
+    "display_hint": null
+  },
+  "EntLogicalIndexOrZero": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  },
+  "CiscoURLString": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "CiscoURLStringOrEmpty": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "CiscoHTTPResponseStatusCode": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "display_hint": null
+  },
+  "CvE164Address": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "CiscoVlanList": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "CiscoCosList": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "BITS",
+      "values": {
+        "0": "cos0",
+        "1": "cos1",
+        "2": "cos2",
+        "3": "cos3",
+        "4": "cos4",
+        "5": "cos5",
+        "6": "cos6",
+        "7": "cos7"
+      }
+    },
+    "display_hint": null
+  },
+  "CiscoPbbServiceIdentifier": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "display_hint": null
+  },
+  "CiscoBridgeDomain": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "display_hint": null
+  },
+  "Cisco2KVlanList": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "CiscoInterfaceIndexList": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "CiscoVrfName": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "CiscoEntityIndexList": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "CiscoVlanIndex": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": null
+  },
+  "CiscoAbsZeroBasedCounter64": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "display_hint": null
+  }
+}

@@ -1,0 +1,400 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Unsigned32",
+        "Counter64"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "DisplayString",
+        "TruthValue"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "enterprises"
+      ]
+    ]
+  ],
+  "nimble": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "enterprises",
+      37447
+    ]
+  },
+  "variables": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "nimble",
+      1
+    ]
+  },
+  "volNumberOfVolumes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "variables",
+      1
+    ]
+  },
+  "volTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF VolEntry"
+    },
+    "index": null,
+    "value": [
+      "variables",
+      2
+    ]
+  },
+  "volEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "VolEntry"
+    },
+    "index": [
+      "volIndex"
+    ],
+    "value": [
+      "volTable",
+      1
+    ]
+  },
+  "VolEntry": {
+    "tp": "SEQUENCE"
+  },
+  "volIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "volEntry",
+      1
+    ]
+  },
+  "volID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "volEntry",
+      2
+    ]
+  },
+  "volName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "volEntry",
+      3
+    ]
+  },
+  "volSizeLow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "volEntry",
+      4
+    ]
+  },
+  "volSizeHigh": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "volEntry",
+      5
+    ]
+  },
+  "volUsageLow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "volEntry",
+      6
+    ]
+  },
+  "volUsageHigh": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "volEntry",
+      7
+    ]
+  },
+  "volReserveLow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "volEntry",
+      8
+    ]
+  },
+  "volReserveHigh": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "volEntry",
+      9
+    ]
+  },
+  "volOnline": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "volEntry",
+      10
+    ]
+  },
+  "volNumConnections": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "volEntry",
+      11
+    ]
+  },
+  "globalStats": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "variables",
+      3
+    ]
+  },
+  "statTimeEpochSeconds": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "globalStats",
+      1
+    ]
+  },
+  "ioReads": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "globalStats",
+      2
+    ]
+  },
+  "ioSeqReads": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "globalStats",
+      3
+    ]
+  },
+  "ioWrites": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "globalStats",
+      4
+    ]
+  },
+  "ioSeqWrites": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "globalStats",
+      5
+    ]
+  },
+  "ioReadTimeMicrosec": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "globalStats",
+      6
+    ]
+  },
+  "ioWriteTimeMicrosec": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "globalStats",
+      7
+    ]
+  },
+  "ioReadBytes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "globalStats",
+      8
+    ]
+  },
+  "ioSeqReadBytes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "globalStats",
+      9
+    ]
+  },
+  "ioWriteBytes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "globalStats",
+      10
+    ]
+  },
+  "ioSeqWriteBytes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "globalStats",
+      11
+    ]
+  },
+  "diskVolBytesUsedLow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "globalStats",
+      12
+    ]
+  },
+  "diskVolBytesUsedHigh": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "globalStats",
+      13
+    ]
+  },
+  "diskSnapBytesUsedLow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "globalStats",
+      14
+    ]
+  },
+  "diskSnapBytesUsedHigh": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Unsigned32"
+    },
+    "index": null,
+    "value": [
+      "globalStats",
+      15
+    ]
+  },
+  "ioNonseqReadHits": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "globalStats",
+      16
+    ]
+  },
+  "arrays": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "nimble",
+      3
+    ]
+  },
+  "arrayEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "arrays",
+      1
+    ]
+  }
+}

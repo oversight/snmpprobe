@@ -1,0 +1,2605 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "OBJECT-IDENTITY",
+        "NOTIFICATION-TYPE",
+        "mib-2",
+        "Counter32",
+        "Integer32",
+        "TimeTicks"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION",
+        "DisplayString"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP",
+        "NOTIFICATION-GROUP"
+      ]
+    ]
+  ],
+  "rmonMibModule": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "rmonConformance",
+      8
+    ]
+  },
+  "rmon": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "mib-2",
+      16
+    ]
+  },
+  "OwnerString": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "EntryStatus": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "valid",
+        "2": "createRequest",
+        "3": "underCreation",
+        "4": "invalid"
+      }
+    },
+    "display_hint": null
+  },
+  "statistics": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "rmon",
+      1
+    ]
+  },
+  "history": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "rmon",
+      2
+    ]
+  },
+  "alarm": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "rmon",
+      3
+    ]
+  },
+  "hosts": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "rmon",
+      4
+    ]
+  },
+  "hostTopN": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "rmon",
+      5
+    ]
+  },
+  "matrix": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "rmon",
+      6
+    ]
+  },
+  "filter": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "rmon",
+      7
+    ]
+  },
+  "capture": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "rmon",
+      8
+    ]
+  },
+  "event": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "rmon",
+      9
+    ]
+  },
+  "rmonConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "rmon",
+      20
+    ]
+  },
+  "etherStatsTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF EtherStatsEntry"
+    },
+    "index": null,
+    "value": [
+      "statistics",
+      1
+    ]
+  },
+  "etherStatsEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EtherStatsEntry"
+    },
+    "index": [
+      "etherStatsIndex"
+    ],
+    "value": [
+      "etherStatsTable",
+      1
+    ]
+  },
+  "EtherStatsEntry": {
+    "tp": "SEQUENCE"
+  },
+  "etherStatsIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      1
+    ]
+  },
+  "etherStatsDataSource": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      2
+    ]
+  },
+  "etherStatsDropEvents": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      3
+    ]
+  },
+  "etherStatsOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      4
+    ]
+  },
+  "etherStatsPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      5
+    ]
+  },
+  "etherStatsBroadcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      6
+    ]
+  },
+  "etherStatsMulticastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      7
+    ]
+  },
+  "etherStatsCRCAlignErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      8
+    ]
+  },
+  "etherStatsUndersizePkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      9
+    ]
+  },
+  "etherStatsOversizePkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      10
+    ]
+  },
+  "etherStatsFragments": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      11
+    ]
+  },
+  "etherStatsJabbers": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      12
+    ]
+  },
+  "etherStatsCollisions": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      13
+    ]
+  },
+  "etherStatsPkts64Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      14
+    ]
+  },
+  "etherStatsPkts65to127Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      15
+    ]
+  },
+  "etherStatsPkts128to255Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      16
+    ]
+  },
+  "etherStatsPkts256to511Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      17
+    ]
+  },
+  "etherStatsPkts512to1023Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      18
+    ]
+  },
+  "etherStatsPkts1024to1518Octets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      19
+    ]
+  },
+  "etherStatsOwner": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OwnerString"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      20
+    ]
+  },
+  "etherStatsStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntryStatus"
+    },
+    "index": null,
+    "value": [
+      "etherStatsEntry",
+      21
+    ]
+  },
+  "historyControlTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HistoryControlEntry"
+    },
+    "index": null,
+    "value": [
+      "history",
+      1
+    ]
+  },
+  "historyControlEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HistoryControlEntry"
+    },
+    "index": [
+      "historyControlIndex"
+    ],
+    "value": [
+      "historyControlTable",
+      1
+    ]
+  },
+  "HistoryControlEntry": {
+    "tp": "SEQUENCE"
+  },
+  "historyControlIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "historyControlEntry",
+      1
+    ]
+  },
+  "historyControlDataSource": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "historyControlEntry",
+      2
+    ]
+  },
+  "historyControlBucketsRequested": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "historyControlEntry",
+      3
+    ]
+  },
+  "historyControlBucketsGranted": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "historyControlEntry",
+      4
+    ]
+  },
+  "historyControlInterval": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "historyControlEntry",
+      5
+    ]
+  },
+  "historyControlOwner": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OwnerString"
+    },
+    "index": null,
+    "value": [
+      "historyControlEntry",
+      6
+    ]
+  },
+  "historyControlStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntryStatus"
+    },
+    "index": null,
+    "value": [
+      "historyControlEntry",
+      7
+    ]
+  },
+  "etherHistoryTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF EtherHistoryEntry"
+    },
+    "index": null,
+    "value": [
+      "history",
+      2
+    ]
+  },
+  "etherHistoryEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EtherHistoryEntry"
+    },
+    "index": [
+      "etherHistoryIndex",
+      "etherHistorySampleIndex"
+    ],
+    "value": [
+      "etherHistoryTable",
+      1
+    ]
+  },
+  "EtherHistoryEntry": {
+    "tp": "SEQUENCE"
+  },
+  "etherHistoryIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "etherHistoryEntry",
+      1
+    ]
+  },
+  "etherHistorySampleIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "etherHistoryEntry",
+      2
+    ]
+  },
+  "etherHistoryIntervalStart": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "etherHistoryEntry",
+      3
+    ]
+  },
+  "etherHistoryDropEvents": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherHistoryEntry",
+      4
+    ]
+  },
+  "etherHistoryOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherHistoryEntry",
+      5
+    ]
+  },
+  "etherHistoryPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherHistoryEntry",
+      6
+    ]
+  },
+  "etherHistoryBroadcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherHistoryEntry",
+      7
+    ]
+  },
+  "etherHistoryMulticastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherHistoryEntry",
+      8
+    ]
+  },
+  "etherHistoryCRCAlignErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherHistoryEntry",
+      9
+    ]
+  },
+  "etherHistoryUndersizePkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherHistoryEntry",
+      10
+    ]
+  },
+  "etherHistoryOversizePkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherHistoryEntry",
+      11
+    ]
+  },
+  "etherHistoryFragments": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherHistoryEntry",
+      12
+    ]
+  },
+  "etherHistoryJabbers": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherHistoryEntry",
+      13
+    ]
+  },
+  "etherHistoryCollisions": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "etherHistoryEntry",
+      14
+    ]
+  },
+  "etherHistoryUtilization": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "etherHistoryEntry",
+      15
+    ]
+  },
+  "alarmTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF AlarmEntry"
+    },
+    "index": null,
+    "value": [
+      "alarm",
+      1
+    ]
+  },
+  "alarmEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "AlarmEntry"
+    },
+    "index": [
+      "alarmIndex"
+    ],
+    "value": [
+      "alarmTable",
+      1
+    ]
+  },
+  "AlarmEntry": {
+    "tp": "SEQUENCE"
+  },
+  "alarmIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "alarmEntry",
+      1
+    ]
+  },
+  "alarmInterval": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "alarmEntry",
+      2
+    ]
+  },
+  "alarmVariable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "alarmEntry",
+      3
+    ]
+  },
+  "alarmSampleType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "absoluteValue",
+        "2": "deltaValue"
+      }
+    },
+    "index": null,
+    "value": [
+      "alarmEntry",
+      4
+    ]
+  },
+  "alarmValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "alarmEntry",
+      5
+    ]
+  },
+  "alarmStartupAlarm": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "risingAlarm",
+        "2": "fallingAlarm",
+        "3": "risingOrFallingAlarm"
+      }
+    },
+    "index": null,
+    "value": [
+      "alarmEntry",
+      6
+    ]
+  },
+  "alarmRisingThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "alarmEntry",
+      7
+    ]
+  },
+  "alarmFallingThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "alarmEntry",
+      8
+    ]
+  },
+  "alarmRisingEventIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "alarmEntry",
+      9
+    ]
+  },
+  "alarmFallingEventIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "alarmEntry",
+      10
+    ]
+  },
+  "alarmOwner": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OwnerString"
+    },
+    "index": null,
+    "value": [
+      "alarmEntry",
+      11
+    ]
+  },
+  "alarmStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntryStatus"
+    },
+    "index": null,
+    "value": [
+      "alarmEntry",
+      12
+    ]
+  },
+  "hostControlTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HostControlEntry"
+    },
+    "index": null,
+    "value": [
+      "hosts",
+      1
+    ]
+  },
+  "hostControlEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HostControlEntry"
+    },
+    "index": [
+      "hostControlIndex"
+    ],
+    "value": [
+      "hostControlTable",
+      1
+    ]
+  },
+  "HostControlEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hostControlIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hostControlEntry",
+      1
+    ]
+  },
+  "hostControlDataSource": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "hostControlEntry",
+      2
+    ]
+  },
+  "hostControlTableSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hostControlEntry",
+      3
+    ]
+  },
+  "hostControlLastDeleteTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "hostControlEntry",
+      4
+    ]
+  },
+  "hostControlOwner": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OwnerString"
+    },
+    "index": null,
+    "value": [
+      "hostControlEntry",
+      5
+    ]
+  },
+  "hostControlStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntryStatus"
+    },
+    "index": null,
+    "value": [
+      "hostControlEntry",
+      6
+    ]
+  },
+  "hostTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HostEntry"
+    },
+    "index": null,
+    "value": [
+      "hosts",
+      2
+    ]
+  },
+  "hostEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HostEntry"
+    },
+    "index": [
+      "hostIndex",
+      "hostAddress"
+    ],
+    "value": [
+      "hostTable",
+      1
+    ]
+  },
+  "HostEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hostAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "hostEntry",
+      1
+    ]
+  },
+  "hostCreationOrder": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hostEntry",
+      2
+    ]
+  },
+  "hostIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hostEntry",
+      3
+    ]
+  },
+  "hostInPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "hostEntry",
+      4
+    ]
+  },
+  "hostOutPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "hostEntry",
+      5
+    ]
+  },
+  "hostInOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "hostEntry",
+      6
+    ]
+  },
+  "hostOutOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "hostEntry",
+      7
+    ]
+  },
+  "hostOutErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "hostEntry",
+      8
+    ]
+  },
+  "hostOutBroadcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "hostEntry",
+      9
+    ]
+  },
+  "hostOutMulticastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "hostEntry",
+      10
+    ]
+  },
+  "hostTimeTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HostTimeEntry"
+    },
+    "index": null,
+    "value": [
+      "hosts",
+      3
+    ]
+  },
+  "hostTimeEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HostTimeEntry"
+    },
+    "index": [
+      "hostTimeIndex",
+      "hostTimeCreationOrder"
+    ],
+    "value": [
+      "hostTimeTable",
+      1
+    ]
+  },
+  "HostTimeEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hostTimeAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "hostTimeEntry",
+      1
+    ]
+  },
+  "hostTimeCreationOrder": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hostTimeEntry",
+      2
+    ]
+  },
+  "hostTimeIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hostTimeEntry",
+      3
+    ]
+  },
+  "hostTimeInPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "hostTimeEntry",
+      4
+    ]
+  },
+  "hostTimeOutPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "hostTimeEntry",
+      5
+    ]
+  },
+  "hostTimeInOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "hostTimeEntry",
+      6
+    ]
+  },
+  "hostTimeOutOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "hostTimeEntry",
+      7
+    ]
+  },
+  "hostTimeOutErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "hostTimeEntry",
+      8
+    ]
+  },
+  "hostTimeOutBroadcastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "hostTimeEntry",
+      9
+    ]
+  },
+  "hostTimeOutMulticastPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "hostTimeEntry",
+      10
+    ]
+  },
+  "hostTopNControlTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HostTopNControlEntry"
+    },
+    "index": null,
+    "value": [
+      "hostTopN",
+      1
+    ]
+  },
+  "hostTopNControlEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HostTopNControlEntry"
+    },
+    "index": [
+      "hostTopNControlIndex"
+    ],
+    "value": [
+      "hostTopNControlTable",
+      1
+    ]
+  },
+  "HostTopNControlEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hostTopNControlIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hostTopNControlEntry",
+      1
+    ]
+  },
+  "hostTopNHostIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hostTopNControlEntry",
+      2
+    ]
+  },
+  "hostTopNRateBase": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "hostTopNInPkts",
+        "2": "hostTopNOutPkts",
+        "3": "hostTopNInOctets",
+        "4": "hostTopNOutOctets",
+        "5": "hostTopNOutErrors",
+        "6": "hostTopNOutBroadcastPkts",
+        "7": "hostTopNOutMulticastPkts"
+      }
+    },
+    "index": null,
+    "value": [
+      "hostTopNControlEntry",
+      3
+    ]
+  },
+  "hostTopNTimeRemaining": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hostTopNControlEntry",
+      4
+    ]
+  },
+  "hostTopNDuration": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hostTopNControlEntry",
+      5
+    ]
+  },
+  "hostTopNRequestedSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hostTopNControlEntry",
+      6
+    ]
+  },
+  "hostTopNGrantedSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hostTopNControlEntry",
+      7
+    ]
+  },
+  "hostTopNStartTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "hostTopNControlEntry",
+      8
+    ]
+  },
+  "hostTopNOwner": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OwnerString"
+    },
+    "index": null,
+    "value": [
+      "hostTopNControlEntry",
+      9
+    ]
+  },
+  "hostTopNStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntryStatus"
+    },
+    "index": null,
+    "value": [
+      "hostTopNControlEntry",
+      10
+    ]
+  },
+  "hostTopNTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF HostTopNEntry"
+    },
+    "index": null,
+    "value": [
+      "hostTopN",
+      2
+    ]
+  },
+  "hostTopNEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HostTopNEntry"
+    },
+    "index": [
+      "hostTopNReport",
+      "hostTopNIndex"
+    ],
+    "value": [
+      "hostTopNTable",
+      1
+    ]
+  },
+  "HostTopNEntry": {
+    "tp": "SEQUENCE"
+  },
+  "hostTopNReport": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hostTopNEntry",
+      1
+    ]
+  },
+  "hostTopNIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hostTopNEntry",
+      2
+    ]
+  },
+  "hostTopNAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "hostTopNEntry",
+      3
+    ]
+  },
+  "hostTopNRate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "hostTopNEntry",
+      4
+    ]
+  },
+  "matrixControlTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF MatrixControlEntry"
+    },
+    "index": null,
+    "value": [
+      "matrix",
+      1
+    ]
+  },
+  "matrixControlEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MatrixControlEntry"
+    },
+    "index": [
+      "matrixControlIndex"
+    ],
+    "value": [
+      "matrixControlTable",
+      1
+    ]
+  },
+  "MatrixControlEntry": {
+    "tp": "SEQUENCE"
+  },
+  "matrixControlIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "matrixControlEntry",
+      1
+    ]
+  },
+  "matrixControlDataSource": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "matrixControlEntry",
+      2
+    ]
+  },
+  "matrixControlTableSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "matrixControlEntry",
+      3
+    ]
+  },
+  "matrixControlLastDeleteTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "matrixControlEntry",
+      4
+    ]
+  },
+  "matrixControlOwner": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OwnerString"
+    },
+    "index": null,
+    "value": [
+      "matrixControlEntry",
+      5
+    ]
+  },
+  "matrixControlStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntryStatus"
+    },
+    "index": null,
+    "value": [
+      "matrixControlEntry",
+      6
+    ]
+  },
+  "matrixSDTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF MatrixSDEntry"
+    },
+    "index": null,
+    "value": [
+      "matrix",
+      2
+    ]
+  },
+  "matrixSDEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MatrixSDEntry"
+    },
+    "index": [
+      "matrixSDIndex",
+      "matrixSDSourceAddress",
+      "matrixSDDestAddress"
+    ],
+    "value": [
+      "matrixSDTable",
+      1
+    ]
+  },
+  "MatrixSDEntry": {
+    "tp": "SEQUENCE"
+  },
+  "matrixSDSourceAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "matrixSDEntry",
+      1
+    ]
+  },
+  "matrixSDDestAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "matrixSDEntry",
+      2
+    ]
+  },
+  "matrixSDIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "matrixSDEntry",
+      3
+    ]
+  },
+  "matrixSDPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "matrixSDEntry",
+      4
+    ]
+  },
+  "matrixSDOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "matrixSDEntry",
+      5
+    ]
+  },
+  "matrixSDErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "matrixSDEntry",
+      6
+    ]
+  },
+  "matrixDSTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF MatrixDSEntry"
+    },
+    "index": null,
+    "value": [
+      "matrix",
+      3
+    ]
+  },
+  "matrixDSEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MatrixDSEntry"
+    },
+    "index": [
+      "matrixDSIndex",
+      "matrixDSDestAddress",
+      "matrixDSSourceAddress"
+    ],
+    "value": [
+      "matrixDSTable",
+      1
+    ]
+  },
+  "MatrixDSEntry": {
+    "tp": "SEQUENCE"
+  },
+  "matrixDSSourceAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "matrixDSEntry",
+      1
+    ]
+  },
+  "matrixDSDestAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "matrixDSEntry",
+      2
+    ]
+  },
+  "matrixDSIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "matrixDSEntry",
+      3
+    ]
+  },
+  "matrixDSPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "matrixDSEntry",
+      4
+    ]
+  },
+  "matrixDSOctets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "matrixDSEntry",
+      5
+    ]
+  },
+  "matrixDSErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "matrixDSEntry",
+      6
+    ]
+  },
+  "filterTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF FilterEntry"
+    },
+    "index": null,
+    "value": [
+      "filter",
+      1
+    ]
+  },
+  "filterEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "FilterEntry"
+    },
+    "index": [
+      "filterIndex"
+    ],
+    "value": [
+      "filterTable",
+      1
+    ]
+  },
+  "FilterEntry": {
+    "tp": "SEQUENCE"
+  },
+  "filterIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "filterEntry",
+      1
+    ]
+  },
+  "filterChannelIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "filterEntry",
+      2
+    ]
+  },
+  "filterPktDataOffset": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "filterEntry",
+      3
+    ]
+  },
+  "filterPktData": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "filterEntry",
+      4
+    ]
+  },
+  "filterPktDataMask": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "filterEntry",
+      5
+    ]
+  },
+  "filterPktDataNotMask": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "filterEntry",
+      6
+    ]
+  },
+  "filterPktStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "filterEntry",
+      7
+    ]
+  },
+  "filterPktStatusMask": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "filterEntry",
+      8
+    ]
+  },
+  "filterPktStatusNotMask": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "filterEntry",
+      9
+    ]
+  },
+  "filterOwner": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OwnerString"
+    },
+    "index": null,
+    "value": [
+      "filterEntry",
+      10
+    ]
+  },
+  "filterStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntryStatus"
+    },
+    "index": null,
+    "value": [
+      "filterEntry",
+      11
+    ]
+  },
+  "channelTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF ChannelEntry"
+    },
+    "index": null,
+    "value": [
+      "filter",
+      2
+    ]
+  },
+  "channelEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ChannelEntry"
+    },
+    "index": [
+      "channelIndex"
+    ],
+    "value": [
+      "channelTable",
+      1
+    ]
+  },
+  "ChannelEntry": {
+    "tp": "SEQUENCE"
+  },
+  "channelIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "channelEntry",
+      1
+    ]
+  },
+  "channelIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "channelEntry",
+      2
+    ]
+  },
+  "channelAcceptType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "acceptMatched",
+        "2": "acceptFailed"
+      }
+    },
+    "index": null,
+    "value": [
+      "channelEntry",
+      3
+    ]
+  },
+  "channelDataControl": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "on",
+        "2": "off"
+      }
+    },
+    "index": null,
+    "value": [
+      "channelEntry",
+      4
+    ]
+  },
+  "channelTurnOnEventIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "channelEntry",
+      5
+    ]
+  },
+  "channelTurnOffEventIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "channelEntry",
+      6
+    ]
+  },
+  "channelEventIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "channelEntry",
+      7
+    ]
+  },
+  "channelEventStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "eventReady",
+        "2": "eventFired",
+        "3": "eventAlwaysReady"
+      }
+    },
+    "index": null,
+    "value": [
+      "channelEntry",
+      8
+    ]
+  },
+  "channelMatches": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "channelEntry",
+      9
+    ]
+  },
+  "channelDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "channelEntry",
+      10
+    ]
+  },
+  "channelOwner": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OwnerString"
+    },
+    "index": null,
+    "value": [
+      "channelEntry",
+      11
+    ]
+  },
+  "channelStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntryStatus"
+    },
+    "index": null,
+    "value": [
+      "channelEntry",
+      12
+    ]
+  },
+  "bufferControlTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF BufferControlEntry"
+    },
+    "index": null,
+    "value": [
+      "capture",
+      1
+    ]
+  },
+  "bufferControlEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BufferControlEntry"
+    },
+    "index": [
+      "bufferControlIndex"
+    ],
+    "value": [
+      "bufferControlTable",
+      1
+    ]
+  },
+  "BufferControlEntry": {
+    "tp": "SEQUENCE"
+  },
+  "bufferControlIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "bufferControlEntry",
+      1
+    ]
+  },
+  "bufferControlChannelIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "bufferControlEntry",
+      2
+    ]
+  },
+  "bufferControlFullStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "spaceAvailable",
+        "2": "full"
+      }
+    },
+    "index": null,
+    "value": [
+      "bufferControlEntry",
+      3
+    ]
+  },
+  "bufferControlFullAction": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "lockWhenFull",
+        "2": "wrapWhenFull"
+      }
+    },
+    "index": null,
+    "value": [
+      "bufferControlEntry",
+      4
+    ]
+  },
+  "bufferControlCaptureSliceSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "bufferControlEntry",
+      5
+    ]
+  },
+  "bufferControlDownloadSliceSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "bufferControlEntry",
+      6
+    ]
+  },
+  "bufferControlDownloadOffset": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "bufferControlEntry",
+      7
+    ]
+  },
+  "bufferControlMaxOctetsRequested": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "bufferControlEntry",
+      8
+    ]
+  },
+  "bufferControlMaxOctetsGranted": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "bufferControlEntry",
+      9
+    ]
+  },
+  "bufferControlCapturedPackets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "bufferControlEntry",
+      10
+    ]
+  },
+  "bufferControlTurnOnTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "bufferControlEntry",
+      11
+    ]
+  },
+  "bufferControlOwner": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OwnerString"
+    },
+    "index": null,
+    "value": [
+      "bufferControlEntry",
+      12
+    ]
+  },
+  "bufferControlStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntryStatus"
+    },
+    "index": null,
+    "value": [
+      "bufferControlEntry",
+      13
+    ]
+  },
+  "captureBufferTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF CaptureBufferEntry"
+    },
+    "index": null,
+    "value": [
+      "capture",
+      2
+    ]
+  },
+  "captureBufferEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "CaptureBufferEntry"
+    },
+    "index": [
+      "captureBufferControlIndex",
+      "captureBufferIndex"
+    ],
+    "value": [
+      "captureBufferTable",
+      1
+    ]
+  },
+  "CaptureBufferEntry": {
+    "tp": "SEQUENCE"
+  },
+  "captureBufferControlIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "captureBufferEntry",
+      1
+    ]
+  },
+  "captureBufferIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "captureBufferEntry",
+      2
+    ]
+  },
+  "captureBufferPacketID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "captureBufferEntry",
+      3
+    ]
+  },
+  "captureBufferPacketData": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "captureBufferEntry",
+      4
+    ]
+  },
+  "captureBufferPacketLength": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "captureBufferEntry",
+      5
+    ]
+  },
+  "captureBufferPacketTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "captureBufferEntry",
+      6
+    ]
+  },
+  "captureBufferPacketStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "captureBufferEntry",
+      7
+    ]
+  },
+  "eventTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF EventEntry"
+    },
+    "index": null,
+    "value": [
+      "event",
+      1
+    ]
+  },
+  "eventEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EventEntry"
+    },
+    "index": [
+      "eventIndex"
+    ],
+    "value": [
+      "eventTable",
+      1
+    ]
+  },
+  "EventEntry": {
+    "tp": "SEQUENCE"
+  },
+  "eventIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "eventEntry",
+      1
+    ]
+  },
+  "eventDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "eventEntry",
+      2
+    ]
+  },
+  "eventType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "none",
+        "2": "log",
+        "3": "snmptrap",
+        "4": "logandtrap"
+      }
+    },
+    "index": null,
+    "value": [
+      "eventEntry",
+      3
+    ]
+  },
+  "eventCommunity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "eventEntry",
+      4
+    ]
+  },
+  "eventLastTimeSent": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "eventEntry",
+      5
+    ]
+  },
+  "eventOwner": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OwnerString"
+    },
+    "index": null,
+    "value": [
+      "eventEntry",
+      6
+    ]
+  },
+  "eventStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EntryStatus"
+    },
+    "index": null,
+    "value": [
+      "eventEntry",
+      7
+    ]
+  },
+  "logTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF LogEntry"
+    },
+    "index": null,
+    "value": [
+      "event",
+      2
+    ]
+  },
+  "logEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "LogEntry"
+    },
+    "index": [
+      "logEventIndex",
+      "logIndex"
+    ],
+    "value": [
+      "logTable",
+      1
+    ]
+  },
+  "LogEntry": {
+    "tp": "SEQUENCE"
+  },
+  "logEventIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "logEntry",
+      1
+    ]
+  },
+  "logIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "logEntry",
+      2
+    ]
+  },
+  "logTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "logEntry",
+      3
+    ]
+  },
+  "logDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "logEntry",
+      4
+    ]
+  },
+  "rmonEventsV2": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "rmon",
+      0
+    ]
+  },
+  "rmonCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "rmonConformance",
+      9
+    ]
+  },
+  "rmonGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "rmonConformance",
+      10
+    ]
+  },
+  "rmonEtherStatsGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "rmonGroups",
+      1
+    ]
+  },
+  "rmonHistoryControlGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "rmonGroups",
+      2
+    ]
+  },
+  "rmonEthernetHistoryGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "rmonGroups",
+      3
+    ]
+  },
+  "rmonAlarmGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "rmonGroups",
+      4
+    ]
+  },
+  "rmonHostGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "rmonGroups",
+      5
+    ]
+  },
+  "rmonHostTopNGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "rmonGroups",
+      6
+    ]
+  },
+  "rmonMatrixGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "rmonGroups",
+      7
+    ]
+  },
+  "rmonFilterGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "rmonGroups",
+      8
+    ]
+  },
+  "rmonPacketCaptureGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "rmonGroups",
+      9
+    ]
+  },
+  "rmonEventGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "rmonGroups",
+      10
+    ]
+  }
+}

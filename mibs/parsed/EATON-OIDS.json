@@ -1,0 +1,254 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "enterprises"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "Integer32"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION"
+      ]
+    ]
+  ],
+  "eaton": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "enterprises",
+      534
+    ]
+  },
+  "xupsMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "eaton",
+      1
+    ]
+  },
+  "xupsEnvironment": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsMIB",
+      6
+    ]
+  },
+  "xupsObjectId": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "eaton",
+      2
+    ]
+  },
+  "powerwareEthernetSnmpAdapter": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsObjectId",
+      1
+    ]
+  },
+  "powerwareNetworkSnmpAdapterEther": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsObjectId",
+      2
+    ]
+  },
+  "powerwareNetworkSnmpAdapterToken": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsObjectId",
+      3
+    ]
+  },
+  "onlinetDaemon": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsObjectId",
+      4
+    ]
+  },
+  "connectUPSAdapterEthernet": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsObjectId",
+      5
+    ]
+  },
+  "powerwareNetworkDigitalIOEther": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsObjectId",
+      6
+    ]
+  },
+  "connectUPSAdapterTokenRing": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsObjectId",
+      7
+    ]
+  },
+  "simpleSnmpAdapter": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsObjectId",
+      8
+    ]
+  },
+  "powerwareEliSnmpAdapter": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsObjectId",
+      9
+    ]
+  },
+  "powerwareBasicEmbeddedEthernet": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsObjectId",
+      10
+    ]
+  },
+  "eatonPowerChainGateway": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsObjectId",
+      11
+    ]
+  },
+  "eatonPowerChainDevice": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsObjectId",
+      12
+    ]
+  },
+  "eatonPowerXpertMeter": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xupsObjectId",
+      13
+    ]
+  },
+  "xupsIoMIB": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "eaton",
+      3
+    ]
+  },
+  "powerVision": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "eaton",
+      4
+    ]
+  },
+  "products": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "eaton",
+      6
+    ]
+  },
+  "pduAgent": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "products",
+      6
+    ]
+  },
+  "hdpdu": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "pduAgent",
+      2
+    ]
+  },
+  "eatonPdu": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "pduAgent",
+      4
+    ]
+  },
+  "sensorAgent": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "products",
+      8
+    ]
+  },
+  "dataCenter": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "products",
+      7
+    ]
+  },
+  "environmentalMonitor": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "dataCenter",
+      1
+    ]
+  },
+  "itProjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "eaton",
+      7
+    ]
+  },
+  "pki": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "itProjects",
+      1
+    ]
+  },
+  "powerChain": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "eaton",
+      8
+    ]
+  },
+  "powerCmnd": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "eaton",
+      9
+    ]
+  },
+  "sts": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "eaton",
+      10
+    ]
+  },
+  "PositiveInteger": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": "d"
+  },
+  "NonNegativeInteger": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": "d"
+  }
+}

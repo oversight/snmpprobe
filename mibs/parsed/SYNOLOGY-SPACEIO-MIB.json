@@ -1,0 +1,229 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-TC",
+      [
+        "DisplayString"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "OBJECT-GROUP",
+        "MODULE-COMPLIANCE"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "OBJECT-TYPE",
+        "Integer32",
+        "Counter32",
+        "Counter64",
+        "enterprises",
+        "MODULE-IDENTITY"
+      ]
+    ]
+  ],
+  "spaceIO": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "synology",
+      102
+    ]
+  },
+  "synology": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      6574
+    ]
+  },
+  "spaceIOTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SpaceIOEntry"
+    },
+    "index": null,
+    "value": [
+      "spaceIO",
+      1
+    ]
+  },
+  "spaceIOEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SpaceIOEntry"
+    },
+    "index": [
+      "spaceIOIndex"
+    ],
+    "value": [
+      "spaceIOTable",
+      1
+    ]
+  },
+  "SpaceIOEntry": {
+    "tp": "SEQUENCE"
+  },
+  "spaceIOIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "spaceIOEntry",
+      1
+    ]
+  },
+  "spaceIODevice": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "spaceIOEntry",
+      2
+    ]
+  },
+  "spaceIONRead": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "spaceIOEntry",
+      3
+    ]
+  },
+  "spaceIONWritten": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "spaceIOEntry",
+      4
+    ]
+  },
+  "spaceIOReads": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "spaceIOEntry",
+      5
+    ]
+  },
+  "spaceIOWrites": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "spaceIOEntry",
+      6
+    ]
+  },
+  "spaceIOLA": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "spaceIOEntry",
+      8
+    ]
+  },
+  "spaceIOLA1": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "spaceIOEntry",
+      9
+    ]
+  },
+  "spaceIOLA5": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "spaceIOEntry",
+      10
+    ]
+  },
+  "spaceIOLA15": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "spaceIOEntry",
+      11
+    ]
+  },
+  "spaceIONReadX": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "spaceIOEntry",
+      12
+    ]
+  },
+  "spaceIONWrittenX": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "spaceIOEntry",
+      13
+    ]
+  },
+  "spaceIOConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "spaceIO",
+      2
+    ]
+  },
+  "spaceIOCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "spaceIOConformance",
+      1
+    ]
+  },
+  "spaceIOGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "spaceIOConformance",
+      2
+    ]
+  },
+  "spaceIOGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "spaceIOGroups",
+      1
+    ]
+  }
+}

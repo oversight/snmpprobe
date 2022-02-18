@@ -1,0 +1,142 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "ObjectSyntax",
+        "TimeTicks"
+      ]
+    ]
+  ],
+  "DisplayString": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": "255a"
+  },
+  "PhysAddress": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": "1x:"
+  },
+  "MacAddress": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": "1x:"
+  },
+  "TruthValue": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "true",
+        "2": "false"
+      }
+    },
+    "display_hint": null
+  },
+  "TestAndIncr": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "display_hint": null
+  },
+  "AutonomousType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "display_hint": null
+  },
+  "InstancePointer": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "display_hint": null
+  },
+  "VariablePointer": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "display_hint": null
+  },
+  "RowPointer": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "display_hint": null
+  },
+  "RowStatus": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      }
+    },
+    "display_hint": null
+  },
+  "TimeStamp": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "display_hint": null
+  },
+  "TimeInterval": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "display_hint": null
+  },
+  "DateAndTime": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": "2d-1d-1d,1d:1d:1d.1d,1a1d:1d"
+  },
+  "StorageType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "volatile",
+        "3": "nonVolatile",
+        "4": "permanent",
+        "5": "readOnly"
+      }
+    },
+    "display_hint": null
+  },
+  "TDomain": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "display_hint": null
+  },
+  "TAddress": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  }
+}

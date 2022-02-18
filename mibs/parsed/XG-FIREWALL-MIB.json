@@ -1,0 +1,861 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "IpAddress",
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "NOTIFICATION-TYPE",
+        "snmpModules",
+        "OBJECT-IDENTITY",
+        "enterprises",
+        "Gauge32",
+        "Counter32",
+        "Counter64",
+        "Integer32"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "DisplayString",
+        "TEXTUAL-CONVENTION",
+        "TruthValue",
+        "DateAndTime"
+      ]
+    ]
+  ],
+  "sophos": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "enterprises",
+      21067
+    ]
+  },
+  "xg-firewall": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "sophos",
+      2
+    ]
+  },
+  "HaModeType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "standalone",
+        "2": "active-passive",
+        "3": "active-active"
+      }
+    },
+    "display_hint": null
+  },
+  "ServiceStatsType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "untouched",
+        "2": "stopped",
+        "3": "initializing",
+        "4": "running",
+        "5": "exiting",
+        "6": "dead",
+        "7": "unregistered"
+      }
+    },
+    "display_hint": null
+  },
+  "RegistrationStatusType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "registered",
+        "2": "unregistered"
+      }
+    },
+    "display_hint": null
+  },
+  "SubscriptionStatusType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "trial",
+        "2": "unsubscribed",
+        "3": "subscribed",
+        "4": "expired"
+      }
+    },
+    "display_hint": null
+  },
+  "SupportStatusType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "support8x5",
+        "2": "support24x7"
+      }
+    },
+    "display_hint": null
+  },
+  "sfosSystem": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "xg-firewall",
+      1
+    ]
+  },
+  "sysInstall": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sfosSystem",
+      1
+    ]
+  },
+  "sysStatus": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sfosSystem",
+      2
+    ]
+  },
+  "sysLicense": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sfosSystem",
+      3
+    ]
+  },
+  "sysAlerts": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sfosSystem",
+      4
+    ]
+  },
+  "applianceKey": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "sysInstall",
+      1
+    ]
+  },
+  "applianceModel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "sysInstall",
+      2
+    ]
+  },
+  "xg-firewallVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "sysInstall",
+      3
+    ]
+  },
+  "webcatVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "sysInstall",
+      4
+    ]
+  },
+  "avVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "sysInstall",
+      5
+    ]
+  },
+  "asVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "sysInstall",
+      6
+    ]
+  },
+  "idpVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "sysInstall",
+      7
+    ]
+  },
+  "systemDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateAndTime"
+    },
+    "index": null,
+    "value": [
+      "sysStatus",
+      1
+    ]
+  },
+  "cpuStatus": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sysStatus",
+      2
+    ]
+  },
+  "cpuPercentUsage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "cpuStatus",
+      1
+    ]
+  },
+  "diskStatus": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sysStatus",
+      3
+    ]
+  },
+  "diskCapacity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "diskStatus",
+      1
+    ]
+  },
+  "diskPercentUsage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "diskStatus",
+      2
+    ]
+  },
+  "memoryStatus": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sysStatus",
+      4
+    ]
+  },
+  "memoryCapacity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "memoryStatus",
+      1
+    ]
+  },
+  "memoryPercentUsage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "memoryStatus",
+      2
+    ]
+  },
+  "swapCapacity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "memoryStatus",
+      3
+    ]
+  },
+  "swapPercentUsage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "memoryStatus",
+      4
+    ]
+  },
+  "haMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "HaModeType"
+    },
+    "index": null,
+    "value": [
+      "sysStatus",
+      5
+    ]
+  },
+  "liveUsers": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Gauge32"
+    },
+    "index": null,
+    "value": [
+      "sysStatus",
+      6
+    ]
+  },
+  "httpHits": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "sysStatus",
+      7
+    ]
+  },
+  "ftpHits": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "sysStatus",
+      8
+    ]
+  },
+  "mailHits": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sysStatus",
+      9
+    ]
+  },
+  "serviceStats": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sysStatus",
+      10
+    ]
+  },
+  "pop3Hits": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "mailHits",
+      1
+    ]
+  },
+  "imapHits": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "mailHits",
+      2
+    ]
+  },
+  "smtpHits": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "mailHits",
+      3
+    ]
+  },
+  "pop3Service": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      1
+    ]
+  },
+  "imap4Service": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      2
+    ]
+  },
+  "smtpService": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      3
+    ]
+  },
+  "ftpService": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      4
+    ]
+  },
+  "httpService": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      5
+    ]
+  },
+  "avService": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      6
+    ]
+  },
+  "asService": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      7
+    ]
+  },
+  "dnsService": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      8
+    ]
+  },
+  "haService": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      9
+    ]
+  },
+  "idpService": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      10
+    ]
+  },
+  "apacheService": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      11
+    ]
+  },
+  "ntpService": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      12
+    ]
+  },
+  "tomcatService": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      13
+    ]
+  },
+  "sslvpnService": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      14
+    ]
+  },
+  "databaseservice": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      15
+    ]
+  },
+  "networkService": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      16
+    ]
+  },
+  "garnerService": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      17
+    ]
+  },
+  "droutingService": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      18
+    ]
+  },
+  "sshdService": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      19
+    ]
+  },
+  "dgdService": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "ServiceStatsType"
+    },
+    "index": null,
+    "value": [
+      "serviceStats",
+      20
+    ]
+  },
+  "liAppliance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sysLicense",
+      1
+    ]
+  },
+  "liSupport": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sysLicense",
+      2
+    ]
+  },
+  "liAntivirus": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sysLicense",
+      3
+    ]
+  },
+  "liAntispam": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sysLicense",
+      4
+    ]
+  },
+  "liIdp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sysLicense",
+      5
+    ]
+  },
+  "liWebcat": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sysLicense",
+      6
+    ]
+  },
+  "appRegStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "RegistrationStatusType"
+    },
+    "index": null,
+    "value": [
+      "liAppliance",
+      1
+    ]
+  },
+  "appExpiryDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateAndTime"
+    },
+    "index": null,
+    "value": [
+      "liAppliance",
+      2
+    ]
+  },
+  "supportSubStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SupportStatusType"
+    },
+    "index": null,
+    "value": [
+      "liSupport",
+      1
+    ]
+  },
+  "supportExpiryDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateAndTime"
+    },
+    "index": null,
+    "value": [
+      "liSupport",
+      2
+    ]
+  },
+  "avSubStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SubscriptionStatusType"
+    },
+    "index": null,
+    "value": [
+      "liAntivirus",
+      1
+    ]
+  },
+  "avExpiryDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateAndTime"
+    },
+    "index": null,
+    "value": [
+      "liAntivirus",
+      2
+    ]
+  },
+  "asSubStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SubscriptionStatusType"
+    },
+    "index": null,
+    "value": [
+      "liAntispam",
+      1
+    ]
+  },
+  "asExpiryDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateAndTime"
+    },
+    "index": null,
+    "value": [
+      "liAntispam",
+      2
+    ]
+  },
+  "idpSubStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SubscriptionStatusType"
+    },
+    "index": null,
+    "value": [
+      "liIdp",
+      1
+    ]
+  },
+  "idpExpiryDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateAndTime"
+    },
+    "index": null,
+    "value": [
+      "liIdp",
+      2
+    ]
+  },
+  "webcatSubStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SubscriptionStatusType"
+    },
+    "index": null,
+    "value": [
+      "liWebcat",
+      1
+    ]
+  },
+  "webcatExpiryDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateAndTime"
+    },
+    "index": null,
+    "value": [
+      "liWebcat",
+      2
+    ]
+  },
+  "highDiskUsage": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sysAlerts",
+      2
+    ]
+  },
+  "highMemUsage": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sysAlerts",
+      3
+    ]
+  },
+  "avAlerts": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sysAlerts",
+      4
+    ]
+  },
+  "dgdAlerts": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sysAlerts",
+      5
+    ]
+  },
+  "idpAlerts": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sysAlerts",
+      6
+    ]
+  },
+  "dosAlerts": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sysAlerts",
+      7
+    ]
+  },
+  "cscAlerts": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "sysAlerts",
+      8
+    ]
+  }
+}

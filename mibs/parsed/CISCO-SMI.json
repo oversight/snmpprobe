@@ -1,0 +1,397 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-IDENTITY",
+        "enterprises"
+      ]
+    ]
+  ],
+  "cisco": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "enterprises",
+      9
+    ]
+  },
+  "ciscoProducts": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      1
+    ]
+  },
+  "local": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      2
+    ]
+  },
+  "temporary": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      3
+    ]
+  },
+  "pakmon": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      4
+    ]
+  },
+  "workgroup": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      5
+    ]
+  },
+  "otherEnterprises": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      6
+    ]
+  },
+  "ciscoSB": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "otherEnterprises",
+      1
+    ]
+  },
+  "ciscoSMB": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "otherEnterprises",
+      2
+    ]
+  },
+  "ciscoAgentCapability": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      7
+    ]
+  },
+  "ciscoConfig": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      8
+    ]
+  },
+  "ciscoMgmt": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      9
+    ]
+  },
+  "ciscoExperiment": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      10
+    ]
+  },
+  "ciscoAdmin": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      11
+    ]
+  },
+  "ciscoModules": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      12
+    ]
+  },
+  "lightstream": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      13
+    ]
+  },
+  "ciscoworks": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      14
+    ]
+  },
+  "newport": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      15
+    ]
+  },
+  "ciscoPartnerProducts": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      16
+    ]
+  },
+  "ciscoPolicy": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      17
+    ]
+  },
+  "ciscoPIB": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoPolicy",
+      2
+    ]
+  },
+  "ciscoPolicyAuto": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      18
+    ]
+  },
+  "ciscoPibToMib": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoPolicyAuto",
+      2
+    ]
+  },
+  "ciscoDomains": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      19
+    ]
+  },
+  "ciscoCIB": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      20
+    ]
+  },
+  "ciscoCibMmiGroup": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoCIB",
+      1
+    ]
+  },
+  "ciscoCibProvGroup": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoCIB",
+      2
+    ]
+  },
+  "ciscoPKI": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      21
+    ]
+  },
+  "ciscoLDAP": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "cisco",
+      22
+    ]
+  },
+  "ciscoProxy": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoAdmin",
+      1
+    ]
+  },
+  "ciscoPartyProxy": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoProxy",
+      1
+    ]
+  },
+  "ciscoContextProxy": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoProxy",
+      2
+    ]
+  },
+  "ciscoRptrGroupObjectID": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoAdmin",
+      2
+    ]
+  },
+  "ciscoUnknownRptrGroup": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoRptrGroupObjectID",
+      1
+    ]
+  },
+  "cisco2505RptrGroup": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoRptrGroupObjectID",
+      2
+    ]
+  },
+  "cisco2507RptrGroup": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoRptrGroupObjectID",
+      3
+    ]
+  },
+  "cisco2516RptrGroup": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoRptrGroupObjectID",
+      4
+    ]
+  },
+  "ciscoWsx5020RptrGroup": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoRptrGroupObjectID",
+      5
+    ]
+  },
+  "ciscoChipSets": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoAdmin",
+      3
+    ]
+  },
+  "ciscoChipSetSaint1": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoChipSets",
+      1
+    ]
+  },
+  "ciscoChipSetSaint2": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoChipSets",
+      2
+    ]
+  },
+  "ciscoChipSetSaint3": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoChipSets",
+      3
+    ]
+  },
+  "ciscoChipSetSaint4": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoChipSets",
+      4
+    ]
+  },
+  "ciscoTDomains": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ciscoDomains",
+      99999
+    ]
+  },
+  "ciscoTDomainUdpIpv4": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoTDomains",
+      1
+    ]
+  },
+  "ciscoTDomainUdpIpv6": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoTDomains",
+      2
+    ]
+  },
+  "ciscoTDomainTcpIpv4": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoTDomains",
+      3
+    ]
+  },
+  "ciscoTDomainTcpIpv6": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoTDomains",
+      4
+    ]
+  },
+  "ciscoTDomainLocal": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoTDomains",
+      5
+    ]
+  },
+  "ciscoTDomainClns": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoTDomains",
+      6
+    ]
+  },
+  "ciscoTDomainCons": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoTDomains",
+      7
+    ]
+  },
+  "ciscoTDomainDdp": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoTDomains",
+      8
+    ]
+  },
+  "ciscoTDomainIpx": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoTDomains",
+      9
+    ]
+  },
+  "ciscoTDomainSctpIpv4": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoTDomains",
+      10
+    ]
+  },
+  "ciscoTDomainSctpIpv6": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "ciscoTDomains",
+      11
+    ]
+  }
+}

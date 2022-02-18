@@ -1,0 +1,180 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "OBJECT-IDENTITY",
+        "snmpModules"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP"
+      ]
+    ]
+  ],
+  "snmpFrameworkMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "snmpModules",
+      10
+    ]
+  },
+  "SnmpEngineID": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "SnmpSecurityModel": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "display_hint": null
+  },
+  "SnmpMessageProcessingModel": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "display_hint": null
+  },
+  "SnmpSecurityLevel": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "noAuthNoPriv",
+        "2": "authNoPriv",
+        "3": "authPriv"
+      }
+    },
+    "display_hint": null
+  },
+  "SnmpAdminString": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": "255t"
+  },
+  "snmpFrameworkAdmin": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "snmpFrameworkMIB",
+      1
+    ]
+  },
+  "snmpFrameworkMIBObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "snmpFrameworkMIB",
+      2
+    ]
+  },
+  "snmpFrameworkMIBConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "snmpFrameworkMIB",
+      3
+    ]
+  },
+  "snmpEngine": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "snmpFrameworkMIBObjects",
+      1
+    ]
+  },
+  "snmpEngineID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SnmpEngineID"
+    },
+    "index": null,
+    "value": [
+      "snmpEngine",
+      1
+    ]
+  },
+  "snmpEngineBoots": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "snmpEngine",
+      2
+    ]
+  },
+  "snmpEngineTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "snmpEngine",
+      3
+    ]
+  },
+  "snmpEngineMaxMessageSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "snmpEngine",
+      4
+    ]
+  },
+  "snmpAuthProtocols": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "snmpFrameworkAdmin",
+      1
+    ]
+  },
+  "snmpPrivProtocols": {
+    "tp": "OBJECT-IDENTITY",
+    "value": [
+      "snmpFrameworkAdmin",
+      2
+    ]
+  },
+  "snmpFrameworkMIBCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "snmpFrameworkMIBConformance",
+      1
+    ]
+  },
+  "snmpFrameworkMIBGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "snmpFrameworkMIBConformance",
+      2
+    ]
+  },
+  "snmpEngineGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "snmpFrameworkMIBGroups",
+      1
+    ]
+  }
+}

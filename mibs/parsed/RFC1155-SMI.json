@@ -1,0 +1,88 @@
+{
+  "IMPORTS": [],
+  "internet": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "iso",
+      3,
+      6,
+      1
+    ]
+  },
+  "directory": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "internet",
+      1
+    ]
+  },
+  "mgmt": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "internet",
+      2
+    ]
+  },
+  "experimental": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "internet",
+      3
+    ]
+  },
+  "private": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "internet",
+      4
+    ]
+  },
+  "enterprises": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "private",
+      1
+    ]
+  },
+  "unix": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      4
+    ]
+  },
+  "agents": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "unix",
+      1
+    ]
+  },
+  "fourBSD-isode": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "agents",
+      2
+    ]
+  },
+  "peers": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "unix",
+      3
+    ]
+  },
+  "unixd": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "peers",
+      1
+    ]
+  },
+  "ObjectName": {
+    "tp": "OBJECT IDENTIFIER"
+  },
+  "DisplayString": {
+    "tp": "OCTET STRING"
+  }
+}

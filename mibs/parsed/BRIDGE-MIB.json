@@ -1,0 +1,881 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "NOTIFICATION-TYPE",
+        "Counter32",
+        "Integer32",
+        "TimeTicks",
+        "mib-2"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION",
+        "MacAddress"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP",
+        "NOTIFICATION-GROUP"
+      ]
+    ],
+    [
+      "IF-MIB",
+      [
+        "InterfaceIndex"
+      ]
+    ]
+  ],
+  "dot1dBridge": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "mib-2",
+      17
+    ]
+  },
+  "BridgeId": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "Timeout": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": "d"
+  },
+  "dot1dNotifications": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "dot1dBridge",
+      0
+    ]
+  },
+  "dot1dBase": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "dot1dBridge",
+      1
+    ]
+  },
+  "dot1dStp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "dot1dBridge",
+      2
+    ]
+  },
+  "dot1dSr": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "dot1dBridge",
+      3
+    ]
+  },
+  "dot1dTp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "dot1dBridge",
+      4
+    ]
+  },
+  "dot1dStatic": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "dot1dBridge",
+      5
+    ]
+  },
+  "dot1dConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "dot1dBridge",
+      8
+    ]
+  },
+  "dot1dBaseBridgeAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "dot1dBase",
+      1
+    ]
+  },
+  "dot1dBaseNumPorts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dot1dBase",
+      2
+    ]
+  },
+  "dot1dBaseType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "transparent-only",
+        "3": "sourceroute-only",
+        "4": "srt"
+      }
+    },
+    "index": null,
+    "value": [
+      "dot1dBase",
+      3
+    ]
+  },
+  "dot1dBasePortTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Dot1dBasePortEntry"
+    },
+    "index": null,
+    "value": [
+      "dot1dBase",
+      4
+    ]
+  },
+  "dot1dBasePortEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dot1dBasePortEntry"
+    },
+    "index": [
+      "dot1dBasePort"
+    ],
+    "value": [
+      "dot1dBasePortTable",
+      1
+    ]
+  },
+  "Dot1dBasePortEntry": {
+    "tp": "SEQUENCE"
+  },
+  "dot1dBasePort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dot1dBasePortEntry",
+      1
+    ]
+  },
+  "dot1dBasePortIfIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "InterfaceIndex"
+    },
+    "index": null,
+    "value": [
+      "dot1dBasePortEntry",
+      2
+    ]
+  },
+  "dot1dBasePortCircuit": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OBJECT IDENTIFIER"
+    },
+    "index": null,
+    "value": [
+      "dot1dBasePortEntry",
+      3
+    ]
+  },
+  "dot1dBasePortDelayExceededDiscards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "dot1dBasePortEntry",
+      4
+    ]
+  },
+  "dot1dBasePortMtuExceededDiscards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "dot1dBasePortEntry",
+      5
+    ]
+  },
+  "dot1dStpProtocolSpecification": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "decLb100",
+        "3": "ieee8021d"
+      }
+    },
+    "index": null,
+    "value": [
+      "dot1dStp",
+      1
+    ]
+  },
+  "dot1dStpPriority": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dot1dStp",
+      2
+    ]
+  },
+  "dot1dStpTimeSinceTopologyChange": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeTicks"
+    },
+    "index": null,
+    "value": [
+      "dot1dStp",
+      3
+    ]
+  },
+  "dot1dStpTopChanges": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "dot1dStp",
+      4
+    ]
+  },
+  "dot1dStpDesignatedRoot": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BridgeId"
+    },
+    "index": null,
+    "value": [
+      "dot1dStp",
+      5
+    ]
+  },
+  "dot1dStpRootCost": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dot1dStp",
+      6
+    ]
+  },
+  "dot1dStpRootPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dot1dStp",
+      7
+    ]
+  },
+  "dot1dStpMaxAge": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Timeout"
+    },
+    "index": null,
+    "value": [
+      "dot1dStp",
+      8
+    ]
+  },
+  "dot1dStpHelloTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Timeout"
+    },
+    "index": null,
+    "value": [
+      "dot1dStp",
+      9
+    ]
+  },
+  "dot1dStpHoldTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dot1dStp",
+      10
+    ]
+  },
+  "dot1dStpForwardDelay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Timeout"
+    },
+    "index": null,
+    "value": [
+      "dot1dStp",
+      11
+    ]
+  },
+  "dot1dStpBridgeMaxAge": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Timeout"
+    },
+    "index": null,
+    "value": [
+      "dot1dStp",
+      12
+    ]
+  },
+  "dot1dStpBridgeHelloTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Timeout"
+    },
+    "index": null,
+    "value": [
+      "dot1dStp",
+      13
+    ]
+  },
+  "dot1dStpBridgeForwardDelay": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Timeout"
+    },
+    "index": null,
+    "value": [
+      "dot1dStp",
+      14
+    ]
+  },
+  "dot1dStpPortTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Dot1dStpPortEntry"
+    },
+    "index": null,
+    "value": [
+      "dot1dStp",
+      15
+    ]
+  },
+  "dot1dStpPortEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dot1dStpPortEntry"
+    },
+    "index": [
+      "dot1dStpPort"
+    ],
+    "value": [
+      "dot1dStpPortTable",
+      1
+    ]
+  },
+  "Dot1dStpPortEntry": {
+    "tp": "SEQUENCE"
+  },
+  "dot1dStpPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dot1dStpPortEntry",
+      1
+    ]
+  },
+  "dot1dStpPortPriority": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dot1dStpPortEntry",
+      2
+    ]
+  },
+  "dot1dStpPortState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "disabled",
+        "2": "blocking",
+        "3": "listening",
+        "4": "learning",
+        "5": "forwarding",
+        "6": "broken"
+      }
+    },
+    "index": null,
+    "value": [
+      "dot1dStpPortEntry",
+      3
+    ]
+  },
+  "dot1dStpPortEnable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "enabled",
+        "2": "disabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "dot1dStpPortEntry",
+      4
+    ]
+  },
+  "dot1dStpPortPathCost": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dot1dStpPortEntry",
+      5
+    ]
+  },
+  "dot1dStpPortDesignatedRoot": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BridgeId"
+    },
+    "index": null,
+    "value": [
+      "dot1dStpPortEntry",
+      6
+    ]
+  },
+  "dot1dStpPortDesignatedCost": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dot1dStpPortEntry",
+      7
+    ]
+  },
+  "dot1dStpPortDesignatedBridge": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BridgeId"
+    },
+    "index": null,
+    "value": [
+      "dot1dStpPortEntry",
+      8
+    ]
+  },
+  "dot1dStpPortDesignatedPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "dot1dStpPortEntry",
+      9
+    ]
+  },
+  "dot1dStpPortForwardTransitions": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "dot1dStpPortEntry",
+      10
+    ]
+  },
+  "dot1dStpPortPathCost32": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dot1dStpPortEntry",
+      11
+    ]
+  },
+  "dot1dTpLearnedEntryDiscards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "dot1dTp",
+      1
+    ]
+  },
+  "dot1dTpAgingTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dot1dTp",
+      2
+    ]
+  },
+  "dot1dTpFdbTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Dot1dTpFdbEntry"
+    },
+    "index": null,
+    "value": [
+      "dot1dTp",
+      3
+    ]
+  },
+  "dot1dTpFdbEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dot1dTpFdbEntry"
+    },
+    "index": [
+      "dot1dTpFdbAddress"
+    ],
+    "value": [
+      "dot1dTpFdbTable",
+      1
+    ]
+  },
+  "Dot1dTpFdbEntry": {
+    "tp": "SEQUENCE"
+  },
+  "dot1dTpFdbAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "dot1dTpFdbEntry",
+      1
+    ]
+  },
+  "dot1dTpFdbPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dot1dTpFdbEntry",
+      2
+    ]
+  },
+  "dot1dTpFdbStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "invalid",
+        "3": "learned",
+        "4": "self",
+        "5": "mgmt"
+      }
+    },
+    "index": null,
+    "value": [
+      "dot1dTpFdbEntry",
+      3
+    ]
+  },
+  "dot1dTpPortTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Dot1dTpPortEntry"
+    },
+    "index": null,
+    "value": [
+      "dot1dTp",
+      4
+    ]
+  },
+  "dot1dTpPortEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dot1dTpPortEntry"
+    },
+    "index": [
+      "dot1dTpPort"
+    ],
+    "value": [
+      "dot1dTpPortTable",
+      1
+    ]
+  },
+  "Dot1dTpPortEntry": {
+    "tp": "SEQUENCE"
+  },
+  "dot1dTpPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dot1dTpPortEntry",
+      1
+    ]
+  },
+  "dot1dTpPortMaxInfo": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dot1dTpPortEntry",
+      2
+    ]
+  },
+  "dot1dTpPortInFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "dot1dTpPortEntry",
+      3
+    ]
+  },
+  "dot1dTpPortOutFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "dot1dTpPortEntry",
+      4
+    ]
+  },
+  "dot1dTpPortInDiscards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "dot1dTpPortEntry",
+      5
+    ]
+  },
+  "dot1dStaticTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Dot1dStaticEntry"
+    },
+    "index": null,
+    "value": [
+      "dot1dStatic",
+      1
+    ]
+  },
+  "dot1dStaticEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dot1dStaticEntry"
+    },
+    "index": [
+      "dot1dStaticAddress",
+      "dot1dStaticReceivePort"
+    ],
+    "value": [
+      "dot1dStaticTable",
+      1
+    ]
+  },
+  "Dot1dStaticEntry": {
+    "tp": "SEQUENCE"
+  },
+  "dot1dStaticAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "dot1dStaticEntry",
+      1
+    ]
+  },
+  "dot1dStaticReceivePort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "dot1dStaticEntry",
+      2
+    ]
+  },
+  "dot1dStaticAllowedToGoTo": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "dot1dStaticEntry",
+      3
+    ]
+  },
+  "dot1dStaticStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "invalid",
+        "3": "permanent",
+        "4": "deleteOnReset",
+        "5": "deleteOnTimeout"
+      }
+    },
+    "index": null,
+    "value": [
+      "dot1dStaticEntry",
+      4
+    ]
+  },
+  "dot1dGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "dot1dConformance",
+      1
+    ]
+  },
+  "dot1dCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "dot1dConformance",
+      2
+    ]
+  },
+  "dot1dBaseBridgeGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "dot1dGroups",
+      1
+    ]
+  },
+  "dot1dBasePortGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "dot1dGroups",
+      2
+    ]
+  },
+  "dot1dStpBridgeGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "dot1dGroups",
+      3
+    ]
+  },
+  "dot1dStpPortGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "dot1dGroups",
+      4
+    ]
+  },
+  "dot1dStpPortGroup2": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "dot1dGroups",
+      5
+    ]
+  },
+  "dot1dStpPortGroup3": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "dot1dGroups",
+      6
+    ]
+  },
+  "dot1dTpBridgeGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "dot1dGroups",
+      7
+    ]
+  },
+  "dot1dTpFdbGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "dot1dGroups",
+      8
+    ]
+  },
+  "dot1dTpGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "dot1dGroups",
+      9
+    ]
+  },
+  "dot1dStaticGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "dot1dGroups",
+      10
+    ]
+  }
+}

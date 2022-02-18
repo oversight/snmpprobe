@@ -1,0 +1,696 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "Counter32",
+        "Counter64"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TruthValue",
+        "TimeInterval",
+        "MacAddress",
+        "TEXTUAL-CONVENTION"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "MODULE-COMPLIANCE",
+        "OBJECT-GROUP"
+      ]
+    ],
+    [
+      "BRIDGE-MIB",
+      [
+        "dot1dTp",
+        "dot1dTpPort",
+        "dot1dBridge",
+        "dot1dBasePortEntry",
+        "dot1dBasePort"
+      ]
+    ]
+  ],
+  "pBridgeMIB": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "dot1dBridge",
+      6
+    ]
+  },
+  "pBridgeMIBObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "pBridgeMIB",
+      1
+    ]
+  },
+  "EnabledStatus": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "enabled",
+        "2": "disabled"
+      }
+    },
+    "display_hint": null
+  },
+  "dot1dExtBase": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "pBridgeMIBObjects",
+      1
+    ]
+  },
+  "dot1dPriority": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "pBridgeMIBObjects",
+      2
+    ]
+  },
+  "dot1dGarp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "pBridgeMIBObjects",
+      3
+    ]
+  },
+  "dot1dGmrp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "pBridgeMIBObjects",
+      4
+    ]
+  },
+  "dot1dDeviceCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BITS",
+      "values": {
+        "0": "dot1dExtendedFilteringServices",
+        "1": "dot1dTrafficClasses",
+        "2": "dot1qStaticEntryIndividualPort",
+        "3": "dot1qIVLCapable",
+        "4": "dot1qSVLCapable",
+        "5": "dot1qHybridCapable",
+        "6": "dot1qConfigurablePvidTagging",
+        "7": "dot1dLocalVlanCapable"
+      }
+    },
+    "index": null,
+    "value": [
+      "dot1dExtBase",
+      1
+    ]
+  },
+  "dot1dTrafficClassesEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TruthValue"
+    },
+    "index": null,
+    "value": [
+      "dot1dExtBase",
+      2
+    ]
+  },
+  "dot1dGmrpStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EnabledStatus"
+    },
+    "index": null,
+    "value": [
+      "dot1dExtBase",
+      3
+    ]
+  },
+  "dot1dPortCapabilitiesTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Dot1dPortCapabilitiesEntry"
+    },
+    "index": null,
+    "value": [
+      "dot1dExtBase",
+      4
+    ]
+  },
+  "dot1dPortCapabilitiesEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dot1dPortCapabilitiesEntry"
+    },
+    "index": "dot1dBasePortEntry",
+    "value": [
+      "dot1dPortCapabilitiesTable",
+      1
+    ]
+  },
+  "Dot1dPortCapabilitiesEntry": {
+    "tp": "SEQUENCE"
+  },
+  "dot1dPortCapabilities": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "BITS",
+      "values": {
+        "0": "dot1qDot1qTagging",
+        "1": "dot1qConfigurableAcceptableFrameTypes",
+        "2": "dot1qIngressFiltering"
+      }
+    },
+    "index": null,
+    "value": [
+      "dot1dPortCapabilitiesEntry",
+      1
+    ]
+  },
+  "dot1dPortPriorityTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Dot1dPortPriorityEntry"
+    },
+    "index": null,
+    "value": [
+      "dot1dPriority",
+      1
+    ]
+  },
+  "dot1dPortPriorityEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dot1dPortPriorityEntry"
+    },
+    "index": "dot1dBasePortEntry",
+    "value": [
+      "dot1dPortPriorityTable",
+      1
+    ]
+  },
+  "Dot1dPortPriorityEntry": {
+    "tp": "SEQUENCE"
+  },
+  "dot1dPortDefaultUserPriority": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "dot1dPortPriorityEntry",
+      1
+    ]
+  },
+  "dot1dPortNumTrafficClasses": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "dot1dPortPriorityEntry",
+      2
+    ]
+  },
+  "dot1dUserPriorityRegenTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Dot1dUserPriorityRegenEntry"
+    },
+    "index": null,
+    "value": [
+      "dot1dPriority",
+      2
+    ]
+  },
+  "dot1dUserPriorityRegenEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dot1dUserPriorityRegenEntry"
+    },
+    "index": [
+      "dot1dBasePort",
+      "dot1dUserPriority"
+    ],
+    "value": [
+      "dot1dUserPriorityRegenTable",
+      1
+    ]
+  },
+  "Dot1dUserPriorityRegenEntry": {
+    "tp": "SEQUENCE"
+  },
+  "dot1dUserPriority": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "dot1dUserPriorityRegenEntry",
+      1
+    ]
+  },
+  "dot1dRegenUserPriority": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "dot1dUserPriorityRegenEntry",
+      2
+    ]
+  },
+  "dot1dTrafficClassTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Dot1dTrafficClassEntry"
+    },
+    "index": null,
+    "value": [
+      "dot1dPriority",
+      3
+    ]
+  },
+  "dot1dTrafficClassEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dot1dTrafficClassEntry"
+    },
+    "index": [
+      "dot1dBasePort",
+      "dot1dTrafficClassPriority"
+    ],
+    "value": [
+      "dot1dTrafficClassTable",
+      1
+    ]
+  },
+  "Dot1dTrafficClassEntry": {
+    "tp": "SEQUENCE"
+  },
+  "dot1dTrafficClassPriority": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "dot1dTrafficClassEntry",
+      1
+    ]
+  },
+  "dot1dTrafficClass": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "dot1dTrafficClassEntry",
+      2
+    ]
+  },
+  "dot1dPortOutboundAccessPriorityTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Dot1dPortOutboundAccessPriorityEntry"
+    },
+    "index": null,
+    "value": [
+      "dot1dPriority",
+      4
+    ]
+  },
+  "dot1dPortOutboundAccessPriorityEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dot1dPortOutboundAccessPriorityEntry"
+    },
+    "index": [
+      "dot1dBasePort",
+      "dot1dRegenUserPriority"
+    ],
+    "value": [
+      "dot1dPortOutboundAccessPriorityTable",
+      1
+    ]
+  },
+  "Dot1dPortOutboundAccessPriorityEntry": {
+    "tp": "SEQUENCE"
+  },
+  "dot1dPortOutboundAccessPriority": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "dot1dPortOutboundAccessPriorityEntry",
+      1
+    ]
+  },
+  "dot1dPortGarpTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Dot1dPortGarpEntry"
+    },
+    "index": null,
+    "value": [
+      "dot1dGarp",
+      1
+    ]
+  },
+  "dot1dPortGarpEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dot1dPortGarpEntry"
+    },
+    "index": "dot1dBasePortEntry",
+    "value": [
+      "dot1dPortGarpTable",
+      1
+    ]
+  },
+  "Dot1dPortGarpEntry": {
+    "tp": "SEQUENCE"
+  },
+  "dot1dPortGarpJoinTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeInterval"
+    },
+    "index": null,
+    "value": [
+      "dot1dPortGarpEntry",
+      1
+    ]
+  },
+  "dot1dPortGarpLeaveTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeInterval"
+    },
+    "index": null,
+    "value": [
+      "dot1dPortGarpEntry",
+      2
+    ]
+  },
+  "dot1dPortGarpLeaveAllTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "TimeInterval"
+    },
+    "index": null,
+    "value": [
+      "dot1dPortGarpEntry",
+      3
+    ]
+  },
+  "dot1dPortGmrpTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Dot1dPortGmrpEntry"
+    },
+    "index": null,
+    "value": [
+      "dot1dGmrp",
+      1
+    ]
+  },
+  "dot1dPortGmrpEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dot1dPortGmrpEntry"
+    },
+    "index": "dot1dBasePortEntry",
+    "value": [
+      "dot1dPortGmrpTable",
+      1
+    ]
+  },
+  "Dot1dPortGmrpEntry": {
+    "tp": "SEQUENCE"
+  },
+  "dot1dPortGmrpStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "EnabledStatus"
+    },
+    "index": null,
+    "value": [
+      "dot1dPortGmrpEntry",
+      1
+    ]
+  },
+  "dot1dPortGmrpFailedRegistrations": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "dot1dPortGmrpEntry",
+      2
+    ]
+  },
+  "dot1dPortGmrpLastPduOrigin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "index": null,
+    "value": [
+      "dot1dPortGmrpEntry",
+      3
+    ]
+  },
+  "dot1dTpHCPortTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Dot1dTpHCPortEntry"
+    },
+    "index": null,
+    "value": [
+      "dot1dTp",
+      5
+    ]
+  },
+  "dot1dTpHCPortEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dot1dTpHCPortEntry"
+    },
+    "index": [
+      "dot1dTpPort"
+    ],
+    "value": [
+      "dot1dTpHCPortTable",
+      1
+    ]
+  },
+  "Dot1dTpHCPortEntry": {
+    "tp": "SEQUENCE"
+  },
+  "dot1dTpHCPortInFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "dot1dTpHCPortEntry",
+      1
+    ]
+  },
+  "dot1dTpHCPortOutFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "dot1dTpHCPortEntry",
+      2
+    ]
+  },
+  "dot1dTpHCPortInDiscards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter64"
+    },
+    "index": null,
+    "value": [
+      "dot1dTpHCPortEntry",
+      3
+    ]
+  },
+  "dot1dTpPortOverflowTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF Dot1dTpPortOverflowEntry"
+    },
+    "index": null,
+    "value": [
+      "dot1dTp",
+      6
+    ]
+  },
+  "dot1dTpPortOverflowEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Dot1dTpPortOverflowEntry"
+    },
+    "index": [
+      "dot1dTpPort"
+    ],
+    "value": [
+      "dot1dTpPortOverflowTable",
+      1
+    ]
+  },
+  "Dot1dTpPortOverflowEntry": {
+    "tp": "SEQUENCE"
+  },
+  "dot1dTpPortInOverflowFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "dot1dTpPortOverflowEntry",
+      1
+    ]
+  },
+  "dot1dTpPortOutOverflowFrames": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "dot1dTpPortOverflowEntry",
+      2
+    ]
+  },
+  "dot1dTpPortInOverflowDiscards": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "dot1dTpPortOverflowEntry",
+      3
+    ]
+  },
+  "pBridgeConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "pBridgeMIB",
+      2
+    ]
+  },
+  "pBridgeGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "pBridgeConformance",
+      1
+    ]
+  },
+  "pBridgeCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "pBridgeConformance",
+      2
+    ]
+  },
+  "pBridgeExtCapGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "pBridgeGroups",
+      1
+    ]
+  },
+  "pBridgeDeviceGmrpGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "pBridgeGroups",
+      2
+    ]
+  },
+  "pBridgeDevicePriorityGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "pBridgeGroups",
+      3
+    ]
+  },
+  "pBridgeDefaultPriorityGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "pBridgeGroups",
+      4
+    ]
+  },
+  "pBridgeRegenPriorityGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "pBridgeGroups",
+      5
+    ]
+  },
+  "pBridgePriorityGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "pBridgeGroups",
+      6
+    ]
+  },
+  "pBridgeAccessPriorityGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "pBridgeGroups",
+      7
+    ]
+  },
+  "pBridgePortGarpGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "pBridgeGroups",
+      8
+    ]
+  },
+  "pBridgePortGmrpGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "pBridgeGroups",
+      9
+    ]
+  },
+  "pBridgeHCPortGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "pBridgeGroups",
+      10
+    ]
+  },
+  "pBridgePortOverflowGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "pBridgeGroups",
+      11
+    ]
+  }
+}

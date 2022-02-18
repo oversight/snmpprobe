@@ -1,0 +1,18 @@
+{
+  "IMPORTS": [
+    [
+      "RFC1155-SMI",
+      [
+        "ObjectName"
+      ]
+    ],
+    [
+      "RFC1213-MIB",
+      [
+        "snmp",
+        "ifIndex",
+        "egpNeighAddr"
+      ]
+    ]
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "enterprises"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION",
+        "MacAddress"
+      ]
+    ]
+  ],
+  "aerohive": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "enterprises",
+      26928
+    ]
+  },
+  "ahProduct": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "aerohive",
+      1
+    ]
+  },
+  "ahAP": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ahProduct",
+      1
+    ]
+  },
+  "ahAPCommon": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ahAP",
+      1
+    ]
+  },
+  "ahAPTrap": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ahAPCommon",
+      1
+    ]
+  },
+  "ahAPInterface": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ahAPCommon",
+      2
+    ]
+  },
+  "ahAPMRP": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ahAPCommon",
+      3
+    ]
+  },
+  "ahAPIDP": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ahAPCommon",
+      4
+    ]
+  },
+  "ahAPHiveAP020-ag": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ahAP",
+      2
+    ]
+  },
+  "ahAPHiveAP028-ag": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ahAP",
+      3
+    ]
+  },
+  "ahAPHiveAP320-n": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ahAP",
+      4
+    ]
+  },
+  "ahAPHiveAP340-n": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "ahAP",
+      5
+    ]
+  },
+  "AhString": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "display_hint": null
+  },
+  "AhNodeID": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "MacAddress"
+    },
+    "display_hint": null
+  },
+  "AhInterfaceType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "ahPHYSICAL",
+        "1": "ahVIRTURAL"
+      }
+    },
+    "display_hint": null
+  },
+  "AhInterfaceMode": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "ahNotUsed",
+        "1": "ahAccess",
+        "2": "ahBackhaul",
+        "3": "ahBridge"
+      }
+    },
+    "display_hint": null
+  },
+  "AhMACProtocol": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "ah11a",
+        "1": "ah11b",
+        "2": "ah11g",
+        "3": "ah11na",
+        "4": "ah11ng"
+      }
+    },
+    "display_hint": null
+  }
+}
