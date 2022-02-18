@@ -7,6 +7,14 @@ from mibs.parser.grammar import MibsGrammar
 from mibs.parser.parse_tree import parse_tree
 from mibs.parser.utils import remove_comments_from_mib
 
+
+mi = MibIndex()
+NEW_CHECK_DEFINITIONS = {
+    check_name: make_check(mi, check_name, check_info)
+    for check_name, check_info in CHECKS.items()
+}
+
+
 TEST_HOSTCONFIG = {
     'probeConfig': {
         'snmpProbe': {
@@ -123,12 +131,6 @@ class TestProbe(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    mi = MibIndex()
-    NEW_CHECK_DEFINITIONS = {
-        check_name: make_check(mi, check_name, check_info)
-        for check_name, check_info in CHECKS.items()
-    }
-
     suite = unittest.TestSuite()
 
     suite.addTest(TestMibs('test_'))
