@@ -1,5 +1,5 @@
-[![CI](https://github.com/oversight-monitoring/snmpprobe/workflows/CI/badge.svg)](https://github.com/oversight-monitoring/snmpprobe/actions)
-[![Release Version](https://img.shields.io/github/release/oversight-monitoring/snmpprobe)](https://github.com/oversight-monitoring/snmpprobe/releases)
+[![CI](https://github.com/oversight/snmpprobe/workflows/CI/badge.svg)](https://github.com/oversight/snmpprobe/actions)
+[![Release Version](https://img.shields.io/github/release/oversight/snmpprobe)](https://github.com/oversight/snmpprobe/releases)
 
 # Oversight SNMP probe
 
