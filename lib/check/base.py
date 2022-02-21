@@ -313,7 +313,8 @@ def make_check(mi, check_name, check_info):
     on_state_data = check_info['check_func'] if 'check_func' in check_info else lambda v: v
     is_vendor_check, vendor_test = make_vendor_test(mi, check_name, check_info)
 
-    return type('SnmpCheck', (Base,), {
+    return type(check_name, (Base,), {
         'interval': check_info.get('interval', DEFAULT_INTERVAL),
         'get_data': check_info.get('snmp_func', func),
+        'required': check_info.get('required', False),
     })

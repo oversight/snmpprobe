@@ -12,6 +12,7 @@ CHECKS = {
         'types': [
             {'mib_obj': 'RFC1213-MIB::system', 'type_name': 'system'},
         ],
+        'required': True,
     },
     'IF_MIB ASN.1 MIB': {
         'types': [
