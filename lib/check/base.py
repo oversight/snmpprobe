@@ -175,9 +175,9 @@ def make_typ(mi, typ_info):
     translations = {
         oid: make_column(mi, mib, name, metric_funcs.get(name))
         for name, oid in mi[mib][0].items()
-        if (oid in mi and mi[oid]['tp'] == 'OBJECT-TYPE'
-            and not mi[oid]['syntax']['tp'].startswith('SEQUENCE OF')
-            and mi[oid]['value'][0] == obj)
+        if (oid in mi and mi[oid]['tp'] == 'OBJECT-TYPE' and
+            not mi[oid]['syntax']['tp'].startswith('SEQUENCE OF') and
+            mi[oid]['value'][0] == obj)
     }
     assert translations
 
@@ -252,8 +252,8 @@ def make_typ_table(mi, typ_info):
     translations = {
         oid: make_column(mi, mib, name, metric_funcs.get(name))
         for name, oid in mi[mib][0].items()
-        if (oid in mi and mi[oid]['tp'] == 'OBJECT-TYPE'
-            and mi[oid]['value'][0] == obj)
+        if (oid in mi and mi[oid]['tp'] == 'OBJECT-TYPE' and
+            mi[oid]['value'][0] == obj)
     }
     assert translations
 
