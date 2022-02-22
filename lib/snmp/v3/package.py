@@ -90,7 +90,8 @@ class Package:
                 encoder.write(self.msgflags, Number.OctetString)
                 encoder.write(self.msgsecuritymodel, Number.Integer)
 
-            encoder.write(_encode_msgsecurityparameters(self.msgsecurityparameters), Number.OctetString)
+            params = _encode_msgsecurityparameters(self.msgsecurityparameters)
+            encoder.write(params, Number.OctetString)
             if self.msgflags == b'\x03':
                 encoder.write(self.msgdata, Number.OctetString)
             else:
@@ -110,7 +111,7 @@ class Package:
                 _, msgsecuritymodel = decoder.read()
 
             _, msgsecurityparameters = decoder.read()
-            msgsecurityparameters_decoded = _decode_msgsecurityparameters(msgsecurityparameters)
+            params = _decode_msgsecurityparameters(msgsecurityparameters)
 
             if msgflags == b'\x03':
                 _, msgdata = decoder.read()
@@ -122,7 +123,7 @@ class Package:
         self.msgmaxsize = msgmaxsize
         self.msgflags = msgflags
         self.msgsecuritymodel = msgsecuritymodel
-        self.msgsecurityparameters = msgsecurityparameters_decoded
+        self.msgsecurityparameters = params
         self.msgdata = msgdata
 
     def encrypt(self, proto, key):

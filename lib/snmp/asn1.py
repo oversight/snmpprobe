@@ -8,7 +8,8 @@ import enum
 import ipaddress
 import re
 from contextlib import contextmanager
-from typing import Any, Iterator, List, NamedTuple, Optional, Tuple, Union, cast
+from typing import Any, Iterator, List, NamedTuple, Optional, Tuple, Union, \
+    cast
 
 
 class Number(enum.IntEnum):

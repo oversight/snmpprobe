@@ -5,7 +5,8 @@ from .utils import FILTER_FUNS, MAP_FUNS
 from ..mib_check.syntax_funs import SYNTAX_FUNS
 from ..snmp.asn1 import Number
 from ..snmp.client import Snmp, SnmpV1, SnmpV3
-from ..snmp.exceptions import SnmpErrorStatus, SnmpVendorOidError, SnmpNoConnection, SnmpNoAuthParams
+from ..snmp.exceptions import SnmpErrorStatus, SnmpVendorOidError, \
+    SnmpNoConnection, SnmpNoAuthParams
 
 
 DEFAULT_INTERVAL = 300
@@ -18,6 +19,7 @@ FLAGS_SEPERATOR = ','
 class Base:
 
     interval = DEFAULT_INTERVAL
+    required = False
 
     @classmethod
     async def run(cls, data, asset_config):
@@ -97,8 +99,10 @@ class Base:
 def on_oid_map(oid, map_):
     if not isinstance(oid, tuple):
         # some devices don't follow mib's syntax
-        # for example ipAddressTable.ipAddressPrefix returns an int in case of old ups firmware version
-        # possible solution is to take tag.nr into account while choosing translation func (make_column)
+        # for example ipAddressTable.ipAddressPrefix returns an int in case of
+        # old ups firmware version
+        # possible solution is to take tag.nr into account while choosing
+        # translation func (make_column)
         return
     return map_.get(oid, {}).get('name', '.'.join(map(str, oid)))
 
@@ -107,8 +111,9 @@ def on_value_map(value, map_):
     return map_.get(value, ENUM_UNKNOWN)
 
 
-def on_value_map_bits(value, map_):
-    return FLAGS_SEPERATOR.join(v for k, v in map_.items() if value[k // 8] & (1 << k % 8))
+def on_value_map_b(value, map_):
+    return FLAGS_SEPERATOR.join(
+        v for k, v in map_.items() if value[k // 8] & (1 << k % 8))
 
 
 def make_column(mi, mib_name, column_name, metric_func=None):
@@ -128,7 +133,7 @@ def make_column(mi, mib_name, column_name, metric_func=None):
     elif syntax['tp'] == 'INTEGER':
         return oid, column_name, lambda v: v
     elif syntax['tp'] == 'BITS':
-        return oid, column_name, lambda v: on_value_map_bits(v, syntax['values'])
+        return oid, column_name, lambda v: on_value_map_b(v, syntax['values'])
     else:
         raise Exception(f'Invalid syntax {syntax}')
 
@@ -149,7 +154,8 @@ def make_typ(mi, typ_info):
             try:
                 item[name] = fun(value)
             except Exception as e:
-                raise Exception(f'Something went wrong in the metric processor: {e.__class__.__name__}: {e}')
+                raise Exception('Something went wrong in the metric processor:'
+                                f' {e.__class__.__name__}: {e}')
 
         if item:
             prefix = typ_info['type_name']
@@ -157,7 +163,8 @@ def make_typ(mi, typ_info):
             try:
                 item = mfun((0, ), item)
             except Exception as e:
-                raise Exception(f'Something went wrong in the item processor: {e.__class__.__name__}: {e}')
+                raise Exception('Something went wrong in the item processor:'
+                                f' {e.__class__.__name__}: {e}')
             item['name'] = name
             yield name, item
 
@@ -168,11 +175,14 @@ def make_typ(mi, typ_info):
     translations = {
         oid: make_column(mi, mib, name, metric_funcs.get(name))
         for name, oid in mi[mib][0].items()
-        if oid in mi and mi[oid]['tp'] == 'OBJECT-TYPE' and not mi[oid]['syntax']['tp'].startswith('SEQUENCE OF') and mi[oid]['value'][0] == obj
+        if (oid in mi and mi[oid]['tp'] == 'OBJECT-TYPE'
+            and not mi[oid]['syntax']['tp'].startswith('SEQUENCE OF')
+            and mi[oid]['value'][0] == obj)
     }
     assert translations
 
-    mfun = MAP_FUNS[typ_info['item_func']] if 'item_func' in typ_info else lambda k, v: v
+    mfun = MAP_FUNS[typ_info['item_func']] \
+        if 'item_func' in typ_info else lambda k, v: v
     recursive = typ_info.get('is_recursive', False)
 
     return (
@@ -213,7 +223,8 @@ def make_typ_table(mi, typ_info):
             try:
                 table[idx][name] = fun(value)
             except Exception as e:
-                raise Exception(f'Something went wrong in the metric processor: {e.__class__.__name__}: {e}')
+                raise Exception('Something went wrong in the metric processor:'
+                                f' {e.__class__.__name__}: {e}')
 
         counts = Counter()
         for key, item in table.items():
@@ -221,12 +232,14 @@ def make_typ_table(mi, typ_info):
             try:
                 valid = ffun(key, item)
             except Exception as e:
-                raise Exception(f'Something went wrong in the item filter function: {e.__class__.__name__}: {e}')
+                raise Exception('Something went wrong in the item filter'
+                                f' function: {e.__class__.__name__}: {e}')
             if valid:
                 try:
                     item = mfun(key, item)
                 except Exception as e:
-                    raise Exception(f'Something went wrong in the item processor: {e.__class__.__name__}: {e}')
+                    raise Exception('Something went wrong in the item'
+                                    f' processor: {e.__class__.__name__}: {e}')
                 item['name'] = name
                 yield name, item
 
@@ -234,17 +247,21 @@ def make_typ_table(mi, typ_info):
     base_oid = mi[mib][0][obj]
     prefixlen = len(base_oid) + 1
     metric_funcs = typ_info.get('metric_funcs', {})
-    assert mi[base_oid]['tp'] == 'OBJECT-TYPE' and mi[base_oid]['syntax']['tp'] == 'SEQUENCE'
+    assert mi[base_oid]['tp'] == 'OBJECT-TYPE' \
+        and mi[base_oid]['syntax']['tp'] == 'SEQUENCE'
     translations = {
         oid: make_column(mi, mib, name, metric_funcs.get(name))
         for name, oid in mi[mib][0].items()
-        if oid in mi and mi[oid]['tp'] == 'OBJECT-TYPE' and mi[oid]['value'][0] == obj
+        if (oid in mi and mi[oid]['tp'] == 'OBJECT-TYPE'
+            and mi[oid]['value'][0] == obj)
     }
     assert translations
 
     nfun = on_item_named if 'name_template' in typ_info else on_item
-    mfun = MAP_FUNS[typ_info['item_func']] if 'item_func' in typ_info else lambda k, v: v
-    ffun = FILTER_FUNS[typ_info['item_filter_func']] if 'item_filter_func' in typ_info else lambda k, v: True
+    mfun = MAP_FUNS[typ_info['item_func']] \
+        if 'item_func' in typ_info else lambda k, v: v
+    ffun = FILTER_FUNS[typ_info['item_filter_func']] \
+        if 'item_filter_func' in typ_info else lambda k, v: True
 
     return (
         typ_info['type_name'],
@@ -306,11 +323,16 @@ def make_check(mi, check_name, check_info):
             try:
                 state_data = on_state_data(state_data)
             except Exception as e:
-                raise Exception(f'Something went wrong in the check processor: {e.__class__.__name__}: {e}')
+                raise Exception('Something went wrong in the check processor:'
+                                f' {e.__class__.__name__}: {e}')
         return state_data
 
-    types = [make_typ_table(mi, typ_info) if typ_info.get('is_table') else make_typ(mi, typ_info) for typ_info in check_info['types']]
-    on_state_data = check_info['check_func'] if 'check_func' in check_info else lambda v: v
+    types = [
+        make_typ_table(mi, typ_info)
+        if typ_info.get('is_table') else make_typ(mi, typ_info)
+        for typ_info in check_info['types']]
+    on_state_data = check_info['check_func'] \
+        if 'check_func' in check_info else lambda v: v
     is_vendor_check, vendor_test = make_vendor_test(mi, check_name, check_info)
 
     return type(check_name, (Base,), {

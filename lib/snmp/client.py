@@ -87,7 +87,8 @@ class Snmp:
             new_rows = [
                 (oid_, value)
                 for oid_, tag, value in vbs
-                if oid_[:prefixlen] == oid and (recursive or oid_[-1] == 0) and value is not None
+                if (oid_[:prefixlen] == oid and (recursive or oid_[-1] == 0)
+                    and value is not None)
             ]
             rows.extend(new_rows)
 
@@ -179,13 +180,11 @@ class SnmpV3(Snmp):
         if self._auth_proto:
             if auth_passwd is None:
                 raise Exception('Supply auth_passwd')
-            self._auth_hash = \
-                self._auth_proto.hash_passphrase(auth_passwd) if auth_passwd else None
+            self._auth_hash = self._auth_proto.hash_passphrase(auth_passwd)
         if self._priv_proto:
             if priv_passwd is None:
                 raise Exception('Supply priv_passwd')
-            self._priv_hash = \
-                self._auth_proto.hash_passphrase(priv_passwd) if priv_passwd else None
+            self._priv_hash = self._auth_proto.hash_passphrase(priv_passwd)
 
     async def connect(self, timeout=10):
         try:
@@ -213,9 +212,11 @@ class SnmpV3(Snmp):
         self._auth_params = \
             pkg.msgsecurityparameters[:3] + [self._username, b'\x00' * 12, b'']
         self._auth_hash_localized = self._auth_proto.localize(
-            self._auth_hash, pkg.msgsecurityparameters[0]) if self._auth_proto else None
+            self._auth_hash, pkg.msgsecurityparameters[0]) \
+            if self._auth_proto else None
         self._priv_hash_localized = self._auth_proto.localize(
-            self._priv_hash, pkg.msgsecurityparameters[0]) if self._priv_proto else None
+            self._priv_hash, pkg.msgsecurityparameters[0]) \
+            if self._priv_proto else None
 
     def _get(self, oids, timeout=None):
         if self._transport is None:

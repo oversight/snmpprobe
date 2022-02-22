@@ -58,7 +58,8 @@ def cpqHeEventLogUpdateTime(value):
         A value of 0 in the year indicates an unknown time stamp."
     src: CPQHLTH-MIB.mib
     '''
-    # some devices seem to return 7 octets, thus we break at [:6] to strip the last octect(s)
+    # some devices seem to return 7 octets, thus we break at [:6] to strip the
+    # last octect(s)
     timetuple = struct.unpack('>HBBBB', value[:6])
     ts = int(time.mktime(timetuple + (0, 0, 0, -1)))
     return ts
@@ -275,8 +276,10 @@ SYNTAX_FUNS = {
     'BROCADE-SYSTEM-MIB::swFCPortLipLastAlpa': PhysAddress,
     'BROCADE-SYSTEM-MIB::swFCPortWwn': PhysAddress,
     'XUPS-MIB::xupsInputFrequency': xupsInputFrequency,
-    'PowerNet-MIB::rPDU2SensorTempHumidityStatusTempF': rPDU2SensorTempHumidityStatusTempF,
-    'PowerNet-MIB::rPDU2SensorTempHumidityStatusTempC': rPDU2SensorTempHumidityStatusTempC,
+    'PowerNet-MIB::rPDU2SensorTempHumidityStatusTempF': \
+    rPDU2SensorTempHumidityStatusTempF,
+    'PowerNet-MIB::rPDU2SensorTempHumidityStatusTempC': \
+    rPDU2SensorTempHumidityStatusTempC,
     'IDRAC-MIB-SMIv2::eventLogDateName': eventLogDateName,
 
     # textual convention funcs
