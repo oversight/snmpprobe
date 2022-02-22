@@ -50,7 +50,7 @@ if __name__ == '__main__':
         '0.0.1',
         NEW_CHECK_DEFINITIONS,
         read_asset_config,
-        '/data/config/wmiprobe/snmpProbe-config.json'
+        '/data/config/snmpprobe/snmpProbe-config.json'
     )
 
     cl.setup_logger(args.log_level, args.log_colorized)
