@@ -87,8 +87,9 @@ class Snmp:
             new_rows = [
                 (oid_, value)
                 for oid_, tag, value in vbs
-                if (oid_[:prefixlen] == oid and (recursive or oid_[-1] == 0)
-                    and value is not None)
+                if oid_[:prefixlen] == oid and
+                (recursive or oid_[-1] == 0) and
+                value is not None
             ]
             rows.extend(new_rows)
 

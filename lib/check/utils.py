@@ -236,11 +236,11 @@ def nimble_mib_status(key, item):
     if 'diskVolBytesUsedHigh' in item and 'diskVolBytesUsedLow' in item:
         item['diskVolBytesUsedInBytes'] = (
             item['diskVolBytesUsedHigh'] << 32) + \
-                item['diskVolBytesUsedLow'] * 1024 * 1024
+            item['diskVolBytesUsedLow'] * 1024 * 1024
     if 'diskSnapBytesUsedHigh' in item and 'diskSnapBytesUsedLow' in item:
         item['diskSnapBytesUsedInBytes'] = (
             item['diskSnapBytesUsedHigh'] << 32) + \
-                item['diskSnapBytesUsedLow'] * 1024 * 1024
+            item['diskSnapBytesUsedLow'] * 1024 * 1024
     return item
 
 
