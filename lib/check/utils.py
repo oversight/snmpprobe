@@ -74,21 +74,25 @@ def ip_mib_address(key, item):
     item['ipAddressAddr'] = local_addr
 
     # when value is 0.0 or 1.1 ignore
+    # some devices don't follow mib's syntax and return None
+    # in case of an unparseable int instead of a RowPointer (oid)
     if 'ipAddressPrefix' in item and item['ipAddressPrefix'] not in (
         'zeroDotZero',  # oid 0.0
         'internet',  # oid 1.1
-        None,  # some devices don't follow mib's syntax and return an unparseable int instead of a RowPointer (oid)
+        None,
     ):
         n = 10  # length of 1.3.6.1.2.1.4.32.1.5 IP-MIB::ipAddressPrefixOrigin
         try:
-            prefix_key = tuple(map(int, item['ipAddressPrefix'].split('.')[n:]))
+            prefix_key = tuple(
+                map(int, item['ipAddressPrefix'].split('.')[n:]))
             prefix_ifindex = prefix_key[0]
             prefix_typ = prefix_key[1]
             prefix_typ_name, prefix_typ_func = ADDRESS_TP[prefix_typ]
             prefix_addr = prefix_typ_func(prefix_key[2:-1])
             prefix_len = prefix_key[-1]
         except Exception:
-            raise Exception(f'Unable to derive address-prefix info from oid-part {prefix_key}')
+            raise Exception('Unable to derive address-prefix info from '
+                            f'oid-part {prefix_key}')
         netmask = addr_netmask(prefix_addr, prefix_len)
         item['ipAddressPrefixIfIndex'] = prefix_ifindex
         item['ipAddressPrefixType'] = prefix_typ_name
@@ -211,23 +215,32 @@ def cisco_process_mib(key, item):
 
 def nimble_mib_volume(key, item):
     if 'volSizeHigh' in item and 'volSizeLow' in item:
-        item['volSize'] = (item['volSizeHigh'] << 32) + item['volSizeLow'] * 1024 * 1024
+        item['volSize'] = (item['volSizeHigh'] << 32) + \
+            item['volSizeLow'] * 1024 * 1024
     if 'volUsageHigh' in item and 'volUsageLow' in item:
-        item['volUsed'] = (item['volUsageHigh'] << 32) + item['volUsageLow'] * 1024 * 1024
+        item['volUsed'] = (item['volUsageHigh'] << 32) + \
+            item['volUsageLow'] * 1024 * 1024
     if 'volReserveHigh' in item and 'volReserveLow' in item:
-        item['volReserve'] = (item['volReserveHigh'] << 32) + item['volReserveLow'] * 1024 * 1024
+        item['volReserve'] = (item['volReserveHigh'] << 32) + \
+            item['volReserveLow'] * 1024 * 1024
     if 'volSize' in item and 'volUsed' in item:
         item['volFree'] = item['volSize'] - item['volUsed']
-        item['volFreePercentage'] = 100 * item['volFree'] / item['volSize'] if item['volSize'] else None
-        item['volUsedPercentage'] = 100 * item['volUsed'] / item['volSize'] if item['volSize'] else None
+        item['volFreePercentage'] = 100 * item['volFree'] / item['volSize'] \
+            if item['volSize'] else None
+        item['volUsedPercentage'] = 100 * item['volUsed'] / item['volSize'] \
+            if item['volSize'] else None
     return item
 
 
 def nimble_mib_status(key, item):
     if 'diskVolBytesUsedHigh' in item and 'diskVolBytesUsedLow' in item:
-        item['diskVolBytesUsedInBytes'] = (item['diskVolBytesUsedHigh'] << 32) + item['diskVolBytesUsedLow'] * 1024 * 1024
+        item['diskVolBytesUsedInBytes'] = (
+            item['diskVolBytesUsedHigh'] << 32) + \
+            item['diskVolBytesUsedLow'] * 1024 * 1024
     if 'diskSnapBytesUsedHigh' in item and 'diskSnapBytesUsedLow' in item:
-        item['diskSnapBytesUsedInBytes'] = (item['diskSnapBytesUsedHigh'] << 32) + item['diskSnapBytesUsedLow'] * 1024 * 1024
+        item['diskSnapBytesUsedInBytes'] = (
+            item['diskSnapBytesUsedHigh'] << 32) + \
+            item['diskSnapBytesUsedLow'] * 1024 * 1024
     return item
 
 
@@ -249,16 +262,26 @@ def ucd_snmp_mib(key, item):
     if 'memTotalReal' in item and 'memAvailReal' in item:
         item['memTotalRealInBytes'] = item['memTotalReal'] * 1024
         item['memAvailRealInBytes'] = item['memAvailReal'] * 1024
-        item['memUsedRealInBytes'] = item['memTotalRealInBytes'] - item['memAvailRealInBytes']
-        item['memUsedRealPercentage'] = 100 * item['memUsedRealInBytes'] / item['memTotalRealInBytes'] if item['memTotalRealInBytes'] else None
-        item['memAvialRealPercentage'] = 100 * item['memAvailRealInBytes'] / item['memTotalRealInBytes'] if item['memTotalRealInBytes'] else None
+        item['memUsedRealInBytes'] = \
+            item['memTotalRealInBytes'] - item['memAvailRealInBytes']
+        item['memUsedRealPercentage'] = \
+            100 * item['memUsedRealInBytes'] / item['memTotalRealInBytes'] \
+            if item['memTotalRealInBytes'] else None
+        item['memAvialRealPercentage'] = \
+            100 * item['memAvailRealInBytes'] / item['memTotalRealInBytes'] \
+            if item['memTotalRealInBytes'] else None
 
     if 'memTotalSwap' in item and 'memAvailSwap' in item:
         item['memTotalSwapInBytes'] = item['memTotalSwap'] * 1024
         item['memAvailSwapInBytes'] = item['memAvailSwap'] * 1024
-        item['memUsedSwapInBytes'] = item['memTotalSwapInBytes'] - item['memAvailSwapInBytes']
-        item['memUsedSwapPercentage'] = 100 * item['memUsedSwapInBytes'] / item['memTotalSwapInBytes'] if item['memTotalSwapInBytes'] else None
-        item['memFreeSwapPercentage'] = 100 * item['memAvailSwapInBytes'] / item['memTotalSwapInBytes'] if item['memTotalSwapInBytes'] else None
+        item['memUsedSwapInBytes'] = \
+            item['memTotalSwapInBytes'] - item['memAvailSwapInBytes']
+        item['memUsedSwapPercentage'] = \
+            100 * item['memUsedSwapInBytes'] / item['memTotalSwapInBytes'] \
+            if item['memTotalSwapInBytes'] else None
+        item['memFreeSwapPercentage'] = \
+            100 * item['memAvailSwapInBytes'] / item['memTotalSwapInBytes'] \
+            if item['memTotalSwapInBytes'] else None
 
     if 'memTotalFree' in item:
         item['memTotalFreeInBytes'] = item['memTotalFree'] * 1024
@@ -274,13 +297,17 @@ def ucd_snmp_mib(key, item):
         item['memSharedInBytes'] = item['memShared'] * 1024
         item['memBufferInBytes'] = item['memBuffer'] * 1024
         item['memCachedInBytes'] = item['memCached'] * 1024
-        item['memUsedHumanInBytes'] = item['memUsedRealInBytes'] - item['memBufferInBytes'] - item['memCachedInBytes']
-        item['percentUsedHuman'] = 100 * item['memUsedHumanInBytes'] / item['memTotalRealInBytes'] if item['memTotalRealInBytes'] else None
+        item['memUsedHumanInBytes'] = item['memUsedRealInBytes'] \
+            - item['memBufferInBytes'] - item['memCachedInBytes']
+        item['percentUsedHuman'] = \
+            100 * item['memUsedHumanInBytes'] / item['memTotalRealInBytes'] \
+            if item['memTotalRealInBytes'] else None
     return item
 
 
 def cpqhlth_powersupply(key, item):
-    if 'cpqHeFltTolPowerSupplyCapacityMaximum' in item and 'cpqHeFltTolPowerSupplyCapacityUsed' in item:
+    if ('cpqHeFltTolPowerSupplyCapacityMaximum' in item and
+            'cpqHeFltTolPowerSupplyCapacityUsed' in item):
         total = item['cpqHeFltTolPowerSupplyCapacityMaximum']
         used = item['cpqHeFltTolPowerSupplyCapacityUsed']
         free = total - used

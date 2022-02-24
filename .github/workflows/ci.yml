@@ -33,4 +33,4 @@ jobs:
           pytest
       - name: Lint with PyCodeStyle
         run: |
-          find . -name \*.py -exec pycodestyle --ignore=E501 {} +
+          find . -name \*.py -exec pycodestyle --ignore=E501,W504 {} +

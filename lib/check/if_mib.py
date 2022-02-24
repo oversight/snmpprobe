@@ -58,7 +58,8 @@ def if_mib(state_data):
 
             if 'ifSpeed' in item and 'ifHighSpeed' in item:
                 # max value for this metric, shown if value is overloading
-                if item['ifSpeed'] == 4294967295 and item['ifHighSpeed'] != 4294:
+                if (item['ifSpeed'] == 4294967295 and
+                        item['ifHighSpeed'] != 4294):
                     # ifspeed is in bits, ifHighSpeed in MBits.
                     item['ifSpeed'] = item['ifHighSpeed'] * 1000000
 

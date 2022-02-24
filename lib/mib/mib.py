@@ -78,7 +78,8 @@ def on_mib(mibname, mib, mib_index, lk_definitions):
                 if obj['syntax']['tp'] == 'TEXTUAL-CONVENTION':
                     obj['syntax'] = obj['syntax']['syntax']
                 if 'values' in obj['syntax']:
-                    obj['syntax']['values'] = {int(k): v for k, v in obj['syntax']['values'].items()}
+                    obj['syntax']['values'] = {
+                        int(k): v for k, v in obj['syntax']['values'].items()}
 
                 names[name] = obj
             elif obj['tp'] == 'OBJECT-IDENTITY':

@@ -7,6 +7,7 @@ from lib.check import CHECKS
 from lib.check.base import make_check
 from lib.config import read_asset_config
 from lib.mib.mib_index import MibIndex
+from lib.version import __version__
 
 
 # Migrate the snmp configuration and credentials
@@ -46,11 +47,11 @@ if __name__ == '__main__':
     }
 
     cl = AgentCoreClient(
-        'probe',
-        '0.0.1',
+        'snmpProbe',
+        __version__,
         NEW_CHECK_DEFINITIONS,
         read_asset_config,
-        '/data/config/wmiprobe/snmpProbe-config.json'
+        '/data/config/snmpprobe/snmpProbe-config.json'
     )
 
     cl.setup_logger(args.log_level, args.log_colorized)
