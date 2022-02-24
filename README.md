@@ -3,15 +3,11 @@
 
 # Oversight SNMP probe
 
+## Docker build
 
-## Configuration Options
-Variable           | Default     | Description
--------------------|-------------|------------------------------------
-`AGENTCORE_IP`     | localhost   | Agentcore ip
-`AGENTCORE_PORT`   | 7211        | Agentcore port
-`SNMP_MAX_ROWS`    | 50000       | Max number of snmp objects (metrics * items). The default is chosen based on the old value `55000`.
-`OS_CONFIG_FOLDER` | /etc        | Location of the config files
-`OS_LOG_LEVEL`     | warning     | Log level
+```
+docker build -t snmpprobe . --no-cache
+```
 
 ## Create a check
 
