@@ -277,7 +277,7 @@ def make_vendor_test(mi, check_name, check_info):
         oid, tag, _ = await snmp.get_next(test_oid)
 
         if tag.cls + tag.nr == Number.EndOfMibView or oid[:7] != test_oid:
-            logging.warning(f'{snmp.host} {check_name} vendor oid mismatch')
+            logging.debug(f'{snmp.host} {check_name} vendor oid mismatch')
             raise SnmpVendorOidError
 
     needs_vendor_test = False
